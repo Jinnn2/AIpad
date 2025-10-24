@@ -1432,7 +1432,6 @@ export default function LineArtBoard() {
               style={{ border: 'none', background: 'transparent', fontSize: 16, cursor: 'pointer', color: '#6b7280' }}
               title="取消"
             >
-              ×
             </button>
           </div>
 
