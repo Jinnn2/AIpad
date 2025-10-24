@@ -1,0 +1,386 @@
+--- a/src/LineArtBoard.tsx
++++ b/src/LineArtBoard.tsx
+@@ -1,4 +1,4 @@
+-import React, { useCallback, useMemo, useRef, useState } from 'react'
++import React, { useCallback, useMemo, useRef, useState } from 'react'
+ import { Stage, Layer, Group, Line as KLine, Rect as KRect, Ellipse as KEllipse, Text as KText } from 'react-konva'
+ 
+ /**
+@@
+  * - Freehand pen tool: mouse draw → Chaikin smooth → even resample → stack
++ * - Vector eraser: radius-based masking → split strokes → replace & stack sync
++ * - Undo/Redo: minimal history snapshots for shapes & drawStack
++ * - Export human strokes (AI v1.1)
+  *
+  * 注意：
+  * 1) 若报“应为表达式”，通常是某段函数/对象没正确闭合的 } 或 )；
+@@
+   return { aiStroke, draft }
+ }
+ 
+ // 预览项结构：一个 payloadId 对应一组草案
+ type PreviewEntry = { payloadId: string; drafts: ShapeDraft[] }
+ 
+ export default function LineArtBoard() {
+@@
+   // 人类笔画栈（供擦除/撤销使用）
+   type DrawStackEntry = { ai: AIStrokeV11; draft: ShapeDraft }
+   const [drawStack, setDrawStack] = useState<DrawStackEntry[]>([])
+ 
++  // -------- 工具模式：'pen' 或 'eraser' --------
++  const [toolMode, setToolMode] = useState<'pen' | 'eraser'>('pen')
++  const [eraserRadius, setEraserRadius] = useState<number>(14) // 像素
++  // 橡皮预览（绘制中显示擦除轨迹）
++  const [erasePoints, setErasePoints] = useState<number[]>([])
++
+   // 预览寄存：payloadId -> drafts
+   const [previews, setPreviews] = useState<Record<string, PreviewEntry>>({})
+   const [currentPayloadId, setCurrentPayloadId] = useState<string | null>(null)
+ 
++  // -------- 简单历史栈（撤销/重做） --------
++  type Snapshot = { shapes: ShapeDraft[]; drawStack: DrawStackEntry[] }
++  const [past, setPast] = useState<Snapshot[]>([])
++  const [future, setFuture] = useState<Snapshot[]>([])
++  const pushHistory = useCallback((snap?: Snapshot) => {
++    setPast(p => [...p, snap ?? { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }])
++    setFuture([]) // 新操作后清空未来分支
++  }, [shapes, drawStack])
++  const undo = useCallback(() => {
++    setPast(p => {
++      if (p.length === 0) return p
++      const last = p[p.length - 1]
++      setFuture(f => [{ shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }, ...f])
++      setShapes(JSON.parse(JSON.stringify(last.shapes)))
++      setDrawStack(JSON.parse(JSON.stringify(last.drawStack)))
++      return p.slice(0, -1)
++    })
++  }, [shapes, drawStack])
++  const redo = useCallback(() => {
++    setFuture(f => {
++      if (f.length === 0) return f
++      const head = f[0]
++      setPast(p => [...p, { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }])
++      setShapes(JSON.parse(JSON.stringify(head.shapes)))
++      setDrawStack(JSON.parse(JSON.stringify(head.drawStack)))
++      return f.slice(1)
++    })
++  }, [shapes, drawStack])
++
+   // 导出/导入（仅导出正式 shapes 的 JSON）
+   const exportJSON = useCallback(() => {
+     const blob = new Blob([JSON.stringify({ shapes }, null, 2)], { type: 'application/json' })
+@@
+     } catch { alert('Invalid JSON') }
+   }, [])
+ 
++  // 导出所有“人类笔画”为 AI v1.1 的 strokes（方便喂给 /suggest）
++  const exportHumanStrokesAI = useCallback(() => {
++    const strokes = drawStack.map(d => d.ai)
++    const payload = { version: 1, intent: 'complete', strokes }
++    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
++    const a = document.createElement('a')
++    a.href = URL.createObjectURL(blob)
++    a.download = 'human_strokes_ai_v1.json'
++    a.click()
++    URL.revokeObjectURL(a.href)
++  }, [drawStack])
++
+   // AI：只把 JSON 写到 localStorage，便于手动测试
+   const applyAIStub = useCallback(() => {
+     const raw = prompt('Paste AI suggestions JSON (v1.1)')
+@@
+   }, [])
+ 
+   // 接受：把预览草案并入正式 shapes 并移除预览
+   const acceptAI = useCallback(() => {
+     if (!currentPayloadId) { alert('No current payloadId'); return }
+     const entry = previews[currentPayloadId]
+     if (!entry) { alert('Preview not found'); return }
+-    setShapes(prev => [...prev, ...entry.drafts])
++    // 记录历史
++    pushHistory()
++    setShapes(prev => [...prev, ...entry.drafts])
+     setPreviews((prev) => {
+       const { [currentPayloadId]: _omit, ...rest } = prev
+       return rest
+     })
+     setCurrentPayloadId(null)
+-  }, [currentPayloadId, previews])
++  }, [currentPayloadId, previews, pushHistory])
+ 
+   // 丢弃：仅移除预览
+   const dismissAI = useCallback(() => {
+     if (!currentPayloadId) { alert('No current payloadId'); return }
+@@
+     return <Group listening={false}>{lines}</Group>
+   }
+ 
+   // Draft → Konva 节点
+   const DraftNode: React.FC<{ d: ShapeDraft; preview?: boolean }> = ({ d, preview }) => {
+@@
+     return snap
+       ? [Math.round(x / GRID_STEP) * GRID_STEP, Math.round(y / GRID_STEP) * GRID_STEP]
+       : [x, y]
+   }, [snap])
+ 
+-  // 画笔事件
++  // 距离/擦除辅助
++  const dist2 = (x1:number,y1:number,x2:number,y2:number) => {
++    const dx = x1-x2, dy = y1-y2; return dx*dx+dy*dy
++  }
++  // 输入一条 pen 笔画（以 draft 表示）与一个“圆形遮罩”（cx,cy,r），按点集切分，返回未被遮住的若干片段（0~2 段）
++  const splitStrokeByCircle = (d: ShapeDraft, cx:number, cy:number, r:number): ShapeDraft[] => {
++    if (!d.points || d.kind !== 'pen') return [d]
++    const r2 = r*r
++    // 将局部点转绝对坐标，判断每个点是否在圆内
++    const abs = d.points.map(p => ({ ax: d.x + p.x, ay: d.y + p.y }))
++    const inside = abs.map(p => dist2(p.ax,p.ay,cx,cy) <= r2)
++    // 找到 outside 的连续区间，转回局部坐标
++    const outDrafts: ShapeDraft[] = []
++    let i = 0
++    const mkDraft = (seg: {x:number;y:number}[]) => {
++      if (seg.length < 2) return
++      // 计算新段的局部原点
++      let minX=Infinity,minY=Infinity; for (const p of seg){ if(p.x<minX)minX=p.x; if(p.y<minY)minY=p.y }
++      const local = seg.map(p => ({ x: p.x - minX, y: p.y - minY }))
++      outDrafts.push({
++        id: `pen_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,6)}`,
++        kind: 'pen',
++        x: minX, y: minY,
++        points: local,
++        style: d.style,
++        meta: d.meta,
++      })
++    }
++    while (i < abs.length) {
++      // 跳过 inside
++      while (i < abs.length && inside[i]) i++
++      const seg: {x:number;y:number}[] = []
++      while (i < abs.length && !inside[i]) {
++        seg.push({ x: abs[i].ax, y: abs[i].ay }); i++
++      }
++      mkDraft(seg)
++    }
++    // 没有切分时，返回原对象
++    return outDrafts.length ? outDrafts : [d]
++  }
++  // 在当前 shapes/drawStack 上应用一次“局部圆形擦除”
++  const applyEraseAtPoint = (cx:number, cy:number, radius:number) => {
++    // 记录历史
++    pushHistory()
++    // 逐条处理 shapes
++    const nextShapes: ShapeDraft[] = []
++    const removedIds = new Set<string>()
++    for (const d of shapes) {
++      if (d.kind !== 'pen') { nextShapes.push(d); continue }
++      const parts = splitStrokeByCircle(d, cx, cy, radius)
++      if (parts.length === 1 && parts[0] === d) {
++        // 未受影响
++        nextShapes.push(d)
++      } else {
++        // 被切分：原草案作废，加入新片段
++        removedIds.add(d.id)
++        nextShapes.push(...parts)
++      }
++    }
++    setShapes(nextShapes)
++    // 同步 drawStack：删除被切分的条目，加入新片段的 AI 映射
++    if (removedIds.size) {
++      const nextStack: DrawStackEntry[] = []
++      for (const e of drawStack) {
++        if (!removedIds.has(e.draft.id)) { nextStack.push(e); continue }
++        // 被切分：把每个新片段生成新的 AI+draft 入栈
++        const d = e.draft
++        const parts = splitStrokeByCircle(d, cx, cy, radius)
++        for (const nd of parts) {
++          // 绝对点列
++          const absPts: Array<[number, number]> = (nd.points ?? []).map(p => [nd.x + p.x, nd.y + p.y])
++          const { aiStroke, draft } = buildAIStrokeAndDraft(absPts, d.style!, d.meta)
++          nextStack.push({ ai: aiStroke, draft })
++        }
++      }
++      setDrawStack(nextStack)
++    }
++  }
++
++  // 画笔/橡皮事件（根据 toolMode 分流）
+   const onMouseDown = useCallback((e: any) => {
+     const pos = e.target.getStage()?.getPointerPosition()
+     if (!pos) return
+-    const [sx, sy] = snapPoint(pos.x, pos.y)
+-    setIsDrawing(true)
+-    setRawPoints([sx, sy])
+-  }, [snapPoint])
++    const [sx, sy] = snapPoint(pos.x, pos.y)
++    if (toolMode === 'pen') {
++      setIsDrawing(true)
++      setRawPoints([sx, sy])
++    } else { // eraser
++      setErasePoints([sx, sy])
++      // 即时擦一次（按需你也可以改成 mouseup 才应用）
++      applyEraseAtPoint(sx, sy, eraserRadius)
++    }
++  }, [snapPoint, toolMode, eraserRadius, applyEraseAtPoint])
+ 
+   const onMouseMove = useCallback((e: any) => {
+-    if (!isDrawing) return
+     const pos = e.target.getStage()?.getPointerPosition()
+-    if (!pos) return
+-    const [x, y] = snapPoint(pos.x, pos.y)
+-    setRawPoints(prev => {
+-      const n = prev.length
+-      if (n >= 2 && prev[n-2] === x && prev[n-1] === y) return prev
+-      return [...prev, x, y]
+-    })
+-  }, [isDrawing, snapPoint])
++    if (!pos) return
++    const [x, y] = snapPoint(pos.x, pos.y)
++    if (toolMode === 'pen') {
++      if (!isDrawing) return
++      setRawPoints(prev => {
++        const n = prev.length
++        if (n >= 2 && prev[n-2] === x && prev[n-1] === y) return prev
++        return [...prev, x, y]
++      })
++    } else {
++      // 橡皮：沿轨迹连续擦
++      setErasePoints(prev => {
++        const n = prev.length
++        if (n >= 2 && prev[n-2] === x && prev[n-1] === y) return prev
++        return [...prev, x, y]
++      })
++      applyEraseAtPoint(x, y, eraserRadius)
++    }
++  }, [isDrawing, snapPoint, toolMode, eraserRadius, applyEraseAtPoint])
+ 
+   const onMouseUp = useCallback(() => {
+-    if (!isDrawing) return
+-    setIsDrawing(false)
+-    if (rawPoints.length < 4) { setRawPoints([]); return }
+-
+-    // [x0,y0,x1,y1,...] → [[x,y], ...]
+-    const absPts: Array<[number, number]> = []
+-    for (let i = 0; i < rawPoints.length; i += 2) absPts.push([rawPoints[i], rawPoints[i+1]])
+-
+-    // Chaikin 平滑 + 均匀采样
+-    const smooth = chaikin(absPts, 2)
+-    const sampled = resampleEvenly(smooth, 3)
+-
+-    // 生成 AI 笔画 + Draft；入栈 & 落地
+-    const { aiStroke, draft } = buildAIStrokeAndDraft(sampled, currentBrush.style, currentBrush.meta)
+-    setDrawStack(prev => [...prev, { ai: aiStroke, draft }])
+-    setShapes(prev => [...prev, draft])
+-    setRawPoints([])
+-  }, [isDrawing, rawPoints, currentBrush])
++    if (toolMode === 'pen') {
++      if (!isDrawing) return
++      setIsDrawing(false)
++      if (rawPoints.length < 4) { setRawPoints([]); return }
++      // [x0,y0,x1,y1,...] → [[x,y], ...]
++      const absPts: Array<[number, number]> = []
++      for (let i = 0; i < rawPoints.length; i += 2) absPts.push([rawPoints[i], rawPoints[i+1]])
++      // Chaikin 平滑 + 均匀采样
++      const smooth = chaikin(absPts, 2)
++      const sampled = resampleEvenly(smooth, 3)
++      // 入历史
++      pushHistory()
++      // 生成 AI 笔画 + Draft；入栈 & 落地
++      const { aiStroke, draft } = buildAIStrokeAndDraft(sampled, currentBrush.style, currentBrush.meta)
++      setDrawStack(prev => [...prev, { ai: aiStroke, draft }])
++      setShapes(prev => [...prev, draft])
++      setRawPoints([])
++    } else {
++      // 橡皮结束：清空轨迹预览
++      setErasePoints([])
++    }
++  }, [toolMode, isDrawing, rawPoints, currentBrush, pushHistory])
+ 
+   return (
+     <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
+       {/* 顶部工具条 */}
+       <div style={{ position:'absolute', left:'50%', transform:'translateX(-50%)', top:16, zIndex:1000, display:'flex', gap:8, alignItems:'center', background:'rgba(255,255,255,0.85)', backdropFilter:'blur(4px)', padding:'8px 12px', borderRadius:16, boxShadow:'0 4px 12px rgba(0,0,0,0.12)' }}>
+-        <button style={BTN} onClick={()=>setShowGrid(s=>!s)}>{showGrid?'Grid: ON':'Grid: OFF'}</button>
+-        <button style={BTN} onClick={()=>setSnap(s=>!s)}>{snap?'Snap: ON':'Snap: OFF'}</button>
++        <button style={BTN} onClick={()=>setShowGrid(s=>!s)}>{showGrid?'Grid: ON':'Grid: OFF'}</button>
++        <button style={BTN} onClick={()=>setSnap(s=>!s)}>{snap?'Snap: ON':'Snap: OFF'}</button>
++        {/* 工具模式：画笔 / 橡皮 */}
++        <select style={SEL} value={toolMode} onChange={(e)=>setToolMode(e.target.value as 'pen'|'eraser')}>
++          <option value="pen">Pen</option>
++          <option value="eraser">Eraser</option>
++        </select>
++        {toolMode === 'eraser' && (
++          <input
++            style={{ ...SEL, width: 80 }}
++            type="number"
++            min={4}
++            max={64}
++            step={2}
++            value={eraserRadius}
++            onChange={(e)=>setEraserRadius(Math.max(4, Math.min(64, Number(e.target.value) || 14)))}
++            title="Eraser radius (px)"
++          />
++        )}
+ 
+         {/* 画笔配置（与 AI 协议同步） */}
+         <select style={SEL} value={brushSize} onChange={(e)=>setBrushSize(e.target.value as 's'|'m'|'l'|'xl')}>
+           <option value="s">S</option><option value="m">M</option><option value="l">L</option><option value="xl">XL</option>
+         </select>
+@@
+         <input ref={fileRef} type="file" accept="application/json,.json" style={{ display:'none' }} onChange={(e)=>{ const f=e.target.files?.[0]; if (f) importJSON(f) }} />
+         <button style={BTN} onClick={()=>fileRef.current?.click()}>Import JSON</button>
++        <button style={BTN} onClick={exportHumanStrokesAI}>Export Strokes (AI)</button>
+ 
+         {/* AI 调试 */}
+         <button style={BTN} onClick={applyAIStub}>Apply AI (stub)</button>
+         <button style={BTN} onClick={previewAI}>Preview AI</button>
+         <button style={BTN} onClick={acceptAI}>Accept</button>
+         <button style={BTN} onClick={dismissAI}>Dismiss</button>
++        {/* 撤销 / 重做 */}
++        <button style={BTN} onClick={undo} disabled={!past.length}>Undo</button>
++        <button style={BTN} onClick={redo} disabled={!future.length}>Redo</button>
+       </div>
+ 
+       {/* Konva 画布 */}
+       <Stage
+         width={size.width}
+         height={size.height}
+         style={{ background:'#fff' }}
+         onMouseDown={onMouseDown}
+         onMouseMove={onMouseMove}
+         onMouseUp={onMouseUp}
+       >
+         {/* 网格层 */}
+         <Layer listening={false}>{showGrid && <Grid />}</Layer>
+ 
+         {/* 正式形状层 */}
+         <Layer>
+           {shapes.map(d => <DraftNode key={'s:'+d.id} d={d} />)}
+           {/* 绘制中预览线条（不入 shapes） */}
+-          {isDrawing && rawPoints.length >= 4 && (
++          {toolMode==='pen' && isDrawing && rawPoints.length >= 4 && (
+             <KLine
+               points={rawPoints}
+               stroke={colorToStroke(brushColor)}
+               strokeWidth={SIZE_TO_WIDTH[brushSize]}
+               tension={0.4}
+               lineCap="round"
+               lineJoin="round"
+               opacity={0.8}
+             />
+           )}
++          {/* 橡皮轨迹可视化（可选）：用浅灰线显示擦除路径 */}
++          {toolMode==='eraser' && erasePoints.length >= 4 && (
++            <KLine
++              points={erasePoints}
++              stroke="#bbbbbb"
++              strokeWidth={1}
++              tension={0.2}
++              dash={[4, 4]}
++              opacity={0.8}
++            />
++          )}
+         </Layer>
+ 
+         {/* AI 预览层 */}
+         <Layer>
+           {Object.values(previews).map(entry => (

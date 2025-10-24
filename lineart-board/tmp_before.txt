@@ -1,0 +1,24 @@
+import React from 'react'
+import { Stage, Layer } from 'react-konva'
+// Public AI protocol types
+export { type PromptMode, type ColorName, type AIStrokeV11, type AIStrokePayload } from './ai/types'
+
+// Public AI helpers
+export { validateAIStrokePayload, normalizeAIStrokePayload, isClosedStroke, computeBounds } from './ai/normalize'
+export { type ShapeDraft, planDrafts } from './ai/plan'
+
+// Zoom constants (board-level)
+export const ZOOM_MIN = 0.2
+export const ZOOM_MAX = 8
+export const ZOOM_STEP = 1.06
+
+export default function LineArtBoard() {
+  // Minimal placeholder board to keep the app compiling
+  const width = 800
+  const height = 600
+  return (
+    <Stage width={width} height={height} style={{ background: '#fafafa', border: '1px solid #eee' }}>
+      <Layer />
+    </Stage>
+  )
+}

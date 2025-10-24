@@ -1,0 +1,493 @@
+import React from 'react'
+import type { PromptMode, ColorName } from './ai/types'
+import { COLORS } from './ai/normalize'
+
+const BTN_BASE: React.CSSProperties = {
+  padding: '6px 10px',
+  borderRadius: 999,
+  border: '1px solid #ccc',
+  background: '#fff',
+  cursor: 'pointer',
+}
+
+const CARD: React.CSSProperties = {
+  padding: 12,
+  border: '1px solid #e5e7eb',
+  borderRadius: 12,
+  background: 'rgba(255,255,255,0.6)',
+}
+
+const CARD_TITLE: React.CSSProperties = {
+  fontSize: 12,
+  color: '#6b7280',
+  marginBottom: 8,
+  letterSpacing: '.3px',
+  textTransform: 'uppercase',
+}
+
+const SEL: React.CSSProperties = {
+  padding: '6px 10px',
+  borderRadius: 999,
+  border: '1px solid #ccc',
+  background: '#fff',
+}
+
+type ButtonLike = React.ButtonHTMLAttributes<HTMLButtonElement>
+
+const Btn = React.forwardRef<HTMLButtonElement, ButtonLike>(({ style, ...props }, ref) => (
+  <button ref={ref} {...props} style={{ ...BTN_BASE, ...style }} />
+))
+Btn.displayName = 'Btn'
+
+export type TopToolbarProps = {
+  showGrid: boolean
+  snap: boolean
+  curveTurns: boolean
+  onToggleGrid: () => void
+  onToggleSnap: () => void
+  onToggleCurve: () => void
+  onAskAI: () => void
+  onAcceptAI: () => void
+  onDismissAI: () => void
+}
+
+export function TopToolbar(props: TopToolbarProps) {
+  const {
+    showGrid,
+    snap,
+    curveTurns,
+    onToggleGrid,
+    onToggleSnap,
+    onToggleCurve,
+    onAskAI,
+    onAcceptAI,
+    onDismissAI,
+  } = props
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        top: 16,
+        zIndex: 1000,
+        display: 'flex',
+        gap: 8,
+        alignItems: 'center',
+        background: 'rgba(255,255,255,0.85)',
+        backdropFilter: 'blur(6px)',
+        padding: '8px 12px',
+        borderRadius: 16,
+        boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
+        border: '1px solid #e5e7eb',
+      }}
+    >
+      <Btn onClick={onToggleGrid}>{showGrid ? 'Grid: ON' : 'Grid: OFF'}</Btn>
+      <Btn onClick={onToggleSnap}>{snap ? 'Snap: ON' : 'Snap: OFF'}</Btn>
+      <Btn onClick={onToggleCurve}>{curveTurns ? 'Curve: ON' : 'Curve: OFF'}</Btn>
+
+      <div style={{ width: 10, height: 24, borderLeft: '1px solid #e5e7eb', margin: '0 4px' }} />
+
+      <Btn
+        onClick={onAskAI}
+        style={{ borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.14)' }}
+      >
+        Ask AI
+      </Btn>
+      <Btn
+        onClick={onAcceptAI}
+        style={{ borderColor: '#52d273', background: 'rgba(82,210,115,0.14)' }}
+      >
+        Accept
+      </Btn>
+      <Btn
+        onClick={onDismissAI}
+        style={{ borderColor: '#ff6b6b', background: 'rgba(255,107,107,0.14)' }}
+      >
+        Dismiss
+      </Btn>
+    </div>
+  )
+}
+
+export type SidePanelProps = {
+  toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand'
+  onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand') => void
+  eraserRadius: number
+  onEraserRadiusChange: (radius: number) => void
+  brushSize: 's' | 'm' | 'l' | 'xl'
+  onBrushSizeChange: (size: 's' | 'm' | 'l' | 'xl') => void
+  brushColor: ColorName
+  onBrushColorChange: (color: ColorName) => void
+  aiScale: number
+  onAiScaleChange: (scale: number) => void
+  autoComplete: boolean
+  onAutoCompleteToggle: (enabled: boolean) => void
+  autoCountdown: number | null
+  hasActivePreview: boolean
+  canUndo: boolean
+  canRedo: boolean
+  onUndo: () => void
+  onRedo: () => void
+  onExportJSON: () => void
+  onImportJSON: (file: File) => void
+  fileInputRef: React.RefObject<HTMLInputElement | null>
+  onExportAI: () => void
+  onApplyAIStub: () => void
+  onPreviewAI: () => void
+  promptMode: PromptMode
+  visionVersion: number
+  onVisionVersionChange: (value: number) => void
+}
+
+export function SidePanel(props: SidePanelProps) {
+  const {
+    toolMode,
+    onToolModeChange,
+    eraserRadius,
+    onEraserRadiusChange,
+    brushSize,
+    onBrushSizeChange,
+    brushColor,
+    onBrushColorChange,
+    aiScale,
+    onAiScaleChange,
+    autoComplete,
+    onAutoCompleteToggle,
+    autoCountdown,
+    hasActivePreview,
+    canUndo,
+    canRedo,
+    onUndo,
+    onRedo,
+    onExportJSON,
+    onImportJSON,
+    fileInputRef,
+    onExportAI,
+    onApplyAIStub,
+    onPreviewAI,
+    promptMode,
+    visionVersion,
+    onVisionVersionChange,
+  } = props
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 80,
+        right: 16,
+        bottom: 180,
+        width: 300,
+        zIndex: 1000,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+        overflow: 'auto',
+        padding: 12,
+        background: 'rgba(255,255,255,0.75)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid #e5e7eb',
+        borderRadius: 16,
+        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+      }}
+    >
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Tools</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+          {(['hand', 'pen', 'eraser', 'ellipse'] as const).map((t) => (
+            <Btn
+              key={t}
+              onClick={() => onToolModeChange(t)}
+              style={{
+                padding: '8px 10px',
+                ...(toolMode === t
+                  ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
+                  : {}),
+              }}
+              title={t}
+            >
+              {t}
+            </Btn>
+          ))}
+        </div>
+
+        {toolMode === 'eraser' && (
+          <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 12, color: '#555' }}>Radius</span>
+            <input
+              style={{ ...SEL, width: 90 }}
+              type="number"
+              min={4}
+              max={64}
+              step={2}
+              value={eraserRadius}
+              onChange={(e) => {
+                const next = Math.max(4, Math.min(64, Number(e.target.value) || 14))
+                onEraserRadiusChange(next)
+              }}
+              title="Eraser radius (px)"
+            />
+          </div>
+        )}
+      </section>
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Brush</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+          <span style={{ fontSize: 12, color: '#555' }}>Size</span>
+          <select
+            style={{ ...SEL, width: 90 }}
+            value={brushSize}
+            onChange={(e) => onBrushSizeChange(e.target.value as 's' | 'm' | 'l' | 'xl')}
+          >
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8 }}>
+          {COLORS.map((c) => (
+            <button
+              key={c}
+              title={c}
+              onClick={() => onBrushColorChange(c as ColorName)}
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 8,
+                border: `2px solid ${brushColor === c ? '#4aa3ff' : '#e5e7eb'}`,
+                background: c === 'white' ? '#fff' : c.replace('light-', 'light'),
+                boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.04)',
+              }}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>AI Scale</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <input
+            type="range"
+            min={4}
+            max={64}
+            step={1}
+            value={aiScale}
+            onChange={(e) => onAiScaleChange(Number(e.target.value) || 16)}
+            title="Max points for AI stroke (model is asked to keep under this)"
+            style={{ flex: 1 }}
+          />
+          <span style={{ fontSize: 12, color: '#333', width: 32, textAlign: 'right' }}>{aiScale}</span>
+        </div>
+      </section>
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Auto Complete</div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+          <label style={{ fontSize: 13, color: '#333' }}>
+            自动补全：5秒无操作触发 askAI。
+          </label>
+          <input
+            type="checkbox"
+            checked={autoComplete}
+            onChange={(e) => onAutoCompleteToggle(e.target.checked)}
+            title="开启后：无预览且 5 秒无新操作自动发送"
+          />
+        </div>
+        <div style={{ marginTop: 6, fontSize: 12, color: '#666' }}>
+          状态：
+          {hasActivePreview
+            ? '有预览，暂停自动发送'
+            : autoCountdown != null
+            ? `倒计时 ${autoCountdown}s`
+            : '空闲'}
+        </div>
+      </section>
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Actions</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }}>
+          <Btn onClick={onUndo} disabled={!canUndo} style={{ opacity: canUndo ? 1 : 0.6 }}>
+            Undo
+          </Btn>
+          <Btn onClick={onRedo} disabled={!canRedo} style={{ opacity: canRedo ? 1 : 0.6 }}>
+            Redo
+          </Btn>
+
+          <Btn onClick={onExportJSON}>Export JSON</Btn>
+          <Btn onClick={() => fileInputRef.current?.click()}>Import JSON</Btn>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/json,.json"
+            style={{ display: 'none' }}
+            onChange={(e) => {
+              const file = e.target.files?.[0]
+              if (file) onImportJSON(file)
+            }}
+          />
+
+          <Btn onClick={onExportAI}>Export Strokes (AI)</Btn>
+          <Btn onClick={onApplyAIStub}>Apply AI (stub)</Btn>
+          <Btn onClick={onPreviewAI}>Preview AI</Btn>
+        </div>
+
+        {promptMode === 'vision' && (
+          <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <label style={{ fontSize: 12, color: '#333', width: 120 }}>Vision version</label>
+            <input
+              type="number"
+              step="0.1"
+              min={1.0}
+              value={visionVersion}
+              onChange={(e) => onVisionVersionChange(Number(e.target.value) || 2.0)}
+              style={{ ...SEL, width: 120, height: 32, borderRadius: 8, padding: '0 8px' }}
+              title="Vision 模式的协议版本（2.0 为二段式）"
+            />
+          </div>
+        )}
+      </section>
+    </div>
+  )
+}
+
+export type AIFeedEntry = {
+  payloadId: string
+  time: number
+  items: { id: string; desc?: string }[]
+}
+
+export type BottomPanelProps = {
+  hint: string
+  onHintChange: (value: string) => void
+  onSubmit: () => void
+  mode: PromptMode
+  onModeCycle: () => void
+  aiFeed: AIFeedEntry[]
+}
+
+export function BottomPanel(props: BottomPanelProps) {
+  const { hint, onHintChange, onSubmit, mode, onModeCycle, aiFeed } = props
+
+  const modeConfig = {
+    light: {
+      title: '轻量补全：仅预测下一笔，快速响应',
+      label: 'LIGHT',
+      borderColor: '#4aa3ff',
+      background: 'linear-gradient(135deg, rgba(74,163,255,0.15), rgba(74,163,255,0.05))',
+      color: '#4aa3ff',
+      boxShadow: 'none',
+      textShadow: 'none',
+    },
+    full: {
+      title: '常规补全：可多笔',
+      label: 'FULL',
+      borderColor: '#ffb84a',
+      background: 'linear-gradient(135deg, rgba(255,184,74,0.15), rgba(255,184,74,0.05))',
+      color: '#ffb84a',
+      boxShadow: 'none',
+      textShadow: 'none',
+    },
+    vision: {
+      title: '视觉增强：AI 视觉理解与创意绘制',
+      label: 'VISION',
+      borderColor: '#9b5cff',
+      background: 'linear-gradient(135deg, rgba(155,92,255,0.25), rgba(255,92,200,0.25))',
+      color: '#c88bff',
+      boxShadow: '0 0 12px rgba(155,92,255,0.6), 0 0 24px rgba(255,92,200,0.4)',
+      textShadow: '0 0 6px rgba(255,255,255,0.8)',
+    },
+  } as const
+
+  const styles = modeConfig[mode]
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 16,
+        right: 16,
+        bottom: 16,
+        zIndex: 1000,
+        background: 'rgba(255,255,255,0.85)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid #e5e7eb',
+        borderRadius: 12,
+        padding: '10px 12px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+        maxHeight: 220,
+        overflow: 'auto',
+      }}
+    >
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
+        <input
+          style={{ ...SEL, width: '100%', borderRadius: 10, height: 40, padding: '0 12px' }}
+          type="text"
+          placeholder="hint for AI, e.g. clean curves / refine hair"
+          value={hint}
+          onChange={(e) => onHintChange(e.target.value)}
+          title="Hint sent to backend /suggest"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault()
+              onSubmit()
+            }
+          }}
+        />
+        <button
+          title={styles.title}
+          onClick={onModeCycle}
+          style={{
+            padding: '8px 18px',
+            borderRadius: '10px',
+            border: '2px solid',
+            fontSize: '14px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'all 0.4s ease',
+            borderColor: styles.borderColor,
+            background: styles.background,
+            color: styles.color,
+            boxShadow: styles.boxShadow,
+            textShadow: styles.textShadow,
+          }}
+        >
+          {styles.label}
+        </button>
+        <Btn
+          onClick={onSubmit}
+          style={{ borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.14)' }}
+        >
+          Send
+        </Btn>
+      </div>
+
+      <div style={{ fontSize: 12, color: '#666', marginBottom: 6 }}>AI Feed (latest)</div>
+      {aiFeed.length === 0 ? (
+        <div style={{ fontSize: 12, color: '#999' }}>No AI packages yet.</div>
+      ) : (
+        aiFeed.map((entry) => (
+          <div key={entry.payloadId} style={{ marginBottom: 6 }}>
+            <div style={{ fontSize: 12, color: '#444' }}>
+              <b>{new Date(entry.time).toLocaleTimeString()}</b> · payload <code>{entry.payloadId}</code>
+            </div>
+            <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
+              {entry.items.map((item, idx) => (
+                <li
+                  key={`${item.id}_${idx}`}
+                  style={{ fontSize: 12, color: '#333', listStyle: 'disc' }}
+                >
+                  <code>{item.id}</code>
+                  {item.desc ? ` · ${item.desc}` : ''}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      )}
+    </div>
+  )
+}
