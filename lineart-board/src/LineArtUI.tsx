@@ -111,9 +111,11 @@ export function TopToolbar(props: TopToolbarProps) {
   )
 }
 
+type GrowDir = 'down' | 'up' | 'left' | 'right'
+
 export type SidePanelProps = {
-  toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand'
-  onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand') => void
+  toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text'
+  onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text') => void
   eraserRadius: number
   onEraserRadiusChange: (radius: number) => void
   brushSize: 's' | 'm' | 'l' | 'xl'
@@ -139,6 +141,13 @@ export type SidePanelProps = {
   promptMode: PromptMode
   visionVersion: number
   onVisionVersionChange: (value: number) => void
+  textSettings: {
+    fontFamily: string
+    fontSize: number
+    fontWeight: string
+    growDir: GrowDir
+  }
+  onTextSettingsChange: (next: Partial<{ fontFamily: string; fontSize: number; fontWeight: string; growDir: GrowDir }>) => void
 }
 
 export function SidePanel(props: SidePanelProps) {
@@ -170,6 +179,8 @@ export function SidePanel(props: SidePanelProps) {
     promptMode,
     visionVersion,
     onVisionVersionChange,
+    textSettings,
+    onTextSettingsChange,
   } = props
 
   return (
@@ -195,8 +206,8 @@ export function SidePanel(props: SidePanelProps) {
     >
       <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
-          {(['hand', 'pen', 'eraser', 'ellipse'] as const).map((t) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 8 }}>
+          {(['hand', 'pen', 'eraser', 'ellipse', 'text'] as const).map((t) => (
             <Btn
               key={t}
               onClick={() => onToolModeChange(t)}
@@ -229,6 +240,63 @@ export function SidePanel(props: SidePanelProps) {
               }}
               title="Eraser radius (px)"
             />
+          </div>
+        )}
+
+        {toolMode === 'text' && (
+          <div style={{ marginTop: 12, display: 'grid', gap: 10 }}>
+            <div>
+              <span style={{ fontSize: 12, color: '#555', display: 'block', marginBottom: 4 }}>Font family</span>
+              <select
+                value={textSettings.fontFamily}
+                onChange={(e) => onTextSettingsChange({ fontFamily: e.target.value })}
+                style={{ ...SEL, width: '100%' }}
+              >
+                {['sans-serif', 'serif', 'monospace', 'cursive'].map((f) => (
+                  <option key={f} value={f}>{f}</option>
+                ))}
+              </select>
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <label style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <span style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Font size (px)</span>
+                <input
+                  style={{ ...SEL, width: '100%' }}
+                  type="number"
+                  min={8}
+                  max={96}
+                  value={textSettings.fontSize}
+                  onChange={(e) => {
+                    const v = Number(e.target.value) || 16
+                    onTextSettingsChange({ fontSize: Math.max(8, Math.min(96, v)) })
+                  }}
+                />
+              </label>
+              <label style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <span style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Weight</span>
+                <select
+                  style={{ ...SEL, width: '100%' }}
+                  value={textSettings.fontWeight}
+                  onChange={(e) => onTextSettingsChange({ fontWeight: e.target.value })}
+                >
+                  {['300', '400', '500', '600', '700'].map((w) => (
+                    <option key={w} value={w}>{w}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div>
+              <span style={{ fontSize: 12, color: '#555', display: 'block', marginBottom: 4 }}>Grow direction</span>
+              <select
+                value={textSettings.growDir}
+                onChange={(e) => onTextSettingsChange({ growDir: e.target.value as GrowDir })}
+                style={{ ...SEL, width: '100%' }}
+              >
+                {(['down', 'right', 'up', 'left'] as const).map((dir) => (
+                  <option key={dir} value={dir}>{dir}</option>
+                ))}
+              </select>
+            </div>
           </div>
         )}
       </section>

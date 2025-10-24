@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import { Stage, Layer, Group, Line as KLine, Rect as KRect, Ellipse as KEllipse, Text as KText } from 'react-konva'
 import type { AIStrokePayload, AIStrokeV11, ColorName, PromptMode } from './ai/types'
-import { normalizeAIStrokePayload, validateAIStrokePayload } from './ai/normalize'
+import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/normalize'
 import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
@@ -92,8 +92,49 @@ const colorToStroke = (c: ColorName) => {
   }
 }
 
+const INPUT_BASE: React.CSSProperties = {
+  padding: '6px 10px',
+  borderRadius: 10,
+  border: '1px solid #d1d5db',
+  background: '#fff',
+}
+
+const BUTTON_BASE: React.CSSProperties = {
+  padding: '6px 12px',
+  borderRadius: 999,
+  border: '1px solid #d1d5db',
+  background: '#fff',
+  cursor: 'pointer',
+}
+
+
 // Preview entries keep drafts grouped by payload id
 type PreviewEntry = { payloadId: string; drafts: ShapeDraft[] }
+
+type TextGrowDir = 'down' | 'up' | 'left' | 'right'
+
+type TextSettings = {
+  fontFamily: string
+  fontSize: number
+  fontWeight: string
+  growDir: TextGrowDir
+}
+
+type TextEditorState = {
+  id: string
+  x: number
+  y: number
+  w: number
+  h: number
+  text: string
+  summary: string
+  fontFamily: string
+  fontSize: number
+  fontWeight: string
+  growDir: TextGrowDir
+  color: ColorName
+  opacity: number
+}
 
 export default function LineArtBoard() {
   // Canvas size; swap to ResizeObserver for responsive layout
@@ -131,10 +172,20 @@ export default function LineArtBoard() {
   // Stack of human strokes for erasing and undo/redo
   type DrawStackEntry = { ai: AIStrokeV11; draft: ShapeDraft }
   const [drawStack, setDrawStack] = useState<DrawStackEntry[]>([])
-  // -------- Tool modes: pen / eraser / ellipse / hand --------
-  const [toolMode, setToolMode] = useState<'pen' | 'eraser' | 'ellipse' | 'hand'>('pen')
+  // -------- Tool modes: pen / eraser / ellipse / hand / text --------
+  const [toolMode, setToolMode] = useState<'pen' | 'eraser' | 'ellipse' | 'hand' | 'text'>('pen')
   const [eraserRadius, setEraserRadius] = useState<number>(14) // pixels
   const [boxDraft, setBoxDraft] = useState<ShapeDraft | null>(null)
+  const [textSettings, setTextSettings] = useState<TextSettings>({
+    fontFamily: 'sans-serif',
+    fontSize: 18,
+    fontWeight: '400',
+    growDir: 'down',
+  })
+  const [textEditor, setTextEditor] = useState<TextEditorState | null>(null)
+  const updateTextSettings = useCallback((patch: Partial<TextSettings>) => {
+    setTextSettings((prev) => ({ ...prev, ...patch }))
+  }, [])
   // Visual cursor for the eraser radius
   const [eraserCursor, setEraserCursor] = useState<{x:number;y:number}|null>(null)
   // Only push history once per erase gesture (pointer down -> up)
@@ -178,6 +229,10 @@ export default function LineArtBoard() {
   // Convert screen coordinates (mouse) to world coordinates
   const screenToWorld = useCallback((sx:number, sy:number) => {
     return { x: (sx - view.x) / view.scale, y: (sy - view.y) / view.scale }
+  }, [view])
+
+  const worldToScreen = useCallback((wx:number, wy:number) => {
+    return { x: wx * view.scale + view.x, y: wy * view.scale + view.y }
   }, [view])
 
   // ----- Snapshot stage canvas to JPEG/PNG Base64 (max edge size configurable) -----
@@ -410,6 +465,111 @@ export default function LineArtBoard() {
       clearAutoTimer()
     }
   }, [autoComplete, hasActivePreview, clearAutoTimer])
+
+  const updateTextEditorState = useCallback((patch: Partial<TextEditorState>) => {
+    setTextEditor((prev) => (prev ? { ...prev, ...patch } : prev))
+  }, [])
+
+  const cancelTextEditor = useCallback(() => {
+    setTextEditor(null)
+  }, [])
+
+  const commitTextEditor = useCallback(() => {
+    if (!textEditor) return
+    const content = textEditor.text.trimEnd()
+    if (!content.trim()) {
+      alert('文字内容不能为空')
+      return
+    }
+    const summary = textEditor.summary.trim().slice(0, 30)
+    let width = Math.max(32, textEditor.w)
+    let height = Math.max(32, textEditor.h)
+    if (width <= 40 && height <= 40) {
+      width = 240
+      height = 160
+    }
+    const draft: ShapeDraft = {
+      id: textEditor.id,
+      kind: 'text',
+      x: textEditor.x,
+      y: textEditor.y,
+      w: width,
+      h: height,
+      text: content,
+      summary,
+      style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
+      meta: {
+        author: 'human',
+        text: content,
+        summary,
+        fontFamily: textEditor.fontFamily,
+        fontWeight: textEditor.fontWeight,
+        fontSize: textEditor.fontSize,
+        growDir: textEditor.growDir,
+      },
+    }
+    const aiStroke: AIStrokeV11 = {
+      id: textEditor.id,
+      tool: 'text',
+      points: [
+        [draft.x, draft.y],
+        [draft.x + width, draft.y + height],
+      ],
+      style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
+      meta: {
+        author: 'human',
+        text: content,
+        summary,
+        fontFamily: textEditor.fontFamily,
+        fontWeight: textEditor.fontWeight,
+        fontSize: textEditor.fontSize,
+        growDir: textEditor.growDir,
+      },
+    }
+    pushHistory()
+    setShapes((prev) => [...prev, draft])
+    setDrawStack((prev) => [...prev, { ai: aiStroke, draft }])
+    setTextEditor(null)
+    updateTextSettings({
+      fontFamily: textEditor.fontFamily,
+      fontSize: textEditor.fontSize,
+      fontWeight: textEditor.fontWeight,
+      growDir: textEditor.growDir,
+    })
+    noteUserAction({ forceStart: true })
+  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction])
+
+  const openTextEditor = useCallback((params: {
+    id: string
+    x: number
+    y: number
+    w: number
+    h: number
+    color: ColorName
+    opacity?: number
+    text?: string
+    summary?: string
+    fontFamily?: string
+    fontSize?: number
+    fontWeight?: string
+    growDir?: TextGrowDir
+  }) => {
+    setTextEditor({
+      id: params.id,
+      x: params.x,
+      y: params.y,
+      w: params.w,
+      h: params.h,
+      text: params.text ?? '',
+      summary: params.summary ?? '',
+      fontFamily: params.fontFamily ?? textSettings.fontFamily,
+      fontSize: params.fontSize ?? textSettings.fontSize,
+      fontWeight: params.fontWeight ?? textSettings.fontWeight,
+      growDir: params.growDir ?? textSettings.growDir,
+      color: params.color,
+      opacity: params.opacity ?? 1,
+    })
+  }, [textSettings])
 
   // Accept: merge preview drafts into committed shapes
   const acceptAI = useCallback(() => {
@@ -811,6 +971,15 @@ export default function LineArtBoard() {
     const absPts: Array<[number,number]> = d.points.map(p => [d.x + p.x, d.y + p.y])
     return polylineMinDistToPoint(absPts, cx, cy) <= r
   }
+  const hitTextBoxByCircle = (d: ShapeDraft, cx:number, cy:number, r:number) => {
+    const w = d.w ?? 0
+    const h = d.h ?? 0
+    const x0 = Math.min(d.x, d.x + w)
+    const x1 = Math.max(d.x, d.x + w)
+    const y0 = Math.min(d.y, d.y + h)
+    const y1 = Math.max(d.y, d.y + h)
+    return cx >= x0 - r && cx <= x1 + r && cy >= y0 - r && cy <= y1 + r
+  }
   // Apply whole-stroke erasure (one history push per gesture)
   const eraseWholeStrokesAt = (cx:number, cy:number, radius:number) => {
     // --- Local helpers dedicated to ellipse hit detection ---
@@ -877,6 +1046,8 @@ export default function LineArtBoard() {
       if (d.kind === 'ellipse') {
         // Ellipses use custom hit testing; others reuse the generic path
         hit = hitEllipseByCircle(d, cx, cy, radius)
+      } else if (d.kind === 'text') {
+        hit = hitTextBoxByCircle(d, cx, cy, radius)
       } else {
         hit = hitStrokeByCircle(d, cx, cy, radius)
       }
@@ -897,6 +1068,7 @@ export default function LineArtBoard() {
   // Pointer handlers branch by toolMode
 
   const onMouseDown = useCallback((e: any) => {
+    if (textEditor) return
     if (toolMode === 'hand') return
     const pos = e.target.getStage()?.getPointerPosition()
     if (!pos) return
@@ -916,6 +1088,29 @@ export default function LineArtBoard() {
         style: { size: brushSize, color: brushColor, opacity: 1 },
         meta: { author: 'human' }
       })
+    } else if (toolMode === 'text') {
+      setIsDrawing(true)
+      const wpt = screenToWorld(pos.x, pos.y)
+      const [sx, sy] = snap ? snapPoint(wpt.x, wpt.y) : [wpt.x, wpt.y]
+      const id = `text_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,6)}`
+      setBoxDraft({
+        id,
+        kind: 'text',
+        x: sx,
+        y: sy,
+        w: 0,
+        h: 0,
+        text: '',
+        summary: '',
+        style: { size: 'm', color: brushColor, opacity: 1 },
+        meta: {
+          author: 'human',
+          fontFamily: textSettings.fontFamily,
+          fontWeight: textSettings.fontWeight,
+          fontSize: textSettings.fontSize,
+          growDir: textSettings.growDir,
+        },
+      })
     } else { // eraser
       const wpt = screenToWorld(pos.x, pos.y)
       const [sx, sy] = snapPoint(wpt.x, wpt.y)
@@ -923,9 +1118,10 @@ export default function LineArtBoard() {
       eraseGestureStarted.current = false // Start a new eraser gesture
       eraseWholeStrokesAt(sx, sy, eraserRadius) // Attempt initial erase immediately
     }
-  }, [snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld])
+  }, [snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld, brushSize, brushColor, textSettings, textEditor])
 
   const onMouseMove = useCallback((e: any) => {
+    if (textEditor) return
     if (toolMode === 'hand') return
     const pos = e.target.getStage()?.getPointerPosition()
     if (!pos) return
@@ -951,6 +1147,18 @@ export default function LineArtBoard() {
         const y1 = Math.max(prev.y, ty)
         return { ...prev, x: x0, y: y0, w: (x1 - x0), h: (y1 - y0) }
       })
+    } else if (toolMode === 'text') {
+      if (!isDrawing || !boxDraft) return
+      const wpt = screenToWorld(pos.x, pos.y)
+      const [tx, ty] = snap ? snapPoint(wpt.x, wpt.y) : [wpt.x, wpt.y]
+      setBoxDraft(prev => {
+        if (!prev) return prev
+        const x0 = Math.min(prev.x, tx)
+        const y0 = Math.min(prev.y, ty)
+        const x1 = Math.max(prev.x, tx)
+        const y1 = Math.max(prev.y, ty)
+        return { ...prev, x: x0, y: y0, w: (x1 - x0), h: (y1 - y0) }
+      })
     } else {
       // Eraser keeps snapping for more reliable hits
       const wpt = screenToWorld(pos.x, pos.y)
@@ -958,9 +1166,10 @@ export default function LineArtBoard() {
       setEraserCursor({ x: sx, y: sy })           // Show eraser cursor indicator
       eraseWholeStrokesAt(sx, sy, eraserRadius)    // Continue erasing whole strokes
     }
-  }, [isDrawing, boxDraft, snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld])
+  }, [isDrawing, boxDraft, snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld, textEditor])
 
   const onMouseUp = useCallback(() => {
+    if (textEditor) return
     if (toolMode === 'hand') return
     if (toolMode === 'pen') {
       if (!isDrawing) return
@@ -1059,12 +1268,44 @@ export default function LineArtBoard() {
       setShapes(prev => [...prev, draft])
       setDrawStack(prev => [...prev, { ai: aiStroke, draft }])
       setBoxDraft(null)
+    } else if (toolMode === 'text') {
+      if (!isDrawing || !boxDraft) { setIsDrawing(false); setBoxDraft(null); return }
+      setIsDrawing(false)
+      const bx0 = Math.min(boxDraft.x, boxDraft.x + (boxDraft.w ?? 0))
+      const by0 = Math.min(boxDraft.y, boxDraft.y + (boxDraft.h ?? 0))
+      const bx1 = Math.max(boxDraft.x, boxDraft.x + (boxDraft.w ?? 0))
+      const by1 = Math.max(boxDraft.y, boxDraft.y + (boxDraft.h ?? 0))
+      let width = bx1 - bx0
+      let height = by1 - by0
+      if (width <= 1 && height <= 1) {
+        width = 240
+        height = 160
+      }
+      const meta = boxDraft.meta ?? {}
+      const styleColor = (boxDraft.style?.color ?? brushColor) as ColorName
+      const opacity = boxDraft.style?.opacity ?? 1
+      setBoxDraft(null)
+      openTextEditor({
+        id: boxDraft.id,
+        x: bx0,
+        y: by0,
+        w: Math.max(width, 32),
+        h: Math.max(height, 32),
+        color: styleColor,
+        opacity,
+        text: (boxDraft.text ?? '') as string,
+        summary: (boxDraft.summary ?? '') as string,
+        fontFamily: (meta as any).fontFamily,
+        fontSize: (meta as any).fontSize,
+        fontWeight: (meta as any).fontWeight,
+        growDir: (meta as any).growDir,
+      })
     } else {
       // Finish eraser gesture
       setEraserCursor(null)
       eraseGestureStarted.current = false
     }
-  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack])
+  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack, brushColor, openTextEditor, textEditor])
 
   // --- Enter shortcut: auto-accept preview when focus is outside inputs ---
   React.useEffect(()=>{
@@ -1095,6 +1336,26 @@ export default function LineArtBoard() {
     }
   }, [toolMode])
   
+  React.useEffect(() => {
+    if (!textEditor) return
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape') {
+        ev.preventDefault()
+        cancelTextEditor()
+      } else if (ev.key === 'Enter' && (ev.metaKey || ev.ctrlKey)) {
+        ev.preventDefault()
+        commitTextEditor()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [textEditor, cancelTextEditor, commitTextEditor])
+
+  const textEditorScreen = textEditor ? worldToScreen(textEditor.x, textEditor.y) : null
+  const textEditorSize = textEditor ? {
+    width: Math.max(textEditor.w * view.scale, 260),
+    height: Math.max(textEditor.h * view.scale, 200),
+  } : null
 
 // ===== Stage binds camera (x/y/scale); hand mode enables dragging =====
   return (
@@ -1139,7 +1400,202 @@ export default function LineArtBoard() {
         promptMode={mode}
         visionVersion={visionVersion}
         onVisionVersionChange={setVisionVersion}
+        textSettings={textSettings}
+        onTextSettingsChange={updateTextSettings}
       />
+
+      {textEditor && textEditorScreen && textEditorSize && (
+        <div
+          style={{
+            position: 'absolute',
+            left: textEditorScreen.x,
+            top: textEditorScreen.y,
+            width: textEditorSize.width,
+            minWidth: 260,
+            maxWidth: 420,
+            background: 'rgba(255,255,255,0.95)',
+            border: '1px solid #d1d5db',
+            borderRadius: 14,
+            padding: 14,
+            zIndex: 2000,
+            boxShadow: '0 14px 36px rgba(15,23,42,0.18)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 10,
+            backdropFilter: 'blur(6px)',
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#1f2937' }}>文字输入框</div>
+            <button
+              onClick={cancelTextEditor}
+              style={{ border: 'none', background: 'transparent', fontSize: 16, cursor: 'pointer', color: '#6b7280' }}
+              title="取消"
+            >
+              ×
+            </button>
+          </div>
+
+          <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontSize: 12, color: '#4b5563' }}>Summary</span>
+            <input
+              type="text"
+              value={textEditor.summary}
+              onChange={(e) => updateTextEditorState({ summary: e.target.value.slice(0, 30) })}
+              style={{ ...INPUT_BASE, width: '100%' }}
+            />
+            <span style={{ alignSelf: 'flex-end', fontSize: 10, color: '#9ca3af' }}>
+              {textEditor.summary.length}/30
+            </span>
+          </label>
+
+          <div style={{ display: 'flex', gap: 8 }}>
+            <label style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Font family</span>
+              <select
+                value={textEditor.fontFamily}
+                onChange={(e) => updateTextEditorState({ fontFamily: e.target.value })}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              >
+                {['sans-serif', 'serif', 'monospace', 'cursive'].map(f => (
+                  <option key={f} value={f}>{f}</option>
+                ))}
+              </select>
+            </label>
+            <label style={{ width: 90, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Font size</span>
+              <input
+                type="number"
+                min={8}
+                max={96}
+                value={Math.round(textEditor.fontSize)}
+                onChange={(e) => {
+                  const next = Math.max(8, Math.min(96, Number(e.target.value) || textEditor.fontSize))
+                  updateTextEditorState({ fontSize: next })
+                }}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              />
+            </label>
+            <label style={{ width: 90, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Weight</span>
+              <select
+                value={textEditor.fontWeight}
+                onChange={(e) => updateTextEditorState({ fontWeight: e.target.value })}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              >
+                {['300', '400', '500', '600', '700'].map(w => (
+                  <option key={w} value={w}>{w}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div style={{ display: 'flex', gap: 8 }}>
+            <label style={{ width: 90, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Width</span>
+              <input
+                type="number"
+                min={32}
+                max={1600}
+                value={Math.round(textEditor.w)}
+                onChange={(e) => {
+                  const next = Math.max(32, Math.min(1600, Number(e.target.value) || textEditor.w))
+                  updateTextEditorState({ w: next })
+                }}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              />
+            </label>
+            <label style={{ width: 90, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Height</span>
+              <input
+                type="number"
+                min={32}
+                max={1600}
+                value={Math.round(textEditor.h)}
+                onChange={(e) => {
+                  const next = Math.max(32, Math.min(1600, Number(e.target.value) || textEditor.h))
+                  updateTextEditorState({ h: next })
+                }}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              />
+            </label>
+            <label style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#4b5563' }}>Grow</span>
+              <select
+                value={textEditor.growDir}
+                onChange={(e) => updateTextEditorState({ growDir: e.target.value as TextGrowDir })}
+                style={{ ...INPUT_BASE, width: '100%' }}
+              >
+                {(['down', 'right', 'up', 'left'] as const).map(dir => (
+                  <option key={dir} value={dir}>{dir}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <span style={{ fontSize: 12, color: '#4b5563', display: 'block', marginBottom: 4 }}>Color</span>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 6 }}>
+              {COLORS.map(c => (
+                <button
+                  key={c}
+                  title={c}
+                  onClick={() => updateTextEditorState({ color: c as ColorName })}
+                  style={{
+                    width: 24,
+                    height: 24,
+                    borderRadius: 6,
+                    border: `2px solid ${textEditor.color === c ? '#4aa3ff' : '#e5e7eb'}`,
+                    background: c === 'white' ? '#fff' : c.replace('light-', 'light'),
+                    cursor: 'pointer',
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontSize: 12, color: '#4b5563' }}>Content (Ctrl/Cmd + Enter 保存)</span>
+            <textarea
+              value={textEditor.text}
+              onChange={(e) => updateTextEditorState({ text: e.target.value })}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+                  e.preventDefault()
+                  commitTextEditor()
+                }
+              }}
+              rows={Math.max(6, Math.round(textEditorSize.height / 40))}
+              style={{
+                width: '100%',
+                minHeight: 160,
+                resize: 'vertical',
+                padding: '8px 10px',
+                borderRadius: 10,
+                border: '1px solid #d1d5db',
+                fontFamily: textEditor.fontFamily,
+                fontSize: textEditor.fontSize,
+                lineHeight: 1.4,
+              }}
+            />
+          </label>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+            <button
+              onClick={cancelTextEditor}
+              style={{ ...BUTTON_BASE, borderColor: '#d1d5db', background: '#f9fafb' }}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={commitTextEditor}
+              style={{ ...BUTTON_BASE, borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.15)', color: '#1d4ed8' }}
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Konva stage spans the viewport; side panel floats above */}
       <Stage
@@ -1189,7 +1645,7 @@ export default function LineArtBoard() {
               opacity={0.8}
             />
           )}
-          {toolMode==='ellipse' && isDrawing && boxDraft && (
+          {isDrawing && boxDraft && (toolMode==='ellipse' || toolMode==='text') && (
             <DraftNode d={boxDraft} />
           )}
           {/* Eraser radius indicator (rounded rect avoids extra import) */}
