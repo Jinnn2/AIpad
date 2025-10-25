@@ -4,7 +4,7 @@ import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from '../textbox/la
 
 export type ShapeDraft = {
   id: string
-  kind: 'pen'|'line'|'rect'|'ellipse'|'poly'|'polyline'|'erase'|'text'
+  kind: 'pen'|'line'|'rect'|'ellipse'|'poly'|'polyline'|'erase'|'text'|'edit'
   x: number
   y: number
   w?: number
@@ -14,6 +14,8 @@ export type ShapeDraft = {
   summary?: string
   style?: { size:'s'|'m'|'l'|'xl'; color: ColorName; opacity:number }
   meta?: Record<string,any>
+  targetId?: string
+  operation?: string
 }
 
 export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): ShapeDraft[] {
@@ -127,6 +129,39 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
             lineCount: layout.lineCount,
             renderedText: layout.renderedText,
           }
+        })
+        break
+      }
+      case 'edit': {
+        const meta = (s.meta ?? {}) as Record<string, any>
+        const rawTarget = meta.targetId ?? meta.target_id ?? meta.target ?? meta.id
+        if (!rawTarget) break
+        const targetId = String(rawTarget)
+        const operation = String(meta.operation ?? '').trim()
+        const content = String(meta.content ?? '').trim()
+        const [p0, p1] = s.points || []
+        const x0 = p0 ? Math.min(p0[0], (p1 ?? p0)[0]) : 0
+        const y0 = p0 ? Math.min(p0[1], (p1 ?? p0)[1]) : 0
+        const x1 = p1 ? Math.max(p0 ? p0[0] : 0, p1[0]) : x0 + 160
+        const y1 = p1 ? Math.max(p0 ? p0[1] : 0, p1[1]) : y0 + 80
+        drafts.push({
+          id: s.id,
+          kind: 'edit',
+          x: x0,
+          y: y0,
+          w: x1 - x0,
+          h: y1 - y0,
+          text: content,
+          summary: '',
+          style,
+          meta: {
+            ...meta,
+            targetId,
+            operation,
+            content,
+          },
+          targetId,
+          operation,
         })
         break
       }

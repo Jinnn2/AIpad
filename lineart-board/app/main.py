@@ -489,6 +489,43 @@ def suggest(req: SuggestRequest):
                 "style": {"size": size, "color": color, "opacity": opacity},
                 "meta": s.get("meta") or {},
             }
+        elif tool_in == "edit":
+            meta = s.get("meta") or {}
+            target_id = meta.get("targetId") or meta.get("target_id") or meta.get("target")
+            if not target_id:
+                raise HTTPException(502, "LLM edit stroke missing targetId.")
+            operation = str(meta.get("operation") or "").strip()
+            content = str(meta.get("content") or "").strip()
+            if not operation:
+                raise HTTPException(502, "LLM edit stroke missing operation description.")
+            if not content:
+                raise HTTPException(502, "LLM edit stroke missing content preview.")
+            raw_pts = s.get("points") or []
+            pts_edit = []
+            if isinstance(raw_pts, list) and len(raw_pts) >= 2:
+                try:
+                    x0, y0 = float(raw_pts[0][0]), float(raw_pts[0][1])
+                    x1, y1 = float(raw_pts[1][0]), float(raw_pts[1][1])
+                    tx0 = min(x0, x1); ty0 = min(y0, y1)
+                    tx1 = max(x0, x1); ty1 = max(y0, y1)
+                    pts_edit = [[_r3(tx0), _r3(ty0)], [_r3(tx1), _r3(ty1)]]
+                except Exception:
+                    pts_edit = []
+            meta_clean = dict(meta)
+            meta_clean["targetId"] = str(target_id)
+            meta_clean["operation"] = operation
+            meta_clean["content"] = content
+            style = s.get("style") or {}
+            size = style.get("size") or "m"
+            color = style.get("color") or "black"
+            opacity = _clamp01(style.get("opacity", 1.0))
+            return {
+                "id": str(s.get("id") or f"ai_{int(time.time())}"),
+                "tool": "edit",
+                "points": pts_edit,
+                "style": {"size": size, "color": color, "opacity": opacity},
+                "meta": meta_clean,
+            }
         
         else:
             # Treat near-coincident endpoints as closed.

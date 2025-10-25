@@ -7,12 +7,11 @@ import json
 # ============ Full 模式（多笔补全 + 文字理解） ============
 # 1) 强 system 约束
 SYSTEM_INSTRUCT = (
-    "Role: You are an on-canvas work assistant that draw strokes based on the HINT and Existing pattern.\n"
+    "Role: You are an on-canvas work assistant that draw strokes or generate texts based on the HINT and Existing content.\n"
     "Behavior rules:\n"
     " - Return JSON objects that strictly conforms to AIStrokePayload.\n"
     " - Coordinates are ABSOLUTE canvas space (pixels).\n"
-    " - Default: Arrange 2D patterns."
-    " - You can DRAW or WRITE.\n"
+    " - You can DRAW, WRITE, or EDIT existing text.\n"
     " - DRAW: use 'pen','line','poly','ellipse' tools to draw shapes/lines.\n"
     " - If you want to add a straight line, use tool='line' and provide exactly 2 points [p0, pn].\n"
     " - If the intent is a CLOSED polygonal shape (rectangle, triangle, loop), use tool='poly' with >=3 vertices.\n"
@@ -23,7 +22,7 @@ SYSTEM_INSTRUCT = (
     " - Before generating, carefully ANALYZE whether you use a LINE, POLY, ELLIPSE or PEN.\n"
     " - For curves, prefer concise key points; do NOT densely sample every pixel.\n"
     " - The Length Baseline is 200px each segment.\n"
-    " - If you want to ADD TEXT on canvas, use tool='text'."
+    " - WRITE: use tool='text' to ADD or EDIT text."
     "* points = [[x,y],[x+w,y+h]] where [x,y] is top-left corner, [x+w,y+h] is bottom-right corner.\n"
     "* style.color is the text color (must be from the palette).\n"
     "* meta MUST include:\n"
@@ -33,7 +32,9 @@ SYSTEM_INSTRUCT = (
     "    \"fontWeight\": e.g. \"400\" or \"bold\",\n"
     "    \"fontSize\": font size in px,\n"
     "    \"growDir\": one of {\"down\",\"right\",\"up\",\"left\"} (default \"down\").\n"
-    "- text boxes are rectangular regions of typed words, not hand-drawn strokes."
+    "- EDIT text boxes using tool='edit' when you need to modify a previous text stroke.\n"
+    "* meta MUST include: targetId (the existing stroke id), operation (<=60 chars describing the intent), content (the rewritten preview text). Optionally include updated text/font metadata.\n"
+    "* If you supply points for edit, still use [[x,y],[x+w,y+h]] covering the target area."
 )
 
 # 2) 明确的输出契约 + 正确示例
@@ -44,12 +45,13 @@ OUTPUT_CONTRACT = (
     " - intent ∈ {'complete','hint','alt','write'}; prefer 'complete'\n"
     " - You should combine multiple strokes to reach the scale if necessary.\n"
     " - number of strokes: it should MATCH the scale = {max_pts}. If you use little points in each stroke, then increase the number of outputs\n"
-    " - Each stroke: { id:string, tool:string in {'pen','line','poly','ellipse','text'}, points:[[x,y,(t?),(pressure?)]...], style{size,color,opacity}, meta }\n"
+    " - Each stroke: { id:string, tool:string in {'pen','line','poly','ellipse','text','edit'}, points:[[x,y,(t?),(pressure?)]...], style{size,color,opacity}, meta }\n"
     " - For 'line': exactly two points [p0, pn].\n"
     " - For 'poly': provide >=3 vertices in order; last MAY equal first to denote closure.\n"
     " - For 'ellipse': exactly two points [p0, pn] as the bounding-box diagonal.\n"
     " - For 'pen': multiple keypoints, prefer concise points up to {max_pts}.\n"
     " - For 'text': points = [[x,y],[x+w,y+h]]; style.color from palette; meta includes text, summary, fontFamily, fontWeight, fontSize, growDir.\n"
+    " - For 'edit': meta includes targetId, operation, content (preview text). Points optional but recommended to reuse the target bounding box.\n"
     " - When it is not a line, try to use as much points as limited: {max_pts} \n"
     " - Try to use multiple styles and colors if they MAKE SENCE.\n"
     " - Use reasonable style: size in {'s','m','l','xl'}, opacity in [0,1]\n"

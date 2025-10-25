@@ -7,7 +7,7 @@ export type ColorName =
 
 export type AIStrokeV11 = {
   id: string
-  tool: 'pen' | 'line' | 'bezier' | 'rect' | 'ellipse' | 'poly' | 'eraser' | string
+  tool: 'pen' | 'line' | 'bezier' | 'rect' | 'ellipse' | 'poly' | 'eraser' | 'text' | 'edit' | string
   // points: [x, y, t?, pressure?]
   points: Array<[number, number, number?, number?]>
   style?: { size?: 's'|'m'|'l'|'xl'; color?: ColorName; opacity?: number }
@@ -21,4 +21,3 @@ export type AIStrokePayload = {
   replace?: string[]
   version?: number
 }
-
