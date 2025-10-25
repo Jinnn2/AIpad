@@ -6,6 +6,7 @@ import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
 import { TopToolbar, SidePanel, BottomPanel, type AIFeedEntry } from './LineArtUI'
+import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from './textbox/layout'
 
 /**
  * LineArtBoard renders a Konva-based workspace with:
@@ -106,6 +107,8 @@ const BUTTON_BASE: React.CSSProperties = {
   background: '#fff',
   cursor: 'pointer',
 }
+
+const TEXT_LINE_HEIGHT = DEFAULT_TEXTBOX_LINE_HEIGHT
 
 
 // Preview entries keep drafts grouped by payload id
@@ -476,55 +479,73 @@ export default function LineArtBoard() {
 
   const commitTextEditor = useCallback(() => {
     if (!textEditor) return
-    const content = textEditor.text.trimEnd()
+    const content = textEditor.text.replace(/\s+$/g, '')
     if (!content.trim()) {
       alert('文字内容不能为空')
       return
     }
     const summary = textEditor.summary.trim().slice(0, 30)
-    let width = Math.max(32, textEditor.w)
-    let height = Math.max(32, textEditor.h)
-    if (width <= 40 && height <= 40) {
-      width = 240
-      height = 160
+    const fallbackWidth = Math.max(240, textEditor.fontSize * 10)
+    const fallbackHeight = Math.max(160, textEditor.fontSize * 4)
+    const baseWidth = textEditor.w > 0 ? Math.max(textEditor.w, 80) : fallbackWidth
+    const baseHeight = textEditor.h > 0 ? Math.max(textEditor.h, Math.round(textEditor.fontSize * 1.6)) : fallbackHeight
+
+    const layout = computeTextBoxLayout({
+      text: content,
+      fontFamily: textEditor.fontFamily,
+      fontSize: textEditor.fontSize,
+      fontWeight: textEditor.fontWeight,
+      baseWidth,
+      baseHeight,
+      growDir: textEditor.growDir,
+      padding: 0,
+      lineHeight: TEXT_LINE_HEIGHT,
+    })
+
+    const posX = textEditor.x + layout.offsetX
+    const posY = textEditor.y + layout.offsetY
+
+    const sharedMeta = {
+      author: 'human',
+      text: content,
+      summary,
+      fontFamily: textEditor.fontFamily,
+      fontWeight: textEditor.fontWeight,
+      fontSize: textEditor.fontSize,
+      growDir: textEditor.growDir,
+      baseWidth: layout.baseWidth,
+      baseHeight: layout.baseHeight,
+      configuredWidth: baseWidth,
+      configuredHeight: baseHeight,
+      lineHeight: layout.lineHeight,
+      padding: layout.padding,
+      contentWidth: layout.contentWidth,
+      contentHeight: layout.contentHeight,
+      lineCount: layout.lineCount,
+      renderedText: layout.renderedText,
     }
+
     const draft: ShapeDraft = {
       id: textEditor.id,
       kind: 'text',
-      x: textEditor.x,
-      y: textEditor.y,
-      w: width,
-      h: height,
+      x: posX,
+      y: posY,
+      w: layout.width,
+      h: layout.height,
       text: content,
       summary,
       style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
-      meta: {
-        author: 'human',
-        text: content,
-        summary,
-        fontFamily: textEditor.fontFamily,
-        fontWeight: textEditor.fontWeight,
-        fontSize: textEditor.fontSize,
-        growDir: textEditor.growDir,
-      },
+      meta: { ...sharedMeta },
     }
     const aiStroke: AIStrokeV11 = {
       id: textEditor.id,
       tool: 'text',
       points: [
-        [draft.x, draft.y],
-        [draft.x + width, draft.y + height],
+        [posX, posY],
+        [posX + layout.width, posY + layout.height],
       ],
       style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
-      meta: {
-        author: 'human',
-        text: content,
-        summary,
-        fontFamily: textEditor.fontFamily,
-        fontWeight: textEditor.fontWeight,
-        fontSize: textEditor.fontSize,
-        growDir: textEditor.growDir,
-      },
+      meta: { ...sharedMeta },
     }
     pushHistory()
     setShapes((prev) => [...prev, draft])
@@ -537,7 +558,7 @@ export default function LineArtBoard() {
       growDir: textEditor.growDir,
     })
     noteUserAction({ forceStart: true })
-  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction])
+  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction, computeTextBoxLayout])
 
   const openTextEditor = useCallback((params: {
     id: string
@@ -554,16 +575,21 @@ export default function LineArtBoard() {
     fontWeight?: string
     growDir?: TextGrowDir
   }) => {
+    const fontSize = params.fontSize ?? textSettings.fontSize
+    const fallbackWidth = Math.max(240, fontSize * 10)
+    const fallbackHeight = Math.max(160, fontSize * 4)
+    const baseWidth = params.w > 0 ? Math.max(params.w, 80) : fallbackWidth
+    const baseHeight = params.h > 0 ? Math.max(params.h, Math.round(fontSize * 1.6)) : fallbackHeight
     setTextEditor({
       id: params.id,
       x: params.x,
       y: params.y,
-      w: params.w,
-      h: params.h,
+      w: baseWidth,
+      h: baseHeight,
       text: params.text ?? '',
       summary: params.summary ?? '',
       fontFamily: params.fontFamily ?? textSettings.fontFamily,
-      fontSize: params.fontSize ?? textSettings.fontSize,
+      fontSize,
       fontWeight: params.fontWeight ?? textSettings.fontWeight,
       growDir: params.growDir ?? textSettings.growDir,
       color: params.color,
@@ -867,7 +893,7 @@ export default function LineArtBoard() {
         return <KLine points={pts} closed stroke={stroke} strokeWidth={strokeWidth} opacity={opacity} lineJoin="round" />
       }
       case 'text': {
-        const fillColor = colorToStroke(d.style?.color ?? 'black') // 我们已有 color->#hex 的函数
+        const fillColor = colorToStroke(d.style?.color ?? 'black')
         const fontSize = (d.meta?.fontSize ?? d.meta?.fontsize ?? d.meta?.font_size ?? 16) as number
         const fontFamily = (d.meta?.fontFamily ?? 'sans-serif') as string
         const fontStyle = (d.meta?.fontWeight === 'bold' || d.meta?.fontWeight === '700')
@@ -875,9 +901,11 @@ export default function LineArtBoard() {
           : 'normal'
         const boxW = d.w ?? 160
         const boxH = d.h ?? 80
+        const lineHeight = typeof d.meta?.lineHeight === 'number' && Number.isFinite(d.meta.lineHeight)
+          ? (d.meta.lineHeight as number)
+          : TEXT_LINE_HEIGHT
         return (
           <Group listening={false}>
-            {/* 可选：画一个淡淡的边框，方便可视化文本框范围 */}
             <KRect
               x={d.x}
               y={d.y}
@@ -893,9 +921,9 @@ export default function LineArtBoard() {
               y={d.y}
               width={boxW}
               height={boxH}
-              text={d.text ?? ''}
+              text={(d.meta?.renderedText as string) ?? d.text ?? ''}
               fontFamily={fontFamily}
-              fontSize={fontSize / view.scale /* 或者不除，看你希望缩放是否影响字号 */}
+              fontSize={fontSize}
               fontStyle={fontStyle}
               fill={fillColor}
               opacity={preview ? Math.min(0.35, d.style?.opacity ?? 1) : (d.style?.opacity ?? 1)}
@@ -903,10 +931,12 @@ export default function LineArtBoard() {
               verticalAlign="top"
               listening={false}
               wrap="word"
+              lineHeight={lineHeight}
             />
           </Group>
         )
       }
+
       case 'erase':
         return <KText x={d.x} y={d.y} text="[erase]" fill="#999" opacity={opacity} />
       default:
@@ -1574,7 +1604,7 @@ export default function LineArtBoard() {
                 border: '1px solid #d1d5db',
                 fontFamily: textEditor.fontFamily,
                 fontSize: textEditor.fontSize,
-                lineHeight: 1.4,
+                lineHeight: TEXT_LINE_HEIGHT,
               }}
             />
           </label>

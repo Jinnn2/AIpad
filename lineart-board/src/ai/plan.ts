@@ -1,5 +1,6 @@
 import type { ColorName } from './types'
 import { computeBounds, normalizeAIStrokePayload } from './normalize'
+import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from '../textbox/layout'
 
 export type ShapeDraft = {
   id: string
@@ -56,7 +57,7 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
       case 'eraser':
         drafts.push({ id: s.id, kind: 'erase', x, y, style, meta: { ...s.meta, op: 'erase' } })
         break
-      case 'text':
+      case 'text': {
         const [p0, p1] = s.points || []
         if (!p0 || !p1)
           throw new Error(`Text stroke ${s.id} must have exactly 2 points.`)
@@ -65,26 +66,70 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
         const x1 = Math.max(p0[0], p1[0])
         const y1 = Math.max(p0[1], p1[1])
 
+        const rawMeta = (s.meta ?? {}) as Record<string, any>
+        const textContent = String(rawMeta.text ?? '')
+        const summary = String(rawMeta.summary ?? '')
+        const fontFamily = String(rawMeta.fontFamily ?? 'sans-serif')
+        const fontSize = Number(rawMeta.fontSize ?? 16) || 16
+        const fontWeight = String(rawMeta.fontWeight ?? '400')
+        const growDir = (rawMeta.growDir as any) ?? 'down'
+        const baseWidth = Number(rawMeta.configuredWidth ?? rawMeta.baseWidth ?? (x1 - x0)) || (x1 - x0) || 240
+        const baseHeight = Number(rawMeta.configuredHeight ?? rawMeta.baseHeight ?? (y1 - y0)) || (y1 - y0) || 160
+        const padding = Number(rawMeta.padding ?? 0)
+        const rawLineHeight = Number(rawMeta.lineHeight)
+        const lineHeight = Number.isFinite(rawLineHeight) && rawLineHeight > 0 ? rawLineHeight : DEFAULT_TEXTBOX_LINE_HEIGHT
+
+        const layout = computeTextBoxLayout({
+          text: textContent,
+          fontFamily,
+          fontSize,
+          fontWeight,
+          baseWidth,
+          baseHeight,
+          growDir,
+          padding,
+          lineHeight,
+        })
+
+        const posX = x0 + layout.offsetX
+        const posY = y0 + layout.offsetY
+
         drafts.push({
           id: s.id,
           kind: 'text',
-          x: x0,
-          y: y0,
-          w: x1 - x0,
-          h: y1 - y0,
-          text: (s.meta as any)?.text || '',
-          summary: (s.meta as any)?.summary || '',
+          x: posX,
+          y: posY,
+          w: layout.width,
+          h: layout.height,
+          text: textContent,
+          summary,
           style: {
             size: s.style?.size ?? 'm',
             color: s.style?.color ?? 'black',
             opacity: s.style?.opacity ?? 1
           },
           meta: {
-            ...s.meta,
-            // we keep font info etc in meta.fontFamily/fontWeight/fontSize/growDir
+            ...rawMeta,
+            text: textContent,
+            summary,
+            fontFamily,
+            fontWeight,
+            fontSize,
+            growDir,
+            configuredWidth: baseWidth,
+            configuredHeight: baseHeight,
+            baseWidth: layout.baseWidth,
+            baseHeight: layout.baseHeight,
+            lineHeight: layout.lineHeight,
+            padding: layout.padding,
+            contentWidth: layout.contentWidth,
+            contentHeight: layout.contentHeight,
+            lineCount: layout.lineCount,
+            renderedText: layout.renderedText,
           }
         })
         break
+      }
       default:
         drafts.push({
           id: s.id, kind: 'polyline', x, y, w, h,
@@ -95,4 +140,3 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
   }
   return drafts
 }
-

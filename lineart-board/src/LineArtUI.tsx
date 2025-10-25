@@ -190,7 +190,8 @@ export function SidePanel(props: SidePanelProps) {
         top: 80,
         right: 16,
         bottom: 180,
-        width: 300,
+        width: 340,
+        minWidth: 340,
         zIndex: 1000,
         display: 'flex',
         flexDirection: 'column',
@@ -206,8 +207,8 @@ export function SidePanel(props: SidePanelProps) {
     >
       <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 8 }}>
-          {(['hand', 'pen', 'eraser', 'ellipse', 'text'] as const).map((t) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+          {(['hand', 'pen', 'eraser', 'ellipse'] as const).map((t) => (
             <Btn
               key={t}
               onClick={() => onToolModeChange(t)}
@@ -222,6 +223,21 @@ export function SidePanel(props: SidePanelProps) {
               {t}
             </Btn>
           ))}
+        </div>
+        <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
+          <Btn
+            onClick={() => onToolModeChange('text')}
+            style={{
+              padding: '8px 10px',
+              gridColumn: 'span 4',
+              ...(toolMode === 'text'
+                ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
+                : {}),
+            }}
+            title="text"
+          >
+            text
+          </Btn>
         </div>
 
         {toolMode === 'eraser' && (
