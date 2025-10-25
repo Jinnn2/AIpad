@@ -92,6 +92,24 @@ const wrapTextWithWidth = (
     maxLineWidth = Math.max(maxLineWidth, measure(finalLine))
   }
 
+  const pushChunks = (segment: string) => {
+    if (!segment) {
+      pushLine('')
+      return
+    }
+    let chunk = ''
+    for (const ch of segment) {
+      const candidate = chunk + ch
+      if (measure(candidate) <= width || !chunk) {
+        chunk = candidate
+      } else {
+        pushLine(chunk)
+        chunk = ch
+      }
+    }
+    if (chunk) pushLine(chunk)
+  }
+
   for (const paragraph of paragraphs) {
     const normalized = paragraph.replace(/\s+/g, ' ').trim()
     if (!normalized) {
@@ -109,7 +127,7 @@ const wrapTextWithWidth = (
         current = next
         maxLineWidth = Math.max(maxLineWidth, measure(current))
       } else {
-        if (current) pushLine(current)
+        if (current) pushChunks(current)
         if (measure(word) <= width) {
           current = word
           maxLineWidth = Math.max(maxLineWidth, measure(current))
@@ -130,7 +148,7 @@ const wrapTextWithWidth = (
       }
     }
 
-    pushLine(current)
+    pushChunks(current)
   }
 
   if (!lines.length) {

@@ -120,3 +120,10 @@ class SyncSessionRequest(BaseModel):
 class SyncSessionResponse(BaseModel):
     ok: bool = True
     count: int = 0
+
+class CompletionRequest(BaseModel):
+    text: str
+    max_tokens: Optional[int] = 4096
+
+class CompletionResponse(BaseModel):
+    completion: str

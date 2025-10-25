@@ -119,6 +119,8 @@ type TextEditorState = {
   opacity: number
   isEditing: boolean
   originalShapeId?: string
+  pendingCompletion?: string | null
+  completing?: boolean
 }
 export default function LineArtBoard() {
   // Canvas size; swap to ResizeObserver for responsive layout
@@ -137,6 +139,14 @@ export default function LineArtBoard() {
     for (const shape of shapes) map[shape.id] = shape
     return map
   }, [shapes])
+  const clearCompletionPreview = useCallback((id: string | null | undefined) => {
+    if (!id) return
+    setCompletionPreviews(prev => {
+      if (!(id in prev)) return prev
+      const { [id]: _omit, ...rest } = prev
+      return rest
+    })
+  }, [])
   // Prompt mode for AI requests
   const [mode, setMode] = useState<PromptMode>("full");
   // Brush configuration aligns with the AI protocol style definition
@@ -161,7 +171,7 @@ export default function LineArtBoard() {
   const [toolMode, setToolMode] = useState<'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select'>('pen')
   const [eraserRadius, setEraserRadius] = useState<number>(14) // pixels
   const [boxDraft, setBoxDraft] = useState<ShapeDraft | null>(null)
-  const [textSettings, setTextSettings] = useState<TextSettings>({
+const [textSettings, setTextSettings] = useState<TextSettings>({
     fontFamily: 'sans-serif',
     fontSize: 18,
     fontWeight: '400',
@@ -169,6 +179,7 @@ export default function LineArtBoard() {
   })
   const [textEditor, setTextEditor] = useState<TextEditorState | null>(null)
   const [selectedShapeId, setSelectedShapeId] = useState<string | null>(null)
+  const [completionPreviews, setCompletionPreviews] = useState<Record<string, string>>({})
   const updateTextSettings = useCallback((patch: Partial<TextSettings>) => {
     setTextSettings((prev) => ({ ...prev, ...patch }))
   }, [])
@@ -447,14 +458,50 @@ const stageCursor = toolMode === 'hand'
   const updateTextEditorState = useCallback((patch: Partial<TextEditorState>) => {
     setTextEditor((prev) => (prev ? { ...prev, ...patch } : prev))
   }, [])
+  const triggerCompletion = useCallback(async (targetId: string, baseText: string) => {
+    if (!baseText.trim()) return
+    setTextEditor(prev => (prev && prev.id === targetId ? { ...prev, completing: true, pendingCompletion: null } : prev))
+    try {
+      const res = await apiFetch('/completion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: baseText }),
+      })
+      if (!res.ok) {
+        const errText = await res.text().catch(() => 'completion failed')
+        throw new Error(errText)
+      }
+      const data = await res.json()
+      const completionText = String(data?.completion ?? '').trim()
+      if (!completionText) throw new Error('empty completion')
+      setCompletionPreviews(prev => ({ ...prev, [targetId]: completionText }))
+      setTextEditor(prev => (prev && prev.id === targetId
+        ? { ...prev, text: prev.text + completionText, pendingCompletion: completionText, completing: false }
+        : prev))
+    } catch (err) {
+      console.error(err)
+      setTextEditor(prev => (prev && prev.id === targetId ? { ...prev, completing: false } : prev))
+      alert('补全失败，请稍后重试')
+    }
+  }, [])
+  const handleEditorTextChange = useCallback((value: string) => {
+    if (!textEditor) return
+    const hasTrigger = value.includes(':::')
+    const sanitized = hasTrigger ? value.replace(/:::/g, '') : value
+    clearCompletionPreview(textEditor.id)
+    setTextEditor(prev => (prev && prev.id === textEditor.id ? { ...prev, text: sanitized, pendingCompletion: null } : prev))
+    if (hasTrigger) triggerCompletion(textEditor.id, sanitized)
+  }, [textEditor, clearCompletionPreview, triggerCompletion])
   const cancelTextEditor = useCallback(() => {
+    const targetId = textEditor?.id
     setTextEditor((prev) => {
       if (prev?.isEditing) {
         setSelectedShapeId(prev.id)
       }
       return null
     })
-  }, [setSelectedShapeId])
+    if (targetId) clearCompletionPreview(targetId)
+  }, [textEditor, setSelectedShapeId, clearCompletionPreview])
   const commitTextEditor = useCallback(() => {
     if (!textEditor) return
     const content = textEditor.text.replace(/\s+$/g, '')
@@ -538,6 +585,7 @@ const stageCursor = toolMode === 'hand'
       setDrawStack((prev) => [...prev, { ai: aiStroke, draft }])
     }
     setTextEditor(null)
+    clearCompletionPreview(textEditor.id)
     updateTextSettings({
       fontFamily: textEditor.fontFamily,
       fontSize: textEditor.fontSize,
@@ -545,7 +593,7 @@ const stageCursor = toolMode === 'hand'
       growDir: textEditor.growDir,
     })
     noteUserAction({ forceStart: true })
-  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction, computeTextBoxLayout, setSelectedShapeId])
+  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction, computeTextBoxLayout, setSelectedShapeId, clearCompletionPreview])
 const openTextEditor = useCallback((params: {
     id: string
     x: number
@@ -583,8 +631,10 @@ const openTextEditor = useCallback((params: {
       opacity: params.opacity ?? 1,
       isEditing: !!params.editing,
       originalShapeId: params.editing ? params.id : undefined,
+      pendingCompletion: completionPreviews[params.id] ?? null,
+      completing: false,
     })
-  }, [textSettings])
+  }, [textSettings, completionPreviews])
   const openEditorForShape = useCallback((shape: ShapeDraft) => {
     if (shape.kind !== 'text') return
     const meta = shape.meta ?? {}
@@ -802,7 +852,7 @@ const openTextEditor = useCallback((params: {
     return <Group listening={false}>{lines}</Group>
   }
   // Draft -> Konva node renderer
-  const DraftNode: React.FC<{ d: ShapeDraft; preview?: boolean; selected?: boolean; editHighlight?: boolean }> = ({ d, preview, selected, editHighlight }) => {
+  const DraftNode: React.FC<{ d: ShapeDraft; preview?: boolean; selected?: boolean; editHighlight?: boolean; completionText?: string | null }> = ({ d, preview, selected, editHighlight, completionText }) => {
     const stroke = colorToStroke(d.style?.color ?? 'black')
     const strokeWidth = SIZE_TO_WIDTH[(d.style?.size ?? 'm')]
     const opacity = preview ? Math.min(0.35, (d.style?.opacity ?? 1)) : (d.style?.opacity ?? 1)
@@ -857,20 +907,23 @@ const openTextEditor = useCallback((params: {
         const lineHeight = typeof d.meta?.lineHeight === 'number' && Number.isFinite(d.meta.lineHeight)
           ? (d.meta.lineHeight as number)
           : TEXT_LINE_HEIGHT
+        const hasCompletion = !!completionText
         const isHighlighted = !!editHighlight
-        const borderColor = isHighlighted
-          ? '#ffb74d'
-          : selected
-            ? '#4aa3ff'
-            : (preview ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.4)')
-        const borderDash = isHighlighted
-          ? [2, 2] as number[]
-          : selected
-            ? [8,4] as number[]
-            : preview
-              ? [4,4]
-              : undefined
-        const fillColorOverlay = isHighlighted ? 'rgba(255,183,77,0.12)' : undefined
+        let borderColor = preview ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.4)'
+        let borderDash: number[] | undefined = preview ? [4,4] : undefined
+        let fillColorOverlay: string | undefined
+        if (isHighlighted) {
+          borderColor = '#ffb74d'
+          borderDash = [2, 2]
+          fillColorOverlay = 'rgba(255,183,77,0.12)'
+        } else if (hasCompletion) {
+          borderColor = '#2563eb'
+          borderDash = [6, 4]
+          fillColorOverlay = 'rgba(37,99,235,0.08)'
+        } else if (selected) {
+          borderColor = '#4aa3ff'
+          borderDash = [8,4]
+        }
         return (
           <Group listening={false}>
             <KRect
@@ -901,6 +954,21 @@ const openTextEditor = useCallback((params: {
               wrap="char"
               lineHeight={lineHeight}
             />
+            {completionText && (
+              <KText
+                x={d.x}
+                y={d.y + boxH + 6}
+                width={boxW}
+                text={completionText}
+                fontFamily={fontFamily}
+                fontSize={Math.max(fontSize * 0.9, 12)}
+                fontStyle="italic"
+                fill="#2563eb"
+                align="left"
+                wrap="word"
+                listening={false}
+              />
+            )}
           </Group>
         )
       }
@@ -1120,6 +1188,16 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       return rest
     })
     setCurrentPayloadId(null)
+    setCompletionPreviews(prev => {
+      const next = { ...prev }
+      for (const draft of entry.drafts) {
+        if (draft.kind !== 'edit') continue
+        const meta = draft.meta ?? {}
+        const targetId = draft.targetId ?? meta.targetId ?? meta.target ?? meta.id
+        if (targetId) delete next[String(targetId)]
+      }
+      return next
+    })
     noteUserAction({ forceStart: true })
   }, [currentPayloadId, previews, pushHistory, noteUserAction, shapes, drawStack, applyEditDraftToState])
   const dismissAI = useCallback(() => {
@@ -1786,10 +1864,10 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             </div>
           </div>
           <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <span style={{ fontSize: 12, color: '#4b5563' }}>Content (Ctrl/Cmd + Enter 保存)</span>
+            <span style={{ fontSize: 12, color: '#4b5563' }}>Content (输入 ::: 触发补全，Ctrl/Cmd + Enter 保存)</span>
             <textarea
               value={textEditor.text}
-              onChange={(e) => updateTextEditorState({ text: e.target.value })}
+              onChange={(e) => handleEditorTextChange(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
                   e.preventDefault()
@@ -1810,6 +1888,23 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
               }}
             />
           </label>
+          {textEditor.completing && (
+            <div style={{ fontSize: 12, color: '#2563eb' }}>补全中…</div>
+          )}
+          {textEditor.pendingCompletion && !textEditor.completing && (
+            <div
+              style={{
+                fontSize: 12,
+                fontStyle: 'italic',
+                color: '#2563eb',
+                background: 'rgba(37,99,235,0.08)',
+                padding: '6px 8px',
+                borderRadius: 8,
+              }}
+            >
+              {textEditor.pendingCompletion}
+            </div>
+          )}
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
             <button
               onClick={cancelTextEditor}
@@ -1860,7 +1955,18 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         <Layer listening={false}>{showGrid && <Grid />}</Layer>
         {/* Committed shapes */}
         <Layer>
-          {shapes.map(d => <DraftNode key={'s:'+d.id} d={d} selected={selectedShapeId === d.id} editHighlight={activeEditTargets.has(d.id)} />)}
+          {shapes.map(d => {
+            const completionText = completionPreviews[d.id]
+            return (
+              <DraftNode
+                key={'s:'+d.id}
+                d={d}
+                selected={selectedShapeId === d.id}
+                editHighlight={activeEditTargets.has(d.id)}
+                completionText={completionText}
+              />
+            )
+          })}
           {/* Live drawing preview (not yet in shapes) */}
           {toolMode==='pen' && isDrawing && rawPoints.length >= 4 && (
             <KLine 
@@ -1874,7 +1980,14 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             />
           )}
           {isDrawing && boxDraft && (toolMode==='ellipse' || toolMode==='text') && (
-            <DraftNode d={boxDraft} />
+            <DraftNode
+              d={boxDraft}
+              completionText={
+                textEditor && textEditor.id === boxDraft.id
+                  ? textEditor.pendingCompletion ?? completionPreviews[textEditor.id] ?? null
+                  : null
+              }
+            />
           )}
           {/* Eraser radius indicator (rounded rect avoids extra import) */}
           {toolMode==='eraser' && !isPanning && eraserCursor && (

@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 from app.schemas import (
     SuggestRequest, SuggestResponse, AIStrokePayload, Health,
     AIStrokeV11, StrokeStyle, CanvasInfo,
-    SyncSessionRequest, SyncSessionResponse
+    SyncSessionRequest, SyncSessionResponse,
+    CompletionRequest, CompletionResponse,
 )
 from app import prompting
 from app.llm_client import call_chat_completions
@@ -640,3 +641,37 @@ def session_sync(body: SyncSessionRequest):
     raw = [s.model_dump() for s in (body.strokes or [])]
     sess.replace_strokes(raw)
     return SyncSessionResponse(ok=True, count=len(sess.strokes))
+
+
+@app.post("/completion", response_model=CompletionResponse)
+def completion(body: CompletionRequest):
+    text = (body.text or "").strip()
+    if not text:
+        raise HTTPException(400, "text required for completion")
+    sys = (
+        "You are a precise writing assistant. "
+        "Continue the provided passage in the same tone, language, and style. "
+        "You should decide to give a short or long continuation based on the input length. "
+        "If the format is like term: , you should give precise definitions or explanations of the term. "
+        "Do not repeat the existing text. Respond with JSON {\"completion\":\"...\"}."
+    )
+    user = (
+        "Continue this passage (completion). Keep the same style and formatting.\n\n"
+        f"{text}"
+    )
+    msgs = [
+        {"role": "system", "content": sys},
+        {"role": "user", "content": user},
+    ]
+    parsed, dbg = call_chat_completions(
+        msgs,
+        max_tokens=body.max_tokens or 120,
+        temperature=0.6,
+        top_p=0.9,
+    )
+    completion = str(parsed.get("completion") or parsed.get("text") or "").strip()
+    if not completion:
+        completion = str(dbg.get("raw_text") or "").strip().strip('"')
+    if not completion:
+        raise HTTPException(502, "Completion model returned empty text.")
+    return CompletionResponse(completion=completion)
