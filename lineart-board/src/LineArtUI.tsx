@@ -114,8 +114,8 @@ export function TopToolbar(props: TopToolbarProps) {
 type GrowDir = 'down' | 'up' | 'left' | 'right'
 
 export type SidePanelProps = {
-  toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text'
-  onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text') => void
+  toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select'
+  onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select') => void
   eraserRadius: number
   onEraserRadiusChange: (radius: number) => void
   brushSize: 's' | 'm' | 'l' | 'xl'
@@ -224,20 +224,22 @@ export function SidePanel(props: SidePanelProps) {
             </Btn>
           ))}
         </div>
-        <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
-          <Btn
-            onClick={() => onToolModeChange('text')}
-            style={{
-              padding: '8px 10px',
-              gridColumn: 'span 4',
-              ...(toolMode === 'text'
-                ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
-                : {}),
-            }}
-            title="text"
-          >
-            text
-          </Btn>
+        <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }}>
+          {(['text', 'select'] as const).map((t) => (
+            <Btn
+              key={t}
+              onClick={() => onToolModeChange(t)}
+              style={{
+                padding: '8px 10px',
+                ...(toolMode === t
+                  ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
+                  : {}),
+              }}
+              title={t}
+            >
+              {t}
+            </Btn>
+          ))}
         </div>
 
         {toolMode === 'eraser' && (

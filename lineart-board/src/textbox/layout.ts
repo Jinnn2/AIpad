@@ -174,19 +174,13 @@ const computeLayout = (
 
   const baseW = Math.max(baseWidth || 0, minWidth)
   const baseH = Math.max(baseHeight || 0, minHeight)
+  const horizontalGrow = growDir === 'left' || growDir === 'right'
 
   let width = Math.max(Math.min(naturalWidth, baseW), minWidth)
-  let wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
-
-  if (naturalWidth > width && width < baseW) {
-    width = Math.min(naturalWidth, baseW)
-    wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
-  }
-
-  if (naturalWidth > baseW) {
+  if (horizontalGrow && naturalWidth > width) {
     width = naturalWidth
-    wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
   }
+  let wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
   let height = Math.max(wrapped.lines.length * lineHeight, minHeight)
 
   if (height <= baseH) {
