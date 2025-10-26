@@ -527,6 +527,9 @@ const stageCursor = toolMode === 'hand'
     })
     const posX = textEditor.x + layout.offsetX
     const posY = textEditor.y + layout.offsetY
+    const actualLineHeight = textEditor.fontSize * layout.lineHeight
+    const heightPadding = Math.min(actualLineHeight * 0.35, 16)
+    const paddedHeight = layout.height + heightPadding
     const sharedMeta = {
       author: 'human',
       text: content,
@@ -552,7 +555,7 @@ const stageCursor = toolMode === 'hand'
       x: posX,
       y: posY,
       w: layout.width,
-      h: layout.height,
+      h: paddedHeight,
       text: content,
       summary,
       style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
@@ -563,7 +566,7 @@ const stageCursor = toolMode === 'hand'
       tool: 'text',
       points: [
         [posX, posY],
-        [posX + layout.width, posY + layout.height],
+        [posX + layout.width, posY + paddedHeight],
       ],
       style: { size: 'm', color: textEditor.color, opacity: textEditor.opacity },
       meta: { ...sharedMeta },
@@ -1114,6 +1117,9 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     })
     const posX = target.x + layout.offsetX
     const posY = target.y + layout.offsetY
+    const actualLineHeight = fontSize * layout.lineHeight
+    const heightPadding = Math.min(actualLineHeight * 0.35, 16)
+    const paddedHeight = layout.height + heightPadding
     const updatedMeta = {
       ...currentMeta,
       ...meta,
@@ -1140,7 +1146,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       x: posX,
       y: posY,
       w: layout.width,
-      h: layout.height,
+      h: paddedHeight,
       text: content,
       summary,
       meta: updatedMeta,
@@ -1148,14 +1154,13 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     const nextShapes = [...baseShapes]
     nextShapes[index] = updatedShape
     const width = layout.width ?? 0
-    const height = layout.height ?? 0
     const nextStack = baseStack.map(entry => {
       if (entry.draft.id !== targetId) return entry
       const ai: AIStrokeV11 = {
         ...entry.ai,
         points: [
           [posX, posY],
-          [posX + width, posY + height],
+          [posX + width, posY + paddedHeight],
         ],
         meta: { ...(entry.ai.meta ?? {}), ...updatedMeta },
       }

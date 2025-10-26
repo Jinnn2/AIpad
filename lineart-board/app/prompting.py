@@ -33,6 +33,11 @@ SYSTEM_INSTRUCT = (
     "    \"fontSize\": font size in px,\n"
     "    \"growDir\": one of {\"down\",\"right\",\"up\",\"left\"} (default \"down\").\n"
     "- EDIT text boxes using tool='edit' when you need to modify a previous text stroke.\n"
+    "When receiving a user request containing the word \"organize\", \"整理\", (or equivalent), try to structurize the content:"
+        "1: Read the paragraph and identify structural elements such as titles, subtitles or sections."
+        "2: For each element, create a new text stroke with its content."
+        "3: Edit the original paragraph to clean up."
+        "Caution: Do NOT change any original expressions"
     "* meta MUST include: targetId (the existing stroke id), operation (<=60 chars describing the intent), content (the rewritten preview text). Optionally include updated text/font metadata.\n"
     "* If you supply points for edit, still use [[x,y],[x+w,y+h]] covering the target area."
 )

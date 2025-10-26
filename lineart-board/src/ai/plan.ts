@@ -93,18 +93,21 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
           lineHeight,
         })
 
-        const posX = x0 + layout.offsetX
-        const posY = y0 + layout.offsetY
+       const posX = x0 + layout.offsetX
+       const posY = y0 + layout.offsetY
+        const actualLineHeight = fontSize * layout.lineHeight
+        const heightPadding = Math.min(actualLineHeight * 0.35, 16)
+        const paddedHeight = layout.height + heightPadding
 
-        drafts.push({
-          id: s.id,
-          kind: 'text',
-          x: posX,
-          y: posY,
-          w: layout.width,
-          h: layout.height,
-          text: textContent,
-          summary,
+       drafts.push({
+         id: s.id,
+         kind: 'text',
+         x: posX,
+         y: posY,
+         w: layout.width,
+         h: paddedHeight,
+         text: textContent,
+         summary,
           style: {
             size: s.style?.size ?? 'm',
             color: s.style?.color ?? 'black',
@@ -125,11 +128,12 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
             lineHeight: layout.lineHeight,
             padding: layout.padding,
             contentWidth: layout.contentWidth,
-            contentHeight: layout.contentHeight,
-            lineCount: layout.lineCount,
-            renderedText: layout.renderedText,
-          }
-        })
+           contentHeight: layout.contentHeight,
+           lineCount: layout.lineCount,
+           renderedText: layout.renderedText,
+           heightPadding,
+         }
+       })
         break
       }
       case 'edit': {
