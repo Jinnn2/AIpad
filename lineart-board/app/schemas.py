@@ -127,3 +127,32 @@ class CompletionRequest(BaseModel):
 
 class CompletionResponse(BaseModel):
     completion: str
+
+
+class GraphAutoModeRequest(BaseModel):
+    sid: str
+    enabled: bool
+    canvas_size: Optional[Tuple[float, float]] = None
+    strokes: Optional[List[AIStrokeV11]] = None
+
+
+class GraphAutoModeResponse(BaseModel):
+    ok: bool = True
+    enabled: bool = False
+
+
+class GraphSnapshotResponse(BaseModel):
+    blocks: List[Dict[str, Any]] = Field(default_factory=list)
+    fragments: List[Dict[str, Any]] = Field(default_factory=list)
+    groups: List[Dict[str, Any]] = Field(default_factory=list)
+
+
+class PromoteGroupRequest(BaseModel):
+    sid: str
+    group_id: str
+
+
+class PromoteGroupResponse(BaseModel):
+    ok: bool = True
+    block: Optional[Dict[str, Any]] = None
+

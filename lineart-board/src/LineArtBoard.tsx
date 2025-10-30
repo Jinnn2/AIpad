@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
+﻿import React, { useCallback, useMemo, useRef, useState } from 'react'
 import { Stage, Layer, Group, Line as KLine, Rect as KRect, Ellipse as KEllipse, Text as KText } from 'react-konva'
 import type { AIStrokePayload, AIStrokeV11, ColorName, PromptMode } from './ai/types'
 import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/normalize'
@@ -342,8 +342,14 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   // ----- Auto-complete toggle & countdown (5s) -----
   const [autoComplete, setAutoComplete] = useState<boolean>(false)
   const [autoCountdown, setAutoCountdown] = useState<number|null>(null)
+  const [autoMaintain, setAutoMaintain] = useState<boolean>(false)
+  const [autoMaintainPending, setAutoMaintainPending] = useState<boolean>(false)
+  const [graphSnapshot, setGraphSnapshot] = useState<GraphSnapshot | null>(null)
+  const [graphInspectorVisible, setGraphInspectorVisible] = useState<boolean>(false)
+  const [promoteGroupPending, setPromoteGroupPending] = useState<string | null>(null)
   const autoTimerRef = useRef<number | ReturnType<typeof setTimeout> | null>(null)
   const autoTickerRef = useRef<number | ReturnType<typeof setInterval> | null>(null)
+  const graphPollRef = useRef<number | null>(null)
   const hasActivePreview = useMemo(() => {
     // Previews exist when at least one AI payload is staged
     return Object.keys(previews || {}).length > 0
@@ -360,6 +366,121 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     setAutoComplete(enabled)
     clearAutoTimer()
   }, [clearAutoTimer])
+  const fetchGraphSnapshot = useCallback(async (currentSid: string) => {
+    try {
+      const res = await apiFetch(`/graph/state?sid=${encodeURIComponent(currentSid)}`)
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`graph state failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = (await res.json()) as GraphSnapshot
+      setGraphSnapshot({
+        blocks: Array.isArray(data?.blocks) ? data.blocks : [],
+        fragments: Array.isArray(data?.fragments) ? data.fragments : [],
+        groups: Array.isArray(data?.groups) ? data.groups : [],
+      })
+    } catch (err) {
+      console.warn('[graph] snapshot error:', err)
+    }
+  }, [])
+  const updateAutoMaintain = useCallback(async (nextEnabled: boolean, opts?: { silent?: boolean }) => {
+    const quiet = opts?.silent ?? false
+    if (!quiet && autoMaintainPending) return
+    try {
+      if (!quiet) setAutoMaintainPending(true)
+      let curSid = sid
+      if (nextEnabled) {
+        if (!curSid) {
+          const initRes = await apiFetch('/session/init', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mode: 'light_helper', init_goal: hint }),
+          })
+          if (!initRes.ok) {
+            const txt = await initRes.text().catch(() => '')
+            throw new Error(`init session failed: ${initRes.status} ${initRes.statusText}${txt ? `\n${txt}` : ''}`)
+          }
+          const j0 = await initRes.json()
+          curSid = String(j0.sid)
+          setSid(curSid)
+          lastSentIndexRef.current = 0
+        }
+      } else {
+        if (!curSid) {
+          setAutoMaintain(false)
+          return
+        }
+      }
+      if (!curSid) return
+      const payload: any = { sid: curSid, enabled: nextEnabled }
+      if (nextEnabled) {
+        payload.canvas_size = [size.width, size.height]
+        payload.strokes = packAllStrokes()
+      }
+      const res = await apiFetch('/graph/auto-mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`graph auto-mode failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = await res.json().catch(() => ({}))
+      const enabled = Boolean((data as any)?.enabled)
+      if (enabled && nextEnabled) {
+        setAutoMaintain(true)
+        if (curSid) await fetchGraphSnapshot(curSid)
+      } else {
+        setAutoMaintain(false)
+        setGraphSnapshot(null)
+      }
+    } catch (err: any) {
+      console.warn('[auto-maintain] error:', err)
+      if (!quiet) {
+        alert('自动维护切换失败：\n' + (err?.message || String(err)))
+      }
+      if (!nextEnabled) {
+        setAutoMaintain(false)
+      }
+    } finally {
+      if (!quiet) setAutoMaintainPending(false)
+      if (!nextEnabled) {
+        setAutoMaintain(false)
+        setGraphSnapshot(null)
+      }
+    }
+  }, [autoMaintainPending, sid, size.width, size.height, packAllStrokes, hint, fetchGraphSnapshot])
+  const handleAutoMaintainToggle = useCallback(() => {
+    void updateAutoMaintain(!autoMaintain)
+  }, [autoMaintain, updateAutoMaintain])
+  const promoteGroup = useCallback(async (groupId: string) => {
+    if (!sid) {
+      alert('需要先初始化会话（点击 Ask AI 一次即可）');
+      return
+    }
+    setPromoteGroupPending(groupId)
+    try {
+      const res = await apiFetch('/graph/promote-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sid, group_id: groupId }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error('promote group failed: ' + res.status + ' ' + res.statusText + (txt ? '\n' + txt : ''))
+      }
+      await fetchGraphSnapshot(sid)
+    } catch (err: any) {
+      console.warn('[graph] promote error:', err)
+      alert('Promote group 失败:\n' + (err?.message || String(err)))
+    } finally {
+      setPromoteGroupPending((prev) => (prev === groupId ? null : prev))
+    }
+  }, [sid, fetchGraphSnapshot])
+  const toggleGraphInspector = useCallback(() => {
+    setGraphInspectorVisible((prev) => !prev)
+  }, [])
   const cycleMode = useCallback(() => {
     setMode((current) => (current === 'light' ? 'full' : current === 'full' ? 'vision' : 'light'))
   }, [setMode])
@@ -833,6 +954,36 @@ const openTextEditor = useCallback((params: {
   React.useEffect(() => {
     askAIRef.current = askAI
   }, [askAI])
+  React.useEffect(() => {
+    if (mode !== 'full' && autoMaintain && !autoMaintainPending) {
+      void updateAutoMaintain(false, { silent: true })
+    }
+  }, [mode, autoMaintain, autoMaintainPending, updateAutoMaintain])
+  React.useEffect(() => {
+    if (!autoMaintain || !sid) {
+        setPromoteGroupPending(null)
+      if (graphPollRef.current) {
+        window.clearInterval(graphPollRef.current)
+        graphPollRef.current = null
+      }
+      if (!autoMaintain) {
+        setGraphSnapshot(null)
+        setGraphInspectorVisible(false)
+      }
+      return
+    }
+    void fetchGraphSnapshot(sid)
+    if (graphPollRef.current) window.clearInterval(graphPollRef.current)
+    graphPollRef.current = window.setInterval(() => {
+      void fetchGraphSnapshot(sid)
+    }, 3500) as unknown as number
+    return () => {
+      if (graphPollRef.current) {
+        window.clearInterval(graphPollRef.current)
+        graphPollRef.current = null
+      }
+    }
+  }, [autoMaintain, sid, fetchGraphSnapshot])
   // Infinite grid that follows the camera viewport
   const Grid: React.FC = () => {
     const STEP = 32
@@ -1720,6 +1871,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onVisionVersionChange={setVisionVersion}
         textSettings={textSettings}
         onTextSettingsChange={updateTextSettings}
+        onToggleGraphInspector={toggleGraphInspector}
+        graphInspectorActive={graphInspectorVisible}
       />
       {textEditor && textEditorScreen && textEditorSize && (
         <div
@@ -2031,8 +2184,205 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         mode={mode}
         onModeCycle={cycleMode}
         aiFeed={aiFeed}
+        showAutoMaintain={mode === 'full'}
+        autoMaintainEnabled={autoMaintain}
+        autoMaintainPending={autoMaintainPending}
+        onToggleAutoMaintain={handleAutoMaintainToggle}
+        graphBlocks={(graphSnapshot?.blocks ?? []).map(b => ({
+          blockId: b.blockId,
+          label: b.label,
+          summary: b.summary,
+          updatedAt: b.updatedAt,
+        }))}
       />
+      {graphInspectorVisible && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 92,
+            right: 370,
+            width: 400,
+            maxHeight: size.height - 160,
+            overflow: 'auto',
+            padding: 16,
+            borderRadius: 16,
+            background: 'rgba(15,23,42,0.75)',
+            color: '#e2e8f0',
+            boxShadow: '0 12px 36px rgba(15,23,42,0.45)',
+            zIndex: 1200,
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+            <div style={{ fontSize: 16, fontWeight: 600 }}>Graph Inspector</div>
+            <button
+              onClick={toggleGraphInspector}
+              style={{
+                border: 'none',
+                background: 'rgba(255,255,255,0.15)',
+                color: '#f1f5f9',
+                borderRadius: 999,
+                padding: '4px 10px',
+                cursor: 'pointer',
+              }}
+            >
+              Close
+            </button>
+          </div>
+          {!autoMaintain && (
+            <div style={{ fontSize: 13, color: '#cbd5f5' }}>
+              启用 Auto Maintain 后即可看到实时知识图更新。
+            </div>
+          )}
+          {autoMaintain && (
+            <>
+              <div style={{ fontSize: 12, color: '#a5b4fc', marginBottom: 8 }}>
+                Blocks: {graphSnapshot?.blocks?.length ?? 0} · Fragments: {graphSnapshot?.fragments?.length ?? 0}
+                {graphSnapshot?.groups && graphSnapshot.groups.length > 0 && (
+                  <div style={{ marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, color: '#fca5a5', marginBottom: 6 }}>
+                      Pending Groups ({graphSnapshot.groups.length})
+                    </div>
+                    {graphSnapshot.groups.map((group) => (
+                      <div
+                        key={group.groupId}
+                        style={{
+                          border: '1px dashed rgba(251,191,36,0.65)',
+                          borderRadius: 10,
+                          padding: '10px 12px',
+                          marginBottom: 8,
+                          background: 'rgba(251,191,36,0.12)',
+                        }}
+                      >
+                        <div style={{ fontSize: 12, fontWeight: 600, color: '#fde68a' }}>
+                          {group.groupId} · {group.state} · size {group.size}
+                        </div>
+                        <div style={{ fontSize: 11, color: '#fef3c7', marginTop: 4 }}>
+                          touchCount: {group.touchCount} · need LLM review: {group.needLLMReview ? 'yes' : 'no'}
+                        </div>
+                        <div style={{ fontSize: 10, color: '#fcd34d', marginTop: 4 }}>
+                          members: {group.members.slice(0, 4).join(', ')}
+                          {group.members.length > 4 ? ' …' : ''}
+                        </div>
+                        <button
+                          onClick={() => promoteGroup(group.groupId)}
+                          disabled={promoteGroupPending === group.groupId}
+                          style={{
+                            marginTop: 8,
+                            border: '1px solid rgba(251,191,36,0.8)',
+                            background: promoteGroupPending === group.groupId ? 'rgba(251,191,36,0.2)' : 'rgba(251,191,36,0.35)',
+                            color: '#78350f',
+                            padding: '6px 10px',
+                            borderRadius: 999,
+                            cursor: promoteGroupPending === group.groupId ? 'wait' : 'pointer',
+                          }}
+                        >
+                          {promoteGroupPending === group.groupId ? 'Promoting…' : 'Promote to Block'}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {(!graphSnapshot || graphSnapshot.blocks.length === 0) ? (
+                <div style={{ fontSize: 13, color: '#cbd5f5' }}>
+                  暂无已命名的语义块。尝试添加文本或等待 LLM 汇总。
+                </div>
+              ) : (
+                graphSnapshot.blocks.map((block) => (
+                  <div
+                    key={block.blockId}
+                    style={{
+                      background: 'rgba(59,130,246,0.12)',
+                      borderRadius: 12,
+                      padding: 12,
+                      marginBottom: 10,
+                      border: '1px solid rgba(96,165,250,0.35)',
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 600, color: '#bfdbfe', marginBottom: 4 }}>
+                      {block.label || block.blockId}
+                    </div>
+                    <div style={{ fontSize: 12, lineHeight: 1.5, color: '#e2e8f0' }}>
+                      {block.summary || '（暂无摘要）'}
+                    </div>
+                    {block.contents?.length ? (
+                      <div style={{ fontSize: 11, color: '#c4b5fd', marginTop: 6 }}>
+                        Fragments: {block.contents.length}
+                      </div>
+                    ) : null}
+                    {block.relationships?.length ? (
+                      <div style={{ fontSize: 11, color: '#cbd5f5', marginTop: 6 }}>
+                        Links: {block.relationships.map(rel => `${rel.type}→${rel.target}`).join(', ')}
+                      </div>
+                    ) : null}
+                    {block.updatedAt && (
+                      <div style={{ fontSize: 10, color: '#94a3b8', marginTop: 6 }}>
+                        {new Date(block.updatedAt).toLocaleString()}
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+              {graphSnapshot && graphSnapshot.fragments.length > 0 && (
+                <div style={{ marginTop: 12 }}>
+                  <div style={{ fontSize: 12, color: '#a5b4fc', marginBottom: 6 }}>Recent Fragments</div>
+                  {graphSnapshot.fragments.slice(-6).reverse().map((frag) => (
+                    <div
+                      key={frag.id}
+                      style={{
+                        fontSize: 11,
+                        color: '#e0f2fe',
+                        padding: '6px 8px',
+                        borderRadius: 8,
+                        background: 'rgba(14,165,233,0.12)',
+                        marginBottom: 4,
+                      }}
+                    >
+                      <div><strong>{frag.type}</strong> · {frag.id}</div>
+                      {frag.text && <div style={{ marginTop: 2 }}>{frag.text}</div>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      )}
     </div>
   )
+}
+
+type GraphBlock = {
+  blockId: string
+  label: string
+  summary: string
+  contents: string[]
+  relationships: Array<{ target: string; type: string; score: number }>
+  updatedAt?: string
+}
+
+type GraphGroup = {
+  groupId: string
+  size: number
+  state: string
+  needLLMReview?: boolean
+  members: string[]
+  touchCount: number
+  updatedAt?: string
+}
+
+type GraphSnapshot = {
+  blocks: GraphBlock[]
+  fragments: Array<{
+    id: string
+    type: string
+    bbox?: [number, number, number, number] | null
+    text?: string | null
+    timestamp?: string | null
+    blockId?: string | null
+    blockLabel?: string | null
+  }>
+  groups: GraphGroup[]
 }
 

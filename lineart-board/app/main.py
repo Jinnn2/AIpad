@@ -8,10 +8,22 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 from app.schemas import (
-    SuggestRequest, SuggestResponse, AIStrokePayload, Health,
-    AIStrokeV11, StrokeStyle, CanvasInfo,
-    SyncSessionRequest, SyncSessionResponse,
-    CompletionRequest, CompletionResponse,
+    SuggestRequest,
+    SuggestResponse,
+    AIStrokePayload,
+    Health,
+    AIStrokeV11,
+    StrokeStyle,
+    CanvasInfo,
+    SyncSessionRequest,
+    SyncSessionResponse,
+    CompletionRequest,
+    CompletionResponse,
+    GraphAutoModeRequest,
+    GraphAutoModeResponse,
+    GraphSnapshotResponse,
+    PromoteGroupRequest,
+    PromoteGroupResponse,
 )
 from app import prompting
 from app.llm_client import call_chat_completions
@@ -639,6 +651,11 @@ def session_sync(body: SyncSessionRequest):
     if not sess:
         raise HTTPException(404, f"session not found: {body.sid}")
     raw = [s.model_dump() for s in (body.strokes or [])]
+    if sess.graph_auto and sess.graph_runtime and raw:
+        try:
+            sess.graph_runtime.ingest_strokes(raw)
+        except Exception as exc:
+            print("[graph] ingest error:", exc)
     sess.replace_strokes(raw)
     return SyncSessionResponse(ok=True, count=len(sess.strokes))
 
@@ -675,3 +692,63 @@ def completion(body: CompletionRequest):
     if not completion:
         raise HTTPException(502, "Completion model returned empty text.")
     return CompletionResponse(completion=completion)
+
+
+@app.post("/graph/auto-mode", response_model=GraphAutoModeResponse)
+def graph_auto_mode(body: GraphAutoModeRequest):
+    sess = S.get_session(body.sid)
+    if not sess:
+        raise HTTPException(404, f"session not found: {body.sid}")
+    if body.enabled:
+        runtime = sess.init_graph_runtime(canvas_size=body.canvas_size)
+        strokes = body.strokes or []
+        payloads = []
+        for stroke in strokes:
+            if hasattr(stroke, "model_dump"):
+                payloads.append(stroke.model_dump())
+            elif isinstance(stroke, dict):
+                payloads.append(stroke)
+        if payloads:
+            try:
+                runtime.ingest_strokes(payloads)
+            except Exception as exc:
+                print("[graph] initial ingest failed:", exc)
+        elif sess.strokes:
+            try:
+                runtime.ingest_strokes(sess.strokes)
+            except Exception as exc:
+                print("[graph] fallback ingest failed:", exc)
+        return GraphAutoModeResponse(ok=True, enabled=True)
+    sess.disable_graph_runtime()
+    return GraphAutoModeResponse(ok=True, enabled=False)
+
+
+@app.get("/graph/state", response_model=GraphSnapshotResponse)
+def graph_state(sid: str):
+    sess = S.get_session(sid)
+    if not sess or not sess.graph_runtime:
+        return GraphSnapshotResponse(blocks=[], fragments=[], groups=[])
+    snapshot = sess.graph_runtime.snapshot()
+    return GraphSnapshotResponse(
+        blocks=snapshot.get("blocks", []),
+        fragments=snapshot.get("fragments", []),
+        groups=snapshot.get("groups", []),
+    )
+
+
+@app.post("/graph/promote-group", response_model=PromoteGroupResponse)
+def graph_promote_group(body: PromoteGroupRequest):
+    sess = S.get_session(body.sid)
+    if not sess or not sess.graph_runtime:
+        raise HTTPException(404, f"session not found or graph disabled: {body.sid}")
+    block = sess.graph_runtime.promote_group_now(body.group_id)
+    if not block:
+        raise HTTPException(404, f"group not found or already promoted: {body.group_id}")
+    payload = {
+        "blockId": block.block_id,
+        "label": block.label,
+        "summary": block.summary,
+        "contents": list(block.contents),
+    }
+    return PromoteGroupResponse(ok=True, block=payload)
+

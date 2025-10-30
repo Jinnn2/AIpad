@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
-from typing import Dict, List, Optional, Tuple, Any
+from typing import Dict, List, Optional, Tuple, Any, TYPE_CHECKING
 from dataclasses import dataclass, field
 from time import time
 import os
@@ -170,6 +170,8 @@ class Session:
     call_count: int = 0
     # 最近笔画（已“最小化”）
     strokes: List[dict] = field(default_factory=list)
+    graph_auto: bool = False
+    graph_runtime: Optional["GraphRuntime"] = None
 
     def append_strokes(self, new_strokes: List[dict]) -> None:
         if not new_strokes: 
@@ -223,6 +225,18 @@ class Session:
                 "points": [[x, y] for x, y in pts2],
             })
         return out
+
+    def init_graph_runtime(self, *, canvas_size: Optional[Tuple[float, float]] = None) -> "GraphRuntime":
+        from app.graph_runtime import GraphRuntime
+
+        self.graph_runtime = GraphRuntime(canvas_size=canvas_size)
+        self.graph_auto = True
+        return self.graph_runtime
+
+    def disable_graph_runtime(self) -> None:
+        self.graph_auto = False
+        self.graph_runtime = None
+
 
 
     def bump(self) -> int:
@@ -285,3 +299,5 @@ def should_include_sample(call_count: int) -> bool:
     if SAMPLE_EVERY_N == 1:
         return True
     return (call_count % SAMPLE_EVERY_N) == 1
+if TYPE_CHECKING:
+    from app.graph_runtime import GraphRuntime

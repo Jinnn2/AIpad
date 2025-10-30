@@ -148,6 +148,8 @@ export type SidePanelProps = {
     growDir: GrowDir
   }
   onTextSettingsChange: (next: Partial<{ fontFamily: string; fontSize: number; fontWeight: string; growDir: GrowDir }>) => void
+  onToggleGraphInspector: () => void
+  graphInspectorActive: boolean
 }
 
 export function SidePanel(props: SidePanelProps) {
@@ -181,6 +183,8 @@ export function SidePanel(props: SidePanelProps) {
     onVisionVersionChange,
     textSettings,
     onTextSettingsChange,
+    onToggleGraphInspector,
+    graphInspectorActive,
   } = props
 
   return (
@@ -320,6 +324,26 @@ export function SidePanel(props: SidePanelProps) {
       </section>
 
       <section style={CARD}>
+        <div style={CARD_TITLE}>Knowledge Graph</div>
+        <Btn
+          onClick={onToggleGraphInspector}
+          style={{
+            width: '100%',
+            justifyContent: 'center',
+            background: graphInspectorActive ? 'linear-gradient(120deg, rgba(59,130,246,0.25), rgba(236,72,153,0.2))' : 'rgba(59,130,246,0.12)',
+            borderColor: graphInspectorActive ? 'rgba(236,72,153,0.7)' : 'rgba(59,130,246,0.6)',
+            color: graphInspectorActive ? '#1d4ed8' : '#2563eb',
+            fontWeight: 600,
+          }}
+        >
+          {graphInspectorActive ? 'Hide Graph View' : 'Show Graph View'}
+        </Btn>
+        <div style={{ fontSize: 12, color: '#6b7280', marginTop: 8 }}>
+          可视化 Auto Maintain 生成的语义块、摘要与最近片段。
+        </div>
+      </section>
+
+      <section style={CARD}>
         <div style={CARD_TITLE}>Brush</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
           <span style={{ fontSize: 12, color: '#555' }}>Size</span>
@@ -453,10 +477,27 @@ export type BottomPanelProps = {
   mode: PromptMode
   onModeCycle: () => void
   aiFeed: AIFeedEntry[]
+  showAutoMaintain: boolean
+  autoMaintainEnabled: boolean
+  autoMaintainPending: boolean
+  onToggleAutoMaintain: () => void
+  graphBlocks: Array<{ blockId: string; label: string; summary: string; updatedAt?: string }>
 }
 
 export function BottomPanel(props: BottomPanelProps) {
-  const { hint, onHintChange, onSubmit, mode, onModeCycle, aiFeed } = props
+  const {
+    hint,
+    onHintChange,
+    onSubmit,
+    mode,
+    onModeCycle,
+    aiFeed,
+    showAutoMaintain,
+    autoMaintainEnabled,
+    autoMaintainPending,
+    onToggleAutoMaintain,
+    graphBlocks,
+  } = props
 
   const modeConfig = {
     light: {
@@ -523,6 +564,53 @@ export function BottomPanel(props: BottomPanelProps) {
             }
           }}
         />
+        {showAutoMaintain && (
+          <button
+            title={autoMaintainEnabled ? '自动维护运行中，实时生成语义块与关系' : '启动自动维护：实时聚合文本与线稿'}
+            onClick={onToggleAutoMaintain}
+            disabled={autoMaintainPending}
+            style={{
+              padding: '9px 22px',
+              borderRadius: 999,
+              border: '2px solid',
+              borderColor: autoMaintainEnabled ? 'rgba(236,72,153,0.8)' : 'rgba(59,130,246,0.8)',
+              background: autoMaintainEnabled
+                ? 'linear-gradient(135deg, rgba(168,85,247,0.95), rgba(236,72,153,0.9))'
+                : 'linear-gradient(135deg, rgba(37,99,235,0.85), rgba(59,130,246,0.75))',
+              color: '#fff',
+              fontWeight: 600,
+              letterSpacing: '0.5px',
+              boxShadow: autoMaintainEnabled
+                ? '0 0 22px rgba(236,72,153,0.45), 0 0 42px rgba(168,85,247,0.35)'
+                : '0 0 14px rgba(59,130,246,0.35)',
+              cursor: autoMaintainPending ? 'wait' : 'pointer',
+              opacity: autoMaintainPending ? 0.75 : 1,
+              transition: 'all 0.25s ease',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            <span style={{ position: 'relative', zIndex: 1 }}>
+              {autoMaintainPending
+                ? 'Engaging...'
+                : autoMaintainEnabled
+                  ? 'Auto Maintain ON'
+                  : 'Auto Maintain'}
+            </span>
+            <span
+              aria-hidden
+              style={{
+                content: '""',
+                position: 'absolute',
+                inset: 0,
+                background: autoMaintainEnabled
+                  ? 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 55%)'
+                  : 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 50%)',
+                mixBlendMode: 'screen',
+              }}
+            />
+          </button>
+        )}
         <button
           title={styles.title}
           onClick={onModeCycle}
@@ -573,6 +661,43 @@ export function BottomPanel(props: BottomPanelProps) {
             </ul>
           </div>
         ))
+      )}
+      {showAutoMaintain && autoMaintainEnabled && graphBlocks.length > 0 && (
+        <div style={{ marginTop: 12 }}>
+          <div style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Graph Blocks</div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: 8,
+            }}
+          >
+            {graphBlocks.map((block) => (
+              <div
+                key={block.blockId}
+                style={{
+                  border: '1px solid rgba(99,102,241,0.25)',
+                  borderRadius: 10,
+                  padding: '8px 10px',
+                  background: 'linear-gradient(135deg, rgba(79,70,229,0.08), rgba(14,165,233,0.05))',
+                  boxShadow: '0 6px 16px rgba(79,70,229,0.12)',
+                }}
+              >
+                <div style={{ fontSize: 12, fontWeight: 600, color: '#4338ca', marginBottom: 4 }}>
+                  {block.label || block.blockId}
+                </div>
+                <div style={{ fontSize: 12, color: '#1f2937', lineHeight: 1.4 }}>
+                  {block.summary || '暂无摘要'}
+                </div>
+                {block.updatedAt && (
+                  <div style={{ fontSize: 10, color: '#6b7280', marginTop: 6 }}>
+                    {new Date(block.updatedAt).toLocaleTimeString()}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   )
