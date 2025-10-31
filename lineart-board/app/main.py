@@ -3,6 +3,7 @@ from __future__ import annotations
 import os, random, time, json, tempfile, math
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, List, Optional
 from fastapi import FastAPI, HTTPException, Response, Request
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -158,7 +159,12 @@ def suggest(req: SuggestRequest):
             _write_json(log_dir, "input.request.json", req.model_dump())
         except Exception:
             pass
-    # Vision 2.0 two-phase mode: pre-process before building messages.
+        used_context_executor = False
+    obj: Optional[Dict[str, object]] = None
+    dbg: Dict[str, object] = {}
+    messages: Optional[List[Dict[str, str]]] = None
+
+# Vision 2.0 two-phase mode: pre-process before building messages.
     # Triggered when mode=vision and vision_version>=2.
     if getattr(req, "mode", None) == "vision" and float(getattr(req, "vision_version", 1.0) or 1.0) >= 2.0:
         # Extract a viewport tuple.
@@ -306,33 +312,80 @@ def suggest(req: SuggestRequest):
         # Replace session state with the provided snapshot to keep deletes/erasures consistent.
         if req.context and isinstance(req.context.strokes, list):
             sess.replace_strokes([s.model_dump() for s in req.context.strokes])  # type: ignore
-        # Increment counters used to decide whether to inject samples.
+
+        graph_runtime = sess.graph_runtime
+        req_mode = (getattr(req, "mode", None) or "full").lower()
+        use_context_executor = bool(sess.graph_auto and graph_runtime is not None and req_mode in {"full", "light"})
+
         cc = sess.bump()
         include_sample = S.should_include_sample(cc)
-        # Build a lightweight context from the most recent strokes.
-        recent = sess.recent_for_model()
-        def _r3(v: float) -> float:
-            try: return round(float(v), 3)
-            except Exception: return float(v)
-        lite_ctx = AIStrokePayload(version=1, intent="complete", strokes=[
-            AIStrokeV11(
-                id=s["id"], tool=s.get("tool","pen"),
-                # Keep only x/y components and drop None placeholders.
-                points=[[ _r3(p[0]), _r3(p[1]) ] for p in s.get("points", [])],
-                style=StrokeStyle(size=((s.get("style") or {}).get("size") or "m"),
-                                  color=((s.get("style") or {}).get("color") or "black"),
-                                  opacity=float((s.get("style") or {}).get("opacity") or 1.0)),
-                meta=s.get("meta") or {}
-            ) for s in recent
-        ])
-        # Pass gen_scale through to bound the number of generated points.
-        fake = SuggestRequest(context=lite_ctx, hint=req.hint, model=req.model,
-                              temperature=req.temperature, top_p=req.top_p, max_tokens=req.max_tokens,
-                              gen_scale=req.gen_scale)
-        messages = prompting.build_messages_by_mode(fake, getattr(req, "mode", None))
-        if LOG_IO:
-            try: _write_json(log_dir, "input.messages.json", messages)
-            except Exception: pass
+
+        if use_context_executor and graph_runtime is not None:
+            if req.context and isinstance(req.context.strokes, list):
+                try:
+                    graph_runtime.ingest_strokes([s.model_dump() for s in req.context.strokes])
+                except Exception as exc:
+                    print("[graph] ingest full context failed:", exc)
+            if req.delta and isinstance(req.delta, DeltaPayload):
+                try:
+                    graph_runtime.ingest_strokes([s.model_dump() for s in req.delta.strokes])
+                except Exception as exc:
+                    print("[graph] ingest delta failed:", exc)
+
+            plan_bundle = graph_runtime.run_conversation(
+                user_input=req.hint or "",
+                mode=req.mode,
+            )
+            obj = plan_bundle.get("payload") or {}
+            dbg = {"mode": "context-executor", "plan": plan_bundle.get("plan")}
+            used_context_executor = True
+            if LOG_IO and log_dir is not None:
+                try:
+                    _write_json(log_dir, "output.context.plan.json", plan_bundle)
+                except Exception:
+                    pass
+        else:
+            recent = sess.recent_for_model()
+
+            def _r3(v: float) -> float:
+                try:
+                    return round(float(v), 3)
+                except Exception:
+                    return float(v)
+
+            lite_ctx = AIStrokePayload(
+                version=1,
+                intent="complete",
+                strokes=[
+                    AIStrokeV11(
+                        id=s["id"],
+                        tool=s.get("tool", "pen"),
+                        points=[[ _r3(p[0]), _r3(p[1]) ] for p in s.get("points", [])],
+                        style=StrokeStyle(
+                            size=((s.get("style") or {}).get("size") or "m"),
+                            color=((s.get("style") or {}).get("color") or "black"),
+                            opacity=float((s.get("style") or {}).get("opacity") or 1.0),
+                        ),
+                        meta=s.get("meta") or {},
+                    )
+                    for s in recent
+                ],
+            )
+            fake = SuggestRequest(
+                context=lite_ctx,
+                hint=req.hint,
+                model=req.model,
+                temperature=req.temperature,
+                top_p=req.top_p,
+                max_tokens=req.max_tokens,
+                gen_scale=req.gen_scale,
+            )
+            messages = prompting.build_messages_by_mode(fake, getattr(req, "mode", None))
+            if LOG_IO:
+                try:
+                    _write_json(log_dir, "input.messages.json", messages)
+                except Exception:
+                    pass
     else:
         # Remain compatible with legacy full-context payloads.
         if not req.context:
@@ -343,7 +396,7 @@ def suggest(req: SuggestRequest):
             except Exception: pass
 
     # MOCK shortcut: serve a deterministic payload when no key or demo mode.
-    if MOCK:
+    if MOCK and not used_context_executor:
         pid = f"ai_{int(time.time())}_{random.randint(1000,9999)}"
         payload = AIStrokePayload(
             version=1,
@@ -373,13 +426,14 @@ def suggest(req: SuggestRequest):
         if new_sid:
             usage["new_sid"] = new_sid
         return SuggestResponse(ok=True, payload=payload, usage=usage)
-    obj, dbg = call_chat_completions(
-        messages=messages,
-        model=req.model,
-        temperature=req.temperature or 0.4,
-        top_p=req.top_p or 0.95,
-        max_tokens=req.max_tokens or 1024,
-    )
+    if not used_context_executor:
+        obj, dbg = call_chat_completions(
+            messages=messages,
+            model=req.model,
+            temperature=req.temperature or 0.4,
+            top_p=req.top_p or 0.95,
+            max_tokens=req.max_tokens or 1024,
+        )
     
     # Normalizer: turn raw LLM strokes into clean renderable data.
     def _clamp01(v: float) -> float:

@@ -17,15 +17,14 @@ if str(_SRC) not in sys.path:
 from semantic_graph import (
     BlockManager,
     BlockSummarizer,
+    ContextExecutor,
     ConversationOrchestrator,
+    FocusContext,
     Fragment,
     FragmentType,
     GraphState,
     OrchestratorContext,
     PlanBackend,
-    PromptBackend,
-    PromptContext,
-    PromptExecutor,
     TextEmbedder,
     VisionBackend,
     VisionGrouper,
@@ -36,6 +35,7 @@ from semantic_graph.models import GroupNotFoundError
 
 from app.embedding_client import embed_text
 from app.llm_client import call_chat_completions
+from app import prompting
 
 DEFAULT_LLM_MODEL = os.getenv("GRAPH_LLM_MODEL") or os.getenv("OPENAI_MODEL") or "gpt-4o"
 DEFAULT_PLAN_MODEL = os.getenv("GRAPH_PLAN_MODEL") or DEFAULT_LLM_MODEL
@@ -67,9 +67,18 @@ class OpenAIEmbedder(TextEmbedder):
 
 
 class LLMBlockSummarizer(BlockSummarizer):
-    def __init__(self, model: str = DEFAULT_SUMMARY_MODEL, max_tokens: int = 400) -> None:
+    def __init__(self, model: str = DEFAULT_SUMMARY_MODEL, max_tokens: int = 400, *, roster_limit: int = 12) -> None:
         self.model = model
         self.max_tokens = max_tokens
+        self.roster_limit = roster_limit
+        self._block_provider = lambda: []
+        self._canvas_size: tuple[float, float] = (1920.0, 1080.0)
+
+    def set_block_provider(self, provider) -> None:
+        self._block_provider = provider
+
+    def set_canvas_size(self, size: tuple[float, float]) -> None:
+        self._canvas_size = size
 
     def propose_block(self, fragments: List[Fragment]) -> tuple[str, str]:
         payload = {
@@ -80,9 +89,9 @@ class LLMBlockSummarizer(BlockSummarizer):
             {
                 "role": "system",
                 "content": (
-                    "你是知识图谱维护助手。根据提供的画布片段生成块标签和摘要。"
-                    "始终返回 JSON 对象 {\"label\": str, \"summary\": str}。"
-                    "label 应精炼、<=40 字符，summary 需兼顾上下文用途。"
+                    "你是知识图谱维护助手。根据提供的画布片段生成块标签和摘要。\n"
+                    "始终返回 JSON 对象 {\"label\": str, \"summary\": str}。\n"
+                    "label 应精炼、<=40 字符，summary 需兼顾上下文用途。\n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -92,25 +101,114 @@ class LLMBlockSummarizer(BlockSummarizer):
         summary = _normalize_text(parsed.get("summary") if isinstance(parsed, dict) else None) or label
         return label, summary
 
-    def refine_summary(self, block, fragments: List[Fragment]) -> str:
+    def refine_summary(self, block, fragments: List[Fragment]) -> Dict[str, object]:
+        roster = self._build_roster(block.block_id)
         payload = {
-            "task": "refine",
-            "block": {"id": block.block_id, "label": block.label, "summary": block.summary},
-            "fragments": [_fragment_export(f) for f in fragments],
+            "task": "refresh",
+            "block": {
+                "id": block.block_id,
+                "label": block.label,
+                "summary": block.summary or "",
+            },
+            "fragments": [self._summarize_fragment(fragment) for fragment in fragments],
+            "others": roster,
+            "canvas": {"size": [self._canvas_size[0], self._canvas_size[1]]},
         }
         messages = [
             {
                 "role": "system",
                 "content": (
-                    "基于现有块信息生成更新后的摘要，保持 label 稳定。"
-                    "输出 JSON {\"summary\": str}，摘要需≤220字符并覆盖新增要点。"
+                    "你正在维护画布知识块。\n"
+                    "1. 在220字以内重写该块的摘要，覆盖当前全部要点。\n"
+                    "2. 推断该块与其它块的语义/功能/视觉关系。\n"
+                    "仅返回 JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}。\n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
         ]
         parsed, _ = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
-        summary = _normalize_text(parsed.get("summary") if isinstance(parsed, dict) else None)
-        return summary or block.summary
+        summary = _normalize_text(parsed.get("summary") if isinstance(parsed, dict) else None) or block.summary or ""
+        relationships = []
+        if isinstance(parsed, dict):
+            relationships = self._sanitize_relationships(parsed.get("relationships"), block.block_id)
+        return {"summary": summary[:220], "relationships": relationships}
+
+    def _build_roster(self, current_block_id: str) -> List[Dict[str, object]]:
+        roster: List[Dict[str, object]] = []
+        provider = self._block_provider or (lambda: [])
+        for other in provider():
+            if other.block_id == current_block_id:
+                continue
+            info: Dict[str, object] = {
+                "id": other.block_id,
+                "label": other.label,
+            }
+            if other.summary:
+                info["summary"] = other.summary[:160]
+            if other.position:
+                x0, y0, x1, y1 = other.position
+                info["bbox"] = [round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1)]
+            roster.append(info)
+            if len(roster) >= self.roster_limit:
+                break
+        return roster
+
+    def _summarize_fragment(self, fragment: Fragment) -> Dict[str, object]:
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        if fragment.fragment_type == FragmentType.TEXT:
+            text = (fragment.text or "").strip()
+            return {
+                "id": fragment.fragment_id,
+                "type": "text",
+                "text": text[:320],
+            }
+        desc: Dict[str, object] = {
+            "id": fragment.fragment_id,
+            "type": "stroke",
+        }
+        if fragment.bbox:
+            x0, y0, x1, y1 = fragment.bbox
+            desc["bbox"] = [round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1)]
+        if isinstance(payload, dict):
+            tool = payload.get("tool")
+            if tool:
+                desc["tool"] = tool
+            meta = payload.get("meta")
+            if isinstance(meta, dict):
+                summary_meta = {k: v for k, v in meta.items() if k in {"desc", "summary", "note"}}
+                if summary_meta:
+                    desc["meta"] = summary_meta
+        return desc
+
+    def _sanitize_relationships(self, relationships, current_block_id: str) -> List[Dict[str, object]]:
+        if not isinstance(relationships, list):
+            return []
+        cleaned: List[Dict[str, object]] = []
+        for rel in relationships:
+            if not isinstance(rel, dict):
+                continue
+            rel_type = _normalize_text(rel.get("type"))
+            target = _normalize_text(rel.get("target"))
+            if not rel_type or not target or target == current_block_id:
+                continue
+            item: Dict[str, object] = {
+                "type": rel_type,
+                "target": target,
+            }
+            score = rel.get("score")
+            try:
+                if score is not None:
+                    item["score"] = float(score)
+            except Exception:
+                pass
+            for key, value in rel.items():
+                if key in {"type", "target", "score"}:
+                    continue
+                item[key] = value
+            cleaned.append(item)
+            if len(cleaned) >= self.roster_limit:
+                break
+        return cleaned
 
 
 class LLMPlanBackend(PlanBackend):
@@ -128,21 +226,6 @@ class LLMPlanBackend(PlanBackend):
             return json.dumps({"action": "NOOP", "targetBlockIds": [], "comment": "invalid planner output"}, ensure_ascii=False)
 
 
-class LLMPromptBackend(PromptBackend):
-    def __init__(self, model: str = DEFAULT_LLM_MODEL, max_tokens: int = 800) -> None:
-        self.model = model
-        self.max_tokens = max_tokens
-
-    def complete(
-        self,
-        messages: List[Dict[str, str]],
-        *,
-        mode: Optional[str] = None,
-    ) -> Dict[str, object]:
-        parsed, _ = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
-        if isinstance(parsed, dict):
-            return parsed
-        return {"assistant_reply": str(parsed), "block_annotation": {}}
 
 
 class NoopVisionBackend(VisionBackend):
@@ -182,16 +265,34 @@ class GraphRuntime:
             summarizer=self.summarizer,
             canvas_size=(float(width), float(height)),
         )
+        self.summarizer.set_block_provider(lambda: self.block_manager.state.blocks.values())
+        self.summarizer.set_canvas_size(self.block_manager.canvas_size)
+
         self.plan_backend = LLMPlanBackend(model=plan_model or DEFAULT_PLAN_MODEL)
         self.orchestrator = ConversationOrchestrator(
             self.block_manager, embedder=self.embedder, plan_backend=self.plan_backend
         )
-        self.prompt_backend = LLMPromptBackend(model=prompt_model or DEFAULT_LLM_MODEL)
-        self.executor = PromptExecutor(self.block_manager, backend=self.prompt_backend)
+        self.context_executor = ContextExecutor(
+            self.block_manager,
+            llm_full_backend=self._call_full_backend,
+            build_full_messages=prompting.build_messages,
+            build_light_messages=prompting.build_messages_light,
+        )
         self.vision_backend = NoopVisionBackend()
         self.vision = VisionGrouper(self.block_manager, backend=self.vision_backend)
         self.context = OrchestratorContext()
         self._seen_fragment_ids: Set[str] = set()
+
+    def _call_full_backend(self, messages: List[Dict[str, str]], *, mode: Optional[str] = None) -> Dict[str, object]:
+        parsed, dbg = call_chat_completions(messages, model=DEFAULT_LLM_MODEL, max_tokens=900)
+        if isinstance(parsed, dict):
+            return parsed
+        if isinstance(parsed, str):
+            try:
+                return json.loads(parsed)
+            except Exception as exc:
+                raise RuntimeError(f"LLM returned non-JSON response: {parsed!r}") from exc
+        raise RuntimeError(f"Unexpected LLM response: {type(parsed)!r}")
 
     def ingest_strokes(self, strokes: Iterable[Dict[str, object]]) -> GraphIngestResult:
         new_fragments: List[str] = []
@@ -290,19 +391,28 @@ class GraphRuntime:
             focus_block_id=focus_block_id,
             focus_fragment_id=focus_fragment_id,
         )
-        ctx = PromptContext(
+        focus_context = FocusContext(
             main_block_id=self.orchestrator.context.main_block_id,
             active_block_ids=list(self.orchestrator.context.active_block_ids),
         )
-        assistant = self.executor.execute(plan, user_input, ctx, mode=mode)
+        exec_mode = (mode or "").lower()
+        if not exec_mode and plan.action:
+            candidate = plan.action.lower()
+            if candidate in {"full", "light"}:
+                exec_mode = candidate
+        response = self.context_executor.execute(
+            plan,
+            user_hint=user_input,
+            mode=exec_mode or None,
+            context=focus_context,
+        )
         return {
             "plan": {
                 "action": plan.action,
                 "targetBlockIds": plan.target_block_ids,
                 "comment": plan.comment,
             },
-            "assistant_reply": assistant.assistant_reply,
-            "block_annotation": assistant.block_annotation,
+            "payload": response,
         }
 
     # ----------------------------- helpers ----------------------------- #
@@ -331,6 +441,7 @@ class GraphRuntime:
             "tool": tool,
             "style": stroke.get("style"),
             "meta": meta_payload,
+            "points": stroke.get("points"),
         }
         return Fragment(
             fragment_id=stroke_id,

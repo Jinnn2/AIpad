@@ -151,7 +151,23 @@ class BlockManager:
                 assignment.promoted_block_id = promoted_block.block_id
             return assignment
 
-        print(f"[graph][cluster] fragment={fragment.fragment_id} starts new block (no cluster match)")
+        # No matching block or group -> start a new pending group
+        group_id = self._assign_to_group(fragment.fragment_id, feature_vec, allow_create=True)
+        if group_id:
+            print(f"[graph][cluster] fragment={fragment.fragment_id} seeded new group={group_id}")
+            assignment.status = "group"
+            assignment.group_id = group_id
+            self._group_touch_counts[group_id] += 1
+            if self._should_promote_group(group_id):
+                print(f"[graph][cluster] promote group={group_id} after assignment {fragment.fragment_id}")
+                promoted_block = self.promote_group(group_id)
+                assignment.status = "block"
+                assignment.block_id = promoted_block.block_id
+                assignment.promoted_block_id = promoted_block.block_id
+            return assignment
+
+        # Fallback safety: create block if group assignment failed
+        print(f"[graph][cluster] fragment={fragment.fragment_id} fallback creates block")
         new_block = self._create_block_from_fragment(fragment)
         assignment.status = "block"
         assignment.block_id = new_block.block_id
@@ -525,11 +541,33 @@ class BlockManager:
             if not refresh_needed:
                 return
         fragments = [self.state.fragments[fid] for fid in block.contents]
-        block.summary = self.summarizer.refine_summary(block, fragments)
+        summary_payload = self.summarizer.refine_summary(block, fragments)
+        if isinstance(summary_payload, dict):
+            summary_text = str(summary_payload.get("summary") or block.summary or "").strip()
+            relationships = summary_payload.get("relationships")
+        else:
+            summary_text = str(summary_payload or block.summary or "").strip()
+            relationships = None
+
+        if summary_text:
+            block.summary = summary_text[:220]
+        now = datetime.utcnow()
         block.revision += 1
         block.last_summary_member_count = member_count
-        block.last_summary_ts = datetime.utcnow()
-        block.updated_at = datetime.utcnow()
+        block.last_summary_ts = now
+        block.updated_at = now
+
+        if relationships is not None:
+            try:
+                annotation = {"summary": block.summary, "relationships": relationships}
+                self.register_block_annotation(block_id, annotation)
+            except Exception as exc:
+                print(f"[graph][summary] failed to register relationships for {block_id}: {exc}")
+        else:
+            # ensure metadata updated even when no relationships provided
+            block.last_summary_member_count = member_count
+            block.last_summary_ts = now
+            block.updated_at = now
 
     def get_block_id_for_fragment(self, fragment_id: str) -> Optional[str]:
         return self._fragment_to_block.get(fragment_id)

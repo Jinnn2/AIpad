@@ -1,9 +1,9 @@
-"""
+﻿"""
 Semantic graph orchestration package that powers the upgraded workflow.
 """
 
 from .block_manager import BlockManager, BlockSummarizer, TextEmbedder, FragmentAssignment
-from .executor import PromptContext, PromptExecutor, PromptBackend
+from .executor import ContextExecutor, FocusContext
 from .models import (
     AssistantReply,
     Block,
@@ -25,18 +25,17 @@ __all__ = [
     "BlockRelationship",
     "BlockRelationshipType",
     "BlockSummarizer",
+    "ContextExecutor",
     "ConversationOrchestrator",
     "ExecutionPlan",
     "FragmentAssignment",
     "Fragment",
     "FragmentType",
+    "FocusContext",
     "GraphState",
     "Group",
     "OrchestratorContext",
     "PlanBackend",
-    "PromptBackend",
-    "PromptContext",
-    "PromptExecutor",
     "TextEmbedder",
     "VisionBackend",
     "VisionGrouper",
