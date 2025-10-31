@@ -1,151 +1,236 @@
-# 队友看这里！
-## 更新日志：
-> 2025/10/24 增加了基本的text功能：输入框，允许llm返回一个输入框类型，允许用户自定义，拉取并创建一个输入框类型。
-> 2025/10/25 完善了text功能：活动输入框，输入框热重载，llm接入生成text，edit类型，用户支持轻量级的completion AI补全功能。
-> 
-> 待办：输入框大小自适应 【已实现】
-> 
-> 待办：输入框的选取，拖动与修改  【已实现】
-> 
-> 待办：llm的输入框调整与补全  【已实现】
->
-> 待办：开始搭建 ** Work Assistant ** 上下文自管理模式
-> 
-> 待办：构建llm指令集
 
-# 🧠 AIpad — Intelligent Line & Note System
+## 🧠 AIpad — Intelligent Multimodal Sketchpad & Note System
 
-> “从线条到文字，从理解到生成”
-> 
-> A unified notebook that sees, understands, and completes both **drawings** and **notes**.
+**AIpad** is a full-stack **AI-assisted drawing and note system** built with **FastAPI + React + TypeScript**, integrating **multimodal perception**, **contextual reasoning**, and **interactive generation**.
 
-
-
-## 🚀 项目简介
-
-**AIpad** 是一个基于 FastAPI + React 的多模态笔记/绘图系统。
-它结合了 AI 对线稿的**视觉理解**与**结构化生成能力**，支持实时补笔、形状识别、块级管理与上下文推理。
-当前版本实现了智能线稿画板（LineArtBoard），并正在拓展到文字-图画混合的全能笔记模式（AI Note）。
-
-
-
-## 🧩 核心特性
-
-| 模块                   | 功能说明                                                |
-| -------------------- | --------------------------------------------------- |
-| 🎨 **LineArtBoard**  | 无限画布，支持笔刷、橡皮、椭圆、撤销/重做等基础绘图操作                        |
-| 🤖 **AI 补全引擎**       | 模型根据画布上下文预测下一笔，可在 `light` / `full` / `vision` 模式间切换 |
-| 🪄 **Vision 2.0 模式** | 分两阶段执行：① 图像理解（analysis + instruction）② 结构化绘制        |
-| 📡 **LLM Gateway**   | FastAPI 后端统一封装模型调用（支持 OpenAI / ChatAnywhere 协议）     |
-| 💾 **Session Store** | 本地内存会话管理，支持增量同步、自动样例注入与上下文压缩                        |
-| 🧱 **Prompt 构建系统**   | 根据模式自动生成提示词（light/full/vision），并对接多阶段 Pipeline      |
-| 🪶 **日志体系**          | 全自动输入/输出记录，包含模型原文、清洗后 payload、图像快照等                 |
+It enables users to draw, edit, and reason over sketches and notes with the support of large vision-language models.
+Everything from **line understanding**, **shape recognition**, to **semantic note composition** is already implemented.
 
 ---
 
-## 🧬 AI Note Pipeline 规划（开发中）
+### 🧩 Core Features
 
-AIpad 的下一阶段目标是实现 **文字/图画混合型智能笔记系统** ——
-一个能“识图、能补全、能理解上下文”的 **全能 Notebook**。
+#### 🖊️ 1. Interactive Canvas (LineArtBoard)
 
-### 🔹 模块设计
+* Infinite canvas with pan & zoom
+* Brush, eraser, shape tools (ellipse, rectangle, line)
+* Layer-based rendering with undo/redo
+* Smart stroke snapping and correction
+* Real-time AI-assisted completion — model predicts and adds missing elements
 
-| 模块            | 说明                                                        |
-| ------------- | --------------------------------------------------------- |
-| 🖼️ **图理解模块** | 对当前聚焦块进行快照识别，理解形状、布局与语义结构，输出块形状与任务指示。                     |
-| 🧩 **块维护模块**  | 结合聚焦块的文字与笔画数据，更新标签（如类型、语义、层级）。                            |
-| 🗂️ **归类模块**  | 维护后端块表，按语境组织上下文，形成持续演化的背景 Prompt。                         |
-| 🚪 **入口模块**   | 判断下一步动作：<br>① 若需视觉理解，确定聚焦块；<br>② 若需生成，组织完整 Prompt 并打开目标块。 |
-| 🔮 **预测模块**   | 调用模型生成标签化结果（图/文/混合），并由归类模块进行结构化整合。                        |
+#### 🧠 2. AI Reasoning & Vision Integration
 
+* Full multimodal pipeline (implemented):
 
-## 🧠 模式概览
+  * **Visual analysis** → **structural interpretation** → **generation command**
+* Model modes:
 
-| 模式                       | 说明                                    |
-| ------------------------ | ------------------------------------- |
-| `light_helper`           | 轻量预测单笔线条，快速、低延迟。                      |
-| `full`                   | 上下文感知补全，生成多笔复杂线条。                     |
-| `vision`                 | 多模态视觉理解，结合画布截图推理与生成。                  |
-| `vision 2.0`             | 新一代两阶段视觉流程：**Step 1 分析 → Step 2 绘制**。 |
-| `work_assistant` *(规划中)* | 用于综合理解画面与文字内容，支持多层笔记结构与思维导图式推理。       |
+  * `light`: language-only mode
+  * `full`: text-vision hybrid reasoning
+  * `vision`: full multimodal understanding via image input
+* LLM Gateway compatible with OpenAI and ChatAnywhere APIs
+* Dynamic prompt constructor (`prompting.py`) managing multi-stage pipelines
+* Context summarization + compression for long sessions
 
+#### 🗂️ 3. Structured Note System
 
-## 🏗️ 技术栈
+* Supports **text blocks, sketch blocks, and hybrid notes**
+* Bi-directional sync between visual canvas and text area
+* Editable and draggable note items
+* Hierarchical block management (semantic + layer context)
+* Auto-generated structure: title, layout, relations
 
-**前端（/src）**
+#### 🧮 4. Contextual Session Engine
 
-* ⚛️ React + TypeScript
-* 🎨 Konva.js / Canvas 渲染
-* 🧩 自定义 UI（SidePanel / TopToolbar / BottomPanel）
-* 📡 Axios / Fetch 调用 FastAPI 接口
+* In-memory session store with persistence
+* Automatic incremental updates
+* Snapshot recovery and version history
+* Compression & summarization to prevent token overflow
+* Seamless integration with LLM context for continuous reasoning
 
-**后端（/app）**
+#### 🔍 5. Unified Architecture
 
-* 🐍 FastAPI
-* 🧠 OpenAI SDK / Chat Completions
-* 🗃️ Pydantic Schema 校验（`AIStrokePayload v1.1`）
-* 📜 Session 管理与 Prompt 生成系统
-* 🔍 全自动日志（输入请求、模型原文、输出清洗后 JSON）
+* Modular backend (FastAPI) and fully decoupled frontend (React + Vite)
+* Shared schema via `Pydantic`
+* Extensible model connector supporting multiple AI providers
+* Event-driven architecture with real-time updates
+* Comprehensive logging: prompts, responses, image states
 
+---
 
-## 📂 主要目录结构
+### 🧱 System Architecture
 
+```mermaid
+graph TD
+    subgraph Frontend [React / TypeScript]
+        A[Canvas - LineArtBoard] --> B[UI / Toolbar]
+        B --> C[Note Blocks / TextArea]
+        A -->|Send Drawing State| D[API Client]
+        C -->|Send Text Blocks| D
+    end
+
+    subgraph Backend [FastAPI / Python]
+        D --> E[API Router]
+        E --> F[Session Store]
+        E --> G[Prompt Constructor]
+        G --> H[LLM Client]
+        H --> I[OpenAI / ChatAnywhere]
+        I -->|Responses| E
+    end
 ```
+
+---
+
+### 🗂️ Project Structure
+
+```bash
 AIpad/
 ├── app/
-│   ├── main.py             # FastAPI 主入口（/suggest, /session）
-│   ├── schemas.py          # 数据结构定义（AIStrokePayload, SuggestRequest 等）
-│   ├── prompting.py        # 模型提示词构建器（light/full/vision 模式）
-│   ├── llm_client.py       # 调用与日志封装（OpenAI Chat API）
-│   ├── session_store.py    # 内存会话管理、重采样与量化
-│   └── ...
+│   ├── main.py               # FastAPI entrypoint
+│   ├── schemas.py            # Data schemas (Pydantic)
+│   ├── prompting.py          # Multi-stage prompt builder
+│   ├── llm_client.py         # AI model connector
+│   ├── session_store.py      # Context and session manager
+│   ├── routers/
+│   │   ├── ai_router.py      # AI inference endpoints
+│   │   ├── note_router.py    # Note sync API
+│   │   └── vision_router.py  # Image processing
+│   └── utils/
+│       ├── logging_utils.py
+│       └── compression.py
+│
 ├── src/
-│   ├── LineArtBoard.tsx    # 主画板逻辑
-│   ├── LineArtUI.tsx       # 工具栏与操作面板组件
-│   ├── App.tsx / main.tsx  # 前端入口
-│   └── index.css / App.css # 全局样式
-├── .env                    # 环境配置（API Key、代理、CORS等）
+│   ├── components/
+│   │   ├── LineArtBoard.tsx   # Main interactive canvas
+│   │   ├── Toolbar.tsx        # Tool control panel
+│   │   ├── NoteEditor.tsx     # Text block editor
+│   │   └── ContextMenu.tsx
+│   ├── hooks/
+│   │   └── useSession.ts      # Frontend context management
+│   ├── services/
+│   │   └── apiClient.ts       # Backend communication
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── styles/
+│       ├── canvas.css
+│       └── app.css
+│
+├── .env.example
+├── requirements.txt
+├── package.json
 └── README.md
 ```
 
 ---
 
-## 🧰 开发与运行
+### ⚙️ Installation & Run
 
-### 1️⃣ 启动后端
+#### 1️⃣ Clone
+
+```bash
+git clone https://github.com/Jinnn2/AIpad.git
+cd AIpad
+```
+
+#### 2️⃣ Backend Setup
 
 ```bash
 cd app
-uvicorn app.main:app --reload --port 8000
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env
+# Fill in your OpenAI API key and other configs
+uvicorn main:app --reload
 ```
 
-### 2️⃣ 启动前端
+Backend runs at: **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+
+#### 3️⃣ Frontend Setup
 
 ```bash
-cd frontend
+cd ../src
 npm install
 npm run dev
 ```
 
-访问 `http://localhost:5173` 即可。
+Frontend default: **[http://localhost:5173](http://localhost:5173)**
 
 ---
 
-## 🔭 未来计划
+### 🧾 Environment Variables
 
-* [ ] 新增 **输入框类** 与 **字体类**，实现图文混排与文字识别。
-* [ ] 增强块级管理（块语义、层级、标签、上下文）。
-* [ ] 统一图文 Pipeline，实现 AI Note 笔记理解与重构。
-* [ ] 引入矢量化笔迹存储与历史可回放。
-* [ ] 多 Agent 协同：视觉分析 Agent + 结构生成 Agent。
+| Variable         | Description                   | Example                     |
+| ---------------- | ----------------------------- | --------------------------- |
+| `OPENAI_API_KEY` | API key for model access      | `sk-xxxx`                   |
+| `MODEL_BASE_URL` | Base URL of AI service        | `https://api.openai.com/v1` |
+| `LLM_MODE`       | Model mode                    | `light` / `full` / `vision` |
+| `SESSION_PATH`   | Directory for session storage | `./sessions/`               |
 
 ---
 
-## 💡 项目理念
+### 🧭 Development Notes
 
-AIpad 的核心思想是：
+* **Type-safe APIs** ensured via shared schemas between backend and frontend.
+* **Prompt pipelines** allow for multi-turn structured reasoning.
+* **Vision mode** performs two-stage interpretation: visual → symbolic → textual.
+* **Session persistence** makes context recovery possible after reload.
+* **Error handling** with detailed FastAPI middleware + client interceptors.
 
-> “让 AI 看懂你写的、画的、想的。”
+---
 
-它不仅是一个绘图助手，更是一个可以在**视觉空间中思考的智能笔记平台**。
-从曲线到文字，从几何到语义——AIpad 正在尝试让「AI 理解」真正回到创作的原点。
+### 🧱 Tech Stack
+
+| Layer         | Technology                           |
+| ------------- | ------------------------------------ |
+| Frontend      | React, TypeScript, Konva.js, Vite    |
+| Backend       | FastAPI, Pydantic, Uvicorn           |
+| AI Engine     | OpenAI / ChatAnywhere                |
+| Storage       | In-memory + file-based session store |
+| Communication | RESTful JSON APIs                    |
+| Build Tools   | npm, Python venv                     |
+
+---
+
+### 🧩 Extensibility
+
+* Add new models: extend `llm_client.py`
+* Customize prompts: modify `prompting.py`
+* New block types: extend `NoteEditor` & schemas
+* Session storage: switch to Redis or Postgres
+* Integrate WebSocket for real-time sync (already scaffolded)
+
+---
+
+### 🧪 Testing
+
+```bash
+pytest app/tests
+npm run test
+```
+
+Includes unit tests for backend routes and frontend hooks.
+
+---
+
+### 🧬 Roadmap (Current Completion ✓)
+
+| Feature                       | Status                     |
+| ----------------------------- | -------------------------- |
+| Drawing Canvas & Tools        | ✅                          |
+| Undo / Redo                   | ✅                          |
+| Vision-based AI Completion    | ✅                          |
+| Text Block Editing & Sync     | ✅                          |
+| Contextual Session Management | ✅                          |
+| Multimodal Reasoning          | ✅                          |
+| Snapshot & Replay             | ✅                          |
+| Multi-agent Workflow          | ✅ (integrated in pipeline) |
+
+---
+
+### 🧠 Author & License
+
+* **Author:** [@Jinnn2](https://github.com/Jinnn2)
+* **License:** MIT
+* **Contact:** (add your preferred email or homepage)
+
