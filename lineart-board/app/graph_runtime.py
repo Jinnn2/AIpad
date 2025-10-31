@@ -341,6 +341,7 @@ class GraphRuntime:
                     "blockId": block.block_id,
                     "label": block.label,
                     "summary": block.summary,
+                    "position": block.position,
                     "contents": list(block.contents),
                     "relationships": [
                         {

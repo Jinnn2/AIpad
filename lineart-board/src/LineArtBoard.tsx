@@ -9,6 +9,7 @@ import {
   Text as KText,
   Label as KLabel,
   Tag as KTag,
+  Arrow as KArrow,
 } from 'react-konva'
 import type { AIStrokePayload, AIStrokeV11, ColorName, PromptMode } from './ai/types'
 import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/normalize'
@@ -584,16 +585,22 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       const blockColor = blockColorMap[block.blockId] ?? '#94a3b8'
       const entries: GraphBlockCardFragment[] = []
       let blockBBox: [number, number, number, number] | null = null
+      const positionBBox = Array.isArray(block.position) && block.position.length === 4
+        ? (block.position as [number, number, number, number])
+        : null
       candidateIds.forEach((fragId) => {
         const frag = fragmentMap.get(fragId)
         if (!frag) return
         const lowerType = String(frag.type || '').toLowerCase()
         const shape = shapeById.get(frag.id) ?? null
         const shapeBBox = resolveShapeBBox(shape)
-        const fragBBox = frag.bbox && frag.bbox.length === 4 ? frag.bbox as [number, number, number, number] : shapeBBox
+        const fragBBox =
+          frag.bbox && frag.bbox.length === 4
+            ? (frag.bbox as [number, number, number, number])
+            : shapeBBox
         const rawText = (frag.text ?? shape?.summary ?? shape?.text ?? '').toString().trim()
         const summary =
-          rawText.length > 120 ? `${rawText.slice(0, 120)}…` : (rawText || '(无摘要)')
+          rawText.length > 120 ? `${rawText.slice(0, 120)}…` : rawText || '(无摘要)'
         entries.push({
           id: frag.id,
           type: lowerType || 'unknown',
@@ -602,6 +609,19 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
         })
         blockBBox = mergeBBox(blockBBox, fragBBox ?? shapeBBox ?? null)
       })
+      blockBBox = mergeBBox(blockBBox, positionBBox)
+      const center = blockBBox
+        ? { x: (blockBBox[0] + blockBBox[2]) / 2, y: (blockBBox[1] + blockBBox[3]) / 2 }
+        : positionBBox
+          ? { x: (positionBBox[0] + positionBBox[2]) / 2, y: (positionBBox[1] + positionBBox[3]) / 2 }
+          : null
+      const relations = Array.isArray(block.relationships)
+        ? block.relationships.map((rel) => ({
+            target: String(rel.target),
+            type: String(rel.type),
+            score: Number(rel.score ?? 0),
+          }))
+        : []
       return {
         blockId: block.blockId,
         label: block.label,
@@ -610,9 +630,100 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
         color: blockColor,
         fragments: entries,
         bbox: blockBBox,
+        center,
+        relationships: relations,
       }
     })
   }, [graphSnapshot, blockColorMap, shapeById])
+  const clipPointToRect = useCallback(
+    (
+      origin: { x: number; y: number },
+      bbox: [number, number, number, number] | null,
+      toward: { x: number; y: number },
+    ) => {
+      if (!bbox) return origin
+      const dx = toward.x - origin.x
+      const dy = toward.y - origin.y
+      const len = Math.hypot(dx, dy)
+      if (!Number.isFinite(len) || len < 1e-3) return origin
+      const [x0, y0, x1, y1] = bbox
+      const ratios: number[] = []
+      if (dx > 0) ratios.push((x1 - origin.x) / dx)
+      if (dx < 0) ratios.push((x0 - origin.x) / dx)
+      if (dy > 0) ratios.push((y1 - origin.y) / dy)
+      if (dy < 0) ratios.push((y0 - origin.y) / dy)
+      const positive = ratios.filter((value) => Number.isFinite(value) && value > 0)
+      if (!positive.length) return origin
+      const t = Math.min(...positive)
+      const margin = Math.min(12 / len, t * 0.25)
+      const adjusted = Math.max(0, t - margin)
+      return {
+        x: origin.x + dx * adjusted,
+        y: origin.y + dy * adjusted,
+      }
+    },
+    [],
+  )
+  const graphRelationshipEdges = useMemo(() => {
+    const edges: Array<{
+      key: string
+      points: [number, number, number, number]
+      color: string
+      label: string
+      labelPos: { x: number; y: number }
+    }> = []
+    const centerMap = new Map<
+      string,
+      { center: { x: number; y: number } | null; bbox: [number, number, number, number] | null; color: string }
+    >()
+    graphBlockCards.forEach((card) => {
+      centerMap.set(card.blockId, { center: card.center, bbox: card.bbox, color: card.color })
+    })
+    const seen = new Set<string>()
+    for (const card of graphBlockCards) {
+      if (!card.center || !card.relationships.length) continue
+      const sourceInfo = centerMap.get(card.blockId)
+      if (!sourceInfo || !sourceInfo.center) continue
+      for (const rel of card.relationships) {
+        const targetInfo = centerMap.get(rel.target)
+        if (!targetInfo || !targetInfo.center) continue
+        const key = `${card.blockId}->${rel.target}:${rel.type}`
+        const reverseKey = `${rel.target}->${card.blockId}:${rel.type}`
+        if (seen.has(key) || seen.has(reverseKey)) continue
+        seen.add(key)
+        const startPoint = clipPointToRect(sourceInfo.center, sourceInfo.bbox, targetInfo.center)
+        const endPoint = clipPointToRect(targetInfo.center, targetInfo.bbox, sourceInfo.center)
+        const dx = endPoint.x - startPoint.x
+        const dy = endPoint.y - startPoint.y
+        const len = Math.hypot(dx, dy)
+        if (!Number.isFinite(len) || len < 24) continue
+        const midX = startPoint.x + dx * 0.5
+        const midY = startPoint.y + dy * 0.5
+        const offset = Math.min(28, len * 0.12)
+        const norm = len || 1
+        const labelPos = {
+          x: midX + (-dy / norm) * offset,
+          y: midY + (dx / norm) * offset,
+        }
+        const typeLabelRaw = String(rel.type || '')
+        const typeLabel = typeLabelRaw
+          .replace(/_/g, ' ')
+          .replace(/\b\w/g, (s) => s.toUpperCase())
+        const label =
+          Number.isFinite(rel.score) && rel.score !== undefined && rel.score !== null
+            ? `${typeLabel} (${Number(rel.score).toFixed(2)})`
+            : typeLabel
+        edges.push({
+          key,
+          points: [startPoint.x, startPoint.y, endPoint.x, endPoint.y],
+          color: card.color,
+          label,
+          labelPos,
+        })
+      }
+    }
+    return edges
+  }, [graphBlockCards, clipPointToRect])
   const focusOnBBox = useCallback((bbox: [number, number, number, number] | null | undefined) => {
     if (!bbox) return
     const [x0, y0, x1, y1] = bbox
@@ -655,8 +766,9 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     const target = graphBlockCards.find((block) => block.blockId === blockId)
     focusOnBBox(target?.bbox ?? null)
   }, [graphBlockCards, focusOnBBox])
-  const showGraphHighlights = graphInspectorVisible && autoMaintain && graphBlockCards.some(
-    (block) => (block.fragments && block.fragments.length > 0) || !!block.bbox,
+  const showGraphHighlights = graphInspectorVisible && autoMaintain && (
+    graphBlockCards.some((block) => (block.fragments && block.fragments.length > 0) || !!block.bbox)
+    || graphRelationshipEdges.length > 0
   )
   const promoteGroup = useCallback(async (groupId: string) => {
     if (!sid) {
@@ -2369,6 +2481,39 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         </Layer>
         {showGraphHighlights && (
           <Layer listening={false}>
+            {graphRelationshipEdges.map((edge) => (
+              <Group key={`edge:${edge.key}`} listening={false}>
+                <KArrow
+                  points={edge.points}
+                  stroke={edge.color}
+                  fill={edge.color}
+                  strokeWidth={2}
+                  pointerLength={16}
+                  pointerWidth={16}
+                  tension={0}
+                  lineCap="round"
+                  lineJoin="round"
+                  opacity={0.65}
+                />
+                <KLabel x={edge.labelPos.x} y={edge.labelPos.y} listening={false}>
+                  <KTag
+                    fill={hexToRgba(edge.color, 0.6)}
+                    stroke={edge.color}
+                    lineJoin="round"
+                    cornerRadius={6}
+                    shadowColor={edge.color}
+                    shadowBlur={6}
+                    shadowOpacity={0.18}
+                  />
+                  <KText
+                    text={edge.label}
+                    fontSize={12}
+                    fill="#0f172a"
+                    padding={6}
+                  />
+                </KLabel>
+              </Group>
+            ))}
             {graphBlockCards.map((block) => {
               const fragments = block.fragments?.filter((frag) => frag.type === 'text' && frag.bbox) ?? []
               const hasBlockBox = !!block.bbox
@@ -2659,6 +2804,7 @@ type GraphBlock = {
   contents: string[]
   relationships: Array<{ target: string; type: string; score: number }>
   updatedAt?: string
+  position?: [number, number, number, number] | null
 }
 
 type GraphGroup = {
@@ -2686,6 +2832,8 @@ type GraphBlockCard = {
   color: string
   fragments: GraphBlockCardFragment[]
   bbox: [number, number, number, number] | null
+  center: { x: number; y: number } | null
+  relationships: Array<{ target: string; type: string; score: number }>
 }
 
 type GraphSnapshot = {
