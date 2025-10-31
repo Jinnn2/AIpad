@@ -135,9 +135,9 @@ class ConversationOrchestrator:
         context_lines = []
         if main_block_id:
             main_info = summaries.get(main_block_id) or {}
-            context_lines.append(f"当前焦点块: {main_info.get('label', main_block_id)}")
+            context_lines.append(f"FOCUSED: {main_info.get('label', main_block_id)}")
         if summaries:
-            context_lines.append("相关块概览:")
+            context_lines.append("RELATED BLOCKS:")
             for block_id, info in summaries.items():
                 label = info.get("label", block_id)
                 summary = info.get("summary", "")
@@ -146,16 +146,12 @@ class ConversationOrchestrator:
                     context_lines.append(f"- [{label}] ({rel}) {summary}")
                 else:
                     context_lines.append(f"- [{label}] {summary}")
-        context_lines.append(f"用户输入: {user_input}")
-        user_prompt = "\n".join(context_lines) + "\n请输出 JSON: {\"action\":...,\"targetBlockIds\":[],\"comment\":\"\"}"
+        context_lines.append(f"USERS INPUT: {user_input}")
+        user_prompt = "\n".join(context_lines) + "\nPlease return JSON: {\"action\":...,\"targetBlockIds\":[],\"comment\":\"\"}"
         return [
             {
                 "role": "system",
-                "content": (
-                    "你是交互式白板编排器。阅读上下文，决定系统的下一步行为。"
-                    "必须返回 JSON，字段 action/targetBlockIds/comment。"
-                    "action 取 CONTINUE/SWITCH/OPEN_RELATED/CLOSE/NOOP 之一。"
-                ),
+                "content": system_prompt,
             },
             {"role": "user", "content": user_prompt},
         ]
@@ -178,19 +174,86 @@ class ConversationOrchestrator:
         targets = [str(i) for i in (parsed.get("targetBlockIds") or [])]
         comment = parsed.get("comment")
         return ExecutionPlan(action=action, target_block_ids=targets, comment=comment)
-
     def _update_context(self, main_block_id: Optional[str], plan: ExecutionPlan) -> None:
+        """
+        Update orchestrator context according to the plan.
+
+        Semantics after this patch:
+        - SWITCH:
+            * Replace the active set with target_block_ids.
+            * Move main focus to the first target.
+        - OPEN_RELATED:
+            * Add target_block_ids into the active set (union).
+            * Keep current main focus (do NOT force-switch focus).
+        - CLOSE:
+            * Remove target_block_ids from the active set.
+            * Keep current main focus (even if the closed block
+              was the main focus; higher-level logic may resolve that).
+        - CONTINUE / NOOP:
+            * No change to active set, no change to main focus.
+        """
+
         if plan.action == "SWITCH":
-            self.context.active_block_ids = plan.target_block_ids
+            # Hard context switch: we are now talking about these block(s).
+            self.context.active_block_ids = list(plan.target_block_ids)
+            # Switch main focus to the first specified target, if any.
+            if plan.target_block_ids:
+                self.context.main_block_id = plan.target_block_ids[0]
+
         elif plan.action == "OPEN_RELATED":
+            # Soft-open additional related blocks, but do NOT steal focus.
             current = set(self.context.active_block_ids)
             current.update(plan.target_block_ids)
             self.context.active_block_ids = list(current)
+            # main_block_id is intentionally NOT changed here.
+
         elif plan.action == "CLOSE":
-            remaining = [bid for bid in self.context.active_block_ids if bid not in plan.target_block_ids]
+            # Just remove these blocks from the active set.
+            remaining = [
+                bid for bid in self.context.active_block_ids
+                if bid not in plan.target_block_ids
+            ]
             self.context.active_block_ids = remaining
-        if plan.target_block_ids:
-            self.context.main_block_id = plan.target_block_ids[0]
-        elif main_block_id:
-            self.context.main_block_id = main_block_id
+            # Do NOT force main_block_id to a closed block.
+            # We leave main_block_id as-is.
+
+        # CONTINUE / NOOP:
+        #   No modification to active_block_ids or main_block_id.
+
+        # Fallback: if we still don't have a main_block_id set at all,
+        #           try to ensure we keep at least *some* focus.
+        if not getattr(self.context, "main_block_id", None):
+            if plan.action == "SWITCH" and plan.target_block_ids:
+                # already handled in SWITCH branch, but keep it safe
+                self.context.main_block_id = plan.target_block_ids[0]
+            elif main_block_id:
+                self.context.main_block_id = main_block_id
+
+system_prompt = (
+    "You are an **interactive whiteboard orchestrator**. "
+    "Your job is to analyze the user's message and decide what is focus block(s) "
+    "You must output a JSON object with the exact fields: "
+    "{\"action\": ..., \"targetBlockIds\": [...], \"comment\": \"...\"}.\n\n"
+
+    "The field `action` must be one of the following:\n"
+    "- **CONTINUE**: The user's input clearly belongs to the current focus block. "
+    "No context change is needed. The current processing can safely end.\n"
+    "- **NOOP**: The input does not require any action or change. "
+    "It is valid and sufficient as-is.\n"
+    "- **SWITCH**: The user has shifted to another topic or block. "
+    "Focus should change to the block(s) listed in `targetBlockIds`. "
+    "After switching, the orchestration process will run again to verify stability.\n"
+    "- **OPEN_RELATED**: The user is requesting to open or expand additional related blocks. "
+    "These block IDs should be added to the active set, and the process will re-run afterward.\n"
+    "- **CLOSE**: The user wants to close or hide some currently active blocks. "
+    "The specified blocks should be removed from the active set, and the process will re-run afterward.\n\n"
+
+    "Rules:\n"
+    "1. Always return valid JSON only — no markdown, no code fences.\n"
+    "2. Include a short, human-readable explanation in the `comment` field.\n"
+    "3. Do not invent block IDs — only use those shown in the context summary.\n"
+    "4. If uncertain, choose NOOP.\n\n"
+
+    "Your answer must contain **only** the JSON object, with no extra text."
+)
 
