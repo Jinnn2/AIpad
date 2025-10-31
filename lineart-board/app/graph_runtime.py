@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -35,6 +35,7 @@ from semantic_graph.models import GroupNotFoundError
 
 from app.embedding_client import embed_text
 from app.llm_client import call_chat_completions
+from app.cluster_logging import ClusterLogger
 from app import prompting
 
 DEFAULT_LLM_MODEL = os.getenv("GRAPH_LLM_MODEL") or os.getenv("OPENAI_MODEL") or "gpt-4o"
@@ -89,9 +90,9 @@ class LLMBlockSummarizer(BlockSummarizer):
             {
                 "role": "system",
                 "content": (
-                    "你是知识图谱维护助手。根据提供的画布片段生成块标签和摘要。\n"
-                    "始终返回 JSON 对象 {\"label\": str, \"summary\": str}。\n"
-                    "label 应精炼、<=40 字符，summary 需兼顾上下文用途。\n"
+                    "浣犳槸鐭ヨ瘑鍥捐氨缁存姢鍔╂墜銆傛牴鎹彁渚涚殑鐢诲竷鐗囨鐢熸垚鍧楁爣绛惧拰鎽樿銆俓n"
+                    "濮嬬粓杩斿洖 JSON 瀵硅薄 {\"label\": str, \"summary\": str}銆俓n"
+                    "label 搴旂簿鐐笺€?=40 瀛楃锛宻ummary 闇€鍏奸【涓婁笅鏂囩敤閫斻€俓n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -118,10 +119,10 @@ class LLMBlockSummarizer(BlockSummarizer):
             {
                 "role": "system",
                 "content": (
-                    "你正在维护画布知识块。\n"
-                    "1. 在220字以内重写该块的摘要，覆盖当前全部要点。\n"
-                    "2. 推断该块与其它块的语义/功能/视觉关系。\n"
-                    "仅返回 JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}。\n"
+                    "浣犳鍦ㄧ淮鎶ょ敾甯冪煡璇嗗潡銆俓n"
+                    "1. 鍦?20瀛椾互鍐呴噸鍐欒鍧楃殑鎽樿锛岃鐩栧綋鍓嶅叏閮ㄨ鐐广€俓n"
+                    "2. 鎺ㄦ柇璇ュ潡涓庡叾瀹冨潡鐨勮涔?鍔熻兘/瑙嗚鍏崇郴銆俓n"
+                    "浠呰繑鍥?JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}銆俓n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -254,16 +255,19 @@ class GraphRuntime:
         summary_model: Optional[str] = None,
         plan_model: Optional[str] = None,
         prompt_model: Optional[str] = None,
+        session_id: Optional[str] = None,
     ) -> None:
         width, height = canvas_size or (1920.0, 1080.0)
         self.state = GraphState()
         self.embedder = OpenAIEmbedder(model=embed_model)
         self.summarizer = LLMBlockSummarizer(model=summary_model or DEFAULT_SUMMARY_MODEL)
+        self.cluster_logger = ClusterLogger(session_id=session_id)
         self.block_manager = BlockManager(
             state=self.state,
             embedder=self.embedder,
             summarizer=self.summarizer,
             canvas_size=(float(width), float(height)),
+            cluster_logger=self.cluster_logger,
         )
         self.summarizer.set_block_provider(lambda: self.block_manager.state.blocks.values())
         self.summarizer.set_canvas_size(self.block_manager.canvas_size)
@@ -309,6 +313,22 @@ class GraphRuntime:
             self._seen_fragment_ids.add(fragment.fragment_id)
             assignment = self.block_manager.register_fragment(fragment)
             new_fragments.append(fragment.fragment_id)
+            if self.cluster_logger:
+                try:
+                    self.cluster_logger.log(
+                        "ingest_assignment",
+                        {
+                            "fragment_id": fragment.fragment_id,
+                            "status": assignment.status,
+                            "block_id": assignment.block_id,
+                            "group_id": assignment.group_id,
+                            "promoted_block_id": assignment.promoted_block_id,
+                            "text": _normalize_text(fragment.text)[:80],
+                            "stroke_tool": str(stroke.get("tool")) if isinstance(stroke, dict) else None,
+                        },
+                    )
+                except Exception:
+                    pass
             if assignment.promoted_block_id:
                 promoted_blocks.append(assignment.promoted_block_id)
         return GraphIngestResult(new_fragments=new_fragments, promoted_blocks=promoted_blocks)
@@ -468,3 +488,4 @@ class GraphRuntime:
         if not xs or not ys:
             return None
         return (min(xs), min(ys), max(xs), max(ys))
+

@@ -229,7 +229,7 @@ class Session:
     def init_graph_runtime(self, *, canvas_size: Optional[Tuple[float, float]] = None) -> "GraphRuntime":
         from app.graph_runtime import GraphRuntime
 
-        self.graph_runtime = GraphRuntime(canvas_size=canvas_size)
+        self.graph_runtime = GraphRuntime(canvas_size=canvas_size, session_id=self.sid)
         self.graph_auto = True
         return self.graph_runtime
 

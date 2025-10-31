@@ -1,5 +1,15 @@
 ﻿import React, { useCallback, useMemo, useRef, useState } from 'react'
-import { Stage, Layer, Group, Line as KLine, Rect as KRect, Ellipse as KEllipse, Text as KText } from 'react-konva'
+import {
+  Stage,
+  Layer,
+  Group,
+  Line as KLine,
+  Rect as KRect,
+  Ellipse as KEllipse,
+  Text as KText,
+  Label as KLabel,
+  Tag as KTag,
+} from 'react-konva'
 import type { AIStrokePayload, AIStrokeV11, ColorName, PromptMode } from './ai/types'
 import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/normalize'
 import type { ShapeDraft } from './ai/plan'
@@ -94,6 +104,27 @@ const BUTTON_BASE: React.CSSProperties = {
   cursor: 'pointer',
 }
 const TEXT_LINE_HEIGHT = DEFAULT_TEXTBOX_LINE_HEIGHT
+const BLOCK_COLOR_PALETTE = [
+  '#2563eb',
+  '#ec4899',
+  '#f97316',
+  '#22c55e',
+  '#0ea5e9',
+  '#a855f7',
+  '#f59e0b',
+  '#ef4444',
+  '#14b8a6',
+  '#94a3b8',
+] as const
+const hexToRgba = (hex: string, alpha: number) => {
+  const normalized = hex.replace('#', '')
+  if (normalized.length !== 6) return `rgba(148, 163, 184, ${alpha})`
+  const bigint = parseInt(normalized, 16)
+  const r = (bigint >> 16) & 255
+  const g = (bigint >> 8) & 255
+  const b = bigint & 255
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
 // Preview entries keep drafts grouped by payload id
 type PreviewEntry = { payloadId: string; drafts: ShapeDraft[] }
 type TextGrowDir = 'down' | 'up' | 'left' | 'right'
@@ -134,6 +165,13 @@ export default function LineArtBoard() {
   const [curveTurns, setCurveTurns] = useState(true)
   // Committed shapes that have been accepted
   const [shapes, setShapes] = useState<ShapeDraft[]>([])
+  const shapeById = useMemo(() => {
+    const index = new Map<string, ShapeDraft>()
+    for (const shape of shapes) {
+      index.set(shape.id, shape)
+    }
+    return index
+  }, [shapes])
   const shapesById = useMemo(() => {
     const map: Record<string, ShapeDraft> = {}
     for (const shape of shapes) map[shape.id] = shape
@@ -347,6 +385,38 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [graphSnapshot, setGraphSnapshot] = useState<GraphSnapshot | null>(null)
   const [graphInspectorVisible, setGraphInspectorVisible] = useState<boolean>(false)
   const [promoteGroupPending, setPromoteGroupPending] = useState<string | null>(null)
+  const blockColorMapRef = useRef<Record<string, string>>({})
+  const blockColorMap = useMemo(() => {
+    const blocks = graphSnapshot?.blocks ?? []
+    if (blocks.length === 0) {
+      blockColorMapRef.current = {}
+      return {}
+    }
+    const existing = blockColorMapRef.current
+    const used = new Set<string>()
+    const next: Record<string, string> = {}
+    for (const block of blocks) {
+      const color = existing[block.blockId]
+      if (color) {
+        next[block.blockId] = color
+        used.add(color)
+      }
+    }
+    let paletteIndex = 0
+    for (const block of blocks) {
+      if (next[block.blockId]) continue
+      let candidate = BLOCK_COLOR_PALETTE[paletteIndex % BLOCK_COLOR_PALETTE.length]
+      while (used.has(candidate)) {
+        paletteIndex += 1
+        candidate = BLOCK_COLOR_PALETTE[paletteIndex % BLOCK_COLOR_PALETTE.length]
+      }
+      next[block.blockId] = candidate
+      used.add(candidate)
+      paletteIndex += 1
+    }
+    blockColorMapRef.current = next
+    return next
+  }, [graphSnapshot?.blocks])
   const autoTimerRef = useRef<number | ReturnType<typeof setTimeout> | null>(null)
   const autoTickerRef = useRef<number | ReturnType<typeof setInterval> | null>(null)
   const graphPollRef = useRef<number | null>(null)
@@ -454,6 +524,140 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const handleAutoMaintainToggle = useCallback(() => {
     void updateAutoMaintain(!autoMaintain)
   }, [autoMaintain, updateAutoMaintain])
+  const graphBlockCards = useMemo<GraphBlockCard[]>(() => {
+    if (!graphSnapshot) return []
+    const fragments = graphSnapshot.fragments ?? []
+    const fragmentMap = new Map<string, (typeof fragments)[number]>()
+    for (const frag of fragments) {
+      fragmentMap.set(frag.id, frag)
+    }
+    const resolveShapeBBox = (shape?: ShapeDraft | null): [number, number, number, number] | null => {
+      if (!shape) return null
+      const baseX = Number(shape.x) || 0
+      const baseY = Number(shape.y) || 0
+      if (Number.isFinite(shape.w) && Number.isFinite(shape.h)) {
+        const w = Math.max(1, Number(shape.w))
+        const h = Math.max(1, Number(shape.h))
+        return [baseX, baseY, baseX + w, baseY + h]
+      }
+      if (shape.points && shape.points.length > 0) {
+        let minX = Number.POSITIVE_INFINITY
+        let minY = Number.POSITIVE_INFINITY
+        let maxX = Number.NEGATIVE_INFINITY
+        let maxY = Number.NEGATIVE_INFINITY
+        for (const pt of shape.points) {
+          const px = baseX + (Number(pt.x) || 0)
+          const py = baseY + (Number(pt.y) || 0)
+          if (px < minX) minX = px
+          if (py < minY) minY = py
+          if (px > maxX) maxX = px
+          if (py > maxY) maxY = py
+        }
+        if (!Number.isFinite(minX) || !Number.isFinite(minY) || !Number.isFinite(maxX) || !Number.isFinite(maxY)) {
+          return null
+        }
+        return [minX, minY, maxX, maxY]
+      }
+      return null
+    }
+    const mergeBBox = (
+      current: [number, number, number, number] | null,
+      next: [number, number, number, number] | null | undefined,
+    ): [number, number, number, number] | null => {
+      if (!next) return current
+      if (!current) return [...next] as [number, number, number, number]
+      const [cx0, cy0, cx1, cy1] = current
+      const [nx0, ny0, nx1, ny1] = next
+      return [
+        Math.min(cx0, nx0),
+        Math.min(cy0, ny0),
+        Math.max(cx1, nx1),
+        Math.max(cy1, ny1),
+      ]
+    }
+    return (graphSnapshot.blocks ?? []).map((block) => {
+      const candidateIds = new Set<string>()
+      for (const id of block.contents ?? []) candidateIds.add(id)
+      for (const frag of fragments) {
+        if (frag.blockId === block.blockId) candidateIds.add(frag.id)
+      }
+      const blockColor = blockColorMap[block.blockId] ?? '#94a3b8'
+      const entries: GraphBlockCardFragment[] = []
+      let blockBBox: [number, number, number, number] | null = null
+      candidateIds.forEach((fragId) => {
+        const frag = fragmentMap.get(fragId)
+        if (!frag) return
+        const lowerType = String(frag.type || '').toLowerCase()
+        const shape = shapeById.get(frag.id) ?? null
+        const shapeBBox = resolveShapeBBox(shape)
+        const fragBBox = frag.bbox && frag.bbox.length === 4 ? frag.bbox as [number, number, number, number] : shapeBBox
+        const rawText = (frag.text ?? shape?.summary ?? shape?.text ?? '').toString().trim()
+        const summary =
+          rawText.length > 120 ? `${rawText.slice(0, 120)}…` : (rawText || '(无摘要)')
+        entries.push({
+          id: frag.id,
+          type: lowerType || 'unknown',
+          text: summary,
+          bbox: fragBBox ?? null,
+        })
+        blockBBox = mergeBBox(blockBBox, fragBBox ?? shapeBBox ?? null)
+      })
+      return {
+        blockId: block.blockId,
+        label: block.label,
+        summary: block.summary,
+        updatedAt: block.updatedAt,
+        color: blockColor,
+        fragments: entries,
+        bbox: blockBBox,
+      }
+    })
+  }, [graphSnapshot, blockColorMap, shapeById])
+  const focusOnBBox = useCallback((bbox: [number, number, number, number] | null | undefined) => {
+    if (!bbox) return
+    const [x0, y0, x1, y1] = bbox
+    if (![x0, y0, x1, y1].every((v) => Number.isFinite(v))) return
+    setView((prev) => {
+      const width = Math.max(40, x1 - x0)
+      const height = Math.max(40, y1 - y0)
+      const margin = 180
+      const scaleX = (size.width - margin) / width
+      const scaleY = (size.height - margin) / height
+      const fitScale = clamp(Math.min(scaleX, scaleY), ZOOM_MIN, ZOOM_MAX)
+      const currentScale = prev.scale
+      let nextScale = clamp(fitScale, ZOOM_MIN, ZOOM_MAX)
+      if (fitScale > currentScale) {
+        nextScale = clamp(Math.min(fitScale, currentScale * 1.8), ZOOM_MIN, ZOOM_MAX)
+      }
+      const centerX = x0 + width / 2
+      const centerY = y0 + height / 2
+      const newX = size.width / 2 - centerX * nextScale
+      const newY = size.height / 2 - centerY * nextScale
+      return {
+        x: newX,
+        y: newY,
+        scale: nextScale,
+      }
+    })
+  }, [size.height, size.width])
+  const focusOnFragment = useCallback((fragmentId: string) => {
+    if (!fragmentId) return
+    for (const block of graphBlockCards) {
+      const frag = block.fragments.find((f) => f.id === fragmentId)
+      if (frag) {
+        focusOnBBox(frag.bbox ?? block.bbox ?? null)
+        return
+      }
+    }
+  }, [graphBlockCards, focusOnBBox])
+  const focusOnBlock = useCallback((blockId: string) => {
+    if (!blockId) return
+    const target = graphBlockCards.find((block) => block.blockId === blockId)
+    focusOnBBox(target?.bbox ?? null)
+  }, [graphBlockCards, focusOnBBox])
+  const showGraphHighlights = graphInspectorVisible && autoMaintain && graphBlockCards.some(
+    (block) => (block.fragments && block.fragments.length > 0) || !!block.bbox,
+  )
   const promoteGroup = useCallback(async (groupId: string) => {
     if (!sid) {
       alert('需要先初始化会话（点击 Ask AI 一次即可）');
@@ -2163,6 +2367,80 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             </Group>
           )}
         </Layer>
+        {showGraphHighlights && (
+          <Layer listening={false}>
+            {graphBlockCards.map((block) => {
+              const fragments = block.fragments?.filter((frag) => frag.type === 'text' && frag.bbox) ?? []
+              const hasBlockBox = !!block.bbox
+              if (!fragments.length && !hasBlockBox) return null
+              const overlays = fragments.map((frag) => {
+                if (!frag.bbox) return null
+                const [fx0, fy0, fx1, fy1] = frag.bbox
+                const width = Math.max(4, fx1 - fx0)
+                const height = Math.max(4, fy1 - fy0)
+                return (
+                  <KRect
+                    key={frag.id}
+                    x={fx0}
+                    y={fy0}
+                    width={width}
+                    height={height}
+                    fill={hexToRgba(block.color, 0.2)}
+                    listening={false}
+                    cornerRadius={8}
+                  />
+                )
+              })
+              let bboxNode: React.ReactNode = null
+              if (block.bbox) {
+                const [bx0, by0, bx1, by1] = block.bbox
+                const bw = Math.max(16, bx1 - bx0)
+                const bh = Math.max(16, by1 - by0)
+                const tentativeLabelY = by0 - 28
+                const labelY = tentativeLabelY >= 12 ? tentativeLabelY : by0 + 8
+                bboxNode = (
+                  <>
+                    <KRect
+                      x={bx0}
+                      y={by0}
+                      width={bw}
+                      height={bh}
+                      stroke={block.color}
+                      strokeWidth={1.6}
+                      dash={[10, 6]}
+                      listening={false}
+                      cornerRadius={14}
+                      opacity={0.9}
+                    />
+                    <KLabel x={bx0} y={labelY} listening={false}>
+                      <KTag
+                        fill={hexToRgba(block.color, 0.55)}
+                        stroke={block.color}
+                        lineJoin="round"
+                        cornerRadius={6}
+                        shadowColor={block.color}
+                        shadowBlur={6}
+                        shadowOpacity={0.18}
+                      />
+                      <KText
+                        text={block.label || block.blockId}
+                        fontSize={12}
+                        fill="#0f172a"
+                        padding={6}
+                      />
+                    </KLabel>
+                  </>
+                )
+              }
+              return (
+                <Group key={`block-highlight-${block.blockId}`} listening={false}>
+                  {overlays}
+                  {bboxNode}
+                </Group>
+              )
+            })}
+          </Layer>
+        )}
         {/* AI previews */}
         <Layer>
           {previewEntries.map(entry => (
@@ -2188,6 +2466,11 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         autoMaintainEnabled={autoMaintain}
         autoMaintainPending={autoMaintainPending}
         onToggleAutoMaintain={handleAutoMaintainToggle}
+        graphInspectorActive={graphInspectorVisible}
+        viewportHeight={size.height}
+        graphBlocksDetailed={graphBlockCards}
+        onFragmentFocus={focusOnFragment}
+        onBlockFocus={focusOnBlock}
         graphBlocks={(graphSnapshot?.blocks ?? []).map(b => ({
           blockId: b.blockId,
           label: b.label,
@@ -2300,8 +2583,24 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                       border: '1px solid rgba(96,165,250,0.35)',
                     }}
                   >
-                    <div style={{ fontSize: 13, fontWeight: 600, color: '#bfdbfe', marginBottom: 4 }}>
-                      {block.label || block.blockId}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span
+                          style={{
+                            width: 12,
+                            height: 12,
+                            borderRadius: '50%',
+                            background: blockColorMap[block.blockId] ?? '#38bdf8',
+                            boxShadow: `0 0 8px ${hexToRgba(blockColorMap[block.blockId] ?? '#38bdf8', 0.55)}`,
+                          }}
+                        />
+                        <span style={{ fontSize: 13, fontWeight: 600, color: '#bfdbfe' }}>
+                          {block.label || block.blockId}
+                        </span>
+                      </div>
+                      <span style={{ fontSize: 11, color: '#93c5fd' }}>
+                        {(block.contents?.length ?? 0)} fragments
+                      </span>
                     </div>
                     <div style={{ fontSize: 12, lineHeight: 1.5, color: '#e2e8f0' }}>
                       {block.summary || '（暂无摘要）'}
@@ -2370,6 +2669,23 @@ type GraphGroup = {
   members: string[]
   touchCount: number
   updatedAt?: string
+}
+
+type GraphBlockCardFragment = {
+  id: string
+  type: string
+  text: string
+  bbox: [number, number, number, number] | null
+}
+
+type GraphBlockCard = {
+  blockId: string
+  label: string
+  summary: string
+  updatedAt?: string
+  color: string
+  fragments: GraphBlockCardFragment[]
+  bbox: [number, number, number, number] | null
 }
 
 type GraphSnapshot = {

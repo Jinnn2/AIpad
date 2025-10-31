@@ -4,7 +4,7 @@ import uuid
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timedelta
-from typing import Dict, Iterable, List, Optional, Protocol, Sequence, Tuple, runtime_checkable
+from typing import Any, Dict, Iterable, List, Optional, Protocol, Sequence, Tuple, runtime_checkable
 
 from .models import (
     BBox,
@@ -72,12 +72,13 @@ class BlockManager:
         state: Optional[GraphState] = None,
         embedder: Optional[TextEmbedder] = None,
         summarizer: Optional[BlockSummarizer] = None,
-        group_distance_threshold: float = 0.35,
-        block_distance_threshold: float = 0.28,
+        group_distance_threshold: float = 0.4,
+        block_distance_threshold: float = 0.4,
         summary_refresh_ratio: float = 0.3,
         summary_refresh_interval: timedelta = timedelta(minutes=10),
         canvas_size: Optional[Tuple[float, float]] = None,
         auto_promote_group_size: int = 5,
+        cluster_logger: Optional[Any] = None,
     ) -> None:
         self.state = state or GraphState()
         self.embedder = embedder
@@ -95,6 +96,7 @@ class BlockManager:
         self._unlabeled_strokes: List[str] = []
         self._block_incoming_counts: Dict[str, int] = defaultdict(int)
         self._group_touch_counts: Dict[str, int] = defaultdict(int)
+        self.cluster_logger = cluster_logger
 
     # ------------------------------- Public API -------------------------------- #
 
@@ -113,8 +115,22 @@ class BlockManager:
         feature_vec = self._ensure_feature_vector(fragment)
         fragment.feature_vec = feature_vec
 
+        self._log_cluster(
+            "fragment_ingest",
+            fragment_id=fragment.fragment_id,
+            fragment_type=fragment.fragment_type.value,
+            text=self._shorten_text(fragment.text),
+            bbox=fragment.bbox,
+            groups=len(self.state.groups),
+            blocks=len(self.state.blocks),
+        )
+
         if not self.state.blocks and not self.state.groups:
-            print(f"[graph][cluster] fragment={fragment.fragment_id} creates initial block (cold start)")
+            self._log_cluster(
+                "fragment_cold_start",
+                fragment_id=fragment.fragment_id,
+                text=self._shorten_text(fragment.text),
+            )
             new_block = self._create_block_from_fragment(fragment)
             assignment.status = "block"
             assignment.block_id = new_block.block_id
@@ -123,9 +139,12 @@ class BlockManager:
 
         block_id, block_distance = self._match_block(feature_vec, fragment_id=fragment.fragment_id)
         if block_id:
-            print(
-                f"[graph][cluster] fragment={fragment.fragment_id} matched block={block_id} "
-                f"distance={block_distance:.3f}"
+            self._log_cluster(
+                "fragment_matched_block",
+                fragment_id=fragment.fragment_id,
+                block_id=block_id,
+                distance=round(block_distance, 6),
+                text=self._shorten_text(fragment.text),
             )
             block = self.attach_fragment_to_block(block_id, fragment.fragment_id)
             self._tag_fragment_with_block(fragment, block)
@@ -135,16 +154,23 @@ class BlockManager:
 
         group_id, group_distance = self._match_group(feature_vec, fragment_id=fragment.fragment_id)
         if group_id:
-            print(
-                f"[graph][cluster] fragment={fragment.fragment_id} matched group={group_id} "
-                f"distance={group_distance:.3f}"
+            self._log_cluster(
+                "fragment_matched_group",
+                fragment_id=fragment.fragment_id,
+                group_id=group_id,
+                distance=round(group_distance, 6),
+                text=self._shorten_text(fragment.text),
             )
             self._assign_to_group(fragment.fragment_id, feature_vec, allow_create=False, existing_group_id=group_id)
             assignment.status = "group"
             assignment.group_id = group_id
             self._group_touch_counts[group_id] += 1
             if self._should_promote_group(group_id):
-                print(f"[graph][cluster] promote group={group_id} after assignment {fragment.fragment_id}")
+                self._log_cluster(
+                    "group_promoted",
+                    group_id=group_id,
+                    trigger_fragment=fragment.fragment_id,
+                )
                 promoted_block = self.promote_group(group_id)
                 assignment.status = "block"
                 assignment.block_id = promoted_block.block_id
@@ -154,12 +180,21 @@ class BlockManager:
         # No matching block or group -> start a new pending group
         group_id = self._assign_to_group(fragment.fragment_id, feature_vec, allow_create=True)
         if group_id:
-            print(f"[graph][cluster] fragment={fragment.fragment_id} seeded new group={group_id}")
+            self._log_cluster(
+                "group_created",
+                group_id=group_id,
+                fragment_id=fragment.fragment_id,
+                text=self._shorten_text(fragment.text),
+            )
             assignment.status = "group"
             assignment.group_id = group_id
             self._group_touch_counts[group_id] += 1
             if self._should_promote_group(group_id):
-                print(f"[graph][cluster] promote group={group_id} after assignment {fragment.fragment_id}")
+                self._log_cluster(
+                    "group_promoted",
+                    group_id=group_id,
+                    trigger_fragment=fragment.fragment_id,
+                )
                 promoted_block = self.promote_group(group_id)
                 assignment.status = "block"
                 assignment.block_id = promoted_block.block_id
@@ -167,7 +202,11 @@ class BlockManager:
             return assignment
 
         # Fallback safety: create block if group assignment failed
-        print(f"[graph][cluster] fragment={fragment.fragment_id} fallback creates block")
+        self._log_cluster(
+            "fragment_fallback_block",
+            fragment_id=fragment.fragment_id,
+            text=self._shorten_text(fragment.text),
+        )
         new_block = self._create_block_from_fragment(fragment)
         assignment.status = "block"
         assignment.block_id = new_block.block_id
@@ -308,6 +347,12 @@ class BlockManager:
             group = self._get_group(existing_group_id)
             group.add_member(fragment_id, feature_vec)
             self._fragment_to_group[fragment_id] = existing_group_id
+            self._log_cluster(
+                "assign_existing_group",
+                group_id=existing_group_id,
+                fragment_id=fragment_id,
+                members=len(group.members),
+            )
             return existing_group_id
 
         best_group_id = None
@@ -324,6 +369,13 @@ class BlockManager:
             group = self.state.groups[best_group_id]
             group.add_member(fragment_id, feature_vec)
             self._fragment_to_group[fragment_id] = best_group_id
+            self._log_cluster(
+                "assign_existing_group",
+                group_id=best_group_id,
+                fragment_id=fragment_id,
+                members=len(group.members),
+                distance=round(best_distance, 6),
+            )
             return best_group_id
 
         if not allow_create:
@@ -337,7 +389,32 @@ class BlockManager:
         self.state.add_group(new_group)
         self._fragment_to_group[fragment_id] = new_group.group_id
         self._group_touch_counts[new_group.group_id] = 0
+        self._log_cluster(
+            "assign_new_group",
+            group_id=new_group.group_id,
+            fragment_id=fragment_id,
+        )
         return new_group.group_id
+
+    # ------------------------------- Logging helpers -------------------------------- #
+
+    def _log_cluster(self, event: str, **payload) -> None:
+        logger = getattr(self, "cluster_logger", None)
+        if not logger:
+            return
+        try:
+            logger.log(event, payload)
+        except Exception:
+            pass
+
+    @staticmethod
+    def _shorten_text(text: Optional[str], limit: int = 80) -> str:
+        if not text:
+            return ""
+        trimmed = text.strip()
+        if len(trimmed) <= limit:
+            return trimmed
+        return trimmed[:limit] + "…"
 
     def _match_block(
         self,
@@ -353,15 +430,25 @@ class BlockManager:
                 continue
             distance = cosine_distance(feature_vec, block_embedding)
             if fragment_id:
-                print(
-                    f"[graph][cluster][block] fragment={fragment_id} candidate={block.block_id} "
-                    f"distance={distance:.3f}"
+                self._log_cluster(
+                    "match_block_candidate",
+                    fragment_id=fragment_id,
+                    candidate_block_id=block.block_id,
+                    distance=round(distance, 6),
                 )
             if distance < best_distance:
                 best_distance = distance
                 best_block_id = block.block_id
         if best_block_id is None or best_distance > self.block_distance_threshold:
             return None, best_distance
+        if fragment_id:
+            self._log_cluster(
+                "match_block_best",
+                fragment_id=fragment_id,
+                block_id=best_block_id,
+                distance=round(best_distance, 6),
+                threshold=self.block_distance_threshold,
+            )
         return best_block_id, best_distance
 
     def _match_group(
@@ -377,15 +464,25 @@ class BlockManager:
                 continue
             distance = cosine_distance(feature_vec, group.prototype_vec)
             if fragment_id:
-                print(
-                    f"[graph][cluster][group] fragment={fragment_id} candidate={group.group_id} "
-                    f"distance={distance:.3f}"
+                self._log_cluster(
+                    "match_group_candidate",
+                    fragment_id=fragment_id,
+                    candidate_group_id=group.group_id,
+                    distance=round(distance, 6),
                 )
             if distance < best_distance:
                 best_distance = distance
                 best_group_id = group.group_id
         if best_group_id is None or best_distance > self.group_distance_threshold:
             return None, best_distance
+        if fragment_id:
+            self._log_cluster(
+                "match_group_best",
+                fragment_id=fragment_id,
+                group_id=best_group_id,
+                distance=round(best_distance, 6),
+                threshold=self.group_distance_threshold,
+            )
         return best_group_id, best_distance
 
     def _should_promote_group(self, group_id: str) -> bool:
@@ -483,9 +580,9 @@ class BlockManager:
             text = fragment.text or ""
             components.extend(self.embedder.embed(text))
 
-        components.extend(self._normalize_bbox(fragment.bbox))
-        components.append(self._normalize_timestamp(fragment.timestamp))
-        components.append(1.0 if fragment.fragment_type == FragmentType.TEXT else 0.0)
+        components.extend(self._weighted_bbox(fragment.bbox))
+        components.append(self._weighted_timestamp(fragment.timestamp))
+        components.append(self._type_indicator(fragment.fragment_type))
         return components
 
     def _normalize_bbox(self, bbox: Optional[BBox]) -> List[float]:
@@ -509,6 +606,25 @@ class BlockManager:
             self._time_anchor = timestamp
         delta = (timestamp - self._time_anchor).total_seconds()
         return max(delta, 0.0) / 3600.0  # hours since start
+
+    # -------------------------- feature weighting helpers -------------------------- #
+
+    _BBOX_SCALE = 0.1
+    _TIME_SCALE = 0.02
+    _TIME_CLAMP_HOURS = 24.0
+    _TYPE_SCALE = 0.05
+
+    def _weighted_bbox(self, bbox: Optional[BBox]) -> List[float]:
+        raw = self._normalize_bbox(bbox)
+        return [self._BBOX_SCALE * v for v in raw]
+
+    def _weighted_timestamp(self, ts: Optional[datetime]) -> float:
+        hours = self._normalize_timestamp(ts)
+        clamped = min(hours, self._TIME_CLAMP_HOURS)
+        return clamped * self._TIME_SCALE
+
+    def _type_indicator(self, fragment_type: FragmentType) -> float:
+        return self._TYPE_SCALE if fragment_type == FragmentType.TEXT else 0.0
 
     def _generate_group_id(self) -> str:
         return f"group_{uuid.uuid4().hex[:8]}"

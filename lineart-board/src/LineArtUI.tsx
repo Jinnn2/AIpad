@@ -186,7 +186,6 @@ export function SidePanel(props: SidePanelProps) {
     onToggleGraphInspector,
     graphInspectorActive,
   } = props
-
   return (
     <div
       style={{
@@ -470,6 +469,23 @@ export type AIFeedEntry = {
   items: { id: string; desc?: string }[]
 }
 
+type BottomPanelGraphFragment = {
+  id: string
+  type: string
+  text: string
+  bbox: [number, number, number, number] | null
+}
+
+type BottomPanelGraphBlock = {
+  blockId: string
+  label: string
+  summary: string
+  updatedAt?: string
+  color: string
+  bbox: [number, number, number, number] | null
+  fragments: BottomPanelGraphFragment[]
+}
+
 export type BottomPanelProps = {
   hint: string
   onHintChange: (value: string) => void
@@ -481,6 +497,11 @@ export type BottomPanelProps = {
   autoMaintainEnabled: boolean
   autoMaintainPending: boolean
   onToggleAutoMaintain: () => void
+  graphInspectorActive: boolean
+  viewportHeight: number
+  graphBlocksDetailed: BottomPanelGraphBlock[]
+  onFragmentFocus: (fragmentId: string) => void
+  onBlockFocus: (blockId: string) => void
   graphBlocks: Array<{ blockId: string; label: string; summary: string; updatedAt?: string }>
 }
 
@@ -496,8 +517,27 @@ export function BottomPanel(props: BottomPanelProps) {
     autoMaintainEnabled,
     autoMaintainPending,
     onToggleAutoMaintain,
+    graphInspectorActive,
+    viewportHeight,
+    graphBlocksDetailed,
+    onFragmentFocus,
+    onBlockFocus,
     graphBlocks,
   } = props
+  const panelMaxHeight = graphInspectorActive
+    ? Math.max(320, Math.min(viewportHeight * 0.6, viewportHeight - 120))
+    : 220
+  const showDetailedBlocks =
+    graphInspectorActive && autoMaintainEnabled && graphBlocksDetailed.length > 0
+  const toRgba = (hex: string, alpha: number) => {
+    const normalized = hex.replace('#', '')
+    if (normalized.length !== 6) return `rgba(148, 163, 184, ${alpha})`
+    const value = parseInt(normalized, 16)
+    const r = (value >> 16) & 255
+    const g = (value >> 8) & 255
+    const b = value & 255
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
 
   const modeConfig = {
     light: {
@@ -545,8 +585,10 @@ export function BottomPanel(props: BottomPanelProps) {
         borderRadius: 12,
         padding: '10px 12px',
         boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-        maxHeight: 220,
-        overflow: 'auto',
+        maxHeight: panelMaxHeight,
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
@@ -639,66 +681,168 @@ export function BottomPanel(props: BottomPanelProps) {
         </Btn>
       </div>
 
-      <div style={{ fontSize: 12, color: '#666', marginBottom: 6 }}>AI Feed (latest)</div>
-      {aiFeed.length === 0 ? (
-        <div style={{ fontSize: 12, color: '#999' }}>No AI packages yet.</div>
-      ) : (
-        aiFeed.map((entry) => (
-          <div key={entry.payloadId} style={{ marginBottom: 6 }}>
-            <div style={{ fontSize: 12, color: '#444' }}>
-              <b>{new Date(entry.time).toLocaleTimeString()}</b> · payload <code>{entry.payloadId}</code>
+      <div
+        style={{
+          flex: '1 1 auto',
+          overflowY: 'auto',
+          marginTop: 8,
+          paddingRight: showDetailedBlocks ? 8 : 0,
+        }}
+      >
+        <div style={{ fontSize: 12, color: '#666', marginBottom: 6 }}>AI Feed (latest)</div>
+        {aiFeed.length === 0 ? (
+          <div style={{ fontSize: 12, color: '#999' }}>No AI packages yet.</div>
+        ) : (
+          aiFeed.map((entry) => (
+            <div key={entry.payloadId} style={{ marginBottom: 6 }}>
+              <div style={{ fontSize: 12, color: '#444' }}>
+                <b>{new Date(entry.time).toLocaleTimeString()}</b> · payload <code>{entry.payloadId}</code>
+              </div>
+              <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
+                {entry.items.map((item, idx) => (
+                  <li
+                    key={`${item.id}_${idx}`}
+                    style={{ fontSize: 12, color: '#333', listStyle: 'disc' }}
+                  >
+                    <code>{item.id}</code>
+                    {item.desc ? ` · ${item.desc}` : ''}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
-              {entry.items.map((item, idx) => (
-                <li
-                  key={`${item.id}_${idx}`}
-                  style={{ fontSize: 12, color: '#333', listStyle: 'disc' }}
+          ))
+        )}
+        {showDetailedBlocks ? (
+          <div style={{ marginTop: 16 }}>
+            <div style={{ fontSize: 12, color: '#334155', marginBottom: 8 }}>
+              Graph Blocks ({graphBlocksDetailed.length})
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: 12,
+              }}
+            >
+              {graphBlocksDetailed.map((block) => (
+                <div
+                  key={block.blockId}
+                  style={{
+                    border: `1px solid ${toRgba(block.color, 0.55)}`,
+                    borderRadius: 12,
+                    padding: '12px 14px',
+                    background: `linear-gradient(135deg, ${toRgba(block.color, 0.14)}, ${toRgba(block.color, 0.05)})`,
+                    boxShadow: `0 8px 18px ${toRgba(block.color, 0.18)}`,
+                  }}
                 >
-                  <code>{item.id}</code>
-                  {item.desc ? ` · ${item.desc}` : ''}
-                </li>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                    <button
+                      type="button"
+                      onClick={() => onBlockFocus(block.blockId)}
+                      style={{
+                        border: 'none',
+                        background: 'none',
+                        padding: 0,
+                        margin: 0,
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: block.color,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {block.label || block.blockId}
+                    </button>
+                    <span style={{ fontSize: 11, color: '#475569' }}>
+                      {block.fragments.length} fragment{block.fragments.length === 1 ? '' : 's'}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 12, color: '#1f2937', lineHeight: 1.5 }}>
+                    {block.summary || '暂无摘要'}
+                  </div>
+                  {block.updatedAt && (
+                    <div style={{ fontSize: 10, color: '#64748b', marginTop: 6 }}>
+                      {new Date(block.updatedAt).toLocaleTimeString()}
+                    </div>
+                  )}
+                  <div style={{ fontSize: 11, color: '#475569', marginTop: 10, marginBottom: 6 }}>
+                    Fragments
+                  </div>
+                  <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {block.fragments.length === 0 ? (
+                      <li style={{ fontSize: 12, color: '#6b7280' }}>暂无 fragment</li>
+                    ) : (
+                      block.fragments.map((frag) => (
+                        <li key={frag.id}>
+                          <button
+                            type="button"
+                            onClick={() => onFragmentFocus(frag.id)}
+                            style={{
+                              width: '100%',
+                              textAlign: 'left',
+                              border: `1px solid ${toRgba(block.color, 0.45)}`,
+                              background: toRgba(block.color, 0.12),
+                              color: '#0f172a',
+                              borderRadius: 10,
+                              padding: '6px 8px',
+                              cursor: 'pointer',
+                              transition: 'background 0.2s ease',
+                            }}
+                          >
+                            <div style={{ fontSize: 11, color: block.color, fontWeight: 600 }}>
+                              #{frag.type || 'fragment'}
+                            </div>
+                            <div style={{ fontSize: 12, color: '#0f172a', lineHeight: 1.45 }}>
+                              {frag.text}
+                            </div>
+                          </button>
+                        </li>
+                      ))
+                    )}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        ))
-      )}
-      {showAutoMaintain && autoMaintainEnabled && graphBlocks.length > 0 && (
-        <div style={{ marginTop: 12 }}>
-          <div style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Graph Blocks</div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: 8,
-            }}
-          >
-            {graphBlocks.map((block) => (
+        ) : (
+          showAutoMaintain && autoMaintainEnabled && graphBlocks.length > 0 && (
+            <div style={{ marginTop: 12 }}>
+              <div style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Graph Blocks</div>
               <div
-                key={block.blockId}
                 style={{
-                  border: '1px solid rgba(99,102,241,0.25)',
-                  borderRadius: 10,
-                  padding: '8px 10px',
-                  background: 'linear-gradient(135deg, rgba(79,70,229,0.08), rgba(14,165,233,0.05))',
-                  boxShadow: '0 6px 16px rgba(79,70,229,0.12)',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                  gap: 8,
                 }}
               >
-                <div style={{ fontSize: 12, fontWeight: 600, color: '#4338ca', marginBottom: 4 }}>
-                  {block.label || block.blockId}
-                </div>
-                <div style={{ fontSize: 12, color: '#1f2937', lineHeight: 1.4 }}>
-                  {block.summary || '暂无摘要'}
-                </div>
-                {block.updatedAt && (
-                  <div style={{ fontSize: 10, color: '#6b7280', marginTop: 6 }}>
-                    {new Date(block.updatedAt).toLocaleTimeString()}
+                {graphBlocks.map((block) => (
+                  <div
+                    key={block.blockId}
+                    style={{
+                      border: '1px solid rgba(99,102,241,0.25)',
+                      borderRadius: 10,
+                      padding: '8px 10px',
+                      background: 'linear-gradient(135deg, rgba(79,70,229,0.08), rgba(14,165,233,0.05))',
+                      boxShadow: '0 6px 16px rgba(79,70,229,0.12)',
+                    }}
+                  >
+                    <div style={{ fontSize: 12, fontWeight: 600, color: '#4338ca', marginBottom: 4 }}>
+                      {block.label || block.blockId}
+                    </div>
+                    <div style={{ fontSize: 12, color: '#1f2937', lineHeight: 1.4 }}>
+                      {block.summary || '暂无摘要'}
+                    </div>
+                    {block.updatedAt && (
+                      <div style={{ fontSize: 10, color: '#6b7280', marginTop: 6 }}>
+                        {new Date(block.updatedAt).toLocaleTimeString()}
+                      </div>
+                    )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      )}
+            </div>
+          )
+        )}
+      </div>
     </div>
   )
 }
