@@ -60,7 +60,7 @@ OUTPUT_CONTRACT = (
     " - When it is not a line, try to use as much points as limited: {max_pts} \n"
     " - Try to use multiple styles and colors if they MAKE SENCE.\n"
     " - Use reasonable style: size in {'s','m','l','xl'}, opacity in [0,1]\n"
-    " - Use colors in palette: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow\n"
+    " - MUST Use colors in palette ONLY: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow\n"
 )
 
 SAMPLE_ONE_STROKE = {

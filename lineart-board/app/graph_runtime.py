@@ -90,10 +90,10 @@ class LLMBlockSummarizer(BlockSummarizer):
             {
                 "role": "system",
                 "content": (
-                    "浣犳槸鐭ヨ瘑鍥捐氨缁存姢鍔╂墜銆傛牴鎹彁渚涚殑鐢诲竷鐗囨鐢熸垚鍧楁爣绛惧拰鎽樿銆俓n"
-                    "濮嬬粓杩斿洖 JSON 瀵硅薄 {\"label\": str, \"summary\": str}銆俓n"
-                    "label 搴旂簿鐐笺€?=40 瀛楃锛宻ummary 闇€鍏奸【涓婁笅鏂囩敤閫斻€俓n"
-                ),
+                    "You are a knowledge-graph curator for a collaborative canvas.\n"
+                    "You are the knowledge-graph curator for this collaborative canvas.\n"
+                    "Always return a JSON object {\"label\": str, \"summary\": str}.\n"
+                    "Keep the label concise (<= 40 characters) and write a summary that captures the block's purpose for future context.\n")
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
         ]
@@ -119,10 +119,10 @@ class LLMBlockSummarizer(BlockSummarizer):
             {
                 "role": "system",
                 "content": (
-                    "浣犳鍦ㄧ淮鎶ょ敾甯冪煡璇嗗潡銆俓n"
-                    "1. 鍦?20瀛椾互鍐呴噸鍐欒鍧楃殑鎽樿锛岃鐩栧綋鍓嶅叏閮ㄨ鐐广€俓n"
-                    "2. 鎺ㄦ柇璇ュ潡涓庡叾瀹冨潡鐨勮涔?鍔熻兘/瑙嗚鍏崇郴銆俓n"
-                    "浠呰繑鍥?JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}銆俓n"
+                    "You are maintaining the structured knowledge blocks on this canvas.\n" 
+                    "1. Rewrite the block summary so it covers all current fragments (aim for 120 characters or fewer).\n"
+                    "2. Identify relationships between this block and other blocks (semantic, functional, or visual flow).\n"
+                    "Return JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}. Use relationship types such as refines, comment_on, or flow_next. Skip any relationship you cannot justify.\n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
