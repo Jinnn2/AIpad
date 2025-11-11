@@ -1,5 +1,6 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
+import base64
 import json
 import os
 import sys
@@ -32,6 +33,7 @@ from semantic_graph import (
     VisionResult,
 )
 from semantic_graph.models import GroupNotFoundError
+from semantic_graph.vision import _bbox_overlap_ratio
 
 from app.embedding_client import embed_text
 from app.llm_client import call_chat_completions
@@ -236,10 +238,99 @@ class NoopVisionBackend(VisionBackend):
         return []
 
 
+VISION_SYSTEM_PROMPT = (
+    "You are a diagram-understanding assistant for a collaborative canvas. "
+    "Given a group of stroke fragments plus the nearby blocks, decide whether the strokes "
+    "should be merged into an existing block or promoted as a brand new diagram block. "
+    "Always return JSON: {\"results\": [{\"decision\": \"merge_block\"|\"new_block\", "
+    "\"target_block_id\": str?, \"label\": str?, \"summary\": str?, "
+    "\"relationships\": [{\"type\": str, \"target\": str, \"score\": float?}]?}]}. "
+    "Only reference block IDs provided in the context. If unsure, prefer \"new_block\" with "
+    "a cautious summary."
+)
+
+
+class LLMVisionBackend(VisionBackend):
+    def __init__(self, model: Optional[str] = None, *, max_tokens: int = 600) -> None:
+        self.model = model or os.getenv("VISION_MODEL") or DEFAULT_LLM_MODEL
+        self.max_tokens = max_tokens
+
+    def analyze(self, payload: VisionPayload) -> List[VisionResult]:
+        context = self._build_context(payload)
+        messages = [
+            {"role": "system", "content": VISION_SYSTEM_PROMPT},
+            {"role": "user", "content": json.dumps(context, ensure_ascii=False)},
+        ]
+        try:
+            parsed, _ = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
+        except Exception:
+            return []
+        results_raw = []
+        if isinstance(parsed, dict):
+            if isinstance(parsed.get("results"), list):
+                results_raw = parsed["results"]
+            else:
+                results_raw = parsed.get("items") or []
+        elif isinstance(parsed, list):
+            results_raw = parsed
+        results: List[VisionResult] = []
+        for item in results_raw or []:
+            try:
+                results.append(
+                    VisionResult(
+                        kind=str(item.get("kind") or ""),
+                        decision=item.get("decision") or item.get("kind"),
+                        label=item.get("label"),
+                        stroke_fragment_ids=list(item.get("stroke_fragment_ids") or payload.stroke_fragment_ids),
+                        target_fragment_id=item.get("target_fragment_id"),
+                        target_block_id=item.get("target_block_id"),
+                        confidence=_safe_float(item.get("confidence")),
+                        summary=item.get("summary"),
+                        relationships=item.get("relationships"),
+                        extra={k: v for k, v in item.items() if k not in {"kind", "decision", "label", "stroke_fragment_ids", "target_fragment_id", "target_block_id", "confidence", "summary", "relationships"}},
+                    )
+                )
+            except Exception:
+                continue
+        return results
+
+    def _build_context(self, payload: VisionPayload) -> Dict[str, object]:
+        meta = payload.metadata[0] if payload.metadata else {}
+        return {
+            "group": {
+                "id": meta.get("group_id"),
+                "reason": meta.get("reason"),
+                "bbox": meta.get("bbox"),
+                "count": meta.get("count"),
+            },
+            "strokes": payload.fragments,
+            "candidateBlocks": payload.candidate_blocks,
+        }
+
+
+def _safe_float(value: object) -> Optional[float]:
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except Exception:
+        return None
+
+
 @dataclass
 class GraphIngestResult:
     new_fragments: List[str]
     promoted_blocks: List[str]
+
+
+@dataclass
+class CanvasSnapshot:
+    image_bytes: bytes
+    mime: str
+    width: int
+    height: int
+    bbox: Optional[tuple[float, float, float, float]]
+    updated_at: datetime
 
 
 class GraphRuntime:
@@ -282,10 +373,11 @@ class GraphRuntime:
             build_full_messages=prompting.build_messages,
             build_light_messages=prompting.build_messages_light,
         )
-        self.vision_backend = NoopVisionBackend()
+        self.vision_backend = LLMVisionBackend(model=os.getenv("VISION_MODEL"))
         self.vision = VisionGrouper(self.block_manager, backend=self.vision_backend)
         self.context = OrchestratorContext()
         self._seen_fragment_ids: Set[str] = set()
+        self._latest_canvas_snapshot: Optional[CanvasSnapshot] = None
 
     def _call_full_backend(self, messages: List[Dict[str, str]], *, mode: Optional[str] = None) -> Dict[str, object]:
         parsed, dbg = call_chat_completions(messages, model=DEFAULT_LLM_MODEL, max_tokens=900)
@@ -331,6 +423,10 @@ class GraphRuntime:
                     pass
             if assignment.promoted_block_id:
                 promoted_blocks.append(assignment.promoted_block_id)
+            if fragment.fragment_type == FragmentType.STROKE:
+                ready_payloads = self.vision.ingest_fragment(fragment, reason="auto")
+                if ready_payloads:
+                    self._process_vision_batches(ready_payloads, reason="auto")
         return GraphIngestResult(new_fragments=new_fragments, promoted_blocks=promoted_blocks)
 
     def snapshot(self) -> Dict[str, object]:
@@ -399,6 +495,61 @@ class GraphRuntime:
             return None
         return block
 
+    def update_canvas_snapshot(self, snapshot: Dict[str, object]) -> None:
+        data_b64 = snapshot.get("data")
+        if not data_b64:
+            return
+        try:
+            image_bytes = base64.b64decode(data_b64)
+        except Exception as exc:
+            print("[graph] decode snapshot failed:", exc)
+            return
+        bbox_raw = snapshot.get("bbox")
+        bbox: Optional[tuple[float, float, float, float]] = None
+        if isinstance(bbox_raw, (list, tuple)) and len(bbox_raw) == 4:
+            try:
+                bbox = (
+                    float(bbox_raw[0]),
+                    float(bbox_raw[1]),
+                    float(bbox_raw[2]),
+                    float(bbox_raw[3]),
+                )
+            except Exception:
+                bbox = None
+        mime = str(snapshot.get("mime") or "image/jpeg")
+        width = int(snapshot.get("width") or 0)
+        height = int(snapshot.get("height") or 0)
+        self._latest_canvas_snapshot = CanvasSnapshot(
+            image_bytes=image_bytes,
+            mime=mime,
+            width=width,
+            height=height,
+            bbox=bbox,
+            updated_at=datetime.utcnow(),
+        )
+
+    def _candidate_blocks_for_bbox(self, bbox: Optional[Tuple[float, float, float, float]]) -> List[Dict[str, object]]:
+        scored = []
+        for block in self.block_manager.state.list_blocks():
+            block_bbox = getattr(block, "position", None)
+            overlap = 0.0
+            if bbox and block_bbox:
+                overlap = _bbox_overlap_ratio(bbox, block_bbox)
+            scored.append((overlap, getattr(block, "updated_at", datetime.min), block))
+        scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        result: List[Dict[str, object]] = []
+        for overlap, _, block in scored[:6]:
+            result.append(
+                {
+                    "blockId": block.block_id,
+                    "label": block.label,
+                    "summary": block.summary,
+                    "bbox": block.position,
+                    "overlap": overlap,
+                }
+            )
+        return result
+
     def run_conversation(
         self,
         user_input: str,
@@ -407,6 +558,9 @@ class GraphRuntime:
         focus_fragment_id: Optional[str] = None,
         mode: Optional[str] = None,
     ) -> Dict[str, object]:
+        pending_payloads = self.vision.flush_groups(reason="ask_ai")
+        if pending_payloads:
+            self._process_vision_batches(pending_payloads, reason="ask_ai")
         plan = self.orchestrator.generate_plan(
             user_input,
             focus_block_id=focus_block_id,
@@ -421,6 +575,24 @@ class GraphRuntime:
             candidate = plan.action.lower()
             if candidate in {"full", "light"}:
                 exec_mode = candidate
+        action_upper = (plan.action or "").upper()
+        if (
+            action_upper in {"NOOP", "CONTINUE"}
+            and not focus_context.main_block_id
+            and not focus_context.active_block_ids
+        ):
+            return {
+                "plan": {
+                    "action": plan.action,
+                    "targetBlockIds": plan.target_block_ids,
+                    "comment": plan.comment,
+                },
+                "payload": {
+                    "version": 1,
+                    "intent": "noop",
+                    "strokes": [],
+                },
+            }
         response = self.context_executor.execute(
             plan,
             user_hint=user_input,
@@ -437,6 +609,60 @@ class GraphRuntime:
         }
 
     # ----------------------------- helpers ----------------------------- #
+
+    def _process_vision_batches(self, payloads: Sequence[VisionPayload], *, reason: str) -> None:
+        for payload in payloads:
+            self._enrich_vision_payload(payload)
+            try:
+                results = self.vision.process(payload)
+                if self.cluster_logger:
+                    self.cluster_logger.log(
+                        "vision_process",
+                        {
+                            "reason": reason,
+                            "stroke_ids": payload.stroke_fragment_ids,
+                            "results": [r.__dict__ for r in results],
+                        },
+                    )
+            except Exception as exc:
+                print(f"[vision] failed to process payload ({reason}): {exc}")
+
+    def _enrich_vision_payload(self, payload: VisionPayload) -> None:
+        fragments: List[Dict[str, object]] = []
+        for fid in payload.stroke_fragment_ids:
+            fragment = self.block_manager.state.fragments.get(fid)
+            if not fragment:
+                continue
+            frag_payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+            fragments.append(
+                {
+                    "id": fragment.fragment_id,
+                    "bbox": fragment.bbox,
+                    "timestamp": fragment.timestamp.isoformat() if fragment.timestamp else None,
+                    "tool": frag_payload.get("tool"),
+                    "style": frag_payload.get("style"),
+                    "points": frag_payload.get("points"),
+                }
+            )
+        payload.fragments = fragments
+        bbox = None
+        if payload.metadata:
+            data = payload.metadata[0]
+            bbox = tuple(data.get("bbox") or []) if isinstance(data.get("bbox"), (list, tuple)) and len(data.get("bbox")) == 4 else None
+        payload.candidate_blocks = self._candidate_blocks_for_bbox(bbox)
+        if self._latest_canvas_snapshot:
+            payload.image_bytes = self._latest_canvas_snapshot.image_bytes
+            payload.image_mime = self._latest_canvas_snapshot.mime
+            payload.metadata.append(
+                {
+                    "snapshot": {
+                        "bbox": self._latest_canvas_snapshot.bbox,
+                        "width": self._latest_canvas_snapshot.width,
+                        "height": self._latest_canvas_snapshot.height,
+                        "capturedAt": self._latest_canvas_snapshot.updated_at.isoformat(),
+                    }
+                }
+            )
 
     def _stroke_to_fragment(self, stroke: Dict[str, object]) -> Optional[Fragment]:
         stroke_id = str(stroke.get("id") or "").strip()

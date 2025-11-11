@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from datetime import datetime
 from typing import Dict, List, Optional, Protocol, runtime_checkable
 
 from .block_manager import BlockManager, TextEmbedder
@@ -50,6 +51,8 @@ class ConversationOrchestrator:
             main_block = best_block_id
 
         summaries = self._collect_block_summaries(main_block)
+        if not main_block and summaries:
+            main_block = next(iter(summaries.keys()))
         prompt = self._build_prompt(main_block, summaries, user_input)
         if self.plan_backend:
             response_text = self.plan_backend.complete(prompt)
@@ -101,29 +104,42 @@ class ConversationOrchestrator:
     def _collect_block_summaries(self, main_block_id: Optional[str]) -> Dict[str, Dict[str, str]]:
         summaries: Dict[str, Dict[str, str]] = {}
         if not main_block_id:
-            return summaries
-        block = self.block_manager.state.blocks.get(main_block_id)
-        if not block:
-            return summaries
-        summaries[block.block_id] = {
-            "label": block.label,
-            "summary": block.summary,
-        }
-        for rel in block.relationships:
-            if rel.rel_type not in {
-                BlockRelationshipType.REFINES,
-                BlockRelationshipType.COMMENT_ON,
-                BlockRelationshipType.FLOW_NEXT,
-            }:
-                continue
-            related = self.block_manager.state.blocks.get(rel.target_block_id)
-            if not related:
-                continue
-            summaries[related.block_id] = {
-                "label": related.label,
-                "summary": related.summary,
-                "relationship": rel.rel_type.value,
-            }
+            pass
+        else:
+            block = self.block_manager.state.blocks.get(main_block_id)
+            if block:
+                summaries[block.block_id] = {
+                    "label": block.label,
+                    "summary": block.summary,
+                }
+                for rel in block.relationships:
+                    if rel.rel_type not in {
+                        BlockRelationshipType.REFINES,
+                        BlockRelationshipType.COMMENT_ON,
+                        BlockRelationshipType.FLOW_NEXT,
+                    }:
+                        continue
+                    related = self.block_manager.state.blocks.get(rel.target_block_id)
+                    if not related:
+                        continue
+                    summaries[related.block_id] = {
+                        "label": related.label,
+                        "summary": related.summary,
+                        "relationship": rel.rel_type.value,
+                    }
+        if not summaries:
+            recent_blocks = sorted(
+                self.block_manager.state.list_blocks(),
+                key=lambda b: getattr(b, "updated_at", None) or datetime.min,
+                reverse=True,
+            )
+            for block in recent_blocks[:5]:
+                if block.block_id in summaries:
+                    continue
+                summaries[block.block_id] = {
+                    "label": block.label,
+                    "summary": block.summary,
+                }
         return summaries
 
     def _build_prompt(
@@ -193,25 +209,28 @@ class ConversationOrchestrator:
             * No change to active set, no change to main focus.
         """
 
-        if plan.action == "SWITCH":
-            # Hard context switch: we are now talking about these block(s).
-            self.context.active_block_ids = list(plan.target_block_ids)
-            # Switch main focus to the first specified target, if any.
-            if plan.target_block_ids:
-                self.context.main_block_id = plan.target_block_ids[0]
+        action = (plan.action or "").upper()
+        targets = list(plan.target_block_ids or [])
 
-        elif plan.action == "OPEN_RELATED":
+        if action == "SWITCH":
+            # Hard context switch: we are now talking about these block(s).
+            self.context.active_block_ids = list(targets)
+            # Switch main focus to the first specified target, if any.
+            if targets:
+                self.context.main_block_id = targets[0]
+
+        elif action in {"OPEN", "OPEN_RELATED"}:
             # Soft-open additional related blocks, but do NOT steal focus.
             current = set(self.context.active_block_ids)
-            current.update(plan.target_block_ids)
+            current.update(targets)
             self.context.active_block_ids = list(current)
             # main_block_id is intentionally NOT changed here.
 
-        elif plan.action == "CLOSE":
+        elif action == "CLOSE":
             # Just remove these blocks from the active set.
             remaining = [
                 bid for bid in self.context.active_block_ids
-                if bid not in plan.target_block_ids
+                if bid not in targets
             ]
             self.context.active_block_ids = remaining
             # Do NOT force main_block_id to a closed block.
@@ -223,31 +242,28 @@ class ConversationOrchestrator:
         # Fallback: if we still don't have a main_block_id set at all,
         #           try to ensure we keep at least *some* focus.
         if not getattr(self.context, "main_block_id", None):
-            if plan.action == "SWITCH" and plan.target_block_ids:
+            if action == "SWITCH" and targets:
                 # already handled in SWITCH branch, but keep it safe
-                self.context.main_block_id = plan.target_block_ids[0]
+                self.context.main_block_id = targets[0]
             elif main_block_id:
                 self.context.main_block_id = main_block_id
 
 system_prompt = (
-    "You are an **interactive whiteboard orchestrator**. "
-    "Your job is to analyze the user's message and decide what is focus block(s) "
-    "You must output a JSON object with the exact fields: "
-    "{\"action\": ..., \"targetBlockIds\": [...], \"comment\": \"...\"}.\n\n"
-
-    "The field `action` must be one of the following:\n"
-    "- **CONTINUE**: The user's input clearly belongs to the current focus block. "
-    "No context change is needed. The current processing can safely end.\n"
-    "- **NOOP**: The input does not require any action or change. "
-    "It is valid and sufficient as-is.\n"
-    "- **SWITCH**: The user has shifted to another topic or block. "
-    "Focus should change to the block(s) listed in `targetBlockIds`. "
-    "After switching, the orchestration process will run again to verify stability.\n"
-    "- **OPEN_RELATED**: The user is requesting to open or expand additional related blocks. "
-    "These block IDs should be added to the active set, and the process will re-run afterward.\n"
-    "- **CLOSE**: The user wants to close or hide some currently active blocks. "
-    "The specified blocks should be removed from the active set, and the process will re-run afterward.\n\n"
-
+    "You are an interactive whiteboard orchestrator. "
+    "Read the latest user message and decide how the block focus should change. "
+    "Always return JSON of the form {\"action\": ..., \"targetBlockIds\": [...], \"comment\": \"...\"}.\n\n"
+    "Allowed actions:\n"
+    "- CONTINUE: The message belongs to the current focus block. No change needed.\n"
+    "- NOOP: Nothing should happen; acknowledge but take no action.\n"
+    "- SWITCH: Move the focus to the listed block IDs. After switching, orchestration runs again.\n"
+    "- OPEN_RELATED: Add the listed blocks to the active set (do not steal focus).\n"
+    "- CLOSE: Remove the listed blocks from the active set.\n\n"
+    "Rules:\n"
+    "1. Return valid JSON only—no markdown, no code fences.\n"
+    "2. Include a short human-readable explanation in the `comment` field.\n"
+    "3. Only reference block IDs that appear in the context list above.\n"
+    "4. If you are unsure, choose NOOP.\n"
+    "Respond with the JSON object only."
     "Rules:\n"
     "1. Always return valid JSON only — no markdown, no code fences.\n"
     "2. Include a short, human-readable explanation in the `comment` field.\n"

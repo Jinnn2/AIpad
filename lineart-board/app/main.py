@@ -705,11 +705,18 @@ def session_sync(body: SyncSessionRequest):
     if not sess:
         raise HTTPException(404, f"session not found: {body.sid}")
     raw = [s.model_dump() for s in (body.strokes or [])]
-    if sess.graph_auto and sess.graph_runtime and raw:
-        try:
-            sess.graph_runtime.ingest_strokes(raw)
-        except Exception as exc:
-            print("[graph] ingest error:", exc)
+    if sess.graph_auto and sess.graph_runtime:
+        runtime = sess.graph_runtime
+        if body.graph_snapshot:
+            try:
+                runtime.update_canvas_snapshot(body.graph_snapshot.model_dump())
+            except Exception as exc:
+                print("[graph] snapshot update error:", exc)
+        if raw:
+            try:
+                runtime.ingest_strokes(raw)
+            except Exception as exc:
+                print("[graph] ingest error:", exc)
     sess.replace_strokes(raw)
     return SyncSessionResponse(ok=True, count=len(sess.strokes))
 
@@ -772,6 +779,11 @@ def graph_auto_mode(body: GraphAutoModeRequest):
                 runtime.ingest_strokes(sess.strokes)
             except Exception as exc:
                 print("[graph] fallback ingest failed:", exc)
+        if body.graph_snapshot:
+            try:
+                runtime.update_canvas_snapshot(body.graph_snapshot.model_dump())
+            except Exception as exc:
+                print("[graph] initial snapshot update error:", exc)
         return GraphAutoModeResponse(ok=True, enabled=True)
     sess.disable_graph_runtime()
     return GraphAutoModeResponse(ok=True, enabled=False)

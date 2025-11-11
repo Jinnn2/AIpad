@@ -116,6 +116,7 @@ class Health(BaseModel):
 class SyncSessionRequest(BaseModel):
     sid: str
     strokes: List[AIStrokeV11] = Field(default_factory=list)
+    graph_snapshot: Optional["GraphSnapshotPayload"] = None
 
 class SyncSessionResponse(BaseModel):
     ok: bool = True
@@ -134,11 +135,20 @@ class GraphAutoModeRequest(BaseModel):
     enabled: bool
     canvas_size: Optional[Tuple[float, float]] = None
     strokes: Optional[List[AIStrokeV11]] = None
+    graph_snapshot: Optional["GraphSnapshotPayload"] = None
 
 
 class GraphAutoModeResponse(BaseModel):
     ok: bool = True
     enabled: bool = False
+
+
+class GraphSnapshotPayload(BaseModel):
+    bbox: Tuple[float, float, float, float]
+    width: int
+    height: int
+    mime: Literal["image/png", "image/jpeg"]
+    data: str
 
 
 class GraphSnapshotResponse(BaseModel):
