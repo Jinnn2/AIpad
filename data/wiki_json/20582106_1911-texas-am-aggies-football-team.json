@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "20582106-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1911 Texas A&M Aggies football team",
+        "summary": "1911 Texas A&M Aggies football team",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "20582106-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          242
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1911 Texas A&M Aggies football team represented Texas A&M during the 1911 college football season.",
+        "summary": "The 1911 Texas A&M Aggies football team ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    }
+  ]
+}

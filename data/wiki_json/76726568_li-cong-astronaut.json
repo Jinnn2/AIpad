@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "76726568-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Li Cong (astronaut)",
+        "summary": "Li Cong (astronaut)",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "76726568-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          264
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Lieutenant colonel Li Cong (Chinese: 李聪; born October 1989) is a Chinese fighter pilot and People's Liberation Army Astronaut Corps (PLAAC) taikonaut.",
+        "summary": "Lieutenant colonel Li Cong (Chinese: 李聪;",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    },
+    {
+      "id": "76726568-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          288
+        ],
+        [
+          840,
+          371
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cong was born in a rural village in Handan, Hebei in October 1989. His family moved to the mining area when he was 5 years old.",
+        "summary": "Cong was born in a rural village in Hand",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    },
+    {
+      "id": "76726568-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          395
+        ],
+        [
+          840,
+          612
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "He applied for recruitment of Chinese People's Liberation Army Air Force Aviation University when he was in third grade of his high school. He graduated from the People's Liberation Army Air Force Aviation University. He was enlisted in the People's Liberation Army (PLA) in September 2009 and he join the Communist Party of China (CCP) in June 2011.",
+        "summary": "He applied for recruitment of Chinese Pe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 217
+      }
+    },
+    {
+      "id": "76726568-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          636
+        ],
+        [
+          840,
+          831
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cong once served as the Lieutenant colonel of a flying brigade of the Air Force Aviation Brigade and was second class pilot in the People's Liberation Army Air Force. He participated in the astronaut selection in May 2018 and was selected as a fourth grade astronaut into the People's Liberation Army Astronaut Corps in September 2020.",
+        "summary": "Cong once served as the Lieutenant colon",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 195
+      }
+    },
+    {
+      "id": "76726568-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          855
+        ],
+        [
+          840,
+          915
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In 2024, he was selected as the crew of Shenzhou 18.",
+        "summary": "In 2024, he was selected as the crew of ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    }
+  ]
+}

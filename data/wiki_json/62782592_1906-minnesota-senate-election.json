@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "62782592-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1906 Minnesota Senate election",
+        "summary": "1906 Minnesota Senate election",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "62782592-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          264
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1906 Minnesota Senate election was held in the U.S. state of Minnesota on November 6, 1906, to elect members to the Senate of the 35th and 36th Minnesota Legislatures.",
+        "summary": "The 1906 Minnesota Senate election was h",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    },
+    {
+      "id": "62782592-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          288
+        ],
+        [
+          840,
+          416
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Minnesota Republican Party won a large majority of seats, followed by the Minnesota Democratic Party and the People's Party. The new Legislature convened on January 8, 1907.",
+        "summary": "The Minnesota Republican Party won a lar",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "62782592-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          440
+        ],
+        [
+          840,
+          500
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "31 Republicans and 4 Democrats were uncontested.",
+        "summary": "31 Republicans and 4 Democrats were unco",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    }
+  ]
+}

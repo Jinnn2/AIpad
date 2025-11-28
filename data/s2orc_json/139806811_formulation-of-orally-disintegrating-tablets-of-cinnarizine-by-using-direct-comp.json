@@ -1,0 +1,1587 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "139806811-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          204
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "FORMULATION OF ORALLY DISINTEGRATING TABLETS OF CINNARIZINE BY USING DIRECT COMPRESSION METHOD",
+        "summary": "FORMULATION OF ORALLY DISINTEGRATING TABLETS OF CINNARIZINE BY USING DIRECT COMP",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 124
+      }
+    },
+    {
+      "id": "139806811-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          226
+        ],
+        [
+          860,
+          450
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Objective: The aim of this work was to formulate and evaluate orally disintegrating tablets of cinnarizine that were prepared by direct compression method using different types of diluents and super disintegrants. The rationale behind this work was to accelerate the disintegration of the tablet to provide rapid dissolution, quick action and enhanced bioavailability of the drug. Methods: The tablets were prepared by direct compression method using different types of diluents as mannitol, microcrystalline cellulose (MCC), and lactose.",
+        "summary": "Objective: The aim of this work was to formulate and evaluate orally disintegrat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          472
+        ],
+        [
+          860,
+          664
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Different super disintegrants were used such as crospovidone (CP), sodium starch glycolate (SSG) and Kyron T-314; Kyron T-314 was used in different concentrations of 5%, 6%, 7%, and 8%. The prepared formulae (F1-F9c) were subjected to flowability studies and postcompression evaluation studies. The optimized formula was selected depending on the time of disintegration and dissolution; then it was subjected to drug-excipient compatibility study and stability study.",
+        "summary": "Different super disintegrants were used such as crospovidone (CP), sodium starch",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          686
+        ],
+        [
+          860,
+          910
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Results: Flowability results were ranging from excellent, excellent to good, and good to fair according to the type of the diluent used. All of the prepared tablets showed acceptable hardness, friability, drug content, and disintegration. A rapid disintegration of 11.66±2.25 s with the highest percentage 2 min-drug release of 74.55±3.01% was obtained by using the diluent lactose and the super disintegrant Kyron T-314 (8%) in the formula F9c. The infrared spectroscopic studies of the formula F9c showed no drug-excipient interaction.",
+        "summary": "Results: Flowability results were ranging from excellent, excellent to good, and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          932
+        ],
+        [
+          860,
+          1076
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition, the stability study indicated that the optimized formula is a stable formula. Conclusion: Formula F9c of a rapidly disintegrating tablet was easy to be manufactured, and the results showed that this formula had a rapid disintegration, high dissolution profile, no noticeable chemical incompatibility and it was stable upon storage.",
+        "summary": "In addition, the stability study indicated that the optimized formula is a stabl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "139806811-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1098
+        ],
+        [
+          860,
+          1306
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "INTRODUCTION Over the last decade, the development of orally disintegrating tablets (ODTs) has received increased interest among pharmaceutical industries and researchers [1]. Such dosage form is not only preferable for elderly and children, but also for adults consumers who like to have their medication obtainable at any time [2]. Orodispersible tablets are defined according to European Pharmacopoeia as \"uncoated tablets intended to be placed in the mouth where they disperse rapidly before being swallowed\" [3].",
+        "summary": "INTRODUCTION Over the last decade, the development of orally disintegrating tabl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "139806811-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1328
+        ],
+        [
+          860,
+          1520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "ODTs are also known as rapid dissolve, fast melting, quick disintegrating, fast dispersing, and/or rapid melt tablets [4]. After being disintegrated in saliva, ODTs produce a solution or suspension that can be swallowed easily by the patient [5]. It means that this dosage form mixes the advantages of both liquid and solid formulations. Also, the opportunity for pregastric absorption of the drug may increases as the drug passes through the mouth, pharynx, and esophagus toward the stomach.",
+        "summary": "ODTs are also known as rapid dissolve, fast melting, quick disintegrating, fast ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1542
+        ],
+        [
+          860,
+          1734
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In such case bioavailability of the drug is significantly improved when compared with that of the conventional tablets [6]. Direct compression can be regarded as the easiest, most appropriate, and simplest way to obtain a rapidly disintegrating tablet with adequate structural integrity. In the direct compression method, the most important factor to be taken in concern is the selection of suitable excipients with good disintegration properties and compatibility.",
+        "summary": "In such case bioavailability of the drug is significantly improved when compared",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1756
+        ],
+        [
+          860,
+          1980
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Several factors should be considered in selecting the super disintegrants because these agents do not affect the rate of disintegration only, but they also affect friability, hardness and how the tablet feels in the mouth. The disintegration and dissolution properties of the direct compressible ODTs are based on the single or combined action of disintegrants and water-soluble excipients. However, the disintegrants have the major role. Choosing of a suitable disintegrant type and in optimal concentration is essential for ensuring high disintegration rate [7].",
+        "summary": "Several factors should be considered in selecting the super disintegrants becaus",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2002
+        ],
+        [
+          860,
+          2226
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cinnarizine is histamine H1 Preparation of cinnarizine ODTs with enhanced disintegration and dissolution rate is beneficial because diseases like motion sickness, nausea and vomiting require immediate release of the drug from the dosage form. In addition, cinnarizine ODTs may improve patient compliance and reduce the side effect of the drug -receptor blocker and voltage-gated calcium channel blocker used for the treatment of vertigo, Meniere's disease, motion sickness, nausea, vomiting, and other symptoms of vestibular origin [8].",
+        "summary": "Cinnarizine is histamine H1 Preparation of cinnarizine ODTs with enhanced disint",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2248
+        ],
+        [
+          860,
+          2376
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The drug is tasteless and water-insoluble [9]; therefore it can be considered as a model drug to be formulated as ODTs. Pharmaceutically, it belongs to the biopharmaceutical classification system (BCS) class II, and drug dissolution is the limiting step for its absorption [10]. .",
+        "summary": "The drug is tasteless and water-insoluble [9]; therefore it can be considered as",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2398
+        ],
+        [
+          860,
+          2526
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "MATERIALS AND METHODS The aim of the present work was to formulate cinnarizine orally disintegrating tablets by direct compression method, to ensure that high percentage of the drug can be dissolved in the stomach within a short period of time which increases the opportunity for high bioavailability of the drug.",
+        "summary": "MATERIALS AND METHODS The aim of the present work was to formulate cinnarizine o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2548
+        ],
+        [
+          860,
+          2756
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Preparation of cinnarizine ODTs by direct compression method using different types of super disintegrants Twelve different formulae of orally disintegrating tablets of cinnarizine (25 mg) were prepared by direct compression method using three different types of diluents and three different types of super disintegrants as demonstrated in table 1. Sodium saccharine and citric acid were added to mask any unacceptable taste while magnesium stearate and talc were added as lubricant and glidant respectively.",
+        "summary": "Preparation of cinnarizine ODTs by direct compression method using different typ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "139806811-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2778
+        ],
+        [
+          860,
+          2938
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "All the ingredients were passed through a sieve (mesh # 60) and blended thoroughly for 10 min, except talc and magnesium stearate which were added later and blended for further 2-3 min. The powder blend was compressed in tablets using 8 mm normal flat punches to get tablets of 180 mg weight using multi-rotary tablet compression machine (Mini press II MT tablet compression, Rimek, India).",
+        "summary": "All the ingredients were passed through a sieve (mesh # 60) and blended thorough",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2960
+        ],
+        [
+          860,
+          3136
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Measuring of the angle of repose The angle of repose is a characteristic related to inter-particulate friction or resistance to movement between particles [11]. It was determined using fixed height funnel method by measuring the height of the cone and the base formed by the powder falling through a funnel. It is calculated by applying the following equation: Where °= Angle of repose; h= height of powder cone; r= radius of powder cone.",
+        "summary": "Measuring of the angle of repose The angle of repose is a characteristic related",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3158
+        ],
+        [
+          860,
+          3398
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Compressibility index (Carr's Index) and Hausner's ratio \"Compressibility is the measure obtained from the shrinkage of the apparent volume for a defined mass of powder after the rearrangement of the grains/particles during the application of tapping\" [12]. Compressibility index (Carr's Index) and Hausner's ratio were determined by gently loading a certain amount of the powder through a funnel into 100 ml cylinder, and tapped until the volume stopped changing. Carr's index and Hausner's ratio were calculated according to the equation below: Where v °= untapped apparent volume in ml, vf",
+        "summary": "Compressibility index (Carr's Index) and Hausner's ratio \"Compressibility is the",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "139806811-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3420
+        ],
+        [
+          860,
+          3468
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Evaluation of the prepared cinnarizine tablets = taped volume of blend in ml.",
+        "summary": "Evaluation of the prepared cinnarizine tablets = taped volume of blend in ml.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "139806811-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3490
+        ],
+        [
+          860,
+          3618
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Hardness (Crushing strength) Hardness test was done to determine the resistance of a tablet to the mechanical shocks during handling, shipping, storage, and transportation [13]. It was measured by tablet breaking force tester-USP (Electrolab, India) and expressed in Newton (N).",
+        "summary": "Hardness (Crushing strength) Hardness test was done to determine the resistance ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3640
+        ],
+        [
+          860,
+          3832
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Friability (Resistance to abrasion) Friability test can be done to evaluate the ability of the tablets to withstand abrasion in packing, handling and transporting. Twenty tablets are randomly taken, dedusted, weighed accurately and transferred into friability tester-1 (EF-2, Electrolab, India). After 100 rotations, the tablets were dedusted and weighed again, the friability percentage was calculated for each formula by the following equation [14]:",
+        "summary": "Friability (Resistance to abrasion) Friability test can be done to evaluate the ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3854
+        ],
+        [
+          860,
+          3982
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Uniformity of weight Twenty tablets were selected at random, and the average weight was calculated. The variation of the weight of the individual tablet from the average weight was calculated. In this work, the percentage limits allowed of weight variation according to the average weight of the tablets is 7.5% [3].",
+        "summary": "Uniformity of weight Twenty tablets were selected at random, and the average wei",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4004
+        ],
+        [
+          860,
+          4196
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Disintegration test Disintegration time for cinnarizine ODTs was determined by disintegration tester-3 USP, (Electrolab, India), using 900 ml of distilled water, at 37 °C±0.5 [3]. The time needed for complete disintegration of the tablet with no palpable mass remaining in the apparatus was measured in seconds [15]. The disintegration time was also measured for the marketed cinnarizine conventional tablet (Stugeron® 25 mg tablet) as a reference.",
+        "summary": "Disintegration test Disintegration time for cinnarizine ODTs was determined by d",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4218
+        ],
+        [
+          860,
+          4378
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Wetting time The wetting time was measured using a simple procedure in which five circular tissue papers of 10 cm in diameter were placed in a 10 cm circular petri dish. 10 ml solution of a water-soluble dye (0.02% tartrazine dye) was added. A tablet was carefully placed on the surface of the tissue paper, the time spent for water to reach the upper surface of the tablet represents the wetting time [16].",
+        "summary": "Wetting time The wetting time was measured using a simple procedure in which fiv",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4400
+        ],
+        [
+          860,
+          4560
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Water absorption ratio To measure the water absorption ratio, the same procedure as that of wetting time was followed. The initial weight of the tablet before placing it in the petri dish was recorded (Wb), the wetted tablet was taken and reweighed (Wa Where R= water absorption ratio; W ). water absorption ratio (R) was determined according to the following equation [16]:",
+        "summary": "Water absorption ratio To measure the water absorption ratio, the same procedure",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4582
+        ],
+        [
+          860,
+          4790
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Dissolution test (In vitro drug release) = weight of the tablet before absorption. Dissolution test for the prepared ODTs of cinnarizine was performed using a dissolution test apparatus II (Pharma test, PT-DT7, Germany) with a paddle stirrer. A volume of 900 ml of 0.1 N HCl (pH 1.2) was used as a dissolution medium at a speed of 50 rpm and a temperature of 37 °C±0.5. A sample of 5 ml of the medium was withdrawn at the predetermined time interval and replaced by the same volume of fresh drug-free dissolution medium.",
+        "summary": "Dissolution test (In vitro drug release) = weight of the tablet before absorptio",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "139806811-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4812
+        ],
+        [
+          860,
+          4988
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The samples were filtered through a 0.45 µm filter, diluted and analyzed at 254 nm by UV spectrophotometer (Specord 40, analytic Jena, Germany), the drug concentration was calculated from the calibration curve [15]. In addition, the dissolution test was conducted for the conventional cinnarizine tablet (Stugeron® 25 mg tablet) as a reference using the same procedure and conditions as that for the prepared ODTs of cinnarizine.",
+        "summary": "The samples were filtered through a 0.45 µm filter, diluted and analyzed at 254 ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5010
+        ],
+        [
+          860,
+          5138
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Drug content (assay) From each formula of the prepared cinnarizine ODTs, 10 tablets were randomly selected and powdered. An equivalent amount of 25 mg of cinnarizine was taken and dissolved in 0.1 N HCl, filtered and analyzed for drug content at the ƛ max (254) by UV -visible spectrophotometer [17].",
+        "summary": "Drug content (assay) From each formula of the prepared cinnarizine ODTs, 10 tabl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5160
+        ],
+        [
+          860,
+          5368
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fourier transforms infrared (FTIR) studies Fourier transforms infrared (FTIR) spectra of cinnarizine alone, and mixtures of 1:0.57 of cinnarizine with Kyron, and 1:5.3 of cinnarizine with lactose (which represented the actual ratio of the constituent of the formula F9c), were recorded to detect any possible interaction between cinnarizine and other excipients. IR-spectrophotometer (Thermo Mattson IR 300, USA) was used with potassium bromide disc; the scanning range was 500-4000 cm -1 [18].",
+        "summary": "Fourier transforms infrared (FTIR) studies Fourier transforms infrared (FTIR) sp",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "139806811-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5390
+        ],
+        [
+          860,
+          5534
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Stability study The selected ODTs formula (formula F9c) was subjected to accelerated stability study for three months at 40 °C in a stability chamber (Newtronic, India) with 75%±5 relative humidity (RH). In addition stability at 25 °C with 60±5 relative humidity (RH) for three months was conducted where samples were withdrawn every month and evaluated [19].",
+        "summary": "Stability study The selected ODTs formula (formula F9c) was subjected to acceler",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "139806811-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5556
+        ],
+        [
+          860,
+          5684
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Statistical analysis The software Excel 2013 using t-test and ANOVA was used for statistical analysis, the difference was considered to be statistically significant when P<0.05 and non-significant when P>0.05. Mean, and standard deviation was used to express the values in the data.",
+        "summary": "Statistical analysis The software Excel 2013 using t-test and ANOVA was used for",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5706
+        ],
+        [
+          860,
+          5930
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Flowability study of the prepared powder mixtures The results of the flowability study showed that those formulae that were prepared using mannitol as a diluent (F1, F2, and F3) had excellent flow properties. The angle of repose was in the range of (24.98±0.36 to 28.319±1.52), Carr's index was less than 10%, and Hausner's ratio was less than 1.11. This was due to the free-flowing nature of the granulated form of mannitol (Perlitol 300 DC) [20]. The formulae that were prepared with MCC diluent (F4, F5, and F6) showed flow properties ranged from good to fair.",
+        "summary": "Flowability study of the prepared powder mixtures The results of the flowability",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5952
+        ],
+        [
+          860,
+          6096
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The angle of repose was in the range of (34.43±0.14 to 40.44±3.70), Carr's index was in the range of (10.69±0.887% to 16.39±0.27%), and Hausner's ratio was in the range of (1.11±0.015 to 1.195±0.005) because MCC is made up of crystalline powder that is porous in nature with a low bulk density which hinders its flowability [21].",
+        "summary": "The angle of repose was in the range of (34.43±0.14 to 40.44±3.70), Carr's index",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "139806811-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6118
+        ],
+        [
+          860,
+          6294
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The formulae (F7, F8, and F9) that were prepared with the diluent lactose (super Tab® 40LL) showed good to excellent flow properties, the angle of repose was in the range of (24.83±2.19 to 34.4±0.43), Carr's index was in the range of (6.37±0.94% to 14.49±0.054%) and Hausner's ratio was in the range of (1.065±0.007 to 1.1694±0.021) due to the presence of lactitol monohydrate in its composition which enhanced its flow properties [22].",
+        "summary": "The formulae (F7, F8, and F9) that were prepared with the diluent lactose (super",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6316
+        ],
+        [
+          860,
+          6476
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Evaluation of cinnarizine orally disintegrating tablets The hardness of the tablets from all of the formulae was within an acceptable range (21.97±1.76 N to 31.55±4.40 N). The highest hardness value was observed for the formulae F4, F5, and F6 due to the strong inter-particle force between MCC particles [7]. In addition to the acceptable friability of less than 1%.",
+        "summary": "Evaluation of cinnarizine orally disintegrating tablets The hardness of the tabl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6498
+        ],
+        [
+          860,
+          6674
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Tablets thickness was in the range of (2.88±0.03 mm to 2.97±0.02 mm), except for the formulae F4, F5, and F6, in which higher thickness range was reported (3.46±0.02 mm to 3.59±0.07 mm), due to the low bulk density of MCC that was used as a diluent for them [21]. The weight variation was acceptable and within the pharmacopoeial limits, and the drug content was found to be good and not less than 90% or more than 110% which is the required limit [3].",
+        "summary": "Tablets thickness was in the range of (2.88±0.03 mm to 2.97±0.02 mm), except for",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6696
+        ],
+        [
+          860,
+          6936
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Disintegration time The disintegration time was in the range of (4.33±1.53s to 28.02±7.1s) as shown in table 2. The formulae F5 and F6 that were prepared with the diluent MCC showed the shortest disintegration time which may be due to the self-disintegration property of MCC (it disintegrate by capillary and swelling mechanism) which was complimentary with the disintegration properties of the super disintegrants that were used [23]. Lactose showed shorter disintegration time than mannitol which may be attributed to the reported spontaneous disintegration property of lactose [24].",
+        "summary": "Disintegration time The disintegration time was in the range of (4.33±1.53s to 2",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "139806811-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6958
+        ],
+        [
+          860,
+          7182
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Coming to the effect of the super disintegrant on disintegration time, CP revealed the shortest disintegration time among the other super disintegrants in the formulae that were prepared with mannitol (F1, F2, and F3), (ANOVA, *P<0.05) and lactose (F7, F8, and F9), (ANOVA, **P<0.01). The order of the disintegration time in such formulae was found to be CP>Kyron T-314>SSG. CP with its porous structure quickly absorbs water into the tablet by capillary action followed by secondary swelling which results in rapid disintegration of the tablet [25].",
+        "summary": "Coming to the effect of the super disintegrant on disintegration time, CP reveal",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7204
+        ],
+        [
+          860,
+          7396
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Kyron disintegrates evenly by wicking mechanism mainly, also by swelling on hydration [26]. SSG disintegrates by swelling, but unlike CP and Kyron T-314, it gels at a high level which may result in the formation of a thick viscous barrier that retards disintegration [27]. These results are in agreement with the results obtained by Swatantra et al. (2014), in a comparative study on the effect of various super disintegrants in the formulation of ibuprofen fast dissolving tablets [28].",
+        "summary": "Kyron disintegrates evenly by wicking mechanism mainly, also by swelling on hydr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7418
+        ],
+        [
+          860,
+          7562
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conversely, the formulae that were prepared with the diluent MCC; CP revealed the longest disintegration time in the formula F4 compared with that of F5 and F6. It may be due to the lower water absorption ratio of the formula F4 with this super disintegrant when compared with that of SSG and Kyron T-314 (F5 and F6) as shown in table 2.",
+        "summary": "Conversely, the formulae that were prepared with the diluent MCC; CP revealed th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "139806811-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7584
+        ],
+        [
+          860,
+          7744
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Wetting time Wetting time can be regarded as one of the vital parameters to predict how much of the fluid is enough for breaking the tablet when placed upon the tongue ( fig. 1). All of the tested formulae were wetted within an acceptable time of less than one minute as illustrated in table 2, which indicated their ability to absorb water and swell. The results were in the range of 2.72±0.75s to 43.64±6.4s.",
+        "summary": "Wetting time Wetting time can be regarded as one of the vital parameters to pred",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7766
+        ],
+        [
+          860,
+          7926
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The shortest wetting time was with the formulae that were prepared with MCC (F4, F5, and F6 with the wetting time of 10.03±3.01s, 4.62±0.68s, and 2.72±0.75s respectively), this could be due to its porous structure [21]. The type of the super disintegrant had a significant effect on wetting time in the formulae F4, F5, and F6 that were prepared with the diluent MCC.",
+        "summary": "The shortest wetting time was with the formulae that were prepared with MCC (F4,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7948
+        ],
+        [
+          860,
+          8060
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Like the disintegration time, the formula F4 that was prepared with the super disintegrant CP showed the longest wetting time (10.03±3.01s) compared with those prepared with SSG and Kyron-T314 (4.62±0.68s and 2.72±0.75s) respectively (ANOVA, *P<0.05).",
+        "summary": "Like the disintegration time, the formula F4 that was prepared with the super di",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "139806811-p041",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8082
+        ],
+        [
+          860,
+          8306
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Water absorption ratio The highest water absorption ratio was observed for the formulae that were prepared with MCC, followed by those prepared with lactose then mannitol, as illustrated in table 2. The effect of the super disintegrant on water absorption ratio appeared when MCC was used as a diluent. The super disintegrant SSG significantly increased the water absorption ratio from 115.27±5.68% and 182.49±13.75% when CP and Kyron T-314 were used as super disintegrants to 232.39±8.62% which may lead to less patient compliance due to the long stay on the tongue (ANOVA, **P<0.01).",
+        "summary": "Water absorption ratio The highest water absorption ratio was observed for the f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "139806811-p042",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8328
+        ],
+        [
+          860,
+          8536
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results are in agreement with the results obtained by Lakshmi et al. (2013) who made a comparative evaluation of natural and synthetic superdisintegrants in the formulation of fast dissolving tablets [29]. Moreover, when the concentration of Kyron T-314 increased from 5% in the formula F9 to 8% in formula F9c, the water absorption ratio increased from 58.52±0.51% to 81.45±7.04% (ANOVA, *P<0.05), while the disintegration and wetting time were not significantly affected. 40LL) when compared with the others.",
+        "summary": "These results are in agreement with the results obtained by Lakshmi et al. (2013",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "139806811-p043",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8558
+        ],
+        [
+          860,
+          8734
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It was composed of anhydrous lactose and lactitol monohydrate, the dissolution rate of anhydrous β-lactose is 10 times more than that of α-lactose monohydrate [30], while MCC is practically insoluble in water [31]. Kyron T-314 increased the porosity of cinnarizine tablets due to which the absorption of water takes place at a higher rate that results in breaking of the tablets and therefore faster disintegration/dissolution [32].",
+        "summary": "It was composed of anhydrous lactose and lactitol monohydrate, the dissolution r",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p044",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8756
+        ],
+        [
+          860,
+          8916
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "By increasing the percentage of Kyron-T314 from 5% in the formula, F9 to 8% in the formula F9c the percentage of the drug release dafter 2 min increased from 61.46±4.60 to 74.55±3.0 ( fig. 8), (ANOVA, **P<0.01). These results were much higher than that of the commercially available cinnarizine tablets (Stugeron® 25 mg tablet), in which only 8.75±2.15% of the drug was released within 2 min.",
+        "summary": "By increasing the percentage of Kyron-T314 from 5% in the formula, F9 to 8% in t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "139806811-p045",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8938
+        ],
+        [
+          860,
+          9114
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results are in agreement with the results obtained by Gattu and Lakshmi (2011), who made a comparative evaluation of natural and synthetic super-disintegrants with newer superdisintegrant Kyron T-314 [33]. Results of the release kinetic models showed that all of the formulae followed the first order kinetics. The k1 value increased in all of the formulae with increasing of the percentage of the drug released (table 2).",
+        "summary": "These results are in agreement with the results obtained by Gattu and Lakshmi (2",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "139806811-p046",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9136
+        ],
+        [
+          860,
+          9264
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "From the above results, formula F9c can be selected as the most appropriate formula that showed rapid disintegration (11.66±2.25 s) when compared with that of the marketed one (312±4.32 s), (t-test, **P<0.01), with the highest dissolution profile among the other formulae.",
+        "summary": "From the above results, formula F9c can be selected as the most appropriate form",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "139806811-p047",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9286
+        ],
+        [
+          860,
+          9478
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fourier transforms infrared (FTIR) studies The FTIR studies showed no detected chemical interaction between cinnarizine, Kyron T-314, and lactose. Fig. 9 shows that there were no noticed shift in peaks or extra peaks appeared when comparing IR of cinnarizine alone ( fig. 9, a), lactose alone ( fig. 9, b), Kyron T-314 alone ( fig. 9, c) with the IR chart of the physical mixture of cinnarizine and lactose ( fig. 9, d), cinnarizine and Kyron T-314 ( fig. 9, e).",
+        "summary": "Fourier transforms infrared (FTIR) studies The FTIR studies showed no detected c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p048",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9500
+        ],
+        [
+          860,
+          9692
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Stability study The results of the stability study of the optimized formula (F9c) showed that there were no significant changes in hardness, friability, disintegration, drug release and drug content of the examined tablets through the stability study (table 3). The only exception is the noticed increase in weight that was observed for the tablets stored at 40 °C, 75%±5 RH which might be due to the hygroscopic nature of the anhydrous lactose that presents in the tested formula [34].",
+        "summary": "Stability study The results of the stability study of the optimized formula (F9c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "139806811-p049",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9714
+        ],
+        [
+          860,
+          9954
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CONCLUSION Owing to that cinnarizine is a class II drug according to the biopharmaceutical classification system (BCS), so any improvement in the dissolution will lead to enhancement of the bioavailability. It was successfully formulated as ODTs by using direct compression method. Among the various diluents used, lactose was selected. In addition, different super disintegrants were used, the super disintegrant Kyron T-314 was the most successful one when used with the diluent lactose. It played an important role in decreasing the disintegration time and enhancing the dissolution of the drug.",
+        "summary": "CONCLUSION Owing to that cinnarizine is a class II drug according to the biophar",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "139806811-p050",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9976
+        ],
+        [
+          860,
+          10088
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The selected formula showed acceptable characteristics, rapid disintegration and dissolution, and good stability. Accordingly, the selected formula (F9c) represents a promising formula for preparing ODTs by using the simple, direct compression strategy.",
+        "summary": "The selected formula showed acceptable characteristics, rapid disintegration and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    }
+  ]
+}

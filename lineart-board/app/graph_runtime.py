@@ -124,7 +124,8 @@ class LLMBlockSummarizer(BlockSummarizer):
                     "You are maintaining the structured knowledge blocks on this canvas.\n" 
                     "1. Rewrite the block summary so it covers all current fragments (aim for 120 characters or fewer).\n"
                     "2. Identify relationships between this block and other blocks (semantic, functional, or visual flow).\n"
-                    "Return JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}]}. Use relationship types such as refines, comment_on, or flow_next. Skip any relationship you cannot justify.\n"
+                    "3. If you believe this block should be merged into another block (because they describe the same concept or the other block already subsumes it), add a merge directive. Use merge objects like {\"source\": \"current_block_id\", \"target\": \"block_xyz\"} or simply {\"target\": \"block_xyz\"}. Only merge when you are confident.\n"
+                    "Return JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}], \"merge\"?: {... or [...]}}. Use relationship types such as refines, comment_on, or flow_next. Skip any relationship you cannot justify.\n"
                 ),
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -690,6 +691,11 @@ class GraphRuntime:
             "meta": meta_payload,
             "points": stroke.get("points"),
         }
+        if fragment_type == FragmentType.TEXT:
+            is_heading = self._is_heading_meta(meta_payload, stroke.get("style"))
+            graph_meta = dict(payload.get("graph") or {})
+            graph_meta["isHeading"] = is_heading
+            payload["graph"] = graph_meta
         return Fragment(
             fragment_id=stroke_id,
             fragment_type=fragment_type,
@@ -698,6 +704,36 @@ class GraphRuntime:
             timestamp=timestamp,
             payload=payload,
         )
+
+    def _is_heading_meta(self, meta: Dict[str, object], style: object) -> bool:
+        font_size = meta.get("fontSize") if isinstance(meta, dict) else None
+        font_weight = meta.get("fontWeight") if isinstance(meta, dict) else None
+        if font_size is None and isinstance(style, dict):
+            font_size = style.get("fontSize")
+        if font_weight is None and isinstance(style, dict):
+            font_weight = style.get("fontWeight")
+        try:
+            size_val = float(font_size)
+        except (TypeError, ValueError):
+            size_val = None
+        weight_val = 0
+        if isinstance(font_weight, str):
+            ft = font_weight.strip().lower()
+            if ft.isdigit():
+                weight_val = int(ft)
+            elif ft in {"bold", "heavy"}:
+                weight_val = 700
+        elif isinstance(font_weight, (int, float)):
+            weight_val = int(font_weight)
+        role = (meta.get("role") if isinstance(meta, dict) else None) or ""
+        role = str(role).lower()
+        if role in {"title", "heading", "header"}:
+            return True
+        if size_val is not None and size_val >= 28:
+            return True
+        if weight_val >= 600:
+            return True
+        return False
 
     def _points_to_bbox(self, points: object) -> Optional[tuple[float, float, float, float]]:
         if not isinstance(points, Iterable):

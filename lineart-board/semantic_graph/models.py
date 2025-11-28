@@ -93,6 +93,7 @@ class Block:
     embedding: Optional[List[float]] = None
     last_summary_member_count: int = 0
     last_summary_ts: datetime = field(default_factory=datetime.utcnow)
+    character_count: int = 0
 
     def add_relationship(self, rel: BlockRelationship) -> None:
         self.relationships.append(rel)

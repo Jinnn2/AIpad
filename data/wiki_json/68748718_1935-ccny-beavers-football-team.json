@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "68748718-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1935 CCNY Beavers football team",
+        "summary": "1935 CCNY Beavers football team",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "68748718-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          331
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1935 CCNY Beavers football team was an American football team that represented the City College of New York (CCNY) as an independent during the 1935 college football season. In their second season under head coach Benny Friedman, the team compiled a 4–3 record.",
+        "summary": "The 1935 CCNY Beavers football team was ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    }
+  ]
+}

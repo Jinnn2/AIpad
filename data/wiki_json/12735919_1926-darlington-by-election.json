@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "12735919-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1926 Darlington by-election",
+        "summary": "1926 Darlington by-election",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "12735919-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          264
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1926 Darlington by-election was a by-election held on 17 February 1926 for the British House of Commons constituency of Darlington in County Durham.",
+        "summary": "The 1926 Darlington by-election was a by",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    },
+    {
+      "id": "12735919-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          288
+        ],
+        [
+          840,
+          416
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The seat had become vacant when the sitting Conservative Member of Parliament (MP), William Pease had died on 23 January 1926, aged 60. He had held the seat since a by-election in 1923.",
+        "summary": "The seat had become vacant when the sitt",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "12735919-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          440
+        ],
+        [
+          840,
+          545
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Liberal Party candidate was 51-year-old John Dickie, who had been the MP for Gateshead from 1923 until his defeat at the 1924 general election.",
+        "summary": "The Liberal Party candidate was 51-year-",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    },
+    {
+      "id": "12735919-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          569
+        ],
+        [
+          840,
+          741
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Labour Party candidate was 42-year-old Arthur Shepherd, and E. H. Pease stood for the Conservatives. Pease had not previously contested a parliamentary election, but Shepherd had contested Darlington in 1924, losing by over 2000 votes to William Pease.",
+        "summary": "The Labour Party candidate was 42-year-o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "12735919-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          765
+        ],
+        [
+          840,
+          937
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "On a slightly increased turnout, the result was a narrow victory for Shepherd. His share of the vote was lower than in 1924, when there had been no Liberal candidate, but the presence of a Liberal in the by-election impacted more heavily on the Conservatives than on Labour.",
+        "summary": "On a slightly increased turnout, the res",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "12735919-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          961
+        ],
+        [
+          840,
+          1021
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Shepherd held the seat at the 1929 general election, but was defeated in 1931.",
+        "summary": "Shepherd held the seat at the 1929 gener",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    },
+    {
+      "id": "12735919-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1045
+        ],
+        [
+          840,
+          1128
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Pease did not stand for Parliament again, but Dickie was elected in 1931 as National Liberal MP for Consett.",
+        "summary": "Pease did not stand for Parliament again",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    }
+  ]
+}

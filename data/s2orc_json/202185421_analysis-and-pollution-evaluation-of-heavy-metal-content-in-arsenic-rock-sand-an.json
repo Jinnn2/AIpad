@@ -1,0 +1,936 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "202185421-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          204
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Analysis and Pollution Evaluation of Heavy Metal Content in Arsenic Rock, Sand and Compound Soil in Yulin Area, Shaanxi Province",
+        "summary": "Analysis and Pollution Evaluation of Heavy Metal Content in Arsenic Rock, Sand a",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 124
+      }
+    },
+    {
+      "id": "202185421-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          226
+        ],
+        [
+          860,
+          450
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "By using the Inductively Coupled Plasma-Mass Spectrometer (ICP-MS) for measuring heavy metal Cr, Ni, Cu, As, Cd, Hg, and Pb contents in sand mixed soils in the project area of arsenic rock and sand mixed-use soil in Yulin Area, Shaanxi Province, Single-factor pollution index method and Nemerow comprehensive pollution index method were used to evaluate the degree of soil contamination. The results showed that the average content of Cd in compound soil and arsenic rock were 0.27 times and 1.03 times higher than the national natural background value of soil environmental quality.",
+        "summary": "By using the Inductively Coupled Plasma-Mass Spectrometer (ICP-MS) for measuring",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          472
+        ],
+        [
+          860,
+          664
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The average content of other heavy metals in compound soil arsenic rock and sand was within the national natural background value of soil environmental quality. Compared with the arsenic rock, the contents of Cr, Ni, Cu, Zn, As, Cd, and Pb in the compound soil except Hg were decreased by 0.13 times, 0.41 times, 0.42 times, 0.49 times, 0.50 times, 0.38 times and 0.14 times respectively. Heavy metals were all less than 1 in individual pollution indexes of compound soil, arsenic rock, and sand.",
+        "summary": "The average content of other heavy metals in compound soil arsenic rock and sand",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          686
+        ],
+        [
+          860,
+          926
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "After 3 years of planting, the content of heavy metals such as Mn, Ni, Cd, Cr, Cu, Zn, As, and Pb in the compound soil was lower than the secondary standard of the soil environmental quality standard. The comprehensive pollution index of heavy metals was 0.109, belonging to the alert level, is still clean, are in line with the standard clean. The research shows that the mass ratio of heavy metals in the arsenic rock-sand compound soil conforms to the soil environmental quality standards for farmland and can ensure the quality of the soil environment and the safety of agricultural products.",
+        "summary": "After 3 years of planting, the content of heavy metals such as Mn, Ni, Cd, Cr, C",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "202185421-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          948
+        ],
+        [
+          860,
+          1156
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction The Yuyang District of Yulin City, Shaanxi Province is located in the hinterland of Mu Us Desert (108°58′-110°24′E, 37°49′-38°58′N), and is an agro-pastoral zone in the wind-sand grass beach area, because of land degradation, water scarcity and ecological vulnerability in the area, it is difficult to develop and use. The local land forms are only sand and arsenic rock. The arsenic rock is as hard as stone without water, but it is soft and muddy when it meets water. It has good quality of water REES2019 IOP Conf.",
+        "summary": "Introduction The Yuyang District of Yulin City, Shaanxi Province is located in t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1178
+        ],
+        [
+          860,
+          1370
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Series: Earth and Environmental Science 300 (2019) 032095 IOP Publishing doi: 10.1088/1755-1315/300/3/032095 2 retention, poor sediment layer permeability and hard laminated on the surface; The sand and soil have no structure, and it has good water permeability under dry and wet conditions. The water holding capacity is poor, and the nature advantages of the two can be complementary [1]. Studies have shown that different crops grow well under different ratios of sand to arsenic rock.",
+        "summary": "Series: Earth and Environmental Science 300 (2019) 032095 IOP Publishing doi: 10",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1392
+        ],
+        [
+          860,
+          1632
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Through this technology, a total of 3.16 million mu of cultivated land has been added to the Yuyang District, Yulin City, Shaanxi Province, and 9 patents have been applied for. It is solved the urgent need of Shaanxi Province to make up for the balance [2]. There are two sources of heavy metal elements in the soil, natural sources and human interference [3]. Heavy metals enter the body and bind to functional proteins, occupy active sites of enzymes, denature them, and lead to metabolic disorders in organisms [4]. Heavy metal pollution in soil is multi-sourced, cumulative and non-degradable.",
+        "summary": "Through this technology, a total of 3.16 million mu of cultivated land has been ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "202185421-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1654
+        ],
+        [
+          860,
+          1846
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It has a good ability to stay in the soil for a long time [5]. In recent years, the problem of heavy metal pollution in agricultural soil has become a hot issue in the environmental science community. There are many studies on the evaluation of soil heavy metal content and soil quality in farmland [6~8]. Therefore, in order to ensure the safety of newly-added arable land and the food safety of agricultural planted agricultural products in order to ensure the arsenic rock and sand mixed.",
+        "summary": "It has a good ability to stay in the soil for a long time [5]. In recent years, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1868
+        ],
+        [
+          860,
+          2076
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This study uses systematic sampling and determine the contents of heavy metals Cr, Ni, Cu, Zn, As, Cd, Hg and Pb in compound soil formed by arsenic rock and sand, arsenic rock, and sand in the project area of arsenic rock and sand mixture soil in the Yuyang District, Yulin City of Mu Us Desert. It is refered to national soil environmental quality standards (GB 15618-1995). Using single factor pollution index method and Nemerow comprehensive pollution index method to evaluate the pollution degree. [9].",
+        "summary": "This study uses systematic sampling and determine the contents of heavy metals C",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2098
+        ],
+        [
+          860,
+          2290
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Vegetable cultivation area, producing area within 300 hm 2 , generally set 3 to 5 sampling points; The area is above 300 hm 2 , and every additional 300 hm 2 increases 1 to 2 sampling points. In this study, the project area is located in Mengjiawan Village, Yulin City, Shaanxi Province, with an area of approximately 163 hm 2 . The project area is evenly divided into 7 areas, each area is about 23 hm 2 . It collects a mixed soil sample for each area, a total of 7, Sampling area plot shape shown in Figure 1.",
+        "summary": "Vegetable cultivation area, producing area within 300 hm 2 , generally set 3 to ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2312
+        ],
+        [
+          860,
+          2520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Sampling and analysis methods Soil samples were collected by snake method. It collects 5 samples in 0-30 cm soil layer (scrape 2 cm top soil layer) and 0.5 kg per sample point then 5 points mixed fully, and leaving 1 kg as a sample for this sample. Soil samples collected were taken back to the laboratory. Removal of plant debris, gravel and other debris after air drying, mix well and keep 0.5 kg in quarters. Divide the soil after grinding as required. A part of a nylon soil sieve with 18-mesh pore size is used for soil pH determination.",
+        "summary": "Sampling and analysis methods Soil samples were collected by snake method. It co",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2542
+        ],
+        [
+          860,
+          2718
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The other part passes through a 100-mesh aperture nylon sieve for the determination of heavy metal content in soil and it is refered to the method in GB/T 17138-1997 [10]. After soil samples are processed according to the method in 2.2.2, use ICP-MS to determine of Cr, Ni, Cu, Zn, As, Cd, Hg, and Pb in Samples. Evaluate of heavy metal contamination in samples using selected evaluation methods; Soil pH determined by glass electrode method [11].",
+        "summary": "The other part passes through a 100-mesh aperture nylon sieve for the determinat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "202185421-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2740
+        ],
+        [
+          860,
+          2820
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Soil pollution level grading standard According to the comprehensive pollution index, classification criteria for soil pollution levels are shown in Table 1 [12].",
+        "summary": "Soil pollution level grading standard According to the comprehensive pollution i",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "202185421-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2842
+        ],
+        [
+          860,
+          2890
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Data processing Using Excel software and DPS7.55 software for statistical analysis.",
+        "summary": "Data processing Using Excel software and DPS7.55 software for statistical analys",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "202185421-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2912
+        ],
+        [
+          860,
+          3120
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Complex soil, arsenic rock and sand pH measurement results The results of the determination of the pH value of compound soil, arsenic rock, and sand are shown in Table 2. According to Table 2, the average pH values of compound soil, arsenic rock, and sand are 8.41, 8.35, and 8.29, respectively, indicating that the complex soil, arsenic rock, and sand are alkaline. Therefore, \"Soil Environmental Quality Standard\" (GB 15618-1995) is adopted. The third-grade standard of the secondary standard in 1995) is used as the evaluation standard.",
+        "summary": "Complex soil, arsenic rock and sand pH measurement results The results of the de",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3142
+        ],
+        [
+          860,
+          3318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Complex soil, arsenic rock and sand heavy metal content The content of heavy metals in compound soil, arsenic rock, and sand is Hg, which is compound soil> arsenic rock> sand, and the contents of the remaining seven elements are diagene arsenic rock> compound soil> sand (as shown in Table 3). The average contents of heavy metals in compound soil, arsenic rock, and sand are all within the national secondary standards.",
+        "summary": "Complex soil, arsenic rock and sand heavy metal content The content of heavy met",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "202185421-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3340
+        ],
+        [
+          860,
+          3564
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Except that the average content of Cd exceeds the natural background value of national soil environmental quality by 0.27 times, the average content of other heavy metals is in the national soil environmental quality natural background value. From the environmental quality standards for green food production areas (NY/T391-2000) [14], the project area meets the requirements for environmental quality standards for green food production, indicating that the three soils have no adverse impact on agricultural production in terms of heavy metals.",
+        "summary": "Except that the average content of Cd exceeds the natural background value of na",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3586
+        ],
+        [
+          860,
+          3778
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The heavy metal content of arsenic rock, sand, and compound soils is shown in Table 3. As can be seen from Table 3, in addition to the Hg element, the Cr, Ni, Cu, Zn, As, Cd, and Pb in the compounded soil decreased by 0.13 times, 0.41 times, 0.42 times, 0.49 times, 0.50 times, 0.38 times, and 0.14 times, respectively, compared with the arsenic rock. It shows that through the physical measures of the soil, it can reduce the concentration of soil pollution and reduce the damage [15].",
+        "summary": "The heavy metal content of arsenic rock, sand, and compound soils is shown in Ta",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3800
+        ],
+        [
+          860,
+          3976
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Note: a~b indicates significant differences within the group, different letters indicate significant differences (P <0.05). The coefficient of variation reflects the average degree of variation at each sampling point in the overall sample. Under normal circumstances, the coefficient of variation is weakly variable from 0% to 10%, moderately variable from 10% to 100%, and strongly variable from 100% or more.",
+        "summary": "Note: a~b indicates significant differences within the group, different letters ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "202185421-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3998
+        ],
+        [
+          860,
+          4190
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "From Table 3, it can be seen that the average variation degree of the eight heavy metals in the compound soil of the project area is ascending order: As>Cu>Zn>Hg>Ni>Cd>Cr>Pb, the range is from 10.75% to 68.17%; The order of the average variation of the eight heavy metals in the arsenic rock is from Zn>Cr>Ni>Cu>Cd>Pb>Hg>As, the range is 0.76% to 26.87%; The order of the average variability of the eight heavy metals in the sand is as follows: As>Cu>Ni>Hg>Cd>Zn>Cr>Pb, the range is 3.14% to 96.13%.",
+        "summary": "From Table 3, it can be seen that the average variation degree of the eight heav",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202185421-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4212
+        ],
+        [
+          860,
+          4372
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It can be seen that the spatial differences of the eight heavy metals in the compound soil and arsenic rock are not large, while the average variation of the eight heavy metals in the sand is relatively large. This may be due to the strong fluidity of sand and its tendency to migrate with the wind, resulting in large differences in the degree of contamination between individual sites.",
+        "summary": "It can be seen that the spatial differences of the eight heavy metals in the com",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "202185421-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4394
+        ],
+        [
+          860,
+          4602
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "At the same time, as can be seen from Table 3, with the exception of Zn, the coefficient of variation of each element of the arsenic rock is minimal compared with that of compound soil and sand, and the variation coefficients of Cr, Ni, and Cu are relatively close, being 4.38% and 3.69%, 3 respectively; Coefficient of variation of As, Cd, Hg, and Pb are relatively close, 0.76%, 1.58%, 1.12%, and 1.53%, respectively, indicating that human activities contribute similar or homogenous pollution to these heavy metals.",
+        "summary": "At the same time, as can be seen from Table 3, with the exception of Zn, the coe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4624
+        ],
+        [
+          860,
+          4848
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Complex soil, sand in the soft rock and heavy metal content evaluation According to the average value of heavy metal content in compound soil, arsenic rock and sand, the third-grade standard of the national secondary standard for soil environmental quality is the evaluation standard value, combining the soil of Table 1 The pollution level grading standard, obtained table evaluation results are shown in Table 4. The individual pollution indexes of various heavy metals, arsenic rock, sand and heavy metals were all less than 1 (as shown in Table 4).",
+        "summary": "Complex soil, sand in the soft rock and heavy metal content evaluation According",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4870
+        ],
+        [
+          860,
+          5094
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The three soil textures were not contaminated by heavy metals. Among them, the pollution degree of eight heavy metals in the compound soil was Cd>As>Ni>Cr>Hg>Pb>Cu>Zn. The comprehensive pollution index was in the order of arsenic rock sand> complex soil> sand, which were 0.314, 0.503, and 0.200, respectively. It shows that the pollution levels of all three soils are of warning level and are still clean. From the sources of soil heavy metals, the soil heavy metals in the project area mainly come from the parent material, and human activities have little impact on them.",
+        "summary": "The three soil textures were not contaminated by heavy metals. Among them, the p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5116
+        ],
+        [
+          860,
+          5180
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Therefore, in the actual land remediation, development and utilization process, care should be taken to protect it.",
+        "summary": "Therefore, in the actual land remediation, development and utilization process, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "202185421-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5202
+        ],
+        [
+          860,
+          5410
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Planting Years on the impact of the heavy metal content of the soil complex In order to determine the effect of planting years on the content of heavy metals in the compound soil, the content of heavy metals in the compound soil after 3 years of planting 2013-2016 was measured and analyzed. According to the third-grade standard of the secondary standard in the \"Soil Environmental Quality Standard\" (GB 15618-1995), the heavy metal content in the compounded soil after planting three years is shown in Table 5.",
+        "summary": "Planting Years on the impact of the heavy metal content of the soil complex In o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5432
+        ],
+        [
+          860,
+          5640
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The content of heavy metals such as Mn, Ni, Cd, Cr, Cu, Zn, As, Pb is lower than the secondary standard of soil environmental quality standard. The comprehensive pollution index of heavy metals in field soil is 0.109, which belongs to the alert level. It is still in a state of cleanliness and meets the standards. From the environmental quality standards for green food production areas, we can see that the project area meets the requirements of environmental quality standards for green food production.",
+        "summary": "The content of heavy metals such as Mn, Ni, Cd, Cr, Cu, Zn, As, Pb is lower than",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202185421-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5662
+        ],
+        [
+          860,
+          5886
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusion The average content of Cd in compound soil and arsenic rock were 0.27 times and 1.03 times higher than the national natural background value of soil environmental quality. The average content of other heavy metals in compound soil arsenic rock and sand was within the national natural background value of soil environmental quality. The content of Cr, Ni, Cu, Zn, As, Cd, and Pb in the eight heavy metals in the compound soil was reduced by 0.13, 0.41, 0.42, 0.49, 0.38, 0.14 and 0.50 times, respectively, compared with the arsenic rock.",
+        "summary": "Conclusion The average content of Cd in compound soil and arsenic rock were 0.27",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5908
+        ],
+        [
+          860,
+          6132
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The spatial differences of the eight heavy metals in the compound soil and arsenic rock are not large, while the average variation of the eight heavy metals in the sand is relatively large The individual pollution indexes of the heavy metals, arsenic rock, sand and heavy metals are all less than 1. Soils of three textures are not contaminated by heavy metals; The comprehensive pollution index of compound soil, arsenic rock, and sand were 0.314, 0.503, and 0.200, respectively. The pollution levels of the soils of the three textures were all alert levels, and they were still clean.",
+        "summary": "The spatial differences of the eight heavy metals in the compound soil and arsen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202185421-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6154
+        ],
+        [
+          860,
+          6314
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "After 3 years of planting, the content of heavy metals such as Mn, Ni, Cd, Cr, Cu, Zn, As, and Pb in the compound soil was lower than the secondary standard of the soil environmental quality standard. The comprehensive pollution index of heavy metals is 0.109, which belongs to the alert level. It is still in a state of cleanliness and meets the standards. It will not cause harm to the growth of humans and plants.",
+        "summary": "After 3 years of planting, the content of heavy metals such as Mn, Ni, Cd, Cr, C",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    }
+  ]
+}

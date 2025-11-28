@@ -1,0 +1,2269 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "197666231-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          240
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Inclusion of Concentrate with Quebracho Is Advisable in Two Forage-Based Diets of Ewes According to the In Vitro Fermentation Parameters",
+        "summary": "The Inclusion of Concentrate with Quebracho Is Advisable in Two Forage-Based Die",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          262
+        ],
+        [
+          860,
+          486
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Simple Summary In dry, mountainous areas, ewes are fed low-quality forages (hay or straw) indoors, although they also graze in high-quality pastures when available. Concentrate supplementation is recommended to cover high nutritional requirements during lactation. Condensed tannins (CT) of quebracho (Schinopsis balansae) can be included in the concentrate to reduce methane (CH4) emissions and ruminal degradation of protein, improving the fermentation’s efficiency. Furthermore, low levels of quebracho can improve some meat and milk quality traits.",
+        "summary": "Simple Summary In dry, mountainous areas, ewes are fed low-quality forages (hay ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          508
+        ],
+        [
+          860,
+          716
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The effects of the inclusion of concentrate and CT in diets depend on the level of inclusion and the quality of forage. The aim of this study was to evaluate the in vitro fermentation characteristics of diets in order to identify the most suitable one to be fed to ewes under farming conditions. The diets examined differed in quality of the forage available, comparing hay versus fresh forage diets and forage alone versus 70:30 forage:concentrate with (quebracho) or without CT (control) in each type of forage.",
+        "summary": "The effects of the inclusion of concentrate and CT in diets depend on the level ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          738
+        ],
+        [
+          860,
+          946
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The fresh-forage-based diets had lower gas and CH4 production and greater in vitro organic matter degradability (IVOMD) than the hay-based diets. The inclusion of quebracho concentrate increased the IVOMD in hay-based diets and reduced ammonia content in fresh-forage-based diets. Abstract Ewes receive hay or graze on fresh pastures supplemented with concentrates to fulfil their lactation requirements. Quebracho (Schinopsis balansae) can be added to change the ruminal fermentation.",
+        "summary": "The fresh-forage-based diets had lower gas and CH4 production and greater in vit",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          968
+        ],
+        [
+          860,
+          1192
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fermentation parameters of forages alone and 70:30 forage:concentrate diets with control and quebracho concentrate were compared after 24 h of in vitro incubation. Fresh forage diets produced less gas (p < 0.05) and had greater IVOMD (p < 0.001), ammonia (NH3-N) content, valeric acid, branched-chain volatile fatty acid proportions, and lower propionic acid proportion than the hay diets (p < 0.01). In the hay diets, methane production increased with control concentrate (p < 0.01) and tended to decrease with quebacho concentrate (p < 0.10).",
+        "summary": "Fermentation parameters of forages alone and 70:30 forage:concentrate diets with",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1214
+        ],
+        [
+          860,
+          1406
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The inclusion of both concentrates increased the acetic:propionic ratio (p < 0.01), and only the inclusion of quebracho concentrate increased the IVOMD (p < 0.01). In the fresh forage diets, gas and methane production increased with the inclusion of the control concentrate (p < 0.05), but methane production decreased with quebracho concentrate (p < 0.01). The inclusion of quebracho concentrate reduced the NH3-N content and valeric acid proportion (p < 0.05).",
+        "summary": "The inclusion of both concentrates increased the acetic:propionic ratio (p < 0.0",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1428
+        ],
+        [
+          860,
+          1524
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In conclusion, the inclusion of quebracho concentrate would be advisable to reduce the CH4 production and NH3-N content in fresh forage diets and to increase the IVOMD in hay diets in comparison with the forages alone.",
+        "summary": "In conclusion, the inclusion of quebracho concentrate would be advisable to redu",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "197666231-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1546
+        ],
+        [
+          860,
+          1770
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction In dry, mountainous areas, ewes are usually stalled around parturition and fed cheap, low-quality forages (hay or straw) supplemented with concentrates/grain throughout lactation to fulfil their maintenance and lactation requirements for energy. However, ewes can raise their suckling lambs at pastures during spring [1,2]. In recent years, the condensed tannins (CT) from quebracho (Schinopsis balansae) have been incorporated into the diets of dairy ewes to increase their milk production during lactation and improve the quality of the milk [3].",
+        "summary": "Introduction In dry, mountainous areas, ewes are usually stalled around parturit",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1792
+        ],
+        [
+          860,
+          1984
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The inclusion of quebracho in the concentrate of grazing and hay-fed Churra Tensina ewes decreased milk protein content [4], reduced lipid oxidation, and increased α-tocopherol content in the meat of the suckling lambs [5]. The forages fed to ewes in these systems differ greatly in their chemical composition, especially the contents of structural carbohydrates and protein, which increase or reduce the parameters of ruminal fermentation depending on chemical composition [6].",
+        "summary": "The inclusion of quebracho in the concentrate of grazing and hay-fed Churra Tens",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2006
+        ],
+        [
+          860,
+          2166
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The fermentation of low-quality forages leads to high gas and methane (CH 4 ) production [7], to the detriment of microbial biomass synthesis [8]. The inclusion of concentrate in diets to cover the energy requirements during lactation can reduce the production of methane [9] and ammonia in the rumen through the enhancement of the direct incorporation of amino N into microbial proteins [10].",
+        "summary": "The fermentation of low-quality forages leads to high gas and methane (CH 4 ) pr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2188
+        ],
+        [
+          860,
+          2396
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Ruminal fermentation parameters are modified by the presence of CT because they have antimicrobial and antiprotozoal activity, as well as the capacity to bind components of the diet, especially protein [11]. Condensed tannins from quebracho can reduce the production of gas, CH 4 [12], and NH 3 -N [13], or change the molar proportions of volatile fatty acid (VFA) production [14]. However, the effect of the CT on the parameters of ruminal fermentation depends on the diet, the concentration of CT, and the ruminant species [15,16].",
+        "summary": "Ruminal fermentation parameters are modified by the presence of CT because they ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2418
+        ],
+        [
+          860,
+          2514
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The aim of this study was to compare the fermentation characteristics of diets fed to ewes under farming conditions in order to identify the most suitable ones depending on the quality of the forage available.",
+        "summary": "The aim of this study was to compare the fermentation characteristics of diets f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "197666231-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2536
+        ],
+        [
+          860,
+          2728
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Experimental Design Two forages of different quality (hay vs. fresh forage) and two concentrates with or without quebracho CT (control vs. quebracho) were used in this experiment. The forages alone and the four diets composed of 70:30 forage:concentrate were incubated in vitro for 24 h. The fermentation parameters between both forage-based diets and the effect of the inclusion of control or quebracho concentrate within each forage with respect to the forage alone were compared.",
+        "summary": "Experimental Design Two forages of different quality (hay vs. fresh forage) and ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2750
+        ],
+        [
+          860,
+          2958
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The samples of the feedstuffs were dried in an oven at 60 • C for 48 h to determine the chemical composition, except for a part of the samples that was immediately freeze-dried to determine the CT content and which was to be incubated in the in vitro assays. All the samples were ground (Rotary Mill, ZM200 Retsch, Haan, Germany) and sieved through a 1 mm screen, except for the parts used to determine the CP and CT contents, which were sieved through a 0.2 mm screen. All the samples were stored in total darkness at −20 • C until further analyses.",
+        "summary": "The samples of the feedstuffs were dried in an oven at 60 • C for 48 h to determ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2980
+        ],
+        [
+          860,
+          3220
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Animals and Sampling of Ruminal Digesta All procedures used in the experiment were carried out in accordance with the Spanish guidelines for experimental animal protection (RD 53/2013) with the approval of the Institutional Animal Care and Use Committee of the Research Centre (procedure number 2011-05). The ruminal contents were collected into a prewarmed insulated thermos before morning feeding from four rumen-cannulated Rasa Aragonesa wethers (65 ± 2.1 kg body weight), fed 70:30 alfalfa hay:barley grain at an energy maintenance level. For more details, read Rufino-Moya et al. [17].",
+        "summary": "Animals and Sampling of Ruminal Digesta All procedures used in the experiment we",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "197666231-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3242
+        ],
+        [
+          860,
+          3322
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Rumen fluid from the four wethers was mixed, and a buffer solution was added in a proportion of 1:2 (v/v) based on the protocol of Menke and Steingass [18].",
+        "summary": "Rumen fluid from the four wethers was mixed, and a buffer solution was added in ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "197666231-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3344
+        ],
+        [
+          860,
+          3568
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In Vitro Gas Production Technique and Sampling The Ankom system (Ankom Technology Corporation, Fairport, NY, USA) was used to determine the gas production following the conditions described by Rufino-Moya et al. [17]. Five hundred milligrams of samples were incubated with 60 mL of buffered solution:rumen fluid (2:1, v/v) in a water bath at 39 • C for 24 h. All bottles were constantly flushed with CO 2 gas to create an anaerobic environment before the start of incubation, and sealed with the Ankom pressure monitor cap. Three runs were conducted on three days in consecutive weeks.",
+        "summary": "In Vitro Gas Production Technique and Sampling The Ankom system (Ankom Technolog",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3590
+        ],
+        [
+          860,
+          3766
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Blanks were included in each run. The samples and blanks were incubated in triplicate in each run. Gas production was recorded for 24 h and corrected with the blanks. After 24 h of incubation, the bottles were placed in ice to stop fermentation (5-10 min) and then tempered at room temperature for 10-15 min. The sampling to determine CH 4 production, NH 3 -N content, and VFA proportions was carried out according to Rufino-Moya et al. [17].",
+        "summary": "Blanks were included in each run. The samples and blanks were incubated in tripl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3788
+        ],
+        [
+          860,
+          3980
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Briefly, a sample of gas of headspace at the end of fermentation was collected from each bottle at atmospheric pressure with a syringe attached to a manometer HD2304.0 (Delta Ohm, Padua, Italy) into a Vacutainer ® tube (Becton Dickinson, Plymouth, United Kingdom). The tubes were conserved at 4 • C until CH 4 determination. After gas sampling, the pH of the incubation medium was measured immediately with a microPH 2002 (Crison Instruments S.A., Barcelona, Spain).",
+        "summary": "Briefly, a sample of gas of headspace at the end of fermentation was collected f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4002
+        ],
+        [
+          860,
+          4194
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For NH 3 -N determination, 2.5 mL of liquid was mixed with 2.5 mL HCl 0.1 N, and for VFA determination, 0.5 mL of the liquid was added to 0.5 mL of deproteinizing solution and 1 mL of distilled water. Tubes with gas samples were stored at 4 • C, and those with samples for determination of NH 3 -N and VFA were stored at −20 • C until future analyses. The entire bottle content was filtered through a pre-weighed bag (50 µm; Ankom) to estimate the in vitro organic matter degradability (IVOMD).",
+        "summary": "For NH 3 -N determination, 2.5 mL of liquid was mixed with 2.5 mL HCl 0.1 N, and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4216
+        ],
+        [
+          860,
+          4312
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Briefly, the bags were sealed, washed, dried at 103 • C for 48 h, and finally placed in a muffle at 550 • C to obtain the ashes. The organic matter of the bag content was obtained as dry matter (DM) ashes, and the IVOMD was calculated.",
+        "summary": "Briefly, the bags were sealed, washed, dried at 103 • C for 48 h, and finally pl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "197666231-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4334
+        ],
+        [
+          860,
+          4558
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Chemical Composition All the analyses of the chemical composition and secondary compounds were done according to the official methods, as reported in Rufino-Moya et al. [17]. The DM, ash, and CP were determined according to the AOAC methods [19]. Neutral detergent fiber (NDFom), acid detergent fiber (ADFom), and lignin (sa) content were determined using the method of Van Soest et al. [20]. The ether extract (EE) was determined following the Ankom Procedure [21] with an XT10 Ankom extractor (Ankom Technology Corporation, Fairport, NY, USA).",
+        "summary": "Chemical Composition All the analyses of the chemical composition and secondary ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4580
+        ],
+        [
+          860,
+          4804
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The nonstructural carbohydrates (NSC) were calculated as NSC = 1000 − CP − EE − NDF − ash, according to Guglielmelli et al. [22]. Metabolisable energy of the forages was estimated using the equation proposed by Mertens [23] and that of the concentrates according to the manufacturer. The content of total polyphenols (TP) was extracted using the method of Makkar [24] and determined with the method of Julkunen-Tiitto [25]. The extractable CT (ECT), protein-bound CT (PBCT), and fiber-bound CT (FBCT) were extracted according to Terrill et al.",
+        "summary": "The nonstructural carbohydrates (NSC) were calculated as NSC = 1000 − CP − EE − ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4826
+        ],
+        [
+          860,
+          4954
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[26] and quantified at 550 nm based on the method described by Grabber et al. [27]. The standards used for quantification of the samples were extracted and purified from sainfoin for forages and quebracho (SYLVAFEED ByPro Q) for concentrates using the method described by Wolfe et al. [28].",
+        "summary": "[26] and quantified at 550 nm based on the method described by Grabber et al. [2",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "197666231-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4976
+        ],
+        [
+          860,
+          5152
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Determination of the Parameters of In Vitro Fermentation The gas production recorded hourly for 24 h by the Ankom system was used to estimate the parameters of the kinetics of fermentation, adjusting the gas produced to the model described by France et al. [29]: where P is the cumulative gas production (mL) at time t (h), A is the potential gas production (mL), and c is the rate of gas production (h −1 ). Methane was determined in an HP-4890 (Agilent, St.",
+        "summary": "Determination of the Parameters of In Vitro Fermentation The gas production reco",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5174
+        ],
+        [
+          860,
+          5366
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Clara, CA, USA) gas chromatograph (GC) equipped with a flame ionization detector (FID) and a TG-BOND Q+ capillary column (30 m × 0.32 mm id × 10 µm film thickness, Thermo Scientific, Waltham, MA, USA). The carrier gas was helium, at a flow rate of 1 mL/min. The temperature of the oven was maintained at 100 • C (isothermal program). The volume of the splitless injection was 200 µL. The identification of CH 4 was based on the retention time compared with the standard.",
+        "summary": "Clara, CA, USA) gas chromatograph (GC) equipped with a flame ionization detector",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5388
+        ],
+        [
+          860,
+          5628
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The concentration was determined from the peak concentration:area ratio using the peak area generated from standard gas as the reference (CH 4 ; 99.995% purity [C45], Carburos Metálicos, Barcelona, Spain). The methane production was calculated by the model proposed by Cattani et al. [30] for the Ankom Gas Production System, which has been shown to enable accurate estimation of methane production [31]: where MP (mL) is methane production, HSCH 4 (L L −1 ) is the methane proportion in the headspace, HSV (mL) is the headspace volume, and GP (mL) is the total gas production of each bottle.",
+        "summary": "The concentration was determined from the peak concentration:area ratio using th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "197666231-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5650
+        ],
+        [
+          860,
+          5874
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Ammonia content was determined in an Epoch microplate spectrophotometer (BioTek Instruments, Inc., Winooski, VT, USA) using the colorimetric method described by Chaney and Marbach [32]. The concentration of acetic, propionic, isobutyric, butyric, isovaleric, and valeric acids was measured in a Bruker Scion 460 GC (Bruker, Billerica, MA, USA) equipped with a CP-8400 autosampler, FID, and a BR-SWax capillary column (30 m × 0.25 mm i.d. × 0.25 µm film thickness, Bruker, Billerica, MA, USA). The carrier gas was helium (flow rate of 1 mL/min).",
+        "summary": "Ammonia content was determined in an Epoch microplate spectrophotometer (BioTek ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5896
+        ],
+        [
+          860,
+          6072
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The temperature program of the oven was 100 • C, followed by a 6 • C/min increase to 160 • C. The injection volume was 1 µL at a split ratio of 1:50. The identification of the individual VFA was based on retention time comparisons with commercially available standards of acetic, propionic, isobutyric, butyric, isovaleric, valeric, and 4-methyl-valeric acids at ≥99% purity (Sigma-Aldrich, St. Louis, MO, USA).",
+        "summary": "The temperature program of the oven was 100 • C, followed by a 6 • C/min increas",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6094
+        ],
+        [
+          860,
+          6318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Calculations and Statistical Analysis Data were analyzed using the statistical software, SAS V.9.3 (SAS Inst. Inc., Cary, NC, USA). The fermentation kinetic parameters (A and c) were estimated through a nonlinear regression model using the SAS NLIN program. The total gas, methane, A, c, IVOMD, and the fermentation end-products were tested by analysis of variance using the general linear model (GLM) procedure of SAS considering the substrate the fixed effect. Orthogonal contrasts were used to compare the difference between type of forage (H, HC, and HQ vs.",
+        "summary": "Calculations and Statistical Analysis Data were analyzed using the statistical s",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6340
+        ],
+        [
+          860,
+          6468
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "FF, FFC, and FFQ) and the effect of the inclusion of control or quebracho concentrate on hay-based diets (H vs. HC and H vs. HQ) and fresh-forage-based diets (FF vs. FFC and FF vs. FFQ). The effects were considered significant, or a trend was found at a probability value of p < 0.05 and 0.05 ≤ p < 0.10, respectively.",
+        "summary": "FF, FFC, and FFQ) and the effect of the inclusion of control or quebracho concen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "197666231-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6490
+        ],
+        [
+          860,
+          6666
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Results The chemical compositions of the feedstuffs are shown in Table 1. As expected, the hay had higher fiber content and lower CP and NSC content than the fresh forage. The content of condensed tannins in both forages was almost negligible. Regarding the concentrates, both had similar CP but different NDFom, ADFom, lignin (sa), and NSC content. The inclusion of quebracho in the concentrate increased the total polyphenol and CT content.",
+        "summary": "Results The chemical compositions of the feedstuffs are shown in Table 1. As exp",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6688
+        ],
+        [
+          860,
+          6880
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effect of the Type of Forage on In Vitro Fermentation The type of forage (hay vs. fresh forage) had major effects on most of the in vitro fermentation parameters ( Table 2). Regarding to the degraded organic matter (dOM), the hay-based diets produced more gas (p < 0.05) and CH 4 (p < 0.001) than the fresh-forage-based diets. The type of forage also affected the IVOMD (p < 0.001) and the NH 3 -N content (p < 0.01), recording lower values in hay-based diets than in fresh-forage-based diets.",
+        "summary": "Effect of the Type of Forage on In Vitro Fermentation The type of forage (hay vs",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6902
+        ],
+        [
+          860,
+          7126
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The total VFA was not affected by type of forage (p > 0.05), but the individual VFA proportions varied according to the forage with lower acetic (p < 0.10) and propionic acid proportions (p = 0.01), but greater proportions of butyric (p < 0.01), valeric (p < 0.001), and branched chain VFA (BCVFA) (p < 0.001) in the fresh-forage-based diets than in the hay-based diets. The type of forage did not affect the C 2 :C 3 ratio (p > 0.05) and the CH 4 /VFA total ratio (p > 0.05), with the hay-based diets presenting lower ratios than the fresh-forage-based diets.",
+        "summary": "The total VFA was not affected by type of forage (p > 0.05), but the individual ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7148
+        ],
+        [
+          860,
+          7356
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Hay-Based Diets: Effect of the Inclusion of the Control or Quebracho Concentrate The fermentation parameters are shown in Table 2, and the fermentation kinetics during the incubation of the hay-based diets is represented in Figure 1. Gas production (mL/g dOM) and NH 3 -N content were not affected by the inclusion of concentrate, regardless of the presence of quebracho (p > 0.05). However, the parameters of the kinetics of fermentation were differently affected depending on the presence of quebracho.",
+        "summary": "Hay-Based Diets: Effect of the Inclusion of the Control or Quebracho Concentrate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7378
+        ],
+        [
+          860,
+          7554
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The potential gas production decreased only with the inclusion of quebracho concentrate (p < 0.05). The rate of gas production c tended to increase with the inclusion of the control concentrate (p < 0.10), whereas it increased with the inclusion of quebracho concentrate (p < 0.01). The CH 4 production (mL/g dOM) increased with the inclusion of control concentrate (p < 0.01) and tended to reduce with quebracho concentrate (p < 0.01).",
+        "summary": "The potential gas production decreased only with the inclusion of quebracho conc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7576
+        ],
+        [
+          860,
+          7800
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Furthermore, the inclusion of concentrate improved the IVOMD to a greater extent with quebracho concentrate (p < 0.05), and a tendency was only observed with the inclusion of the control concentrate (p < 0.10). The inclusion of concentrates affected most of the molar proportions of VFA (p < 0.05), but not total VFA production (p > 0.05). The inclusion of both concentrates similarly reduced the proportions of propionic and isovaleric acids (p < 0.01) and tended to reduce the proportion of isobutyric acid (p < 0.10) but increased butyric acid (p < 0.05).",
+        "summary": "Furthermore, the inclusion of concentrate improved the IVOMD to a greater extent",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7822
+        ],
+        [
+          860,
+          7902
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The C 2 :C 3 ratio increased when concentrate was added to a greater extent with the control concentrate (p < 0.01) than with the quebracho concentrate (p < 0.05).",
+        "summary": "The C 2 :C 3 ratio increased when concentrate was added to a greater extent with",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "197666231-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7924
+        ],
+        [
+          860,
+          8132
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Hay-Based Diets: Effect of the Inclusion of the Control or Quebracho Concentrate The fermentation parameters are shown in Table 2, and the fermentation kinetics during the incubation of the hay-based diets is represented in Figure 1. Gas production (mL/g dOM) and NH3-N content were not affected by the inclusion of concentrate, regardless of the presence of quebracho (p > 0.05). However, the parameters of the kinetics of fermentation were differently affected depending on the presence of quebracho.",
+        "summary": "Hay-Based Diets: Effect of the Inclusion of the Control or Quebracho Concentrate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8154
+        ],
+        [
+          860,
+          8330
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The potential gas production decreased only with the inclusion of quebracho concentrate (p < 0.05). The rate of gas production c tended to increase with the inclusion of the control concentrate (p < 0.10), whereas it increased with the inclusion of quebracho concentrate (p < 0.01). The CH4 production (mL/g dOM) increased with the inclusion of control concentrate (p < 0.01) and tended to reduce with quebracho concentrate (p < 0.01).",
+        "summary": "The potential gas production decreased only with the inclusion of quebracho conc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8352
+        ],
+        [
+          860,
+          8576
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Furthermore, the inclusion of concentrate improved the IVOMD to a greater extent with quebracho concentrate (p < 0.05), and a tendency was only observed with the inclusion of the control concentrate (p < 0.10). The inclusion of concentrates affected most of the molar proportions of VFA (p < 0.05), but not total VFA production (p > 0.05). The inclusion of both concentrates similarly reduced the proportions of propionic and isovaleric acids (p < 0.01) and tended to reduce the proportion of isobutyric acid (p < 0.10) but increased butyric acid (p < 0.05).",
+        "summary": "Furthermore, the inclusion of concentrate improved the IVOMD to a greater extent",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p041",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8598
+        ],
+        [
+          860,
+          8678
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The C2:C3 ratio increased when concentrate was added to a greater extent with the control concentrate (p < 0.01) than with the quebracho concentrate (p < 0.05).",
+        "summary": "The C2:C3 ratio increased when concentrate was added to a greater extent with th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "197666231-p042",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8700
+        ],
+        [
+          860,
+          8860
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fresh-Forage-Based Diet: Effect of the Inclusion of Control or Quebracho Concentrate The parameters obtained in the in vitro fermentation are shown in Table 2, and the fermentation kinetics during the incubation are represented in Figure 2. The inclusion of the control concentrate increased the production of total gas and CH4 (mL/g dOM; p < 0.05) without affecting IVOMD and NH3-N (p > 0.05).",
+        "summary": "Fresh-Forage-Based Diet: Effect of the Inclusion of Control or Quebracho Concent",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p043",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8882
+        ],
+        [
+          860,
+          9090
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, the inclusion of quebracho concentrate did not affect the production of gas (mL/g dOM; p > 0.05) but reduced CH4 production (mL/g dOM; p < 0.01), and tended to increase IVOMD (p < 0.10) and reduce NH3-N content (p < 0.05). The total VFA and the proportions of acetic and propionic acids were not affected by the inclusion of concentrate (p > 0.05). The inclusion of both concentrates tended to increase the proportion of butyric acid (p < 0.10) and reduce the proportions of BCVFA (p < 0.05 to p < 0.001).",
+        "summary": "However, the inclusion of quebracho concentrate did not affect the production of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p044",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9112
+        ],
+        [
+          860,
+          9176
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The proportion of valeric acid was only affected by the inclusion of quebracho concentrate (p < 0.05), which decreased its proportion.",
+        "summary": "The proportion of valeric acid was only affected by the inclusion of quebracho c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "197666231-p045",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9198
+        ],
+        [
+          860,
+          9358
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fresh-Forage-Based Diet: Effect of the Inclusion of Control or Quebracho Concentrate The parameters obtained in the in vitro fermentation are shown in Table 2, and the fermentation kinetics during the incubation are represented in Figure 2. The inclusion of the control concentrate increased the production of total gas and CH 4 (mL/g dOM; p < 0.05) without affecting IVOMD and NH 3 -N (p > 0.05).",
+        "summary": "Fresh-Forage-Based Diet: Effect of the Inclusion of Control or Quebracho Concent",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p046",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9380
+        ],
+        [
+          860,
+          9588
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, the inclusion of quebracho concentrate did not affect the production of gas (mL/g dOM; p > 0.05) but reduced CH 4 production (mL/g dOM; p < 0.01), and tended to increase IVOMD (p < 0.10) and reduce NH 3 -N content (p < 0.05). The total VFA and the proportions of acetic and propionic acids were not affected by the inclusion of concentrate (p > 0.05). The inclusion of both concentrates tended to increase the proportion of butyric acid (p < 0.10) and reduce the proportions of BCVFA (p < 0.05 to p < 0.001).",
+        "summary": "However, the inclusion of quebracho concentrate did not affect the production of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p047",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9610
+        ],
+        [
+          860,
+          9674
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The proportion of valeric acid was only affected by the inclusion of quebracho concentrate (p < 0.05), which decreased its proportion.",
+        "summary": "The proportion of valeric acid was only affected by the inclusion of quebracho c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "197666231-p048",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9696
+        ],
+        [
+          860,
+          9856
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effects of the Type of Forage on Fermentation Parameters In the present study, the forages for the fresh and hay diets were harvested at different stages of maturity in an attempt to use the forages actually offered to ewes in dry mountainous areas. As stated above, ewes are generally fed hay-based diets indoors when natural resources are scarce, or they graze when the pasture is available.",
+        "summary": "Effects of the Type of Forage on Fermentation Parameters In the present study, t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p049",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9878
+        ],
+        [
+          860,
+          10054
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Usually, farmers harvest the forage for haymaking when maximum production is possible with the forage being near maturity, and they turn out the ewes to the meadows at the start of the grazing season, when forages are in the vegetative stage. Therefore, these two forages are either consumed fresh or as hay, and may have different ruminal fermentation characteristics, which may be reflected in different productive performances [4,5].",
+        "summary": "Usually, farmers harvest the forage for haymaking when maximum production is pos",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p050",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10076
+        ],
+        [
+          860,
+          10284
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "One of the most important objectives of nutrition is to improve microbial efficiency, thus maximizing feed conversion into microbial biomass, improving microbial protein supply to the small intestine, and, proportionally, reducing energy losses by gas and CH4 production [8,33,34]. In the present study, the lower gas and CH4 production and greater IVOMD of fresh-forage-based compared with hay-based diets were due to the lower content of structural carbohydrates of the former than the latter [9,35].",
+        "summary": "One of the most important objectives of nutrition is to improve microbial effici",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p051",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10306
+        ],
+        [
+          860,
+          10530
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results might indicate that the organic matter degraded in freshforage-based diets is mainly destined for microbial biomass synthesis [8,22]. Furthermore, the increase of c in fresh-forage-based diets could be related to higher content of rapidly fermentable carbohydrates [35], showing a fast fermentation process which allows for high voluntary intake [36]. Thus, fresh-forage-based diets could increase animal production due to lower energy losses, lower methane production, and greater degradability of the feedstuffs [22,34].",
+        "summary": "These results might indicate that the organic matter degraded in freshforage-bas",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p052",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10552
+        ],
+        [
+          860,
+          10776
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the current experiment, ammonia content and the proportions of valeric, isobutyric, and isovaleric acids, which were derived from the fermentation of protein and branched-chain amino acids, reflected the CP content of the forages [22,37]. Generally, the presence of structural carbohydrates is associated with the production of acetic and butyric acids to the detriment of propionic acid [6,34], which was not registered in the present study, probably due to the short incubation period in comparison with previous studies. However, as in the current experiment, Saro et al.",
+        "summary": "In the current experiment, ammonia content and the proportions of valeric, isobu",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p053",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10798
+        ],
+        [
+          860,
+          10910
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[37] reported that diets with a higher concentration of fiber had higher proportions of acetic and propionic acids, a lower proportion of butyric acid, and a similar C2:C3 ratio than diets with a lower concentration of fiber under in vivo conditions until 8 h postfeeding.",
+        "summary": "[37] reported that diets with a higher concentration of fiber had higher proport",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "197666231-p054",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10932
+        ],
+        [
+          860,
+          11092
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effects of the Type of Forage on Fermentation Parameters In the present study, the forages for the fresh and hay diets were harvested at different stages of maturity in an attempt to use the forages actually offered to ewes in dry mountainous areas. As stated above, ewes are generally fed hay-based diets indoors when natural resources are scarce, or they graze when the pasture is available.",
+        "summary": "Effects of the Type of Forage on Fermentation Parameters In the present study, t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "197666231-p055",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11114
+        ],
+        [
+          860,
+          11290
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Usually, farmers harvest the forage for haymaking when maximum production is possible with the forage being near maturity, and they turn out the ewes to the meadows at the start of the grazing season, when forages are in the vegetative stage. Therefore, these two forages are either consumed fresh or as hay, and may have different ruminal fermentation characteristics, which may be reflected in different productive performances [4,5].",
+        "summary": "Usually, farmers harvest the forage for haymaking when maximum production is pos",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p056",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11312
+        ],
+        [
+          860,
+          11520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "One of the most important objectives of nutrition is to improve microbial efficiency, thus maximizing feed conversion into microbial biomass, improving microbial protein supply to the small intestine, and, proportionally, reducing energy losses by gas and CH 4 production [8,33,34]. In the present study, the lower gas and CH 4 production and greater IVOMD of fresh-forage-based compared with hay-based diets were due to the lower content of structural carbohydrates of the former than the latter [9,35].",
+        "summary": "One of the most important objectives of nutrition is to improve microbial effici",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p057",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11542
+        ],
+        [
+          860,
+          11766
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results might indicate that the organic matter degraded in fresh-forage-based diets is mainly destined for microbial biomass synthesis [8,22]. Furthermore, the increase of c in fresh-forage-based diets could be related to higher content of rapidly fermentable carbohydrates [35], showing a fast fermentation process which allows for high voluntary intake [36]. Thus, fresh-forage-based diets could increase animal production due to lower energy losses, lower methane production, and greater degradability of the feedstuffs [22,34].",
+        "summary": "These results might indicate that the organic matter degraded in fresh-forage-ba",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p058",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11788
+        ],
+        [
+          860,
+          12012
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the current experiment, ammonia content and the proportions of valeric, isobutyric, and isovaleric acids, which were derived from the fermentation of protein and branched-chain amino acids, reflected the CP content of the forages [22,37]. Generally, the presence of structural carbohydrates is associated with the production of acetic and butyric acids to the detriment of propionic acid [6,34], which was not registered in the present study, probably due to the short incubation period in comparison with previous studies. However, as in the current experiment, Saro et al.",
+        "summary": "In the current experiment, ammonia content and the proportions of valeric, isobu",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p059",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12034
+        ],
+        [
+          860,
+          12146
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[37] reported that diets with a higher concentration of fiber had higher proportions of acetic and propionic acids, a lower proportion of butyric acid, and a similar C 2 :C 3 ratio than diets with a lower concentration of fiber under in vivo conditions until 8 h postfeeding.",
+        "summary": "[37] reported that diets with a higher concentration of fiber had higher proport",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "197666231-p060",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12168
+        ],
+        [
+          860,
+          12360
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effect of the Inclusion of Concentrate with or without Quebracho In suckling lamb production systems, concentrates are offered to ewes to cover the high energy requirements of lactation [38] because there is an increase of dietary energy and, thereby, an optimization of the efficiency of feed utilization [39]. Occasionally, CT from quebracho can be included in the concentrate to promote a propionic rumen fermentation towards a lower C 2 :C 3 ratio and CH 4 production [12,13,15].",
+        "summary": "Effect of the Inclusion of Concentrate with or without Quebracho In suckling lam",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p061",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12382
+        ],
+        [
+          860,
+          12606
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the current experiment, the concentration of condensed tannins from quebracho was limited to 75 g/kg DM in the concentrate because greater contents lead to a reduction in voluntary feed intake and lesions in digestive tracts [40]. However, the final dose in the 70:30 forage:concentrate diets was 22.5 g/kg DM of CT from quebracho. The inclusion of concentrate is associated with an increase in gas production [41,42], mainly due to an increase in the amount of energy available to the microbial population during the first few hours of incubation [43].",
+        "summary": "In the current experiment, the concentration of condensed tannins from quebracho",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p062",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12628
+        ],
+        [
+          860,
+          12836
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the current experiment, this effect was noticeable in the first few hours of incubation of hay-based diets ( Figure 1). However, the effect on gas production (mL/g dOM) at 24 h was only evident with the inclusion of the control concentrate in the fresh forage diet. The absence of the effect of the inclusion of concentrate at the end of incubation in hay-based diets is in agreement with Zicarelli et al. [44], who observed similar gas production with the inclusion of 30% concentrate in a diet with oat hay.",
+        "summary": "In the current experiment, this effect was noticeable in the first few hours of ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p063",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12858
+        ],
+        [
+          860,
+          13082
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The inclusion of quebracho concentrate had no effect on gas production with respect to forage alone, as reported with the addition of 30 g/kg DM of quebracho extract in a silage-based diet (67:33 forage:concentrate) [45]. Similarly, the inclusion of 20 g/kg DM CT from quebracho in a total mixed ration had no effect on gas production [15]. The CH 4 production increased with the inclusion of control concentrate in both forage-based diets, agreeing with Pedreira et al. [46], who recorded an increase of CH 4 production with sorghum silage supplemented with 30% of concentrate.",
+        "summary": "The inclusion of quebracho concentrate had no effect on gas production with resp",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p064",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13104
+        ],
+        [
+          860,
+          13328
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, the reduced CH 4 production with the inclusion of quebracho concentrate in both types of forage-based diets could be due to the presence of CT that counterbalanced the presence of rapidly fermentable carbohydrates in the concentrate, which accelerated the degradation process and increased bacterial growth [47,48] during the short incubation in the present study. In contrast, Hassanat and Benchaar [15] did not report any effect on CH 4 production when a mixed ration with 20 g/kg DM CT from quebracho was incubated in cow ruminal fluid.",
+        "summary": "However, the reduced CH 4 production with the inclusion of quebracho concentrate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p065",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13350
+        ],
+        [
+          860,
+          13558
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This discrepancy might be due to the different diet and donor animal of ruminal fluid [16]. In the current experiment, the inclusion of concentrates increased the IVOMD in the hay-based diet, as has been reported for low-quality forages [42,44]. Surprisingly, the inclusion of quebracho concentrate increased the IVOMD, whereas a higher dose of quebracho CT extract (30 g/kg DM) reduced the IVOMD of alfalfa hay-based diets [45] due to the linkage with protein or polysaccharide molecules in the feed [11].",
+        "summary": "This discrepancy might be due to the different diet and donor animal of ruminal ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "197666231-p066",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13580
+        ],
+        [
+          860,
+          13804
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Thus, the high content of nonstructural carbohydrates of the quebracho concentrate could have contributed to the improvement in the IVOMD. In the present experiment, the inclusion of concentrates did not affect NH 3 -N content in the hay-based diets with low CP content, which is in agreement with other authors [13,15]. The effect of the inclusion of concentrate on NH 3 -N production varied according to the presence of quebracho in the fresh forage diet. The similar NH 3 -N concentration of the control concentrate when compared to the forage alone agrees with Archimède et al.",
+        "summary": "Thus, the high content of nonstructural carbohydrates of the quebracho concentra",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "197666231-p067",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13826
+        ],
+        [
+          860,
+          14002
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[49], who included 30% and 60% of concentrate in alfalfa hay-based diets with a high protein content. However, the inclusion of quebracho concentrate reduced the NH 3 -N content, as reported by Castro-Montoya et al. [45], who observed the reduction of NH 3 -N content with the inclusion of 15 g/kg DM of quebracho. This reduction could be associated with a reduction of protein degradation due to the presence of CT [11].",
+        "summary": "[49], who included 30% and 60% of concentrate in alfalfa hay-based diets with a ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p068",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14024
+        ],
+        [
+          860,
+          14216
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Results showed that neither the inclusion of concentrate nor the addition of quebracho affected the total VFA production, according to previous studies that used similar proportions of the concentrate [44,46] and a similar inclusion of quebracho [13,15]. Most works in the literature report no effect or a reduction of C 2 :C 3 due to the increase of the propionic proportion [15,44,46,49], with greater inclusion of concentrate and quebracho than the ones used in the present experiment.",
+        "summary": "Results showed that neither the inclusion of concentrate nor the addition of que",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "197666231-p069",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14238
+        ],
+        [
+          860,
+          14414
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The low inclusion of CT from quebracho in the current experiment did not reduce the C 2 :C 3 ratio, as it was reported in previous studies [15,45]. The reduction of the proportion of valeric acid with the inclusion of quebracho concentrate in the forage-based diet and the BCVFA with the inclusion of concentrates in both forages agrees with the enhancement of the microbial capture of these VFAs due to the energetic input from the concentrates [41,50].",
+        "summary": "The low inclusion of CT from quebracho in the current experiment did not reduce ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "197666231-p070",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14436
+        ],
+        [
+          860,
+          14516
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Furthermore, the presence of CT can increase the utilization of BCVFA for microbial protein synthesis [14] and/or can reduce protein degradation in the rumen [13,15,45].",
+        "summary": "Furthermore, the presence of CT can increase the utilization of BCVFA for microb",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "197666231-p071",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14538
+        ],
+        [
+          860,
+          14682
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusions In conclusion, fresh-forage-based diets had lower gas and CH 4 production in relation to degraded organic matter, and higher IVOMD than hay-based diets. The inclusion of control concentrate increased CH 4 production in both forage-based diets and gas production-though only in fresh-forage-based diets-without affecting IVOMD.",
+        "summary": "Conclusions In conclusion, fresh-forage-based diets had lower gas and CH 4 produ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "197666231-p072",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14704
+        ],
+        [
+          860,
+          14816
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It would be advisable to include CT from quebracho at a low dose (22.5 g CT/kg DM in diets) because it reduced the CH 4 production and the protein degradation in fresh forage-based diets and increased the IVOMD and tended to reduce the CH 4 production in hay-based diets.",
+        "summary": "It would be advisable to include CT from quebracho at a low dose (22.5 g CT/kg D",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    }
+  ]
+}

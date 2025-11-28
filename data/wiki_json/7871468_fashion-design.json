@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "7871468-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fashion Design",
+        "summary": "Fashion Design",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "7871468-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          533
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fashion designers 'Fashion designers work in a variety of different ways when designing their pieces and accessories such as rings, bracelets, necklaces and earrings. Due to the time required to put a garment out in market, designers must anticipate changes to consumer desires. Fashion designers are responsible for creating looks for individual garments, involving shape, color, fabric, trimming, and more. Some clothes are made specifically for an individual, as in the case of haute couture or bespoke tailoring. Today, most clothing is designed for the mass market, especially casual and everyday wear, which are commonly known as ready to wear or fast fashion.",
+        "summary": "Fashion designers 'Fashion designers wor",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 374
+      }
+    },
+    {
+      "id": "7871468-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          557
+        ],
+        [
+          840,
+          931
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Structure There are different lines of work for designers in the fashion industry. Fashion designers that work full-time for one fashion house, as 'in-house designers', own the designs and may either work alone or as a part of a design team. Freelance designers who work for themselves, sell their designs to fashion houses, directly to shops, or to clothing manufacturers. There are quite a few fashion designers who choose to set up their own labels, which offers them full control over their designs. While others are self-employed and design for individual clients. Other high-end fashion designers cater to specialty stores or high-end fashion department stores.",
+        "summary": "Structure There are different lines of w",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 374
+      }
+    },
+    {
+      "id": "7871468-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          955
+        ],
+        [
+          840,
+          1463
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Designing a garment Fashion designers work in various ways, some start with a vision in their head and later on move into drawing it on paper or computer, while others go directly into draping fabric onto a dress form, also known as a mannequin. The design process is unique to the designer and it is rather intriguing to see the various steps that go into the process. A designer may choose to work with certain apps that are able to help connect all their ideas together and expand their thoughts to create a cohesive design. When a designer is completely satisfied with the fit of the toile (or muslin), they will consult a professional pattern maker who then makes the finished, working version of the pattern out of card or via a computer program. Finally, a sample garment is made up and tested on a model to make sure it is an operational outfit. Fashion design is expressive, the designers create art that may be functional or non-functional.",
+        "summary": "Designing a garment Fashion designers wo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 508
+      }
+    },
+    {
+      "id": "7871468-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1487
+        ],
+        [
+          840,
+          1816
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Ready-to-wear (prêt-à-porter) Ready-to-wear, or prêt-à-porter, clothes are a cross between haute couture and mass market. They are not made for individual customers, but great care is taken in the choice and cut of the fabric. Clothes are made in small quantities to guarantee exclusivity, so they are rather expensive. Ready-to-wear collections are usually presented by fashion houses each season during a period known as Fashion Week. This takes place on a citywide basis and occurs twice a year. The main seasons of Fashion Week include; spring/summer, fall/winter, resort, swim, and bridal.",
+        "summary": "Ready-to-wear (prêt-à-porter) Ready-to-w",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 329
+      }
+    }
+  ]
+}

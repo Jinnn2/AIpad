@@ -68,3 +68,12 @@ class GraphState:
 
     def list_groups(self) -> List[Group]:
         return list(self.groups.values())
+
+    def remove_block(self, block_id: str) -> None:
+        block = self.blocks.pop(block_id, None)
+        if not block:
+            return
+        for other in self.blocks.values():
+            filtered = [rel for rel in other.relationships if rel.target_block_id != block_id]
+            if len(filtered) != len(other.relationships):
+                other.relationships = filtered

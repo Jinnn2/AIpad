@@ -1,0 +1,2455 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "207961611-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          240
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effects of Forchlorfenuron on the Morphology, Metabolite Accumulation, and Transcriptional Responses of Siraitia grosvenorii Fruit",
+        "summary": "Effects of Forchlorfenuron on the Morphology, Metabolite Accumulation, and Trans",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "207961611-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          262
+        ],
+        [
+          860,
+          470
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Siraitia grosvenorii fruit, called luo-han-guo (LHG), have been used as a traditional Chinese medicine (TCM) and dietary supplements for many years. Mogrosides, the main bioactive ingredients in LHG, are commercially available worldwide as a non-sugar-based and noncaloric sweetener. However, the production cannot meet the increasing market demand because of the low content of mogrosides and the small size of LHG. Therefore, some advanced technologies have been applied for improving the quality of LHG.",
+        "summary": "Siraitia grosvenorii fruit, called luo-han-guo (LHG), have been used as a tradit",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          492
+        ],
+        [
+          860,
+          700
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Forchlorfenuron (CPPU), a plant growth regulator, is widely applied to promote plant yield and the secondary metabolite synthesis. Here, the content of nine mogrosides and three intermediates in LHG that were treated with three different concentrations of CPPU were determined by LC-MS/MS and GC-MS, respectively. The total content of mogrosides in LHG treated with CPPU was not enhanced, and the proportion of some main bioactive ingredients, including mogroside V (MV), were decreased relative to that of the control treatment.",
+        "summary": "Forchlorfenuron (CPPU), a plant growth regulator, is widely applied to promote p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          722
+        ],
+        [
+          860,
+          898
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Morphological and cytological observations showed CPPU could make an early lignification in fruit epidermal cells, and 5 or 25 mg L−1 CPPU could inhibit LHG growth. The expression levels of 24 key genes in the mogroside biosynthesis pathway were measured and revealed that genes downregulated in upstream, and different expressions of SgUGTs would affect the accumulations and proportions of mogrosides in LHG induced by CPPU.",
+        "summary": "Morphological and cytological observations showed CPPU could make an early ligni",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          920
+        ],
+        [
+          860,
+          1080
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This was the first study that applied CPPU individually on LHG, and assessed effects of CPPU on the morphology, the accumulation of metabolites, and expression profiles of 24 structural genes. The CPPU effects on LHG were undesirable, including development inhibition and the decrease of main mogroside content. These will provide guidance for the rational application of CPPU.",
+        "summary": "This was the first study that applied CPPU individually on LHG, and assessed eff",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "207961611-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1102
+        ],
+        [
+          860,
+          1326
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Siraitia grosvenorii is a perennial vine of the Cucurbitaceae family, and its fruit, called Luo-Han-Guo (LHG) in Chinese, has been used as a traditional Chinese medicine (TCM) in treatment of colds, sore throats, and lung congestion, and also has been recognized as a safe flavor enhancer and sweetener in Japan, US, and New Zealand [1,2]. Mogrosides, the main bioactive components extracted from LHG, are zero-caloric and approximately 300 times sweeter than sucrose, which can be used as a sucrose substitute for diabetes and obesity patients [3].",
+        "summary": "Introduction Siraitia grosvenorii is a perennial vine of the Cucurbitaceae famil",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1348
+        ],
+        [
+          860,
+          1556
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Pharmacological studies have shown that mogrosides have many important effects, such as liver-protecting, antidiabetic, antioxidation, anti-inflammatory, antitumor, and hypoglycemic activities [4][5][6]. To date, key genes associated with mogroside biosynthesis have been completely cloned and characterized [7]. The mogroside biosynthesis pathway can be divided into upstream and downstream, Figure 1. The diagram of the mogroside biosynthetic pathway. It was divided into upstream and downstream in this study.",
+        "summary": "Pharmacological studies have shown that mogrosides have many important effects, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1578
+        ],
+        [
+          860,
+          1802
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Acetyl-CoA is transformed into mogrol in the upstream by catalysis of HMGR (3-hydroxy-3-methyl glutaryl coenzyme A reductase), SQS (squalene synthase), SQE (squalene epoxidase), CDS (cucurbitadienol synthase), and CYP450 (cytochrome P450). Mogrol can be converted into different grades of mogrosides by UDP-glycosyltransferases. CAS (cycloartenol synthase) could translate 2,3-Oxidosqualene in to cycloartenol, which is the beginning of the steroid biosynthetic pathway. EPH, epoxide hydrolase; UGT, UDP-glycosyltransferases.",
+        "summary": "Acetyl-CoA is transformed into mogrol in the upstream by catalysis of HMGR (3-hy",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1824
+        ],
+        [
+          860,
+          2000
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Mogrosides are the complex cucurbitane-type triterpenoid glycosides, and it is difficult to obtain these compounds by the chemical approach [11]. At present, commercially available mogrosides are mainly extracted from LHG. With an increased public awareness of healthy diets, the value of LHG extracts has been increasingly in the industry of TCM [12]. However, the low content of mogrosides in LHG cannot meet the increasing market demand.",
+        "summary": "Mogrosides are the complex cucurbitane-type triterpenoid glycosides, and it is d",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2022
+        ],
+        [
+          860,
+          2246
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Market surveys showed that the larger the fruit, the higher the price because of the high content (1%-2%, m/m) of mogrosides in large LHG, and the extraction cost can be reduced by 1% when the mogroside content increases 0.1% [13]. Therefore, it is an urgent issue, taking some advanced technologies to achieve high-quality LHG. Mogrosides are the complex cucurbitane-type triterpenoid glycosides, and it is difficult to obtain these compounds by the chemical approach [11]. At present, commercially available mogrosides are mainly extracted from LHG.",
+        "summary": "Market surveys showed that the larger the fruit, the higher the price because of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2268
+        ],
+        [
+          860,
+          2492
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "With an increased public awareness of healthy diets, the value of LHG extracts has been increasingly in the industry of TCM [12]. However, the low content of mogrosides in LHG cannot meet the increasing market demand. Market surveys showed that the larger the fruit, the higher the price because of the high content (1%-2%, m/m) of mogrosides in large LHG, and the extraction cost can be reduced by 1% when the mogroside content increases 0.1% [13]. Therefore, it is an urgent issue, taking some advanced technologies to achieve high-quality LHG.",
+        "summary": "With an increased public awareness of healthy diets, the value of LHG extracts h",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2514
+        ],
+        [
+          860,
+          2738
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Forchlorfenuron (CPPU, N-(2-Chloro-4-pyridyl)-N'-phenylurea), a synthetic cytokinin of the phenyl urea family, has been tested and applied to regulate fruit set, size, shape, and inflorescence morphology in Torenia fournieri, grapes, apples, pears, and melons [14][15][16][17][18][19]. It was approved for application to kiwi fruit and grape by the United States Environmental Protection Agency in 2009 [20]. CPPU is not only applied in agriculture, but also used with medicinal plants to improve the synthesis of secondary metabolites.",
+        "summary": "Forchlorfenuron (CPPU, N-(2-Chloro-4-pyridyl)-N'-phenylurea), a synthetic cytoki",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2760
+        ],
+        [
+          860,
+          2904
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For example, it can increase the content of total flavonoids and puerarin in kudzu roots [21], of catalpol and verbascoside in Rehmannia glutinosa tuber [22], and of schisandrol in Schisandra chinensis [23]. Moreover, CPPU has also been applied in combination with other plant growth regulators (PGRs) in fruit production.",
+        "summary": "For example, it can increase the content of total flavonoids and puerarin in kud",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "207961611-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2926
+        ],
+        [
+          860,
+          3054
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For example, CPPU applied with gibberellin can delay maturity, increase berry size, reduce anthocyanin content, and enhance firmness in grapes [24,25], and CPPU applied with paclobutrazol can improve the content of dry matter, protein, starch, and saponin in Dioscorea opposita root [26,27]. In this study, S.",
+        "summary": "For example, CPPU applied with gibberellin can delay maturity, increase berry si",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "207961611-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3076
+        ],
+        [
+          860,
+          3236
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "grosvenorii fruit at 20 days after flowering were treated with three different concentrations of CPPU, the determination of the transverse and vertical diameters of the fruit, and cytological observations of the fruit epidermis cell and pulp cell were performed, of which the results were applied to assess the morphological features of LHG after being treated with CPPU.",
+        "summary": "grosvenorii fruit at 20 days after flowering were treated with three different c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "207961611-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3258
+        ],
+        [
+          860,
+          3498
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition, the content of nine mogrosides and three intermediates in the fruit at different development stages were determined by high-performance liquid chromatography with tandem mass spectrometry (HPLC-MS/MS) or gas chromatography mass spectrometry (GC-MS). The expression levels of 24 structure genes involved in the mogroside biosynthesis were examined by a quantitative real-time PCR (qRT-PCR) experiment. The change in content and proportion of bioactive compounds were analyzed. The genes regulated by inducted CPPU will serve as a valuable reference for further studies.",
+        "summary": "In addition, the content of nine mogrosides and three intermediates in the fruit",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3520
+        ],
+        [
+          860,
+          3616
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Overall, this is the first study that applied CPPU individually on LHG, and the effects on quality of LHG were investigated; these will provide guidance for the rational application of CPPU.",
+        "summary": "Overall, this is the first study that applied CPPU individually on LHG, and the ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "207961611-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3638
+        ],
+        [
+          860,
+          3814
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Morphological and Cytological Observations The transverse and vertical diameters of LHG were measured from 0 to 50 days-after-treatment (DAT); the results are displayed in Figure 2 (2A and 2B). In the high-concentration CPPU treatment group, the fruit did not grow normally, and the transverse and vertical diameters were both smaller in these fruits than in the control fruit; about 0.83-fold and 0.85-fold smaller at 50 DAT, respectively.",
+        "summary": "Morphological and Cytological Observations The transverse and vertical diameters",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3836
+        ],
+        [
+          860,
+          4012
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the medium-concentration CPPU treatment, the fruit showed unnormal growth compared with the control fruit at 50 DAT, being 0.88-fold and 0.91-fold smaller in the transverse and vertical diameter, respectively. In addition, the fruit treated with the low concentration of CPPU did not significantly differ from the control fruit. Overall, it was obvious that the CPPU in medium-and high-concentrations inhibited fruit development.",
+        "summary": "In the medium-concentration CPPU treatment, the fruit showed unnormal growth com",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4034
+        ],
+        [
+          860,
+          4258
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The inhibition started from 3 DAT for the transverse diameter development, as shown in Figure 2A, and 7 DAT for the vertical diameter development, as shown in Figure 2B. The results in the size of mature fruit and the starting day of inhibition indicated that the inhibition was more severe in the transverse diameter than the vertical diameter. Control, Low, Medium, and High mean the control group, low-, medium-, and high-concentration CPPU treatment group, respectively. DAT represents days-after-treatment. The epidermis cells and pulp cells in S.",
+        "summary": "The inhibition started from 3 DAT for the transverse diameter development, as sh",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4280
+        ],
+        [
+          860,
+          4488
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "grosvenorii fruit were observed, which are exhibited in Figure 2C and 2D. Cytological observations showed that fruit fluff covered the fruit epidermis at 0 DAT (20 days after anthesis), and the dense cells in the fruit epidermis started to become lignified at 10 DAT (30 days after anthesis). The lignified cells connected to form a layer that became the hard fruit rind, as shown in Figure 2C. Interestingly, the epidermis cells of fruit treated with CPPU exhibited lignification earlier than that of the control group.",
+        "summary": "grosvenorii fruit were observed, which are exhibited in Figure 2C and 2D. Cytolo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4510
+        ],
+        [
+          860,
+          4702
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the high-concentration treatment, the fruit rinds were thicker than those of the control group at 50 DAT, and even the low-concentration group displayed some difference from the control group at 10 DAT. CPPU can promote S. grosvenorii fruit rind generation and make it hard. In addition, under medium CPPU concentrations, the cells under the epidermis were symmetrical and numerous at 10 DAT, and some dehiscent fruit were found at 7 DAT, as shown in Figure 3.",
+        "summary": "In the high-concentration treatment, the fruit rinds were thicker than those of ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4724
+        ],
+        [
+          860,
+          4932
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "We speculate that these cells divided rapidly under the epidermis while the epidermis partly lignified, which might have caused the dehiscent fruit. Microscopic observation of pulp cells revealed a dense distribution at 0 DAT and a continuous, rapid increase in cell number to 10 DAT; at this time, cell size in the CPPU treated groups was bigger than that in the control group, as shown in Figure 2D. Subsequently, the pulp cells continued to increase in size and became irregular shaped during 30-50 DAT.",
+        "summary": "We speculate that these cells divided rapidly under the epidermis while the epid",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4954
+        ],
+        [
+          860,
+          5194
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CPPU treatment had a little influence on pulp cell development; it is possible that the CPPU solution, after dipping the fruit, did not diffuse deeply into the fruit. The epidermis cells and pulp cells in S. grosvenorii fruit were observed, which are exhibited in Figure 2C,D. Cytological observations showed that fruit fluff covered the fruit epidermis at 0 DAT (20 days after anthesis), and the dense cells in the fruit epidermis started to become lignified at 10 DAT (30 days after anthesis). The lignified cells connected to form a layer that became the hard fruit rind, as shown in Figure 2C.",
+        "summary": "CPPU treatment had a little influence on pulp cell development; it is possible t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5216
+        ],
+        [
+          860,
+          5456
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Interestingly, the epidermis cells of fruit treated with CPPU exhibited lignification earlier than that of the control group. In the high-concentration treatment, the fruit rinds were thicker than those of the control group at 50 DAT, and even the low-concentration group displayed some difference from the control group at 10 DAT. CPPU can promote S. grosvenorii fruit rind generation and make it hard. In addition, under medium CPPU concentrations, the cells under the epidermis were symmetrical and numerous at 10 DAT, and some dehiscent fruit were found at 7 DAT, as shown in Figure 3.",
+        "summary": "Interestingly, the epidermis cells of fruit treated with CPPU exhibited lignific",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5478
+        ],
+        [
+          860,
+          5686
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "We speculate that these cells divided rapidly under the epidermis while the epidermis partly lignified, which might have caused the dehiscent fruit. Microscopic observation of pulp cells revealed a dense distribution at 0 DAT and a continuous, rapid increase in cell number to 10 DAT; at this time, cell size in the CPPU treated groups was bigger than that in the control group, as shown in Figure 2D. Subsequently, the pulp cells continued to increase in size and became irregular shaped during 30-50 DAT.",
+        "summary": "We speculate that these cells divided rapidly under the epidermis while the epid",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5708
+        ],
+        [
+          860,
+          5788
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CPPU treatment had a little influence on pulp cell development; it is possible that the CPPU solution, after dipping the fruit, did not diffuse deeply into the fruit.",
+        "summary": "CPPU treatment had a little influence on pulp cell development; it is possible t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "207961611-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5810
+        ],
+        [
+          860,
+          6018
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii Fruit In the upstream of the mogroside biosynthetic pathway, the content of the three compounds (squalene, cucurbitadienol, and cycloartenol) in S. grosvenorii fruit treated with different concentrations of CPPU were determined by GC-MS at different DAT, and the results exhibited obvious differences, as shown in Figure 4 and Appendix Table A1. The content of three intermediates decreased constantly in the control and treatment groups.",
+        "summary": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii F",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6040
+        ],
+        [
+          860,
+          6232
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "On 50 DAT, the content of squalene showed a marked difference in the control and the high-concentration CPPU treatment groups (2.12fold higher than that of the control). In the low-and medium-concentration CPPU groups, squalene content did not differ significantly from that in the control. Compared with the corresponding content in the control group on 50 DAT, the cucurbitadienol contents were 1.29-fold and 1.45-fold under lowand high-concentration treatments, respectively.",
+        "summary": "On 50 DAT, the content of squalene showed a marked difference in the control and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6254
+        ],
+        [
+          860,
+          6462
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The fruit in the medium-concentration treatment showed a 36% reduction in content of cucurbitadienol relative to the level in the control group on 50 DAT. Regarding content of cycloartenol, there was no significant difference between the medium-or high-concentration CPPU treatments and the control group, whereas it was decreased to 61% under the low concentration of CPPU. The rapid content decrease of the three intermediates might result from the efficient utilization of synthesis downstream.",
+        "summary": "The fruit in the medium-concentration treatment showed a 36% reduction in conten",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6484
+        ],
+        [
+          860,
+          6548
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results demonstrated that different concentrations of CPPU could affect the accumulation of compounds.",
+        "summary": "These results demonstrated that different concentrations of CPPU could affect th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "207961611-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6570
+        ],
+        [
+          860,
+          6778
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii Fruit In the upstream of the mogroside biosynthetic pathway, the content of the three compounds (squalene, cucurbitadienol, and cycloartenol) in S. grosvenorii fruit treated with different concentrations of CPPU were determined by GC-MS at different DAT, and the results exhibited obvious differences, as shown in Figure 4 and Appendix A Table A1. The content of three intermediates decreased constantly in the control and treatment groups.",
+        "summary": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii F",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6800
+        ],
+        [
+          860,
+          6992
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "On 50 DAT, the content of squalene showed a marked difference in the control and the high-concentration CPPU treatment groups (2.12-fold higher than that of the control). In the low-and medium-concentration CPPU groups, squalene content did not differ significantly from that in the control. Compared with the corresponding content in the control group on 50 DAT, the cucurbitadienol contents were 1.29-fold and 1.45-fold under low-and high-concentration treatments, respectively.",
+        "summary": "On 50 DAT, the content of squalene showed a marked difference in the control and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7014
+        ],
+        [
+          860,
+          7222
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The fruit in the medium-concentration treatment showed a 36% reduction in content of cucurbitadienol relative to the level in the control group on 50 DAT. Regarding content of cycloartenol, there was no significant difference between the medium-or high-concentration CPPU treatments and the control group, whereas it was decreased to 61% under the low concentration of CPPU. The rapid content decrease of the three intermediates might result from the efficient utilization of synthesis downstream.",
+        "summary": "The fruit in the medium-concentration treatment showed a 36% reduction in conten",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7244
+        ],
+        [
+          860,
+          7308
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These results demonstrated that different concentrations of CPPU could affect the accumulation of compounds.",
+        "summary": "These results demonstrated that different concentrations of CPPU could affect th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "207961611-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7330
+        ],
+        [
+          860,
+          7506
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii Fruit In the upstream of the mogroside biosynthetic pathway, the content of the three compounds (squalene, cucurbitadienol, and cycloartenol) in S. grosvenorii fruit treated with different concentrations of CPPU were determined by GC-MS at different DAT, and the results exhibited obvious differences, as shown in Figure 4 and Appendix Table A1.",
+        "summary": "The Determination of Three Intermediates and Nine Mogrosides in S. grosvenorii F",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7528
+        ],
+        [
+          860,
+          7736
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The content of three intermediates Moreover, the contents of the nine mogrosides were determined by LC-MS/MS at different stages of fruit development, as shown in Appendix A Figure A1 and Table A1. The mogroside V (MV) was detected (0.19 and 0.15 mg g −1 , respectively) in the low-and medium-concentration CPPU groups in the 30 DAT, but not found in the control and high-concentration groups. The content of mogrosides MIIE and MIII were decreased during fruit development. Figure 5 displays the content of the nine mogrosides at 50 DAT.",
+        "summary": "The content of three intermediates Moreover, the contents of the nine mogrosides",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7758
+        ],
+        [
+          860,
+          7982
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Compared with the content in the control group, the content of mogrosides MIIE, MIII, MIV, and IMV in the low-concentration CPPU treatment were increased (to 1.37-fold, 1.06-fold, 1.08-fold, and 1.18-fold, respectively), and the content of MV was decreased (to 0.77-fold). In the medium-CPPU treatment group, the content of mogroside MIII was slightly improved (to 1.04-fold) relative to the control content, whereas the content of mogrosides MIV, MV, IMV, and MVI were significantly reduced (to 0.88-fold, 0.87-fold, 0.76-fold, and 0.63-fold, respectively).",
+        "summary": "Compared with the content in the control group, the content of mogrosides MIIE, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8004
+        ],
+        [
+          860,
+          8196
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Relative to the control treatment, the high concentration of CPPU greatly increased the content of mogrosides MIIE, MIII, MIVA, and IMV (to 1.82-fold, 1.32-fold, 1.10-fold, and 1.65-fold, respectively) but significantly decreased the content of Si, MV, OMV, and MVI (to 0.76-fold, 0.76-fold, 0.88-fold, and 0.82-fold, respectively). Overall, exogenous treatment with CPPU significantly promoted the accumulation of mogroside MIII and decreased the content of mogroside MV.",
+        "summary": "Relative to the control treatment, the high concentration of CPPU greatly increa",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8218
+        ],
+        [
+          860,
+          8410
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The total content of mogrosides at 50 DAT in the control and low-, medium-, and high-concentration CPPU groups was 22.86, 21.86, 21.28, and 23.81 mg g −1 , respectively. The total mogroside content in the high-concentration CPPU group had little difference compared with that of the control; the mogroside MV content proportion was 29.15% in this treatment group (vs. 39.89% in the control group), and 32.18% and 37.6% in the lowand medium-concentration CPPU group, respectively.",
+        "summary": "The total content of mogrosides at 50 DAT in the control and low-, medium-, and ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8432
+        ],
+        [
+          860,
+          8672
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The main active compound mogroside MV proportion was changed after CPPU treatment, which might affect the fruit's flavor and its curative effects as a TCM. Moreover, the contents of the nine mogrosides were determined by LC-MS/MS at different stages of fruit development, as shown in Appendix Figure A1 and Table A1. The mogroside V (MV) was detected (0.19 and 0.15 mg g −1 , respectively) in the low-and medium-concentration CPPU groups in the 30 DAT, but not found in the control and high-concentration groups. The content of mogrosides MIIE and MIII were decreased during fruit development.",
+        "summary": "The main active compound mogroside MV proportion was changed after CPPU treatmen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p041",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8694
+        ],
+        [
+          860,
+          8758
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Figure 5 displays the content of the nine mogrosides at 50 DAT. Compared with the content in the control group, the content of mogrosides",
+        "summary": "Figure 5 displays the content of the nine mogrosides at 50 DAT. Compared with th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "207961611-p042",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8780
+        ],
+        [
+          860,
+          8956
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Gene Expression Analysis Cluster analysis of the gene expression levels at the four sampling times and under the three treatment concentrations was performed, as shown in Figure 6. The expression levels of twenty-four key genes in the mogroside biosynthetic pathway treated with different concentrations of CPPU showed obvious differences. The genes with different expression levels were grouped into four main clusters.",
+        "summary": "Gene Expression Analysis Cluster analysis of the gene expression levels at the f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p043",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8978
+        ],
+        [
+          860,
+          9170
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The gene SgUGT94-289-2 was put into Cluster I, SgUGT73-327-2, SgEPH, SgCYP102801, and SgCDS were grouped into Cluster II, SgUGT75-281-2, SgUGT73-251-5, SgUGT85-269-4, SgUGT74-345-2, SgCPR1, SgUGT94-289-3, SgUGT94-289-1, SgUGT73-348-2, SgUGT85-269-1, SgCPR2, SgEPH2, SgUGT73-251-6, and SgSQE1 were classified into Cluster III, the remaining genes including SgHMGR, SgSQS, SgCAS, SgSQE2, SgEPH1, and SgEPH4 were categorized into Cluster IV.",
+        "summary": "The gene SgUGT94-289-2 was put into Cluster I, SgUGT73-327-2, SgEPH, SgCYP102801",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p044",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9192
+        ],
+        [
+          860,
+          9400
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Relative to the control treatment, the genes in Cluster IV were upregulated in the fruit treated with low-concentration CPPU-these genes are significant in the upstream of the mogroside biosynthetic pathway-and genes in Cluster I, II, and III were upregulated, especially for the genes in the UGTs family. In the medium-concentration CPPU treatment group, most genes in Cluster III, especially the SgUGTs genes, were downregulated at 24 h or 48 h after treatment and then upregulated thereafter.",
+        "summary": "Relative to the control treatment, the genes in Cluster IV were upregulated in t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p045",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9422
+        ],
+        [
+          860,
+          9630
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "As for the high-concentration CPPU treatment group, a handful of genes were downregulated at 24 h or 48 h after treatment, and a little upregulation was found in the latter sampling times; the gene SgUGT94-289-2 was downregulated at all times. Overall, the expression levels of genes in Cluster III had obvious differences, upregulations were found in low-concentration CPPU, early downregulation and late upregulation in medium-concentration CPPU, and a little effect in high-concentration CPPU.",
+        "summary": "As for the high-concentration CPPU treatment group, a handful of genes were down",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p046",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9652
+        ],
+        [
+          860,
+          9876
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Discussion S. grosvenorii is a perennial vine distributed in southern China in Guangxi. Some modern agricultural technologies, such as plant tissue culture [28,29], have been applied in the cultivation of S. grosvenorii plants; however, neither the content of mogrosides have markedly improved, nor a satisfactory fruit size was achieved. It is generally recognized that the production and distribution of the active compounds in medicinal plants is regulated by genetic factors, harvesting time, development environment, physiological factors, and chemical factors.",
+        "summary": "Discussion S. grosvenorii is a perennial vine distributed in southern China in G",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p047",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9898
+        ],
+        [
+          860,
+          10122
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It has been found that exogenous plant hormone, like methyl jasmonate, abscisic acid, and salicylic acid, could affect the accumulation of secondary metabolites in Salvia miltiorrhiza [30], Glycyrrhiza uralensis root [31], and Uncaria tomentosa [32]. Exogenous plant hormone applied in the S. grosvenorii might be an appropriate approach for good production, and Zhang et al. demonstrated that methyl jasmonate applied in different development stages of S. grosvenorii fruit significantly promotes the accumulation of squalene, cucurbitadienol, and mogrosides IIE [33].",
+        "summary": "It has been found that exogenous plant hormone, like methyl jasmonate, abscisic ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p048",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10144
+        ],
+        [
+          860,
+          10320
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "A CPPU combined with gibberellin treatment achieved parthenocarpy in S. grosvenorii fruit in a previous study [34], whereas only a concentration CPPU (10 mg·L −1 ) treatment was performed and the achieved fruit size was unsatisfactory. In this study, the LHG treated with three different concentrations of CPPU displayed obvious differences in morphological characteristics and mogroside accumulations.",
+        "summary": "A CPPU combined with gibberellin treatment achieved parthenocarpy in S. grosveno",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p049",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10342
+        ],
+        [
+          860,
+          10566
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The phenomenon that dehiscent fruit, found in the medium-concentration CPPU group at 7 DAT, and medium-and high-concentration of CPPU inhibited fruit development suggest that the inappropriate application of CPPU could lead to crop failure. Cytological observation revealed that LHG treated with CPPU presents lignification earlier, which would result in hard fruit rinds. The cells under the epidermis divided rapidly under CPPU treatment, and partial lignification of the epidermis might limit the space available for cell division.",
+        "summary": "The phenomenon that dehiscent fruit, found in the medium-concentration CPPU grou",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p050",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10588
+        ],
+        [
+          860,
+          10812
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Research has indicated that CPPU has a cytokinin effect and that cell division is more sensitive to this effect than is cell enlargement [35,36]. Therefore, the combination of CPPU with other PGRs might be beneficial for S. grosvenorii fruit size development. It is obvious that appropriate proportions of the ingredients are important for achieving a stable treatment effect in TCM. The active compounds in medicinal plants treated with exogenous plant hormone might be changed and their geo-herbal characteristics could not be guaranteed. In the S.",
+        "summary": "Research has indicated that CPPU has a cytokinin effect and that cell division i",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p051",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10834
+        ],
+        [
+          860,
+          11026
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "grosvenorii fruit, the most important compounds are mogrosides, and mogroside MV content is regarded as an index of LHG quality and is required to be above 0.5% (m/m) in the Chinese Pharmacopoeia [37]. Our study found that the content and proportion of mogroside MV decreased after CPPU treatment, although those of some other mogrosides increased. Except for the usage as the materials in mogroside extraction production, LHG treated with CPPU should be carefully considered before use as a TCM.",
+        "summary": "grosvenorii fruit, the most important compounds are mogrosides, and mogroside MV",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p052",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11048
+        ],
+        [
+          860,
+          11224
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition, nine mogrosides have different sweetness, with sweetness decreasing in the order Si, IMV, MV, MIV, MIVA, MIII, MVI, OMV, and MIIE [38]; this means that the changes in the proportions of mogrosides under CPPU treatment might alter the fruit's flavor and affect its dietary usage. Therefore, the effects of CPPU treatment on the quality of S. grosvenorii fruit, specifically, the proportions of mogrosides, should be investigated.",
+        "summary": "In addition, nine mogrosides have different sweetness, with sweetness decreasing",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p053",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11246
+        ],
+        [
+          860,
+          11454
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Due to the limitation of little research of CPPU applied in medicinal plants, and lack of safety assessments, CPPU should be used cautiously in the cultivation application on S. grosvenorii used in herb crop production. The biosynthetic pathway of mogrosides has been studied extensively, and most of the related genes have been identified. In the upstream of the biosynthetic pathway, as shown in Figure 1, the number of genes encoding SQE, EPH, and CPR (cytochrome P450 reductase) are 2, 4, and 2, respectively.",
+        "summary": "Due to the limitation of little research of CPPU applied in medicinal plants, an",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p054",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11476
+        ],
+        [
+          860,
+          11620
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this study, SgSQE2, SgEPH1, and SgEPH2 were put into Cluster IV; downregulation or little impact found in LHG treated with different concentrations of CPPU suggest that these genes have different functions and might be regulated in other mechanisms. In another sides, SgSQE1, SgEPH2, SgCPR1, and SgCPR2 were gathered in Cluster III and upregulated.",
+        "summary": "In this study, SgSQE2, SgEPH1, and SgEPH2 were put into Cluster IV; downregulati",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "207961611-p055",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11642
+        ],
+        [
+          860,
+          11818
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "SgCPR is the redox partner of various SgCYP450s involved in secondary metabolism [39], its upregulation can play a significant role in the promotion of the mogrol accumulation, which would further improve mogroside accumulation downstream in this study. Genes in Cluster IV were almost downregulated in the low-concentration CPPU treatment, which would hinder the generation and conversion of intermediates upstream.",
+        "summary": "SgCPR is the redox partner of various SgCYP450s involved in secondary metabolism",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p056",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11840
+        ],
+        [
+          860,
+          12080
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the downstream of the biosynthetic pathway, as shown in Figure 7, it has been identified that twelve genes in the UGT family participate in the process of mogrol converting into mogrosides [10]. Gene expression in this study displayed that nine genes in Cluster III (including SgUGT73-251-5, SgUGT73-251-6, SgUGT73-348-2, SgUGT74-345-2, SgUGT75-281-2, SgUGT85-269-1, SgUGT85-269-4, SgUGT94-289-3, and SgUGT94-289-1) were upregulated, and the expression of genes in the SgUGT73 (SgUGT73-251-5, SgUGT73-251-6, SgUGT73-348-2) family were responsible for the mogroside M1 (MIA1 and MIB) biosynthesis.",
+        "summary": "In the downstream of the biosynthetic pathway, as shown in Figure 7, it has been",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p057",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12102
+        ],
+        [
+          860,
+          12294
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "SgUGT74-345-2, SgUGT75-281-2, and SgUGT85-269-4 could affect different grades of mogroside biosynthesis because of their UGT catalytic function on the C3 of the mogroside skeleton [7]. The UGT85-269-1 could make another β-d-glucopyranosyl conjugate with the β-d-glucopyranosyl on C3 of the skeleton. UGT94-289-3 and UGT94-289-1 were unspecific for the mogroside biosynthesis, especially UGT94-289-3, which can transform mogroside IIE into mogroside V.",
+        "summary": "SgUGT74-345-2, SgUGT75-281-2, and SgUGT85-269-4 could affect different grades of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p058",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12316
+        ],
+        [
+          860,
+          12524
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Overall, it is difficult to analyze the correlation between mogroside accumulation and the level of relative gene expression in plant development because of the intricate network of biosynthetic pathways. , and MVI represent mogroside IE1, mogroside IA1, mogroside IB, mogroside IIA, mogroside IIA1, mogroside IIA2, mogroside IIE, mogroside III, mogroside IIIE, mogroside IIIA1, mogroside IIIA2, mogroside IVA, mogroside IV, isomogroside IV, isomogroside V, mogroside V, and mogroside VI, respectively.",
+        "summary": "Overall, it is difficult to analyze the correlation between mogroside accumulati",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p059",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12546
+        ],
+        [
+          860,
+          12754
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this study, the proportions of mogrosides were markedly affected by CPPU treatment, especially that of MV, which might have been due to the changes of gene expression in the biosynthetic pathway. In the low-concentration CPPU treatment group, SgSQE1 and SgCDS were upregulated and cucurbitadienol content was increased, whereas SgHMGR and SgSQS were inhibited. CPPU treatment might inhibit squalene biosynthesis; although the downstream genes were upregulated, a lack of pre-substrates would affect mogroside biosynthesis.",
+        "summary": "In this study, the proportions of mogrosides were markedly affected by CPPU trea",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p060",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12776
+        ],
+        [
+          860,
+          13000
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Under high-concentration CPPU treatment, squalene and cucurbitadienol accumulated significantly, and some genes were slightly upregulated at 48 h after treatment, and the proportions of mogrosides were changed. The structural genes in the mogroside downstream pathway are not specifically for biosynthesis of individual compounds, especially the SgUGTs. It demonstrated that genes are up/downregulated by CPPU treatment, which will serve as a valuable reference for further studies on the regulation of gene expression in the mogroside biosynthetic pathway.",
+        "summary": "Under high-concentration CPPU treatment, squalene and cucurbitadienol accumulate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p061",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13022
+        ],
+        [
+          860,
+          13246
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Plant Materials, CPPU Treatments, and Sample Preparation Twenty S. grosvenorii plants grown under identical natural conditions were selected in Guilin City, Guangxi, China (24 • 57 36.16\" N, 110 • 02 19.67\" E). The control group and the treatment groups each comprised five plants. For the treatment groups, S. grosvenorii fruit at 20 days after flowering were dipped in CPPU solution at one of three concentrations (low concentration: 0.5 mg L −1 , medium concentration: 5 mg L −1 , and high concentration: 25 mg L −1 ) for approximately 30 s until the surface was uniformly wetted.",
+        "summary": "Plant Materials, CPPU Treatments, and Sample Preparation Twenty S. grosvenorii p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "207961611-p062",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13268
+        ],
+        [
+          860,
+          13460
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Ethanol was used as a cosolvent for the preparation of the CPPU stock solution with a final concentration of 2% (v/v), and 2% (v/v) ethanol was used also for the control group. Samples were collected at different time points (0, 1, 2, 3, 7, 10, 30, and 50 DAT), and five biological replicates were obtained for each sample. Additionally, the fruit transverse diameter and vertical diameter were measured by an Absolute Digital Caliper (Mitutoyo, Tokyo, Japan) before treatment and sampling.",
+        "summary": "Ethanol was used as a cosolvent for the preparation of the CPPU stock solution w",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p063",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13482
+        ],
+        [
+          860,
+          13658
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The samples collected at 0, 1, 2, 3, and 7 DAT were cut into small pieces, immediately frozen in liquid nitrogen, and stored at -80 • C until further processing. The dry powdered sample (0.5 g) was accurately weighted and suspended in 25 mL of methanol/water (80:20, v/v) with KOH (5%, m/v), then the sample was sonicated in an ultrasonic water bath operating at 40 kHZ with an output power of 300 W for 1 h at room temperature.",
+        "summary": "The samples collected at 0, 1, 2, 3, and 7 DAT were cut into small pieces, immed",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p064",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13680
+        ],
+        [
+          860,
+          13872
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Duplicate extraction was required and both extracts were mixed and then diluted to 100mL with methanol/water (80:20, v/v), and finally, the sample solution was filtered through a 0.22 µm polyvinylidene difluoride filter into 1.5 mL glass vials for LC-MS/MS determination. For the analysis of the nonpolar compounds-squalene, cucurbitadienol, and cycloartenol-from LHG, 50 mL of the above mentioned methanol/water extracts was extracted three times with the same volume of n-hexane.",
+        "summary": "Duplicate extraction was required and both extracts were mixed and then diluted ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p065",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13894
+        ],
+        [
+          860,
+          13958
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The combined extracts were dried under reduced pressure distillation and dissolved in 1 mL of n-hexane and then GC-MS analyzed.",
+        "summary": "The combined extracts were dried under reduced pressure distillation and dissolv",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "207961611-p066",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13980
+        ],
+        [
+          860,
+          14220
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Morphological and Cytological Observations The fruit samples collected at 0, 10, 30, and 50 DAT were fixed in FAA (formalin, acetic acid, and alcohol) solution from Coolaber Biotech (Beijing, China), containing 45% ethanol, formaldehyde, and acetic acid (90:5:5 by volume). Then, the samples were softened and dehydrated. Subsequently, a thick section was cut from each sample and embedded in paraffin, and a transverse 10 µm thick slice was removed from the section by microtome (Leica Microsystems SM2500, Wetzlar, Germany). The slice was mounted and stained with safranin-fast green.",
+        "summary": "Morphological and Cytological Observations The fruit samples collected at 0, 10,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p067",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14242
+        ],
+        [
+          860,
+          14306
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Finally, photos were taken under a high-resolution digital microscope (Leica DM2500; Leica Microsystems GmbH, Wetzlar, Germany).",
+        "summary": "Finally, photos were taken under a high-resolution digital microscope (Leica DM2",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "207961611-p068",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14328
+        ],
+        [
+          860,
+          14520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "GC-MS Analysis of Squalene, Cucurbitadienol, and Cycloartenol GC-MS was performed on a Thermo Scientific ISQ Single Quadrupole GC-MS (Thermo Scientific, Waltham, MA, USA). Three intermediates (squalene, cucurbitadienol, and cycloartenol) were measured. The fruit samples for GC-MS analysis were prepared and the basic operational conditions were as described previously [13,33]. Helium gas was used as the carrier gas, and the carrier flow rate was 1.5 mL min −1 .",
+        "summary": "GC-MS Analysis of Squalene, Cucurbitadienol, and Cycloartenol GC-MS was performe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "207961611-p069",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14542
+        ],
+        [
+          860,
+          14750
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The initial oven temperature was 160 • C and was held for 1 min, then gradually increased to 300 • C at a rate of 20 • C·min −1 and then held for 10 min at 300 • C. A sample of 10 µL was injected automatically into the monitor system in 1:10 split mode. Selective ion monitoring mode (ions selected for scanning: m/z: 426, 410, 408, 393, 341, 367, 274, 95, 69) was chosen. Additionally, identification of the three components was performed by matching the fragment ion peak and retention time with standards, as shown in Appendix A Figure A2.",
+        "summary": "The initial oven temperature was 160 • C and was held for 1 min, then gradually ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p070",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14772
+        ],
+        [
+          860,
+          14916
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "LC-MS/MS Analysis of Nine Mogrosides Mogroside MIIE, MIII, MIV, MIVA, Si, MV, IMV, OMV, and MVI were detected by LC-MS/MS following previously described methods [38]. The HPLC system consisted of an Agilent Technologies 1260 Series LC system (Agilent, USA) equipped with an automatic degasser, a quaternary pump, and an autosampler.",
+        "summary": "LC-MS/MS Analysis of Nine Mogrosides Mogroside MIIE, MIII, MIV, MIVA, Si, MV, IM",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "207961611-p071",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14938
+        ],
+        [
+          860,
+          15146
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Chromatographic separations were performed on an Agilent Poroshell 120 SB C18 column (100 × 2.1 mm, 2.7 µm) by gradient elution using a mobile phase consisting of (A) water (containing 0.1% formic acid) and (B) acetonitrile (containing 0.1% formic acid) with the following gradient procedure: 0 min, 26% B; 5 min, 32% B; 5.01-5.50 min, 80% B; and 5.51-10.0 min, 26% B. The flow rate was 0.25 mL·min −1 , and the injection volume was 10 µL. The column effluent was monitored using a 4500 QTRAP ® LC-MS/MS system (AB Sciex, Toronto, Canada).",
+        "summary": "Chromatographic separations were performed on an Agilent Poroshell 120 SB C18 co",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p072",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15168
+        ],
+        [
+          860,
+          15264
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The compound-dependent instrumental parameters were optimized and listed in Appendix A Table A2. Both the standards and samples of nine mogrosides in the LC-MS/MS chromatograms are displayed in Appendix A Figure A3.",
+        "summary": "The compound-dependent instrumental parameters were optimized and listed in Appe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "207961611-p073",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15286
+        ],
+        [
+          860,
+          15526
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Quantitative Real-Time PCR (qRT-PCR) Analysis of Gene Expression Twenty-four structural genes in the mogroside biosynthetic pathway were measured by qRT-PCR. Total RNA extraction, quality and concentration assessment, and the expression profiles of the 24 structural genes determined using the BIO-RAD CFX system (BIO-RAD, USA) were performed as described previously [33]. First-strand cDNA was synthesized by TransScript One-Step gDNA Removal and cDNA Synthesis SuperMix (Transgen Biotech, Beijing, China). The primer sequences used in this experiment are listed in Appendix A Table A3. S.",
+        "summary": "Quantitative Real-Time PCR (qRT-PCR) Analysis of Gene Expression Twenty-four str",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p074",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15548
+        ],
+        [
+          860,
+          15628
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "grosvenorii ubiquitin (SgUBQ) was used as an internal reference gene [40]. Relative expression levels of each sample were calculated using the 2-∆∆Ct method [41].",
+        "summary": "grosvenorii ubiquitin (SgUBQ) was used as an internal reference gene [40]. Relat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "207961611-p075",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15650
+        ],
+        [
+          860,
+          15826
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Statistical Analysis All results were presented as mean ± standard deviation (SD) of the number of experiments. The statistical significances of the fruit size change, concentration values, as well as gene expression levels were tested using Student's t test implemented in the SPSS software (version 20.0, IBM, Chicago, IL, USA). The heatmap of hierarchical clustering was generated with Origin 2017 (OriginLab Co., Northampton, MA, USA).",
+        "summary": "Statistical Analysis All results were presented as mean ± standard deviation (SD",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "207961611-p076",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15848
+        ],
+        [
+          860,
+          16088
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusions In this study, the content of nine active components and three intermediates in LHG treated with different concentrations of CPPU were determined by LC-MS/MS and GC-MS, respectively. The results displayed that the total content of mogrosides in LHG treated with CPPU was not significantly different, and the proportional decrease of the main active compound mogroside MV was found in all treatment groups. Morphological and cytological observations showed the medium-or high-concentration CPPU could inhibit LHG development, and CPPU could affect the LHG rind generation.",
+        "summary": "Conclusions In this study, the content of nine active components and three inter",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "207961611-p077",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          16110
+        ],
+        [
+          860,
+          16318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Twenty-four key gene expression levels revealed that genes downregulated in upstream and different expressions of SgUGTs would affect the accumulations and proportions of mogrosides. This study provides basic data of CPPU effects on the morphological characteristics, mogroside accumulation, and relative gene expression. Some undesirable consequences from LHG treated with CPPU should be concerning, and the application of CPPU should be cautious in the cultivation of S. grosvenorii used in herb crop production.",
+        "summary": "Twenty-four key gene expression levels revealed that genes downregulated in upst",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "207961611-p078",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          16340
+        ],
+        [
+          860,
+          16420
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conflicts of Interest: The authors declared no conflict of interest. Table A1. Contents (mg g −1 ) of 12 compounds in tested samples (n = 5, mean ± SD).",
+        "summary": "Conflicts of Interest: The authors declared no conflict of interest. Table A1. C",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    }
+  ]
+}

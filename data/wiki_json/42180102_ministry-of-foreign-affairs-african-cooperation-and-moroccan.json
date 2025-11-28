@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "42180102-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          174
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates",
+        "summary": "Ministry of Foreign Affairs, African Coo",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 94
+      }
+    },
+    {
+      "id": "42180102-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          198
+        ],
+        [
+          840,
+          258
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "34°0′44.05″N 6°49′20.98″W / 34.0122361°N 6.8224944°W",
+        "summary": "34°0′44.05″N 6°49′20.98″W / 34.0122361°N",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    },
+    {
+      "id": "42180102-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          282
+        ],
+        [
+          840,
+          432
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Ministry of Foreign Affairs, African Cooperation and Moroccan Expatriates is the foreign affairs ministry of Morocco, responsible for implementing Morocco's foreign policy and ensuring relations with foreign states.",
+        "summary": "The Ministry of Foreign Affairs, African",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    },
+    {
+      "id": "42180102-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          456
+        ],
+        [
+          840,
+          584
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Its head office is in Rabat and is one of the so-called \"ministries of sovereignty\", which report directly to the king of Morocco, alongside the ministries of the interior and religious affairs.",
+        "summary": "Its head office is in Rabat and is one o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "42180102-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          608
+        ],
+        [
+          840,
+          758
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Since 5 April 2017, Nasser Bourita is the incumbent minister, and is assisted by his junior minister, Abdelkrim Benatiq, who serves as the Minister Delegate to the Minister of Foreign Affairs, in charge of Moroccans living abroad and Migration Affairs.",
+        "summary": "Since 5 April 2017, Nasser Bourita is th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    },
+    {
+      "id": "42180102-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          782
+        ],
+        [
+          840,
+          1022
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The ministry was created by Dahir No. 1-56-097 of 26 April 1956, four months after the formation of the government of Mbarek Bekkay, first Prime Minister of the Kingdom of Morocco. The ministry is headed by the Secretary of State, currently Mounia Boucetta since April 2017. As of 2017, the ministry manages and staffs 91 embassies, 53 consulates-general and several Permanent Missions.",
+        "summary": "The ministry was created by Dahir No. 1-",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 240
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import math
 import uuid
 from collections import defaultdict
 from dataclasses import dataclass
@@ -73,7 +74,7 @@ class BlockManager:
         embedder: Optional[TextEmbedder] = None,
         summarizer: Optional[BlockSummarizer] = None,
         group_distance_threshold: float = 0.4,
-        block_distance_threshold: float = 0.4,
+        block_distance_threshold: float = 0.35,
         summary_refresh_ratio: float = 0.3,
         summary_refresh_interval: timedelta = timedelta(minutes=10),
         canvas_size: Optional[Tuple[float, float]] = None,
@@ -128,6 +129,18 @@ class BlockManager:
         if not self.state.blocks and not self.state.groups:
             self._log_cluster(
                 "fragment_cold_start",
+                fragment_id=fragment.fragment_id,
+                text=self._shorten_text(fragment.text),
+            )
+            new_block = self._create_block_from_fragment(fragment)
+            assignment.status = "block"
+            assignment.block_id = new_block.block_id
+            assignment.promoted_block_id = new_block.block_id
+            return assignment
+
+        if self._is_heading_fragment(fragment):
+            self._log_cluster(
+                "heading_promoted",
                 fragment_id=fragment.fragment_id,
                 text=self._shorten_text(fragment.text),
             )
@@ -241,6 +254,11 @@ class BlockManager:
         )
         block.last_summary_member_count = len(block.contents)
         block.last_summary_ts = datetime.utcnow()
+        block.character_count = sum(
+            self._fragment_text_length(self.state.fragments.get(fid))
+            for fid in group.members
+            if self.state.fragments.get(fid)
+        )
         self.state.add_block(block)
 
         for fragment_id in group.members:
@@ -265,6 +283,7 @@ class BlockManager:
             raise FragmentNotFoundError(fragment_id)
         block.add_contents({fragment_id})
         block.position = self._refresh_block_bbox(block)
+        block.character_count += self._fragment_text_length(fragment)
         self._fragment_to_block[fragment_id] = block_id
         self._fragment_to_group.pop(fragment_id, None)
         self._block_incoming_counts[block_id] += 1
@@ -396,6 +415,165 @@ class BlockManager:
         )
         return new_group.group_id
 
+    def _ensure_group_embedding(self, group: Group) -> Optional[List[float]]:
+        if group.prototype_vec is not None:
+            return list(group.prototype_vec)
+        embedding = self._compute_block_embedding(group.members)
+        if embedding is not None:
+            group.prototype_vec = list(embedding)
+            return list(embedding)
+        return None
+
+    def _absorb_group_into_block(self, block: Block, group: Group) -> None:
+        fragment_ids = list(group.members)
+        if not fragment_ids:
+            return
+        block.add_contents(fragment_ids)
+        block.position = self._refresh_block_bbox(block)
+        char_delta = 0
+        for fid in fragment_ids:
+            self._fragment_to_block[fid] = block.block_id
+            self._fragment_to_group.pop(fid, None)
+            fragment = self.state.fragments.get(fid)
+            if fragment:
+                char_delta += self._fragment_text_length(fragment)
+                self._tag_fragment_with_block(fragment, block)
+        group.state = GroupState.RETIRED
+        self.state.remove_group(group.group_id)
+        self._group_touch_counts.pop(group.group_id, None)
+        block.character_count += char_delta
+        self._log_cluster(
+            "group_absorbed_into_block",
+            block_id=block.block_id,
+            group_id=group.group_id,
+            members=len(fragment_ids),
+        )
+
+    def _reevaluate_groups_for_block(self, block_id: str) -> bool:
+        block = self.state.blocks.get(block_id)
+        if not block:
+            return False
+        block_vec = self._ensure_block_embedding(block)
+        if not block_vec:
+            return False
+        candidates: List[Tuple[float, Group]] = []
+        for group in self.state.groups.values():
+            if group.state == GroupState.RETIRED or not group.members:
+                continue
+            group_vec = self._ensure_group_embedding(group)
+            if not group_vec:
+                continue
+            distance = cosine_distance(block_vec, group_vec)
+            if distance <= self.block_distance_threshold:
+                candidates.append((distance, group))
+        if not candidates:
+            return False
+        candidates.sort(key=lambda item: item[0])
+        for _, group in candidates:
+            block = self.state.blocks.get(block_id)
+            if not block:
+                break
+            self._absorb_group_into_block(block, group)
+        block = self.state.blocks.get(block_id)
+        if block:
+            self._refresh_block_embedding(block)
+        return True
+
+    def merge_blocks(self, source_block_id: str, target_block_id: str) -> Block:
+        if source_block_id == target_block_id:
+            block = self.state.blocks.get(target_block_id)
+            if not block:
+                raise BlockNotFoundError(target_block_id)
+            return block
+        source = self.state.blocks.get(source_block_id)
+        target = self.state.blocks.get(target_block_id)
+        if not source:
+            raise BlockNotFoundError(source_block_id)
+        if not target:
+            raise BlockNotFoundError(target_block_id)
+        moved_fragments = list(source.contents)
+        if moved_fragments:
+            target.add_contents(moved_fragments)
+            for fid in moved_fragments:
+                self._fragment_to_block[fid] = target_block_id
+                fragment = self.state.fragments.get(fid)
+                if fragment:
+                    target.character_count += self._fragment_text_length(fragment)
+                    self._tag_fragment_with_block(fragment, target)
+        if source.position:
+            if target.position:
+                target.position = _union_bbox([target.position, source.position])
+            else:
+                target.position = source.position
+        for relationship in list(source.relationships):
+            other_id = relationship.target_block_id
+            if other_id in {source_block_id, target_block_id}:
+                continue
+            try:
+                self.connect_blocks(
+                    target_block_id,
+                    other_id,
+                    relationship.rel_type,
+                    score=relationship.score,
+                    metadata=relationship.metadata,
+                )
+            except KeyError:
+                continue
+        self.state.remove_block(source_block_id)
+        self._block_incoming_counts.pop(source_block_id, None)
+        self._log_cluster(
+            "block_merged",
+            source_block_id=source_block_id,
+            target_block_id=target_block_id,
+            fragments=len(moved_fragments),
+        )
+        self._refresh_block_embedding(target)
+        self._maybe_refresh_summary(target_block_id, force=True, allow_group_scan=False)
+        return target
+
+    def _handle_merge_instructions(self, current_block_id: str, instructions: object) -> None:
+        for source_id, target_id in self._coerce_merge_pairs(current_block_id, instructions):
+            if source_id == target_id:
+                continue
+            try:
+                self.merge_blocks(source_id, target_id)
+            except (BlockNotFoundError, KeyError) as exc:
+                print(f"[graph][merge] failed: {exc}")
+
+    def _coerce_merge_pairs(self, current_block_id: str, instructions: object) -> List[Tuple[str, str]]:
+        pairs: List[Tuple[str, str]] = []
+        if not instructions:
+            return pairs
+
+        def append_pair(src: Optional[str], tgt: Optional[str]) -> None:
+            if not src or not tgt or src == tgt:
+                return
+            pairs.append((str(src).strip(), str(tgt).strip()))
+
+        items = instructions if isinstance(instructions, list) else [instructions]
+        for item in items:
+            if isinstance(item, str):
+                append_pair(current_block_id, item)
+                continue
+            if isinstance(item, dict):
+                source = item.get("source") or item.get("from")
+                target = item.get("target") or item.get("into")
+                if source and not target:
+                    target = current_block_id
+                if target and not source:
+                    source = current_block_id
+                append_pair(source, target)
+        return pairs
+
+    def _effective_block_threshold(self, block: Block) -> float:
+        base = self.block_distance_threshold
+        excess = max(block.character_count - self._BLOCK_CHAR_THRESHOLD, 0)
+        if excess <= 0:
+            return base
+        ratio = excess / self._BLOCK_CHAR_THRESHOLD
+        penalty_factor = 1.0 + min(ratio, 3.0) * self._BLOCK_CHAR_PENALTY
+        return base / penalty_factor
+
     # ------------------------------- Logging helpers -------------------------------- #
 
     def _log_cluster(self, event: str, **payload) -> None:
@@ -424,6 +602,7 @@ class BlockManager:
     ) -> Tuple[Optional[str], float]:
         best_block_id = None
         best_distance = float("inf")
+        best_threshold = self.block_distance_threshold
         for block in self.state.blocks.values():
             block_embedding = self._ensure_block_embedding(block)
             if not block_embedding:
@@ -439,7 +618,8 @@ class BlockManager:
             if distance < best_distance:
                 best_distance = distance
                 best_block_id = block.block_id
-        if best_block_id is None or best_distance > self.block_distance_threshold:
+                best_threshold = self._effective_block_threshold(block)
+        if best_block_id is None or best_distance > best_threshold:
             return None, best_distance
         if fragment_id:
             self._log_cluster(
@@ -447,7 +627,7 @@ class BlockManager:
                 fragment_id=fragment_id,
                 block_id=best_block_id,
                 distance=round(best_distance, 6),
-                threshold=self.block_distance_threshold,
+                threshold=best_threshold,
             )
         return best_block_id, best_distance
 
@@ -501,26 +681,31 @@ class BlockManager:
 
     def _compute_block_embedding(self, fragment_ids: Iterable[str]) -> Optional[List[float]]:
         vectors: List[List[float]] = []
+        weights: List[float] = []
         for fid in fragment_ids:
             fragment = self.state.fragments.get(fid)
             if fragment and fragment.feature_vec:
                 vec = list(fragment.feature_vec)
+                weight = self._fragment_embed_weight(fragment)
+                if weight <= 0:
+                    continue
                 vectors.append(vec)
+                weights.append(weight)
         if not vectors:
             return None
         dims = len(vectors[0])
         avg = [0.0] * dims
-        count = 0
-        for vec in vectors:
+        total_weight = 0.0
+        for vec, weight in zip(vectors, weights):
             if len(vec) != dims:
                 continue
-            count += 1
+            total_weight += weight
             for idx in range(dims):
-                avg[idx] += vec[idx]
-        if count == 0:
+                avg[idx] += vec[idx] * weight
+        if total_weight == 0:
             return None
         for idx in range(dims):
-            avg[idx] /= count
+            avg[idx] /= total_weight
         return avg
 
     def _ensure_block_embedding(self, block: Block) -> Optional[List[float]]:
@@ -563,6 +748,7 @@ class BlockManager:
         )
         block.last_summary_member_count = 1
         block.last_summary_ts = datetime.utcnow()
+        block.character_count = self._fragment_text_length(fragment)
         self.state.add_block(block)
         self._fragment_to_block[fragment.fragment_id] = block_id
         self._fragment_to_group.pop(fragment.fragment_id, None)
@@ -574,14 +760,26 @@ class BlockManager:
         if fragment.feature_vec is not None:
             return list(fragment.feature_vec)
         components: List[float] = []
+        semantic_norm = 1.0
         if fragment.fragment_type == FragmentType.TEXT:
             if not self.embedder:
                 raise RuntimeError("TextEmbedder is required for text fragments")
             text = fragment.text or ""
-            components.extend(self.embedder.embed(text))
+            emphasis = self._text_emphasis_factor(fragment)
+            embedding = list(self.embedder.embed(text))
+            if emphasis != 1.0:
+                embedding = [value * emphasis for value in embedding]
+            semantic_norm = max(math.sqrt(sum(value * value for value in embedding)), 1e-6)
+            components.extend(embedding)
+            size_feature, weight_feature = self._text_style_features(fragment)
+            components.append(size_feature)
+            components.append(weight_feature)
+        else:
+            components.append(0.0)
+            components.append(0.0)
 
-        components.extend(self._weighted_bbox(fragment.bbox))
-        components.append(self._weighted_timestamp(fragment.timestamp))
+        components.extend(self._weighted_bbox(fragment.bbox, semantic_norm))
+        components.append(self._weighted_timestamp(fragment.timestamp, semantic_norm))
         components.append(self._type_indicator(fragment.fragment_type))
         return components
 
@@ -589,14 +787,18 @@ class BlockManager:
         if not bbox:
             return [0.0, 0.0, 0.0, 0.0]
         width, height = self.canvas_size
-        width = width or 1.0
-        height = height or 1.0
+        width = max(width or 1.0, 1.0)
+        height = max(height or 1.0, 1.0)
         x0, y0, x1, y1 = bbox
+
+        def squash(value: float, scale: float) -> float:
+            return math.tanh(value / scale)
+
         return [
-            x0 / width,
-            y0 / height,
-            x1 / width,
-            y1 / height,
+            squash(x0, width),
+            squash(y0, height),
+            squash(x1, width),
+            squash(y1, height),
         ]
 
     def _normalize_timestamp(self, timestamp: Optional[datetime]) -> float:
@@ -609,22 +811,136 @@ class BlockManager:
 
     # -------------------------- feature weighting helpers -------------------------- #
 
-    _BBOX_SCALE = 0.1
-    _TIME_SCALE = 0.02
     _TIME_CLAMP_HOURS = 24.0
     _TYPE_SCALE = 0.05
+    _FONT_SIZE_BASE = 18.0
+    _FONT_SIZE_MAX = 120.0
+    _FONT_WEIGHT_EMPHASIS = 3
+    _HEADING_FONT_SIZE = 28.0
+    _HEADING_FONT_WEIGHT = 600
+    _SPATIAL_TARGET_RATIO = 0.2
+    _SPATIAL_FALLBACK_SCALE = 0.2
+    _TIME_TARGET_RATIO = 0.1
+    _TIME_FALLBACK_SCALE = 0.05
+    _BLOCK_CHAR_THRESHOLD = 5000
+    _BLOCK_CHAR_PENALTY = 0.35
 
-    def _weighted_bbox(self, bbox: Optional[BBox]) -> List[float]:
+    def _weighted_bbox(self, bbox: Optional[BBox], semantic_norm: float) -> List[float]:
         raw = self._normalize_bbox(bbox)
-        return [self._BBOX_SCALE * v for v in raw]
+        return self._scale_aux_vector(raw, semantic_norm, self._SPATIAL_TARGET_RATIO, self._SPATIAL_FALLBACK_SCALE)
 
-    def _weighted_timestamp(self, ts: Optional[datetime]) -> float:
+    def _weighted_timestamp(self, ts: Optional[datetime], semantic_norm: float) -> float:
         hours = self._normalize_timestamp(ts)
         clamped = min(hours, self._TIME_CLAMP_HOURS)
-        return clamped * self._TIME_SCALE
+        return self._scale_aux_scalar(clamped, semantic_norm, self._TIME_TARGET_RATIO, self._TIME_FALLBACK_SCALE)
 
     def _type_indicator(self, fragment_type: FragmentType) -> float:
         return self._TYPE_SCALE if fragment_type == FragmentType.TEXT else 0.0
+
+    def _scale_aux_vector(
+        self,
+        values: Sequence[float],
+        semantic_norm: float,
+        target_ratio: float,
+        fallback_scale: float,
+    ) -> List[float]:
+        raw_norm = math.sqrt(sum(v * v for v in values))
+        if raw_norm <= 1e-9 or semantic_norm <= 1e-9:
+            scale = fallback_scale
+        else:
+            scale = (target_ratio * semantic_norm) / raw_norm
+        return [v * scale for v in values]
+
+    def _scale_aux_scalar(
+        self,
+        value: float,
+        semantic_norm: float,
+        target_ratio: float,
+        fallback_scale: float,
+    ) -> float:
+        raw_norm = abs(value)
+        if raw_norm <= 1e-9 or semantic_norm <= 1e-9:
+            return value * fallback_scale
+        scale = (target_ratio * semantic_norm) / raw_norm
+        return value * scale
+
+    def _text_emphasis_factor(self, fragment: Fragment) -> float:
+        size, weight_token = self._extract_font_meta(fragment)
+        norm_size = min(max(size, 0.0), self._FONT_SIZE_MAX)
+        size_bonus = max(norm_size - self._FONT_SIZE_BASE, 0.0) / max(self._FONT_SIZE_BASE, 1.0)
+        emphasis = 1.0 + 3 * min(size_bonus, 6.0)
+        if weight_token >= 600:
+            emphasis *= self._FONT_WEIGHT_EMPHASIS
+        return emphasis
+
+    def _text_style_features(self, fragment: Fragment) -> Tuple[float, float]:
+        size, weight_token = self._extract_font_meta(fragment)
+        size_feature = min(max(size, 0.0), self._FONT_SIZE_MAX) / self._FONT_SIZE_MAX
+        weight_feature = 1.0 if weight_token >= 600 else 0.0
+        return size_feature, weight_feature
+
+    def _fragment_embed_weight(self, fragment: Fragment) -> float:
+        if fragment.fragment_type != FragmentType.TEXT:
+            return 1.0
+        return self._text_emphasis_factor(fragment)
+
+    def _extract_font_meta(self, fragment: Fragment) -> Tuple[float, int]:
+        payload = fragment.payload or {}
+        meta = payload.get("meta")
+        style = payload.get("style")
+        font_size = None
+        font_weight = None
+        if isinstance(meta, dict):
+            font_size = meta.get("fontSize") or meta.get("fontsize")
+            font_weight = meta.get("fontWeight") or meta.get("font_weight")
+        if font_size is None and isinstance(style, dict):
+            font_size = style.get("fontSize")
+        if font_weight is None and isinstance(style, dict):
+            font_weight = style.get("fontWeight")
+        try:
+            size_value = float(font_size)
+        except (TypeError, ValueError):
+            size_value = self._FONT_SIZE_BASE
+        weight_value = 400
+        if isinstance(font_weight, str):
+            token = font_weight.strip().lower()
+            if token.isdigit():
+                weight_value = int(token)
+            elif token == "bold":
+                weight_value = 700
+        elif isinstance(font_weight, (int, float)):
+            weight_value = int(font_weight)
+        return size_value, weight_value
+
+    def _fragment_text_length(self, fragment: Optional[Fragment]) -> int:
+        if not fragment or fragment.fragment_type != FragmentType.TEXT:
+            return 0
+        if fragment.text:
+            return len(fragment.text)
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        if isinstance(meta, dict):
+            summary = meta.get("summary")
+            if isinstance(summary, str):
+                return len(summary)
+            text_meta = meta.get("text")
+            if isinstance(text_meta, str):
+                return len(text_meta)
+        return 0
+
+    def _is_heading_fragment(self, fragment: Fragment) -> bool:
+        payload = fragment.payload or {}
+        graph_meta = payload.get("graph")
+        if isinstance(graph_meta, dict):
+            flag = graph_meta.get("isHeading")
+            if isinstance(flag, bool):
+                return flag
+        size, weight = self._extract_font_meta(fragment)
+        if size >= self._HEADING_FONT_SIZE:
+            return True
+        if weight >= self._HEADING_FONT_WEIGHT:
+            return True
+        return False
 
     def _generate_group_id(self) -> str:
         return f"group_{uuid.uuid4().hex[:8]}"
@@ -642,7 +958,7 @@ class BlockManager:
         bboxes = [self.state.fragments[fid].bbox for fid in block.contents if self.state.fragments[fid].bbox]
         return _union_bbox(bboxes) if bboxes else block.position
 
-    def _maybe_refresh_summary(self, block_id: str, force: bool = False) -> None:
+    def _maybe_refresh_summary(self, block_id: str, force: bool = False, *, allow_group_scan: bool = True) -> None:
         block = self.state.blocks.get(block_id)
         if not block:
             raise BlockNotFoundError(block_id)
@@ -661,9 +977,11 @@ class BlockManager:
         if isinstance(summary_payload, dict):
             summary_text = str(summary_payload.get("summary") or block.summary or "").strip()
             relationships = summary_payload.get("relationships")
+            merge_payload = summary_payload.get("merge")
         else:
             summary_text = str(summary_payload or block.summary or "").strip()
             relationships = None
+            merge_payload = None
 
         if summary_text:
             block.summary = summary_text[:220]
@@ -684,6 +1002,10 @@ class BlockManager:
             block.last_summary_member_count = member_count
             block.last_summary_ts = now
             block.updated_at = now
+        if merge_payload:
+            self._handle_merge_instructions(block_id, merge_payload)
+        if allow_group_scan and self._reevaluate_groups_for_block(block_id):
+            self._maybe_refresh_summary(block_id, force=True, allow_group_scan=False)
 
     def get_block_id_for_fragment(self, fragment_id: str) -> Optional[str]:
         return self._fragment_to_block.get(fragment_id)
@@ -729,3 +1051,8 @@ class BlockManager:
             fragment = self.state.fragments.get(fragment_id)
             if fragment:
                 self._tag_fragment_with_block(fragment, block)
+        merge_payload = annotation.get("merge")
+        if merge_payload:
+            self._handle_merge_instructions(block_id, merge_payload)
+        if block_id in self.state.blocks:
+            self._reevaluate_groups_for_block(block_id)

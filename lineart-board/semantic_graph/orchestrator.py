@@ -57,6 +57,7 @@ class ConversationOrchestrator:
         if self.plan_backend:
             response_text = self.plan_backend.complete(prompt)
             plan = self._parse_plan(response_text)
+            plan.target_block_ids = self._resolve_targets(plan.target_block_ids, summaries)
         else:
             plan = ExecutionPlan(action="NOOP", target_block_ids=[], comment="plan backend unavailable")
 
@@ -190,6 +191,28 @@ class ConversationOrchestrator:
         targets = [str(i) for i in (parsed.get("targetBlockIds") or [])]
         comment = parsed.get("comment")
         return ExecutionPlan(action=action, target_block_ids=targets, comment=comment)
+
+    def _resolve_targets(
+        self,
+        targets: List[str],
+        summaries: Dict[str, Dict[str, str]],
+    ) -> List[str]:
+        if not targets:
+            return []
+        label_to_id: Dict[str, str] = {}
+        for block_id, info in summaries.items():
+            label = info.get("label")
+            if label:
+                label_to_id[label.strip()] = block_id
+        resolved: List[str] = []
+        for target in targets:
+            if target in self.block_manager.state.blocks:
+                resolved.append(target)
+                continue
+            lookup = label_to_id.get(target.strip())
+            if lookup:
+                resolved.append(lookup)
+        return resolved
     def _update_context(self, main_block_id: Optional[str], plan: ExecutionPlan) -> None:
         """
         Update orchestrator context according to the plan.
@@ -250,13 +273,13 @@ class ConversationOrchestrator:
 
 system_prompt = (
     "You are an interactive whiteboard orchestrator. "
-    "Read the latest user message and decide how the block focus should change. "
+    "Read the latest user message and decide what should be included. "
     "Always return JSON of the form {\"action\": ..., \"targetBlockIds\": [...], \"comment\": \"...\"}.\n\n"
     "Allowed actions:\n"
-    "- CONTINUE: The message belongs to the current focus block. No change needed.\n"
+    "- CONTINUE: The message only belongs to the current focus block. No changes needed.\n"
     "- NOOP: Nothing should happen; acknowledge but take no action.\n"
     "- SWITCH: Move the focus to the listed block IDs. After switching, orchestration runs again.\n"
-    "- OPEN_RELATED: Add the listed blocks to the active set (do not steal focus).\n"
+    "- OPEN_RELATED: Other blocks are related and needed to add to the context. Add the listed blocks to the active set (do not steal focus). You can ONLY use existing blocks.\n"
     "- CLOSE: Remove the listed blocks from the active set.\n\n"
     "Rules:\n"
     "1. Return valid JSON only—no markdown, no code fences.\n"

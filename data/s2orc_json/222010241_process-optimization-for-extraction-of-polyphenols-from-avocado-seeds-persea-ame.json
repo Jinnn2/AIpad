@@ -1,0 +1,1618 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "222010241-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          204
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Process Optimization for Extraction of Polyphenols from Avocado Seeds (Persea americana Mill.) Using Response Surface Methodology",
+        "summary": "Process Optimization for Extraction of Polyphenols from Avocado Seeds (Persea am",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 124
+      }
+    },
+    {
+      "id": "222010241-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          226
+        ],
+        [
+          860,
+          418
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "At the present time, polyphenolic compounds have attracted great interest due to their roles in the prevention of degenerative diseases and have used as the input material for manufacturing functional foods, nutraceutical and pharmaceutical products. Previous researches have revealed the avocado seed is rich source of polyphenolic compounds with antioxidant and antimicrobial activities; which they could be used as a source of potent natural ingredients and additives.",
+        "summary": "At the present time, polyphenolic compounds have attracted great interest due to",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          440
+        ],
+        [
+          860,
+          632
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this study, extraction factors of polyphenols were optimized for recovery yield by using response surface methodology and the obtained polyphenol rich solution was encapsulated with different coating agents (Maltodextrin-MD and Gum Arabic-GA) as well as their mixtures. A Box-behnken design was used to investigate the effects of three independent variables including ethanol concentration (X1:35-65%, v/v), solvent to solid ratio (X2:8-12, v/w) and extraction time (X3:1.0-3.0 h).",
+        "summary": "In this study, extraction factors of polyphenols were optimized for recovery yie",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          654
+        ],
+        [
+          860,
+          830
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The result shown that the optimized extraction conditions were using ethanol concentration of 40% (v/v), ratio of solvent to solid at 12:1 and extraction time of 1.5 h. Under the conditions, the experimental recovery yield of polyphenols is 83.1% which is well matched with the predicted yield of 82.5%. Micro particle prepared by 20:80 of MD:GA ratio as coating agent can be selected for encapsulation of the polyphenolic compounds.",
+        "summary": "The result shown that the optimized extraction conditions were using ethanol con",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          852
+        ],
+        [
+          860,
+          1012
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Avocado (Persea americana Mill.) is an evergreen tree native to Central America that now widely cultivated in the tropical and subtropical regions of the world for edible fruits, which are very rich in oil [1]. In 2017, world avocado production was approximately 5.92 million metric tons. This tree was first introduced into the Lam Dong province of Vietnam in 1940 by the French [2,3].",
+        "summary": "Introduction Avocado (Persea americana Mill.) is an evergreen tree native to Cen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "222010241-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1034
+        ],
+        [
+          860,
+          1226
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Although no statistical figures are available on the area and output of avocado, the tree is widely grown in the uplands of Vietnam such as Dong Nai, Ba Ria-Vung Tau, Lam Dong, Dak Lak and Phu Tho with various local names given to them according to their fruit shape and quality. The fruit of the plant, also called avocado (or avocado pear or alligator pear), is commercially importance. The edible part of the fruit is rich in unsaturated fatty acids, vitamins B, C and E, and other nutrients [4].",
+        "summary": "Although no statistical figures are available on the area and output of avocado,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1248
+        ],
+        [
+          860,
+          1408
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The avocados are mainly consumed as a fresh fruit but at the moment many value added products have manufactured as guacamole, avocado pulp and avocado oil [5]. Industrial processing of avocados generates a large amount of peels and seeds as waste which can cause environmental problems. The avocado seed contents up 16% of the total weight of the fruit and has a long history of ethno botanical use [6].",
+        "summary": "The avocados are mainly consumed as a fresh fruit but at the moment many value a",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "222010241-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1430
+        ],
+        [
+          860,
+          1606
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "They are a rich source in phytochemicals, especially polyphenolic compounds such as hydroxycinnamic acid derivatives, flavonoids and proanthocyanidins with many bioactivities such as anticancer, antidiabetic effect antihypertensive effect [7][8][9][10] and antioxidant and antibacterial properties [11][12][13][14][15][16]. Polyphenols are a group of plant-derived secondary metabolites with phenolic structural features.",
+        "summary": "They are a rich source in phytochemicals, especially polyphenolic compounds such",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1628
+        ],
+        [
+          860,
+          1836
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "They can be divided into at least 10 different classes depending on their basic chemical structure of aglycones such as phenolic acid derivatives, flavonoids and proanthocyanidins [17]. Currently, the compounds have attracted great interest due to their roles in the prevention of degenerative diseases, particularly cancers, cardiovascular diseases and neurodegenerative diseases [18]. They have used as the input materials for manufacturing functional foods, nutraceutical and pharmaceutical products.",
+        "summary": "They can be divided into at least 10 different classes depending on their basic ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1858
+        ],
+        [
+          860,
+          2098
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, the effectiveness of polyphenols depends on preserving the stability, bioactivity and bioavailability of the active ingredients. Moreover, the unpleasant taste of most polyphenolic compounds also limits their application. Therefore, encapsulation process can be a useful method to alleviate these deficiencies. Encapsulation may be defined as a process to entrap substances (active agents) within another substance (wall materials) [19]. Up to now, many encapsulation technologies of polyphenols have been used effectively such as spray drying, liposome entrapment and emulsion.",
+        "summary": "However, the effectiveness of polyphenols depends on preserving the stability, b",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "222010241-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2120
+        ],
+        [
+          860,
+          2360
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the food industry, the encapsulation process is a useful tool to improve delivery of bioactive molecules into foods [20]. Besides, the process can be applied for protecting the core material from degradation by the surrounding environment, preventing Citation: Vo TH, Nguyen TT and Ho KVN. Process optimization for extraction of polyphenols from avocado seeds (Persea americana Mill.) using response surface methodology (2019) Edelweiss Food Sci Tech 1: 5-11. 6 unwanted flavor or taste of core material as well as modifying the nature of the original material for easier handling [21].",
+        "summary": "In the food industry, the encapsulation process is a useful tool to improve deli",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "222010241-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2382
+        ],
+        [
+          860,
+          2558
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Nowadays, there is a growing interest in finding phytochemicals as alternatives to the synthetic substances that are commonly used in the food, pharmaceutical and cosmetic industries. The research results about polyphenol rich extract of avocado seed have revealed their potential usage as they contribute to enhance the nutritional and technological value of the meat products through their antioxidant action [22][23].",
+        "summary": "Nowadays, there is a growing interest in finding phytochemicals as alternatives ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2580
+        ],
+        [
+          860,
+          2772
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Response Surface Methodology (RSM) consists of a group of mathematical and statistical techniques that are based on the fit of empirical models to the experimental data obtained in relation to experimental design [24]. It is the one of most effective tools for optimizing the process when many factors and interactions affect the desired response. RSM usually uses an experimental design such as Box-behnken or central composite to fit a second order polynomial [25][26].",
+        "summary": "Response Surface Methodology (RSM) consists of a group of mathematical and stati",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2794
+        ],
+        [
+          860,
+          2906
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The purpose of this study was  To optimize the extraction parameters of polyphenols from the avocado seeds using RSM  To study effect of encapsulating agents on physiochemical characteristics of polyphenol rich micro particles.",
+        "summary": "The purpose of this study was  To optimize the extraction parameters of polyphe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "222010241-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2928
+        ],
+        [
+          860,
+          3088
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Materials Avocado fruits (named \"Bơ Sáp\" in Vietnamese) were purchased from the local market in Ho Chi Minh City, Vietnam and kept at room temperature until they reached ready-to-eat ripeness. MD (DE=10-13) and GA supplied by Sigma-Aldrich Chemical Co. were used as coating materials. Other chemicals either HPLC reagent grades or the highest purity were available.",
+        "summary": "Materials Avocado fruits (named \"Bơ Sáp\" in Vietnamese) were purchased from the ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "222010241-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3110
+        ],
+        [
+          860,
+          3318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Preparation of Avocado Seed Powder (ASP) Avocado seeds were manually separated from the flesh and cleaned. The seeds were sliced with the average thickness of the sliced seed samples about 2.5 mm then they were soaked in a 1.5% w/v citric acid solution for 20 minute (the citric acid used as an inhibitor of enzymatic browning). The pretreated slices were dried in a hot air oven at 70 o C for 3h. The dried slices with moisture of 7.04% were ground into powder using Grindomix machine (Retsch, GM 200, Germany) and stored at -25 o C until use.",
+        "summary": "Preparation of Avocado Seed Powder (ASP) Avocado seeds were manually separated f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3340
+        ],
+        [
+          860,
+          3564
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Extraction Procedure Solid-liquid extractions were carried out at temperature 60 o C. One hundred grams of ASP sample (126.02 ± 0.1 mg GAE/g) were blended with ethanol solvent at concentrations (35-65%, v/v), ratios of solvent to solid (8-12 v/w) and extraction time (1.0-3.0 h) as specified by the experimental design ( Table 1). After the extraction, liquid extracts were separated from solids by filtration and removed ethanol in a rotary evaporator at 55 o C. The recovery yield of polyphenols (RYP) from ASP was calculated according to equation 1.",
+        "summary": "Extraction Procedure Solid-liquid extractions were carried out at temperature 60",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3586
+        ],
+        [
+          860,
+          3810
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Preparation of the Polyphenol Rich Micro particles MD and GA mixed with different ratios of 10:0, 8:2, 6:4, 4:6, 2:8 and 0:10 were used as coating materials. Polyphenolic extract after removing solid and ethanol (312.5 ml, total polyphenolic content=21 mg GAE/ml and dry matter content=2.4 g/100 ml) was previously heated at 45 o C with constant stirring. 42.5 g MD:GA mixture with above ratios was added to form homogeneous solutions. Total solid content of the solutions before spray drying was corrected to 10 by adding to 137.5 ml distilled water.",
+        "summary": "Preparation of the Polyphenol Rich Micro particles MD and GA mixed with differen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3832
+        ],
+        [
+          860,
+          3960
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The obtained solutions were fed to a mini spray dryer (B-290, Büchi). The spray dryer was operated at inlet temperature 160 ± 2 o C. The air flow and rate of feeding were 550L h -1 and 10 ml min -1 , respectively. The powders obtained were kept in dark container at -20 o C until analysis.",
+        "summary": "The obtained solutions were fed to a mini spray dryer (B-290, Büchi). The spray ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "222010241-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3982
+        ],
+        [
+          860,
+          4206
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Total Polyphenol Content (TPC) Determination The Total Polyphenol Content of each extract was determined by the Folin-Ciocalteu assay with minor modifications [8]. The extracts (1 ml) were mixed with 5 ml of 1:10 diluted Folin-Ciocalteu's phenol reagent, followed by 4 ml of sodium carbonate (7.7%, w/v) and allowed to stand for 30 min in the dark at room temperature then the absorbance was read at 760 nm using a spectrophotometer (Shimadzu, Japan). The polyphenol content was calculated as mg of Gallic Acid Equivalents (GAE) per gram of dry matter from a standard curve of Gallic acid.",
+        "summary": "Total Polyphenol Content (TPC) Determination The Total Polyphenol Content of eac",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4228
+        ],
+        [
+          860,
+          4420
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "To extract polyphenols for TPC determination from ASP, 0.2g of samples were extracted in 10 ml acetone/water (70:30, v/v) for 30 min [15]. After the extraction, the extract was centrifuged at 3000 rpm for 15 min. The supernatant was collected and the residue was re-extracted once more. The two supernatants were combined and dried by using a rotary evaporator at 55 o C. The residue was dissolved in 10ml of distilled water and kept in dark container at 5 o C until analysis.",
+        "summary": "To extract polyphenols for TPC determination from ASP, 0.2g of samples were extr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4442
+        ],
+        [
+          860,
+          4538
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Where EPC was the encapsulated polyphenol content which was calculated by subtracting total polyphenol content (TPCm) of micro particles from surface polyphenol content (SPCm) of micro particles.",
+        "summary": "Where EPC was the encapsulated polyphenol content which was calculated by subtra",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "222010241-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4560
+        ],
+        [
+          860,
+          4768
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Moisture Content and Water Solubility Index The moisture content of micro particles was determined based on the loss in weight between samples before and after drying at 105 ± 2 o C. In order to evaluate the solubility of the micro particles, the Water Solubility Index (WSI) was determined using by Anderson method with minor modifications [28]. One gram of powder samples was added to 12 ml distilled water, mixed and incubated in a water bath at 30 o C for 30 min. After incubation, samples were centrifuged at 3500 rpm for 15 min.",
+        "summary": "Moisture Content and Water Solubility Index The moisture content of micro partic",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4790
+        ],
+        [
+          860,
+          4854
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The supernatants were collected and evaporated at 105 ± 2 o C until obtaining a constant weight. WSI was expressed as in equation 4.",
+        "summary": "The supernatants were collected and evaporated at 105 ± 2 o C until obtaining a ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "222010241-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4876
+        ],
+        [
+          860,
+          5100
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Experimental Design and Statistical Analysis In this study, RSM was used to predict the optimum extraction conditions of polyphenol compounds from ASP by using Design-Expert software (version 9.0, Stat-Ease Inc., Minneapolis, MN, USA). The Box-Behnken Design (BBD) with a quadratic model was selected to investigate the combined effects of three independent Where Xi is the coded value, xi is the corresponding actual value, x0 is the actual value in the center of the domain, and Δx is the increment of xi corresponding to a variation of 1 unit of X.",
+        "summary": "Experimental Design and Statistical Analysis In this study, RSM was used to pred",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5122
+        ],
+        [
+          860,
+          5346
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Experimental data were fitted to a quadratic polynomial model and regression coefficients obtained. The computer-generated quadratic model used in the response surface was as follows: Where Y denotes the dependent variable. The coefficients of the polynomial equation were represented by β0 (intercept), βi (linear effects), βii (quadratic effects), and βij (cross product effects). Xi represented the coded levels of independent variables. The terms XiXj and Xi 2 were expressed as the interaction and quadratic terms, respectively.",
+        "summary": "Experimental data were fitted to a quadratic polynomial model and regression coe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5368
+        ],
+        [
+          860,
+          5592
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Design-Expert software was used to estimate the response of each set of experimental design and optimized conditions. The quality of the fitted model was expressed by the coefficient of determination R 2 , the adjusted determination coefficient R 2 adj as well as the predicted determination coefficient R 2 pred and statistical significance of the model was determined by F-test. All treatments were done in triplicate and the results were expressed as a mean (± SD) for each treatment. The significant difference between treatments reported at p ≤ 0.05.",
+        "summary": "Design-Expert software was used to estimate the response of each set of experime",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5614
+        ],
+        [
+          860,
+          5646
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Run Coded",
+        "summary": "Run Coded",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 32
+      }
+    },
+    {
+      "id": "222010241-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5668
+        ],
+        [
+          860,
+          5908
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Extraction optimization The plot of experimental values of the recovery yield of polyphenols versus those calculated from equation (7) indicated a good fit, as shown in Figure 1. To test the significance and adequacy of the model, the Analysis of Variance (ANOVA) for the quadratic model was performed. The lack of fit test measures the failure of the model to represent the data in the experimental domain at points which are not included in the regression, which determines whether the selected model is adequate to explain the experimental data or another model should be reselected [29].",
+        "summary": "Extraction optimization The plot of experimental values of the recovery yield of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "222010241-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5930
+        ],
+        [
+          860,
+          6138
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "As shown in Table 2, the lack of fit test was not significant relative to the pure error (p>0.05) and implied that the model equation was available. The model F-value of 66.1 (p ~ 0.0001) revealed the model was significant. There was only a 0.01% chance that and this large F-value could occur due to noise. The results of the analysis of variance also generated the determination coefficients for the model as shown in Table 2. For the fitted model, the coefficient of determination (R 2 ), which is a measure of degree of fit, was 0.9917.",
+        "summary": "As shown in Table 2, the lack of fit test was not significant relative to the pu",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6160
+        ],
+        [
+          860,
+          6384
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This indicated that only 0.83% of the total variations were not explained by the fitted model as well as revealed the satisfactory correlation between actual values and predicted ones. Lundstedt, et al. suggested that, for a good fit of a model, R 2 should be at least 0.80 [30]. Moreover, the adjusted determination coefficient (R 2 adj, 0.9767) was high and very close to R 2 . The higher the value of R 2 adj is, the deeper the correlation between the observed and predicted values performs [31]. R 2 prep (0.9738) was in reasonable agreement with R 2 adj.",
+        "summary": "This indicated that only 0.83% of the total variations were not explained by the",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6406
+        ],
+        [
+          860,
+          6630
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CV (coefficient of variation), which indicates the degree of precision with that the experiments are compared, was 2.39. A relatively low value of CV disclosed a better precision and reliability of quadratic polynomial model adequate precision compares the range of the predicted values at the design points to the average prediction error and a ratio greater than 4 is desirable. The value of adequate precision was 26.3372 as shown in Table 2. Therefore, the model is adequate for prediction in the range of experimental variables and could be used to navigate the design space.",
+        "summary": "CV (coefficient of variation), which indicates the degree of precision with that",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6652
+        ],
+        [
+          860,
+          6892
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effects of Extraction Conditions on Recovery Yield of Polyphenols: The effects of extraction conditions of ASP on polyphenol recovery yield by the regression coefficients of fitted second-order polynomial are presented in Table 2 and the significance of each coefficient was determined using F-value and p-value. It could be seen that the effects of ethanol concentration and the solvent to solid ratio (X1, and X2; p<0.05) were the major contributing factors to the recovery yield of polyphenols, while extraction time had no significant effect (X3; p>0.05) within the experimental range.",
+        "summary": "Effects of Extraction Conditions on Recovery Yield of Polyphenols: The effects o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "222010241-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6914
+        ],
+        [
+          860,
+          7090
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition, it was evident that coefficients (X1X2, X1X3, X2 2 , and X3 2 ) were significant at the level of p<0.05, whereas the other coefficients were insignificant (X1X3, X1 2 ; p>0.05). To aid visualization, the relationship between independent variables and response variable of polyphenolic extraction from ASP was graphically represented by 3D response surfaces generated by the model as in Figure 2",
+        "summary": "In addition, it was evident that coefficients (X1X2, X1X3, X2 2 , and X3 2 ) wer",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7112
+        ],
+        [
+          860,
+          7304
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Determination of Optimum Conditions and Model Verification: From the model, the optimum conditions for polyphenolic extraction from ASP were obtained by using Design-Expert software was presented as in Table 3. Under optimum conditions, recovered yield of 82.5% polyphenols was predicted. The suitability of the model equation for predicting the optimum response value was tested by additional independent experiments (triplicate) using the recommended optimum conditions in Table 3.",
+        "summary": "Determination of Optimum Conditions and Model Verification: From the model, the ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7326
+        ],
+        [
+          860,
+          7406
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The result has shown the experimental recovery yield of polyphenols (83.1%) was not significantly difference from the predicted value (82.5%).",
+        "summary": "The result has shown the experimental recovery yield of polyphenols (83.1%) was ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "222010241-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7428
+        ],
+        [
+          860,
+          7556
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Physicochemical Properties of Micro Particles The polyphenol rich extract from ASP at optimum conditions as in Table 3 was used for preparing spray dried solution with different mixtures of MD and GA as coating agents. After spray drying, the results of physiochemical evaluation are shown as in Table 4.",
+        "summary": "Physicochemical Properties of Micro Particles The polyphenol rich extract from A",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "222010241-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7578
+        ],
+        [
+          860,
+          7802
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "As can be seen in Table 4, the moisture content of the micro particles ranges from 1.9% to 3.7% which decreases with the increment of the MD fraction, reaching the lowest value when only MD (100%) was used as coating agent, while the decreasing of the GA fraction rises WSI, from 87.3% to 99.8% when MD:GA ratio ranges from 0:100 to 100:0 due to solubility of GA in water is lower than that of MD. Although EE was almost unchanged at any MD:GA ratio but the total polyphenol content in the micro particle at 20:80 of MD:GA ratio had the highest value (149.5 mg GAE/g).",
+        "summary": "As can be seen in Table 4, the moisture content of the micro particles ranges fr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7824
+        ],
+        [
+          860,
+          7872
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "RPY at all experimental points varies from 78.0% to 98.6%.",
+        "summary": "RPY at all experimental points varies from 78.0% to 98.6%.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "222010241-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7894
+        ],
+        [
+          860,
+          8086
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Discussion The exploitation of waste from fruit and vegetable processing as a source of bioactive compounds is a promising field and it offers a new avenue for industrial growth and waste management. Extraction is the first and the most important step in the recovery and purification of bioactive compounds from plant materials and it was significantly influenced by many process factors such as solvent, temperature and solvent to solid ratio [32][33][34].",
+        "summary": "Discussion The exploitation of waste from fruit and vegetable processing as a so",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8108
+        ],
+        [
+          860,
+          8300
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Therefore, optimizing the extraction process in order to improve recovery of added-value compounds represents a necessary technological innovation for the benefit of related industries. Despite several disadvantages such low recovery yield and use of high solvent volumes but solvent extraction techniques have been mostly used for the recovery of polyphenolic compounds from plant materials due to their simple operation, wide range of applicability and low outlay [35].",
+        "summary": "Therefore, optimizing the extraction process in order to improve recovery of add",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p041",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8322
+        ],
+        [
+          860,
+          8530
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Many solvents can be selected to extract these compounds such as ethyl acetate, acetone, propanol, ethanol, methanol and water but the selection of ethanol and water as extraction solvent throughout the study because they are safer for human consumption and less toxic as compared to other organic solvents [36]. Moreover, binary solvent system was found superior to the monosolvent system due to the compositions as well as the structure and physicochemical properties of polyphenolic compounds from different plant sources [37].",
+        "summary": "Many solvents can be selected to extract these compounds such as ethyl acetate, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p042",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8552
+        ],
+        [
+          860,
+          8776
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For food and pharmaceutical industries, target compound recovery from plant materials by extraction is very significant when higher yield means lower production cost. In this study, the results obtained from analysis of experimental model have indicated that the effects of ethanol concentration and the solvent to solid ratio were the major contributing factors to the recovery yield of polyphenol from ASP as former reports and their effects depend on the polyphenol composition of the plant materials using for extraction [38][39][40][41][42]. Shi, et al.",
+        "summary": "For food and pharmaceutical industries, target compound recovery from plant mate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p043",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8798
+        ],
+        [
+          860,
+          8974
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "reported the polyphenol content extracted from grape seed increased when ethanol concentration decreased and the best the ethanol concentration obtained at 50% [43]. Polyphenol extraction was highly dependent on the solvent to solid ratio reported by Pompeu, et al and the ratio was at 40:1 (v/w) in extraction polyphenols from Euterpe oleracea fruits [44]. Our optimized extraction conditions were similar with Boyadzhieva, et al.",
+        "summary": "reported the polyphenol content extracted from grape seed increased when ethanol",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p044",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8996
+        ],
+        [
+          860,
+          9188
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "wherein their conditions obtained by using one factor at a time experiments with results ethanol concentration of 30% (v/v), ratio of solvent to solid at 8 and extraction time of 60 min from the avocado seed material but the polyphenol recovery yield has not reported [45]. The recovery yield of polyphenols increased when ethanol concentration was decreased due to polyphenolic composition of ASP containing lots of polarity compounds such as procyanidins.",
+        "summary": "wherein their conditions obtained by using one factor at a time experiments with",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "222010241-p045",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9210
+        ],
+        [
+          860,
+          9418
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Moreover, water increases the contact surface area between plant matrix and solvent, increasing the swelling capability of plant material which results in increasing extraction efficiency. Increase in the recovery yield of polyphenols under higher solvent to solid ratio is based on the mass transfer principles where the driving force for mass transfer is considered to be the concentration gradient between the solid and the solvent. At a lower ratio, the solvent can attain saturation state soon during extraction.",
+        "summary": "Moreover, water increases the contact surface area between plant matrix and solv",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p046",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9440
+        ],
+        [
+          860,
+          9664
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Polyphenolic compounds originate from plant have recently obtained a great attention due to their bioactive roles. However, they are sensitive and they can be easily affected by physicochemical factors that create a great challenge to incorporate them into the food products [19]. Hence, the encapsulation process becomes an effective strategy to overcome this problem. There are many different encapsulation methods for bioactive compounds but spray drying is an industrial and economical method which is commonly used to transform the liquid products into dry powders [46].",
+        "summary": "Polyphenolic compounds originate from plant have recently obtained a great atten",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p047",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9686
+        ],
+        [
+          860,
+          9862
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this method, the sensitive compounds are covered within the carrier material, which leads to their protection against environmental disadvantages. Previous studies have revealed that the type and characterization of carrier materials influence on many properties of encapsulated micro particles [47][48][49][50]. Therefore, choosing the correct wall material is the important step to produce efficient encapsulated powders.",
+        "summary": "In this method, the sensitive compounds are covered within the carrier material,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "222010241-p048",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9884
+        ],
+        [
+          860,
+          10108
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "MD and GA have been frequently used as carrier materials for encapsulation of plant polyphenols due to their high solubility, good biocompatibility, optimum viscosity and safety. Our results have shown that physicochemical properties of micro particles were influenced by the carrier type as well as their mixture ratio, which were similar to previous reports [51][52]. RPY and EE are the most important indicators which shows the efficiency of the spray dried process and they gained the best values at 20:80 of MD:GA ratio in this study (Table 4).",
+        "summary": "MD and GA have been frequently used as carrier materials for encapsulation of pl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p049",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10130
+        ],
+        [
+          860,
+          10354
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Micro particles produced with GA presented higher moisture contents in compared with MD. This may be due to higher water holding capacity of GA than MD. This similar behavior also observed by Akhavan Mahdavi, et al. when studying microencapsulation of natural anthocyanin's from barberry fruits [53]. Solubility of micro particles (evaluated by WSI) is an important physiochemical property that influences functional characteristics of micro particles in food system. Our data shown that high solubility of all samples has been noticed.",
+        "summary": "Micro particles produced with GA presented higher moisture contents in compared ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "222010241-p050",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10376
+        ],
+        [
+          860,
+          10584
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusions Avocado seeds can be used as a raw material to extract bioactive polyphenols. The RSM based on the BBD was successfully used to optimize process parameters for polyphenolic extraction from ASP. The optimum conditions in the polyphenolic extraction were using ethanol concentration of 40% (v/v), solid to solvent ratio at 1:12 and extraction time of 1.5 h. Under the conditions, the experimental yield of polyphenols is 83.1%. Besides, the characteristics of polyphenol rich micro particles were also determined.",
+        "summary": "Conclusions Avocado seeds can be used as a raw material to extract bioactive pol",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "222010241-p051",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10606
+        ],
+        [
+          860,
+          10670
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Micro particle prepared by 20:80 of MD:GA ratio as coating agent can be selected for encapsulation of polyphenolic compounds from ASP.",
+        "summary": "Micro particle prepared by 20:80 of MD:GA ratio as coating agent can be selected",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    }
+  ]
+}

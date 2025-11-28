@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "12316417-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "10-simplex",
+        "summary": "10-simplex",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "12316417-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          354
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In geometry, a 10- simplex is a self-dual regular 10-polytope. It has 11 vertices, 55 edges, 165 triangle faces, 330 tetrahedral cells, 462 5-cell 4-faces, 462 5-simplex 5-faces, 330 6-simplex 6-faces, 165 7-simplex 7-faces, 55 8-simplex 8-faces, and 11 9-simplex 9-faces. Its dihedral angle is cos (1/10), or approximately 84.26°.",
+        "summary": "In geometry, a 10- simplex is a self-dua",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 195
+      }
+    },
+    {
+      "id": "12316417-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          378
+        ],
+        [
+          840,
+          528
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It can also be called a hendecaxennon, or hendeca-10-tope, as an 11- facetted polytope in 10-dimensions. The name hendecaxennon is derived from hendeca for 11 facets in Greek and -xenn (variation of ennea for nine), having 9-dimensional facets, and -on.",
+        "summary": "It can also be called a hendecaxennon, o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    },
+    {
+      "id": "12316417-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          552
+        ],
+        [
+          840,
+          635
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Cartesian coordinates of the vertices of an origin-centered regular 10-simplex having edge length 2 are:",
+        "summary": "The Cartesian coordinates of the vertice",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    },
+    {
+      "id": "12316417-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          659
+        ],
+        [
+          840,
+          787
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "More simply, the vertices of the 10-simplex can be positioned in 11-space as permutations of (0,0,0,0,0,0,0,0,0,0,1). This construction is based on facets of the 11-orthoplex.",
+        "summary": "More simply, the vertices of the 10-simp",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "12316417-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          811
+        ],
+        [
+          840,
+          916
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 2-skeleton of the 10-simplex is topologically related to the 11-cell abstract regular polychoron which has the same 11 vertices, 55 edges, but only 1/3 the faces (55).",
+        "summary": "The 2-skeleton of the 10-simplex is topo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    }
+  ]
+}

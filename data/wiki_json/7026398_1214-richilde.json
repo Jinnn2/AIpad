@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "7026398-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1214 Richilde",
+        "summary": "1214 Richilde",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "7026398-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          331
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1214 Richilde, provisional designation 1932 AA, is a dark background asteroid from the central regions of the asteroid belt, approximately 35 kilometers in diameter. It was discovered by Max Wolf at Heidelberg Observatory in 1932. Any reference of the asteroid's name to a person is unknown.",
+        "summary": "1214 Richilde, provisional designation 1",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "7026398-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          355
+        ],
+        [
+          840,
+          662
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Richilde was discovered on 1 January 1932, by German astronomer Max Wolf at the Heidelberg-Königstuhl State Observatory in southwest Germany. Five nights later, on 6 January 1932, it was independently discovered by Japanese astronomer K. Nakamura at Kwasan Observatory (377), Kyoto. The Minor Planet Center only recognizes the first discoverer. The body's observation arc begins with its first observation as 1930 QD at Uccle Observatory in August 1930, approximately 16 months prior to its official discovery observation at Heidelberg.",
+        "summary": "Richilde was discovered on 1 January 193",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 307
+      }
+    },
+    {
+      "id": "7026398-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          686
+        ],
+        [
+          840,
+          881
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Richilde is a non- family asteroid from the main-belt's background population. It orbits the Sun in the central asteroid belt at a distance of 2.4–3.0 AU once every 4 years and 6 months (1,629 days; semi-major axis of 2.71 AU). Its orbit has an eccentricity of 0.12 and an inclination of 10 ° with respect to the ecliptic.",
+        "summary": "Richilde is a non- family asteroid from ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 195
+      }
+    },
+    {
+      "id": "7026398-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          905
+        ],
+        [
+          840,
+          1033
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the SMASS, Richilde is a Xk-subtype, that transitions from the X-type to the rare K-type asteroids, while the Wide-field Infrared Survey Explorer (WISE) characterizes the body as a primitive P-type asteroid.",
+        "summary": "In the SMASS, Richilde is a Xk-subtype, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "7026398-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1057
+        ],
+        [
+          840,
+          1162
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This minor planet is named after a common German female name. Any reference of this name to a person or occurrence is unknown (AN 247, 153).",
+        "summary": "This minor planet is named after a commo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 105
+      }
+    }
+  ]
+}

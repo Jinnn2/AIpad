@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "202199711-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          240
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Analysis of prospects application of integrated farming system models for lowland rice with beef cattle to strengthen farmers’ economy in West Sumatera",
+        "summary": "Analysis of prospects application of integrated farming system models for lowlan",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "202199711-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          262
+        ],
+        [
+          860,
+          486
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Crop-Livestock-System (CLS) is an agricultural system approach that can improve business efficiency, maintain land fertility and realize sustainable agriculture, especially on small-scale agriculture. This research was conducted in Gunung Talang Subdistrict, Solok Regency, West Sumatra, aimed to find out the habits of farmers and the potential to integrate and calculate farmers’ income if they only do one commodity farming, namely rice, or rice and cattle. Data collection was conducted from June to August 2018 using survey methods.",
+        "summary": "Crop-Livestock-System (CLS) is an agricultural system approach that can improve ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202199711-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          508
+        ],
+        [
+          860,
+          732
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Data collection was carried out through interviews with 30 lowland rice farmers as respondents, randomly selected. Data collected includes crop and livestock farming data such as: farmer characteristics, average rice field area, average productivity and production value, average number and value of inputs (seeds, inorganic fertilizers and organic fertilizers, and organic and inorganic pesticides, the average supply of laboratory in an integrated farming system between plants and cattle. The results showed that average rice yield was 5.74 tons/ha of dried ground rice.",
+        "summary": "Data collection was carried out through interviews with 30 lowland rice farmers ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202199711-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          754
+        ],
+        [
+          860,
+          962
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The use of inorganic fertilizer urea 100 kg/ha (N 71.43%), SP-36 50 kg/ha (50%), KCl 50 kg/ha (50%).The income of farmers with only rice IDR 11,816,807 for ones hectare land. Total income from paddy (1 ha) and livestock (2 heads) integrated farming system about IDR 17, 612,405/season and provide R/C value about 1.44, meanwhile R/C value of non integrated farming system about 1.33. It means, paddy and livestock integrated farming system could increase farmer’s income about 49,45% per season compared to non integrated farming.",
+        "summary": "The use of inorganic fertilizer urea 100 kg/ha (N 71.43%), SP-36 50 kg/ha (50%),",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202199711-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          984
+        ],
+        [
+          860,
+          1208
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Fragmentation and converted land use are the causes of the increasingly small land tenure in lowland rice farmers. Therefore to increase production, intensification with the use of inorganic fertilizers cannot be avoided. In the long run (approximately 30 years) can reduce land productivity [1], due to decreased nutrients in the soil. Besides that it will also reduce business efficiency, thereby reducing farmers' income. The integration of lowland rice with beef cattle maintenance is conceptually seen as an ideal solution.",
+        "summary": "Introduction Fragmentation and converted land use are the causes of the increasi",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202199711-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1230
+        ],
+        [
+          860,
+          1438
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Livestock waste will produce organic fertilizer while rice waste can be used as a source of cattle feed. This model application will be able to maintain soil fertility and at the same time reduce production input costs. According to data from the West Sumatra Central Bureau of Statistics (BPS), rice production in 2015 reached 2.55 million tons of milled dry grain with a harvested area of 440,000Ha. If the straw is produced as much as 1.44 x of MPD production, then 3.6 million tons of rice straw will be produced each year.",
+        "summary": "Livestock waste will produce organic fertilizer while rice waste can be used as ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202199711-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1460
+        ],
+        [
+          860,
+          1668
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "If each cow needs 10 kg of hay / day for feed, then wet rice in West Sumatra has the potential to provide feed to increase the cattle population of ± 800,000, -tail. This amount means almost 3 times the number of cattle population in West Sumatra. Thus rice-beef cattle integration will improve business efficiency, improve the quality of land use, and produce a clean and comfortable environment. Such conditions will lead to the strengthening of the farmers' economy, especially the destruction of rice fields.",
+        "summary": "If each cow needs 10 kg of hay / day for feed, then wet rice in West Sumatra has",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202199711-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1690
+        ],
+        [
+          860,
+          1802
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This study aims to describe the habits of farming patterns and the potential integration of cattle-rice in the area of rice farming centers in Solok Regency, West Sumatra. Furthermore, it is also to find out the farmers' income if they only do rice farming in the same area.",
+        "summary": "This study aims to describe the habits of farming patterns and the potential int",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "202199711-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1824
+        ],
+        [
+          860,
+          2064
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Materials and methods The study was conducted in Kenagarian Jawi-Jawi, Gunung Talang Subdistrict, Solok Regency which was chosen purposively. The consideration was that nigari almost all of its inhabitants had intensive rice farming activities conducted intensively. Determination of sample farmers Stratified random sampling was carried out as many as 30 farmers. Data collection is done by interviewing to fill out a list of questions (questionnaires) that have been prepared for it. Data analysis was carried out with descriptive statistics. For economic analysis using cost-benefit analysis.",
+        "summary": "Materials and methods The study was conducted in Kenagarian Jawi-Jawi, Gunung Ta",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "202199711-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2086
+        ],
+        [
+          860,
+          2150
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Furthermore, financial analysis is done using the formula: Marginal Benefit Cost Ratio (MBCR) which is modified from the formula [2].",
+        "summary": "Furthermore, financial analysis is done using the formula: Marginal Benefit Cost",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "202199711-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2172
+        ],
+        [
+          860,
+          2236
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "MBCR = Revenue integrated farming-Revenue of rice farming Total Cost of integrated farming -Total cost rice farming",
+        "summary": "MBCR = Revenue integrated farming-Revenue of rice farming Total Cost of integrat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "202199711-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2258
+        ],
+        [
+          860,
+          2466
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Characteristics of Research Locations Kenagarian Jawi-Jawi has a rice field area that is 100% technical irrigation. Rice fields are the main source of livelihood for the farming family and can be planted 2-3 times / year because the presence of water is available throughout the year. From the socio-economic aspect, rice fields are land to fulfill basic needs and are the main employment opportunities for villagers. The dominant cropping pattern is rice-rice-rice and most farmers around the study site plant local varieties.",
+        "summary": "Characteristics of Research Locations Kenagarian Jawi-Jawi has a rice field area",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202199711-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2488
+        ],
+        [
+          860,
+          2584
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fertilization for good quality rice generally uses urea doses of 300-400 kg / ha, SP-36 100-150 kg / ha, and KCl 100-150 kg / ha. Manure is not used as a source of fertilizer for rice fields.",
+        "summary": "Fertilization for good quality rice generally uses urea doses of 300-400 kg / ha",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "202199711-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2606
+        ],
+        [
+          860,
+          2830
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Rice Cultivation and Utilization of Rice Straw as Sources of Feed Rice cultivation planted local varieties of Cisokan and Anak Daro, N fertilization with BWD indicators, fertilizing P and K according to recommendations. With an average yield of 5.74 tons / Ha. This result is higher than that reported [3] that the P3T program can produce rice production 5.5 t / ha. Based on rice planting area, fresh straw obtained 13.20 tons / ha, after fermented to 7.92 tons (60% yield) and can be used for feed 2 heads of cattle for a year assuming feed consumption of 10 kg / head.",
+        "summary": "Rice Cultivation and Utilization of Rice Straw as Sources of Feed Rice cultivati",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "202199711-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2852
+        ],
+        [
+          860,
+          3028
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Proximate analysis of straw fermented showed can improve protein quality at 4.88% from 4.01% to 9.09%, reducing crude fiber 6.32% from 24.76% to 18.44%, and increase TDN 6.95% from 41.68% to 48.63%. There is an increase in protein and very low levels of crude fiber support in its use as animal feed, because in general which is a limiting factor in the utilization of agricultural waste as Animal feed is a low nutritional value.",
+        "summary": "Proximate analysis of straw fermented showed can improve protein quality at 4.88",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "202199711-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3050
+        ],
+        [
+          860,
+          3242
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Beef Cattle Raising and Utilization of Manure The number of cattle ownership in the study location is an average of 2 heads. By the product of the process of raising cattle is manure which will become a quality compost after fermentation. The results of the analysis of manure showed that fermentation could improve the quality of fertilizer and reduce the C / N ratio from 33.67 to 19.03. With 2 heads of cattle, organic fertilizer will be produced 0.24 tons / month up to 0.3 tons / month.",
+        "summary": "Beef Cattle Raising and Utilization of Manure The number of cattle ownership in ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202199711-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3264
+        ],
+        [
+          860,
+          3472
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "If the average ownership of the farmer's land area is 0.32 hectares, fine compost needs for own land of 0.6 tons / MT (if the dose is 2 tons / ha), which can be obtained during 2 months of collecting manure. The average production of compost is 1.2 tons / 2 heads / 4 months, if it is assumed that the selling price is IDR 1000/kg, an additional income of IDR 1,200,000 will be obtained. Contribution of additional revenue from fine compost is 9.70%, while the farmer pattern that was carried out at the time of research there was no revenue from manure.",
+        "summary": "If the average ownership of the farmer's land area is 0.32 hectares, fine compos",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "202199711-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3494
+        ],
+        [
+          860,
+          3686
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Financial Analysis Farmer's income in rice farming is influenced by the amount of production and the emphasis on the purchase of inorganic fertilizer (57.14%). The results of the analysis of the R / C ratio obtained 2.28, that each expenditure of production costs of IDR 1,000 gives revenue of IDR 2,280 and IDR 1,990 (farmer level). Some assumptions used are the price of rice IDR 6,200/kg, fine compost IDR 800/kg, urea IDR 1,800/kg, TSP IDR 2,500/kg, KCl IDR 2,500/kg.",
+        "summary": "Financial Analysis Farmer's income in rice farming is influenced by the amount o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "202199711-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3708
+        ],
+        [
+          860,
+          3948
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Financial analysis of cattle fattening through utilization of fermented straw as animal feed and utilization of organic fertilizer, showed that the average income reached IDR 1,383,100/head/4 months with R / C 1.24. The MBCR value is 1.43, means that every additional cost in applying the introduction technology of IDR 1,000 can increase the revenue of IDR 1,430. This shows that the cattle raising with an integrated system approach can increase the productivity and income of farmers as well as financially feasible to be developed when compared to the pattern of agriculture only rice plants.",
+        "summary": "Financial analysis of cattle fattening through utilization of fermented straw as",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "202199711-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3970
+        ],
+        [
+          860,
+          4098
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Livestock integration systems are significantly capable of providing added value on farm produce and on livestock productivity. Integrated farming can reduce production costs, especially for the provision of forage, as source of laboratory, and can contribute to savings purchase of fertilizer.",
+        "summary": "Livestock integration systems are significantly capable of providing added value",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "202199711-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4120
+        ],
+        [
+          860,
+          4312
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusions Integration of cattle with rice are farming which is efficient and very relevant for the condition of people's farming with ownership limited land in the countryside. This system benefits farmers because (1) Animal waste that have not been optimally used can be used as organic fertilizer to increase soil fertility and sources income and (2) agricultural waste (rice and bran straw) available used as a source of high quality food that reduces costs feed supply.",
+        "summary": "Conclusions Integration of cattle with rice are farming which is efficient and v",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    }
+  ]
+}

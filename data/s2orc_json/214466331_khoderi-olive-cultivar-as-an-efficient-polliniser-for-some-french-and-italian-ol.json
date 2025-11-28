@@ -1,0 +1,1060 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "214466331-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          204
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "'KHODERI' OLIVE CULTIVAR AS AN EFFICIENT POLLINISER FOR SOME FRENCH AND ITALIAN OLIVE CULTIVARS",
+        "summary": "'KHODERI' OLIVE CULTIVAR AS AN EFFICIENT POLLINISER FOR SOME FRENCH AND ITALIAN ",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 124
+      }
+    },
+    {
+      "id": "214466331-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          226
+        ],
+        [
+          860,
+          450
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The research was conducted in 2017 and 2019 seasons in Bouka center for research and plant production, Latakia, Syria, in order to investigate the ability of using Syrian olive cultivar 'Khoderi' as polliniser for 'Tanche',' Picholine' (French) and 'Frantoio' (Italian) olive cultivars. Pistil abortion (%), pollen germination (%), flowering period, self, open and cross-pollination with 'Khoderi' were studied. Results showed that all cultivars were characterized by good pollen germination ratio. Both season and cultivar affected pistil abortion significantly.",
+        "summary": "The research was conducted in 2017 and 2019 seasons in Bouka center for research",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214466331-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          472
+        ],
+        [
+          860,
+          712
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The flowering periods were overlapping for all studied cultivars but with some delay of 'Frantoio'. 'Picholine' was highly self-incompatible (ISI= 0.11), while 'Tanche' was partially self-incompatible (0.330.35). The highest self-compatibility was for 'Frantoio' (ISI= 0.520.73). Pollination results showed that using 'Khoderi' as polliniser increased final fruit set over openand selfpollination for all cultivars and seasons. The results indicated that 'Khoderi' was efficient polliniser for 'Tanche', 'Picholine' and 'Frantoio' olive cultivars under Syrian Coast conditions.",
+        "summary": "The flowering periods were overlapping for all studied cultivars but with some d",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214466331-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          734
+        ],
+        [
+          860,
+          974
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "INTRODUCTION Olive (Olea europaea L.) is one of the most important fruit trees worldwide. Olive cultivation is close related to the culture and traditions of the Mediterranean countries. Syria is considered as one of the native origins of olive, also it's an active olive producer with ~850 thousand tons (MOAAR, 2017). Traditionally, olive was considered self-fertile, but the recent studies mentioned that most olive cultivars are self-incompatible (Saumitou-Laprade et al., 2017). Self-incompatibility (SI), a common physiological phenomenon in flowering plants, leads to rejection of self-pollen.",
+        "summary": "INTRODUCTION Olive (Olea europaea L.) is one of the most important fruit trees w",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214466331-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          996
+        ],
+        [
+          860,
+          1188
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Although self-incompatibility encourages biodiversity by inhibiting self-fertilization, but this could lead to lower fruit set of olive cultivars planting without pollinisers. In Mediterranean as well as non-Mediterranean countries, many studies were conducted to find the efficient pollinisers for local and imported olive cultivars in each area and in different planting systems (Zhu et al., 2013;Lodolini et al., 2018;Sanchez-Estrada and Cuevas, 2019).",
+        "summary": "Although self-incompatibility encourages biodiversity by inhibiting self-fertili",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1210
+        ],
+        [
+          860,
+          1402
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In Croatia, 'Leccino', 'Drobinca' and 'Oblica' were partially self-incompatible cultivars, also 'Levantinka' and ' Oblica ' were crosscompatible in both directions (Selak et al., 2011). In Turkey, Mete et al. (2016) reported several Turkish cultivars to be efficient pollinisers for the new olive cultivar 'Hayat'. Farinelli et al. (2012) mentioned that the most efficient polliniser for 'Ascolana Tenera' was 'Carolea' followed by 'Picholine'.",
+        "summary": "In Croatia, 'Leccino', 'Drobinca' and 'Oblica' were partially self-incompatible ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1424
+        ],
+        [
+          860,
+          1616
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In Mexico, which is non-traditional olive producer, self-and open-pollination were reported to give low fruit set in mono-cultivar orchards of 'Manzanillo', fruit set was increased when using 'Barouni' as polliniser (Sanchez-Estrada and Cuevas, 2019). Breton and Berville (2012) used fruit set estimation and fertility index to predict self-incompatibility alleles in olive; they reported six SI-alleles in olive with dominance relationships among them.",
+        "summary": "In Mexico, which is non-traditional olive producer, self-and open-pollination we",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1638
+        ],
+        [
+          860,
+          1798
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Using pollen growth observation in stigma tissue, paternity analysis and fruit set estimation, Saumitou-Laprade et al., (2017) reported two SI groups in olive G1 (with S1S2 genotype) and G2 (with S1S1 genotype). Till now S-locus in olive still undiscovered in the molecular level and many phenomena must be studied to full understand SI in olive (Alagna et al., 2019).",
+        "summary": "Using pollen growth observation in stigma tissue, paternity analysis and fruit s",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214466331-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1820
+        ],
+        [
+          860,
+          2012
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In general, cross-compatibility response was reported to differ depending on location and seasons (Gonzalez and Cuevas, 2012), which leads to conduct local experiments in each area in order to have an accurate evaluation of the pollinisers. Pollination experiments are fairly recent in Syria. Mhnna et al. (2015) reported that imported cultivars 'Picholine' and 'Frantoio' were self-incompatible and had good performance under Syrian coastal area.",
+        "summary": "In general, cross-compatibility response was reported to differ depending on loc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2034
+        ],
+        [
+          860,
+          2130
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "So, this study aimed to evaluate the ability of local olive cultivar 'Khoderi' to pollinate those two cultivars, 'Picholine' and 'Frantoio', with 'Tanche' another French cultivar also proved good performance in the area.",
+        "summary": "So, this study aimed to evaluate the ability of local olive cultivar 'Khoderi' t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "214466331-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2152
+        ],
+        [
+          860,
+          2360
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "MATERIAL AND METHODS Study location and Plant material: The experiments were conducted for two seasons (2017 and 2019) in Bouka center for research and plant production, Latakia province, Syria (latitude 35º32' North, 35º48' East), 40 m above sea level, characterized by clay calcareous soil. More than 40 olive cultivars are grown in the germoplasm collection. Average monthly maximum and minimum temperatures (c°) and Precipitations (mm) were taken from Sit-Kheris station located less than 8 km from the experimental orchard.",
+        "summary": "MATERIAL AND METHODS Study location and Plant material: The experiments were con",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214466331-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2382
+        ],
+        [
+          860,
+          2494
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Three olive cultivars were involved as pollen receptors: 'Tanche', 'Picholine' (French) and Italian olive cultivar 'Frantoio'. Autochthonous olive cultivar 'Khoderi' was used as pollen donor. Trees are about 30 years old, planted under rain fed conditions.",
+        "summary": "Three olive cultivars were involved as pollen receptors: 'Tanche', 'Picholine' (",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "214466331-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2516
+        ],
+        [
+          860,
+          2740
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Methods: Three uniform trees of each of 'Tanche', 'Picholine' and 'Frantoio' olive cultivars were chosen, a sample of 50 inflorescences was taken randomly from one year branches in white bud stage randomly distributed around the canopy of each tree. Average number of flowers per inflorescence and pistil abortion (%) were estimated. Pollen was extracted and stored for several days in 2017 season, but cultured immediately in 2019 season in a media according to Ferri et al. (2008), with some modifications containing 15% commercial sugar, 50 ppm boric acid and 0.6% agar.",
+        "summary": "Methods: Three uniform trees of each of 'Tanche', 'Picholine' and 'Frantoio' oli",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214466331-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2762
+        ],
+        [
+          860,
+          3002
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Germination was observed after 24 hours of incubation on 26± 2°C. Germination (%) was estimated by taking three fields, each field containing more than 50 pollen grains (Koubouris et al., 2009) in each petri dish (four petri dishes for each cultivar). Pollen was considered germinated when pollen tube length was longer than twice the pollen diameter. Pollination treatments: Three one year old branches on each side of the trees were tagged in white bud stage (twelve on each tree), number of inflorescence were counted and unified. Two of the three branches were enclosed by white paper bags.",
+        "summary": "Germination was observed after 24 hours of incubation on 26± 2°C. Germination (%",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214466331-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3024
+        ],
+        [
+          860,
+          3216
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cross-pollination: at full bloom, paper bag enclosing one of the two branches in each side of the trees were opened and flowering branch of 'Khoderi' with open flowers taken from the same orchard were inserted into the bag. Bags were enclosed and shaken daily for three days. Self-pollination: the second branch on each side of the trees was kept enclosed to force self-pollination. Open pollination: The third branch in each side of the trees was kept without enclosing for open (free) pollination.",
+        "summary": "Cross-pollination: at full bloom, paper bag enclosing one of the two branches in",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3238
+        ],
+        [
+          860,
+          3366
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fertility index (R) was estimated and evaluated according to Moutier (2002) as follows: R = number of fruits in the case of cross-pollination / number of fruits in the case of free-pollination: R=0 to 0.33: bad polliniser, R= 0.33 to 0.66: passable polliniser, R= 0.66 to 1 or higher: good polliniser.",
+        "summary": "Fertility index (R) was estimated and evaluated according to Moutier (2002) as f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "214466331-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3388
+        ],
+        [
+          860,
+          3532
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Experimental design and statistical analysis: Completely randomized blocks design was used with three replications (trees). Data were arcsine transferred and subjected to ANOVA. Means were separated using Duncan multiple range test (P< 0.05) using (CoStat version 6.400 Copyright(c) 1998-2008 CoHort software, CA, USA).",
+        "summary": "Experimental design and statistical analysis: Completely randomized blocks desig",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "214466331-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3554
+        ],
+        [
+          860,
+          3762
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "RESULTS AND DISCUSSION Meteorological data: Climatic factors play major rule in physiology of fruit trees, affecting the transition from one phenological phase to another (Marra et al., 2018). Precipitation behavior was aslo different among seasons, precipitation almost stopped in February 2017, then lasted until June. In 2019 season, precipitation was higher but stopped in June resulting in droght in that month. Flowering period: The flowering period is a key factor when choosing pollinisers.",
+        "summary": "RESULTS AND DISCUSSION Meteorological data: Climatic factors play major rule in ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214466331-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3784
+        ],
+        [
+          860,
+          3944
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Figure All the studied cultivars started flowering by the same time in 2017 except for 'Frantoio' whose flowering was delayed by five days. In 2019 season, 'Khoderi' was the earliest flowering followed by 'Tanche' and 'Frantoio'. In general 'Khoderi' had the longest flowering period and overlaped or covered the entire flowering periods of the other cultivars.",
+        "summary": "Figure All the studied cultivars started flowering by the same time in 2017 exce",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214466331-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3966
+        ],
+        [
+          860,
+          4078
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This meets the fact that when choosing pollinisers, the pollen donor (polliniser) and the receptor plant must overlap in flowering periods that ensures the presenence of pollen grains by the time of flower opening of the receptor cultivars (Selak et al., 2018).",
+        "summary": "This meets the fact that when choosing pollinisers, the pollen donor (polliniser",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "214466331-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4100
+        ],
+        [
+          860,
+          4340
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Pistil abortion and Number of flowers per inflorescence: Data analysis showed that both cultivar and season affected pistil abortion; the main effect was of the cultivar. Figure (3-A) shows that 'Picholine' had the highest pistil abortion (%) and 'Frantoio' had the lowest. Significant differences between seasons were observed in 'Tanche' and 'Picholine' but not in 'Frantoio'. Generally, several factors reported to influence pistil abortion like genetic factor, season, competition for resources and other factors (Rosati et al., 2011;Rosati et al., 2012;Alagna et al., 2016). Rapoport et al.",
+        "summary": "Pistil abortion and Number of flowers per inflorescence: Data analysis showed th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214466331-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4362
+        ],
+        [
+          860,
+          4554
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "(2012) found that water deficits in the stage of inflorescence formation reduced the hermaphrodite flowers ratio. In the study site buds began to burst in February, so lacking moisture in this period ( Figure 1) could negatively affect the inflorescence formation. The number of flowers per inflorescence (Figure 3-B) was lower in 2017 than in 2019 season, this could be due to similar reason even though this reduction was insignificant in all studied cultivars except 'Frantoio'.",
+        "summary": "(2012) found that water deficits in the stage of inflorescence formation reduced",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4576
+        ],
+        [
+          860,
+          4784
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Pollen germination: Pollen germination differed depending on cultivar and season (Figure 4). 'Frantoio' and 'Tanche' had the highest germination ratio in 2017 and 2019 seasons, respectively, while 'Picholine' had the lowest in both seasons. Significant differences were observed between 2017 and 2019 seasons, 2019 season was characterized by higher germination ratio. This could be due to fact that pollen was cultured immediately in 2019 season while stored for several days before culturing in 2017.",
+        "summary": "Pollen germination: Pollen germination differed depending on cultivar and season",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214466331-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4806
+        ],
+        [
+          860,
+          4886
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Pollen germination could also be influenced by the number of the pollen produced by the tree, nutritional status and climatic conditions (Ferri et al., 2008;Mazzeo et al., 2010).",
+        "summary": "Pollen germination could also be influenced by the number of the pollen produced",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "214466331-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4908
+        ],
+        [
+          860,
+          5132
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fruit set: Data presented in table (1) shows that initial fruit set (%) was influenced by pollination type. In 2017 season, open pollination and cross-pollination by 'Khoderi' resulted in the highest initial fruit set, while lowest initial fruit set was of self-pollination. In 'Frantoio' cultivar, the differences in initial fruit set for all pollination type were insignificant. In 2019, initial fruit set of 'Tanche' was higher than 2017 and behaved the same. In 'Frantoio', cross pollination with 'Khoderi' resulted in the highest initial fruit set.",
+        "summary": "Fruit set: Data presented in table (1) shows that initial fruit set (%) was infl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214466331-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5154
+        ],
+        [
+          860,
+          5378
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Significant effect of pollinisers on initial fruit set for number of olive cultivars was reported in Croatia (Selak et al., 2011). Final fruit set was used to evaluate the fruit set from different pollination types in most pollination studies (Selak et al., 2011;Sánchez-Estrada and Cuevas, 2018). Data presented in table (1) shows similar response of 'Tanche' and 'Picholine' to pollination type, i.e. cross-pollination with 'Khoderi' resulted in the highest final fruit set followed by open pollination, while self-pollination resulted in the lowest final fruit set.",
+        "summary": "Significant effect of pollinisers on initial fruit set for number of olive culti",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214466331-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5400
+        ],
+        [
+          860,
+          5560
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "After initial fruit set massive fruit abscission normally occurs mainly due to fruit competition for substrate (Rapoport and Rallo, 1991), this could be the reason for higher fruit drop of 'Tanche' fruits resulting from cross-pollination with 'Khoderi' in 2019 comparing to 2017 season and to other treatments were fruit sets were lower. 'Frantoio' behaved little different.",
+        "summary": "After initial fruit set massive fruit abscission normally occurs mainly due to f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214466331-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5582
+        ],
+        [
+          860,
+          5774
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "No significant differences between all pollination types were observed in 2017, but in 2019 final fruit set resulted from cross pollination with 'Khoderi' was significantly higher than fruit set resulted from open and self-pollination. Generally, cross-pollination with 'Khoderi' resulted in the highest final fruit set for all studied cultivars and seasons. Several studies reported the significance of cross-pollination in olive cultivars, Farinelli et al.",
+        "summary": "No significant differences between all pollination types were observed in 2017, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5796
+        ],
+        [
+          860,
+          6036
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "(2006) found that cross pollination of 'Sorani' with 'Gordal', 'Moresca' and 'Picholine marocaine' resulted in fruit set similar to open pollination; by the same way, 'Gemlik' olive cultivar was reported to increase fruit set of 'Hayat' when used as pollen donor (Mete et al., 2016). (Pinillos and Cuevas, 2009;Selak et al., 2011;Sanchez-Estrada and Cuevas, 2018), this could be a result of more favorable environmental conditions in open branches comparing with enclosed bags (Selak et al., 2011), and/or the presence of more compatible pollinisers than those used in crosspollination.",
+        "summary": "(2006) found that cross pollination of 'Sorani' with 'Gordal', 'Moresca' and 'Pi",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214466331-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6058
+        ],
+        [
+          860,
+          6234
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, in the present study the opposite situation was found, cross-pollination results were higher than open pollination, which clearly indicate that 'Khoderi' is highly compatible with the studied cultivars. Enhancing fruit set under cross-pollination over open-pollination is a case more important in areas with little olive diversity or mono-cultivar olive orchards of 'Tanche', 'Picholine' and 'Frantoio'.",
+        "summary": "However, in the present study the opposite situation was found, cross-pollinatio",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "214466331-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6256
+        ],
+        [
+          860,
+          6464
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Self-incompatibility and Fertility index: Data presented in table (2) shows that 'Picholine' was highly selfincompatible cultivar with ISI= 0.11. Previous studies in the same region reported that 'Picholine' was highly self-incompatible with ISI= 0-0.09 (Mhnna et al., 2015), which is in accordance with Moutier (2002) who found that 'Picholine' is highly self-incompatible in France. 'Tanche' and 'Frantoio' were partially selfincompatible, but 'Frantoio' was more self-fertile than 'Tanche'.",
+        "summary": "Self-incompatibility and Fertility index: Data presented in table (2) shows that",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214466331-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6486
+        ],
+        [
+          860,
+          6678
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Spinardi and Bassi (2012) found that ISI of 'Frantoio' was 0.25; this difference could be related to different environmental conditions. Gonzalez and Cuevas (2012) reported different ISI values of 'Arbequina' depending on season and study location. This cultivar was self-compatible in one region and incompatible in another. The same cultivar was reported to be infertile in Montenegro conditions with concern of the productivity in mono-cultivar orchards (Lazović et al., 2017).",
+        "summary": "Spinardi and Bassi (2012) found that ISI of 'Frantoio' was 0.25; this difference",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214466331-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6700
+        ],
+        [
+          860,
+          6924
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Fertility index (R-index) was used to evaluate olive pollinisers by different authors (Moutier, 2002;Mete et al., 2016, etc.). In our study, based on R-index 'Khoderi' was good (efficient) polliniser for 'Tanche', 'Picholine' and 'Frantoio' olive cultivars in both study seasons. Recent studies also reported that most olive cultivars are self-incompatible (Saumitou-Laprade et al., 2017), and there is a need of cross-pollination with compatible cultivars to increase fruit set even for self-compatible cultivars (Mete et al., 2016).",
+        "summary": "Fertility index (R-index) was used to evaluate olive pollinisers by different au",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214466331-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6946
+        ],
+        [
+          860,
+          7154
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CONCLUSIONS 'Picholine' was highly self-incompatible olive cultivar, while 'Tanche' and 'Frantoio' were partially self-incompatible. 'Khoderi' was efficient polliniser for all the studied cultivars, characterized by good pollen germinability and extended flowering period that overlaps the flowering period of the receptor cultivars. Overall results suggest 'Khoderi' as efficient polliniser for 'Picholine', 'Tanche' and 'Frantoio' olives in order to enhance fruit set and consequently productivity.",
+        "summary": "CONCLUSIONS 'Picholine' was highly self-incompatible olive cultivar, while 'Tanc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    }
+  ]
+}

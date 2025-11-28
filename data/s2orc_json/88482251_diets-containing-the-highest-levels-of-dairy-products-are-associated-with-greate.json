@@ -1,0 +1,2455 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "88482251-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          276
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Diets containing the highest levels of dairy products are associated with greater eutrophication potential but higher nutrient intakes and lower financial cost in the United Kingdom",
+        "summary": "Diets containing the highest levels of dairy products are associated with greate",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 196
+      }
+    },
+    {
+      "id": "88482251-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          298
+        ],
+        [
+          860,
+          426
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Purpose Previously, the nutritional contribution, environmental and financial costs of dairy products have been examined independently. Our aim was to determine the nutritional adequacy, financial cost and environmental impact of UK diets according to dairy content.",
+        "summary": "Purpose Previously, the nutritional contribution, environmental and financial co",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "88482251-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          448
+        ],
+        [
+          860,
+          688
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Methods In this cross-sectional study of adults (19–64 years) from the UK National Diet and Nutrition Survey years 1–4 (n = 1655), dietary intakes assessed from 4-day estimated food diaries were organized into quartiles (Q) total grams of dairy (milk, cheese, yogurt, dairy desserts) and analyzed using ANCOVA controlling for age, sex and energy intake with Bonferroni post hoc test for nutritional adequacy, Alternative Healthy Eating Index (AHEI-2010), environmental impact [greenhouse gas emissions (GHGE), eutrophication and acidification potentials], financial cost, markers of health and cardio",
+        "summary": "Methods In this cross-sectional study of adults (19–64 years) from the UK Nation",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "88482251-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          710
+        ],
+        [
+          860,
+          742
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "-metabolic diseases.",
+        "summary": "-metabolic diseases.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 32
+      }
+    },
+    {
+      "id": "88482251-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          764
+        ],
+        [
+          860,
+          972
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Results Nutritional adequacy, particularly for protein, calcium and iodine (+ 18 g, + 533 mg, + 95 g, respectively, all P < 0.0001) and AHEI-2010 (P < 0.0001) were significantly higher and systolic BP (− 2 mmHg, P = 0.019) was significantly lower for the higher-dairy diets (Q4, 274–1429 g/day dairy), compared with diets containing lower dairy (Q1, 0–96 g/day dairy). Diets in Q4 had lower financial cost (− 19%, P < 0.0001) and the greatest eutrophication potential, compared with Q1 (+ 29%, P < 0.0001).",
+        "summary": "Results Nutritional adequacy, particularly for protein, calcium and iodine (+ 18",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          994
+        ],
+        [
+          860,
+          1218
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Yet the environmental (GHGE) and financial costs per unit nutrient (riboflavin, zinc, iodine, magnesium, calcium, potassium) were lower in Q4 than Q1 (all P < 0.0001). Conclusion Diets with the highest dairy content had higher nutrient composition, better diet quality, were associated with lower BP and financial cost, but with higher eutrophication potential. Robust environmental data for many of food groups are limited and this needs an urgent addressing. Trial registration This trial was registered on clinicaltrials.gov as NCT03407248.",
+        "summary": "Yet the environmental (GHGE) and financial costs per unit nutrient (riboflavin, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1240
+        ],
+        [
+          860,
+          1320
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Electronic supplementary material The online version of this article (10.1007/s00394-019-01949-y) contains supplementary material, which is available to authorized users.",
+        "summary": "Electronic supplementary material The online version of this article (10.1007/s0",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "88482251-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1342
+        ],
+        [
+          860,
+          1518
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Global population growth, which is estimated to rise to > 9 billion by 2050, is placing greater demand on the planet's finite natural resources. Estimates suggest that world food demand will increase at an average rate of 1.1% annually between now and 2050 [1]. Supplying the growing population with sufficient food to meet energy and nutrient needs is, therefore, one of the world's greatest challenges.",
+        "summary": "Introduction Global population growth, which is estimated to rise to > 9 billion",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1540
+        ],
+        [
+          860,
+          1748
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The manufacture of food impacts on the environment through, for example, the production of greenhouse gas emissions (GHGE) such as carbon dioxide, methane and nitrous oxide, and the use of land as well as water resources. The environmental impact arises at all stages in the life cycle from the processes of agricultural production, processing, transport, storage, cooking, through to disposal of waste [2]. Estimates suggest that the food system contributes 19-29% of global GHGEs [3] and accounts for 70% of global freshwater use [4].",
+        "summary": "The manufacture of food impacts on the environment through, for example, the pro",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1770
+        ],
+        [
+          860,
+          1978
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Animal products, particularly meat and dairy are generally associated with relatively large environmental impacts on a per kg basis. Dietary change along with efficiencies in food production and reductions in food waste is, therefore, an important strategy to reduce environmental impacts of the food system [5]. In the UK, consumption of milk and dairy products has changed substantially over the previous decades. Since the 1970s, milk consumption by adults has fallen from around 2.5 L per person per week to 1.5 L per person per week [6].",
+        "summary": "Animal products, particularly meat and dairy are generally associated with relat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2000
+        ],
+        [
+          860,
+          2208
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Moreover, from around 1990, the quantity of fat-reduced milk consumed has exceeded that of full-fat milk, and the trend of replacing full-fat milk with fat-reduced milk has continued [6]. Over the same period, yogurt and fromage frais consumption has increased substantially, whilst cheese consumption has seen an overall steady increase [6]. Despite these very large changes, milk and dairy products remain an important dietary source of key nutrients for a large proportion of the UK population.",
+        "summary": "Moreover, from around 1990, the quantity of fat-reduced milk consumed has exceed",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2230
+        ],
+        [
+          860,
+          2422
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For example, in adults, dairy products provide around 50% of the reference nutrient intake (RNI) for calcium and phosphorus, and 40% and 107%, of the RNI for riboflavin and vitamin B 12 , respectively [7]. In addition, for many of the nutrients, dairy products have a high nutrient density meaning that less energy needs to be consumed to provide the same nutrient intake [8]. Milk and dairy products also contribute around 27% of saturated fat intake in the UK diet [7].",
+        "summary": "For example, in adults, dairy products provide around 50% of the reference nutri",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2444
+        ],
+        [
+          860,
+          2636
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Higher dietary saturated fat consumption is associated with an increased risk of cardiovascular disease (CVD), which is largely due to the low-density lipoprotein cholesterol (LDL-C) raising effects of saturated fat [9]. However, evidence from a number of meta-analyses of prospective cohort studies show that the consumption of milk and other dairy products is either associated with a neutral or reduced risk of CVD [10][11][12], stroke [13], type 2 diabetes [14] and hypertension [15].",
+        "summary": "Higher dietary saturated fat consumption is associated with an increased risk of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2658
+        ],
+        [
+          860,
+          2850
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Therefore, when assessing the role of dairy products in sustainable diets, it is important to consider not only the environmental impact, but also the nutritional contribution dairy products make to the diet, together with other health beneficial functionality. The aim of this study was to determine the associations between UK diets containing varying levels of dairy products with nutritional adequacy, dietary cost and GHGE, acidification and eutrophication potentials.",
+        "summary": "Therefore, when assessing the role of dairy products in sustainable diets, it is",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2872
+        ],
+        [
+          860,
+          3080
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Dietary data Data files from years 1 to 4 (2008/2009-2011/2012) of the NDNS were obtained from the UK Data Archive (https :// www.data-archi ve.ac.uk) [7]. Overall, the response rate of participants completing three or four diet diary days was 56% in years 1-4 giving a total sample size of 4156 survey participants. In the current analysis, data from the adult population were investigated using the food consumption and nutritional data for all 1655 adults aged 19-64 years (males: n = 710 and females: n = 945), unless otherwise stated.",
+        "summary": "Dietary data Data files from years 1 to 4 (2008/2009-2011/2012) of the NDNS were",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3102
+        ],
+        [
+          860,
+          3326
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The mean quantity of individual foods consumed per day was aggregated into food sub-groups (136 food sub-groups, excluding dietary supplements, commercial toddler food and drink, artificial sweeteners and nutrition powders and drinks) according to the NDNS classification. Non-consumers of each food group were included in the analysis. The dairy food group included milk, cheese, yogurt, fromage frais, ice cream, other dairy, cream and dairy desserts, but not butter as this is classified as part of the fats and oils food group in NDNS.",
+        "summary": "The mean quantity of individual foods consumed per day was aggregated into food ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3348
+        ],
+        [
+          860,
+          3572
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Milk alternatives such as almond, rice and soya milks were removed from the food groups and analyzed as a separate food group. The nutritional contribution of each food group to average estimated requirement (EAR) for energy, dietary reference values (DRV) for macronutrients and reference nutrient intakes (RNI) for vitamins and minerals was also calculated. All micronutrients reported in the NDNS were used in the analysis. The NDNS was conducted according to the guidelines laid down in the Declaration of Helsinki, and ethical approval for all procedures was granted by Local",
+        "summary": "Milk alternatives such as almond, rice and soya milks were removed from the food",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3594
+        ],
+        [
+          860,
+          3674
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "3 Research Ethics Committees covering all areas in the survey. All participants (or where relevant, legal guardians) gave informed consent.",
+        "summary": "3 Research Ethics Committees covering all areas in the survey. All participants ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "88482251-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3696
+        ],
+        [
+          860,
+          3920
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Assessment of underreporting Energy misreporting was assessed using Goldberg's cut-off 2 criterion [16,17], which uses 95% confidence limits to statistically compare the ratio of reported energy intake (EI) to basal metabolic rate (BMR) with physical activity level (PAL). BMR was estimated using the Henry equation [18] and a PAL of 1.2, representing that a sedentary lifestyle was chosen for the total population. The within-subject variation in reported energy intake (CV wEI ) and repeated BMR measurements (CV wBMR ) was 23% and 8.2%, respectively [17].",
+        "summary": "Assessment of underreporting Energy misreporting was assessed using Goldberg's c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3942
+        ],
+        [
+          860,
+          4022
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The between-subject variation in PAL (CV tP ) was 15% [16,17]. Subjects were identified as under-reporters if their reported EI was less than the calculated lower cut-off.",
+        "summary": "The between-subject variation in PAL (CV tP ) was 15% [16,17]. Subjects were ide",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "88482251-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4044
+        ],
+        [
+          860,
+          4268
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Environmental data Estimates of GHGEs, eutrophication potential and acidification potential were used to calculate the environmental impact of diets containing varying levels of dairy products. Briefly, data for GHGEs, eutrophication potential and acidification potential associated with each of the 136 sub-food groups from the NDNS were collected during the period of June-September 2014, from relevant literature from the UK and other European countries and were cross-referenced with at least one other source to ensure representativeness.",
+        "summary": "Environmental data Estimates of GHGEs, eutrophication potential and acidificatio",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4290
+        ],
+        [
+          860,
+          4514
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Data were collected from primary production to retail using life-cycle assessment (LCA). Within each NDNS sub-food group, environmental data on the most commonly consumed foods were averaged to produce a single value for each subfood group. For some composite dishes or processed foods, where a single value was not available, the environmental impact was estimated using component ingredients. This was particularly the case for eutrophication and acidification potentials where data were only available for main food items [19][20][21][22][23][24][25][26].",
+        "summary": "Data were collected from primary production to retail using life-cycle assessmen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4536
+        ],
+        [
+          860,
+          4616
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "A detailed discussion of assumptions made can be found in the Supplemental Environmental Methods. A list of GHGE values and data sources used can be found in Supplemental Table 1.",
+        "summary": "A detailed discussion of assumptions made can be found in the Supplemental Envir",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "88482251-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4638
+        ],
+        [
+          860,
+          4862
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cost of diets The monetary cost of the diets was estimated by collecting UK retail prices of all food items (n = 3420) reported in years 1-4 of the NDNS. Briefly, the retail price of food items was collected online from Asda and Waitrose supermarkets during the period of June-September 2014, and was updated in July 2015. The collection of food item costs was standardized, and whenever possible, the minimum weight of a food or product as sold was used. Furthermore, any offers or multi-buys were avoided to ensure that the true cost of a food item was captured.",
+        "summary": "Cost of diets The monetary cost of the diets was estimated by collecting UK reta",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4884
+        ],
+        [
+          860,
+          5092
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The majority of costs was based on own brand products/house brands for Asda and Waitrose supermarkets. The retail price of each of the food items was calculated as an average cost between Asda and Waitrose, and was aggregated into food groups as described above. In the case of food groups with a large number of individual foods, we took the average cost of the most consumed foods by weight within that food group. A table showing a summary of the food prices used for each sub-food group can be found in Supplemental Table 2.",
+        "summary": "The majority of costs was based on own brand products/house brands for Asda and ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5114
+        ],
+        [
+          860,
+          5290
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Calculation of GHGEs and financial cost (£) of diets per unit nutrient The GHGEs and financial cost (£) of diets per unit of nutrient were calculated using the following equations: A cut-off was also applied when 100% of the RNI was met for a particular nutrient. For example, if the unit (µg, mg, g) consumed per day of a nutrient exceeded the RNI for that particular nutrient, then the RNI was used in the calculation instead of the unit nutrient per day.",
+        "summary": "Calculation of GHGEs and financial cost (£) of diets per unit nutrient The GHGEs",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5312
+        ],
+        [
+          860,
+          5520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Biomarkers of health data Anthropometric (weight, height, body mass index, waist and hip circumference), blood pressure and blood biomarker data (total cholesterol, high-density lipoprotein cholesterol (HDL-C), low-density lipoprotein cholesterol (LDL-C), triacylglycerol (TAG), C-reactive protein, glycated hemoglobin and glucose) were obtained for participants in the NDNS. Details of how blood samples were taken, stored and analyzed have been described in detail elsewhere [7].",
+        "summary": "Biomarkers of health data Anthropometric (weight, height, body mass index, waist",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5542
+        ],
+        [
+          860,
+          5734
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Food group analysis and calculation of Alternative Healthy Index (AHEI) score A 'baseline' diet was created which was based on the average UK adult (19-64 years) male and female diets from the NDNS. The lower and higher dairy diets were created by splitting the male and female 'baseline' diet into quartiles of total grams of dairy, with the lowest quartile representing the lower dairy diet (Q1) and the highest quartile representing the higher dairy diet (Q4).",
+        "summary": "Food group analysis and calculation of Alternative Healthy Index (AHEI) score A ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5756
+        ],
+        [
+          860,
+          5964
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Alternative Healthy Eating Index (AHEI) score was calculated for each of the diets GHGE per unit nutrient = gCO2e per day ug, mg or g nutrient per day Diet cost (£) per unit nutrient = diet cost per day ug, mg or g nutrient per day . using the methods previously described [27] with minor modification (Supplemental Table 3). The AHEI score was used in this analysis because previous studies have shown that it is a better predictor of risk of chronic disease compared with other diet scores such as the Healthy Eating Index (HEI)-2010 [27].",
+        "summary": "The Alternative Healthy Eating Index (AHEI) score was calculated for each of the",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5986
+        ],
+        [
+          860,
+          6162
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Statistical analysis The primary outcome of this study was to determine the associations between UK diets containing varying levels of dairy products with nutritional adequacy, dietary cost and three elements of environmental impact (GHGE, acidification and eutrophication potentials). The secondary outcome was to calculate GHGE and financial cost per unit nutrient to estimate the quality costs of each diet.",
+        "summary": "Statistical analysis The primary outcome of this study was to determine the asso",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6184
+        ],
+        [
+          860,
+          6408
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Analysis of covariance (ANCOVA) was used to detect statistically significant differences between diets based on dairy quartiles and nutrient intakes, environmental impact, dietary cost, food groups and GHGEs and financial cost per nutrient controlling for age, sex and total energy intake (kJ). We controlled for total energy intake in our analysis of the environmental impact because GHGEs have been shown to be positively associated with total energy intake [28]. Bonferroni post hoc tests were used to detect differences between quartiles.",
+        "summary": "Analysis of covariance (ANCOVA) was used to detect statistically significant dif",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6430
+        ],
+        [
+          860,
+          6654
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Significant differences between categorical variables across dairy quartiles were analyzed using Chi-square test for independence. The strength of the association between categorical variables (effect size) was calculated using Cramer's V (V) test or partial Eta 2 (η 2 ) for non-categorical variables. We regarded the P value of 0.05 as statistically significant. All statistical analyses were performed in SPSS version 21 (SPSS Inc.). In this population, it was estimated that 13% (n = 194) of subjects were classed as under-reporters of energy intake.",
+        "summary": "Significant differences between categorical variables across dairy quartiles wer",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6676
+        ],
+        [
+          860,
+          6788
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, underreporting was not considered further in statistical analysis. LRNI was used in this study as it represents a diet that will be insufficient for 97.5% of the population and is also used in NDNS as a marker of diet quality.",
+        "summary": "However, underreporting was not considered further in statistical analysis. LRNI",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "88482251-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6810
+        ],
+        [
+          860,
+          6922
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Sociodemographic and health characteristics of adults by dairy quartile The sociodemographic and health characteristics of adults by dairy quartile are presented in Table 1. There were significant differences across quartiles for age (P = 0.005, partial",
+        "summary": "Sociodemographic and health characteristics of adults by dairy quartile The soci",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "88482251-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6944
+        ],
+        [
+          860,
+          7008
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Food group analysis and AHEI-2010 score Diets for the total population and for different quartiles of dairy intake are shown in Table 2.",
+        "summary": "Food group analysis and AHEI-2010 score Diets for the total population and for d",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "88482251-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7030
+        ],
+        [
+          860,
+          7222
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "There was a significant difference in consumption of high-fiber breakfast cereals, other breakfast cereals, milk, other milk and cream, cheese, ice cream, yogurt and fromage frais, fruit and tea, coffee and water, alcoholic beverages, soft drinks (not low calorie), chips, milk alternatives (all P < 0.0001), bread (P = 0.001), vegetables and potatoes (P = 0.014), biscuits (P = 0.02), eggs and dishes (P = 0.039) and preserves and sweet spreads (P = 0.004) across quartiles of dairy intake.",
+        "summary": "There was a significant difference in consumption of high-fiber breakfast cereal",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7244
+        ],
+        [
+          860,
+          7308
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "There were no significant differences in red meat (P = 0.18) or processed meat (P = 0.20) across increasing quartiles of dairy intake.",
+        "summary": "There were no significant differences in red meat (P = 0.18) or processed meat (",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "88482251-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7330
+        ],
+        [
+          860,
+          7570
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Bonferroni post hoc analysis comparing the highest (Q4) with the lowest (Q1) dairy quartiles showed that subjects in Q4 had significantly higher intakes of high-fiber breakfast cereals, other breakfast cereals, milk, other milk and cream, cheese, ice cream, yogurt and fromage frais, fruit, tea, coffee and water (all P < 0.0001), bread (P = 0.001), vegetables and potatoes (P = 0.007) and preserves and sweet spreads (P = 0.002) and significantly lower intakes of milk alternatives (P < 0.0001), eggs and egg dishes (P = 0.031), chips (P = 0.001), soft drinks (not low calorie) (P < 0.0001) and alco",
+        "summary": "Bonferroni post hoc analysis comparing the highest (Q4) with the lowest (Q1) dai",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "88482251-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7592
+        ],
+        [
+          860,
+          7640
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "holic beverages (P < 0.0001) compared to subjects in Q1.",
+        "summary": "holic beverages (P < 0.0001) compared to subjects in Q1.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "88482251-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7662
+        ],
+        [
+          860,
+          7774
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "There was a significant difference in AHEI across dairy quartiles (P < 0.0001), with the diets of adults in Q2 (P = 0.022), Q3 (P < 0.0001) and Q4 (P < 0.0001) having significantly higher AHEI scores compared with the diets of adults in Q1 (Table 2).",
+        "summary": "There was a significant difference in AHEI across dairy quartiles (P < 0.0001), ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "88482251-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7796
+        ],
+        [
+          860,
+          8004
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Nutrient intakes and adequacy of diets The nutrient intakes and adequacy of the total population and across increasing quartiles of dairy intake are shown in Table 3. When controlling for age, sex and total energy intake (kJ), there was a significant increase in total energy intake, carbohydrate, protein, saturated fat, cis-MUFA, PUFA, calcium, magnesium, potassium, iodine, zinc, thiamine, riboflavin, vitamin B 12 , folate (all P < 0.0001) and iron (P = 0.014) across increasing quartiles of dairy intake.",
+        "summary": "Nutrient intakes and adequacy of diets The nutrient intakes and adequacy of the ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p041",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8026
+        ],
+        [
+          860,
+          8250
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For total energy intake, carbohydrate, protein, saturated fat, cis-MUFA, PUFA, calcium, magnesium, potassium, iodine, zinc, thiamine, riboflavin, vitamin B 12 , folate and iron, there was a significantly higher intake by adults in Q4 compared with Q1 (all P < 0.0001, except cis-MUFA (P = 0.001). In addition, for the nutrients that were significantly different across dairy quartiles (vitamin B 12 , riboflavin, calcium, iodine, folate, zinc, magnesium, iron and potassium), the percentage of subjects below the LRNI was less in Q4 compared with Q1 (Table 3).",
+        "summary": "For total energy intake, carbohydrate, protein, saturated fat, cis-MUFA, PUFA, c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p042",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8272
+        ],
+        [
+          860,
+          8320
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For thiamine, no participants were below the LRNI across dairy quartiles.",
+        "summary": "For thiamine, no participants were below the LRNI across dairy quartiles.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "88482251-p043",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8342
+        ],
+        [
+          860,
+          8534
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Environmental impact of diets When controlling for age, sex and total energy intake (kJ), there was a significant difference in eutrophication potential across increasing quartile of dairy intake (non-adjusted and adjusted values P < 0.0001) with the diets containing the highest amount of dairy (Q4) having significantly higher eutrophication potential (29%) (all P < 0.0001) compared with the diets containing the lowest amount of dairy (Q1, Table 4).",
+        "summary": "Environmental impact of diets When controlling for age, sex and total energy int",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p044",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8556
+        ],
+        [
+          860,
+          8764
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For GHGE and acidification potential, there was a significant difference across dairy quartiles in the nonadjusted model only (both P < 0.0001) with the diets containing the highest amount of dairy (Q4) having significantly higher GHGE and acidification potential (both P < 0.0001) compared with the diets containing the lowest amount of dairy (Q1). However, the significance was lost when the analysis was adjusted for energy intake, age and gender (GHGE; P-trend = 1.00 and acidification potential; P-trend = 0.045, Table 4).",
+        "summary": "For GHGE and acidification potential, there was a significant difference across ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p045",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8786
+        ],
+        [
+          860,
+          8946
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Cost of diets There was a significant difference between dietary costs (£/day) across increasing quartile of dairy intake in the non-adjusted model (P = 0.045); however, there was no significant difference in dietary cost between Q4 and Q1 Values are means ± SD or percentages unless otherwise stated. Values shown for quartiles of total dairy product consumption are min and max grams consumed per day.",
+        "summary": "Cost of diets There was a significant difference between dietary costs (£/day) a",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "88482251-p046",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8968
+        ],
+        [
+          860,
+          9096
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Differences between dairy quartiles for continuous variables were assessed using ANOVA and for categorical variables Chi-square test for independence was used NS not significant a Based on National Statistics Socio-Economic Classification [49] Total n = 1655 Quartiles of dairy product consumption (g/day) P",
+        "summary": "Differences between dairy quartiles for continuous variables were assessed using",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "88482251-p047",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9118
+        ],
+        [
+          860,
+          9358
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Associations between dairy quartiles and biomarkers of health There was a significant difference across increasing quartiles of total dairy intake for height (P = 0.039) in the nonadjusted model (Table 5). When adjusting for age, sex, BMI and energy intake (model 2), there was a significant difference in SBP (P = 0.019) and DBP (P = 0.037) across quartiles of total dairy intake, with individuals in Q4 having significantly lower SBP (P = 0.028) compared with individuals in Q1. There were no other significant differences between quartiles of total dairy intake and biomarkers of health.",
+        "summary": "Associations between dairy quartiles and biomarkers of health There was a signif",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "88482251-p048",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9380
+        ],
+        [
+          860,
+          9604
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Associations between food groups and GHGEs The association between the average UK diet and diets containing varying quantities of dairy intake with GHGEs was further explored in general linear models that examined the contribution of 15 individual food groups to GHGEs, adjusted for age, sex and energy intake (Supplemental Table 4). The food groups contributing most to GHGEs in the total population were meat and meat products, vegetables and potatoes, dairy products, cereals and cereal products and alcohol contributing 24, 16, 15, 14 and 11%, respectively, of total GHGEs.",
+        "summary": "Associations between food groups and GHGEs The association between the average U",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p049",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9626
+        ],
+        [
+          860,
+          9834
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Food groups were differentially associated with GHGEs across dairy quartiles, with two food groups (dairy products, fruit) significantly (dairy products P-trend < 0.0001; fruit = 0.002) contributing to GHGEs in Q4 compared with Q1 (all Q4 vs. Q1 dairy products P < 0.0001; fruit = 0.001). In addition, three food groups (meat and meat products, alcohol, non-alcoholic beverages) were associated with significantly lower (all P-trend < 0.0001) contribution to Values are non-adjusted means (95% CIs).",
+        "summary": "Food groups were differentially associated with GHGEs across dairy quartiles, wi",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p050",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          9856
+        ],
+        [
+          860,
+          10016
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Values shown for quartiles of total dairy product consumption are min and max grams consumed per day. Total dairy products AHEI, Alternative Healthy Eating Index a Based on Bonferroni post hoc test comparing the highest (Q4) and lowest (Q1) dairy quartiles b Differences between food groups across dairy quartiles using general linear models adjusted for age, sex and total energy intake",
+        "summary": "Values shown for quartiles of total dairy product consumption are min and max gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "88482251-p051",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10038
+        ],
+        [
+          860,
+          10246
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Associations between food groups and nutrient intakes The relationship between nutrients and food groups that were significantly different (P < 0.0001) across quartiles of total dairy intake is shown in Supplemental Tables 5-17. Food groups were differentially associated with nutrient intakes across increasing quartiles of dairy intake, with cereal and cereal products significantly contributing to intakes of energy (P-trend = 0.001), carbohydrate Values are non-adjusted means (95% CIs).",
+        "summary": "Associations between food groups and nutrient intakes The relationship between n",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p052",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10268
+        ],
+        [
+          860,
+          10508
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Values shown for quartiles of total dairy product consumption are min and max grams consumed per day EAR estimated average requirement, DRV daily recommended value, LRNI lower reference nutrient intake, RNI reference nutrient intake, NMES non-milk extrinsic sugars a Percentage contribution to ADIs for: carbohydrate (50% total dietary energy); non-milk extrinsic sugars (11% food energy); fat (35% food energy); saturated fat (11% food energy); polyunsaturated fat (6.5% food energy) and monounsaturated fat (13% food energy) b Based on Bonferroni post hoc test comparing the highest (Q4) and lowest",
+        "summary": "Values shown for quartiles of total dairy product consumption are min and max gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "88482251-p053",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10530
+        ],
+        [
+          860,
+          10658
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "(Q1) dairy quartiles c Differences between nutrient intakes across dairy quartiles using general linear models adjusted for age, sex and total energy intake d Retinol equivalents Table 5 Differences in biomarkers of health between quartiles of total dairy intake Values are non-adjusted means (95% CIs).",
+        "summary": "(Q1) dairy quartiles c Differences between nutrient intakes across dairy quartil",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "88482251-p054",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10680
+        ],
+        [
+          860,
+          10904
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Values shown for quartiles of total dairy product consumption are min and max grams consumed per day. Please note the sample size (n = 661), which is due to a large number of missing samples (n = 994) CRP C-reactive protein, DBP diastolic blood pressure, HbA1c glycated hemoglobin, HDL-C high-density lipoprotein cholesterol, LDL-C lowdensity lipoprotein cholesterol, PP pulse pressure, SBP systolic blood pressure, TAG triacylglycerol, Total-C total cholesterol a Differences between health biomarkers across dairy quartiles using general linear models.",
+        "summary": "Values shown for quartiles of total dairy product consumption are min and max gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p055",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          10926
+        ],
+        [
+          860,
+          11150
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Model 1 was non-adjusted and model 2 was adjusted for age, sex and energy intake with additional adjustment of BMI for systolic, diastolic and pulse pressure Table 6 Average GHGE (g CO 2 eqv) produced per mg or µg nutrient by quartiles of total dairy intake among British adults All values are non-adjusted mean (95% CIs). Values shown for quartiles of total dairy product consumption are min and max grams consumed per day. The variable was calculated by dividing GHGE (g CO 2 eqv) per day by nutrient intakes per day with a cut-off when 100% of the RNI was met for each nutrient.",
+        "summary": "Model 1 was non-adjusted and model 2 was adjusted for age, sex and energy intake",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p056",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11172
+        ],
+        [
+          860,
+          11236
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Data shown for nutrients with significant differences (P < 0.05) across quartiles of dairy intake.",
+        "summary": "Data shown for nutrients with significant differences (P < 0.05) across quartile",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "88482251-p057",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11258
+        ],
+        [
+          860,
+          11498
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "No significant differences were found for energy, protein, fat, SFA, vitamin A, thiamine, niacin, vitamin B 6 , vitamins B 12 , folate, vitamin C, iron, selenium and sodium across quartiles of dairy intake GHGE greenhouse gas emissions a Based on Bonferroni post hoc test comparing the highest (Q4) and lowest (Q1) dairy quartiles b Differences between GHGE per unit nutrient across dairy quartiles using general linear models adjusted for age, sex and total energy intake (P-trend = 0.0001), zinc (P-trend = 0.001), magnesium (P-trend = 0.0001), thiamine (P-trend = 0.0001) and folate (P-trend = 0.0",
+        "summary": "No significant differences were found for energy, protein, fat, SFA, vitamin A, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "88482251-p058",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11520
+        ],
+        [
+          860,
+          11568
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "001) in the higher diary diets (Q4) compared with the lower dairy diets (Q1).",
+        "summary": "001) in the higher diary diets (Q4) compared with the lower dairy diets (Q1).",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "88482251-p059",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11590
+        ],
+        [
+          860,
+          11686
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Milk and milk products contributed significantly more to intakes of SFA, PUFA, protein, calcium, potassium, iodine, riboflavin and vitamin B 12 intakes in Q4 compared with Q1 (P-trend all = < 0.0001, Q4 vs. Q1 all P = < 0.0001).",
+        "summary": "Milk and milk products contributed significantly more to intakes of SFA, PUFA, p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "88482251-p060",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11708
+        ],
+        [
+          860,
+          11884
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Discussion In this study, we investigated the nutritional adequacy, cardiometabolic risk profile, diet financial cost and environmental impact of UK diets containing varying quantities of dairy products. In addition, financial and environmental costs were estimated for each diet to assess overall impact of the different diets, and per unit nutrient supplied to estimate the quality costs of each diet.",
+        "summary": "Discussion In this study, we investigated the nutritional adequacy, cardiometabo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p061",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          11906
+        ],
+        [
+          860,
+          12098
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Adults consuming between 274 and 1429 g/day dairy had significantly higher intakes of essential micronutrients including calcium, iodine, vitamin B 12 and riboflavin, supporting previous studies [29][30][31][32]. Dairy products were also among the major food groups contributing to the higher intakes of these nutrients in the diets containing the highest quantity of dairy intake (Q4). However, other foods also contribute to the higher nutrient intake in these diets.",
+        "summary": "Adults consuming between 274 and 1429 g/day dairy had significantly higher intak",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p062",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12120
+        ],
+        [
+          860,
+          12312
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The higher overall AHEI score of those consuming the higher dairy diets compared with the lower dairy diets suggests that consumption of dairy products is associated with a better overall diet quality. Few studies have investigated diets and diet quality associated with dairy intake in UK populations; however, studies conducted in Australian [33] and American [34] adults have also found higher dairy intake to be associated with better overall diet quality.",
+        "summary": "The higher overall AHEI score of those consuming the higher dairy diets compared",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p063",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12334
+        ],
+        [
+          860,
+          12558
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The diets associated with higher dairy intake in the UK population contained more high-fiber breakfast cereals, vegetables, fruit, tea, coffee and water, and lower intakes of alcohol, chips, and soft drinks (not low calorie) compared with the lower dairy diet. Intakes of these foods are associated with a higher diet quality [35]; however, other components of the higher dairy diets were associated with lower diet quality such as higher intakes of sugar, preserves and sweet spreads. The intake of the particular foods reflects habitual diets in the UK.",
+        "summary": "The diets associated with higher dairy intake in the UK population contained mor",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p064",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12580
+        ],
+        [
+          860,
+          12788
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For example, milk is often consumed with breakfast cereals and in tea and coffee within the UK, which is confirmed by the higher wholegrain, other breakfast cereals and tea and coffee intakes within the higher dairy consumers. Furthermore, tea and coffee are also often drunk with biscuits (cookies) or cakes. The intakes of specific foods would be different if Table 7 Average cost per unit of nutrient in GBP (£) across quartiles of total dairy intake among British adults All values are non-adjusted mean (95% CIs).",
+        "summary": "For example, milk is often consumed with breakfast cereals and in tea and coffee",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p065",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          12810
+        ],
+        [
+          860,
+          13034
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Values shown for quartiles of total dairy product consumption are min and max grams consumed per day. The variable was calculated by dividing cost in pounds (£) per day by nutrient intakes per day with a cut-off when 100% of the RNI was met for each nutrient a Based on Bonferroni post hoc test comparing the highest (Q4) and lowest (Q1) dairy quartiles a Differences between dietary cost per mg or µg nutrient across dairy quartiles using general linear models adjusted for age, sex and total energy intake Participants, (n) Quartiles of dairy product consumption (g/day) P a Q1 vs.",
+        "summary": "Values shown for quartiles of total dairy product consumption are min and max gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p066",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13056
+        ],
+        [
+          860,
+          13232
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Q4 the diets of other countries were considered, and this indicates the importance of studying representative diets within countries. Diets containing the highest amount of dairy products had significantly higher eutrophication potential compared with diets containing the lowest, although there was no significant difference in GHGEs and acidification potential across all levels of dairy intake.",
+        "summary": "Q4 the diets of other countries were considered, and this indicates the importan",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p067",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13254
+        ],
+        [
+          860,
+          13446
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Previous studies have investigated the effects of changing specific aspects of the diet such as reducing meat consumption and replacing this with fruits and vegetables, and determining associated reduction in GHGEs [36][37][38][39][40]. In our study, we found that the eutrophication potential was higher for the higher dairy diets compared with the lower intakes, yet the higher dairy diets met significantly more of the nutrient recommendations and had a better AHEI score.",
+        "summary": "Previous studies have investigated the effects of changing specific aspects of t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p068",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13468
+        ],
+        [
+          860,
+          13692
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This finding supports previous research which showed that self-selected diets of French adults that were of high nutritional quality were not associated with lower GHGEs [41]. One possible explanation may simply be that dairy foods have a high nutrient density but a relatively high environmental impact per kg basis. However, other foods, notably breakfast cereals, also contributed to the environmental impact within this diet, which highlights the importance of calculating the environmental impact in the context of real habitual diets.",
+        "summary": "This finding supports previous research which showed that self-selected diets of",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p069",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13714
+        ],
+        [
+          860,
+          13906
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It is of note that these diets represent usual UK population eating habits and the diets have not been optimized for nutrient intake, financial costs or environmental impact. The GHGEs per unit nutrient were significantly lower in the higher dairy diets for a number of micronutrients, particularly calcium, iodine, vitamin B 12 and riboflavin, despite the overall environmental impact of the higher-dairy diets being significantly higher than the lower-dairy diets.",
+        "summary": "It is of note that these diets represent usual UK population eating habits and t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p070",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          13928
+        ],
+        [
+          860,
+          14120
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Therefore, although diets that contain between 274 and 1429 g/day dairy products had a higher overall environmental impact, these diets are a more efficient and effective way of delivering the required nutrients, which have a relatively lower environmental cost for a higher dietary quality. The monetary cost of food is an important factor in food choice [42,43]. In our study, the cost of the average UK adult diet was similar to other studies [28,37].",
+        "summary": "Therefore, although diets that contain between 274 and 1429 g/day dairy products",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p071",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14142
+        ],
+        [
+          860,
+          14366
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "We also found that diets containing the highest amount of dairy were cheaper than the average UK diet and the diets containing the lowest amount of dairy. In addition, the financial cost per unit nutrient was significantly lower for a number of nutrients, particularly calcium, iodine, vitamin B 12 and riboflavin, in the higher compared with the lower quartiles of dairy intake. This may be due to the high concentration of these nutrients in dairy products as well as the lower cost of dairy foods as a source of these nutrients compared with other food groups in the NDNS.",
+        "summary": "We also found that diets containing the highest amount of dairy were cheaper tha",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p072",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14388
+        ],
+        [
+          860,
+          14564
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Assessment of the metabolic profile of individuals illustrated that adults in the higher dairy quartile had lower systolic and diastolic blood pressure compared with adults in the lowest quartile of dairy intake. An increasing number of population studies have also shown inverse associations between dairy product consumption and blood pressure, particularly in subjects with hypertension [44,45]. In addition, Soedamah-Muthu et al.",
+        "summary": "Assessment of the metabolic profile of individuals illustrated that adults in th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "88482251-p073",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14586
+        ],
+        [
+          860,
+          14778
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[15] found a lower relative risk of hypertension with higher total dairy in a meta-analysis of nine prospective cohort studies (pooled RR 0.97; 95% CI 0.95, 0.99 per 200 g/day) [15]. This is also supported by intervention studies including the double blind, crossover RCT performed by our group, which reported a significant reduction in 24-h systolic and diastolic blood pressure after consumption of whey protein (56 g/day) for 8 weeks compared with control [46].",
+        "summary": "[15] found a lower relative risk of hypertension with higher total dairy in a me",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "88482251-p074",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          14800
+        ],
+        [
+          860,
+          15008
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "One possible mechanism by which dairy product consumption may lower blood pressure is the presence of bioactive peptides, released from milk proteins during digestion, which inhibit the angiotensin I-converting enzyme (ACE) [47]. In our analysis, we found no association between dairy intake and serum TAGs, total-, LDL-C and HDL-C levels, which supports the findings of previous studies which have shown that the fatty acids found within complex dairy foods (excluding butter) have minimal effects on blood lipid concentrations [48].",
+        "summary": "One possible mechanism by which dairy product consumption may lower blood pressu",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "88482251-p075",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15030
+        ],
+        [
+          860,
+          15254
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, our findings should be interpreted with caution due to the cross-sectional nature of the NDNS study design. This study faced a number of limitations, including relying on approximate environmental data collected from a number of different sources. There were potential methodological differences, the limited availability of environmental data for every NDNS food group (particularly for acidification and eutrophication potentials) and data were not available for environmental impacts associated with the consumption phase, such as food preparation and waste.",
+        "summary": "However, our findings should be interpreted with caution due to the cross-sectio",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p076",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15276
+        ],
+        [
+          860,
+          15500
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Similar considerations apply to the collection of financial data, which were obtained using retail food prices, and therefore only reflect costs at one point in time and only for the foods reported in the NDNS. In addition, the lack of measures of uncertainty in the prices and environmental impacts is another important limitation of this analysis. The cross-sectional design of the NDNS, with no prospective follow-up, is also a limitation. There were quite a few missing samples (n = 994) in the health analysis, which means that bias may have incurred.",
+        "summary": "Similar considerations apply to the collection of financial data, which were obt",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "88482251-p077",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15522
+        ],
+        [
+          860,
+          15666
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This study is representative of actual dietary intakes in the UK, but may not be representative of the diets of other countries. Despite these limitations, we believe that this study is an important step forward in investigating the environmental impact of typical UK diets using multiple measures of diet-related environmental impact.",
+        "summary": "This study is representative of actual dietary intakes in the UK, but may not be",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "88482251-p078",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          15688
+        ],
+        [
+          860,
+          15912
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusion In conclusion, this study, using data from a nationally representative cross-sectional UK population, has shown that diets containing the highest amount of dairy products have higher nutrient intakes, better overall diet quality and lower blood pressure, although are associated with higher eutrophication potential. However, robust data on the environmental costs of many food components were somewhat limited and this requires urgent attention to facilitate determination of the complete picture of the environmental cost of these diets.",
+        "summary": "Conclusion In conclusion, this study, using data from a nationally representativ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    }
+  ]
+}

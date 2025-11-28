@@ -1,0 +1,1277 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "214247391-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          168
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Microencapsulation of Carotenoids from Red Melinjo (Gnetum gnemon L.) Peels Extract",
+        "summary": "Microencapsulation of Carotenoids from Red Melinjo (Gnetum gnemon L.) Peels Extr",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 88
+      }
+    },
+    {
+      "id": "214247391-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          190
+        ],
+        [
+          860,
+          414
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Red melinjo (Gnetum gnemon L.) peels have high carotenoid content and have the potential to be a natural food colorant. But carotenoids have low resistance to light, heat and pH. Microencapsulation is one of the process that can be done to protect and increase the solubility of carotenoids. This research was aimed to protect and increase the solubility of carotenoid compounds from red melinjo peels extract by microencapsulation process. This research consist of two stage, preliminary and main stage. In preliminary stage, red melinjo peels were extracted using ethyl acetate.",
+        "summary": "Red melinjo (Gnetum gnemon L.) peels have high carotenoid content and have the p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          436
+        ],
+        [
+          860,
+          644
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In the main stage, the extract was encapsulated using spray dryer. The microcapsules were analyzed for moisture content, powder recovery, total carotenoid and phenolic content, encapsulation efficiency, color measurement, solubility, and particle size. The extract has 17693.87 μg/g total carotenoid content and 23.21 mg GAE/g total phenolic content. From the result of this research, there are effects of spray drying inlet temperature and coating material ratio towards characteristics of microcapsules.",
+        "summary": "In the main stage, the extract was encapsulated using spray dryer. The microcaps",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214247391-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          666
+        ],
+        [
+          860,
+          826
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The best microcapsules were obtained using 150°C spray dryer inlet temperature and 100% arabic gum as coating material with moisture content 5.08%, powder recovery 72.45%, total carotenoid content 420.40 μg/g, encapsulation efficiency 91.23%,°hue microcapsules powder 30.95°, total phenolic content 1.12 mg GAE/g, solubility 89.35%, and microcapsules particle diameter 2.85 μm.",
+        "summary": "The best microcapsules were obtained using 150°C spray dryer inlet temperature a",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214247391-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          848
+        ],
+        [
+          860,
+          1072
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Food colorant is a food additive, widely used to add aesthetics, increase the selling value, and contribute to the level of consumer acceptance towards a food product. In general, synthetic food colorants are more widely used because they have lower price and give more stable colour, however continuous use of synthetic food colorant can cause allergic, or in the special case can cause cancer [1]. Melinjo (Gnetum gnemon L.) is a plant widely grown in Indonesia. Melinjo's seed is part of the plant that used as the basic ingredients for emping cracker.",
+        "summary": "Introduction Food colorant is a food additive, widely used to add aesthetics, in",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1094
+        ],
+        [
+          860,
+          1318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, melinjo peel has not been widely used in the food products. Melinjo peels contain carotenoid pigment which is potential as a natural food colorant [2]. According to Cornelia et al. [3], red melinjo peels ethanol extract has the highest total carotenoid content (241.2 ppm) and total phenolic content (0.386 mg GAE/g) compared to green and yellow melinjo peels. As a natural food colorant, carotenoid has low resistance towards pH, light, and heat [4]. Microencapsulation is one of the procedure that can be done to protect sensitive components [5].",
+        "summary": "However, melinjo peel has not been widely used in the food products. Melinjo pee",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1340
+        ],
+        [
+          860,
+          1564
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Microencapsulation works by thinly coating of solid particles, liquid droplets, and liquid dispersions. Encapsulation using spray drying method is suitable for component that are sensitive towards heat because droplet will be coated with film and the heating process only take short times so it won't damage the core material [5]. Besides to increase stability, encapsulation of carotenoid also increase the solubility of carotenoid in water [6]. Microcapsules produced by spray drying method are influenced by the type of its coating material. According to Bustos-Garza et al.",
+        "summary": "Microencapsulation works by thinly coating of solid particles, liquid droplets, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1586
+        ],
+        [
+          860,
+          1810
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[7], use of arabic gum and whey protein isolate (WPI) as a coating material give highest red intensity (a*=28.4-35.1) in astaxanthin oleoresin microcapsules, which is correlated with high carotenoid content. Besides type of coating material, inlet spray drying temperature also affect carotenoid content of microcapsules. In general, inlet spray drying temperature for microencapsulation of carotenoid compound range between 120-200°C [8]. In this research, extraction of carotenoids from red melinjo peels was conducted by using ethyl acetate as a solvent.",
+        "summary": "[7], use of arabic gum and whey protein isolate (WPI) as a coating material give",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1832
+        ],
+        [
+          860,
+          1960
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Then extract had been encapsulated by spray drying method with arabic gum dan WPI as coating material. Microencapsulation used different ratio of arabic gum and WPI, also different inlet temperature to determine the best treatment according to the microcapsule's characteristic.",
+        "summary": "Then extract had been encapsulated by spray drying method with arabic gum dan WP",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "214247391-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1982
+        ],
+        [
+          860,
+          2158
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Material and Equipment The sample used in this research was red melinjo peels (Gnetum gnemon L.) from Tubagus Angke market, Jakarta Barat which came from Serang, Banten, Indonesia. Materials used in this research are ethyl acetate food grade, ethanol pro analysis, distilled water, arabic gum, WPI (Whey Protein Isolate), Folin-Ciocalteu, gallic acid standard, Na 2 CO 3 , petroleum eter pro analysis and aceton pro analysis.",
+        "summary": "Material and Equipment The sample used in this research was red melinjo peels (G",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "214247391-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2180
+        ],
+        [
+          860,
+          2404
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Preliminary Research Extraction procedure of red melinjo peels was done according to Siregar and Utami [9]. First, red melinjo peels will be cleaned by running water, then dried by oven with 50°C temperature for 24 hours. Dried melinjo peels then crushed using dry blender, for then sieved using 35 mesh siever to produce red melinjo peels powder. 75 g of red melinjo peels powder mixed with 300 ml ethyl acetate foodgrade solvent. Method used in the extraction process is maceration in room temperature (±25°C) for 24 hours with constant stirring using shaker.",
+        "summary": "Preliminary Research Extraction procedure of red melinjo peels was done accordin",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2426
+        ],
+        [
+          860,
+          2586
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "When maceration, allumunium foil is used to cover the whole erlenmeyer to protect the extraction process towards the light. After that, the mixture is filtered using Buchner vacuum pump with Whatman filter paper (no. 1). Ethyl acetate as a solvent was then evaporated using rotary vacuum evaporator at 55 o C. Extract produced then keep in sealed dark bottle in the refrigerator.",
+        "summary": "When maceration, allumunium foil is used to cover the whole erlenmeyer to protec",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214247391-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2608
+        ],
+        [
+          860,
+          2832
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Main Research Microencapsulation was done according to Nunes dan Mercadante [10]. In this process, the ratio for core to coating was 1:20. Coating material used consist of two different type which are arabic gum and WPI with ratio 1:0,1:1,0:1 and inlet spray dryer temperature 130,150,170°C. 0.2 g of red melinjo peels extract was dissolved using 1ml ethyl acetate food grade, then solution dissolved again by 10 ml food grade ethanol. 4 g of coating material also dissolved in the separated beaker glass using distilled water at 60°C temperature.",
+        "summary": "Main Research Microencapsulation was done according to Nunes dan Mercadante [10]",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2854
+        ],
+        [
+          860,
+          2998
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The solution of coating material then ultrasonicated for 6 minutes in order to perfectly dissolved. After that, the extract solution was mixed to the coating material solution little by little using drop pippete with constant stirring. Solution then dissolved again by 200 ml distilled water. This solution was used as a feed solution for",
+        "summary": "The solution of coating material then ultrasonicated for 6 minutes in order to p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "214247391-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3020
+        ],
+        [
+          860,
+          3180
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Experimental Design The experimental design used in this research is completely randomized two factorial design which is coating material ratio and inlet spray dryer temperature with two replicates. Variation of arabic gum : WPI are 1:0, 1:1, 0:1 while the variation for inlet spray dryer temperature are 130, 150, dan 170°C. The data obtained were analyzed by ANOVA using SPSS version 20.",
+        "summary": "Experimental Design The experimental design used in this research is completely ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214247391-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3202
+        ],
+        [
+          860,
+          3362
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Parameter Of Analysis In this research, an analysis were carried out in the form of moisture content [11], powder recovery [12], total phenolic content [13], total carotenoid content [14], encapsulation efficiency [15], solubility [16], particle size [17], and particle morphology using SEM. The results of microcapsule moisture content analysis can be seen in Figure 1.",
+        "summary": "Parameter Of Analysis In this research, an analysis were carried out in the form",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214247391-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3384
+        ],
+        [
+          860,
+          3608
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Results and Discussion Note: Different superscript letters state significant differences (p≤0,05) Figure 1. Effect of coating material ratio and inlet temperature towards moisture content of microcapsule Figure 1 shows that the higher the inlet temperature used, the lower the moisture content of microcapsules. The decrease of microcapsule's moisture content is due to the increasing temperature difference between the feed solution which has passed the atomization process and the drying air inside the spray drying device when the inlet temperature used increases.",
+        "summary": "Results and Discussion Note: Different superscript letters state significant dif",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3630
+        ],
+        [
+          860,
+          3694
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Then this will increase the transfer of hot air to the particles so that the evaporation rate increases [18].",
+        "summary": "Then this will increase the transfer of hot air to the particles so that the eva",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 64
+      }
+    },
+    {
+      "id": "214247391-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3716
+        ],
+        [
+          860,
+          3924
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Red Melinjo Peel Extract Characteristic Note: Different superscript letters state significant differences (p≤0,05) Figure 2. Effect of coating material ratio and inlet temperature towards powder recovery of microcapsule Figure 2 shows that, the increasing of inlet temperature, makes the powder recovery of microcapsule also increase. This can occur because the higher the inlet temperature used, will make the process of heat and mass transfer that takes place on the surface of the particles become more efficient.",
+        "summary": "Red Melinjo Peel Extract Characteristic Note: Different superscript letters stat",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214247391-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3946
+        ],
+        [
+          860,
+          4138
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "At lower temperatures, the evaporation process of water molecules cannot done well [21]. Some water molecules that can't evaporate well can make particles form deposits that attach to the drying chamber, so the powder recovery is reduced. At same temperature, microcapsules with 100% arabic gum produce the highest powder recovery. Arabic gum is a carbohydrate-based coating material that has a high molecular weight of between 250,000-1,000,000 g / mol [22].",
+        "summary": "At lower temperatures, the evaporation process of water molecules cannot done we",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214247391-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4160
+        ],
+        [
+          860,
+          4400
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "As coating material, arabic gum has high solubility and low viscosity in aqueous solution, where these properties support the spray drying process conditions [23]. While the use of whey protein as a coating material in the microencapsulation process can increase the viscosity of the solution due to its good emulsifying properties. Solutions with high viscosity can make the flow of feed solution in spray drying unstable because solution can interrupt the atomizer process. This can causes many particles to attach to the wall of the chamber so that the microcapsule yield become decreases .",
+        "summary": "As coating material, arabic gum has high solubility and low viscosity in aqueous",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214247391-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4422
+        ],
+        [
+          860,
+          4598
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Microcapsule with 100% arabic gum as coating material produces higher moisture content than other ratio of coating materials at the same temperature. Arabic gum has more complex structure which makes the bonding between it molecules and water more difficult to release when the drying process occurs [19]. The chemical structure of arabic gum has a large number of branch with hydrophilic groups containing shorter chains.",
+        "summary": "Microcapsule with 100% arabic gum as coating material produces higher moisture c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "214247391-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4620
+        ],
+        [
+          860,
+          4700
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "So that microcapsules with Arabic gum as a coating material can easily absorb water molecules from the air during the handling process of microcapsules after the spray drying [20].",
+        "summary": "So that microcapsules with Arabic gum as a coating material can easily absorb wa",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "214247391-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4722
+        ],
+        [
+          860,
+          4898
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Powder Recovery Powder recovery is amount of microcapsules produced by the spray drying process. Powder recovery also shows the drying process effectiveness. In this study, powder recovery is a ratio between the dry weight of microcapsules and the dry weight of the initial material used. [24] about the microencapsulation of carotenoids from paprika oleoresin, the higher the temperature used, the higher the carotenoid content of microcapsule.",
+        "summary": "Powder Recovery Powder recovery is amount of microcapsules produced by the spray",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "214247391-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4920
+        ],
+        [
+          860,
+          5128
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This happens because at high temperatures, the speed of film formation on the surface of microcapsule particles will increase and produce a more robust surface layer. The film will then act as a protective layer for the active compound component from the migration process to the surface of particle [24]. At 170 ° C, the total carotenoid content of microcapsules decreased. According to Movahhed and Mohebbi [25], the higher the inlet temperature used, the carotenoid content of microcapsules will decrease.",
+        "summary": "This happens because at high temperatures, the speed of film formation on the su",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214247391-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5150
+        ],
+        [
+          860,
+          5390
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This is because at high temperatures oxidative reactions occur in carotenoids and carotenoid degradation rates increase, so it can be concluded that, the optimum microencapsulation temperature of red melinjo peels extract in this study was 150°C, which at this temperature the microcapsules obtained the highest total carotenoid content compared to other temperatures. Above 150°C the carotenoid content of microcapsules decrease due to carotenoid degradation. The main cause of carotenoid degradation is isomerization which is strongly influenced by exposure to light and heat [26].",
+        "summary": "This is because at high temperatures oxidative reactions occur in carotenoids an",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214247391-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5412
+        ],
+        [
+          860,
+          5604
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The reduction of total carotenoid content at temperature 170°C, did not occur in the treatment with 100% WPI as coating material. Based on the data in figure 3, it can be seen that the total carotenoid content of microcapsules with 100% WPI tends to be stable at 170°C. This is due to the ability of WPI as a thermoprotectant. The use of protein-based coating material has several advantages where whey protein can protect functional compounds from heat (thermoprotectan) [27].",
+        "summary": "The reduction of total carotenoid content at temperature 170°C, did not occur in",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214247391-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5626
+        ],
+        [
+          860,
+          5738
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Figure 3 shows that, total carotenoid content of microcapsules increases at an inlet temperature of 150°C but then decreases at temperature 170°C. This happened significantly (p≤0.05) in the treatment with 100% arabic gum and AG-WPI combination.",
+        "summary": "Figure 3 shows that, total carotenoid content of microcapsules increases at an i",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "214247391-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5760
+        ],
+        [
+          860,
+          5888
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Total Carotenoid Content of Microcapsules Microcapsules with 100% arabic gum produced the highest total carotenoid content compared to the other coating treatment. Arabic gum has a good film-forming ability that makes it able to properly encapsulate active components [28].",
+        "summary": "Total Carotenoid Content of Microcapsules Microcapsules with 100% arabic gum pro",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "214247391-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5910
+        ],
+        [
+          860,
+          6134
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Encapsulation Efficiency Encapsulation efficiency is one of the parameter to measure the encapsulation effectiveness to encapsulate active compound. The higher the value of encapsulation efficiency, means that the ability of the coating material to protect the core material is also higher. In this study, encapsulation efficiency is a comparison between the total carotenoid content in microcapsules and the total carotenoid content in the feed solution. Note: Different superscript letters state significant differences (p≤0,05 Figure 4.",
+        "summary": "Encapsulation Efficiency Encapsulation efficiency is one of the parameter to mea",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6156
+        ],
+        [
+          860,
+          6380
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effect of coating material ratio and inlet temperature towards encapsulation efficiency of microcapsules Figure 4 shows that microcapsules with 100% arabic gum produce encapsulation efficiency that significantly higher (p≤0.05) than other microcapsules at the same temperature. The more arabic gum used in the coating material mixture, will increase the encapsulation efficiency of microcapsules. This is due to the chemical structure of arabic gum which consists of branched carbohydrate chains and a small amount of glycoproteins bound through covalent bonds.",
+        "summary": "Effect of coating material ratio and inlet temperature towards encapsulation eff",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "214247391-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6402
+        ],
+        [
+          860,
+          6642
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The form of branched and rounded arabic gum molecules makes it able to form dense film to trap the core components [29]. The use of a single WPI as coating material produced the lowest encapsulation efficiency, this was due to the structural changes and denaturation of WPI when passing extreme conditions during the spray drying process. This condition makes WPI's ability in coating the active components decrease so that the encapsulation efficiency becomes low [30]. Figure 4 also shows that the encapsulation efficiency increases at 150°C. At 170°C, encapsulation efficiency tends to decrease.",
+        "summary": "The form of branched and rounded arabic gum molecules makes it able to form dens",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214247391-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6664
+        ],
+        [
+          860,
+          6808
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "At high temperatures, there can be an imbalance between the process of water molecules evaporation and the process of forming a surface film, where the surface film will form more quickly, resulting in cracks on the surface of the particles which result in degradation of the active components inside the microcapsule [31].",
+        "summary": "At high temperatures, there can be an imbalance between the process of water mol",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "214247391-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6830
+        ],
+        [
+          860,
+          7038
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Solubility of Microcapsules Solubility is one of the important parameters of microcapsule properties because it is expected that the results of microcapsules can be applied to food products as both fortified and natural dyes. Note: Different superscript letters state significant differences (p≤0.05) Figure 5. Effect of coating material ratioand inlet temperature towards solubility of microcapsules Note: Different superscript letters state significant differences (p≤0.05) Figure 6.",
+        "summary": "Solubility of Microcapsules Solubility is one of the important parameters of mic",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "214247391-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7060
+        ],
+        [
+          860,
+          7220
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Effect of inlet temperature towards particle size of microcapsules From figure 6 it can be seen that the particle size of microcapsules has decreased with increasing inlet spray drying temperature. This is caused by the higher heat transfer coefficient at high temperatures, making the evaporation speed of the water molecules in the particles faster which results in a decrease in particle diameter.",
+        "summary": "Effect of inlet temperature towards particle size of microcapsules From figure 6",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "214247391-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7242
+        ],
+        [
+          860,
+          7434
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The use of low inlet temperature will produce microcapsules with high water content due to low evaporation speeds so that microcapsule particles can be easily agglomerated which results in an increasing of particle diameter. From figure 5, it can be seen that the higher the inlet spray drying temperature used, the higher the solubility of microcapsules. The solubility of an sample in water solvent is influenced by the moisture content of the material.",
+        "summary": "The use of low inlet temperature will produce microcapsules with high water cont",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214247391-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7456
+        ],
+        [
+          860,
+          7696
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Microcapsules with high moisture content will be difficult to spread in the water due to the tendency of microcapsules to attach and not form pores. This will make microcapsules difficult to absorb water. Microcapsules with 100% arabic gum produce the highest solubility. This is due to the high solubility of arabic gum in the water. While the use of whey protein isolate coating material produces lower solubility. This is caused by a protein denaturation process that occurs at high temperatures where this denaturation process can affect the functional properties of protein solubility.",
+        "summary": "Microcapsules with high moisture content will be difficult to spread in the wate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "214247391-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7718
+        ],
+        [
+          860,
+          7910
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Particle Size of Microcapsules Microcapsules from each treatment were analyzed for particle size using a microscope with a magnification of 1000 times and using Olympus Stream Start software. figure 7, the morphology of the particles obtained by microcapsules shows a shape that tends to be round with a basin (arrow) on the surface of the particle. These basins are caused by rapid evaporation and contraction of particles during the spray drying process.",
+        "summary": "Particle Size of Microcapsules Microcapsules from each treatment were analyzed f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214247391-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7932
+        ],
+        [
+          860,
+          8028
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Microcapsules with 100% arabic gum produce particles with a non-cracking surface which shows their ability to survive under drying conditions so that they are able to coating the active components well.",
+        "summary": "Microcapsules with 100% arabic gum produce particles with a non-cracking surface",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "214247391-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8050
+        ],
+        [
+          860,
+          8242
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conclusion The inlet spray drying temperature and the ratio of the coating material (arabic gum: WPI) used affect the characteristics and properties of the microcapsules produced. The use of 100% arabic gum coating produced microcapsules with the highest total carotenoid content and efficiency compared to other coating material ratios. The increase in temperature from 130-150°C causes an increase in the total carotenoid content and efficiency of microcapsules.",
+        "summary": "Conclusion The inlet spray drying temperature and the ratio of the coating mater",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "214247391-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8264
+        ],
+        [
+          860,
+          8424
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The best red melinjo peels extract microcapsules are microcapsules with 100% arabic gum coating at 150°C which have a moisture content of 5.08%, 72.45% powder recovery, total carotenoid content 420.40 µg/g, encapsulation efficiency 91.23%, °hue powder microcapsules 30.95°, total phenolic content of 1.12 mg GAE/g, solubility of 89.35%, and diameter of particle size of microcapsules 2.85 µm.",
+        "summary": "The best red melinjo peels extract microcapsules are microcapsules with 100% ara",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    }
+  ]
+}

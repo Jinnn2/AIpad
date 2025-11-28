@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "76634085-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Juan Benet (computer scientist)",
+        "summary": "Juan Benet (computer scientist)",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "76634085-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          331
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Juan Benet (born March 1988) is an American computer scientist. He is the founder and CEO of Protocol Labs, a computer networking research and development company. He designed the InterPlanetary File System (IPFS), a decentralized web protocol, and Filecoin, a peer-to-peer file storage network.",
+        "summary": "Juan Benet (born March 1988) is an Ameri",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "76634085-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          355
+        ],
+        [
+          840,
+          527
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Benet graduated from Stanford University where he studied machine learning. From January 2010 to December 2011, he was CTO of Loki Studios, leading development on the location-based multiplayer mobile game Geomon. The firm was acquired by Yahoo! in May 2013.",
+        "summary": "Benet graduated from Stanford University",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "76634085-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          551
+        ],
+        [
+          840,
+          813
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Benet founded Protocol Labs in May 2014, going through the Y-Combinator incubator that summer, to support development of IPFS and related infrastructure for a distributed web. These included libp2p for network communication, and Filecoin for insuring decentralized storage. To support the Filecoin launch, Benet developed the SAFT legal framework with Marco Santori, and founded CoinList, a token sale and investment platform.",
+        "summary": "Benet founded Protocol Labs in May 2014,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 262
+      }
+    },
+    {
+      "id": "76634085-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          837
+        ],
+        [
+          840,
+          920
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In 2018, Benet was named one of Fortune magazine 's \"40 under 40\" in recognition of his work creating IPFS.",
+        "summary": "In 2018, Benet was named one of Fortune ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    }
+  ]
+}

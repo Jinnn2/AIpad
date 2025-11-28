@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "51392595-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1927 TCU Horned Frogs football team",
+        "summary": "1927 TCU Horned Frogs football team",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "51392595-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          399
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1927 TCU Horned Frogs football team represented Texas Christian University (TCU) as a member the Southwest Conference (SWC) during the 1927 college football season. Led by fifth-year head coach Matty Bell, the Horned Frogs compiled and overall record of 4–3–2 overall with a mark of 1–2–2 in conference play, placing fifth. TCU played their home games at Clark Field, located on campus in Fort Worth, Texas.",
+        "summary": "The 1927 TCU Horned Frogs football team ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 240
+      }
+    }
+  ]
+}

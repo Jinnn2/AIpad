@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "20597418-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Penn State Great Valley",
+        "summary": "Penn State Great Valley",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "20597418-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          399
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Penn State Great Valley School of Graduate Professional Studies is a special mission graduate school of Penn State University located in Malvern, Pennsylvania. Academic offerings include master's programs in engineering, information science, business, data analytics, finance, accounting, and software engineering. Continuing professional education courses and customized corporate training are also offered.",
+        "summary": "Penn State Great Valley School of Gradua",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "20597418-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          423
+        ],
+        [
+          840,
+          730
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Penn State Great Valley, founded in 1963 to provide graduate engineering programs to employees of local businesses, was housed in a rented school building in King of Prussia, Pennsylvania and was known as the King of Prussia Graduate Center. In 1974, the center began offering courses off-site at area businesses. In 1978, the center moved to an old elementary school building in Radnor, Pennsylvania. In 1982 the center moved back to King of Prussia and became the King of Prussia Center for Graduate Studies and Continuing Education.",
+        "summary": "Penn State Great Valley, founded in 1963",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 307
+      }
+    },
+    {
+      "id": "20597418-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          754
+        ],
+        [
+          840,
+          1150
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In 1987, the university acquired 8.5 acres (34,000 m) within the Great Valley Corporate Center in Malvern, Pennsylvania. A new facility was built on the site earning the distinction of being the first permanent campus in the country located within a corporate park. The campus moved to the new location in 1988, introduced a graduate management program, and changed its name to Penn State Great Valley. In 1998, the Board of Trustees approved the Great Valley campus as a distinct School of Graduate Professional Studies. Due to its expanding programs, the Safeguard Scientifics Building was built next to the original facility and opened in 2001 with a 400-seat auditorium and additional classrooms.",
+        "summary": "In 1987, the university acquired 8.5 acr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 396
+      }
+    },
+    {
+      "id": "20597418-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1174
+        ],
+        [
+          840,
+          1257
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The Penn State Great Valley School of Graduate Professional Studies houses two academic divisions:",
+        "summary": "The Penn State Great Valley School of Gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 83
+      }
+    },
+    {
+      "id": "20597418-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1281
+        ],
+        [
+          840,
+          1476
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition to its degree programs, continuing professional education courses and certificate programs are offered in areas of business and technology. Continuing professional education courses can be customized and delivered to companies and organizations at the Penn State Great Valley campus or at their location.",
+        "summary": "In addition to its degree programs, cont",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 195
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "41190748-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "House Arrest (Bulgarian TV series)",
+        "summary": "House Arrest (Bulgarian TV series)",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "41190748-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          466
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "House Arrest (Bulgarian: Домашен арест, romanized: Domashen arest) is a Bulgarian sitcom aired on bTV and produced by bTV Studios. The series marked the dawn of a new generation of Bulgarian cinema and television. Some critics have said that it is the most successful Bulgarian sitcom. The first season aired starting November 24, 2011 as part of the \"Season of Bulgarian TV series\". Directors of production are Peter Valchanov and Nikolay Penchev, Stanislav Todorov - Rogi, Grigor Kumitski and writer Nelly Dimitrova. Chief operator Grigor Kumitski.",
+        "summary": "House Arrest (Bulgarian: Домашен арест, ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 307
+      }
+    },
+    {
+      "id": "41190748-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          490
+        ],
+        [
+          840,
+          662
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "House arrest is a unique product developed based on the model of American sitcoms such as Everybody Loves Raymond, Two and a Half Men, Friends among others. One of the leading British experts in this genre - director Ben Squirt - was part of the consulting team in the beginning stage of the project.",
+        "summary": "House arrest is a unique product develop",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "41190748-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          686
+        ],
+        [
+          840,
+          814
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The series was filmed with HD cameras in 16:9 format, but in his first season was broadcast in 4:3, the second season changes to HD 16:9 format, along with the transition of TV to HD.",
+        "summary": "The series was filmed with HD cameras in",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 128
+      }
+    }
+  ]
+}

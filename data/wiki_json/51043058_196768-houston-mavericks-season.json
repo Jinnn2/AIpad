@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "51043058-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1967–68 Houston Mavericks season",
+        "summary": "1967–68 Houston Mavericks season",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "51043058-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          757
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The 1967–68 Houston Mavericks season was the first season of the Mavericks in the American Basketball Association. On February 2, 1967, Houston was awarded a franchise for $30,000 with William Whitmore, Charles Frazier and Cloyce Box being the buyers. Later that year, T.S. Morrow and Bud Adams, owner of a Houston-based oil company and the AFL's Houston Oilers bought Box's interest in the team. Morrow would be majority owner while Adams was a minority owner. The team had less than stellar attendance, with 3,091 attending the first ever game versus the Chaparrals on October 23, 1967 (losing 100–83). The lowest attended game was held on February 5, 1968, when only 575 people attended. The highest attended game was on February 29, 1968, with 4,965 attendance. Despite all of this, the Mavericks spiraled into the playoffs, in part due to 8 of the 11 teams in the new league being guaranteed a spot into the Playoffs, with Houston getting the final spot by 4 games. In the Semifinals, they were swept by the Dallas Chaparrals in 3 games. This was their only playoff appearance in their two-year history.",
+        "summary": "The 1967–68 Houston Mavericks season was",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 598
+      }
+    },
+    {
+      "id": "51043058-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          781
+        ],
+        [
+          840,
+          819
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Western Division Semifinals",
+        "summary": "Western Division Semifinals",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 38
+      }
+    },
+    {
+      "id": "51043058-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          843
+        ],
+        [
+          840,
+          881
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Mavericks lose series 3–0",
+        "summary": "Mavericks lose series 3–0",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 38
+      }
+    },
+    {
+      "id": "51043058-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          905
+        ],
+        [
+          840,
+          965
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1968 ABA All-Star Game selections (game played on January 9, 1968)",
+        "summary": "1968 ABA All-Star Game selections (game ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    }
+  ]
+}

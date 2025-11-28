@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "846415-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1949 Baseball Hall of Fame balloting",
+        "summary": "1949 Baseball Hall of Fame balloting",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "846415-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          511
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Elections to the Baseball Hall of Fame for 1949 followed the rules in place since 1947, which had governed two successful elections of recent players. The Baseball Writers' Association of America (BBWAA) voted by mail to select from players retired less than 25 years, with provision for a runoff in case of no winner. This year the runoff was necessary to elect one person, Charlie Gehringer. Meanwhile, the Old-Timers Committee, which met on no schedule and not since 1946, responded again to the continuing calls for election of more of the game's earlier stars. It selected Mordecai Brown and Kid Nichols.",
+        "summary": "Elections to the Baseball Hall of Fame f",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 352
+      }
+    },
+    {
+      "id": "846415-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          535
+        ],
+        [
+          840,
+          797
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "An induction ceremony was held in Cooperstown, New York, on June 13, 1949, for inductees of both 1948 and 1949. Of the five total inductees, Kid Nichols and Pie Traynor attended, while Charlie Gehringer was unable to attend. Mordecai Brown and Herb Pennock had both died in 1948. Dignitaries present included National League president Ford Frick, Hall of Fame founder Stephen Carlton Clark, Hall of Fame president Bob Quinn, and Brooklyn Dodgers president Branch Rickey.",
+        "summary": "An induction ceremony was held in Cooper",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 262
+      }
+    },
+    {
+      "id": "846415-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          821
+        ],
+        [
+          840,
+          1083
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "After not having voted on new inductees since 1946, the committee still did not meet formally to consider candidates; instead, the members cast ballots by mail on candidates from the pre-1924 era. This minor action temporarily decreased criticism that earlier players were being overlooked, but it would be the only attempt between 1946 and 1953 to elect players from this period, and there was no attempt to review managers and other non-playing candidates.",
+        "summary": "After not having voted on new inductees ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 262
+      }
+    },
+    {
+      "id": "846415-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1107
+        ],
+        [
+          840,
+          1167
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "On May 9, it was announced that two pitchers had been selected:",
+        "summary": "On May 9, it was announced that two pitc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 60
+      }
+    },
+    {
+      "id": "846415-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1191
+        ],
+        [
+          840,
+          1341
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Nichols was still living, but Brown had died the previous year. They were formally inducted on June 13 along with Charlie Gehringer and the 1948 selections, Pie Traynor and the late Herb Pennock; Nichols and Traynor were in attendance.",
+        "summary": "Nichols was still living, but Brown had ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    },
+    {
+      "id": "846415-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1365
+        ],
+        [
+          840,
+          1515
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The selection of these two pitchers from the period between 1890 and 1916 was roundly applauded, but it was noted that stars of the earlier era had been ignored once again, as well as position players from the same period.",
+        "summary": "The selection of these two pitchers from",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    }
+  ]
+}

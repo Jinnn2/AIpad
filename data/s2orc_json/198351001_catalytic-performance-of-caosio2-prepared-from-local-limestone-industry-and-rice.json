@@ -1,0 +1,1277 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "198351001-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          204
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Catalytic Performance of CaO/SiO2 Prepared from Local Limestone Industry and Rice Husk Silica",
+        "summary": "Catalytic Performance of CaO/SiO2 Prepared from Local Limestone Industry and Ric",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 124
+      }
+    },
+    {
+      "id": "198351001-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          226
+        ],
+        [
+          860,
+          434
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This research was conducted to study the performance of CaO/SiO2 prepared from local limestone and rice husk silica as catalyst for transesterification of coconut oil. A series of catalysts with CaO loads of 5, 10, 15, 20, and 25% relative to silica was prepared using solgel method, followed by calcination at 700 °C for six hours. The catalysts were then used to evaluate the effect of CaO loads on percent of conversion of coconut oil. Several kinetic factors associated with transesterification was also investigated.",
+        "summary": "This research was conducted to study the performance of CaO/SiO2 prepared from l",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          456
+        ],
+        [
+          860,
+          616
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The products of transesterification were analyzed using GC-MS technique, revealing that they are composed methyl esters of fatty acid composing coconut oil. Quite significant effect of CaO loads observed, in which the higher the load, the higher the percent of conversion. However, it should be noted that the use of 25% CaO led to formation of soap due to leaching of some CaO from the catalyst.",
+        "summary": "The products of transesterification were analyzed using GC-MS technique, reveali",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "198351001-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          638
+        ],
+        [
+          860,
+          862
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Taking this leaching into account, it was then concluded that percent of conversion of 98.3%, is the best result, which was obtained with the use of catalyst with CaO load of 20%, reaction time of 60 minutes, methanol to oil ratio of 8:1, and the catalyst amount of 5% relative to mass of the oil. Key word: Transesterification, rice husk, silica, limestone, biodiesel INTRODUCTION In the current energy market, biodiesel has reached commercial use as a blend for fossil diesel, and it is expected that the role of this renewable fuel will continue to increase.",
+        "summary": "Taking this leaching into account, it was then concluded that percent of convers",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          884
+        ],
+        [
+          860,
+          1044
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This expectation is driving factor for continuous development of more efficient production technologies. One of the focuses of current research is the development of heterogeneous catalysts as a substitute for homogeneous catalysts commonly used, either strong acids such as nitric acid [1] and sulphuric acid [2] or strong base primarily NaOH [2] and KOH [3].",
+        "summary": "This expectation is driving factor for continuous development of more efficient ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "198351001-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1066
+        ],
+        [
+          860,
+          1290
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This switch is driven by the fact that, despite showing good performance, homogeneous catalysts are also constrained by various technical problems, such as the difficulty of separating catalysts from biodiesel, the corrosive nature of catalysts. The lack of opportunity for reuse of catalyst is another disadvantage of homogeneous catalyst that should be taken into account. Using heterogeneous catalyst on the other hand is not constrained by technical drawbacks with the use of homogeneous catalysts, while catalyst reuse is very possible.",
+        "summary": "This switch is driven by the fact that, despite showing good performance, homoge",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1312
+        ],
+        [
+          860,
+          1472
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These features make heterogeneous catalysts more attractive and for this reason, development of heterogeneous many types of heterogeneous catalyst have been developed. Heterogeneous catalyst relies on metal oxide bearing acid or base character as active site, such as TiO2 [4-5], ZnO [6-7], MgO [8-10], and CaO [9, 11-13]. In principle, these metal J. Pure App. Chem. Res., 2019, 8 (2), 170-178",
+        "summary": "These features make heterogeneous catalysts more attractive and for this reason,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "198351001-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1494
+        ],
+        [
+          860,
+          1718
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "INTRODUCTION In the current energy market, biodiesel has reached commercial use as a blend for fossil diesel, and it is expected that the role of this renewable fuel will continue to increase. This expectation is driving factor for continuous development of more efficient production technologies. One of the focuses of current research is the development of heterogeneous catalysts as a substitute for homogeneous catalysts commonly used, either strong acids such as nitric acid [1] and sulphuric acid [2] or strong base primarily NaOH [2] and KOH [3].",
+        "summary": "INTRODUCTION In the current energy market, biodiesel has reached commercial use ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1740
+        ],
+        [
+          860,
+          1964
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "This switch is driven by the fact that, despite showing good performance, homogeneous catalysts are also constrained by various technical problems, such as the difficulty of separating catalysts from biodiesel, the corrosive nature of catalysts. The lack of opportunity for reuse of catalyst is another disadvantage of homogeneous catalyst that should be taken into account. Using heterogeneous catalyst on the other hand is not constrained by technical drawbacks with the use of homogeneous catalysts, while catalyst reuse is very possible.",
+        "summary": "This switch is driven by the fact that, despite showing good performance, homoge",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1986
+        ],
+        [
+          860,
+          2130
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "These features make heterogeneous catalysts more attractive and for this reason, development of heterogeneous many types of heterogeneous catalyst have been developed. Heterogeneous catalyst relies on metal oxide bearing acid or base character as active site, such as TiO 2 [4][5], ZnO [6][7], MgO [8][9][10], and CaO [9,[11][12][13].",
+        "summary": "These features make heterogeneous catalysts more attractive and for this reason,",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "198351001-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2152
+        ],
+        [
+          860,
+          2360
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In principle, these metal oxides can be used directly as catalyst, however, in practice they are generally incorporated with solid supports having porous structure, such as silica [9,[13][14], alumina [15][16][17], and zeolite [18][19]), which adsorb the reactant to enhance the effective contact between the reactant and catalyst. Of various metal oxides with catalytic activity, CaO is an interesting oxide since it has high basicity, therefore it is a suitable replacement of homogeneous base catalyst.",
+        "summary": "In principle, these metal oxides can be used directly as catalyst, however, in p",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2382
+        ],
+        [
+          860,
+          2606
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition, CaO can be produced from limestone mineral abundantly available in nature, therefore CaO is much cheaper than other metal oxides. In the use of CaO, one drawback that should be considered is the occurrence of soap formation (saponification) due to formation of Ca(OH) 2 as a result of water resulted from the reaction of fatty acid and alcohol. Recognizing its high catalytic activity together with the need to prevent soap formation, CaO has been used in various catalyst systems using different supports such as silica [9,13], alumina [17,20] and zeolite [18].",
+        "summary": "In addition, CaO can be produced from limestone mineral abundantly available in ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2628
+        ],
+        [
+          860,
+          2836
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this study, a series of CaO/SiO 2 catalysts was synthesized from locally produced CaCO 3 and rise husk silica (RHS) extracted using sol-gel method [9,13]. The catalysts with different CaO loads of 5 to 25% mass relative to rice husk silica (RHS) were synthesized using sol-gel method followed by calcination of the catalysts at 700 o C for six hours. The catalysts were then used in transesterification of coconut oil with methanol and the transesterification products were analyzed using GC-MS technique.",
+        "summary": "In this study, a series of CaO/SiO 2 catalysts was synthesized from locally prod",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2858
+        ],
+        [
+          860,
+          2986
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Varying the CaO loads is intended to provide an opportunity to evaluate the effect of the CaO loads on the percentage of conversion of coconut oil into biodiesel. In addition, the variation is also useful to evaluate whether the CaO can be strongly bound to RHS, preventing the soap formation problem.",
+        "summary": "Varying the CaO loads is intended to provide an opportunity to evaluate the effe",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "198351001-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3008
+        ],
+        [
+          860,
+          3200
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "EXPERIMENT Chemicals and instrumentation Sodium hydroxide, nitric acid, and methanol used are Reagent grade (Aldrich). Calcium carbonate with the Ca content of 98% was obtained from purified limestone from Halaban, Payakumbuh, West Sumatera, and rice husk (RH) from local rice milling industry, in the City of Bandar Lampung, Lampung. The RH was soaked in distilled water overnight. Sinking RH presumably having high silica content, was collected, while floating RH was discharged.",
+        "summary": "EXPERIMENT Chemicals and instrumentation Sodium hydroxide, nitric acid, and meth",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3222
+        ],
+        [
+          860,
+          3318
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The main equipments used are a Nabertherm electrical furnace (Lilienthal, Germany) for calcination of the catalyst and GCMS-QP2010 SE SHIMADZU to analyze transesterification products.",
+        "summary": "The main equipments used are a Nabertherm electrical furnace (Lilienthal, German",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "198351001-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3340
+        ],
+        [
+          860,
+          3420
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Procedure Extraction of rice husk silica (RHS) Rice husk silica (RHS) was obtained using an alkali extraction method, as previously reported [13,21].",
+        "summary": "Procedure Extraction of rice husk silica (RHS) Rice husk silica (RHS) was obtain",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "198351001-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3442
+        ],
+        [
+          860,
+          3650
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Typical extraction procedure consists of 30 minute boiling of 50 g dried mixed with 500 ml of 1.5% NaOH solution, leaving the mixture overnight at room temperature, separating the filtrate contains silica sol (SS) and residue, neutralizing the SS by dropwise addition of 10% HNO 3 solution to transform the SS into gel, aging the gel for three days, rinsing the gel repeatedly with de-ionized water to remove the excess of acid, oven drying of the gel 110 °C for eight hours, and finally grinding the dried RHS into powder.",
+        "summary": "Typical extraction procedure consists of 30 minute boiling of 50 g dried mixed w",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3672
+        ],
+        [
+          860,
+          3896
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Preparation of CaO/SiO 2 Preparation of CaO/SiO 2 catalyst was carried out using sol-gel technique [13], in which the specified amount of RHS was dissolved in 1.5% NaOH solution and specified amount of CaCO 3 was dissolved in 10% HNO 3 solution. The CaCO 3 solution was slowly added into RHS solution under stirring, and the mixture was allowed to transform into gel. The composition of the catalysts precursors are listed in Table 1. The catalysts precursors were aged for three days, and subsequently washed with distilled water until the pH of the water was in the neutral range.",
+        "summary": "Preparation of CaO/SiO 2 Preparation of CaO/SiO 2 catalyst was carried out using",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3918
+        ],
+        [
+          860,
+          4030
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The washed samples were then oven dried at 100 o C for eight hours, and then ground into powder. Finally, the dry samples were calcined at 700 °C using temperature program with the heating rate of 5 °C/min, and holding time of 6 hours at peak temperature.",
+        "summary": "The washed samples were then oven dried at 100 o C for eight hours, and then gro",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "198351001-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4052
+        ],
+        [
+          860,
+          4244
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Transesterification experiment Transesterification experiment was carried using reflux unit with a 500 mL round bottom flask as reactor equipped with water condenser situated on heating magnetic stirrer. To investigate the effect of CaO loads, a series of the experiment was commenced using 25 mL of coconut oil, 100 mL of methanol (methanol to oil ratio of 4:1), and 5% of catalyst (mass percent of catalyst relative to volume of coconut oil). The mixture was refluxed for 90 minutes at 70 °C.",
+        "summary": "Transesterification experiment Transesterification experiment was carried using ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4266
+        ],
+        [
+          860,
+          4458
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "At the completion of the experiment, the product was transferred into separatory funnel and allowed to separate into two layers. The layers were separated and the volume of upper and bottom layer was measured. The % conversion was calculated using the the following equation below [22]. where V i = initial volume of coconut oil (mL) and V f = the volume of unreacted oil (mL). The upper layer was also analyzed using GC-MS method to identify the chemical components composing the product.",
+        "summary": "At the completion of the experiment, the product was transferred into separatory",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4480
+        ],
+        [
+          860,
+          4608
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In addition to provide information about the effect of CaO loads on the catalyst performance, the experiments also indicate the best catalyst to be used further to investigate the effect of other variables, including reaction times, the ratios of methanol to oil, and the amounts of catalysts.",
+        "summary": "In addition to provide information about the effect of CaO loads on the catalyst",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "198351001-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4630
+        ],
+        [
+          860,
+          4790
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The effect of reaction times was studied by carrying out experiments at different times of 60, 90, and 120 minutes, the effect of methanol to ratios was evaluated by conducting the experiments using the methanol to oil (v/v) of 4:1; 6:1, and 8:1, and the effect of catalyst amounts was studied by the experiments using 5, 10, and 15% catalyst, relative to the volume of oil.",
+        "summary": "The effect of reaction times was studied by carrying out experiments at differen",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    },
+    {
+      "id": "198351001-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4812
+        ],
+        [
+          860,
+          4988
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Analysis of transesterification product Identification of chemical composition of the transesterification experiments was conducted with the aid of gas chromatography-mass spectroscopy (GC-MS) technique. The instrument used is GCMS-QP2010 Se Shimadzu, equipped with 30 m long and 0.32 mm internal diameter HP SMS 30 m column, operated in the EI mode at 70 EV using helium as carrier gas and nitrogen as make up gas to give a 60 mL/min total flow rate.",
+        "summary": "Analysis of transesterification product Identification of chemical composition o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    },
+    {
+      "id": "198351001-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5010
+        ],
+        [
+          860,
+          5154
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Tentative identification of the components in the sample was done by comparing the mass spectra of the component to those published in the MS Library System NIST62, Wiley 7, database. The relative amount (%) of each component was estimated by dividing the peak area of the component with the total peak area of all components.",
+        "summary": "Tentative identification of the components in the sample was done by comparing t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "198351001-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5176
+        ],
+        [
+          860,
+          5384
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "RESULT AND DISCUSSION The effect of CaO loads The results of transesterification reactions displaying the effect of CaO loads on conversion of coconut oil is presented as bar chart in Figure 1. The experimental results presented in Figure 1 clearly demonstrated quite significant effect of CaO loads. As can be seen, increasing the CaO load is following by increased percent of conversion achieved. This trend justifies the role of CaO loaded as active site as has been observed by others in previous studies [17,23,24].",
+        "summary": "RESULT AND DISCUSSION The effect of CaO loads The results of transesterification",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5406
+        ],
+        [
+          860,
+          5630
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "It is also evident that percent of conversion increases quite significantly with the use of catalysts loaded with CaO up to 15 %, however no significant increase was observed with the use of catalysts loaded with 15 to 25% CaO. This trend implies that with the use of 15 to 25% CaO, the CaO is sufficient to cover the surface of the catalyst, providing the sites for effective reaction to take place. Unfortunately, with the use of catalyst loaded with 25% CaO, the formation of soap was observed, indicating the occurrence of CaO leaching from the catalyst network.",
+        "summary": "It is also evident that percent of conversion increases quite significantly with",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5652
+        ],
+        [
+          860,
+          5764
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Taking this problem into consideration, it was then decided that the best catalyst for further experiments is the one loaded with 20% CaO. The percent of conversion achieved with this selected catalyst is 92%, which is comparable with the results reported by others.",
+        "summary": "Taking this problem into consideration, it was then decided that the best cataly",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "198351001-p029",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5786
+        ],
+        [
+          860,
+          6010
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The effect of reaction times In transesterification reaction for biodiesel production, reaction time is acknowledged as one of prime factors influencing the reaction yield achieved. To investigate the effect of this variables, the experiments with different reaction times were carried out using the catalyst In brief, it can be seen in Figure 2 that the percent of conversion obtained from the 30 minutes reaction time is significantly smaller than those obtained from the experiments performed at 60 and 90 minutes, while the results of the last two reactions are almost the same.",
+        "summary": "The effect of reaction times In transesterification reaction for biodiesel produ",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p030",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6032
+        ],
+        [
+          860,
+          6144
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For this reason, it was concluded that 60 minutes reaction time is sufficient to achieved optimum result. Comparing the results in Figure 2 to those in Figure 1, it can be seen that the effect of catalyst is more significant than that of reaction time.",
+        "summary": "For this reason, it was concluded that 60 minutes reaction time is sufficient to",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "198351001-p031",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6166
+        ],
+        [
+          860,
+          6358
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The effect of methanol to oil ratios It is well known that methanol and vegetable oil is no reactive to each other, and transesterification reaction is a reversible reaction. Due to these basic features, in addition to catalyst, another way applied to manipulate the reaction in order optimize the formation of product is by using methanol in excess. In this respect, the ratio of methanol to oil is another acknowledged variable of transesterification reaction.",
+        "summary": "The effect of methanol to oil ratios It is well known that methanol and vegetabl",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p032",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6380
+        ],
+        [
+          860,
+          6572
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this study, the effect of methanol to ratios was evaluated by carrying out the experiments using different ratios of the two reactants. The experimental results presented in Figure 3 clearly demonstrated the very strong effect of this particular variable. As can be seen, very close to complete conversion of the oil (96.6%) was achieved with the methanol to oil ratio of 8:1, while the results obtained with the ratios of 4:1 and 6:1 show no significant difference.",
+        "summary": "In this study, the effect of methanol to ratios was evaluated by carrying out th",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p033",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6594
+        ],
+        [
+          860,
+          6786
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The effect of catalyst amounts The last variable investigated in this study is the amount of catalyst used, by undertaking the experiments with different amounts of catalyst. The results obtained are shown in Figure 4. The experimental results presented in Figure 4 indicate that the optimum percent of conversion (98.3%) was achieved with the use of 5% catalyst, and this percentage is much higher than those obtained with the use of 10 and 15% catalyst.",
+        "summary": "The effect of catalyst amounts The last variable investigated in this study is t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p034",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6808
+        ],
+        [
+          860,
+          6952
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In this respect, it can be implied that the use of excessive catalyst might impart the negative effect in a sense lead to reduced percent of conversion. The trend of the effect of CaO loads on transesterification as observed in this study has been reported by others in the experiments with varied CaO loaded catalyst and different feedstocks [23,24].",
+        "summary": "In this respect, it can be implied that the use of excessive catalyst might impa",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "198351001-p035",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          6974
+        ],
+        [
+          860,
+          7214
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "GC-MS analysis Theoretically, transesterification of vegetable oil with methanol will lead to formation of methyl esters of the fatty acids composing the oil. These esters are also known fatty acid methyl esters (FAMEs) or biodiesel. To confirm the production of these esters, the transesterification product is commonly analyzed using GC-MS technique. In this research, this technique was applied to analyze the reaction products. The chemical components of the products were identified with the aid of NIST12 Library System Software, which contains MS data of various reference compounds.",
+        "summary": "GC-MS analysis Theoretically, transesterification of vegetable oil with methanol",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "198351001-p036",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7236
+        ],
+        [
+          860,
+          7460
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The typical example of GC chromatogram of the transesterification products is presented in Figure 5, and the components identified with the aid of library system is listed in Table 2. As can be seen in Figure 5, there are nine peaks in the chromatogram, suggesting that the product composed of nine different compounds. These compounds presented in Table. 2 The data in Table 2 also indicate that methyl laurate emerges as the main component. This is in accordance with previous reports describing the existence of lauric acid as the main component of coconut oil [5,25].",
+        "summary": "The typical example of GC chromatogram of the transesterification products is pr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "198351001-p037",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7482
+        ],
+        [
+          860,
+          7690
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The data in Table 2 also displays that the methylesters of fatty acids generally composing coconut oil are present in the biodiesel produced. In this respect it can be concluded that the catalysts synthesized are able to convert all types of fatty acid present in coconut oil into biodiesel, suggesting the potential use of the catalyst for industrial application. Many studies have reported the use of CaO obtained from different sources as catalysts for biodiesel production, with high % conversion or biodiesel yield.",
+        "summary": "The data in Table 2 also displays that the methylesters of fatty acids generally",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "198351001-p038",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7712
+        ],
+        [
+          860,
+          7904
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For example, in previous study [23] CaO produced from Ca(NO 3 ) 2 .4H 2 O was used to prepare CaO-La 2 O 3 catalyst. The catalyst was then applied for transesterification of Jatropha curcas oil and the yield of 98.76% was achieved, which is comparable with the result obtained in this study. In another study [26], CaO/SiO 2 catalyst was prepared using egg shells and rice husk silica for transesterification of waste cooking oil, achieving the biodiesel yield of 90 %. Widayat et al.",
+        "summary": "For example, in previous study [23] CaO produced from Ca(NO 3 ) 2 .4H 2 O was us",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "198351001-p039",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          7926
+        ],
+        [
+          860,
+          8166
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "[27] compared the activity of CaO catalysts prepared from three different sources (limestone, Ca(OH) 2 and commercial CaCO 3 ) for transesterification of cooking oil. It was reported that the catalyst from limestone worked better than the other two catalysts, with the biodiesel yield of 89.98% was achieved. Comparing the results obtained in this current study with those reported in the above quoted previous studies, it can be seen that the biodiesel yields achieved using CaO based catalyst are practically comparable regardless the sources of CaO and the types of biodiesel feedstock used.",
+        "summary": "[27] compared the activity of CaO catalysts prepared from three different source",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "198351001-p040",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          8188
+        ],
+        [
+          860,
+          8348
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "CONCLUSION The experimental results obtained demonstrated that the catalysts prepared exhibit promising potential as heterogeneous catalyst for biodiesel production. Very high conversion (98.3% percent of conversion) of the coconut oil into corresponding FAMEs was achieved with the use of catalyst with 20% CaO load with the amount of 5%, at 60 minutes reaction, and 8:1 methanol to oil ratio.",
+        "summary": "CONCLUSION The experimental results obtained demonstrated that the catalysts pre",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 160
+      }
+    }
+  ]
+}

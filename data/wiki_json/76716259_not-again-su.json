@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "76716259-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Not Again SU",
+        "summary": "Not Again SU",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "76716259-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          511
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The hashtag and student led organization #NotAgainSU began circulating after several racist incidents occurred on the campus of Syracuse University, during the academic course of 2019-2021. Initial reports of racist paraphernalia occurred early November in the dorm buildings of first- and second-year undergraduate students. After nearly a month of daily reports, Syracuse students organized a sit-in where they occupied, and created an elaborate list of 19 demands for Chancellor Kent Syverud to sign. After several protests, some taking place at his persona residence, the list was signed with few revisions on November 21st.",
+        "summary": "The hashtag and student led organization",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 352
+      }
+    },
+    {
+      "id": "76716259-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          535
+        ],
+        [
+          840,
+          752
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The #NotAgainSU protestors made a list of 19 demands to the University which was later expanded to 34 after Chancellor Kent Syverud signed the initial list. The protestor's demands focus on the improvement of marginalized student experiences on campus as well as improved University wide education on diversity with a specific focus on Anti-Racism.",
+        "summary": "The #NotAgainSU protestors made a list o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 217
+      }
+    },
+    {
+      "id": "76716259-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          776
+        ],
+        [
+          840,
+          1083
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The protestors called for punishments for the students involved in hate crimes and bias related incidents based on their level of involvement, reform of the SEM100 course now called FYS 101 and mandatory education of faculty and staff on diversity and anti-racism. The demands also included stronger anti-harassment policies, an open forum between the University and students in order for the grievances of marginalized students to be addressed and published updates from the University on their progress in meeting the protestors demands.",
+        "summary": "The protestors called for punishments fo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 307
+      }
+    },
+    {
+      "id": "76716259-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1107
+        ],
+        [
+          840,
+          1459
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "In terms of the improvement of the experience of marginalized students on campus, the protestors demanded housing reforms including the prioritization of disabled students in the housing selection process and the use of roommate selection platforms such as My College Roomie in order for students to select roommates of similar backgrounds and interests. They demanded increased funding for counseling services which better represent marginalized students, development of a multicultural center, recognition of Multicultural Greek life and increased financial aid funding for students of color.",
+        "summary": "In terms of the improvement of the exper",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 352
+      }
+    },
+    {
+      "id": "76716259-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1483
+        ],
+        [
+          840,
+          1857
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The demands also addressed the protestors specific concerns with the administration and Department of Public Safety processes and procedures. These demands included timelier responses to racial incidences on campus and more transparency regarding these incidences. They also demanded an external review of the Department of Public Safety singling out Associate Chief John Sardino in their request. They also demanded the removal of multiple university administration leaders including Chancellor Kent Syverud, Senior VP for Enrollment and Student Experience Dolan Evanovich, DPS Chief Bobby Maldonado, and Deputy Chief John Sardino.",
+        "summary": "The demands also addressed the protestor",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 374
+      }
+    }
+  ]
+}

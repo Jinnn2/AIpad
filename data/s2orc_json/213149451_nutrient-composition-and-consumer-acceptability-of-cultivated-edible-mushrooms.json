@@ -1,0 +1,905 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "213149451-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          860,
+          168
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Nutrient Composition and Consumer Acceptability of Cultivated Edible Mushrooms",
+        "summary": "Nutrient Composition and Consumer Acceptability of Cultivated Edible Mushrooms",
+        "fontFamily": "sans-serif",
+        "fontSize": 36,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 88
+      }
+    },
+    {
+      "id": "213149451-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          190
+        ],
+        [
+          860,
+          414
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Shortage of food and diminishing quality of human health will be growing concerns because of the population increase and urbanization, with a concomitant reduction in cultivable land. Converting lignocellulosic agricultural and forest residues into protein-rich mushrooms is one of the most economically viable and sustainable biotechnology processes to address world food demand, especially protein demand1. Mushrooms because of its enticing flavor, taste and ample nutrition are gaining popularity and has scope to alleviate malnutrition.",
+        "summary": "Shortage of food and diminishing quality of human health will be growing concern",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          436
+        ],
+        [
+          860,
+          660
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Though India is not a major producer of mushrooms but has potential to cultivate them in the future. It is a good source of lysine and can complement to cereal based Indian diet. Further it possesses many medicinal attributes. Despite this fact mushroom cultivation and its utilization is not catching up fast. Mushrooms are an important commodity worldwide. Cultivated mushrooms now become popular all over the world. The consumption of mushrooms can make a valuable addition to the often unbalanced diets of people in developing countries Marshall and Nair2.",
+        "summary": "Though India is not a major producer of mushrooms but has potential to cultivate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p003",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          682
+        ],
+        [
+          860,
+          890
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, a thorough understanding of consumption trends is not yet available. In India especially in Kerala State, the nutrient composition of edible cultivated mushrooms and consumer preferences and perceptions has not been studied. It is in this background the present study “Nutrient composition and consumer acceptability of cultivated edible mushrooms” becomes immensely relevant, because mushrooms with its huge health benefits can solve many health problems and problems related to malnutrition.",
+        "summary": "However, a thorough understanding of consumption trends is not yet available. In",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "213149451-p004",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          912
+        ],
+        [
+          860,
+          1136
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Introduction Shortage of food and diminishing quality of human health will be growing concerns because of the population increase and urbanization, with a concomitant reduction in cultivable land. Converting lignocellulosic agricultural and forest residues into protein-rich mushrooms is one of the most economically viable and sustainable biotechnology processes to address world food demand, especially protein demand 1 . Mushrooms because of its enticing flavor, taste and ample nutrition are gaining popularity and has scope to alleviate malnutrition.",
+        "summary": "Introduction Shortage of food and diminishing quality of human health will be gr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p005",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1158
+        ],
+        [
+          860,
+          1382
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Though India is not a major producer of mushrooms but has potential to cultivate them in the future. It is a good source of lysine and can complement to cereal based Indian diet. Further it possesses many medicinal attributes. Despite this fact mushroom cultivation and its utilization is not catching up fast. Mushrooms are an important commodity worldwide. Cultivated mushrooms now become popular all over the world. The consumption of mushrooms can make a valuable addition to the often unbalanced diets of people in developing countries Marshall and Nair 2 .",
+        "summary": "Though India is not a major producer of mushrooms but has potential to cultivate",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p006",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1404
+        ],
+        [
+          860,
+          1612
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "However, a thorough understanding of consumption trends is not yet available. In India especially in Kerala State, the nutrient composition of edible cultivated mushrooms and consumer preferences and perceptions has not been studied. It is in this background the present study \"Nutrient composition and consumer acceptability of cultivated edible mushrooms\" becomes immensely relevant, because mushrooms with its huge health benefits can solve many health problems and problems related to malnutrition.",
+        "summary": "However, a thorough understanding of consumption trends is not yet available. In",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "213149451-p007",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1634
+        ],
+        [
+          860,
+          1730
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Materials and Methods The methodology of the present study \"Nutrient composition and consumer acceptability of cultivated edible mushrooms\" was discussed under three different phases -",
+        "summary": "Materials and Methods The methodology of the present study \"Nutrient composition",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "213149451-p008",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1752
+        ],
+        [
+          860,
+          1800
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Selection of Area The area selected for the study was Ernakulam city, Kerala.",
+        "summary": "Selection of Area The area selected for the study was Ernakulam city, Kerala.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "213149451-p009",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1822
+        ],
+        [
+          860,
+          1902
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Selection of Subjects The study population selected for the study comprised of home makers of hundred families. The study population was selected using convenience sampling.",
+        "summary": "Selection of Subjects The study population selected for the study comprised of h",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "213149451-p010",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          1924
+        ],
+        [
+          860,
+          2036
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Selection of Tool The method used to collect data in the present study was house hold survey. Information regarding consumer acceptance of mushrooms were collected using a combination of open-ended and closed ended questionnaires.",
+        "summary": "Selection of Tool The method used to collect data in the present study was house",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "213149451-p011",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2058
+        ],
+        [
+          860,
+          2106
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Selection of Area Markets in Ernakulam, Kerala were selected for the study.",
+        "summary": "Selection of Area Markets in Ernakulam, Kerala were selected for the study.",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 48
+      }
+    },
+    {
+      "id": "213149451-p012",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2128
+        ],
+        [
+          860,
+          2240
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Selection of Tool Market survey was done using observation technique and questionnaire. Questionnaire consisted of questions including general observations, type of mushroom and cost, purchase, availability, demand, storage, income, packaging etc.",
+        "summary": "Selection of Tool Market survey was done using observation technique and questio",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "213149451-p013",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2262
+        ],
+        [
+          860,
+          2342
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Conduct of Study and Data Collection A total of 10 shops representing local, super and hyper markets were purposefully selected to study the market availability of mushrooms.",
+        "summary": "Conduct of Study and Data Collection A total of 10 shops representing local, sup",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "213149451-p014",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2364
+        ],
+        [
+          860,
+          2508
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Collection of Sample Based on the data obtained from market survey three types of mushrooms were selected for nutrient analysis. Fresh mushrooms sample was purchased from local market for in-depth study. The mushrooms purchased are, • Button mushroom (Agaricus bisporus), • Milky mushroom (Pleurotuso streatus), • Oyster mushroom (Calocybe indica).",
+        "summary": "Collection of Sample Based on the data obtained from market survey three types o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "213149451-p015",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2530
+        ],
+        [
+          860,
+          2674
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Raw Sample Analysis Raw samples were analyzed to obtain moisture and vitamin C content of the mushrooms. The non-edible portions and unwanted wastes or particles (e.g. soil, portion of compost where they were grown, spoiled portion of mushrooms, etc.) if remained were separated and removed. Then total weight of edible fresh mushrooms was recorded.",
+        "summary": "Raw Sample Analysis Raw samples were analyzed to obtain moisture and vitamin C c",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 144
+      }
+    },
+    {
+      "id": "213149451-p016",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2696
+        ],
+        [
+          860,
+          2808
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Dried Sample Analysis The mushrooms were air-dried at 100 o C and stored in airtight containers to prevent absorption of moisture. Each specimen was carefully labeled. This method was adopted to conduct proximate analysis and mineral analysis of mushrooms.",
+        "summary": "Dried Sample Analysis The mushrooms were air-dried at 100 o C and stored in airt",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 112
+      }
+    },
+    {
+      "id": "213149451-p017",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          2830
+        ],
+        [
+          860,
+          3054
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Determination of Nutritive Value For determination of nutritive value, the following nutrients were estimated using the procedure given below. Moisture analysis was done using standard procedure and the moisture content was calculated using the following equation: Moisture (%) = (initial weight -final weight) × 100/ weight of sample 3 . Crude protein was determined by micro Kjeldahl method described by Pearson 4 . Crude fat content of the samples was determined by extracting a known weight of powdered mushroom sample with petroleum ether, using Soxhlet apparatus.",
+        "summary": "Determination of Nutritive Value For determination of nutritive value, the follo",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p018",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3076
+        ],
+        [
+          860,
+          3300
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Crude fibre was determined and calculated as below. The content of the available carbohydrate was determined by the following equation: Carbohydrate (g/100 g sample) = 100 -[(moisture + fat + protein + ash + crude fiber) g/100 g] 3 . Energy was determined by following the method described by Pearson, (1976). Total energy is estimated using the following equation: Energy (Kcal/100 g) = (carbohydrate *4) + (protein *4) + (total fat *9). Then total ash was calculated as: Ash content (g/100 g sample) = weight of ash × 100/weight of sample taken 3 .",
+        "summary": "Crude fibre was determined and calculated as below. The content of the available",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p019",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3322
+        ],
+        [
+          860,
+          3418
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Sodium and potassium content of the sample was determined using flame photometer. Iron and phosphorous was determined calorimetrically. Calcium and vitamin C present in the sample was determined by titration.",
+        "summary": "Sodium and potassium content of the sample was determined using flame photometer",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 96
+      }
+    },
+    {
+      "id": "213149451-p020",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3440
+        ],
+        [
+          860,
+          3520
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Data Interpretation and Analysis Questionnaire responses were collected and descriptive analysis of the data was done and the results were discussed.",
+        "summary": "Data Interpretation and Analysis Questionnaire responses were collected and desc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 80
+      }
+    },
+    {
+      "id": "213149451-p021",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3542
+        ],
+        [
+          860,
+          3766
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Consumer Acceptability of Mushrooms A consumer survey was conducted among 100 home makers in Ernakulam district, the commercial capital of Kerala, to study the acceptability of mushroom and the results thus obtained are given below: Majority of the subjects (43%) belonged to the age group of 45 to 50 years. Educational qualification of the subjects showed that 47% of them had completed degree or diploma, 34% of the subjects acquired their higher secondary education, 15% were post graduates and remaining 4% had completed their professional courses ( Table 1).",
+        "summary": "Consumer Acceptability of Mushrooms A consumer survey was conducted among 100 ho",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 224
+      }
+    },
+    {
+      "id": "213149451-p022",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          3788
+        ],
+        [
+          860,
+          3980
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "69% of them were housewives, 27% were employed and remaining 4% were doing business. Majority (50.6%) responded that they were not interested in using mushroom. This was mainly because of their lack of familiarity with the usage of mushrooms. Around 20% of the subject responded that they were not purchasing mushroom because it was expensive and 19.2% of the subject did not buy it as they have no knowledge regarding the health benefits and uses of mushroom.",
+        "summary": "69% of them were housewives, 27% were employed and remaining 4% were doing busin",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "213149451-p023",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4002
+        ],
+        [
+          860,
+          4242
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Some of the respondents (10%) had a fear that consumption of mushroom may lead to health problems such as allergy, abdominal discomfort and vomiting. Reason for preferring mushroom studied among the mushroom users (22%) revealed that, all the subjects liked the taste of mushroom. 50% of the mushroom users reported that price of mushroom was pocket friendly whereas; another half reported that mushrooms are costly. Majority of the subjects (81%) reported that preparation process such as cleaning, cutting and preparations were easy and 18.2% reported that the preparative process were not so easy.",
+        "summary": "Some of the respondents (10%) had a fear that consumption of mushroom may lead t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "213149451-p024",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4264
+        ],
+        [
+          860,
+          4504
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Market Survey on Mushroom Availability To study the market availability of mushrooms, a market survey was conducted at ten shops selling mushroom in the Ernakulam district. To the results thus obtained are given below. Table 2, shows the type of shops selected for survey, majority of the shops (60%) selected were grocery shops and the remaining 40% were supermarkets. No exclusive shops of mushrooms were found in the selected locale. Market survey revealed that only three types of mushrooms were available at shops in Ernakulam, namely, button mushroom, oyster mushroom and milky mushroom.",
+        "summary": "Market Survey on Mushroom Availability To study the market availability of mushr",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 240
+      }
+    },
+    {
+      "id": "213149451-p025",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4526
+        ],
+        [
+          860,
+          4654
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "50% of the shops sold all the three types of mushroom namely, button, oyster and milky mushroom and 30% were selling button mushroom and an equal percentage of 10 were selling oyster and milky mushroom only (Table 3). All the three varieties of mushrooms consisted of 91% of moisture. (Table 4).",
+        "summary": "50% of the shops sold all the three types of mushroom namely, button, oyster and",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 128
+      }
+    },
+    {
+      "id": "213149451-p026",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4676
+        ],
+        [
+          860,
+          4868
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Summary and Conclusion Consumer preference for mushroom was found to be low as only 22% of the selected subjects used cultivated mushrooms. Only three varieties of mushrooms were available in shops of Ernakulam city. The data obtained from the present study showed that dietary mushrooms analyzed are good source of nutrients specially protein and fiber. Being rich in protein mushrooms can overcome the problems of protein deficiency, world's most serious human nutritional problem.",
+        "summary": "Summary and Conclusion Consumer preference for mushroom was found to be low as o",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 192
+      }
+    },
+    {
+      "id": "213149451-p027",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          4890
+        ],
+        [
+          860,
+          5098
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "The dietary fibre plays an important role in decreasing the risks of many disorders such a constipation, diabetes, cardiovascular diseases, obesity etc. Ernakulam leads Kerala with largest number of diabetic subjects earning the dubious distinction of being termed the 'diabetes capital of Kerala' . Mushroom with its high fibre content if properly being used, can help to control the incidence of diabetes. Provision of well stored quality mushrooms in markets will definitely increase the purchase of mushroom among the consumers.",
+        "summary": "The dietary fibre plays an important role in decreasing the risks of many disord",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 208
+      }
+    },
+    {
+      "id": "213149451-p028",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          5120
+        ],
+        [
+          860,
+          5296
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "For promotion of mushroom cultivation, regular training programmes can be conducted. Training kits comprising of spawn, polythene covers and booklet for starters can also being supplied to improve production of mushroom at household level itself. Intake of mushroom can be increased by the development of value added products such as mushroom powders, dried mushroom, mushroom soup, mushroom curry etc.",
+        "summary": "For promotion of mushroom cultivation, regular training programmes can be conduc",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1,
+        "padding": 8,
+        "configuredWidth": 780,
+        "configuredHeight": 176
+      }
+    }
+  ]
+}

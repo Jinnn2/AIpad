@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "intent": "import",
+  "strokes": [
+    {
+      "id": "9794428-p000",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          80
+        ],
+        [
+          840,
+          135
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "1947 Danish Folketing election",
+        "summary": "1947 Danish Folketing election",
+        "fontFamily": "sans-serif",
+        "fontSize": 28,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 55
+      }
+    },
+    {
+      "id": "9794428-p001",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          159
+        ],
+        [
+          840,
+          331
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Folketing elections were held in Denmark on 28 October 1947, except in the Faroe Islands where they were held on 18 February 1948. The Social Democratic Party remained the largest in the Folketing, with 57 of the 150 seats. Voter turnout was 86% in Denmark proper and 60% in the Faroes.",
+        "summary": "Folketing elections were held in Denmark",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 172
+      }
+    },
+    {
+      "id": "9794428-p002",
+      "tool": "text",
+      "points": [
+        [
+          80,
+          355
+        ],
+        [
+          840,
+          505
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "Following legislation in December 1947 the representation of the Faroe Islands constituency was increased from one seat to two. The two seats were elected using proportional representation with the D'Hondt method.",
+        "summary": "Following legislation in December 1947 t",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 1.4,
+        "padding": 8,
+        "configuredWidth": 760,
+        "configuredHeight": 150
+      }
+    }
+  ]
+}
