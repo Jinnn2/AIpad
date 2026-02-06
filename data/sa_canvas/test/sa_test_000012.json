@@ -1,0 +1,89 @@
+{
+  "canvas_id": "sa_test_000012",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to decide if you should have a prenatal test 2",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "if you are in your late 30s or 40s , the likelihood of having a child with a disability or disorder increases significantly . if you know early on , you can research the disability to be prepared , or decide not to keep the baby if you cant handle it e . g . putting it up for adoption . in addition to being at higher risk of complications and premature delivery with increasing maternal age , you are more likely to give birth to a baby with down syndrome or certain disabilities .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        816
+      ],
+      "text": "if you personally have a genetic disability , your child may be more likely to have the same condition . make a list of genetic conditions found in blood relatives both in your family and that of your partner . if you are very concerned about your babys risk of having the a particular condition , discuss family genetics with a genetic counselor or physician prior to testing some conditions may only affect one gender or may be recessive , which can significantly reduce your childs chance of having the disease .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        840,
+        960.0,
+        1088
+      ],
+      "text": "in many cases , by simply examining both parents with a simple blood test , you can check for a wide range of conditions your baby could potentially have . many genetic conditions are recessive in nature and could only manifest in the baby if both parents are carriers and pass the recessive gene to the baby . remember that not all conditions are based on the parents genetics , and that genetic testing of both parents will not tell you whether the baby may have a developmental condition or chromosomal problem .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "if you personally have a genetic disability , your child may be more likely to have the same condition . make a list of genetic conditions found in blood relati",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b2",
+        "b4",
+        "b1",
+        "b3"
+      ],
+      "query_block_id": "b3"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "how to decide if you should have a prenatal test 2",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b3",
+        "b1",
+        "b2",
+        "b4"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "in many cases , by simply examining both parents with a simple blood test , you can check for a wide range of conditions your baby could potentially have . many",
+      "answer_block_id": "b4",
+      "candidate_block_ids": [
+        "b2",
+        "b1",
+        "b3",
+        "b4"
+      ],
+      "query_block_id": "b4"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:38"
+}

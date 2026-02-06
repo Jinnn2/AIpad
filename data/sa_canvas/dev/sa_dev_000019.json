@@ -1,0 +1,75 @@
+{
+  "canvas_id": "sa_dev_000019",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to travel for less 1",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        512
+      ],
+      "text": "on most of these sites , you can sign up for email or text alerts when a lower fare is available for your desired destination . , put all your purchases on that card your frequent flyer miles will add up fast . many of these airlines also offer special promotion deals , or a chance to win a free trip . some couriers hand carry sensitive documents that a company doesnt want to entrust to a mail service .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        536,
+        960.0,
+        648
+      ],
+      "text": "some companies simply want someone to occupy a seat on a plane that is carrying their cargo so that the cargo is treated as passengers baggage so that it goes through the customs process faster .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "on most of these sites , you can sign up for email or text alerts when a lower fare is available for your desired destination . , put all your purchases on that",
+      "answer_block_id": "b2",
+      "candidate_block_ids": [
+        "b2",
+        "b3",
+        "b1"
+      ],
+      "query_block_id": "b2"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "some companies simply want someone to occupy a seat on a plane that is carrying their cargo so that the cargo is treated as passengers baggage so that it goes t",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "query_block_id": "b3"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "how to travel for less 1",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b1",
+        "b3",
+        "b2"
+      ],
+      "query_block_id": "b1"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:23"
+}

@@ -1,0 +1,103 @@
+{
+  "canvas_id": "sa_test_000005",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to choose healthy juices 4",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "if youre having trouble locating healthy juices , you can make some yourself with a juicer . a juicer is a device that allows you to separate the flesh of a given fruit from its juices . one cup of 100 fruit juice or vegetable juice – the kind obtained from a juicer – counts as one cup of fruit . most juicers have a slot into which you insert sliced chunks of the fruit of your choice . the device then pumps juice out one end and collects pulp in a separate removable container .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        816
+      ],
+      "text": "consult manufacturer directions before use . do not drink juice as your only source of fruits and veggies . some people choose healthy fruit juices with the intent to switch to a liquid - only diet as part of a weight - loss plan , or because they cannot consume solid food due to a medical condition . however , unlike whole fruits and veggies , juices lack significant amounts of fiber . fiber is the indigestible portion of the fruit or vegetable that helps increase nutrient absorption and keeps the gut clean .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        840,
+        960.0,
+        1064
+      ],
+      "text": "if youre on a juice or liquid - only diet for a medical reason , your doctor might prescribe a fiber supplement to you . some juicers incorporate fruit and vegetable pulp back into the juice so that you can get additional fiber . homemade juices can be made safely if the fruit or vegetables used to produce it are cleaned thoroughly , and if the juicer itself is clean . clean your juicers many removable parts with soap and hot water after each use .",
+      "type": "body"
+    },
+    {
+      "block_id": "b5",
+      "bbox": [
+        200.0,
+        1088,
+        960.0,
+        1280
+      ],
+      "text": "to clean fruits and veggies , simply place them under swiftly flowing cool water . this will remove excess biocides , fertilizers , and grime . do not use alcohol , soap , or other cleaning agents . remove produce stickers from your fruits or veggies before juicing them . if you have several fruits you wish to use at once , place them all in a colander and rinse the whole batch .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "how to choose healthy juices 4",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b1",
+        "b5",
+        "b3",
+        "b4",
+        "b2"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "to clean fruits and veggies , simply place them under swiftly flowing cool water . this will remove excess biocides , fertilizers , and grime . do not use alcoh",
+      "answer_block_id": "b5",
+      "candidate_block_ids": [
+        "b4",
+        "b3",
+        "b2",
+        "b1",
+        "b5"
+      ],
+      "query_block_id": "b5"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "if youre having trouble locating healthy juices , you can make some yourself with a juicer . a juicer is a device that allows you to separate the flesh of a giv",
+      "answer_block_id": "b2",
+      "candidate_block_ids": [
+        "b5",
+        "b4",
+        "b3",
+        "b1",
+        "b2"
+      ],
+      "query_block_id": "b2"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:31"
+}

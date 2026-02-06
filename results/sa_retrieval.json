@@ -1,0 +1,11 @@
+{
+  "split": "test",
+  "metrics": {
+    "text_only": {
+      "MRR": 1.0,
+      "R1": 1.0,
+      "R3": 1.0,
+      "n_queries": 60
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "canvas_id": "sa_dev_000015",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to grow a beard faster 3",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        512
+      ],
+      "text": "if you want the hair to come in quickly , leave it alone while it grows . you will have the chance to groom the beard after about four to six weeks when it is full . there is no scientific evidence to support this . shaving your beard will only reduce the amount of hair on your face , not bring it in more rapidly . because your hair will not all grow at the same pace , your face might get itchy and irritated .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        536,
+        960.0,
+        696
+      ],
+      "text": "if you suffer from itching or a rash , ask a doctor about applying a hydrocortisone cream to your face while you are growing a beard . it will relieve the itching . however , it can also have negative side effects when used on the face , so only apply it according to doctor supervision and advice .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "how to grow a beard faster 3",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "if you suffer from itching or a rash , ask a doctor about applying a hydrocortisone cream to your face while you are growing a beard . it will relieve the itchi",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b3",
+        "b1",
+        "b2"
+      ],
+      "query_block_id": "b3"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "if you want the hair to come in quickly , leave it alone while it grows . you will have the chance to groom the beard after about four to six weeks when it is f",
+      "answer_block_id": "b2",
+      "candidate_block_ids": [
+        "b2",
+        "b1",
+        "b3"
+      ],
+      "query_block_id": "b2"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:19"
+}

@@ -9,6 +9,8 @@ from pathlib import Path
 import re
 
 DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
+DEFAULT_TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.4") or 0.4)
+DEFAULT_TOP_P = float(os.getenv("OPENAI_TOP_P", "0.95") or 0.95)
 MAX_RETRIES = 2  # Maximum number of retry attempts per request
 
 # ---------------------------------------- LLM client helpers ---------------------------------------- #
@@ -117,8 +119,8 @@ def _inject_vision_content(messages: list[dict]) -> list[dict]:
 def call_chat_completions(
     messages: list[dict[str, Any]],
     model: Optional[str] = None,
-    temperature: float = 0.4,
-    top_p: float = 0.95,
+    temperature: float = DEFAULT_TEMPERATURE,
+    top_p: float = DEFAULT_TOP_P,
     max_tokens: int = 1024,
 ) -> tuple[Dict[str, Any], Dict[str, Any]]:
     """Call /v1/chat/completions with JSON-first handling and retries. Returns (parsed_payload, debug_info)."""

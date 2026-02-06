@@ -1,0 +1,213 @@
+{
+  "canvas_id": "sa_dev_000014",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to know if youre too sick to go to work or school",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "if you have a fever over 100f you should stay home from work or school and not go back until your body temperature has been normal usually 98 . 6f for 24 hours . if you need to take medication to get your temperature to be normal , that doesnt count . you are still sick and likely infectious . a baby with a temperature of 100f or more should be taken immediately to the emergency room . a high fever is likely to also be accompanied by periods of sweating and chills .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        792
+      ],
+      "text": "coughing that feels like it comes from deep within your lungs could be a sign of a serious infection . dont go to work or school . contact your doctor to see if you should get your cough checked out . mild coughing frequently occurs due to a cold or allergies . you may also have a stuffy , drippy nose and sneezing . if you feel up to it and no other symptoms are present , you can still go about your daily routine . cover your mouth when you cough and wash your hands frequently .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        816,
+        960.0,
+        1040
+      ],
+      "text": "this will help prevent you from spreading germs . if you have trouble breathing during coughing fits , go to the emergency room to get medical attention . stay away from others until you are no longer vomiting and the doctor says that you are not contagious . persistent vomiting will cause dehydration and weakness . take care of yourself by drinking plenty of liquids . if you cant keep a glass of water down , you might try sucking on ice cubes .",
+      "type": "body"
+    },
+    {
+      "block_id": "b5",
+      "bbox": [
+        200.0,
+        1064,
+        960.0,
+        1288
+      ],
+      "text": "it will enable you to take the water in more slowly and may be easier to keep down . if you are unable to keep any liquid down and are at risk of becoming severely dehydrated , you may need to go to an emergency room . if necessary , they will rehydrate you with intravenous fluids . symptoms of dehydration include weakness , headaches , infrequent urination , passing dark or cloudy urine , and crying without tears . a very loose or watery stool can often be a sign of infection .",
+      "type": "body"
+    },
+    {
+      "block_id": "b6",
+      "bbox": [
+        200.0,
+        1312,
+        960.0,
+        1536
+      ],
+      "text": "remain near the bathroom and do not try to go to work or school until you are better . if the diarrhea is caused by food or medication , then it is not contagious . in this case if you are well enough to be able to go about your daily routine , you do not need to stay home . during all cases of diarrhea , you are likely to be losing a lot of water . this means that it is important to replenish your liquids by drinking lots of water . drink water even if you do not feel thirsty .",
+      "type": "body"
+    },
+    {
+      "block_id": "b7",
+      "bbox": [
+        200.0,
+        1560,
+        960.0,
+        1784
+      ],
+      "text": "if you have a rash that has open wounds with fluid leaking out or is rapidly spreading , you should call your doctor . do not go into work or school until your doctor determines that it is not contagious . rashes due to allergies are not contagious . if you have the symptoms under control enough that you can think and concentrate , then you can go to work or school . for mild rashes , you may be able to go to work or school if the rashes are covered . check with your school nurse or doctor to be sure .",
+      "type": "body"
+    },
+    {
+      "block_id": "b8",
+      "bbox": [
+        200.0,
+        1808,
+        960.0,
+        2056
+      ],
+      "text": "you probably dont need to stay home if you just have a cold . if you are not so sick that you need to stay home , there are still some simple precautions that you can take to protect others . you canwash your hands frequently not hug or shake hands avoid sharing drinks or food with others turn away from others when you sneeze or cough and do so into your elbow use tissues if you have a drippy nose if your child comes in contact with other children that are unvaccinated or have weakened immune systems , he may put them at risk .",
+      "type": "body"
+    },
+    {
+      "block_id": "b9",
+      "bbox": [
+        1160.0,
+        320,
+        1920.0,
+        544
+      ],
+      "text": "wait until your doctor declares your child healthy enough to return to school . these diseases includemeasles . this disease has cold - like symptoms and red spots . the infected person is contagious for four days before the rash starts and the first four days of the rashs presence . wait until your doctor gives the ok before sending your child back to school . mumps . it is characterized by flu - like symptoms and swollen salivary glands .",
+      "type": "body"
+    },
+    {
+      "block_id": "b10",
+      "bbox": [
+        1160.0,
+        568,
+        1920.0,
+        792
+      ],
+      "text": "follow the instructions from your doctor and school officials to determine how long to keep your child home . rubella . this disease has flu - like symptoms and a pink rash . it can cause birth defects in unborn babies if the mother catches it . ask your doctor and the school nurse when your child can return to school . pertussis whooping cough . this illness has flu - and cold - like symptoms and severe coughing which can make it difficult to breathe .",
+      "type": "body"
+    },
+    {
+      "block_id": "b11",
+      "bbox": [
+        1160.0,
+        816,
+        1920.0,
+        1040
+      ],
+      "text": "ask your doctor and the school nurse how long your child will be infectious . chicken pox . this disease has flu - like symptoms and a rash of fluid - filled red bumps . an infected person is contagious for two days before the rash starts and then until all the spots have scabbed over . ask your doctor when its ok to send your child back to school . pink eye , also called conjunctivitis , is an infection where the eye becomes red and leaks sticky yellowish - greenish goo .",
+      "type": "body"
+    },
+    {
+      "block_id": "b12",
+      "bbox": [
+        1160.0,
+        1064,
+        1920.0,
+        1288
+      ],
+      "text": "because the eye maybe itchy , children often rub their eyes , and then touch other children or shared toys , making it easily contagious . once your child has begun treatment , he may be able to go back to school once your doctor says he is unlikely to be infectious . however , once your child is receiving treatment under a doctors supervision , it should be ok for your child to return to school , unless your doctor advises against it . impetigo is an infection in which pustules form .",
+      "type": "body"
+    },
+    {
+      "block_id": "b13",
+      "bbox": [
+        1160.0,
+        1312,
+        1920.0,
+        1536
+      ],
+      "text": "the pustules may seep fluid and crust over . these spots must be covered when your child goes to school . impetigo can be caused by streptococci , staphylococcus , and mrsa infections . this infection is characterized by a sore throat . bring your child to the doctor because he may need antibiotics . your child may feel well enough to go back to school after being on antibiotics for 24 hours . check with your doctor to see what he or she recommends .",
+      "type": "body"
+    },
+    {
+      "block_id": "b14",
+      "bbox": [
+        1160.0,
+        1560,
+        1920.0,
+        1784
+      ],
+      "text": "this is a very contagious liver infection which causes nausea , vomiting , pain near the liver , joint pain , dark urine , clay - colored stool , and yellow skin and eyes . if you think your child has hepatitis a , bring him to the doctor immediately . if it takes longer than a week for your child to feel well enough to go back , you may need to keep him home for longer . if the pain comes from an infection , your child may need antibiotics .",
+      "type": "body"
+    },
+    {
+      "block_id": "b15",
+      "bbox": [
+        1160.0,
+        1808,
+        1920.0,
+        2032
+      ],
+      "text": "chances are your child will not be able to concentrate or learn well until his ears no longer hurt . let him stay home until he feels better . ear pain can be caused by bacterial or viral infections . if left untreated , ear infections can lead to hearing loss . consult with your childs doctor and school nurse . it may be possible for your child to attend school or daycare , if your child has one of the following common infectionsscabies . this is a caused by a mite that burrows in the skin and lays eggs .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "follow the instructions from your doctor and school officials to determine how long to keep your child home . rubella . this disease has flu - like symptoms and",
+      "answer_block_id": "b10",
+      "candidate_block_ids": [
+        "b13",
+        "b8",
+        "b6",
+        "b2",
+        "b10"
+      ],
+      "query_block_id": "b10"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "it will enable you to take the water in more slowly and may be easier to keep down . if you are unable to keep any liquid down and are at risk of becoming sever",
+      "answer_block_id": "b5",
+      "candidate_block_ids": [
+        "b9",
+        "b14",
+        "b3",
+        "b13",
+        "b5"
+      ],
+      "query_block_id": "b5"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "how to know if youre too sick to go to work or school",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b8",
+        "b1",
+        "b12",
+        "b15",
+        "b9"
+      ],
+      "query_block_id": "b1"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:18"
+}

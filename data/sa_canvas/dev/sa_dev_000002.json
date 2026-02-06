@@ -1,0 +1,429 @@
+{
+  "version": 1,
+  "intent": "import",
+  "canvas_id": "sa_dev_000002",
+  "strokes": [
+    {
+      "id": "sa_dev_000002_b1",
+      "tool": "text",
+      "points": [
+        [
+          200,
+          160
+        ],
+        [
+          507.6,
+          194
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "how to clean aquarium glass 1",
+        "summary": "how to clean aquarium glass 1",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 700,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 307.6,
+        "configuredHeight": 34.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b2",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          242
+        ],
+        [
+          960.0,
+          416
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "if you just have some mild algae buildup on the inside of your glass , its pretty easy to wipe it off with a sponge . be sure to use a clean sponge that will not introduce any chemicals or detergents into your aquarium . its perfectly fine to do this while your fish are in the tank as long as you dont remove much of the water . you can use a sponge with an abrasive side if you need a little extra scrubbing power .",
+        "summary": "if you just have some mild algae buildup on the inside of your glass , its pretty easy to wipe it off with a sponge . be sure to use a clean sponge that will not introduce any chemicals or detergents into your aquarium . its perfectly fine to do this while your fish are in the tank as long as you dont remove much of the water . you can use a sponge with an abrasive side if you need a little extra scrubbing power .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 174.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b3",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          440
+        ],
+        [
+          960.0,
+          670
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "if you dont want to put your arm in the tank , you can find a scrubber with a long handle at your local aquarium store . if you just need to remove some tougher algae from the inside of your aquarium glass , its easy to do with a scraper . aquarium stores sell a special tool with a a scraper on one end and a brush on the other that is designed specially for this task . let the algae fall to the bottom of the tank as you are scraping and scrubbing . you can clean it up with an aquarium vacuum when you are finished .",
+        "summary": "if you dont want to put your arm in the tank , you can find a scrubber with a long handle at your local aquarium store . if you just need to remove some tougher algae from the inside of your aquarium glass , its easy to do with a scraper . aquarium stores sell a special tool with a a scraper on one end and a brush on the other that is designed specially for this task . let the algae fall to the bottom of the tank as you are scraping and scrubbing . you can clean it up with an aquarium vacuum when you are finished .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 230.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b4",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          694
+        ],
+        [
+          960.0,
+          896
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "if the scraper is not working well enough , you can use a razor blade to scrape off the algae . hold it at a 45 degree angle against the glass and scrape very carefully so as not to cut yourself . do not empty the tank to do this . removing more than 25 of the water from your aquarium can destroy the beneficial bacteria colonies that live there , which can cause your fish to die . if you dont want to stick your arm in the tank to clean the glass , there is another option .",
+        "summary": "if the scraper is not working well enough , you can use a razor blade to scrape off the algae . hold it at a 45 degree angle against the glass and scrape very carefully so as not to cut yourself . do not empty the tank to do this . removing more than 25 of the water from your aquarium can destroy the beneficial bacteria colonies that live there , which can cause your fish to die . if you dont want to stick your arm in the tank to clean the glass , there is another option .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 202.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b5",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          920
+        ],
+        [
+          960.0,
+          1122
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "you can buy an aquarium magnet at your local pet or aquarium store , which will make this task much easier . the part of the magnet with the scrubbing pad goes on the inside of the glass , and the part with the handle goes on the outside . as you move the outside part around , the inside part will glide along the inside of your tank , cleaning the glass . be very careful not to bring your magnet within two inches of the sand or gravel at the bottom of the tank .",
+        "summary": "you can buy an aquarium magnet at your local pet or aquarium store , which will make this task much easier . the part of the magnet with the scrubbing pad goes on the inside of the glass , and the part with the handle goes on the outside . as you move the outside part around , the inside part will glide along the inside of your tank , cleaning the glass . be very careful not to bring your magnet within two inches of the sand or gravel at the bottom of the tank .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 202.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b6",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          1146
+        ],
+        [
+          960.0,
+          1348
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "if you get any abrasive materials stuck under the pad , you run the risk of scratching your glass . be sure to rinse the cleaning pad after each use , and never leave the magnet in the tank when you are not using it . this will help prevent any sand from getting under the pad . consider placing a piece of felt under the exterior part of the magnet to protect the glass . aquarium magnets are available in a variety of sizes . the size of the magnet you choose will depend on the size of your tank .",
+        "summary": "if you get any abrasive materials stuck under the pad , you run the risk of scratching your glass . be sure to rinse the cleaning pad after each use , and never leave the magnet in the tank when you are not using it . this will help prevent any sand from getting under the pad . consider placing a piece of felt under the exterior part of the magnet to protect the glass . aquarium magnets are available in a variety of sizes . the size of the magnet you choose will depend on the size of your tank .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 202.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b7",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          1372
+        ],
+        [
+          960.0,
+          1574
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "although any size will work , it may be tedious to clean a very large tank with a very small magnet . the magnets are also available in different strengths . use a stronger magnet for glass than for acrylic . be very careful not to get your fingers caught between them if you choose a strong magnet some of these magnets float so you dont have to worry about fishing them out of the tank if they become dislodged . some also have razor blade attachments for stubborn algae .",
+        "summary": "although any size will work , it may be tedious to clean a very large tank with a very small magnet . the magnets are also available in different strengths . use a stronger magnet for glass than for acrylic . be very careful not to get your fingers caught between them if you choose a strong magnet some of these magnets float so you dont have to worry about fishing them out of the tank if they become dislodged . some also have razor blade attachments for stubborn algae .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 202.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b8",
+      "tool": "text",
+      "points": [
+        [
+          200.0,
+          1598
+        ],
+        [
+          960.0,
+          1772
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "its just as important to keep the outside of your aquarium glass clean as the inside , and this task is considerably easier . simply use a lint - free cloth or soft piece of paper coffee filters and newspaper both work well and gently scrub the outside of your tank with warm water . using chemical cleaners is not advised because it is possible that small particles could become airborne and contaminate the inside of your tank .",
+        "summary": "its just as important to keep the outside of your aquarium glass clean as the inside , and this task is considerably easier . simply use a lint - free cloth or soft piece of paper coffee filters and newspaper both work well and gently scrub the outside of your tank with warm water . using chemical cleaners is not advised because it is possible that small particles could become airborne and contaminate the inside of your tank .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 174.0
+      }
+    },
+    {
+      "id": "sa_dev_000002_b9",
+      "tool": "text",
+      "points": [
+        [
+          1160.0,
+          242
+        ],
+        [
+          1920.0,
+          304
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "if you must use a chemical cleaner , spray it onto your cloth well away from the aquarium , instead of spraying it onto the glass .",
+        "summary": "if you must use a chemical cleaner , spray it onto your cloth well away from the aquarium , instead of spraying it onto the glass .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18.0,
+        "fontWeight": 400,
+        "growDir": "down",
+        "lineHeight": 1.5555555555555556,
+        "padding": 3.0,
+        "configuredWidth": 760.0,
+        "configuredHeight": 62.0
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        507.6,
+        194
+      ],
+      "text": "how to clean aquarium glass 1",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        242,
+        960.0,
+        416
+      ],
+      "text": "if you just have some mild algae buildup on the inside of your glass , its pretty easy to wipe it off with a sponge . be sure to use a clean sponge that will not introduce any chemicals or detergents into your aquarium . its perfectly fine to do this while your fish are in the tank as long as you dont remove much of the water . you can use a sponge with an abrasive side if you need a little extra scrubbing power .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        440,
+        960.0,
+        670
+      ],
+      "text": "if you dont want to put your arm in the tank , you can find a scrubber with a long handle at your local aquarium store . if you just need to remove some tougher algae from the inside of your aquarium glass , its easy to do with a scraper . aquarium stores sell a special tool with a a scraper on one end and a brush on the other that is designed specially for this task . let the algae fall to the bottom of the tank as you are scraping and scrubbing . you can clean it up with an aquarium vacuum when you are finished .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        694,
+        960.0,
+        896
+      ],
+      "text": "if the scraper is not working well enough , you can use a razor blade to scrape off the algae . hold it at a 45 degree angle against the glass and scrape very carefully so as not to cut yourself . do not empty the tank to do this . removing more than 25 of the water from your aquarium can destroy the beneficial bacteria colonies that live there , which can cause your fish to die . if you dont want to stick your arm in the tank to clean the glass , there is another option .",
+      "type": "body"
+    },
+    {
+      "block_id": "b5",
+      "bbox": [
+        200.0,
+        920,
+        960.0,
+        1122
+      ],
+      "text": "you can buy an aquarium magnet at your local pet or aquarium store , which will make this task much easier . the part of the magnet with the scrubbing pad goes on the inside of the glass , and the part with the handle goes on the outside . as you move the outside part around , the inside part will glide along the inside of your tank , cleaning the glass . be very careful not to bring your magnet within two inches of the sand or gravel at the bottom of the tank .",
+      "type": "body"
+    },
+    {
+      "block_id": "b6",
+      "bbox": [
+        200.0,
+        1146,
+        960.0,
+        1348
+      ],
+      "text": "if you get any abrasive materials stuck under the pad , you run the risk of scratching your glass . be sure to rinse the cleaning pad after each use , and never leave the magnet in the tank when you are not using it . this will help prevent any sand from getting under the pad . consider placing a piece of felt under the exterior part of the magnet to protect the glass . aquarium magnets are available in a variety of sizes . the size of the magnet you choose will depend on the size of your tank .",
+      "type": "body"
+    },
+    {
+      "block_id": "b7",
+      "bbox": [
+        200.0,
+        1372,
+        960.0,
+        1574
+      ],
+      "text": "although any size will work , it may be tedious to clean a very large tank with a very small magnet . the magnets are also available in different strengths . use a stronger magnet for glass than for acrylic . be very careful not to get your fingers caught between them if you choose a strong magnet some of these magnets float so you dont have to worry about fishing them out of the tank if they become dislodged . some also have razor blade attachments for stubborn algae .",
+      "type": "body"
+    },
+    {
+      "block_id": "b8",
+      "bbox": [
+        200.0,
+        1598,
+        960.0,
+        1772
+      ],
+      "text": "its just as important to keep the outside of your aquarium glass clean as the inside , and this task is considerably easier . simply use a lint - free cloth or soft piece of paper coffee filters and newspaper both work well and gently scrub the outside of your tank with warm water . using chemical cleaners is not advised because it is possible that small particles could become airborne and contaminate the inside of your tank .",
+      "type": "body"
+    },
+    {
+      "block_id": "b9",
+      "bbox": [
+        1160.0,
+        242,
+        1920.0,
+        304
+      ],
+      "text": "if you must use a chemical cleaner , spray it onto your cloth well away from the aquarium , instead of spraying it onto the glass .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "although any size will work , it may be tedious to clean a very large tank with a very small magnet .",
+      "answer_block_id": "b7",
+      "candidate_block_ids": [
+        "b8",
+        "b1",
+        "b4",
+        "b7",
+        "b5"
+      ],
+      "query_block_id": "b7"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "you can buy an aquarium magnet at your local pet or aquarium store , which will make this task much easier .",
+      "answer_block_id": "b5",
+      "candidate_block_ids": [
+        "b1",
+        "b6",
+        "b2",
+        "b9",
+        "b5"
+      ],
+      "query_block_id": "b5"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "if you get any abrasive materials stuck under the pad , you run the risk of scratching your glass .",
+      "answer_block_id": "b6",
+      "candidate_block_ids": [
+        "b6",
+        "b8",
+        "b9",
+        "b5",
+        "b1"
+      ],
+      "query_block_id": "b6"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:3"
+}

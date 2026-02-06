@@ -1,0 +1,89 @@
+{
+  "canvas_id": "sa_test_000010",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to get rid of back acne fast 3",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "sleeping on dirty , oily sheets can transfer impurities to your skin and cause back acne . wash your sheets regularly to reduce the transfer of dirt and oil onto your skin . try sheets made of lightweight cotton . these trap less moisture than other fabrics . wearing dirty clothes can transfer oil and dirt to your skin , causing back acne . always wear clean clothes . if you still have trouble with back acne , then make sure your clothes are loose - fitting .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        792
+      ],
+      "text": "that allows your skin breathe and doesnt trap sweat and impurities against your skin . wear clothes made of breathable materials , like cotton . synthetic fabrics can trap sweat , which can cause breakouts . some lotions and laundry detergents can irritate your skin and cause breakouts . try fragrance - free or products for sensitive skin . if you have long hair , it can transfer dirt and oil to your neck , shoulders , and back . wash your hair often to minimize this .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        816,
+        960.0,
+        1040
+      ],
+      "text": "its also important to wash your hair often if you use hair products . hair products can clog your pores . try to wait to wash your back after using shampoo and conditioner to remove any product that may have rinsed off onto your skin . tanning beds and too much sun exposure can damage your skin . damaged skin is at a high risk for acne . additionally , some acne medications make you skin extremely sensitive to uv rays . stay out of the sun to help with your acne .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "how to get rid of back acne fast 3",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b3",
+        "b2",
+        "b4",
+        "b1"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "that allows your skin breathe and doesnt trap sweat and impurities against your skin . wear clothes made of breathable materials , like cotton . synthetic fabri",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b3",
+        "b1",
+        "b4",
+        "b2"
+      ],
+      "query_block_id": "b3"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "its also important to wash your hair often if you use hair products . hair products can clog your pores . try to wait to wash your back after using shampoo and ",
+      "answer_block_id": "b4",
+      "candidate_block_ids": [
+        "b4",
+        "b3",
+        "b1",
+        "b2"
+      ],
+      "query_block_id": "b4"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:36"
+}

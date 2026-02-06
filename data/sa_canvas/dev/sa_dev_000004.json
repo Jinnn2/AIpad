@@ -1,0 +1,103 @@
+{
+  "canvas_id": "sa_dev_000004",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to keep an older dog mentally active 1",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "dogs that are left alone all the time will not be able to stay mentally healthy . a dog that does not have a lot of social interaction can lose its mental acuity because it doesnt exercise its brain . dogs are meant to have social interaction , as they are pack animals , and they need it to avoid becoming sad , lonely , and destructive . interaction can come in a lot of forms . it could mean taking your dog for a walk , playing catch , or simply giving it love and attention .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        792
+      ],
+      "text": "the interaction doesnt have to always come from you . if you know you are going to be gone all day , for example , you can take your dog to a doggy daycare . this will give your dog lots of interaction . some dogs benefit from living in a household with multiple dogs . having more than one dog at home can give your dog lots of positive interaction while you are away . there are a wide variety of games that you can play with your dog that will stimulate its brain .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        816,
+        960.0,
+        1040
+      ],
+      "text": "even common games , such as tug - o - war or catch , can give it a lot of stimulation and keep it mentally active . other games you can play includework on advanced training , such as teaching your dog to play dead . hide your dogs favorite toy and have it find it . train your dog to identify its toys by name and to get specific toys when you ask for them by name . toys , such as puzzles , can stimulate your dog while you are away or unable to directly play with the dog .",
+      "type": "body"
+    },
+    {
+      "block_id": "b5",
+      "bbox": [
+        200.0,
+        1064,
+        960.0,
+        1288
+      ],
+      "text": "these puzzles use treats or regular dog food as motivation for the dog to complete the challenge . buy a food puzzle that requires your dog to complete tasks in order to get food . there are a wide variety of these puzzles sold at pet stores or online . the added benefit of these puzzles is that they can be used to slow down your dogs eating . in order to keep your dogs mind stimulated , switch out your dogs toys and puzzles on a regular basis . new toys mean new stimulation and fun .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "how to keep an older dog mentally active 1",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b1"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "these puzzles use treats or regular dog food as motivation for the dog to complete the challenge . buy a food puzzle that requires your dog to complete tasks in",
+      "answer_block_id": "b5",
+      "candidate_block_ids": [
+        "b3",
+        "b2",
+        "b4",
+        "b5",
+        "b1"
+      ],
+      "query_block_id": "b5"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "even common games , such as tug - o - war or catch , can give it a lot of stimulation and keep it mentally active . other games you can play includework on adva",
+      "answer_block_id": "b4",
+      "candidate_block_ids": [
+        "b5",
+        "b2",
+        "b3",
+        "b1",
+        "b4"
+      ],
+      "query_block_id": "b4"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:5"
+}

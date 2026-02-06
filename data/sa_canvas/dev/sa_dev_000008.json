@@ -1,0 +1,89 @@
+{
+  "canvas_id": "sa_dev_000008",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to style side swept bangs 1",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "since youre only working with your bangs , youll need to keep the rest of your hair out of the way while youre creating your side swept style . use a comb to separate the rest of your hair from your bangs , then secure it away from your face using a hair clip or elastic band . you can style your bangs when youve just stepped out of the shower or use a spray bottle with water to wet them . tie back the rest of your hair so you dont get it wet , then spray your bangs with water .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        792
+      ],
+      "text": "use a towel to pat away the extra moisture . using a hotter setting on your hair dryer will result in shiny , straight hair . a lower setting will leave your bangs with more texture . when your bangs are dry , use the brush or a comb to comb through them and give them a little volume . if youd like , apply a bit of mousse or anti - frizz serum to your hands and run it through your bangs . dont use too much serum on your bangs , since this could cause them to look greasy .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        816,
+        960.0,
+        952
+      ],
+      "text": "if you want your bangs to lie flat , rather than having volume , dont fluff them up . use your fingers or the end of a comb to sweep the tips of your bangs to the side . your bangs will look best if theyre swept in the opposite direction of your part .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "use a towel to pat away the extra moisture . using a hotter setting on your hair dryer will result in shiny , straight hair . a lower setting will leave your ba",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b2",
+        "b3",
+        "b4",
+        "b1"
+      ],
+      "query_block_id": "b3"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "how to style side swept bangs 1",
+      "answer_block_id": "b1",
+      "candidate_block_ids": [
+        "b4",
+        "b2",
+        "b3",
+        "b1"
+      ],
+      "query_block_id": "b1"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "since youre only working with your bangs , youll need to keep the rest of your hair out of the way while youre creating your side swept style . use a comb to se",
+      "answer_block_id": "b2",
+      "candidate_block_ids": [
+        "b2",
+        "b1",
+        "b3",
+        "b4"
+      ],
+      "query_block_id": "b2"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:10"
+}

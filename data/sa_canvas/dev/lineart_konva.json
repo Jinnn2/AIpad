@@ -1,0 +1,106 @@
+{
+  "shapes": [
+    {
+      "id": "sa_dev_000001_b1",
+      "kind": "text",
+      "x": 200,
+      "y": 160,
+      "w": 423.7642822265625,
+      "h": 520,
+      "text": "how to win all the soul wars games in runescape",
+      "summary": "how to win all the soul wars games in runescape",
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "how to win all the soul wars games in runescape",
+        "summary": "how to win all the soul wars games in runescape",
+        "fontFamily": "sans-serif",
+        "fontSize": 18,
+        "fontWeight": "700",
+        "growDir": "down",
+        "lineHeight": 28,
+        "padding": 3,
+        "configuredWidth": 494.79999999999995,
+        "configuredHeight": 34,
+        "baseWidth": 494.79999999999995,
+        "baseHeight": 504,
+        "contentWidth": 423.7642822265625,
+        "contentHeight": 504,
+        "lineCount": 1,
+        "renderedText": "how to win all the soul wars games in runescape",
+        "heightPadding": 16
+      }
+    },
+    {
+      "id": "sa_dev_000001_b2",
+      "kind": "text",
+      "x": 200,
+      "y": 242,
+      "w": 760,
+      "h": 3040,
+      "text": "a good method for this is to use the portal and then go to the opposite team . also look at the summoning familiars . the next winning team will have the most powerful monsters such as steel titan in the waiting box . without helping out you can get kicked out . do things like kill pyre fiends or jellies . when killing these , they drop soul shards , which you ca use on the soul obelisk if your team is in control . you can also kill other players , or the boss if your slayer level is above the bosses level .",
+      "summary": "a good method for this is to use the portal and then go to the opposite team . also look at the summoning familiars . the next winning team will have the most powerful monsters such as steel titan in the waiting box . without helping out you can get kicked out . do things like kill pyre fiends or jellies . when killing these , they drop soul shards , which you ca use on the soul obelisk if your team is in control . you can also kill other players , or the boss if your slayer level is above the bosses level .",
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "a good method for this is to use the portal and then go to the opposite team . also look at the summoning familiars . the next winning team will have the most powerful monsters such as steel titan in the waiting box . without helping out you can get kicked out . do things like kill pyre fiends or jellies . when killing these , they drop soul shards , which you ca use on the soul obelisk if your team is in control . you can also kill other players , or the boss if your slayer level is above the bosses level .",
+        "summary": "a good method for this is to use the portal and then go to the opposite team . also look at the summoning familiars . the next winning team will have the most powerful monsters such as steel titan in the waiting box . without helping out you can get kicked out . do things like kill pyre fiends or jellies . when killing these , they drop soul shards , which you ca use on the soul obelisk if your team is in control . you can also kill other players , or the boss if your slayer level is above the bosses level .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 28,
+        "padding": 3,
+        "configuredWidth": 760,
+        "configuredHeight": 230,
+        "baseWidth": 760,
+        "baseHeight": 504,
+        "contentWidth": 760,
+        "contentHeight": 3024,
+        "lineCount": 6,
+        "renderedText": "a good method for this is to use the portal and then go to the opposite team . also look at\nthe summoning familiars . the next winning team will have the most powerful monsters\nsuch as steel titan in the waiting box . without helping out you can get kicked out . do\nthings like kill pyre fiends or jellies . when killing these , they drop soul shards , which you\nca use on the soul obelisk if your team is in control . you can also kill other players , or the\nboss if your slayer level is above the bosses level .",
+        "heightPadding": 16
+      }
+    },
+    {
+      "id": "sa_dev_000001_b3",
+      "kind": "text",
+      "x": 200,
+      "y": 496,
+      "w": 760,
+      "h": 1024,
+      "text": "if your bosses level is low then bury bones in your graveyard . many people die so there will be a ton of bones around . note this doesnt raise your prayer level .",
+      "summary": "if your bosses level is low then bury bones in your graveyard . many people die so there will be a ton of bones around . note this doesnt raise your prayer level .",
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1
+      },
+      "meta": {
+        "text": "if your bosses level is low then bury bones in your graveyard . many people die so there will be a ton of bones around . note this doesnt raise your prayer level .",
+        "summary": "if your bosses level is low then bury bones in your graveyard . many people die so there will be a ton of bones around . note this doesnt raise your prayer level .",
+        "fontFamily": "sans-serif",
+        "fontSize": 18,
+        "fontWeight": "400",
+        "growDir": "down",
+        "lineHeight": 28,
+        "padding": 3,
+        "configuredWidth": 760,
+        "configuredHeight": 90,
+        "baseWidth": 760,
+        "baseHeight": 504,
+        "contentWidth": 760,
+        "contentHeight": 1008,
+        "lineCount": 2,
+        "renderedText": "if your bosses level is low then bury bones in your graveyard . many people die so there will\nbe a ton of bones around . note this doesnt raise your prayer level .",
+        "heightPadding": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "canvas_id": "sa_dev_000018",
+  "strokes": [],
+  "blocks": [
+    {
+      "block_id": "b1",
+      "bbox": [
+        200,
+        160,
+        1920.0,
+        272
+      ],
+      "text": "how to stay fit during your vacation 1",
+      "type": "title"
+    },
+    {
+      "block_id": "b2",
+      "bbox": [
+        200.0,
+        320,
+        960.0,
+        544
+      ],
+      "text": "instead of a tour bus or car , sightsee in a more physical way . check out the sights on foot , or rent a bicycle to get around . walking around a city on foot lets you get a more personal , up close view of the city . youre able to interact with the people and the community instead of looking at it from a vehicle . some cities offer bicycle tours . you can check into finding one of those , or you can rent bicycles and make your own bicycle tour .",
+      "type": "body"
+    },
+    {
+      "block_id": "b3",
+      "bbox": [
+        200.0,
+        568,
+        960.0,
+        728
+      ],
+      "text": "when youre planning your vacation , consider skipping cities and instead go for an outdoor destination . national parks are great areas for an active , fun vacation , complete with lodging with amenities . you can also try resorts , like ski resorts , or island destinations with swimming , kayaking , and mountain climbing .",
+      "type": "body"
+    },
+    {
+      "block_id": "b4",
+      "bbox": [
+        200.0,
+        752,
+        960.0,
+        976
+      ],
+      "text": "look for destinations that offer physical activities , like a river rafting trip , a hike through the jungle , a walk to the tallest mountain in the state , riding horses on a ranch , or surfing on the beach . look for places to hike . not all hikes have to be super strenuous to the top of a 10 , 000 foot mountain . most national and state parks , and many national forests , nature preserves , and resorts , offer all kinds of hiking for you to enjoy .",
+      "type": "body"
+    },
+    {
+      "block_id": "b5",
+      "bbox": [
+        200.0,
+        1000,
+        960.0,
+        1248
+      ],
+      "text": "if youre feeling particularly adventurous , consider camping outdoors . if youre going to a beach destination , fun activities for the whole family are kayaking and bicycling . most beach towns have multiple places for you to rent these things . if youre driving and are able , you can take your own bicycles or kayaks with you . if you dont want to think about working out at a gym during your vacationing , doing fun activities like kayaking and bicycling will get you active without making it feel like exercise .",
+      "type": "body"
+    },
+    {
+      "block_id": "b6",
+      "bbox": [
+        200.0,
+        1272,
+        960.0,
+        1432
+      ],
+      "text": "while you may want to use your vacation for relaxing , that doesnt mean you cant relax and stay active . you dont have to run a marathon every day , just include physical activity into your daily routine . instead of sitting on the beach all day , go for a walk along the beach . walk through a local park or around the city .",
+      "type": "body"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_id": "q1",
+      "query_text": "look for destinations that offer physical activities , like a river rafting trip , a hike through the jungle , a walk to the tallest mountain in the state , rid",
+      "answer_block_id": "b4",
+      "candidate_block_ids": [
+        "b1",
+        "b4",
+        "b2",
+        "b6",
+        "b3"
+      ],
+      "query_block_id": "b4"
+    },
+    {
+      "query_id": "q2",
+      "query_text": "while you may want to use your vacation for relaxing , that doesnt mean you cant relax and stay active . you dont have to run a marathon every day , just includ",
+      "answer_block_id": "b6",
+      "candidate_block_ids": [
+        "b2",
+        "b6",
+        "b1",
+        "b3",
+        "b5"
+      ],
+      "query_block_id": "b6"
+    },
+    {
+      "query_id": "q3",
+      "query_text": "when youre planning your vacation , consider skipping cities and instead go for an outdoor destination . national parks are great areas for an active , fun vaca",
+      "answer_block_id": "b3",
+      "candidate_block_ids": [
+        "b4",
+        "b3",
+        "b5",
+        "b1",
+        "b2"
+      ],
+      "query_block_id": "b3"
+    }
+  ],
+  "source": "gursi26/wikihow-cleaned:22"
+}
