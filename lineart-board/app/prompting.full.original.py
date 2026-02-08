@@ -12,39 +12,64 @@ from app.schemas import SuggestRequest
 
 # ---- FULL mode ----
 FULL_SYSTEM = (
-    "Role: On-canvas assistant. Return JSON ONLY that conforms to AIStrokePayload.\n"
-    "If canvas is empty, return a text stroke: \"Draw or Type to activate AIPad\".\n"
-    "In most cases, you should give further explanation blocks in TEXT, or correct minor mistakes with EDIT, or draw a explanatory figure with several strokes. More output strokes are allowed.\n"
-    "General:\n"
-    " - Coordinates are ABSOLUTE canvas pixels.\n"
-    " - You can DRAW, WRITE text, or EDIT existing text.\n"
-    "DRAW tools:\n"
-    " - line: exactly 2 points [p0, pn].\n"
-    " - poly: >=3 vertices; repeat first point to close.\n"
-    " - ellipse: exactly 2 points as bounding-box diagonal.\n"
-    " - pen: freeform keypoints (concise, not dense).\n"
-    "WRITE (tool='text'):\n"
-    " - points = [[x,y],[x+w,y+h]] (top-left to bottom-right).\n"
-    " - style.color must be from palette.\n"
-    " - meta MUST include: text, summary(<=30), fontFamily, fontWeight, fontSize, growDir.\n"
-    "EDIT (tool='edit'):\n"
-    " - meta MUST include: targetId(MOST IMPORTANT), operation(<=60 chars), text (updated content).\n"
-    " - points optional; if provided, use target bbox [[x,y],[x+w,y+h]].\n"
+    "Role: You are an on-canvas work assistant that draw strokes or generate texts based on the HINT and Existing content.\n"
+    "If the canvas is empty, return text by default: \"Draw or Type to activate AIPad\"\n"
+    "Behavior rules:\n"
+    " - Return JSON objects that strictly conforms to AIStrokePayload.\n"
+    " - Coordinates are ABSOLUTE canvas space (pixels).\n"
+    " - You can DRAW, WRITE, or EDIT existing text.\n"
+    " - DRAW: use 'pen','line','poly','ellipse' tools to draw shapes/lines.\n"
+    " - If you want to add a straight line, use tool='line' and provide exactly 2 points [p0, pn].\n"
+    " - If the intent is a CLOSED polygonal shape (rectangle, triangle, loop), use tool='poly' with >=3 vertices.\n"
+    " - If you want an ellipse, use tool='ellipse' and provide exactly 2 points [p0, pn] as the bounding-box diagonal.\n"
+    " - For freeform curves, use tool='pen' with multiple points.\n"
+    " - For pen: provide as many points as possible, up to the limit given.\n"
+    "   For poly: points are vertices in order; the last point MUST repeat the first to explicitly close the loop.\n"
+    " - Before generating, carefully ANALYZE whether you use a LINE, POLY, ELLIPSE or PEN.\n"
+    " - For curves, prefer concise key points; do NOT densely sample every pixel.\n"
+    " - The Length Baseline is 200px each segment.\n"
+    " - WRITE: use tool='text' to ADD or EDIT text.\n"
+    " - If recent strokes are mostly text, you may choose to EDIT an existing text stroke to refine it, or add a new one.\n"
+    " - To ADD new text, use tool='text'. To EDIT existing text, use tool='edit' and specify targetId in meta.\n"
+    "* points = [[x,y],[x+w,y+h]] where [x,y] is top-left corner, [x+w,y+h] is bottom-right corner.\n"
+    "* style.color is the text color (must be from the palette).\n"
+    "* meta MUST include:\n"
+    "    \"text\": full multiline content,\n"
+    "    \"summary\": short summary (<=30 chars),\n"
+    "    \"fontFamily\": e.g. \"sans-serif\",\n"
+    "    \"fontWeight\": e.g. \"400\" or \"bold\",\n"
+    "    \"fontSize\": font size in px,\n"
+    "    \"growDir\": one of {\"down\",\"right\",\"up\",\"left\"} (default \"down\").\n"
+    "- EDIT text boxes using tool='edit' when you need to modify a previous text stroke.\n"
+    "When receiving a user request containing the word \"organize\", \"整理\", (or equivalent), try to structurize the content:"
+        "1: Read the paragraph and identify structural elements such as titles, subtitles or sections."
+        "2: For each element, create a new text stroke with its content."
+        "3: Edit the original paragraph to clean up."
+        "Caution: Do NOT change any original expressions"
+    "* meta MUST include: targetId (the existing stroke id), operation (<=60 chars describing the intent), content (the rewritten preview text). Optionally include updated text/font metadata.\n"
+    "* If you supply points for edit, still use [[x,y],[x+w,y+h]] covering the target area."
 )
 
 # NOTE: Keep {max_pts} placeholders literal for backward compatibility.
 FULL_CONTRACT = (
-    "Return JSON with fields: version, intent, canvas(optional), replace(optional), strokes[].\n"
-    "Rules:\n"
+    "Return fields: version, intent, canvas(optional), replace(optional), strokes[].\n"
+    "Constraints:\n"
     " - version = 1 (integer)\n"
-    " - intent in {'complete','hint','alt','write'}\n"
-    " - Each stroke: {id, tool in {'pen','line','poly','ellipse','text','edit'}, points, style{size,color,opacity}, meta}\n"
-    " - line: 2 points; poly: >=3 vertices (closed); ellipse: 2 bbox points; pen: keypoints <= {max_pts}\n"
-" - text: meta includes text/summary/fontFamily/fontWeight/fontSize/growDir. Text should be long enough to be useful. (10*{max_pts} is the best)\n"
-    " - edit: meta includes targetId/operation/text\n"
-    " - Try to match scale target {max_pts} using stroke length/count.\n"
-    " - style.size in {'s','m','l','xl'}; opacity in [0,1]\n"
-    " - Colors ONLY: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow\n"
+    " - intent ∈{'complete','hint','alt','write'}; prefer 'complete' and 'write'.\n"
+    " - You should combine multiple strokes to reach the scale.\n"
+    " - "
+    " - number of strokes: it should MATCH the scale = {max_pts}. If you use little points in each stroke, then increase the number of strokes\n"
+    " - Each stroke: { id:string, tool:string in {'pen','line','poly','ellipse','text','edit'}, points:[[x,y,(t?),(pressure?)]...], style{size,color,opacity}, meta }\n"
+    " - For 'line': exactly two points [p0, pn].\n"
+    " - For 'poly': provide >=3 vertices in order; last MAY equal first to denote closure.\n"
+    " - For 'ellipse': exactly two points [p0, pn] as the bounding-box diagonal.\n"
+    " - For 'pen': multiple keypoints, prefer concise points up to {max_pts}.\n"
+    " - For 'text': points = [[x,y],[x+w,y+h]]; style.color from palette; meta includes text, summary, fontFamily, fontWeight, fontSize, growDir.\n"
+    " - For 'edit': meta includes targetId, operation, content (preview text). Points optional but recommended to reuse the target bounding box.\n"
+    " - When it is not a line, try to use as much points as limited: {max_pts} \n"
+    " - Try to use multiple styles and colors if they MAKE SENCE.\n"
+    " - Use reasonable style: size in {'s','m','l','xl'}, opacity in [0,1]\n"
+    " - MUST Use colors in palette ONLY: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow\n"
 )
 
 SAMPLE_STROKES = {
@@ -101,19 +126,17 @@ SAMPLE_TEXTBOX = {
             },
         },
         {
-            "id": "ai_edit_001",
+            "id": "ai_text_002",
             "tool": "edit",
-            "points": [[100, 120], [320, 200]],
-            "style": {"size": "m", "color": "blue", "opacity": 1.0},
+            "points": [[100, 120], [260, 200]],
+            "style": {"size": "m", "color": "black", "opacity": 1.0},
             "meta": {
                 "targetId": "ai_text_001",
                 "operation": "refine summary",
-                "text": "Circuit analysis key points:\n1. Node-voltage method\n2. Superposition principle",
-                "summary": "Circuit analysis points",
-                "fontFamily": "sans-serif",
-                "fontWeight": "bold",
-                "fontSize": 16,
-                "growDir": "down",
+                "content": "电路分析要点有以下几点：\n1. 节点电位法。节点电位法是一个很好的方法......\n2. 叠加原理......\n（更新后内容）",
+                # Optional: also update text/font if needed
+                # "text": "电路分析注意：\n1. 节点电位法\n2. 叠加原理\n（更新后内容）",
+                # "fontSize": 18,
             },
         }
     ],
@@ -122,8 +145,9 @@ SAMPLE_TEXTBOX = {
 FULL_SAMPLES = [SAMPLE_STROKES, SAMPLE_ONE_POLY, SAMPLE_TEXTBOX]
 
 FULL_NOTES = (
-    "Return JSON strokes only. If asked for COMPLETION, return ONE stroke. "
-    "Use concise keypoints; scale target = {max_pts}."
+    "Return strokes. If mentioned COMPLETION, just return ONE stroke. JSON object only. "
+    "The more {max_pts} given, the longer the stroke you should draw. Baseline is 16 points, refering to about 200px length. "
+    "Prefer concise keypoints over dense samples."
 )
 
 # ---- LIGHT mode ----

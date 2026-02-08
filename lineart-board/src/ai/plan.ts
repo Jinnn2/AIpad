@@ -142,7 +142,7 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
         if (!rawTarget) break
         const targetId = String(rawTarget)
         const operation = String(meta.operation ?? '').trim()
-        const content = String(meta.content ?? '').trim()
+        const content = String(meta.text ?? '').trim()
         const [p0, p1] = s.points || []
         const x0 = p0 ? Math.min(p0[0], (p1 ?? p0)[0]) : 0
         const y0 = p0 ? Math.min(p0[1], (p1 ?? p0)[1]) : 0
@@ -162,7 +162,7 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
             ...meta,
             targetId,
             operation,
-            content,
+            text: content,
           },
           targetId,
           operation,

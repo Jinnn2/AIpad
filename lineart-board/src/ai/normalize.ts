@@ -25,7 +25,12 @@ export function validateAIStrokePayload(raw: unknown): { ok: boolean; errors: st
       if (!s || typeof s !== 'object') errors.push(`strokes[${i}] not an object`)
       if (!s?.id || typeof s.id !== 'string') errors.push(`strokes[${i}].id missing`)
       if (!s?.tool || typeof s.tool !== 'string') errors.push(`strokes[${i}].tool missing`)
-      if (!Array.isArray(s?.points) || s.points.length < 2) errors.push(`strokes[${i}].points need >=2 points`)
+      const tool = String(s?.tool ?? '')
+      if (tool !== 'edit') {
+        if (!Array.isArray(s?.points) || s.points.length < 2) {
+          errors.push(`strokes[${i}].points need >=2 points`)
+        }
+      }
     })
   }
 
@@ -80,6 +85,7 @@ function simplifyRDP(points: AIStrokeV11['points'], eps = 0.4): AIStrokeV11['poi
 }
 
 export function computeBounds(points: AIStrokeV11['points']) {
+  if (!points || points.length === 0) return { x: 0, y: 0, w: 1, h: 1 }
   let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity
   for (const [x,y] of points) { if (x<minX) minX=x; if (y<minY) minY=y; if (x>maxX) maxX=x; if (y>maxY) maxY=y }
   return { x:minX, y:minY, w: Math.max(1,maxX-minX), h: Math.max(1,maxY-minY) }
@@ -96,7 +102,12 @@ function normalizeStroke(s: AIStrokeV11, viewport?: [number,number,number,number
   const size = (s.style?.size as 's'|'m'|'l'|'xl') ?? 'm'
   const color = COLORS.includes((s.style?.color as ColorName)) ? (s.style!.color as ColorName) : 'black'
   const opacity = typeof s.style?.opacity==='number' ? clamp(s.style!.opacity!,0,1) : 1
-  const raw = dedupeConsecutive(clampPoints(s.points, viewport))
+  const tool = String(s.tool ?? '')
+  const rawPoints = Array.isArray(s.points) ? s.points : []
+  if (tool === 'edit' && rawPoints.length < 2) {
+    return { id: String(s.id), tool, points: [], style: { size, color, opacity }, meta: s.meta ?? {} }
+  }
+  const raw = dedupeConsecutive(clampPoints(rawPoints, viewport))
   const closed = (s.tool !== 'poly') && isClosedStroke(raw)
   const eps = (s.tool === 'poly' || closed) ? 0 : 0.4
   let pts: AIStrokeV11['points'] = eps === 0 ? raw : simplifyRDP(raw, eps)

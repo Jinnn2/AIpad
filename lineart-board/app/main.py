@@ -562,11 +562,11 @@ def suggest(req: SuggestRequest):
             if not target_id:
                 raise HTTPException(502, "LLM edit stroke missing targetId.")
             operation = str(meta.get("operation") or "").strip()
-            content = str(meta.get("content") or "").strip()
+            text = str(meta.get("text") or "").strip()
             if not operation:
                 raise HTTPException(502, "LLM edit stroke missing operation description.")
-            if not content:
-                raise HTTPException(502, "LLM edit stroke missing content preview.")
+            if not text:
+                raise HTTPException(502, "LLM edit stroke missing text content.")
             raw_pts = s.get("points") or []
             pts_edit = []
             if isinstance(raw_pts, list) and len(raw_pts) >= 2:
@@ -581,7 +581,8 @@ def suggest(req: SuggestRequest):
             meta_clean = dict(meta)
             meta_clean["targetId"] = str(target_id)
             meta_clean["operation"] = operation
-            meta_clean["content"] = content
+            meta_clean["text"] = text
+            meta_clean.pop("content", None)
             style = s.get("style") or {}
             size = style.get("size") or "m"
             color = style.get("color") or "black"

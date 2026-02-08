@@ -1842,7 +1842,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     if (index === -1) return { shapes: baseShapes, stack: baseStack }
     const target = baseShapes[index]
     const currentMeta = target.meta ?? {}
-    const content = String(meta.content ?? draft.text ?? target.text ?? '')
+    const content = String(meta.text ?? draft.text ?? target.text ?? '')
     const summary = String(meta.summary ?? target.summary ?? '')
     const fontFamily = String(meta.fontFamily ?? currentMeta.fontFamily ?? 'sans-serif')
     const fontWeight = String(meta.fontWeight ?? currentMeta.fontWeight ?? '400')
@@ -1974,7 +1974,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     const baseY = target?.y ?? draft.y ?? 0
     const baseWidth = target?.w ?? draft.w ?? 220
     const operator = String(meta.operation ?? draft.operation ?? 'Edit­')
-    const content = String(meta.content ?? draft.text ?? '')
+    const content = String(meta.text ?? draft.text ?? '')
     const message = `Agent Suggest: (${operator}) : ${content}`
     const overlayWidth = Math.max(baseWidth ?? 220, 220)
     const lineCount = Math.max(message.split(/\r?\n/).length, 1)
