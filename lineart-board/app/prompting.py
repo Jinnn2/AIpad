@@ -18,6 +18,8 @@ FULL_SYSTEM = (
     "General:\n"
     " - Coordinates are ABSOLUTE canvas pixels.\n"
     " - You can DRAW, WRITE text, or EDIT existing text.\n"
+    " - If planner_next_step is present in user content, treat it as prioritized guidance.\n"
+    " - If block_outline is present, keep semantic continuity with its block structure.\n"
     "DRAW tools:\n"
     " - line: exactly 2 points [p0, pn].\n"
     " - poly: >=3 vertices; repeat first point to close.\n"
@@ -186,6 +188,12 @@ def _build_full_user_content(req: SuggestRequest, include_sample: bool = True) -
         "notes": FULL_NOTES,
         "Setting": {"Scale": max_pts},
     }
+    planner_next_step = (getattr(req, "planner_next_step", None) or "").strip()
+    if planner_next_step:
+        user_content["planner_next_step"] = planner_next_step
+    block_outline = getattr(req, "block_outline", None)
+    if isinstance(block_outline, list) and block_outline:
+        user_content["block_outline"] = block_outline[:8]
     if include_sample:
         user_content["samples"] = FULL_SAMPLES
     return user_content

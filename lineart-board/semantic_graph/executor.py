@@ -55,6 +55,7 @@ class ContextExecutor:
     ) -> Dict[str, object]:
         """Build a local canvas context and ask the FULL-mode backend for new strokes."""
         selected_blocks = self._select_blocks(plan, context)
+        block_outline = self._build_block_outline(selected_blocks)
         strokes = self._collect_strokes(selected_blocks)
 
         if not strokes:
@@ -73,10 +74,14 @@ class ContextExecutor:
         if request_mode not in {"full", "light"}:
             request_mode = "full"
 
+        planner_next_step = self._normalize_planner_hint(plan.next_step_hint)
+        composed_hint = self._compose_hint(user_hint, planner_next_step)
         req = SuggestRequest(
             mode=request_mode,
-            hint=user_hint,
+            hint=composed_hint,
             context=payload,
+            planner_next_step=planner_next_step,
+            block_outline=block_outline,
         )
 
         if request_mode == "light":
@@ -86,6 +91,24 @@ class ContextExecutor:
 
         response = self.llm_full_backend(messages, mode=request_mode)
         return response
+
+    @staticmethod
+    def _normalize_planner_hint(text: Optional[str]) -> Optional[str]:
+        if text is None:
+            return None
+        compact = " ".join(str(text).split()).strip()
+        if not compact:
+            return None
+        return compact[:240]
+
+    @staticmethod
+    def _compose_hint(user_hint: str, planner_next_step: Optional[str]) -> str:
+        base = (user_hint or "").strip()
+        if not planner_next_step:
+            return base
+        if not base:
+            return f"Planner next-step: {planner_next_step}"
+        return f"{base}\n\nPlanner next-step: {planner_next_step}"
 
     def _select_blocks(self, plan: ExecutionPlan, context: Optional[FocusContext]) -> List[str]:
         seeds: List[str] = []
@@ -160,7 +183,7 @@ class ContextExecutor:
             block = self.block_manager.state.blocks.get(block_id)
             if not block:
                 continue
-            for fragment_id in block.contents:
+            for fragment_id in sorted(block.contents):
                 if fragment_id in seen_fragments:
                     continue
                 fragment = self.block_manager.state.fragments.get(fragment_id)
@@ -172,6 +195,52 @@ class ContextExecutor:
                     seen_fragments.add(fragment_id)
 
         return strokes
+
+    def _build_block_outline(self, block_ids: Sequence[str]) -> List[Dict[str, object]]:
+        outline: List[Dict[str, object]] = []
+        for rank, block_id in enumerate(block_ids, start=1):
+            block = self.block_manager.state.blocks.get(block_id)
+            if not block:
+                continue
+
+            fragment_ids = sorted(block.contents)
+            item: Dict[str, object] = {
+                "rank": rank,
+                "blockId": block.block_id,
+                "label": block.label,
+                "summary": block.summary,
+                "fragmentCount": len(fragment_ids),
+                "fragmentIds": fragment_ids[:12],
+            }
+
+            text_snippets: List[Dict[str, str]] = []
+            for fid in fragment_ids:
+                fragment = self.block_manager.state.fragments.get(fid)
+                if not fragment or not fragment.text:
+                    continue
+                text = " ".join(fragment.text.split()).strip()
+                if not text:
+                    continue
+                text_snippets.append({"fragmentId": fid, "text": text[:120]})
+                if len(text_snippets) >= 3:
+                    break
+            if text_snippets:
+                item["textSnippets"] = text_snippets
+
+            relationships: List[Dict[str, object]] = []
+            for rel in sorted(block.relationships, key=lambda rel: rel.score, reverse=True)[: self.max_related_per_block]:
+                relationships.append(
+                    {
+                        "targetBlockId": rel.target_block_id,
+                        "type": rel.rel_type.value,
+                        "score": round(float(rel.score), 4),
+                    }
+                )
+            if relationships:
+                item["relationships"] = relationships
+
+            outline.append(item)
+        return outline
 
     def _fragment_to_stroke(self, fragment: Fragment) -> Optional[Dict[str, object]]:
         payload = fragment.payload if isinstance(fragment.payload, dict) else {}

@@ -98,6 +98,10 @@ class SuggestRequest(BaseModel):
     seq: Optional[int] = 1  # 1 = Step-1（图像理解），2 = Step-2（注入full）
     # Step-2 时把 Step-1 的文字说明作为“强化指令”送入 full 流程
     instruction_text: Optional[str] = None
+    # Optional planner guidance for FULL flow.
+    planner_next_step: Optional[str] = None
+    # Optional structured block outline for preserving graph structure in FULL prompts.
+    block_outline: Optional[List[Dict[str, Any]]] = None
 
 class SuggestResponse(BaseModel):
     ok: bool = True

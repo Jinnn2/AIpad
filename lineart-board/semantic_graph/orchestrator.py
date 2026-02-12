@@ -164,7 +164,11 @@ class ConversationOrchestrator:
                 else:
                     context_lines.append(f"- [{label}] {summary}")
         context_lines.append(f"USERS INPUT: {user_input}")
-        user_prompt = "\n".join(context_lines) + "\nPlease return JSON: {\"action\":...,\"targetBlockIds\":[],\"comment\":\"\"}"
+        user_prompt = (
+            "\n".join(context_lines)
+            + "\nPlease return JSON: "
+            + "{\"action\":...,\"targetBlockIds\":[],\"comment\":\"\",\"nextStepHint\":\"\"}"
+        )
         return [
             {
                 "role": "system",
@@ -190,7 +194,25 @@ class ConversationOrchestrator:
         action = str(parsed.get("action") or "NOOP")
         targets = [str(i) for i in (parsed.get("targetBlockIds") or [])]
         comment = parsed.get("comment")
-        return ExecutionPlan(action=action, target_block_ids=targets, comment=comment)
+
+        raw_next_hint = (
+            parsed.get("nextStepHint")
+            or parsed.get("next_step_hint")
+            or parsed.get("nextContentHint")
+            or parsed.get("next_content_hint")
+        )
+        next_step_hint: Optional[str] = None
+        if raw_next_hint is not None:
+            next_text = str(raw_next_hint).strip()
+            if next_text:
+                next_step_hint = next_text[:240]
+
+        return ExecutionPlan(
+            action=action,
+            target_block_ids=targets,
+            comment=comment,
+            next_step_hint=next_step_hint,
+        )
 
     def _resolve_targets(
         self,
@@ -274,25 +296,20 @@ class ConversationOrchestrator:
 system_prompt = (
     "You are an interactive whiteboard orchestrator. "
     "Read the latest user message and decide what should be included. "
-    "Always return JSON of the form {\"action\": ..., \"targetBlockIds\": [...], \"comment\": \"...\"}.\n\n"
+    "Always return JSON of the form {\"action\": ..., \"targetBlockIds\": [...], "
+    "\"comment\": \"...\", \"nextStepHint\": \"...\"}.\n\n"
     "Allowed actions:\n"
     "- CONTINUE: The message only belongs to the current focus block. No changes needed.\n"
     "- NOOP: Nothing should happen; acknowledge but take no action.\n"
     "- SWITCH: Move the focus to the listed block IDs. After switching, orchestration runs again.\n"
-    "- OPEN_RELATED: Other blocks are related and needed to add to the context. Add the listed blocks to the active set (do not steal focus). You can ONLY use existing blocks.\n"
+    "- OPEN_RELATED: Other blocks are related and needed to add to the context. "
+    "Add the listed blocks to the active set (do not steal focus). You can ONLY use existing blocks.\n"
     "- CLOSE: Remove the listed blocks from the active set.\n\n"
     "Rules:\n"
-    "1. Return valid JSON only—no markdown, no code fences.\n"
-    "2. Include a short human-readable explanation in the `comment` field.\n"
-    "3. Only reference block IDs that appear in the context list above.\n"
-    "4. If you are unsure, choose NOOP.\n"
-    "Respond with the JSON object only."
-    "Rules:\n"
-    "1. Always return valid JSON only — no markdown, no code fences.\n"
-    "2. Include a short, human-readable explanation in the `comment` field.\n"
-    "3. Do not invent block IDs — only use those shown in the context summary.\n"
-    "4. If uncertain, choose NOOP.\n\n"
-
-    "Your answer must contain **only** the JSON object, with no extra text."
+    "1. Return valid JSON only; no markdown or code fences.\n"
+    "2. Include a short human-readable explanation in `comment`.\n"
+    "3. Add `nextStepHint` as one concise sentence for the next generation focus.\n"
+    "4. Only reference block IDs that appear in the context list above.\n"
+    "5. If uncertain, choose NOOP.\n\n"
+    "Your answer must contain only the JSON object, with no extra text."
 )
-

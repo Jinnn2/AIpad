@@ -131,11 +131,37 @@ class VisionGrouper:
         group.updated_at = datetime.utcnow()
         return self._drain_ready_groups()
 
-    def flush_groups(self, *, reason: str) -> List[VisionPayload]:
-        ready = list(self._pending_groups.values())
-        self._pending_groups.clear()
-        payloads = [self._group_to_payload(group, override_reason=reason) for group in ready]
-        return payloads
+    def flush_groups(
+        self,
+        *,
+        reason: str,
+        ready_only: bool = False,
+        min_size: int = 1,
+        stale_seconds: int = 8,
+    ) -> List[VisionPayload]:
+        if not ready_only:
+            ready = list(self._pending_groups.values())
+            self._pending_groups.clear()
+            return [self._group_to_payload(group, override_reason=reason) for group in ready]
+
+        now = datetime.utcnow()
+        size_floor = max(1, int(min_size))
+        stale_window = timedelta(seconds=max(0, int(stale_seconds)))
+        ready_ids: List[str] = []
+        for gid, group in self._pending_groups.items():
+            if group.ready_reason:
+                ready_ids.append(gid)
+                continue
+            is_stale = (now - group.updated_at) >= stale_window
+            if len(group.stroke_ids) >= size_floor and is_stale:
+                ready_ids.append(gid)
+
+        ready_groups: List[_PendingGroup] = []
+        for gid in ready_ids:
+            group = self._pending_groups.pop(gid, None)
+            if group:
+                ready_groups.append(group)
+        return [self._group_to_payload(group, override_reason=reason) for group in ready_groups]
 
     def register_diagram_block(self, block_id: str, bbox: Optional[Tuple[float, float, float, float]]) -> None:
         if bbox:
@@ -172,7 +198,7 @@ class VisionGrouper:
         for other in self._pending_groups.values():
             if other is group:
                 continue
-            if not other.ready_reason:
+            if not other.ready_reason and len(other.stroke_ids) >= self.stroke_threshold:
                 other.ready_reason = "spatial_split"
         return group
 

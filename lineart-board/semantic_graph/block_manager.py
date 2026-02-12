@@ -79,6 +79,8 @@ class BlockManager:
         summary_refresh_interval: timedelta = timedelta(minutes=10),
         canvas_size: Optional[Tuple[float, float]] = None,
         auto_promote_group_size: int = 5,
+        spatial_target_ratio: float = 0.40,
+        time_target_ratio: float = 0.08,
         cluster_logger: Optional[Any] = None,
     ) -> None:
         self.state = state or GraphState()
@@ -90,6 +92,8 @@ class BlockManager:
         self.summary_refresh_interval = summary_refresh_interval
         self.canvas_size = canvas_size or (1.0, 1.0)
         self.auto_promote_group_size = max(1, auto_promote_group_size)
+        self.spatial_target_ratio = max(0.0, float(spatial_target_ratio))
+        self.time_target_ratio = max(0.0, float(time_target_ratio))
 
         self._time_anchor: Optional[datetime] = None
         self._fragment_to_group: Dict[str, str] = {}
@@ -669,10 +673,12 @@ class BlockManager:
         group = self.state.groups.get(group_id)
         if not group or not self.summarizer:
             return False
-        if len(group.members) >= self.auto_promote_group_size:
+        member_count = len(group.members)
+        if member_count >= self.auto_promote_group_size:
             return True
         touches = self._group_touch_counts.get(group_id, 0)
-        return touches >= self.auto_promote_group_size
+        min_members_for_touches = max(3, math.ceil(self.auto_promote_group_size * 0.6))
+        return touches >= self.auto_promote_group_size and member_count >= min_members_for_touches
 
     def _refresh_block_embedding(self, block: Block) -> None:
         embedding = self._compute_block_embedding(block.contents)
@@ -818,21 +824,29 @@ class BlockManager:
     _FONT_WEIGHT_EMPHASIS = 3
     _HEADING_FONT_SIZE = 28.0
     _HEADING_FONT_WEIGHT = 600
-    _SPATIAL_TARGET_RATIO = 0.2
     _SPATIAL_FALLBACK_SCALE = 0.2
-    _TIME_TARGET_RATIO = 0.1
     _TIME_FALLBACK_SCALE = 0.05
     _BLOCK_CHAR_THRESHOLD = 5000
     _BLOCK_CHAR_PENALTY = 0.35
 
     def _weighted_bbox(self, bbox: Optional[BBox], semantic_norm: float) -> List[float]:
         raw = self._normalize_bbox(bbox)
-        return self._scale_aux_vector(raw, semantic_norm, self._SPATIAL_TARGET_RATIO, self._SPATIAL_FALLBACK_SCALE)
+        return self._scale_aux_vector(
+            raw,
+            semantic_norm,
+            self.spatial_target_ratio,
+            self._SPATIAL_FALLBACK_SCALE,
+        )
 
     def _weighted_timestamp(self, ts: Optional[datetime], semantic_norm: float) -> float:
         hours = self._normalize_timestamp(ts)
         clamped = min(hours, self._TIME_CLAMP_HOURS)
-        return self._scale_aux_scalar(clamped, semantic_norm, self._TIME_TARGET_RATIO, self._TIME_FALLBACK_SCALE)
+        return self._scale_aux_scalar(
+            clamped,
+            semantic_norm,
+            self.time_target_ratio,
+            self._TIME_FALLBACK_SCALE,
+        )
 
     def _type_indicator(self, fragment_type: FragmentType) -> float:
         return self._TYPE_SCALE if fragment_type == FragmentType.TEXT else 0.0

@@ -444,6 +444,47 @@ def suggest(req: SuggestRequest):
         try: return round(float(v), 3)
         except Exception: return float(v)
 
+    _ALLOWED_COLORS = {
+        "black", "blue", "green", "grey",
+        "light-blue", "light-green", "light-red", "light-violet",
+        "orange", "red", "violet", "white", "yellow",
+    }
+    _COLOR_ALIASES = {
+        "gray": "grey",
+        "light-gray": "grey",
+        "light-grey": "grey",
+        "lightgray": "grey",
+        "lightgrey": "grey",
+        "purple": "violet",
+        "light-purple": "light-violet",
+        "lightpurple": "light-violet",
+        "lightviolet": "light-violet",
+        "navy": "blue",
+        "skyblue": "light-blue",
+        "lightblue": "light-blue",
+        "lightgreen": "light-green",
+        "lightred": "light-red",
+        "brown": "orange",
+        "light-brown": "orange",
+        "lightbrown": "orange",
+        "dark-red": "red",
+        "darkred": "red",
+    }
+
+    def _normalize_color(value: object) -> str:
+        """
+        Normalize color names to the allowed palette.
+        Unknown colors fallback to black to avoid payload validation errors.
+        """
+        if value is None:
+            return "black"
+        token = str(value).strip().lower()
+        if not token:
+            return "black"
+        token = token.replace("_", "-").replace(" ", "-")
+        canonical = _COLOR_ALIASES.get(token, token)
+        return canonical if canonical in _ALLOWED_COLORS else "black"
+
     def _limit_points(pts, max_n: int):
         # Resample points evenly up to max_n while keeping endpoints.
         if not isinstance(pts, list) or len(pts) <= max_n: return pts
@@ -546,7 +587,7 @@ def suggest(req: SuggestRequest):
 
             style = s.get("style") or {}
             size = style.get("size") or "m"
-            color = style.get("color") or "black"
+            color = _normalize_color(style.get("color"))
             opacity = _clamp01(style.get("opacity", 1.0))
 
             return {
@@ -585,7 +626,7 @@ def suggest(req: SuggestRequest):
             meta_clean.pop("content", None)
             style = s.get("style") or {}
             size = style.get("size") or "m"
-            color = style.get("color") or "black"
+            color = _normalize_color(style.get("color"))
             opacity = _clamp01(style.get("opacity", 1.0))
             return {
                 "id": str(s.get("id") or f"ai_{int(time.time())}"),
@@ -617,7 +658,7 @@ def suggest(req: SuggestRequest):
         # 3) Fill in style and metadata defaults.
         style = s.get("style") or {}
         size = style.get("size") or "m"
-        color = style.get("color") or "black"
+        color = _normalize_color(style.get("color"))
         opacity = _clamp01(style.get("opacity", 1.0))
 
         return {

@@ -6,8 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-__pycache__
-app\__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
 
 node_modules
 dist

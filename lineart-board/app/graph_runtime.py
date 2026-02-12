@@ -52,6 +52,34 @@ def _normalize_text(value: Optional[str]) -> str:
     return str(value).strip()
 
 
+def _env_int(name: str, default: int, *, minimum: Optional[int] = None) -> int:
+    raw = os.getenv(name)
+    value = default
+    if raw is not None and str(raw).strip() != "":
+        try:
+            value = int(float(str(raw).strip()))
+        except (TypeError, ValueError):
+            value = default
+    if minimum is not None:
+        value = max(minimum, value)
+    return value
+
+
+def _env_float(name: str, default: float, *, minimum: Optional[float] = None, maximum: Optional[float] = None) -> float:
+    raw = os.getenv(name)
+    value = default
+    if raw is not None and str(raw).strip() != "":
+        try:
+            value = float(str(raw).strip())
+        except (TypeError, ValueError):
+            value = default
+    if minimum is not None:
+        value = max(minimum, value)
+    if maximum is not None:
+        value = min(maximum, value)
+    return value
+
+
 def _fragment_export(fragment: Fragment) -> Dict[str, object]:
     return {
         "id": fragment.fragment_id,
@@ -351,6 +379,18 @@ class GraphRuntime:
         session_id: Optional[str] = None,
     ) -> None:
         width, height = canvas_size or (1920.0, 1080.0)
+        vision_stroke_threshold = _env_int("GRAPH_VISION_STROKE_THRESHOLD", 6, minimum=1)
+        vision_spatial_threshold = _env_float("GRAPH_VISION_SPATIAL_THRESHOLD", 280.0, minimum=0.0)
+        vision_auto_promote_confidence = _env_float(
+            "GRAPH_VISION_AUTO_PROMOTE_CONFIDENCE",
+            0.92,
+            minimum=0.0,
+            maximum=1.0,
+        )
+        block_group_distance_threshold = _env_float("GRAPH_BLOCK_GROUP_DISTANCE_THRESHOLD", 0.45, minimum=0.0)
+        block_block_distance_threshold = _env_float("GRAPH_BLOCK_BLOCK_DISTANCE_THRESHOLD", 0.40, minimum=0.0)
+        block_auto_promote_group_size = _env_int("GRAPH_BLOCK_AUTO_PROMOTE_GROUP_SIZE", 7, minimum=1)
+
         self.state = GraphState()
         self.embedder = OpenAIEmbedder(model=embed_model)
         self.summarizer = LLMBlockSummarizer(model=summary_model or DEFAULT_SUMMARY_MODEL)
@@ -359,7 +399,10 @@ class GraphRuntime:
             state=self.state,
             embedder=self.embedder,
             summarizer=self.summarizer,
+            group_distance_threshold=block_group_distance_threshold,
+            block_distance_threshold=block_block_distance_threshold,
             canvas_size=(float(width), float(height)),
+            auto_promote_group_size=block_auto_promote_group_size,
             cluster_logger=self.cluster_logger,
         )
         self.summarizer.set_block_provider(lambda: self.block_manager.state.blocks.values())
@@ -376,7 +419,13 @@ class GraphRuntime:
             build_light_messages=prompting.build_messages_light,
         )
         self.vision_backend = LLMVisionBackend(model=os.getenv("VISION_MODEL"))
-        self.vision = VisionGrouper(self.block_manager, backend=self.vision_backend)
+        self.vision = VisionGrouper(
+            self.block_manager,
+            backend=self.vision_backend,
+            stroke_threshold=vision_stroke_threshold,
+            auto_promote_confidence=vision_auto_promote_confidence,
+            spatial_threshold=vision_spatial_threshold,
+        )
         self.context = OrchestratorContext()
         self._seen_fragment_ids: Set[str] = set()
         self._fragment_signatures: Dict[str, str] = {}
@@ -623,7 +672,12 @@ class GraphRuntime:
         focus_fragment_id: Optional[str] = None,
         mode: Optional[str] = None,
     ) -> Dict[str, object]:
-        pending_payloads = self.vision.flush_groups(reason="ask_ai")
+        pending_payloads = self.vision.flush_groups(
+            reason="ask_ai",
+            ready_only=True,
+            min_size=self.vision.stroke_threshold,
+            stale_seconds=8,
+        )
         if pending_payloads:
             self._process_vision_batches(pending_payloads, reason="ask_ai")
         plan = self.orchestrator.generate_plan(
@@ -651,6 +705,7 @@ class GraphRuntime:
                     "action": plan.action,
                     "targetBlockIds": plan.target_block_ids,
                     "comment": plan.comment,
+                    "nextStepHint": plan.next_step_hint,
                 },
                 "payload": {
                     "version": 1,
@@ -669,6 +724,7 @@ class GraphRuntime:
                 "action": plan.action,
                 "targetBlockIds": plan.target_block_ids,
                 "comment": plan.comment,
+                "nextStepHint": plan.next_step_hint,
             },
             "payload": response,
         }

@@ -1,1 +1,4 @@
-lineart-board/app/__pycache__
+# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*$py.class

@@ -112,6 +112,7 @@ class ExecutionPlan:
     action: str
     target_block_ids: List[str]
     comment: Optional[str] = None
+    next_step_hint: Optional[str] = None
 
 
 @dataclass
