@@ -105,6 +105,18 @@ const BUTTON_BASE: React.CSSProperties = {
   cursor: 'pointer',
 }
 const TEXT_LINE_HEIGHT = DEFAULT_TEXTBOX_LINE_HEIGHT
+type TextStylePreset = {
+  id: 'body' | 'subtitle' | 'title'
+  label: string
+  fontSize: number
+  fontWeight: string
+  color: ColorName
+}
+const TEXT_STYLE_PRESETS: TextStylePreset[] = [
+  { id: 'body', label: '正文', fontSize: 18, fontWeight: '400', color: 'black' },
+  { id: 'subtitle', label: '副标题', fontSize: 24, fontWeight: '600', color: 'blue' },
+  { id: 'title', label: '标题', fontSize: 32, fontWeight: '700', color: 'red' },
+]
 const BLOCK_COLOR_PALETTE = [
   '#2563eb',
   '#ec4899',
@@ -158,6 +170,7 @@ export default function LineArtBoard() {
   // Canvas size; swap to ResizeObserver for responsive layout
   const [size] = useState({ width: window.innerWidth, height: window.innerHeight })
   const askAIRef = useRef<null | (() => void)>(null)
+  const askInFlightRef = useRef(false)
 const stageRef = useRef<any>(null)
 const gridLayerRef = useRef<any>(null)
   // Top toolbar state
@@ -610,6 +623,11 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     setAutoComplete(enabled)
     clearAutoTimer()
   }, [clearAutoTimer])
+  React.useEffect(() => {
+    if (autoMaintainPending) {
+      clearAutoTimer()
+    }
+  }, [autoMaintainPending, clearAutoTimer])
   const fetchGraphSnapshot = useCallback(async (currentSid: string) => {
     try {
       const res = await apiFetch(`/graph/state?sid=${encodeURIComponent(currentSid)}`)
@@ -1089,7 +1107,7 @@ const stageCursor = toolMode === 'hand'
     const forceStart = !!opts?.forceStart
     // Only handles countdown start/reset; preview cleanup happens elsewhere
     // Start when enabled and preview absent (or explicitly forced)
-    if (autoComplete && (!hasActivePreview || forceStart)) {
+    if (autoComplete && !autoMaintainPending && !askInFlightRef.current && (!hasActivePreview || forceStart)) {
       clearAutoTimer()
       setAutoCountdown(5)
       // Update visible countdown every second
@@ -1098,6 +1116,7 @@ const stageCursor = toolMode === 'hand'
       }, 1000)
       // Trigger askAI after 5 seconds
       autoTimerRef.current = setTimeout(() => {
+        if (askInFlightRef.current || autoMaintainPending) return
         clearAutoTimer()
         // Equivalent to pressing the Ask AI button
         askAIRef.current && askAIRef.current()
@@ -1106,7 +1125,7 @@ const stageCursor = toolMode === 'hand'
       // Otherwise ensure all timers are cleared
       clearAutoTimer()
     }
-  }, [autoComplete, hasActivePreview, clearAutoTimer])
+  }, [autoComplete, hasActivePreview, clearAutoTimer, autoMaintainPending])
 
   const clearImportQueue = useCallback(() => {
     if (importTimerRef.current) {
@@ -1180,6 +1199,13 @@ const stageCursor = toolMode === 'hand'
   const updateTextEditorState = useCallback((patch: Partial<TextEditorState>) => {
     setTextEditor((prev) => (prev ? { ...prev, ...patch } : prev))
   }, [])
+  const applyTextStylePreset = useCallback((preset: TextStylePreset) => {
+    updateTextEditorState({
+      fontSize: preset.fontSize,
+      fontWeight: preset.fontWeight,
+      color: preset.color,
+    })
+  }, [updateTextEditorState])
   const triggerCompletion = useCallback(async (targetId: string, baseText: string) => {
     if (!baseText.trim()) return
     setTextEditor(prev => (prev && prev.id === targetId ? { ...prev, completing: true, pendingCompletion: null } : prev))
@@ -1382,6 +1408,9 @@ const openTextEditor = useCallback((params: {
   }, [openTextEditor, textSettings])
   // ===== Ask AI: call backend and populate previews =====
   const askAI = useCallback(async () => {
+    if (askInFlightRef.current) return
+    askInFlightRef.current = true
+    clearAutoTimer()
     try {
       // 1) Ensure session exists
       let curSid = sid
@@ -1550,8 +1579,10 @@ const openTextEditor = useCallback((params: {
     } catch (err: any) {
       console.error('[askAI] error:', err)
       alert('Ask AI failed:\n' + (err?.message || String(err)))
+    } finally {
+      askInFlightRef.current = false
     }
-  }, [sid, drawStack, size.width, size.height, hint, aiScale, mode, visionVersion])
+  }, [sid, drawStack, size.width, size.height, hint, aiScale, mode, visionVersion, clearAutoTimer])
   React.useEffect(() => {
     askAIRef.current = askAI
   }, [askAI])
@@ -2520,6 +2551,35 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
               {textEditor.summary.length}/30
             </span>
           </label>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontSize: 12, color: '#4b5563' }}>快捷样式</span>
+            <div style={{ display: 'flex', gap: 8 }}>
+              {TEXT_STYLE_PRESETS.map((preset) => {
+                const active =
+                  Math.round(textEditor.fontSize) === preset.fontSize
+                  && textEditor.fontWeight === preset.fontWeight
+                  && textEditor.color === preset.color
+                return (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    onClick={() => applyTextStylePreset(preset)}
+                    style={{
+                      ...BUTTON_BASE,
+                      flex: 1,
+                      padding: '6px 10px',
+                      borderColor: active ? '#4aa3ff' : '#d1d5db',
+                      background: active ? 'rgba(74,163,255,0.16)' : '#fff',
+                      color: active ? '#1d4ed8' : '#334155',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {preset.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <label style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
               <span style={{ fontSize: 12, color: '#4b5563' }}>Font family</span>

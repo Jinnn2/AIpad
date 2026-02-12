@@ -323,7 +323,7 @@ def suggest(req: SuggestRequest):
         if use_context_executor and graph_runtime is not None:
             if req.context and isinstance(req.context.strokes, list):
                 try:
-                    graph_runtime.ingest_strokes([s.model_dump() for s in req.context.strokes])
+                    graph_runtime.sync_strokes_snapshot([s.model_dump() for s in req.context.strokes])
                 except Exception as exc:
                     print("[graph] ingest full context failed:", exc)
             if req.delta and isinstance(req.delta, DeltaPayload):
@@ -629,9 +629,27 @@ def suggest(req: SuggestRequest):
         }
 
     def _clean_payload(obj, gen_scale: int):
+        intent = (obj.get("intent") or "complete") if isinstance(obj, dict) else "complete"
+        intent_norm = str(intent).strip().lower()
+        canvas = obj.get("canvas") if isinstance(obj, dict) else None
+        replace = obj.get("replace") if isinstance(obj, dict) else None
+
         # Keep and sanitize every stroke.
         strokes_in = (obj.get("strokes") or []) if isinstance(obj, dict) else []
-        if not isinstance(strokes_in, list) or len(strokes_in) == 0:
+        if not isinstance(strokes_in, list):
+            raise HTTPException(502, "LLM returned invalid strokes field.")
+        if len(strokes_in) == 0:
+            if intent_norm == "noop":
+                cleaned = {
+                    "version": 1,
+                    "intent": "noop",
+                    "strokes": [],
+                }
+                if isinstance(canvas, dict):
+                    cleaned["canvas"] = canvas
+                if isinstance(replace, list):
+                    cleaned["replace"] = [str(x) for x in replace]
+                return cleaned
             raise HTTPException(502, "LLM returned empty strokes.")
         cleaned_list = []
         for s in strokes_in:
@@ -642,11 +660,6 @@ def suggest(req: SuggestRequest):
                 print("[clean] drop one stroke:", e)
         if not cleaned_list:
             raise HTTPException(502, "All strokes invalid after cleaning.")
-
-        # Pass through intent/canvas/replace when supplied.
-        intent = (obj.get("intent") or "complete")
-        canvas = obj.get("canvas") or None
-        replace = obj.get("replace") or None
 
         # Assemble the final payload.
         cleaned = {
@@ -715,7 +728,7 @@ def session_sync(body: SyncSessionRequest):
                 print("[graph] snapshot update error:", exc)
         if raw:
             try:
-                runtime.ingest_strokes(raw)
+                runtime.sync_strokes_snapshot(raw)
             except Exception as exc:
                 print("[graph] ingest error:", exc)
     sess.replace_strokes(raw)

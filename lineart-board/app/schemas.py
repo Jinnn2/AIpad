@@ -51,7 +51,7 @@ class CanvasInfo(BaseModel):
 class AIStrokePayload(BaseModel):
     # 模型输入/输出使用的统一结构
     version: int = 1
-    intent: Optional[Literal["complete","hint","alt","write"]] = "complete"
+    intent: Optional[Literal["complete","hint","alt","write","noop"]] = "complete"
     replace: Optional[List[str]] = None
     canvas: Optional[CanvasInfo] = None
     strokes: List[AIStrokeV11] = Field(default_factory=list)
