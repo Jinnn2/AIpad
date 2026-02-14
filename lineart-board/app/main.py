@@ -61,15 +61,17 @@ elif _env_cors:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=origins,
+        # Keep explicitly configured origins, while always allowing local dev loopback hosts.
+        allow_origin_regex=r"^http://(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
 else:
-    # Default to allowing http://localhost:* and http://127.0.0.1:* during development.
+    # Default to allowing local dev origins on IPv4/IPv6 loopback.
     app.add_middleware(
         CORSMiddleware,
-        allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(:\d+)?$",
+        allow_origin_regex=r"^http://(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -195,7 +197,7 @@ def suggest(req: SuggestRequest):
                 if LOG_IO:
                     try: _write_json(log_dir, "input.messages.step1.json", msgs)
                     except Exception: pass
-                parsed, dbg = call_chat_completions(msgs, max_tokens=800)
+                parsed, dbg = call_chat_completions(msgs, max_tokens=8000)
                 analysis = ""
                 instruction = ""
                 if isinstance(parsed, dict):
@@ -432,7 +434,7 @@ def suggest(req: SuggestRequest):
             model=req.model,
             temperature=req.temperature or 0.4,
             top_p=req.top_p or 0.95,
-            max_tokens=req.max_tokens or 1024,
+            max_tokens=req.max_tokens or 10240,
         )
     
     # Normalizer: turn raw LLM strokes into clean renderable data.
@@ -798,7 +800,7 @@ def completion(body: CompletionRequest):
     ]
     parsed, dbg = call_chat_completions(
         msgs,
-        max_tokens=body.max_tokens or 120,
+        max_tokens=body.max_tokens or 12000,
         temperature=0.6,
         top_p=0.9,
     )

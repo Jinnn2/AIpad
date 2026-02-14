@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import base64
 import hashlib
@@ -245,7 +245,7 @@ class LLMBlockSummarizer(BlockSummarizer):
 
 
 class LLMPlanBackend(PlanBackend):
-    def __init__(self, model: str = DEFAULT_PLAN_MODEL, max_tokens: int = 240) -> None:
+    def __init__(self, model: str = DEFAULT_PLAN_MODEL, max_tokens: int = 1200) -> None:
         self.model = model
         self.max_tokens = max_tokens
 
@@ -281,7 +281,7 @@ VISION_SYSTEM_PROMPT = (
 
 
 class LLMVisionBackend(VisionBackend):
-    def __init__(self, model: Optional[str] = None, *, max_tokens: int = 600) -> None:
+    def __init__(self, model: Optional[str] = None, *, max_tokens: int = 1200) -> None:
         self.model = model or os.getenv("VISION_MODEL") or DEFAULT_LLM_MODEL
         self.max_tokens = max_tokens
 
@@ -432,7 +432,7 @@ class GraphRuntime:
         self._latest_canvas_snapshot: Optional[CanvasSnapshot] = None
 
     def _call_full_backend(self, messages: List[Dict[str, str]], *, mode: Optional[str] = None) -> Dict[str, object]:
-        parsed, dbg = call_chat_completions(messages, model=DEFAULT_LLM_MODEL, max_tokens=900)
+        parsed, dbg = call_chat_completions(messages, model=DEFAULT_LLM_MODEL, max_tokens=9000)
         if isinstance(parsed, dict):
             return parsed
         if isinstance(parsed, str):

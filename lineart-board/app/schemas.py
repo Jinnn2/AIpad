@@ -86,7 +86,7 @@ class SuggestRequest(BaseModel):
     model: Optional[str] = None
     temperature: Optional[float] = 0.4
     top_p: Optional[float] = 0.95
-    max_tokens: Optional[int] = 1024
+    max_tokens: Optional[int] = 10240
     # 建议的 AI 单笔点数上限（用于引导模型控制规模）
     gen_scale: Optional[int] = Field(default=None, description="preferred max points for AI stroke")
     # 可选的Vision模式图像输入
