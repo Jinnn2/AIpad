@@ -209,6 +209,9 @@ class ConversationOrchestrator:
         group_candidates: List[Dict[str, object]],
     ) -> List[Dict[str, str]]:
         context_lines = []
+        latest_fragment = self._extract_latest_fragment(latest_context)
+        context_lines.append("LATEST_FRAGMENT:")
+        context_lines.append(json.dumps(latest_fragment, ensure_ascii=False))
         if latest_context:
             context_lines.append("LATEST_CONTEXT:")
             context_lines.append(json.dumps(latest_context, ensure_ascii=False))
@@ -291,18 +294,23 @@ class ConversationOrchestrator:
                 compact = self._compact_fragment(fragment)
                 if compact:
                     compact_members.append(compact)
-            return {
+            payload = {
                 "kind": "group",
                 "groupId": latest_group.group_id,
                 "updatedAt": latest_group.updated_at.isoformat(),
                 "fragmentCount": len(compact_members),
                 "fragments": compact_members,
             }
+            if compact_members:
+                payload["latestFragment"] = compact_members[0]
+            elif latest_block:
+                fallback_fragment = self._latest_fragment_for_ids(latest_block.contents)
+                compact_fallback = self._compact_fragment(fallback_fragment) if fallback_fragment else None
+                if compact_fallback:
+                    payload["latestFragment"] = compact_fallback
+            return payload
 
         if not latest_block:
-            return None
-        if focused_block_id and latest_block.block_id == focused_block_id:
-            # If semantic focus already points to the same block, skip latest context.
             return None
 
         latest_fragment = self._latest_fragment_for_ids(latest_block.contents)
@@ -317,6 +325,20 @@ class ConversationOrchestrator:
         if compact_latest:
             payload["latestFragment"] = compact_latest
         return payload
+
+    @staticmethod
+    def _extract_latest_fragment(latest_context: Optional[Dict[str, object]]) -> Optional[Dict[str, object]]:
+        if not isinstance(latest_context, dict):
+            return None
+        candidate = latest_context.get("latestFragment")
+        if isinstance(candidate, dict):
+            return candidate
+        fragments = latest_context.get("fragments")
+        if isinstance(fragments, list):
+            for item in fragments:
+                if isinstance(item, dict):
+                    return item
+        return None
 
     def _latest_fragment_for_ids(self, fragment_ids: Iterable[str]):
         latest = None
@@ -584,7 +606,7 @@ system_prompt = (
     "\"comment\": \"...\", \"nextStepHint\": \"...\"}. targetBlockIds may contain block IDs and group IDs.\n\n"
     "Allowed actions:\n"
     "- CONTINUE: The content provided is what you need to complete the task. Put what you need into targetBlockIds\n"
-    "- NOOP: Nothing should happen; acknowledge but take no action.\n"
+    "- NOOP: No appropriate action can be determined; the system will quit and wait for user's further input.\n"
     "- SWITCH: Move the focus to the listed context IDs (block/group). After switching, orchestration runs again.\n"
     "- OPEN_RELATED: Other context IDs are related and needed to add to the context. "
     "Add the listed IDs to the active set (do not steal focus). You can ONLY use existing IDs.\n"

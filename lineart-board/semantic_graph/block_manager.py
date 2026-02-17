@@ -824,6 +824,8 @@ class BlockManager:
     _FONT_WEIGHT_EMPHASIS = 3
     _HEADING_FONT_SIZE = 34.0
     _HEADING_FONT_WEIGHT = 700
+    _SUBHEADING_FONT_SIZE = 22.0
+    _SUBHEADING_FONT_WEIGHT = 600
     _HEADING_MAX_TEXT_LEN = 80
     _HEADING_MAX_LINES = 2
     _SPATIAL_FALLBACK_SCALE = 0.2
@@ -951,6 +953,22 @@ class BlockManager:
             flag = graph_meta.get("isHeading")
             if isinstance(flag, bool):
                 return flag
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        if isinstance(meta, dict):
+            role = str(meta.get("role") or "").strip().lower()
+            if role in {
+                "title",
+                "heading",
+                "header",
+                "subtitle",
+                "subheading",
+                "sub-title",
+                "sub_title",
+                "标题",
+                "副标题",
+                "小标题",
+            }:
+                return True
         size, weight = self._extract_font_meta(fragment)
         text_val = (fragment.text or "").strip()
         line_count = text_val.count("\n") + 1 if text_val else 1
@@ -959,6 +977,8 @@ class BlockManager:
         if size >= self._HEADING_FONT_SIZE and concise and short_text:
             return True
         if size >= 28 and weight >= self._HEADING_FONT_WEIGHT and concise and (not text_val or len(text_val) <= 60):
+            return True
+        if size >= self._SUBHEADING_FONT_SIZE and weight >= self._SUBHEADING_FONT_WEIGHT and concise and short_text:
             return True
         return False
 

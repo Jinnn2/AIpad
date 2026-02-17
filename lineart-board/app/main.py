@@ -319,6 +319,12 @@ def suggest(req: SuggestRequest):
             sess.replace_strokes([s.model_dump() for s in req.context.strokes])  # type: ignore
 
         graph_runtime = sess.graph_runtime
+        runtime_group_promote_mode = getattr(req, "group_promote_mode", None)
+        if graph_runtime is not None and runtime_group_promote_mode:
+            try:
+                graph_runtime.set_group_promotion_mode(runtime_group_promote_mode)
+            except Exception as exc:
+                print("[graph] set group promote mode failed:", exc)
         req_mode = (getattr(req, "mode", None) or "full").lower()
         use_context_executor = bool(sess.graph_auto and graph_runtime is not None and req_mode in {"full", "light"})
 

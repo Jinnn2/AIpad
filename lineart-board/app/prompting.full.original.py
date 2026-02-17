@@ -39,7 +39,9 @@ FULL_SYSTEM = (
     "    \"fontFamily\": e.g. \"sans-serif\",\n"
     "    \"fontWeight\": e.g. \"400\" or \"bold\",\n"
     "    \"fontSize\": font size in px,\n"
-    "    \"growDir\": one of {\"down\",\"right\",\"up\",\"left\"} (default \"down\").\n"
+    "    \"role\": optional one of {\"body\",\"subtitle\",\"title\"},\n"
+    "    \"growDir\": one of {\"right-down\",\"down\",\"right\",\"up\",\"left\"} (default \"right-down\").\n"
+    "For growDir='right-down', wrap inside current box first, and only if overflow remains, expand proportionally to lower-right.\n"
     "- EDIT text boxes using tool='edit' when you need to modify a previous text stroke.\n"
     "When receiving a user request containing the word \"organize\", \"整理\", (or equivalent), try to structurize the content:"
         "1: Read the paragraph and identify structural elements such as titles, subtitles or sections."
@@ -64,7 +66,7 @@ FULL_CONTRACT = (
     " - For 'poly': provide >=3 vertices in order; last MAY equal first to denote closure.\n"
     " - For 'ellipse': exactly two points [p0, pn] as the bounding-box diagonal.\n"
     " - For 'pen': multiple keypoints, prefer concise points up to {max_pts}.\n"
-    " - For 'text': points = [[x,y],[x+w,y+h]]; style.color from palette; meta includes text, summary, fontFamily, fontWeight, fontSize, growDir.\n"
+    " - For 'text': points = [[x,y],[x+w,y+h]]; style.color from palette; meta includes text, summary, fontFamily, fontWeight, fontSize, optional role in {'body','subtitle','title'}, growDir (default 'right-down').\n"
     " - For 'edit': meta includes targetId, operation, content (preview text). Points optional but recommended to reuse the target bounding box.\n"
     " - When it is not a line, try to use as much points as limited: {max_pts} \n"
     " - Try to use multiple styles and colors if they MAKE SENCE.\n"
@@ -122,7 +124,8 @@ SAMPLE_TEXTBOX = {
                 "fontFamily": "sans-serif",
                 "fontWeight": "bold",
                 "fontSize": 16,
-                "growDir": "down",
+                "role": "subtitle",
+                "growDir": "right-down",
             },
         },
         {

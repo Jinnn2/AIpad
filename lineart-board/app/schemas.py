@@ -29,10 +29,11 @@ class AIStrokeV11(BaseModel):
       - meta: {
           "text": str,
           "summary": str,
+          "role": str,          # optional: 'body'|'subtitle'|'title'
           "fontFamily": str,
           "fontWeight": str,   # '400'/'bold'/...
           "fontSize": float,   # px
-          "growDir": str       # 'down'|'right'|'up'|'left'
+          "growDir": str       # 'right-down'|'down'|'right'|'up'|'left' (right-down = proportional grow to lower-right)
         }
     """
     id: str
@@ -103,6 +104,8 @@ class SuggestRequest(BaseModel):
     planner_next_step: Optional[str] = None
     # Optional structured block outline for preserving graph structure in FULL prompts.
     block_outline: Optional[List[Dict[str, Any]]] = None
+    # Optional runtime override for group->block promotion strategy in Auto Maintain.
+    group_promote_mode: Optional[Literal["heuristic", "hybrid", "llm"]] = None
 
 class SuggestResponse(BaseModel):
     ok: bool = True

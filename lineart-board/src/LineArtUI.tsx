@@ -254,7 +254,8 @@ export function SettingsButton(props: SettingsButtonProps) {
   )
 }
 
-type GrowDir = 'down' | 'up' | 'left' | 'right'
+type GrowDir = 'down' | 'up' | 'left' | 'right' | 'right-down'
+type GroupPromoteMode = 'heuristic' | 'hybrid' | 'llm'
 
 export type SidePanelProps = {
   toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select'
@@ -286,6 +287,8 @@ export type SidePanelProps = {
   onLlmTopPChange: (value: number) => void
   onLlmMaxTokensChange: (value: number) => void
   onResetLLMSettings: () => void
+  groupPromoteMode: GroupPromoteMode
+  onGroupPromoteModeChange: (value: GroupPromoteMode) => void
   settingsOpen: boolean
   onCloseSettings: () => void
   promptMode: PromptMode
@@ -333,6 +336,8 @@ export function SidePanel(props: SidePanelProps) {
     onLlmTopPChange,
     onLlmMaxTokensChange,
     onResetLLMSettings,
+    groupPromoteMode,
+    onGroupPromoteModeChange,
     settingsOpen,
     onCloseSettings,
     promptMode,
@@ -457,6 +462,25 @@ export function SidePanel(props: SidePanelProps) {
             </div>
           </div>
 
+          <div style={{ marginTop: 12, fontSize: 11, color: '#64748b', letterSpacing: '.3px', textTransform: 'uppercase' }}>
+            Auto Maintain
+          </div>
+          <div style={{ display: 'grid', gap: 8, marginTop: 8 }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#475569' }}>Group Promote Mode</span>
+              <select
+                value={groupPromoteMode}
+                onChange={(e) => onGroupPromoteModeChange(e.target.value as GroupPromoteMode)}
+                style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                title="heuristic: rules only, hybrid: rules+LLM review on boundary cases, llm: always review"
+              >
+                <option value="heuristic">Heuristic</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="llm">LLM Review</option>
+              </select>
+            </label>
+          </div>
+
           {promptMode === 'vision' && (
             <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
               <label style={{ fontSize: 12, color: '#334155', width: 120 }}>Vision version</label>
@@ -579,7 +603,7 @@ export function SidePanel(props: SidePanelProps) {
                 onChange={(e) => onTextSettingsChange({ growDir: e.target.value as GrowDir })}
                 style={{ ...SEL, width: '100%' }}
               >
-                {(['down', 'right', 'up', 'left'] as const).map((dir) => (
+                {(['right-down', 'down', 'right', 'up', 'left'] as const).map((dir) => (
                   <option key={dir} value={dir}>{dir}</option>
                 ))}
               </select>

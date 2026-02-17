@@ -75,6 +75,19 @@ const VITE_LLM_MODEL_DEFAULT = (() => {
 const VITE_LLM_TEMPERATURE_DEFAULT = readViteNumber('VITE_OPENAI_TEMPERATURE', 0.4, 0, 2)
 const VITE_LLM_TOP_P_DEFAULT = readViteNumber('VITE_OPENAI_TOP_P', 0.95, 0, 1)
 const VITE_LLM_MAX_TOKENS_DEFAULT = Math.round(readViteNumber('VITE_OPENAI_MAX_TOKENS', 10240, 256, 32768))
+type GroupPromoteMode = 'heuristic' | 'hybrid' | 'llm'
+const normalizeGroupPromoteMode = (value: unknown): GroupPromoteMode => {
+  const token = String(value ?? '').trim().toLowerCase()
+  if (token === 'hybrid' || token === 'llm') return token
+  return 'heuristic'
+}
+const VITE_GROUP_PROMOTE_MODE_DEFAULT: GroupPromoteMode = (() => {
+  try {
+    return normalizeGroupPromoteMode((import.meta as any)?.env?.VITE_GRAPH_AGENT_GROUP_PROMOTE_MODE ?? 'heuristic')
+  } catch {
+    return 'heuristic'
+  }
+})()
 const apiFetch = async (path: string, init?: RequestInit) => {
   const isAbsolute = typeof path === 'string' && /^https?:/i.test(path)
   const request = (url: string) => fetch(url, init)
@@ -140,6 +153,27 @@ const TEXT_STYLE_PRESETS: TextStylePreset[] = [
   { id: 'subtitle', label: '副标题', fontSize: 24, fontWeight: '600', color: 'blue' },
   { id: 'title', label: '标题', fontSize: 32, fontWeight: '700', color: 'red' },
 ]
+type TextRole = 'body' | 'subtitle' | 'title'
+const parseFontWeight = (raw: string | number | null | undefined) => {
+  if (typeof raw === 'number' && Number.isFinite(raw)) return Math.round(raw)
+  const token = String(raw ?? '').trim().toLowerCase()
+  if (!token) return 400
+  if (/^\d+$/.test(token)) return Number(token)
+  if (token === 'bold' || token === 'heavy') return 700
+  if (token === 'semibold' || token === 'demibold') return 600
+  return 400
+}
+const inferTextRole = (fontSize: number, fontWeight: string): TextRole => {
+  const normalizedSize = Number(fontSize) || 16
+  const normalizedWeight = parseFontWeight(fontWeight)
+  if (normalizedSize >= 30 || (normalizedSize >= 28 && normalizedWeight >= 700)) {
+    return 'title'
+  }
+  if (normalizedSize >= 22 && normalizedWeight >= 600) {
+    return 'subtitle'
+  }
+  return 'body'
+}
 const BLOCK_COLOR_PALETTE = [
   '#2563eb',
   '#ec4899',
@@ -163,7 +197,7 @@ const hexToRgba = (hex: string, alpha: number) => {
 }
 // Preview entries keep drafts grouped by payload id
 type PreviewEntry = { payloadId: string; drafts: ShapeDraft[] }
-type TextGrowDir = 'down' | 'up' | 'left' | 'right'
+type TextGrowDir = 'down' | 'up' | 'left' | 'right' | 'right-down'
 type TextSettings = {
   fontFamily: string
   fontSize: number
@@ -279,6 +313,7 @@ const gridLayerRef = useRef<any>(null)
   const [llmTemperature, setLlmTemperature] = useState<number>(VITE_LLM_TEMPERATURE_DEFAULT)
   const [llmTopP, setLlmTopP] = useState<number>(VITE_LLM_TOP_P_DEFAULT)
   const [llmMaxTokens, setLlmMaxTokens] = useState<number>(VITE_LLM_MAX_TOKENS_DEFAULT)
+  const [groupPromoteMode, setGroupPromoteMode] = useState<GroupPromoteMode>(VITE_GROUP_PROMOTE_MODE_DEFAULT)
   // AI generation scale caps point count and informs upload density
   const [aiScale, setAiScale] = useState<number>(16) // adjustable 4-64, defaults to 16
   // Live drawing state with raw float coordinates (world space)
@@ -295,7 +330,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     fontFamily: 'sans-serif',
     fontSize: 18,
     fontWeight: '400',
-    growDir: 'down',
+    growDir: 'right-down',
   })
   const [textEditor, setTextEditor] = useState<TextEditorState | null>(null)
   const [selectedShapeId, setSelectedShapeId] = useState<string | null>(null)
@@ -1315,10 +1350,12 @@ const stageCursor = toolMode === 'hand'
     const actualLineHeight = textEditor.fontSize * layout.lineHeight
     const heightPadding = Math.min(actualLineHeight * 0.35, 16)
     const paddedHeight = layout.height + heightPadding
+    const textRole = inferTextRole(textEditor.fontSize, textEditor.fontWeight)
     const sharedMeta = {
       author: 'human',
       text: content,
       summary,
+      role: textRole,
       fontFamily: textEditor.fontFamily,
       fontWeight: textEditor.fontWeight,
       fontSize: textEditor.fontSize,
@@ -1500,6 +1537,7 @@ const openTextEditor = useCallback((params: {
         context: { version: 1, intent: 'complete', strokes: snapshot },
         hint,
         auto_complete_enabled: autoComplete,
+        group_promote_mode: groupPromoteMode,
         ...(runtimeModel ? { model: runtimeModel } : {}),
         temperature: runtimeTemperature,
         top_p: runtimeTopP,
@@ -1553,6 +1591,7 @@ const openTextEditor = useCallback((params: {
           // Reuse existing parameters such as hint/gen_scale
           hint,
           auto_complete_enabled: autoComplete,
+          group_promote_mode: groupPromoteMode,
           ...(runtimeModel ? { model: runtimeModel } : {}),
           temperature: runtimeTemperature,
           top_p: runtimeTopP,
@@ -1642,6 +1681,7 @@ const openTextEditor = useCallback((params: {
     size.height,
     hint,
     autoComplete,
+    groupPromoteMode,
     llmModel,
     llmTemperature,
     llmTopP,
@@ -1946,7 +1986,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     const fontFamily = String(meta.fontFamily ?? currentMeta.fontFamily ?? 'sans-serif')
     const fontWeight = String(meta.fontWeight ?? currentMeta.fontWeight ?? '400')
     const fontSize = Number(meta.fontSize ?? currentMeta.fontSize ?? 16) || 16
-    const growDir = (meta.growDir as TextGrowDir) ?? (currentMeta.growDir as TextGrowDir) ?? 'down'
+    const role = String(meta.role ?? inferTextRole(fontSize, fontWeight))
+    const growDir = (meta.growDir as TextGrowDir) ?? (currentMeta.growDir as TextGrowDir) ?? 'right-down'
     const padding = Number(meta.padding ?? currentMeta.padding ?? 0)
     const baseWidth = Number(meta.configuredWidth ?? currentMeta.configuredWidth ?? target.w ?? 240)
     const baseHeight = Number(meta.configuredHeight ?? currentMeta.configuredHeight ?? target.h ?? 160)
@@ -1976,6 +2017,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       ...meta,
       text: content,
       summary,
+      role,
       fontFamily,
       fontWeight,
       fontSize,
@@ -2579,6 +2621,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onLlmTopPChange={(value) => setLlmTopP(clamp(value, 0, 1))}
         onLlmMaxTokensChange={(value) => setLlmMaxTokens(Math.max(256, Math.min(32768, Math.round(value || 0))))}
         onResetLLMSettings={resetRuntimeLLMSettings}
+        groupPromoteMode={groupPromoteMode}
+        onGroupPromoteModeChange={(value) => setGroupPromoteMode(normalizeGroupPromoteMode(value))}
         settingsOpen={settingsOpen}
         onCloseSettings={() => setSettingsOpen(false)}
         promptMode={mode}
@@ -2739,7 +2783,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 onChange={(e) => updateTextEditorState({ growDir: e.target.value as TextGrowDir })}
                 style={{ ...INPUT_BASE, width: '100%' }}
               >
-                {(['down', 'right', 'up', 'left'] as const).map(dir => (
+                {(['right-down', 'down', 'right', 'up', 'left'] as const).map(dir => (
                   <option key={dir} value={dir}>{dir}</option>
                 ))}
               </select>

@@ -1,4 +1,4 @@
-export type GrowDirection = 'down' | 'up' | 'left' | 'right'
+export type GrowDirection = 'down' | 'up' | 'left' | 'right' | 'right-down'
 
 export type TextBoxLayoutInput = {
   text: string
@@ -192,18 +192,52 @@ const computeLayout = (
 
   const baseW = Math.max(baseWidth || 0, minWidth)
   const baseH = Math.max(baseHeight || 0, minHeight)
-  const horizontalGrow = growDir === 'left' || growDir === 'right'
+  const rightDownGrow = growDir === 'right-down'
+  const growLeft = growDir === 'left'
+  const growRight = growDir === 'right' || rightDownGrow
+  const growUp = growDir === 'up'
+  const growDown = growDir === 'down' || rightDownGrow
+  const horizontalGrow = growLeft || growRight
+  const verticalGrow = growUp || growDown
+  const pureHorizontalGrow = horizontalGrow && !verticalGrow
 
-  let width = Math.max(Math.min(naturalWidth, baseW), minWidth)
-  if (horizontalGrow && naturalWidth > width) {
+  let width = rightDownGrow ? baseW : Math.max(Math.min(naturalWidth, baseW), minWidth)
+  if (pureHorizontalGrow && naturalWidth > width) {
     width = naturalWidth
   }
   let wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
   let height = Math.max(wrapped.lines.length * lineHeight, minHeight)
 
-  if (height <= baseH) {
+  if (rightDownGrow) {
+    // right-down: wrap inside current box first; only expand proportionally
+    // when content height overflows the current box.
+    width = baseW
+    wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
+    const initialRequiredHeight = Math.max(wrapped.lines.length * lineHeight, minHeight)
+    if (initialRequiredHeight <= baseH) {
+      height = baseH
+    } else {
+      let scale = Math.max(1, initialRequiredHeight / Math.max(baseH, 1e-6))
+      for (let i = 0; i < 6; i++) {
+        const nextWidth = Math.max(minWidth, baseW * scale)
+        const nextWrapped = wrapTextWithWidth(text, nextWidth, measure, lineHeight)
+        const requiredHeight = Math.max(nextWrapped.lines.length * lineHeight, minHeight)
+        const requiredScale = Math.max(1, requiredHeight / Math.max(baseH, 1e-6))
+        wrapped = nextWrapped
+        width = nextWidth
+        if (requiredScale <= scale + 1e-3) {
+          break
+        }
+        scale = requiredScale
+      }
+      width = Math.max(minWidth, baseW * scale)
+      wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
+      const requiredHeight = Math.max(wrapped.lines.length * lineHeight, minHeight)
+      height = Math.max(baseH * scale, requiredHeight)
+    }
+  } else if (height <= baseH) {
     height = Math.min(height, baseH)
-  } else if (growDir === 'left' || growDir === 'right') {
+  } else if (horizontalGrow) {
     const maxWidth = width + Math.max(fontSize, baseW)
     let targetWidth = width
     while (wrapped.lines.length * lineHeight > baseH && targetWidth < maxWidth) {
@@ -222,11 +256,11 @@ const computeLayout = (
 
   let offsetX = 0
   let offsetY = 0
-  if (width > baseW && (growDir === 'left' || growDir === 'right')) {
-    offsetX = growDir === 'left' ? baseW - width : 0
+  if (width > baseW && horizontalGrow) {
+    offsetX = growLeft ? baseW - width : 0
   }
-  if (height > baseH && (growDir === 'up' || growDir === 'down')) {
-    offsetY = growDir === 'up' ? baseH - height : 0
+  if (height > baseH && verticalGrow) {
+    offsetY = growUp ? baseH - height : 0
   }
 
   return {

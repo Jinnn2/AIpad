@@ -74,7 +74,7 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
         const fontFamily = String(rawMeta.fontFamily ?? 'sans-serif')
         const fontSize = Number(rawMeta.fontSize ?? 16) || 16
         const fontWeight = String(rawMeta.fontWeight ?? '400')
-        const growDir = (rawMeta.growDir as any) ?? 'down'
+        const growDir = (rawMeta.growDir as any) ?? 'right-down'
         const baseWidth = Number(rawMeta.configuredWidth ?? rawMeta.baseWidth ?? (x1 - x0)) || (x1 - x0) || 240
         const baseHeight = Number(rawMeta.configuredHeight ?? rawMeta.baseHeight ?? (y1 - y0)) || (y1 - y0) || 160
         const padding = Number(rawMeta.padding ?? 0)
