@@ -822,8 +822,10 @@ class BlockManager:
     _FONT_SIZE_BASE = 18.0
     _FONT_SIZE_MAX = 120.0
     _FONT_WEIGHT_EMPHASIS = 3
-    _HEADING_FONT_SIZE = 28.0
-    _HEADING_FONT_WEIGHT = 600
+    _HEADING_FONT_SIZE = 34.0
+    _HEADING_FONT_WEIGHT = 700
+    _HEADING_MAX_TEXT_LEN = 80
+    _HEADING_MAX_LINES = 2
     _SPATIAL_FALLBACK_SCALE = 0.2
     _TIME_FALLBACK_SCALE = 0.05
     _BLOCK_CHAR_THRESHOLD = 5000
@@ -950,9 +952,13 @@ class BlockManager:
             if isinstance(flag, bool):
                 return flag
         size, weight = self._extract_font_meta(fragment)
-        if size >= self._HEADING_FONT_SIZE:
+        text_val = (fragment.text or "").strip()
+        line_count = text_val.count("\n") + 1 if text_val else 1
+        concise = line_count <= self._HEADING_MAX_LINES
+        short_text = (not text_val) or len(text_val) <= self._HEADING_MAX_TEXT_LEN
+        if size >= self._HEADING_FONT_SIZE and concise and short_text:
             return True
-        if weight >= self._HEADING_FONT_WEIGHT:
+        if size >= 28 and weight >= self._HEADING_FONT_WEIGHT and concise and (not text_val or len(text_val) <= 60):
             return True
         return False
 

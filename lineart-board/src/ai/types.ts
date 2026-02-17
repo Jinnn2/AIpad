@@ -17,7 +17,7 @@ export type AIStrokeV11 = {
 export type AIStrokePayload = {
   canvas?: { width?: number; height?: number; viewport?: [number, number, number, number] }
   strokes: AIStrokeV11[]
-  intent?: 'complete' | 'hint' | 'alt' | 'write' | 'noop'
+  intent?: 'complete' | 'hint' | 'alt' | 'write' | 'edit' | 'noop'
   replace?: string[]
   version?: number
 }

@@ -16,7 +16,7 @@ import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/
 import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
-import { TopToolbar, SidePanel, BottomPanel, type AIFeedEntry } from './LineArtUI'
+import { TopToolbar, SidePanel, BottomPanel, SettingsButton, type AIFeedEntry } from './LineArtUI'
 import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from './textbox/layout'
 /**
  * LineArtBoard renders a Konva-based workspace with:
@@ -52,6 +52,29 @@ const withBase = (base: string, path: string) => {
   if (/^https?:/i.test(path)) return path
   return `${base}${path.startsWith('/') ? path : `/${path}`}`
 }
+const readViteNumber = (key: string, fallback: number, min?: number, max?: number) => {
+  try {
+    const raw = (import.meta as any)?.env?.[key]
+    if (raw === undefined || raw === null || raw === '') return fallback
+    let value = Number(raw)
+    if (!Number.isFinite(value)) return fallback
+    if (typeof min === 'number') value = Math.max(min, value)
+    if (typeof max === 'number') value = Math.min(max, value)
+    return value
+  } catch {
+    return fallback
+  }
+}
+const VITE_LLM_MODEL_DEFAULT = (() => {
+  try {
+    return String((import.meta as any)?.env?.VITE_OPENAI_MODEL ?? '').trim()
+  } catch {
+    return ''
+  }
+})()
+const VITE_LLM_TEMPERATURE_DEFAULT = readViteNumber('VITE_OPENAI_TEMPERATURE', 0.4, 0, 2)
+const VITE_LLM_TOP_P_DEFAULT = readViteNumber('VITE_OPENAI_TOP_P', 0.95, 0, 1)
+const VITE_LLM_MAX_TOKENS_DEFAULT = Math.round(readViteNumber('VITE_OPENAI_MAX_TOKENS', 10240, 256, 32768))
 const apiFetch = async (path: string, init?: RequestInit) => {
   const isAbsolute = typeof path === 'string' && /^https?:/i.test(path)
   const request = (url: string) => fetch(url, init)
@@ -251,6 +274,11 @@ const gridLayerRef = useRef<any>(null)
   }), [brushSize, brushColor])
   // Hint text forwarded to /suggest
   const [hint, setHint] = useState<string>('Work as a noting assistant to draw or write.')
+  // Runtime LLM controls (editable while app is running).
+  const [llmModel, setLlmModel] = useState<string>(VITE_LLM_MODEL_DEFAULT)
+  const [llmTemperature, setLlmTemperature] = useState<number>(VITE_LLM_TEMPERATURE_DEFAULT)
+  const [llmTopP, setLlmTopP] = useState<number>(VITE_LLM_TOP_P_DEFAULT)
+  const [llmMaxTokens, setLlmMaxTokens] = useState<number>(VITE_LLM_MAX_TOKENS_DEFAULT)
   // AI generation scale caps point count and informs upload density
   const [aiScale, setAiScale] = useState<number>(16) // adjustable 4-64, defaults to 16
   // Live drawing state with raw float coordinates (world space)
@@ -274,6 +302,12 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [completionPreviews, setCompletionPreviews] = useState<Record<string, string>>({})
   const updateTextSettings = useCallback((patch: Partial<TextSettings>) => {
     setTextSettings((prev) => ({ ...prev, ...patch }))
+  }, [])
+  const resetRuntimeLLMSettings = useCallback(() => {
+    setLlmModel(VITE_LLM_MODEL_DEFAULT)
+    setLlmTemperature(VITE_LLM_TEMPERATURE_DEFAULT)
+    setLlmTopP(VITE_LLM_TOP_P_DEFAULT)
+    setLlmMaxTokens(VITE_LLM_MAX_TOKENS_DEFAULT)
   }, [])
   // Visual cursor for the eraser radius
   const [eraserCursor, setEraserCursor] = useState<{x:number;y:number}|null>(null)
@@ -436,6 +470,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [currentPayloadId, setCurrentPayloadId] = useState<string | null>(null)
   // AI feed keeps the latest 50 suggestion entries
   const [aiFeed, setAiFeed] = useState<AIFeedEntry[]>([])
+  const [plannerNextStepHint, setPlannerNextStepHint] = useState<string>('')
   // Session identifiers from backend; lastSentIndex tracks delta uploads
   const [sid, setSid] = useState<string | null>(null)
   const [visionVersion, setVisionVersion] = useState<number>(2.0)
@@ -536,6 +571,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [autoCountdown, setAutoCountdown] = useState<number|null>(null)
   const [autoMaintain, setAutoMaintain] = useState<boolean>(false)
   const [autoMaintainPending, setAutoMaintainPending] = useState<boolean>(false)
+  const [settingsOpen, setSettingsOpen] = useState<boolean>(false)
   const [graphSnapshot, setGraphSnapshot] = useState<GraphSnapshot | null>(null)
   const [graphInspectorVisible, setGraphInspectorVisible] = useState<boolean>(false)
   const [hoveredGraphBlockId, setHoveredGraphBlockId] = useState<string | null>(null)
@@ -544,6 +580,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     autoMaintainRef.current = autoMaintain
     if (!autoMaintain) {
       graphCaptureBBoxRef.current = null
+      setPlannerNextStepHint('')
     }
   }, [autoMaintain])
   React.useEffect(() => {
@@ -1452,12 +1489,21 @@ const openTextEditor = useCallback((params: {
       }
       // 3) Build request (include viewport to help backend validation)
       const snapshot = packAllStrokes()
+      const runtimeModel = llmModel.trim()
+      const runtimeTemperature = clamp(llmTemperature, 0, 2)
+      const runtimeTopP = clamp(llmTopP, 0, 1)
+      const runtimeMaxTokens = Math.max(256, Math.min(32768, Math.round(llmMaxTokens || VITE_LLM_MAX_TOKENS_DEFAULT)))
       const baseReq = {
         sid: curSid!,
         canvas: { viewport: [0, 0, size.width, size.height] as [number, number, number, number] },
         delta: { strokes: deltaStrokes },
         context: { version: 1, intent: 'complete', strokes: snapshot },
         hint,
+        auto_complete_enabled: autoComplete,
+        ...(runtimeModel ? { model: runtimeModel } : {}),
+        temperature: runtimeTemperature,
+        top_p: runtimeTopP,
+        max_tokens: runtimeMaxTokens,
         gen_scale: aiScale,
         mode, // key: one of the prompt modes
         vision_version: visionVersion,
@@ -1506,6 +1552,11 @@ const openTextEditor = useCallback((params: {
           seq: 2,
           // Reuse existing parameters such as hint/gen_scale
           hint,
+          auto_complete_enabled: autoComplete,
+          ...(runtimeModel ? { model: runtimeModel } : {}),
+          temperature: runtimeTemperature,
+          top_p: runtimeTopP,
+          max_tokens: runtimeMaxTokens,
           gen_scale: aiScale,
         }
         let res2 = await doPost(req2)
@@ -1515,6 +1566,7 @@ const openTextEditor = useCallback((params: {
         }
         const data2 = await res2.json()
         if (data2?.usage?.new_sid) setSid(String(data2.usage.new_sid))
+        setPlannerNextStepHint(String(data2?.usage?.planner_next_step || '').trim())
         const payload2 = data2?.payload
         if (!payload2) throw new Error('No payload in step2 response')
         localStorage.setItem('ai_suggestions_v1', JSON.stringify(payload2))
@@ -1562,6 +1614,7 @@ const openTextEditor = useCallback((params: {
       // 4) Parse response payload and stage previews
       const data = await res.json()
       if (data?.usage?.new_sid) setSid(String(data.usage.new_sid))
+      setPlannerNextStepHint(String(data?.usage?.planner_next_step || '').trim())
       const payload = data?.payload as AIStrokePayload | undefined
       if (!payload) throw new Error('No payload in response')
       // Log feed entries and raw payload text for debugging
@@ -1582,7 +1635,22 @@ const openTextEditor = useCallback((params: {
     } finally {
       askInFlightRef.current = false
     }
-  }, [sid, drawStack, size.width, size.height, hint, aiScale, mode, visionVersion, clearAutoTimer])
+  }, [
+    sid,
+    drawStack,
+    size.width,
+    size.height,
+    hint,
+    autoComplete,
+    llmModel,
+    llmTemperature,
+    llmTopP,
+    llmMaxTokens,
+    aiScale,
+    mode,
+    visionVersion,
+    clearAutoTimer,
+  ])
   React.useEffect(() => {
     askAIRef.current = askAI
   }, [askAI])
@@ -2472,6 +2540,14 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onAskAI={askAI}
         onAcceptAI={acceptAI}
         onDismissAI={dismissAI}
+        autoComplete={autoComplete}
+        autoCountdown={autoCountdown}
+        hasActivePreview={hasActivePreview}
+        onToggleAutoComplete={handleAutoCompleteToggle}
+      />
+      <SettingsButton
+        open={settingsOpen}
+        onToggle={() => setSettingsOpen((value) => !value)}
       />
       <SidePanel
         toolMode={toolMode}
@@ -2484,10 +2560,6 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onBrushColorChange={setBrushColor}
         aiScale={aiScale}
         onAiScaleChange={setAiScale}
-        autoComplete={autoComplete}
-        onAutoCompleteToggle={handleAutoCompleteToggle}
-        autoCountdown={autoCountdown}
-        hasActivePreview={hasActivePreview}
         canUndo={canUndo}
         canRedo={canRedo}
         onUndo={undo}
@@ -2498,6 +2570,17 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onExportAI={exportHumanStrokesAI}
         onApplyAIStub={applyAIStub}
         onPreviewAI={previewAI}
+        llmModel={llmModel}
+        llmTemperature={llmTemperature}
+        llmTopP={llmTopP}
+        llmMaxTokens={llmMaxTokens}
+        onLlmModelChange={setLlmModel}
+        onLlmTemperatureChange={(value) => setLlmTemperature(clamp(value, 0, 2))}
+        onLlmTopPChange={(value) => setLlmTopP(clamp(value, 0, 1))}
+        onLlmMaxTokensChange={(value) => setLlmMaxTokens(Math.max(256, Math.min(32768, Math.round(value || 0))))}
+        onResetLLMSettings={resetRuntimeLLMSettings}
+        settingsOpen={settingsOpen}
+        onCloseSettings={() => setSettingsOpen(false)}
         promptMode={mode}
         visionVersion={visionVersion}
         onVisionVersionChange={setVisionVersion}
@@ -2968,6 +3051,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       </Stage>
       <BottomPanel
         hint={hint}
+        plannerNextStepHint={plannerNextStepHint}
         onHintChange={setHint}
         onSubmit={askAI}
         mode={mode}

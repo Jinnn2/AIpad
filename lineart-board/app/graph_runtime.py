@@ -680,11 +680,48 @@ class GraphRuntime:
         )
         if pending_payloads:
             self._process_vision_batches(pending_payloads, reason="ask_ai")
-        plan = self.orchestrator.generate_plan(
-            user_input,
-            focus_block_id=focus_block_id,
-            focus_fragment_id=focus_fragment_id,
-        )
+
+        # Re-run planner after SWITCH so context can stabilize on the new focus.
+        # Hard cap avoids planner ping-pong loops.
+        max_planner_passes = 3
+        plan = None
+        loop_focus_block_id = focus_block_id
+        loop_focus_fragment_id = focus_fragment_id
+        for attempt in range(max_planner_passes):
+            plan = self.orchestrator.generate_plan(
+                user_input,
+                focus_block_id=loop_focus_block_id,
+                focus_fragment_id=loop_focus_fragment_id,
+            )
+            if (plan.action or "").upper() != "SWITCH":
+                break
+            # From the second pass onward, rely on orchestrator-updated context.
+            loop_focus_fragment_id = None
+            current_focus = self.orchestrator.context.main_block_id
+            if current_focus and current_focus in self.state.blocks:
+                loop_focus_block_id = current_focus
+            else:
+                loop_focus_block_id = None
+            if self.cluster_logger:
+                try:
+                    self.cluster_logger.log(
+                        "planner_switch_retry",
+                        {
+                            "attempt": attempt + 1,
+                            "max_attempts": max_planner_passes,
+                            "target_ids": list(plan.target_block_ids or []),
+                            "next_focus_block_id": loop_focus_block_id,
+                        },
+                    )
+                except Exception:
+                    pass
+
+        if plan is None:
+            plan = self.orchestrator.generate_plan(
+                user_input,
+                focus_block_id=focus_block_id,
+                focus_fragment_id=focus_fragment_id,
+            )
         focus_context = FocusContext(
             main_block_id=self.orchestrator.context.main_block_id,
             active_block_ids=list(self.orchestrator.context.active_block_ids),
@@ -849,9 +886,27 @@ class GraphRuntime:
         role = str(role).lower()
         if role in {"title", "heading", "header"}:
             return True
-        if size_val is not None and size_val >= 28:
+        text_val = ""
+        if isinstance(meta, dict):
+            text_val = str(meta.get("text") or "").strip()
+        if isinstance(meta, dict):
+            raw_line_count = meta.get("lineCount")
+        else:
+            raw_line_count = None
+        try:
+            line_count = int(raw_line_count) if raw_line_count is not None else None
+        except (TypeError, ValueError):
+            line_count = None
+        if line_count is None:
+            line_count = text_val.count("\n") + 1 if text_val else 1
+        # Conservative heading heuristic:
+        # - very large concise text, or
+        # - large + heavy concise text.
+        concise = line_count <= 2
+        short_text = (not text_val) or len(text_val) <= 80
+        if size_val is not None and size_val >= 34 and concise and short_text:
             return True
-        if weight_val >= 600:
+        if size_val is not None and size_val >= 28 and weight_val >= 700 and concise and (not text_val or len(text_val) <= 60):
             return True
         return False
 

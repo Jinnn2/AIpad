@@ -165,6 +165,9 @@ def suggest(req: SuggestRequest):
     obj: Optional[Dict[str, object]] = None
     dbg: Dict[str, object] = {}
     messages: Optional[List[Dict[str, str]]] = None
+    auto_complete_on = bool(getattr(req, "auto_complete_enabled", False))
+    raw_hint = str(getattr(req, "hint", "") or "").strip()
+    effective_hint = "" if auto_complete_on else raw_hint
 
 # Vision 2.0 two-phase mode: pre-process before building messages.
     # Triggered when mode=vision and vision_version>=2.
@@ -204,7 +207,7 @@ def suggest(req: SuggestRequest):
                     analysis = str(parsed.get("analysis","") or "").strip()
                     instruction = str(parsed.get("instruction","") or "").strip()
                 if not instruction:
-                    instruction = (req.hint or "Make the single best next stroke.")
+                    instruction = (effective_hint or "Make the single best next stroke.")
                 if LOG_IO:
                     try: _write_json(log_dir, "output.step1.json", {"analysis":analysis, "instruction":instruction, "raw_text": (dbg or {}).get("raw_text")})
                     except Exception: pass
@@ -245,7 +248,7 @@ def suggest(req: SuggestRequest):
                 except Exception:
                     i_text = _ins_raw
 
-                orig_hint = str(getattr(req, "hint", "") or "").strip()
+                orig_hint = effective_hint
                 _parts = []
                 if orig_hint: _parts.append(orig_hint)
                 if a_text:    _parts.append("Vision Analysis:\n" + a_text)
@@ -306,7 +309,7 @@ def suggest(req: SuggestRequest):
         sess = S.get_session(req.sid)
         if not sess:
             # Re-initialize the session automatically if it was lost.
-            sess = S.create_session(mode="light_helper", init_goal=req.hint or None, tags=None)
+            sess = S.create_session(mode="light_helper", init_goal=effective_hint or None, tags=None)
             new_sid = sess.sid
         # Merge incremental strokes when provided.
         if req.delta and isinstance(req.delta, DeltaPayload):
@@ -335,7 +338,7 @@ def suggest(req: SuggestRequest):
                     print("[graph] ingest delta failed:", exc)
 
             plan_bundle = graph_runtime.run_conversation(
-                user_input=req.hint or "",
+                user_input=effective_hint,
                 mode=req.mode,
             )
             obj = plan_bundle.get("payload") or {}
@@ -375,7 +378,7 @@ def suggest(req: SuggestRequest):
             )
             fake = SuggestRequest(
                 context=lite_ctx,
-                hint=req.hint,
+                hint=effective_hint,
                 model=req.model,
                 temperature=req.temperature,
                 top_p=req.top_p,
@@ -392,7 +395,10 @@ def suggest(req: SuggestRequest):
         # Remain compatible with legacy full-context payloads.
         if not req.context:
             raise HTTPException(400, "Either {sid, delta} or {context} must be provided.")
-        messages = prompting.build_messages_by_mode(req, getattr(req, "mode", None))
+        req_d = req.model_dump()
+        req_d["hint"] = effective_hint
+        req_no_hint = SuggestRequest.model_validate(req_d)
+        messages = prompting.build_messages_by_mode(req_no_hint, getattr(req, "mode", None))
         if LOG_IO:
             try: _write_json(log_dir, "input.messages.json", messages)
             except Exception: pass
@@ -535,8 +541,37 @@ def suggest(req: SuggestRequest):
             if d > maxd: maxd = d
         return maxd
 
+    class _CleanRuleError(Exception):
+        def __init__(self, rule: str, detail: str):
+            super().__init__(detail)
+            self.rule = str(rule or "UNKNOWN_RULE")
+            self.detail = str(detail or "")
+
+    def _fail_rule(rule: str, detail: str):
+        raise _CleanRuleError(rule, detail)
+
+    def _summarize_clean_errors(errors: list[dict], max_rules: int = 8, max_samples: int = 3) -> str:
+        if not errors:
+            return "none"
+        counts: Dict[str, int] = {}
+        for item in errors:
+            rule = str(item.get("rule") or "UNKNOWN_RULE")
+            counts[rule] = counts.get(rule, 0) + 1
+        ordered = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[:max_rules]
+        counts_part = ",".join(f"{k}:{v}" for k, v in ordered)
+        sample_bits = []
+        for item in errors[:max_samples]:
+            sample_bits.append(
+                f"idx={item.get('index')},id={item.get('stroke_id')},tool={item.get('tool')},rule={item.get('rule')}"
+            )
+        if sample_bits:
+            return f"{counts_part}; samples={' | '.join(sample_bits)}"
+        return counts_part
+
     def _clean_one(s: dict, gen_scale: int) -> dict:
-        # 1) Normalize points: keep up to the first four entries, minimum two points.
+        tool_in = str(s.get("tool") or "pen").lower()
+
+        # 1) Normalize points: keep up to the first four entries.
         raw_pts = s.get("points") or []
         pts = [
             [float(p[0]), float(p[1])]
@@ -545,15 +580,14 @@ def suggest(req: SuggestRequest):
             for p in raw_pts
             if isinstance(p, (list, tuple)) and len(p) >= 2
         ]
-        if len(pts) < 2:
-            raise HTTPException(502, "LLM stroke has <2 points.")
-
-        tool_in = str(s.get("tool") or "pen").lower()
+        # edit tool may omit points (text-targeted edit); all others still need >=2 points.
+        if tool_in != "edit" and len(pts) < 2:
+            _fail_rule("MIN_POINTS", "LLM stroke has <2 points.")
 
         # 2) Tool-specific cleanup.
         if tool_in == "poly":
             if len(pts) < 3:
-                raise HTTPException(502, "LLM poly needs >= 3 points.")
+                _fail_rule("POLY_MIN_POINTS", "LLM poly needs >= 3 points.")
             # Append the start point when a path should be closed.
             if not (abs(pts[0][0] - pts[-1][0]) < 1e-6 and abs(pts[0][1] - pts[-1][1]) < 1e-6):
                 pts.append([pts[0][0], pts[0][1]] + (pts[0][2:] if len(pts[0]) > 2 else []))
@@ -565,7 +599,7 @@ def suggest(req: SuggestRequest):
 
         elif tool_in == "ellipse":
             if len(pts) < 2:
-                raise HTTPException(502, "LLM ellipse needs 2 points.")
+                _fail_rule("ELLIPSE_MIN_POINTS", "LLM ellipse needs 2 points.")
             x0 = min(pts[0][0], pts[-1][0]); y0 = min(pts[0][1], pts[-1][1])
             x1 = max(pts[0][0], pts[-1][0]); y1 = max(pts[0][1], pts[-1][1])
             pts2 = [[x0, y0], [x1, y1]]
@@ -575,13 +609,13 @@ def suggest(req: SuggestRequest):
             # expect at least two points [[x,y],[x2,y2]]
             raw_pts = s.get("points") or []
             if not (isinstance(raw_pts, list) and len(raw_pts) >= 2):
-                raise HTTPException(502, "LLM text box needs 2 points.")
+                _fail_rule("TEXT_BOX_MIN_POINTS", "LLM text box needs 2 points.")
             p0 = raw_pts[0]; p1 = raw_pts[1]
             try:
                 x0, y0 = float(p0[0]), float(p0[1])
                 x1, y1 = float(p1[0]), float(p1[1])
             except Exception:
-                raise HTTPException(502, "invalid text box points")
+                _fail_rule("TEXT_BOX_INVALID_POINTS", "invalid text box points")
 
             tx0 = min(x0, x1); ty0 = min(y0, y1)
             tx1 = max(x0, x1); ty1 = max(y0, y1)
@@ -603,13 +637,13 @@ def suggest(req: SuggestRequest):
             meta = s.get("meta") or {}
             target_id = meta.get("targetId") or meta.get("target_id") or meta.get("target")
             if not target_id:
-                raise HTTPException(502, "LLM edit stroke missing targetId.")
+                _fail_rule("EDIT_MISSING_TARGET_ID", "LLM edit stroke missing targetId.")
             operation = str(meta.get("operation") or "").strip()
             text = str(meta.get("text") or "").strip()
             if not operation:
-                raise HTTPException(502, "LLM edit stroke missing operation description.")
+                _fail_rule("EDIT_MISSING_OPERATION", "LLM edit stroke missing operation description.")
             if not text:
-                raise HTTPException(502, "LLM edit stroke missing text content.")
+                _fail_rule("EDIT_MISSING_TEXT", "LLM edit stroke missing text content.")
             raw_pts = s.get("points") or []
             pts_edit = []
             if isinstance(raw_pts, list) and len(raw_pts) >= 2:
@@ -692,17 +726,61 @@ def suggest(req: SuggestRequest):
                     cleaned["canvas"] = canvas
                 if isinstance(replace, list):
                     cleaned["replace"] = [str(x) for x in replace]
-                return cleaned
+                return cleaned, []
             raise HTTPException(502, "LLM returned empty strokes.")
         cleaned_list = []
-        for s in strokes_in:
+        clean_errors = []
+        for idx, s in enumerate(strokes_in):
+            stroke_id = str((s or {}).get("id") or "") if isinstance(s, dict) else ""
+            stroke_tool = str((s or {}).get("tool") or "") if isinstance(s, dict) else ""
             try:
                 cleaned_list.append(_clean_one(s, gen_scale))
+            except _CleanRuleError as e:
+                clean_errors.append(
+                    {
+                        "index": idx,
+                        "stroke_id": stroke_id,
+                        "tool": stroke_tool,
+                        "rule": e.rule,
+                        "detail": e.detail,
+                    }
+                )
+                print(
+                    f"[clean] drop one stroke: rule={e.rule} detail={e.detail} "
+                    f"index={idx} id={stroke_id} tool={stroke_tool}"
+                )
+            except HTTPException as e:
+                clean_errors.append(
+                    {
+                        "index": idx,
+                        "stroke_id": stroke_id,
+                        "tool": stroke_tool,
+                        "rule": "HTTP_EXCEPTION",
+                        "detail": str(getattr(e, "detail", e)),
+                    }
+                )
+                print(
+                    f"[clean] drop one stroke: rule=HTTP_EXCEPTION detail={getattr(e, 'detail', e)} "
+                    f"index={idx} id={stroke_id} tool={stroke_tool}"
+                )
             except Exception as e:
+                clean_errors.append(
+                    {
+                        "index": idx,
+                        "stroke_id": stroke_id,
+                        "tool": stroke_tool,
+                        "rule": "UNEXPECTED_CLEAN_EXCEPTION",
+                        "detail": str(e),
+                    }
+                )
                 # Skip invalid strokes but preserve at least one valid entry.
-                print("[clean] drop one stroke:", e)
+                print(
+                    f"[clean] drop one stroke: rule=UNEXPECTED_CLEAN_EXCEPTION detail={e} "
+                    f"index={idx} id={stroke_id} tool={stroke_tool}"
+                )
         if not cleaned_list:
-            raise HTTPException(502, "All strokes invalid after cleaning.")
+            summary = _summarize_clean_errors(clean_errors)
+            raise HTTPException(502, f"All strokes invalid after cleaning. failed_rules={summary}")
 
         # Assemble the final payload.
         cleaned = {
@@ -715,9 +793,9 @@ def suggest(req: SuggestRequest):
         if isinstance(replace, list):
             cleaned["replace"] = [str(x) for x in replace]
 
-        return cleaned
+        return cleaned, clean_errors
 
-    obj_clean = _clean_payload(obj, req.gen_scale or 24)
+    obj_clean, clean_errors = _clean_payload(obj, req.gen_scale or 24)
 
     # pydantic validation as a safety net.
     try:
@@ -732,20 +810,39 @@ def suggest(req: SuggestRequest):
             "model": dbg.get("model"),
             "response_id": (dbg.get("response_dump") or {}).get("id"),
         }
+        plan_info = dbg.get("plan")
+        if isinstance(plan_info, dict):
+            planner_next_step = str(plan_info.get("nextStepHint") or "").strip()
+            if planner_next_step:
+                usage["planner_next_step"] = planner_next_step
+        if clean_errors:
+            usage["clean_dropped_strokes"] = len(clean_errors)
+            usage["clean_failed_rules"] = _summarize_clean_errors(clean_errors)
         if new_sid: usage["new_sid"] = new_sid
         return SuggestResponse(ok=True, payload=payload, usage=usage)
     
     except Exception as e:
+        clean_rules = _summarize_clean_errors(clean_errors) if clean_errors else "none"
         if LOG_IO and log_dir is not None:
             try:
                 _write_json(
                     log_dir,
                     "output.error.json",
-                    {"error": "invalid payload", "detail": str(e), "raw": obj, "raw_text": dbg.get("raw_text")},
+                    {
+                        "error": "invalid payload",
+                        "detail": str(e),
+                        "raw": obj,
+                        "raw_text": dbg.get("raw_text"),
+                        "clean_errors": clean_errors,
+                        "clean_failed_rules": clean_rules,
+                    },
                 )
             except Exception:
                 pass
-        raise HTTPException(502, f"LLM returned invalid payload after cleaning: {e} | raw={dbg.get('raw_text')!r}")
+        raise HTTPException(
+            502,
+            f"LLM returned invalid payload after cleaning: {e} | clean_failed_rules={clean_rules} | raw={dbg.get('raw_text')!r}",
+        )
     
 
 # ---------------------------------------- Session management endpoints ---------------------------------------- #

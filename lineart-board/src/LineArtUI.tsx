@@ -49,6 +49,10 @@ export type TopToolbarProps = {
   onAskAI: () => void
   onAcceptAI: () => void
   onDismissAI: () => void
+  autoComplete: boolean
+  autoCountdown: number | null
+  hasActivePreview: boolean
+  onToggleAutoComplete: (enabled: boolean) => void
 }
 
 export function TopToolbar(props: TopToolbarProps) {
@@ -62,7 +66,16 @@ export function TopToolbar(props: TopToolbarProps) {
     onAskAI,
     onAcceptAI,
     onDismissAI,
+    autoComplete,
+    autoCountdown,
+    hasActivePreview,
+    onToggleAutoComplete,
   } = props
+  const autoCompleteState = hasActivePreview
+    ? 'Paused'
+    : autoCountdown != null
+      ? `Next ${autoCountdown}s`
+      : 'Idle'
 
   return (
     <div
@@ -75,6 +88,9 @@ export function TopToolbar(props: TopToolbarProps) {
         display: 'flex',
         gap: 8,
         alignItems: 'center',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        maxWidth: 'calc(100vw - 24px)',
         background: 'rgba(255,255,255,0.85)',
         backdropFilter: 'blur(6px)',
         padding: '8px 12px',
@@ -86,6 +102,51 @@ export function TopToolbar(props: TopToolbarProps) {
       <Btn onClick={onToggleGrid}>{showGrid ? 'Grid: ON' : 'Grid: OFF'}</Btn>
       <Btn onClick={onToggleSnap}>{snap ? 'Snap: ON' : 'Snap: OFF'}</Btn>
       <Btn onClick={onToggleCurve}>{curveTurns ? 'Curve: ON' : 'Curve: OFF'}</Btn>
+      <button
+        onClick={() => onToggleAutoComplete(!autoComplete)}
+        title={`Auto Complete (${autoCompleteState})`}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '6px 10px',
+          borderRadius: 999,
+          border: `1px solid ${autoComplete ? '#22c55e' : '#cbd5e1'}`,
+          background: autoComplete ? 'rgba(34,197,94,0.16)' : '#fff',
+          cursor: 'pointer',
+          color: '#0f172a',
+          fontSize: 12,
+          fontWeight: 600,
+        }}
+      >
+        <span>Auto Complete</span>
+        <span
+          style={{
+            position: 'relative',
+            width: 34,
+            height: 20,
+            borderRadius: 999,
+            background: autoComplete ? '#22c55e' : '#cbd5e1',
+            transition: 'background 0.2s ease',
+            flexShrink: 0,
+          }}
+        >
+          <span
+            style={{
+              position: 'absolute',
+              top: 2,
+              left: autoComplete ? 16 : 2,
+              width: 16,
+              height: 16,
+              borderRadius: '50%',
+              background: '#fff',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.25)',
+              transition: 'left 0.2s ease',
+            }}
+          />
+        </span>
+        <span style={{ fontSize: 11, color: '#64748b', minWidth: 56 }}>{autoCompleteState}</span>
+      </button>
 
       <div style={{ width: 10, height: 24, borderLeft: '1px solid #e5e7eb', margin: '0 4px' }} />
 
@@ -111,6 +172,88 @@ export function TopToolbar(props: TopToolbarProps) {
   )
 }
 
+export type SettingsButtonProps = {
+  open: boolean
+  onToggle: () => void
+}
+
+export function SettingsButton(props: SettingsButtonProps) {
+  const { open, onToggle } = props
+  const [hovered, setHovered] = React.useState(false)
+  const [pressed, setPressed] = React.useState(false)
+  const translateY = pressed ? 1 : hovered ? -1 : 0
+  const scale = pressed ? 0.97 : hovered ? 1.04 : 1
+  const shellBorder = open ? '1px solid rgba(129,140,248,0.62)' : '1px solid rgba(148,163,184,0.48)'
+  const shellBackground = open
+    ? 'linear-gradient(150deg, rgba(30,64,175,0.96), rgba(124,58,237,0.92))'
+    : 'linear-gradient(150deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94))'
+  const shellShadow = open
+    ? '0 14px 30px rgba(79,70,229,0.38), 0 4px 10px rgba(30,64,175,0.28)'
+    : hovered
+      ? '0 12px 24px rgba(59,130,246,0.22), 0 3px 8px rgba(15,23,42,0.12)'
+      : '0 6px 12px rgba(15,23,42,0.12)'
+
+  return (
+    <button
+      type="button"
+      title={open ? 'Close settings' : 'Open settings'}
+      onClick={onToggle}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => {
+        setHovered(false)
+        setPressed(false)
+      }}
+      onMouseDown={() => setPressed(true)}
+      onMouseUp={() => setPressed(false)}
+      style={{
+        position: 'absolute',
+        top: 82,
+        right: 364,
+        zIndex: 1100,
+        width: 44,
+        height: 44,
+        borderRadius: '50%',
+        border: shellBorder,
+        background: shellBackground,
+        color: open ? '#eef2ff' : '#0f172a',
+        fontSize: 19,
+        fontWeight: 700,
+        lineHeight: 1,
+        cursor: 'pointer',
+        boxShadow: shellShadow,
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        transition: 'transform 140ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+      }}
+    >
+      <span
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          borderRadius: '50%',
+          background: open
+            ? 'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.36), transparent 58%)'
+            : 'radial-gradient(circle at 30% 25%, rgba(148,163,184,0.16), transparent 58%)',
+        }}
+      />
+      <span
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          transform: open ? 'rotate(28deg)' : 'rotate(0deg)',
+          transition: 'transform 220ms ease',
+        }}
+      >
+        {'\u2699'}
+      </span>
+    </button>
+  )
+}
+
 type GrowDir = 'down' | 'up' | 'left' | 'right'
 
 export type SidePanelProps = {
@@ -124,10 +267,6 @@ export type SidePanelProps = {
   onBrushColorChange: (color: ColorName) => void
   aiScale: number
   onAiScaleChange: (scale: number) => void
-  autoComplete: boolean
-  onAutoCompleteToggle: (enabled: boolean) => void
-  autoCountdown: number | null
-  hasActivePreview: boolean
   canUndo: boolean
   canRedo: boolean
   onUndo: () => void
@@ -138,6 +277,17 @@ export type SidePanelProps = {
   onExportAI: () => void
   onApplyAIStub: () => void
   onPreviewAI: () => void
+  llmModel: string
+  llmTemperature: number
+  llmTopP: number
+  llmMaxTokens: number
+  onLlmModelChange: (value: string) => void
+  onLlmTemperatureChange: (value: number) => void
+  onLlmTopPChange: (value: number) => void
+  onLlmMaxTokensChange: (value: number) => void
+  onResetLLMSettings: () => void
+  settingsOpen: boolean
+  onCloseSettings: () => void
   promptMode: PromptMode
   visionVersion: number
   onVisionVersionChange: (value: number) => void
@@ -164,10 +314,6 @@ export function SidePanel(props: SidePanelProps) {
     onBrushColorChange,
     aiScale,
     onAiScaleChange,
-    autoComplete,
-    onAutoCompleteToggle,
-    autoCountdown,
-    hasActivePreview,
     canUndo,
     canRedo,
     onUndo,
@@ -178,6 +324,17 @@ export function SidePanel(props: SidePanelProps) {
     onExportAI,
     onApplyAIStub,
     onPreviewAI,
+    llmModel,
+    llmTemperature,
+    llmTopP,
+    llmMaxTokens,
+    onLlmModelChange,
+    onLlmTemperatureChange,
+    onLlmTopPChange,
+    onLlmMaxTokensChange,
+    onResetLLMSettings,
+    settingsOpen,
+    onCloseSettings,
     promptMode,
     visionVersion,
     onVisionVersionChange,
@@ -208,6 +365,115 @@ export function SidePanel(props: SidePanelProps) {
         boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
       }}
     >
+      {settingsOpen && (
+        <section style={{ ...CARD, background: 'rgba(248,250,252,0.95)', borderColor: '#cbd5e1' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ ...CARD_TITLE, marginBottom: 0 }}>Settings</div>
+            <Btn onClick={onCloseSettings} style={{ padding: '4px 10px', fontSize: 12 }}>
+              Close
+            </Btn>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }}>
+            <Btn onClick={onUndo} disabled={!canUndo} style={{ opacity: canUndo ? 1 : 0.6 }}>
+              Undo
+            </Btn>
+            <Btn onClick={onRedo} disabled={!canRedo} style={{ opacity: canRedo ? 1 : 0.6 }}>
+              Redo
+            </Btn>
+            <Btn onClick={onExportJSON}>Export JSON</Btn>
+            <Btn onClick={() => fileInputRef.current?.click()}>Import JSON</Btn>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="application/json,.json"
+              style={{ display: 'none' }}
+              onChange={(e) => {
+                const file = e.target.files?.[0]
+                if (file) onImportJSON(file)
+              }}
+            />
+            <Btn onClick={onExportAI}>Export Strokes (AI)</Btn>
+            <Btn onClick={onApplyAIStub}>Apply AI (stub)</Btn>
+            <Btn onClick={onPreviewAI}>Preview AI</Btn>
+          </div>
+
+          <div style={{ marginTop: 12, fontSize: 11, color: '#64748b', letterSpacing: '.3px', textTransform: 'uppercase' }}>
+            Runtime LLM
+          </div>
+          <div style={{ display: 'grid', gap: 8, marginTop: 8 }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#475569' }}>Model</span>
+              <input
+                style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                type="text"
+                value={llmModel}
+                onChange={(e) => onLlmModelChange(e.target.value)}
+                placeholder="Use backend default when empty"
+              />
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+              <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ fontSize: 12, color: '#475569' }}>Temp</span>
+                <input
+                  style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                  type="number"
+                  step="0.05"
+                  min={0}
+                  max={2}
+                  value={llmTemperature}
+                  onChange={(e) => onLlmTemperatureChange(Number(e.target.value))}
+                />
+              </label>
+              <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ fontSize: 12, color: '#475569' }}>Top P</span>
+                <input
+                  style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                  type="number"
+                  step="0.05"
+                  min={0}
+                  max={1}
+                  value={llmTopP}
+                  onChange={(e) => onLlmTopPChange(Number(e.target.value))}
+                />
+              </label>
+              <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ fontSize: 12, color: '#475569' }}>Max Tokens</span>
+                <input
+                  style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                  type="number"
+                  step={128}
+                  min={256}
+                  max={32768}
+                  value={llmMaxTokens}
+                  onChange={(e) => onLlmMaxTokensChange(Number(e.target.value))}
+                />
+              </label>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Btn onClick={onResetLLMSettings} style={{ padding: '5px 12px', fontSize: 12 }}>
+                Reset to Env
+              </Btn>
+            </div>
+          </div>
+
+          {promptMode === 'vision' && (
+            <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 8 }}>
+              <label style={{ fontSize: 12, color: '#334155', width: 120 }}>Vision version</label>
+              <input
+                type="number"
+                step="0.1"
+                min={1.0}
+                value={visionVersion}
+                onChange={(e) => onVisionVersionChange(Number(e.target.value) || 2.0)}
+                style={{ ...SEL, width: 120, height: 32, borderRadius: 8, padding: '0 8px' }}
+                title="Vision protocol version (2.0 is two-phase)"
+              />
+            </div>
+          )}
+        </section>
+      )}
+
       <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
@@ -393,72 +659,7 @@ export function SidePanel(props: SidePanelProps) {
         </div>
       </section>
 
-      <section style={CARD}>
-        <div style={CARD_TITLE}>Auto Complete</div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
-          <label style={{ fontSize: 13, color: '#333' }}>
-            自动补全：5秒无操作触发 askAI。
-          </label>
-          <input
-            type="checkbox"
-            checked={autoComplete}
-            onChange={(e) => onAutoCompleteToggle(e.target.checked)}
-            title="开启后：无预览且 5 秒无新操作自动发送"
-          />
-        </div>
-        <div style={{ marginTop: 6, fontSize: 12, color: '#666' }}>
-          状态：
-          {hasActivePreview
-            ? '有预览，暂停自动发送'
-            : autoCountdown != null
-            ? `倒计时 ${autoCountdown}s`
-            : '空闲'}
-        </div>
-      </section>
 
-      <section style={CARD}>
-        <div style={CARD_TITLE}>Actions</div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }}>
-          <Btn onClick={onUndo} disabled={!canUndo} style={{ opacity: canUndo ? 1 : 0.6 }}>
-            Undo
-          </Btn>
-          <Btn onClick={onRedo} disabled={!canRedo} style={{ opacity: canRedo ? 1 : 0.6 }}>
-            Redo
-          </Btn>
-
-          <Btn onClick={onExportJSON}>Export JSON</Btn>
-          <Btn onClick={() => fileInputRef.current?.click()}>Import JSON</Btn>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="application/json,.json"
-            style={{ display: 'none' }}
-            onChange={(e) => {
-              const file = e.target.files?.[0]
-              if (file) onImportJSON(file)
-            }}
-          />
-
-          <Btn onClick={onExportAI}>Export Strokes (AI)</Btn>
-          <Btn onClick={onApplyAIStub}>Apply AI (stub)</Btn>
-          <Btn onClick={onPreviewAI}>Preview AI</Btn>
-        </div>
-
-        {promptMode === 'vision' && (
-          <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
-            <label style={{ fontSize: 12, color: '#333', width: 120 }}>Vision version</label>
-            <input
-              type="number"
-              step="0.1"
-              min={1.0}
-              value={visionVersion}
-              onChange={(e) => onVisionVersionChange(Number(e.target.value) || 2.0)}
-              style={{ ...SEL, width: 120, height: 32, borderRadius: 8, padding: '0 8px' }}
-              title="Vision 模式的协议版本（2.0 为二段式）"
-            />
-          </div>
-        )}
-      </section>
     </div>
   )
 }
@@ -489,6 +690,7 @@ type BottomPanelGraphBlock = {
 
 export type BottomPanelProps = {
   hint: string
+  plannerNextStepHint?: string
   onHintChange: (value: string) => void
   onSubmit: () => void
   mode: PromptMode
@@ -511,6 +713,7 @@ export type BottomPanelProps = {
 export function BottomPanel(props: BottomPanelProps) {
   const {
     hint,
+    plannerNextStepHint,
     onHintChange,
     onSubmit,
     mode,
@@ -688,6 +891,34 @@ export function BottomPanel(props: BottomPanelProps) {
           Send
         </Btn>
       </div>
+      {showAutoMaintain && autoMaintainEnabled && (
+        <div
+          title="Planner Hint"
+          style={{
+            marginBottom: 8,
+            borderRadius: 10,
+            border: '1px solid #cbd5e1',
+            background: 'linear-gradient(180deg, rgba(248,250,252,0.98), rgba(241,245,249,0.9))',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.95)',
+            padding: '10px 12px',
+          }}
+        >
+          <div style={{ fontSize: 11, color: '#64748b', letterSpacing: '.2px', marginBottom: 6, textTransform: 'uppercase' }}>
+            Assistant Planner Focus
+          </div>
+          <div
+            style={{
+              fontSize: 12,
+              color: '#1f2937',
+              lineHeight: 1.5,
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+            }}
+          >
+            {plannerNextStepHint || 'No planner next-step hint yet.'}
+          </div>
+        </div>
+      )}
 
       <div
         style={{
@@ -704,7 +935,7 @@ export function BottomPanel(props: BottomPanelProps) {
           aiFeed.map((entry) => (
             <div key={entry.payloadId} style={{ marginBottom: 6 }}>
               <div style={{ fontSize: 12, color: '#444' }}>
-                <b>{new Date(entry.time).toLocaleTimeString()}</b> · payload <code>{entry.payloadId}</code>
+                <b>{new Date(entry.time).toLocaleTimeString()}</b> AIpayload <code>{entry.payloadId}</code>
               </div>
               <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
                 {entry.items.map((item, idx) => (

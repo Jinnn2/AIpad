@@ -51,7 +51,7 @@ class CanvasInfo(BaseModel):
 class AIStrokePayload(BaseModel):
     # 模型输入/输出使用的统一结构
     version: int = 1
-    intent: Optional[Literal["complete","hint","alt","write","noop"]] = "complete"
+    intent: Optional[Literal["complete","hint","alt","write","edit","noop"]] = "complete"
     replace: Optional[List[str]] = None
     canvas: Optional[CanvasInfo] = None
     strokes: List[AIStrokeV11] = Field(default_factory=list)
@@ -82,6 +82,7 @@ class SuggestRequest(BaseModel):
     delta: Optional[DeltaPayload] = Field(None, description="新格式：增量笔画（只传最近新增）")
     # 人类指令/偏好，可选
     hint: Optional[str] = None
+    auto_complete_enabled: Optional[bool] = None
     # 临时覆盖模型与采样参数，可选
     model: Optional[str] = None
     temperature: Optional[float] = 0.4

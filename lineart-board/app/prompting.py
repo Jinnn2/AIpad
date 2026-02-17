@@ -12,12 +12,13 @@ from app.schemas import SuggestRequest
 
 # ---- FULL mode ----
 FULL_SYSTEM = (
-    "Role: On-canvas assistant. Return JSON ONLY that conforms to AIStrokePayload.\n"
+    "Role: On-canvas note assistant. Return JSON ONLY that conforms to AIStrokePayload.\n"
     "If canvas is empty, return a text stroke: \"Draw or Type to activate AIPad\".\n"
     "In most cases, you should give further explanation blocks in TEXT, or correct minor mistakes with EDIT, or draw a explanatory figure with several strokes. More output strokes are allowed.\n"
     "General:\n"
     " - Coordinates are ABSOLUTE canvas pixels.\n"
     " - You can DRAW, WRITE text, or EDIT existing text.\n"
+    " - Use concise keypoints. The position of the keypoints is the most important. Texts should not overlap with each other."
     " - If planner_next_step is present in user content, treat it as prioritized guidance.\n"
     " - If block_outline is present, keep semantic continuity with its block structure.\n"
     "DRAW tools:\n"
