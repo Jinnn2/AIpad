@@ -43,8 +43,8 @@ class TextEmbedder(Protocol):
 
 @runtime_checkable
 class BlockSummarizer(Protocol):
-    def propose_block(self, fragments: List[Fragment]) -> Tuple[str, str]:
-        """Return (label, summary) for a new block."""
+    def propose_block(self, fragments: List[Fragment]) -> object:
+        """Return either (label, summary) or an annotation-like dict for a new block."""
 
     def refine_summary(self, block: Block, fragments: List[Fragment]) -> str:
         """Return an updated summary for an existing block."""
@@ -245,7 +245,8 @@ class BlockManager:
         if not self.summarizer:
             raise RuntimeError("BlockSummarizer is required to promote groups")
 
-        label, summary = self.summarizer.propose_block(fragments)
+        proposal = self.summarizer.propose_block(fragments)
+        label, summary, relationships = self._coerce_block_proposal(proposal)
         bbox_candidates = [f.bbox for f in fragments if f.bbox]
         position = _union_bbox(bbox_candidates) if bbox_candidates else None
         block_id = self._generate_block_id()
@@ -276,6 +277,16 @@ class BlockManager:
         self.state.remove_group(group_id)
         self._group_touch_counts.pop(group_id, None)
         self._refresh_block_embedding(block)
+        if relationships is not None:
+            try:
+                self.register_block_annotation(
+                    block.block_id,
+                    {"label": block.label, "summary": block.summary, "relationships": relationships},
+                )
+            except Exception as exc:
+                print(f"[graph][bootstrap] failed to register proposed relationships for {block.block_id}: {exc}")
+        else:
+            self._bootstrap_block_relationships(block.block_id)
         return block
 
     def attach_fragment_to_block(self, block_id: str, fragment_id: str) -> Block:
@@ -741,8 +752,10 @@ class BlockManager:
             raw_label = (fragment.text or '').strip() or f'Block {fragment.fragment_id[:6]}'
             label = raw_label[:36]
             summary = raw_label[:220]
+            relationships = None
         else:
-            label, summary = self.summarizer.propose_block([fragment])
+            proposal = self.summarizer.propose_block([fragment])
+            label, summary, relationships = self._coerce_block_proposal(proposal)
         bbox = fragment.bbox
         block_id = self._generate_block_id()
         block = Block(
@@ -760,7 +773,59 @@ class BlockManager:
         self._fragment_to_group.pop(fragment.fragment_id, None)
         self._tag_fragment_with_block(fragment, block)
         self._refresh_block_embedding(block)
+        if relationships is not None:
+            try:
+                self.register_block_annotation(
+                    block.block_id,
+                    {"label": block.label, "summary": block.summary, "relationships": relationships},
+                )
+            except Exception as exc:
+                print(f"[graph][bootstrap] failed to register proposed relationships for {block.block_id}: {exc}")
+        else:
+            self._bootstrap_block_relationships(block.block_id)
         return block
+
+    @staticmethod
+    def _coerce_block_proposal(proposal: object) -> Tuple[str, str, Optional[List[Dict[str, object]]]]:
+        """
+        Backward-compatible parser for summarizer propose outputs.
+        Supports:
+        - (label, summary)
+        - {label, summary, relationships?}
+        """
+        if isinstance(proposal, dict):
+            label = str(proposal.get("label") or "").strip()
+            summary = str(proposal.get("summary") or label or "").strip()
+            relationships_raw = proposal.get("relationships")
+            relationships: Optional[List[Dict[str, object]]] = None
+            if isinstance(relationships_raw, list):
+                cleaned: List[Dict[str, object]] = []
+                for item in relationships_raw:
+                    if isinstance(item, dict):
+                        cleaned.append(dict(item))
+                relationships = cleaned
+            return label, summary, relationships
+
+        if isinstance(proposal, (list, tuple)) and len(proposal) >= 2:
+            return str(proposal[0] or "").strip(), str(proposal[1] or "").strip(), None
+
+        text = str(proposal or "").strip()
+        return text, text, None
+
+    def _bootstrap_block_relationships(self, block_id: str) -> None:
+        """
+        When a block is first formed, immediately run one relationship-aware summary
+        refresh so planner/executor can use connections earlier.
+        """
+        if not self.summarizer:
+            return
+        # No peer blocks -> no relationships to infer.
+        if len(self.state.blocks) <= 1:
+            return
+        try:
+            self._maybe_refresh_summary(block_id, force=True, allow_group_scan=False)
+        except Exception as exc:
+            print(f"[graph][bootstrap] failed to infer relationships for {block_id}: {exc}")
 
     def _ensure_feature_vector(self, fragment: Fragment) -> List[float]:
         if fragment.feature_vec is not None:

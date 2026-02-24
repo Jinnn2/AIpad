@@ -209,31 +209,64 @@ const computeLayout = (
   let height = Math.max(wrapped.lines.length * lineHeight, minHeight)
 
   if (rightDownGrow) {
-    // right-down: wrap inside current box first; only expand proportionally
-    // when content height overflows the current box.
-    width = baseW
-    wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
-    const initialRequiredHeight = Math.max(wrapped.lines.length * lineHeight, minHeight)
-    if (initialRequiredHeight <= baseH) {
-      height = baseH
+    // right-down: wrap in the current box first, then auto-fit proportionally
+    // (shrink/expand) while keeping the base aspect ratio.
+    const minScale = Math.max(
+      minWidth / Math.max(baseW, 1e-6),
+      minHeight / Math.max(baseH, 1e-6),
+    )
+    const evalRightDownScale = (scale: number) => {
+      const clampedScale = Math.max(minScale, scale)
+      const nextWidth = Math.max(minWidth, baseW * clampedScale)
+      const nextWrapped = wrapTextWithWidth(text, nextWidth, measure, lineHeight)
+      const requiredHeight = Math.max(nextWrapped.lines.length * lineHeight, minHeight)
+      const boxHeight = Math.max(minHeight, baseH * clampedScale)
+      const fits = requiredHeight <= boxHeight + 1e-3
+      return {
+        scale: clampedScale,
+        width: nextWidth,
+        wrapped: nextWrapped,
+        requiredHeight,
+        boxHeight,
+        fits,
+      }
+    }
+
+    const baseEval = evalRightDownScale(1)
+    if (baseEval.fits) {
+      // Auto-shrink: find the smallest proportional box that still fits the wrapped text.
+      let lo = minScale
+      let hi = 1
+      let best = baseEval
+      for (let i = 0; i < 12; i++) {
+        const mid = (lo + hi) / 2
+        const midEval = evalRightDownScale(mid)
+        if (midEval.fits) {
+          best = midEval
+          hi = mid
+        } else {
+          lo = mid
+        }
+      }
+      width = best.width
+      wrapped = best.wrapped
+      height = best.boxHeight
     } else {
-      let scale = Math.max(1, initialRequiredHeight / Math.max(baseH, 1e-6))
-      for (let i = 0; i < 6; i++) {
-        const nextWidth = Math.max(minWidth, baseW * scale)
-        const nextWrapped = wrapTextWithWidth(text, nextWidth, measure, lineHeight)
-        const requiredHeight = Math.max(nextWrapped.lines.length * lineHeight, minHeight)
-        const requiredScale = Math.max(1, requiredHeight / Math.max(baseH, 1e-6))
-        wrapped = nextWrapped
-        width = nextWidth
+      // Auto-expand: keep wrapping and grow proportionally until the wrapped text fits.
+      let scale = Math.max(1, baseEval.requiredHeight / Math.max(baseH, 1e-6))
+      let best = baseEval
+      for (let i = 0; i < 8; i++) {
+        const nextEval = evalRightDownScale(scale)
+        best = nextEval
+        const requiredScale = Math.max(1, nextEval.requiredHeight / Math.max(baseH, 1e-6))
         if (requiredScale <= scale + 1e-3) {
           break
         }
         scale = requiredScale
       }
-      width = Math.max(minWidth, baseW * scale)
-      wrapped = wrapTextWithWidth(text, width, measure, lineHeight)
-      const requiredHeight = Math.max(wrapped.lines.length * lineHeight, minHeight)
-      height = Math.max(baseH * scale, requiredHeight)
+      width = best.width
+      wrapped = best.wrapped
+      height = Math.max(best.boxHeight, best.requiredHeight)
     }
   } else if (height <= baseH) {
     height = Math.min(height, baseH)

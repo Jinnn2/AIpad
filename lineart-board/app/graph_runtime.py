@@ -161,10 +161,13 @@ class LLMBlockSummarizer(BlockSummarizer):
     def set_canvas_size(self, size: tuple[float, float]) -> None:
         self._canvas_size = size
 
-    def propose_block(self, fragments: List[Fragment]) -> tuple[str, str]:
+    def propose_block(self, fragments: List[Fragment]) -> Dict[str, object]:
+        roster = self._build_roster("")
         payload = {
             "task": "propose",
             "fragments": [_fragment_export(f) for f in fragments],
+            "others": roster,
+            "canvas": {"size": [self._canvas_size[0], self._canvas_size[1]]},
         }
         messages = [
             {
@@ -172,15 +175,21 @@ class LLMBlockSummarizer(BlockSummarizer):
                 "content": (
                     "You are a knowledge-graph curator for a collaborative canvas.\n"
                     "You are the knowledge-graph curator for this collaborative canvas.\n"
-                    "Always return a JSON object {\"label\": str, \"summary\": str}.\n"
-                    "Keep the label concise (<= 40 characters) and write a summary that captures the block's purpose for future context.\n")
+                    "Create a new block label/summary from the provided fragments.\n"
+                    "Also infer relationships from this new block to existing blocks in `others` when justified.\n"
+                    "Always return a JSON object {\"label\": str, \"summary\": str, \"relationships\"?: [{\"type\": str, \"target\": str, \"score\": float?}]}.\n"
+                    "Keep the label concise (<= 40 characters) and write a summary that captures the block's purpose for future context.\n"
+                    "Only reference IDs that appear in `others`. Use relationship types such as refines, comment_on, subtopic or flow_next. Skip uncertain relationships.\n")
             },
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
         ]
         parsed, _ = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
         label = _normalize_text(parsed.get("label") if isinstance(parsed, dict) else None) or "Untitled Block"
         summary = _normalize_text(parsed.get("summary") if isinstance(parsed, dict) else None) or label
-        return label, summary
+        relationships: List[Dict[str, object]] = []
+        if isinstance(parsed, dict):
+            relationships = self._sanitize_relationships(parsed.get("relationships"), "")
+        return {"label": label, "summary": summary, "relationships": relationships}
 
     def refine_summary(self, block, fragments: List[Fragment]) -> Dict[str, object]:
         roster = self._build_roster(block.block_id)
@@ -1636,7 +1645,6 @@ class GraphRuntime:
         line_count = max(1, int(math.ceil(max(1, len(text)) / max_chars_per_line)))
         h = float(min(220.0, max(56.0, line_count * 30.0 + 20.0)))
 
-        margin = 24.0
         x_min = 8.0
         y_min = 8.0
         x_max = max(x_min, float(canvas_w) - w - 8.0)
@@ -1645,15 +1653,45 @@ class GraphRuntime:
         def _clamp_xy(x: float, y: float) -> Tuple[float, float]:
             return (min(max(x, x_min), x_max), min(max(y, y_min), y_max))
 
-        candidates_xy = [
-            _clamp_xy(float(canvas_w) - w - margin, margin),
-            _clamp_xy(float(canvas_w) - w - margin, float(canvas_h) - h - margin),
-            _clamp_xy(margin, float(canvas_h) - h - margin),
-            _clamp_xy(margin, margin),
-            _clamp_xy((float(canvas_w) - w) / 2.0, margin),
-            _clamp_xy((float(canvas_w) - w) / 2.0, float(canvas_h) - h - margin),
-            _clamp_xy((float(canvas_w) - w) / 2.0, (float(canvas_h) - h) / 2.0),
-        ]
+        center_x = (float(canvas_w) - w) / 2.0
+        center_y = (float(canvas_h) - h) / 2.0
+        step_x = max(32.0, min(w * 0.55, float(canvas_w) * 0.18))
+        step_y = max(28.0, min(h * 0.70, float(canvas_h) * 0.18))
+
+        # Prefer positions near the user's screen center, while still minimizing overlap.
+        # Build a small center-biased lattice (center + 8-neighborhood + outer ring).
+        raw_candidates: List[Tuple[float, float]] = [(center_x, center_y)]
+        for ring in (1.0, 2.0):
+            for dx_mul, dy_mul in (
+                (-1, -1), (0, -1), (1, -1),
+                (-1, 0),           (1, 0),
+                (-1, 1),  (0, 1),  (1, 1),
+            ):
+                raw_candidates.append(
+                    (
+                        center_x + dx_mul * step_x * ring,
+                        center_y + dy_mul * step_y * ring,
+                    )
+                )
+        # Add a few elongated offsets to help dodge dense central clusters.
+        raw_candidates.extend(
+            [
+                (center_x - 3.0 * step_x, center_y),
+                (center_x + 3.0 * step_x, center_y),
+                (center_x, center_y - 3.0 * step_y),
+                (center_x, center_y + 3.0 * step_y),
+            ]
+        )
+
+        candidates_xy: List[Tuple[float, float]] = []
+        seen_candidates: Set[Tuple[float, float]] = set()
+        for raw_x, raw_y in raw_candidates:
+            cx, cy = _clamp_xy(raw_x, raw_y)
+            key = (round(cx, 3), round(cy, 3))
+            if key in seen_candidates:
+                continue
+            seen_candidates.add(key)
+            candidates_xy.append((cx, cy))
 
         occupied: List[Tuple[float, float, float, float]] = []
         for fragment in self.state.fragments.values():
@@ -1671,21 +1709,27 @@ class GraphRuntime:
             occupied.append((bx0, by0, bx1, by1))
 
         best_bbox: Optional[Tuple[float, float, float, float]] = None
-        best_score: Optional[float] = None
+        best_score: Optional[Tuple[float, float, float]] = None
+        target_cx = float(canvas_w) / 2.0
+        target_cy = float(canvas_h) / 2.0
         for x, y in candidates_xy:
             candidate = (x, y, x + w, y + h)
             overlap_area = 0.0
             for occ in occupied:
                 overlap_area += self._bbox_intersection_area(candidate, occ)
-            # tie-break: prefer top-right-ish by keeping x larger and y smaller
-            tie_break = (float(canvas_w) - x) * 1e-3 + y * 1e-4
-            score = overlap_area + tie_break
+            candidate_cx = x + w / 2.0
+            candidate_cy = y + h / 2.0
+            center_distance = math.hypot(candidate_cx - target_cx, candidate_cy - target_cy)
+            # Final tiny tie-break prefers slightly upper positions when overlap and
+            # center distance are equivalent, to reduce covering lower canvas content.
+            vertical_tie = y
+            score = (overlap_area, center_distance, vertical_tie)
             if best_score is None or score < best_score:
                 best_score = score
                 best_bbox = candidate
 
         if best_bbox is None:
-            x, y = _clamp_xy(float(canvas_w) - w - margin, margin)
+            x, y = _clamp_xy(center_x, center_y)
             best_bbox = (x, y, x + w, y + h)
         return best_bbox
 

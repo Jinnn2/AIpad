@@ -41,7 +41,7 @@ FULL_SYSTEM = (
     "    \"fontSize\": font size in px,\n"
     "    \"role\": optional one of {\"body\",\"subtitle\",\"title\"},\n"
     "    \"growDir\": one of {\"right-down\",\"down\",\"right\",\"up\",\"left\"} (default \"right-down\").\n"
-    "For growDir='right-down', wrap inside current box first, and only if overflow remains, expand proportionally to lower-right.\n"
+    "For growDir='right-down', wrap inside current box first, then proportionally auto-fit to lower-right (shrink/expand as needed).\n"
     "- EDIT text boxes using tool='edit' when you need to modify a previous text stroke.\n"
     "When receiving a user request containing the word \"organize\", \"整理\", (or equivalent), try to structurize the content:"
         "1: Read the paragraph and identify structural elements such as titles, subtitles or sections."
