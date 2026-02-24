@@ -236,16 +236,16 @@ class BlockManager:
         group.updated_at = datetime.utcnow()
         return self.promote_group(group_id)
 
-    def promote_group(self, group_id: str) -> Block:
+    def promote_group(self, group_id: str, *, proposal_override: Optional[object] = None) -> Block:
         group = self._get_group(group_id)
         fragments = [self.state.fragments[fid] for fid in group.members]
         if not fragments:
             raise ValueError(f"group {group_id} has no fragments to promote")
 
-        if not self.summarizer:
+        if proposal_override is None and not self.summarizer:
             raise RuntimeError("BlockSummarizer is required to promote groups")
 
-        proposal = self.summarizer.propose_block(fragments)
+        proposal = proposal_override if proposal_override is not None else self.summarizer.propose_block(fragments)
         label, summary, relationships = self._coerce_block_proposal(proposal)
         bbox_candidates = [f.bbox for f in fragments if f.bbox]
         position = _union_bbox(bbox_candidates) if bbox_candidates else None

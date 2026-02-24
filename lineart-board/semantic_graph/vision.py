@@ -50,6 +50,7 @@ class VisionGrouper:
         idle_timeout: timedelta = timedelta(seconds=2),
         auto_promote_confidence: float = 0.85,
         spatial_threshold: float = 220.0,
+        manual_pending_promotion: bool = True,
     ) -> None:
         self.block_manager = block_manager
         self.backend = backend
@@ -57,6 +58,7 @@ class VisionGrouper:
         self.idle_timeout = idle_timeout
         self.auto_promote_confidence = auto_promote_confidence
         self.spatial_threshold = spatial_threshold
+        self.manual_pending_promotion = bool(manual_pending_promotion)
         self._last_activity: Optional[datetime] = None
         self._pending_groups: Dict[str, _PendingGroup] = {}
         self._diagram_blocks: Dict[str, Tuple[float, float, float, float]] = {}
@@ -74,7 +76,7 @@ class VisionGrouper:
             latest_ts = self._last_activity or now
         return (now - latest_ts) >= self.idle_timeout
 
-    def process(self, payload: VisionPayload) -> List[VisionResult]:
+    def process(self, payload: VisionPayload, *, force_promote: bool = False) -> List[VisionResult]:
         raw_results = self.backend.analyze(payload)
         if not isinstance(raw_results, list):
             return []
@@ -111,9 +113,33 @@ class VisionGrouper:
             if decision in {"annotation", "merge_block", "merge_to_block"}:
                 self._handle_annotation(result, strokes)
             elif decision in {"diagram", "new_block"}:
-                self._handle_diagram(result, strokes)
+                self._handle_diagram(result, strokes, force_promote=force_promote)
             applied.append(result)
         return applied
+
+    def list_pending_groups(self) -> List[Dict[str, object]]:
+        groups: List[Dict[str, object]] = []
+        for group in self._pending_groups.values():
+            groups.append(
+                {
+                    "groupId": group.group_id,
+                    "bbox": list(group.bbox),
+                    "count": len(group.stroke_ids),
+                    "strokeIds": list(group.stroke_ids),
+                    "readyReason": group.ready_reason,
+                    "createdAt": group.created_at.isoformat(),
+                    "updatedAt": group.updated_at.isoformat(),
+                    "eligible": len(group.stroke_ids) >= self.stroke_threshold,
+                }
+            )
+        groups.sort(key=lambda item: str(item.get("updatedAt") or ""), reverse=True)
+        return groups
+
+    def pop_pending_group_payload(self, group_id: str, *, reason: str = "manual") -> Optional[VisionPayload]:
+        group = self._pending_groups.pop(group_id, None)
+        if not group:
+            return None
+        return self._group_to_payload(group, override_reason=reason)
 
     def ingest_fragment(self, fragment, *, reason: str = "auto") -> List[VisionPayload]:
         if fragment.fragment_type != FragmentType.STROKE:
@@ -182,7 +208,11 @@ class VisionGrouper:
         if best_group and best_distance <= self.spatial_threshold:
             best_group.stroke_ids.append(fragment_id)
             best_group.bbox = _merge_bbox(best_group.bbox, bbox)
-            if len(best_group.stroke_ids) >= self.stroke_threshold and not best_group.ready_reason:
+            if (
+                not self.manual_pending_promotion
+                and len(best_group.stroke_ids) >= self.stroke_threshold
+                and not best_group.ready_reason
+            ):
                 best_group.ready_reason = "stroke_threshold"
             return best_group
         group_id = f"vision_{uuid.uuid4().hex[:8]}"
@@ -195,11 +225,12 @@ class VisionGrouper:
             ready_reason=None,
         )
         self._pending_groups[group_id] = group
-        for other in self._pending_groups.values():
-            if other is group:
-                continue
-            if not other.ready_reason and len(other.stroke_ids) >= self.stroke_threshold:
-                other.ready_reason = "spatial_split"
+        if not self.manual_pending_promotion:
+            for other in self._pending_groups.values():
+                if other is group:
+                    continue
+                if not other.ready_reason and len(other.stroke_ids) >= self.stroke_threshold:
+                    other.ready_reason = "spatial_split"
         return group
 
     def _group_to_payload(self, group: _PendingGroup, override_reason: Optional[str] = None) -> VisionPayload:
@@ -249,23 +280,41 @@ class VisionGrouper:
         if block and block.contents:
             block.position = self.block_manager._refresh_block_bbox(block)  # type: ignore[attr-defined]
 
-    def _handle_diagram(self, result: VisionResult, strokes: List[str]) -> None:
-        confidence = result.confidence or 0.0
+    def _handle_diagram(self, result: VisionResult, strokes: List[str], *, force_promote: bool = False) -> None:
+        confidence = result.confidence
+        if confidence is None:
+            # Backward-compatible fallback: earlier prompts often omitted confidence
+            # while still providing an explicit new_block/diagram decision.
+            confidence = self.auto_promote_confidence
         label = result.label or "diagram"
         try:
             group = self.block_manager.create_group_from_fragments(strokes, need_llm_review=True)
         except ValueError:
             return
-        if confidence >= self.auto_promote_confidence:
+        if force_promote or confidence >= self.auto_promote_confidence:
             fragments = [self.block_manager.state.fragments[fid] for fid in group.members]
             for fragment in fragments:
                 fragment.fragment_type = FragmentType.STROKE
+            manual_proposal_override = None
+            if force_promote:
+                manual_proposal_override = {
+                    "label": label,
+                    "summary": result.summary or f"Diagram: {label}",
+                    "relationships": result.relationships or [],
+                }
             try:
-                block = self.block_manager.promote_group(group.group_id)
+                block = self.block_manager.promote_group(
+                    group.group_id,
+                    proposal_override=manual_proposal_override,
+                )
             except Exception:
                 return
             if label:
                 block.label = label
+            if force_promote:
+                block.position = self.block_manager._refresh_block_bbox(block)  # type: ignore[attr-defined]
+                self.register_diagram_block(block.block_id, block.position)
+                return
             annotation = {
                 "summary": result.summary or block.summary or f"Diagram: {label}",
                 "label": block.label,

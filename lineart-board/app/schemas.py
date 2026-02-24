@@ -106,6 +106,8 @@ class SuggestRequest(BaseModel):
     block_outline: Optional[List[Dict[str, Any]]] = None
     # Optional runtime override for group->block promotion strategy in Auto Maintain.
     group_promote_mode: Optional[Literal["heuristic", "hybrid", "llm"]] = None
+    # Optional runtime override for Auto Maintain vision image usage policy.
+    vision_image_mode: Optional[Literal["off", "auto", "always"]] = None
 
 class SuggestResponse(BaseModel):
     ok: bool = True
@@ -125,6 +127,7 @@ class SyncSessionRequest(BaseModel):
     sid: str
     strokes: List[AIStrokeV11] = Field(default_factory=list)
     graph_snapshot: Optional["GraphSnapshotPayload"] = None
+    vision_image_mode: Optional[Literal["off", "auto", "always"]] = None
 
 class SyncSessionResponse(BaseModel):
     ok: bool = True
@@ -144,6 +147,7 @@ class GraphAutoModeRequest(BaseModel):
     canvas_size: Optional[Tuple[float, float]] = None
     strokes: Optional[List[AIStrokeV11]] = None
     graph_snapshot: Optional["GraphSnapshotPayload"] = None
+    vision_image_mode: Optional[Literal["off", "auto", "always"]] = None
 
 
 class GraphAutoModeResponse(BaseModel):
@@ -163,6 +167,7 @@ class GraphSnapshotResponse(BaseModel):
     blocks: List[Dict[str, Any]] = Field(default_factory=list)
     fragments: List[Dict[str, Any]] = Field(default_factory=list)
     groups: List[Dict[str, Any]] = Field(default_factory=list)
+    visionPendingGroups: List[Dict[str, Any]] = Field(default_factory=list)
 
 
 class PromoteGroupRequest(BaseModel):
@@ -173,4 +178,14 @@ class PromoteGroupRequest(BaseModel):
 class PromoteGroupResponse(BaseModel):
     ok: bool = True
     block: Optional[Dict[str, Any]] = None
+
+
+class PromoteVisionPendingGroupRequest(BaseModel):
+    sid: str
+    group_id: str
+    graph_snapshot: Optional["GraphSnapshotPayload"] = None
+
+
+class PromoteVisionPendingGroupResponse(BaseModel):
+    ok: bool = True
 

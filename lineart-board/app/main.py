@@ -25,6 +25,8 @@ from app.schemas import (
     GraphSnapshotResponse,
     PromoteGroupRequest,
     PromoteGroupResponse,
+    PromoteVisionPendingGroupRequest,
+    PromoteVisionPendingGroupResponse,
 )
 from app import prompting
 from app.llm_client import call_chat_completions
@@ -325,6 +327,12 @@ def suggest(req: SuggestRequest):
                 graph_runtime.set_group_promotion_mode(runtime_group_promote_mode)
             except Exception as exc:
                 print("[graph] set group promote mode failed:", exc)
+        runtime_vision_image_mode = getattr(req, "vision_image_mode", None)
+        if graph_runtime is not None and runtime_vision_image_mode:
+            try:
+                graph_runtime.set_vision_image_mode(runtime_vision_image_mode)
+            except Exception as exc:
+                print("[graph] set vision image mode failed:", exc)
         req_mode = (getattr(req, "mode", None) or "full").lower()
         use_context_executor = bool(sess.graph_auto and graph_runtime is not None and req_mode in {"full", "light"})
 
@@ -867,6 +875,12 @@ def session_sync(body: SyncSessionRequest):
     raw = [s.model_dump() for s in (body.strokes or [])]
     if sess.graph_auto and sess.graph_runtime:
         runtime = sess.graph_runtime
+        runtime_vision_image_mode = getattr(body, "vision_image_mode", None)
+        if runtime_vision_image_mode:
+            try:
+                runtime.set_vision_image_mode(runtime_vision_image_mode)
+            except Exception as exc:
+                print("[graph] set vision image mode failed:", exc)
         if body.graph_snapshot:
             try:
                 runtime.update_canvas_snapshot(body.graph_snapshot.model_dump())
@@ -922,6 +936,12 @@ def graph_auto_mode(body: GraphAutoModeRequest):
         raise HTTPException(404, f"session not found: {body.sid}")
     if body.enabled:
         runtime = sess.init_graph_runtime(canvas_size=body.canvas_size)
+        runtime_vision_image_mode = getattr(body, "vision_image_mode", None)
+        if runtime_vision_image_mode:
+            try:
+                runtime.set_vision_image_mode(runtime_vision_image_mode)
+            except Exception as exc:
+                print("[graph] set vision image mode failed:", exc)
         strokes = body.strokes or []
         payloads = []
         for stroke in strokes:
@@ -953,12 +973,13 @@ def graph_auto_mode(body: GraphAutoModeRequest):
 def graph_state(sid: str):
     sess = S.get_session(sid)
     if not sess or not sess.graph_runtime:
-        return GraphSnapshotResponse(blocks=[], fragments=[], groups=[])
+        return GraphSnapshotResponse(blocks=[], fragments=[], groups=[], visionPendingGroups=[])
     snapshot = sess.graph_runtime.snapshot()
     return GraphSnapshotResponse(
         blocks=snapshot.get("blocks", []),
         fragments=snapshot.get("fragments", []),
         groups=snapshot.get("groups", []),
+        visionPendingGroups=snapshot.get("visionPendingGroups", []),
     )
 
 
@@ -977,4 +998,20 @@ def graph_promote_group(body: PromoteGroupRequest):
         "contents": list(block.contents),
     }
     return PromoteGroupResponse(ok=True, block=payload)
+
+
+@app.post("/graph/promote-vision-group", response_model=PromoteVisionPendingGroupResponse)
+def graph_promote_vision_group(body: PromoteVisionPendingGroupRequest):
+    sess = S.get_session(body.sid)
+    if not sess or not sess.graph_runtime:
+        raise HTTPException(404, f"session not found or graph disabled: {body.sid}")
+    if body.graph_snapshot:
+        try:
+            sess.graph_runtime.update_canvas_snapshot(body.graph_snapshot.model_dump())
+        except Exception as exc:
+            print("[graph] promote vision snapshot update error:", exc)
+    ok = sess.graph_runtime.promote_vision_pending_group_now(body.group_id)
+    if not ok:
+        raise HTTPException(404, f"pending vision group not found or processing failed: {body.group_id}")
+    return PromoteVisionPendingGroupResponse(ok=True)
 

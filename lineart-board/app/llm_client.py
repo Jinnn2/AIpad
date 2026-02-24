@@ -92,15 +92,16 @@ def _inject_vision_content(messages: list[dict]) -> list[dict]:
             out.append(m)
             continue
 
-        # The content is an f-string that resembles a dict; attempt a lightweight parse
-        # Ideally prompting would pass a dict directly and avoid string parsing altogether
-        # Use a safe parsing strategy instead of eval()
+        # Prefer strict JSON parsing. Fallback to a lightweight quote translation
+        # for legacy call sites that stringify Python-like dicts.
         import json
         try:
-            # Translate single quotes to double quotes first
-            content_json = json.loads(re.sub(r"'", '"', content))
+            content_json = json.loads(content)
         except Exception:
-            out.append(m); continue
+            try:
+                content_json = json.loads(re.sub(r"'", '"', content))
+            except Exception:
+                out.append(m); continue
 
         image_data = content_json.pop("_image_data", None)
         image_mime = content_json.pop("_image_mime", "image/png")

@@ -76,16 +76,29 @@ const VITE_LLM_TEMPERATURE_DEFAULT = readViteNumber('VITE_OPENAI_TEMPERATURE', 0
 const VITE_LLM_TOP_P_DEFAULT = readViteNumber('VITE_OPENAI_TOP_P', 0.95, 0, 1)
 const VITE_LLM_MAX_TOKENS_DEFAULT = Math.round(readViteNumber('VITE_OPENAI_MAX_TOKENS', 10240, 256, 32768))
 type GroupPromoteMode = 'heuristic' | 'hybrid' | 'llm'
+type VisionImageMode = 'off' | 'auto' | 'always'
 const normalizeGroupPromoteMode = (value: unknown): GroupPromoteMode => {
   const token = String(value ?? '').trim().toLowerCase()
   if (token === 'hybrid' || token === 'llm') return token
   return 'heuristic'
+}
+const normalizeVisionImageMode = (value: unknown): VisionImageMode => {
+  const token = String(value ?? '').trim().toLowerCase()
+  if (token === 'off' || token === 'always') return token
+  return 'auto'
 }
 const VITE_GROUP_PROMOTE_MODE_DEFAULT: GroupPromoteMode = (() => {
   try {
     return normalizeGroupPromoteMode((import.meta as any)?.env?.VITE_GRAPH_AGENT_GROUP_PROMOTE_MODE ?? 'heuristic')
   } catch {
     return 'heuristic'
+  }
+})()
+const VITE_VISION_IMAGE_MODE_DEFAULT: VisionImageMode = (() => {
+  try {
+    return normalizeVisionImageMode((import.meta as any)?.env?.VITE_GRAPH_VISION_IMAGE_MODE ?? 'auto')
+  } catch {
+    return 'auto'
   }
 })()
 const apiFetch = async (path: string, init?: RequestInit) => {
@@ -128,16 +141,22 @@ const colorToStroke = (c: ColorName) => {
   }
 }
 const INPUT_BASE: React.CSSProperties = {
-  padding: '6px 10px',
+  padding: '7px 10px',
   borderRadius: 10,
-  border: '1px solid #d1d5db',
-  background: '#fff',
+  border: '1px solid rgba(148, 163, 184, 0.42)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.94))',
+  color: '#0f172a',
+  boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 1px 2px rgba(15,23,42,0.04)',
+  outline: 'none',
 }
 const BUTTON_BASE: React.CSSProperties = {
   padding: '6px 12px',
   borderRadius: 999,
-  border: '1px solid #d1d5db',
-  background: '#fff',
+  border: '1px solid rgba(148, 163, 184, 0.34)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92))',
+  color: '#0f172a',
+  fontWeight: 600,
+  boxShadow: '0 1px 0 rgba(255,255,255,0.92) inset, 0 6px 14px rgba(15,23,42,0.06)',
   cursor: 'pointer',
 }
 const TEXT_LINE_HEIGHT = DEFAULT_TEXTBOX_LINE_HEIGHT
@@ -314,6 +333,7 @@ const gridLayerRef = useRef<any>(null)
   const [llmTopP, setLlmTopP] = useState<number>(VITE_LLM_TOP_P_DEFAULT)
   const [llmMaxTokens, setLlmMaxTokens] = useState<number>(VITE_LLM_MAX_TOKENS_DEFAULT)
   const [groupPromoteMode, setGroupPromoteMode] = useState<GroupPromoteMode>(VITE_GROUP_PROMOTE_MODE_DEFAULT)
+  const [visionImageMode, setVisionImageMode] = useState<VisionImageMode>(VITE_VISION_IMAGE_MODE_DEFAULT)
   // AI generation scale caps point count and informs upload density
   const [aiScale, setAiScale] = useState<number>(16) // adjustable 4-64, defaults to 16
   // Live drawing state with raw float coordinates (world space)
@@ -391,6 +411,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     bbox?: [number, number, number, number]
     padding?: number
     hideGrid?: boolean
+    background?: string | null
   }
 
   const snapshotCanvas = useCallback(async (
@@ -450,6 +471,13 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       targetCanvas.height = targetHeight
       const ctx = targetCanvas.getContext("2d")
       if (!ctx) return { data: null, w: 0, h: 0, mime }
+      const background = options?.background !== undefined
+        ? options.background
+        : (mime === "image/jpeg" ? "#ffffff" : null)
+      if (background) {
+        ctx.fillStyle = background
+        ctx.fillRect(0, 0, targetWidth, targetHeight)
+      }
       ctx.drawImage(rawCanvas, 0, 0, targetWidth, targetHeight)
       const outUri = targetCanvas.toDataURL(mime, quality)
       const base64 = outUri.split(",")[1] || null
@@ -470,12 +498,13 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   }
   const captureGraphSnapshotPayload = useCallback(async (
     bbox: [number, number, number, number],
-    opts?: { maxSize?: number },
+    opts?: { maxSize?: number; mime?: "image/jpeg" | "image/png"; quality?: number; padding?: number; background?: string | null },
   ): Promise<GraphSnapshotUpload | null> => {
-    const snap = await snapshotCanvas(opts?.maxSize ?? 1024, "image/jpeg", 0.72, {
+    const snap = await snapshotCanvas(opts?.maxSize ?? 1024, opts?.mime ?? "image/jpeg", opts?.quality ?? 0.72, {
       bbox,
-      padding: 72,
+      padding: opts?.padding ?? 72,
       hideGrid: true,
+      background: opts?.background,
     })
     if (!snap.data) return null
     return {
@@ -575,6 +604,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
         }
       }
       const body: Record<string, unknown> = { sid: curSid, strokes }
+      body.vision_image_mode = visionImageMode
       if (graphSnapshotPayload) {
         body.graph_snapshot = graphSnapshotPayload
       }
@@ -587,7 +617,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     } catch (err) {
       console.warn('session/sync error', err)
     }
-  }, [packAllStrokes, captureGraphSnapshotPayload])
+  }, [packAllStrokes, captureGraphSnapshotPayload, visionImageMode])
   React.useEffect(() => {
     if (!sid) return
     if (syncTimerRef.current) window.clearTimeout(syncTimerRef.current)
@@ -644,6 +674,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     }
   }, [graphInspectorVisible])
   const [promoteGroupPending, setPromoteGroupPending] = useState<string | null>(null)
+  const [promoteVisionGroupPending, setPromoteVisionGroupPending] = useState<string | null>(null)
   const blockColorMapRef = useRef<Record<string, string>>({})
   const blockColorMap = useMemo(() => {
     const blocks = graphSnapshot?.blocks ?? []
@@ -712,6 +743,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
         blocks: Array.isArray(data?.blocks) ? data.blocks : [],
         fragments: Array.isArray(data?.fragments) ? data.fragments : [],
         groups: Array.isArray(data?.groups) ? data.groups : [],
+        visionPendingGroups: Array.isArray((data as any)?.visionPendingGroups) ? (data as any).visionPendingGroups : [],
       })
     } catch (err) {
       console.warn('[graph] snapshot error:', err)
@@ -747,6 +779,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       }
       if (!curSid) return
       const payload: any = { sid: curSid, enabled: nextEnabled }
+      payload.vision_image_mode = visionImageMode
       if (nextEnabled) {
         payload.canvas_size = [size.width, size.height]
         const allStrokes = packAllStrokes()
@@ -811,6 +844,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     fetchGraphSnapshot,
     computeStrokeBBox,
     captureGraphSnapshotPayload,
+    visionImageMode,
   ])
   const handleAutoMaintainToggle = useCallback(() => {
     void updateAutoMaintain(!autoMaintain)
@@ -1079,6 +1113,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const showGraphHighlights = graphInspectorVisible && autoMaintain && (
     graphBlockCards.some((block) => (block.fragments && block.fragments.length > 0) || !!block.bbox)
     || graphRelationshipEdges.length > 0
+    || ((graphSnapshot?.visionPendingGroups?.length ?? 0) > 0)
   )
   const promoteGroup = useCallback(async (groupId: string) => {
     if (!sid) {
@@ -1104,9 +1139,82 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       setPromoteGroupPending((prev) => (prev === groupId ? null : prev))
     }
   }, [sid, fetchGraphSnapshot])
+  const promoteVisionPendingGroup = useCallback(async (groupId: string) => {
+    if (!sid) {
+      alert('Need to initialize session first')
+      return
+    }
+    setPromoteVisionGroupPending(groupId)
+    try {
+      let graphSnapshotPayload: GraphSnapshotUpload | null = null
+      const pendingGroup = (graphSnapshot?.visionPendingGroups ?? []).find((g) => String(g.groupId) === String(groupId))
+      const pendingBBox = Array.isArray(pendingGroup?.bbox) && pendingGroup!.bbox.length === 4
+        ? pendingGroup!.bbox as [number, number, number, number]
+        : null
+      if (pendingBBox) {
+        try {
+          graphSnapshotPayload = await captureGraphSnapshotPayload(pendingBBox, {
+            maxSize: 1400,
+            mime: "image/png",
+            quality: 1.0,
+            padding: 96,
+            background: "#ffffff",
+          })
+        } catch (err) {
+          console.warn('[graph] promote pending vision snapshot capture failed:', err)
+        }
+      }
+      const res = await apiFetch('/graph/promote-vision-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sid,
+          group_id: groupId,
+          ...(graphSnapshotPayload ? { graph_snapshot: graphSnapshotPayload } : {}),
+        }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error('promote pending vision group failed: ' + res.status + ' ' + res.statusText + (txt ? '\n' + txt : ''))
+      }
+      await fetchGraphSnapshot(sid)
+    } catch (err: any) {
+      console.warn('[graph] promote pending vision group error:', err)
+      alert('Promote pending vision group failed:\n' + (err?.message || String(err)))
+    } finally {
+      setPromoteVisionGroupPending((prev) => (prev === groupId ? null : prev))
+    }
+  }, [sid, fetchGraphSnapshot, graphSnapshot?.visionPendingGroups, captureGraphSnapshotPayload])
   const toggleGraphInspector = useCallback(() => {
     setGraphInspectorVisible((prev) => !prev)
   }, [])
+  const pendingVisionGroupOverlays = useMemo(() => {
+    const groups = graphSnapshot?.visionPendingGroups ?? []
+    if (!graphInspectorVisible || !autoMaintain || groups.length === 0) return []
+    return groups
+      .map((group) => {
+        const bbox = Array.isArray(group.bbox) && group.bbox.length === 4
+          ? group.bbox as [number, number, number, number]
+          : null
+        if (!bbox) return null
+        const [x0, y0, x1, y1] = bbox
+        const cx = (x0 + x1) / 2
+        const cy = (y0 + y1) / 2
+        const screen = worldToScreen(cx, cy)
+        const onScreen = screen.x >= -80 && screen.x <= size.width + 80 && screen.y >= -40 && screen.y <= size.height + 40
+        if (!onScreen) return null
+        return {
+          groupId: group.groupId,
+          bbox,
+          count: Number(group.count || 0),
+          eligible: Boolean(group.eligible),
+          readyReason: group.readyReason ?? null,
+          centerWorld: { x: cx, y: cy },
+          centerScreen: screen,
+        }
+      })
+      .filter((item): item is NonNullable<typeof item> => Boolean(item))
+  }, [graphSnapshot?.visionPendingGroups, graphInspectorVisible, autoMaintain, worldToScreen, size.width, size.height])
   const cycleMode = useCallback(() => {
     setMode((current) => (current === 'light' ? 'full' : current === 'full' ? 'vision' : 'light'))
   }, [setMode])
@@ -1538,6 +1646,7 @@ const openTextEditor = useCallback((params: {
         hint,
         auto_complete_enabled: autoComplete,
         group_promote_mode: groupPromoteMode,
+        vision_image_mode: visionImageMode,
         ...(runtimeModel ? { model: runtimeModel } : {}),
         temperature: runtimeTemperature,
         top_p: runtimeTopP,
@@ -1592,6 +1701,7 @@ const openTextEditor = useCallback((params: {
           hint,
           auto_complete_enabled: autoComplete,
           group_promote_mode: groupPromoteMode,
+          vision_image_mode: visionImageMode,
           ...(runtimeModel ? { model: runtimeModel } : {}),
           temperature: runtimeTemperature,
           top_p: runtimeTopP,
@@ -1682,6 +1792,7 @@ const openTextEditor = useCallback((params: {
     hint,
     autoComplete,
     groupPromoteMode,
+    visionImageMode,
     llmModel,
     llmTemperature,
     llmTopP,
@@ -1803,21 +1914,24 @@ const openTextEditor = useCallback((params: {
           : TEXT_LINE_HEIGHT
         const hasCompletion = !!completionText
         const isHighlighted = !!editHighlight
-        let borderColor = preview ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.4)'
+        let borderColor = preview ? 'rgba(15,23,42,0.22)' : 'rgba(15,23,42,0.34)'
         let borderDash: number[] | undefined = preview ? [4,4] : undefined
-        let fillColorOverlay: string | undefined
+        let fillColorOverlay: string | undefined = preview ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.18)'
         if (isHighlighted) {
           borderColor = '#ffb74d'
           borderDash = [2, 2]
-          fillColorOverlay = 'rgba(255,183,77,0.12)'
+          fillColorOverlay = 'rgba(255,183,77,0.14)'
         } else if (hasCompletion) {
           borderColor = '#2563eb'
           borderDash = [6, 4]
-          fillColorOverlay = 'rgba(37,99,235,0.08)'
+          fillColorOverlay = 'rgba(37,99,235,0.1)'
         } else if (selected) {
           borderColor = '#4aa3ff'
           borderDash = [8,4]
+          fillColorOverlay = 'rgba(74,163,255,0.08)'
         }
+        const frameCorner = Math.max(8 / view.scale, 2 / view.scale)
+        const frameShadowBlur = (isHighlighted || hasCompletion || selected) ? Math.max(16 / view.scale, 4 / view.scale) : 0
         return (
           <Group listening={false}>
             <KRect
@@ -1825,11 +1939,15 @@ const openTextEditor = useCallback((params: {
               y={d.y}
               width={boxW}
               height={boxH}
+              cornerRadius={frameCorner}
               stroke={borderColor}
               strokeWidth={1 / view.scale}
               dash={borderDash}
               fill={fillColorOverlay}
-              opacity={0.6}
+              shadowColor={borderColor}
+              shadowBlur={frameShadowBlur}
+              shadowOpacity={frameShadowBlur > 0 ? 0.18 : 0}
+              opacity={0.85}
             />
             <KText
               x={d.x}
@@ -2571,7 +2689,55 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
   } : null
 // ===== Stage binds camera (x/y/scale); hand mode enables dragging =====
   return (
-    <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow:'hidden' }}>
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden',
+        background:
+          'radial-gradient(circle at 12% 10%, rgba(14,165,233,0.1), transparent 38%), radial-gradient(circle at 85% 18%, rgba(34,197,94,0.08), transparent 36%), linear-gradient(180deg, rgba(255,255,255,0.7), rgba(248,250,252,0.55))',
+      }}
+    >
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          background:
+            'radial-gradient(circle at 20% 24%, rgba(255,255,255,0.55), transparent 46%), radial-gradient(circle at 78% 30%, rgba(255,255,255,0.42), transparent 44%), radial-gradient(circle at 50% 68%, rgba(148,163,184,0.08), transparent 55%)',
+          maskImage: 'radial-gradient(circle at 50% 45%, black 35%, transparent 92%)',
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          top: -120,
+          left: -80,
+          width: 360,
+          height: 360,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(37,99,235,0.14), rgba(37,99,235,0.02) 58%, transparent 72%)',
+          filter: 'blur(4px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          right: -120,
+          bottom: 120,
+          width: 420,
+          height: 420,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(20,184,166,0.1), rgba(20,184,166,0.02) 56%, transparent 72%)',
+          filter: 'blur(8px)',
+          pointerEvents: 'none',
+        }}
+      />
       <TopToolbar
         showGrid={showGrid}
         snap={snap}
@@ -2623,6 +2789,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onResetLLMSettings={resetRuntimeLLMSettings}
         groupPromoteMode={groupPromoteMode}
         onGroupPromoteModeChange={(value) => setGroupPromoteMode(normalizeGroupPromoteMode(value))}
+        visionImageMode={visionImageMode}
+        onVisionImageModeChange={(value) => setVisionImageMode(normalizeVisionImageMode(value))}
         settingsOpen={settingsOpen}
         onCloseSettings={() => setSettingsOpen(false)}
         promptMode={mode}
@@ -2642,28 +2810,62 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             width: textEditorSize.width,
             minWidth: 260,
             maxWidth: 420,
-            background: 'rgba(255,255,255,0.95)',
-            border: '1px solid #d1d5db',
-            borderRadius: 14,
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,252,0.94))',
+            border: '1px solid rgba(148,163,184,0.28)',
+            borderRadius: 18,
             padding: 14,
             zIndex: 2000,
-            boxShadow: '0 14px 36px rgba(15,23,42,0.18)',
+            boxShadow: '0 20px 44px rgba(15,23,42,0.16), 0 6px 16px rgba(15,23,42,0.08)',
             display: 'flex',
             flexDirection: 'column',
-            gap: 10,
-            backdropFilter: 'blur(6px)',
+            gap: 12,
+            backdropFilter: 'blur(10px) saturate(115%)',
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#1f2937' }}>
-              {textEditor.isEditing ? 'Edit text box' : 'Create text box'}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div
+                aria-hidden
+                style={{
+                  width: 22,
+                  height: 22,
+                  borderRadius: 8,
+                  background: 'linear-gradient(135deg, rgba(37,99,235,0.16), rgba(20,184,166,0.14))',
+                  border: '1px solid rgba(37,99,235,0.18)',
+                  color: '#1d4ed8',
+                  display: 'grid',
+                  placeItems: 'center',
+                  fontSize: 12,
+                  fontWeight: 700,
+                }}
+              >
+                T
+              </div>
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#0f172a', lineHeight: 1.1 }}>
+                  {textEditor.isEditing ? 'Edit text box' : 'Create text box'}
+                </div>
+                <div style={{ fontSize: 11, color: '#64748b', marginTop: 2 }}>
+                  Auto-wrap + {textEditor.growDir} layout
+                </div>
+              </div>
             </div>
             <button
               onClick={cancelTextEditor}
-              style={{ border: 'none', background: 'transparent', fontSize: 16, cursor: 'pointer', color: '#6b7280' }}
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: 8,
+                border: '1px solid rgba(148,163,184,0.28)',
+                background: 'rgba(255,255,255,0.8)',
+                fontSize: 15,
+                cursor: 'pointer',
+                color: '#64748b',
+                boxShadow: '0 1px 0 rgba(255,255,255,0.85) inset',
+              }}
               title="Cancel"
             >
-              x
+              ×
             </button>
           </div>
           <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -2694,9 +2896,11 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                     style={{
                       ...BUTTON_BASE,
                       flex: 1,
-                      padding: '6px 10px',
-                      borderColor: active ? '#4aa3ff' : '#d1d5db',
-                      background: active ? 'rgba(74,163,255,0.16)' : '#fff',
+                      padding: '7px 10px',
+                      borderColor: active ? 'rgba(74,163,255,0.45)' : 'rgba(148,163,184,0.28)',
+                      background: active
+                        ? 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(219,234,254,0.9))'
+                        : 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92))',
                       color: active ? '#1d4ed8' : '#334155',
                       fontWeight: 600,
                     }}
@@ -2798,12 +3002,15 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                   title={c}
                   onClick={() => updateTextEditorState({ color: c as ColorName })}
                   style={{
-                    width: 24,
-                    height: 24,
-                    borderRadius: 6,
-                    border: `2px solid ${textEditor.color === c ? '#4aa3ff' : '#e5e7eb'}`,
+                    width: 26,
+                    height: 26,
+                    borderRadius: 8,
+                    border: `2px solid ${textEditor.color === c ? '#4aa3ff' : '#e2e8f0'}`,
                     background: c === 'white' ? '#fff' : c.replace('light-', 'light'),
                     cursor: 'pointer',
+                    boxShadow: textEditor.color === c
+                      ? '0 0 0 3px rgba(74,163,255,0.12)'
+                      : '0 1px 2px rgba(15,23,42,0.06)',
                   }}
                 />
               ))}
@@ -2825,12 +3032,16 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 width: '100%',
                 minHeight: 160,
                 resize: 'vertical',
-                padding: '8px 10px',
-                borderRadius: 10,
-                border: '1px solid #d1d5db',
+                padding: '10px 12px',
+                borderRadius: 12,
+                border: '1px solid rgba(148,163,184,0.38)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96))',
+                color: '#0f172a',
+                boxShadow: 'inset 0 1px 2px rgba(15,23,42,0.04)',
                 fontFamily: textEditor.fontFamily,
                 fontSize: textEditor.fontSize,
                 lineHeight: TEXT_LINE_HEIGHT,
+                outline: 'none',
               }}
             />
           </label>
@@ -2843,9 +3054,10 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 fontSize: 12,
                 fontStyle: 'italic',
                 color: '#2563eb',
-                background: 'rgba(37,99,235,0.08)',
-                padding: '6px 8px',
-                borderRadius: 8,
+                background: 'linear-gradient(180deg, rgba(239,246,255,0.95), rgba(219,234,254,0.82))',
+                border: '1px solid rgba(59,130,246,0.18)',
+                padding: '7px 10px',
+                borderRadius: 10,
               }}
             >
               {textEditor.pendingCompletion}
@@ -2854,13 +3066,24 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
             <button
               onClick={cancelTextEditor}
-              style={{ ...BUTTON_BASE, borderColor: '#d1d5db', background: '#f9fafb' }}
+              style={{
+                ...BUTTON_BASE,
+                borderColor: 'rgba(148,163,184,0.34)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9))',
+                color: '#334155',
+              }}
             >
               Cancel
             </button>
             <button
               onClick={commitTextEditor}
-              style={{ ...BUTTON_BASE, borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.15)', color: '#1d4ed8' }}
+              style={{
+                ...BUTTON_BASE,
+                borderColor: 'rgba(59,130,246,0.34)',
+                background: 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(219,234,254,0.9))',
+                color: '#1d4ed8',
+                boxShadow: '0 8px 16px rgba(37,99,235,0.12), 0 1px 0 rgba(255,255,255,0.9) inset',
+              }}
             >
               Save
             </button>
@@ -2994,6 +3217,45 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 </Group>
               )
             })}
+            {pendingVisionGroupOverlays.map((group) => {
+              const [gx0, gy0, gx1, gy1] = group.bbox
+              const width = Math.max(12, gx1 - gx0)
+              const height = Math.max(12, gy1 - gy0)
+              const labelY = gy0 - 24 >= 12 ? gy0 - 24 : gy0 + 8
+              const stroke = group.eligible ? '#f59e0b' : '#fbbf24'
+              return (
+                <Group key={`vision-pending-${group.groupId}`} listening={false}>
+                  <KRect
+                    x={gx0}
+                    y={gy0}
+                    width={width}
+                    height={height}
+                    stroke={stroke}
+                    strokeWidth={1.8}
+                    dash={[8, 6]}
+                    cornerRadius={12}
+                    opacity={0.95}
+                    shadowColor={stroke}
+                    shadowBlur={10}
+                    shadowOpacity={0.15}
+                  />
+                  <KLabel x={gx0} y={labelY} listening={false}>
+                    <KTag
+                      fill={hexToRgba(stroke, 0.16)}
+                      stroke={stroke}
+                      lineJoin="round"
+                      cornerRadius={6}
+                    />
+                    <KText
+                      text={`vision pending · ${group.count} stroke${group.count === 1 ? '' : 's'}`}
+                      fontSize={11}
+                      fill="#78350f"
+                      padding={5}
+                    />
+                  </KLabel>
+                </Group>
+              )
+            })}
             {graphBlockCards.map((block) => {
               const fragments = block.fragments?.filter((frag) => frag.type === 'text' && frag.bbox) ?? []
               const hasBlockBox = !!block.bbox
@@ -3093,6 +3355,39 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           ))}
         </Layer>
       </Stage>
+      {graphInspectorVisible && autoMaintain && pendingVisionGroupOverlays.map((group) => {
+        const busy = promoteVisionGroupPending === group.groupId
+        return (
+          <button
+            key={`vision-pending-btn-${group.groupId}`}
+            onClick={() => promoteVisionPendingGroup(group.groupId)}
+            disabled={busy}
+            title={`${group.groupId}${group.readyReason ? ` · ${group.readyReason}` : ''}`}
+            style={{
+              position: 'absolute',
+              left: group.centerScreen.x,
+              top: group.centerScreen.y,
+              transform: 'translate(-50%, -50%)',
+              zIndex: 1150,
+              border: '1px solid rgba(245,158,11,0.75)',
+              background: busy
+                ? 'linear-gradient(180deg, rgba(254,243,199,0.92), rgba(253,230,138,0.86))'
+                : 'linear-gradient(180deg, rgba(255,251,235,0.96), rgba(254,240,138,0.9))',
+              color: '#78350f',
+              borderRadius: 999,
+              padding: '6px 12px',
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: busy ? 'wait' : 'pointer',
+              boxShadow: '0 8px 18px rgba(217,119,6,0.18)',
+              pointerEvents: 'auto',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {busy ? 'Promoting…' : 'Promote to Block'}
+          </button>
+        )
+      })}
       <BottomPanel
         hint={hint}
         plannerNextStepHint={plannerNextStepHint}
@@ -3162,10 +3457,36 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             <>
               <div style={{ fontSize: 12, color: '#a5b4fc', marginBottom: 8 }}>
                 Blocks: {graphSnapshot?.blocks?.length ?? 0} · Fragments: {graphSnapshot?.fragments?.length ?? 0}
+                {graphSnapshot?.visionPendingGroups && graphSnapshot.visionPendingGroups.length > 0 && (
+                  <div style={{ marginTop: 10, marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, color: '#fdba74', marginBottom: 6 }}>
+                      Vision Pending Groups ({graphSnapshot.visionPendingGroups.length})
+                    </div>
+                    {graphSnapshot.visionPendingGroups.map((group) => (
+                      <div
+                        key={`vision-${group.groupId}`}
+                        style={{
+                          border: '1px dashed rgba(245,158,11,0.55)',
+                          borderRadius: 10,
+                          padding: '8px 10px',
+                          marginBottom: 6,
+                          background: 'rgba(245,158,11,0.08)',
+                        }}
+                      >
+                        <div style={{ fontSize: 12, fontWeight: 600, color: '#fde68a' }}>
+                          {group.groupId} · strokes {group.count}
+                        </div>
+                        <div style={{ fontSize: 11, color: '#fcd34d', marginTop: 2 }}>
+                          {group.eligible ? 'eligible for manual promote' : 'collecting more strokes'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {graphSnapshot?.groups && graphSnapshot.groups.length > 0 && (
                   <div style={{ marginBottom: 12 }}>
                     <div style={{ fontSize: 12, color: '#fca5a5', marginBottom: 6 }}>
-                      Pending Groups ({graphSnapshot.groups.length})
+                      Semantic Groups ({graphSnapshot.groups.length})
                     </div>
                     {graphSnapshot.groups.map((group) => (
                       <div
@@ -3313,6 +3634,17 @@ type GraphGroup = {
   updatedAt?: string
 }
 
+type GraphVisionPendingGroup = {
+  groupId: string
+  bbox?: [number, number, number, number] | null
+  count: number
+  strokeIds?: string[]
+  readyReason?: string | null
+  createdAt?: string
+  updatedAt?: string
+  eligible?: boolean
+}
+
 type GraphBlockCardFragment = {
   id: string
   type: string
@@ -3344,6 +3676,7 @@ type GraphSnapshot = {
     blockLabel?: string | null
   }>
   groups: GraphGroup[]
+  visionPendingGroups?: GraphVisionPendingGroup[]
 }
 
 type ImportEntry = { draft: ShapeDraft; stroke: AIStrokeV11 }

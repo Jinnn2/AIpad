@@ -2,40 +2,206 @@ import React from 'react'
 import type { PromptMode, ColorName } from './ai/types'
 import { COLORS } from './ai/normalize'
 
+const UI_THEME = {
+  ink: '#0f172a',
+  inkSoft: '#334155',
+  inkMuted: '#64748b',
+  line: 'rgba(148, 163, 184, 0.28)',
+  lineStrong: 'rgba(100, 116, 139, 0.34)',
+  panel: 'rgba(255,255,255,0.82)',
+  panelDeep: 'rgba(248,250,252,0.92)',
+  panelHover: 'rgba(255,255,255,0.94)',
+  glow: '0 22px 50px rgba(15,23,42,0.12), 0 4px 14px rgba(15,23,42,0.06)',
+  glowStrong: '0 24px 60px rgba(15,23,42,0.16), 0 6px 18px rgba(15,23,42,0.1)',
+  accent: '#2563eb',
+  accentSoft: 'rgba(37,99,235,0.1)',
+}
+
+type UiIconName =
+  | 'grid'
+  | 'snap'
+  | 'curve'
+  | 'spark'
+  | 'ask'
+  | 'check'
+  | 'close'
+  | 'hand'
+  | 'pen'
+  | 'eraser'
+  | 'ellipse'
+  | 'text'
+  | 'select'
+
+function UiIcon({
+  name,
+  size = 14,
+  stroke = 'currentColor',
+}: {
+  name: UiIconName
+  size?: number
+  stroke?: string
+}) {
+  const common = {
+    fill: 'none',
+    stroke,
+    strokeWidth: 1.7,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+  }
+  return (
+    <svg
+      aria-hidden
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      style={{ flexShrink: 0, display: 'block' }}
+    >
+      {name === 'grid' && (
+        <g {...common}>
+          <rect x="2.2" y="2.2" width="11.6" height="11.6" rx="1.6" />
+          <path d="M7.5 2.2v11.6M11 2.2v11.6M2.2 7.5h11.6M2.2 11h11.6" />
+        </g>
+      )}
+      {name === 'snap' && (
+        <g {...common}>
+          <circle cx="8" cy="8" r="4.5" />
+          <path d="M8 1.5v2.2M8 12.3v2.2M1.5 8h2.2M12.3 8h2.2M8 6.1v3.8M6.1 8h3.8" />
+        </g>
+      )}
+      {name === 'curve' && (
+        <g {...common}>
+          <path d="M2.3 11.8C4.5 4.1 7.4 4.1 9.8 8.2c1.1 1.9 2.1 2.2 3.9-.2" />
+          <circle cx="2.3" cy="11.8" r="1.1" />
+          <circle cx="9.8" cy="8.2" r="1.1" />
+          <circle cx="13.7" cy="8" r="1.1" />
+        </g>
+      )}
+      {name === 'spark' && (
+        <g {...common}>
+          <path d="M8 1.7l1.2 3.1 3.1 1.2-3.1 1.2L8 10.3 6.8 7.2 3.7 6l3.1-1.2L8 1.7Z" />
+          <path d="M12.5 10.7v3M11 12.2h3" />
+        </g>
+      )}
+      {name === 'ask' && (
+        <g {...common}>
+          <path d="M3 4.1h10v6.4a1.2 1.2 0 0 1-1.2 1.2H7.2L4 14.2v-2.5H4A1 1 0 0 1 3 10.7z" />
+          <path d="M6 7.7h4M6 5.8h6" />
+        </g>
+      )}
+      {name === 'check' && <path {...common} d="M2.8 8.5 6.4 12l6.8-7.4" />}
+      {name === 'close' && <path {...common} d="M3.3 3.3l9.4 9.4M12.7 3.3 3.3 12.7" />}
+      {name === 'hand' && (
+        <g {...common}>
+          <path d="M6 13.3c-1.5 0-2.7-1.2-2.7-2.7V7.2c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1V5.4c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1V4.8c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v.9c0-.5.4-.9.9-.9s.9.4.9.9v4.9c0 1.5-1.2 2.7-2.7 2.7H6z" />
+        </g>
+      )}
+      {name === 'pen' && (
+        <g {...common}>
+          <path d="M3 13l2.8-.6 6.7-6.7-2.2-2.2-6.7 6.7L3 13z" />
+          <path d="M9.4 3.5l2.2 2.2" />
+        </g>
+      )}
+      {name === 'eraser' && (
+        <g {...common}>
+          <path d="M6.2 3.2 13 10a1.2 1.2 0 0 1 0 1.7l-1.2 1.2a1.2 1.2 0 0 1-1.7 0L3.3 6.1a1.2 1.2 0 0 1 0-1.7l1.2-1.2a1.2 1.2 0 0 1 1.7 0Z" />
+          <path d="M7.7 13.4h5" />
+        </g>
+      )}
+      {name === 'ellipse' && (
+        <g {...common}>
+          <ellipse cx="8" cy="8" rx="5.6" ry="4.1" />
+        </g>
+      )}
+      {name === 'text' && (
+        <g {...common}>
+          <path d="M2.5 3.3h11M8 3.3v9.4M5.8 12.7h4.4" />
+        </g>
+      )}
+      {name === 'select' && (
+        <g {...common}>
+          <rect x="2.4" y="2.4" width="8.5" height="8.5" rx="1.2" strokeDasharray="2 1.4" />
+          <path d="M10.8 10.2l2.8 3.1M10.6 7.8l2.6 1-.9 2.6" />
+        </g>
+      )}
+    </svg>
+  )
+}
+
+function IconLabel({
+  icon,
+  children,
+  tone,
+}: {
+  icon: UiIconName
+  children: React.ReactNode
+  tone?: string
+}) {
+  return (
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+      <UiIcon name={icon} size={14} stroke={tone ?? 'currentColor'} />
+      <span>{children}</span>
+    </span>
+  )
+}
+
 const BTN_BASE: React.CSSProperties = {
-  padding: '6px 10px',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 6,
+  padding: '7px 12px',
   borderRadius: 999,
-  border: '1px solid #ccc',
-  background: '#fff',
+  border: `1px solid ${UI_THEME.lineStrong}`,
+  background: `linear-gradient(180deg, ${UI_THEME.panelHover}, rgba(241,245,249,0.92))`,
+  color: UI_THEME.ink,
   cursor: 'pointer',
+  fontSize: 12,
+  fontWeight: 600,
+  letterSpacing: '0.01em',
+  boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 6px 14px rgba(15,23,42,0.06)',
+  transition: 'transform 120ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease',
 }
 
 const CARD: React.CSSProperties = {
-  padding: 12,
-  border: '1px solid #e5e7eb',
-  borderRadius: 12,
-  background: 'rgba(255,255,255,0.6)',
+  padding: 14,
+  border: `1px solid ${UI_THEME.line}`,
+  borderRadius: 16,
+  background: `linear-gradient(180deg, ${UI_THEME.panelHover}, rgba(248,250,252,0.9))`,
+  boxShadow: '0 10px 24px rgba(15,23,42,0.05)',
+  backdropFilter: 'blur(10px)',
 }
 
 const CARD_TITLE: React.CSSProperties = {
   fontSize: 12,
-  color: '#6b7280',
+  color: UI_THEME.inkMuted,
   marginBottom: 8,
-  letterSpacing: '.3px',
+  letterSpacing: '.08em',
   textTransform: 'uppercase',
+  fontWeight: 700,
 }
 
 const SEL: React.CSSProperties = {
-  padding: '6px 10px',
-  borderRadius: 999,
-  border: '1px solid #ccc',
-  background: '#fff',
+  padding: '7px 10px',
+  borderRadius: 10,
+  border: `1px solid ${UI_THEME.lineStrong}`,
+  background: 'rgba(255,255,255,0.92)',
+  color: UI_THEME.ink,
+  boxShadow: '0 1px 0 rgba(255,255,255,0.95) inset',
+  outline: 'none',
 }
 
 type ButtonLike = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const Btn = React.forwardRef<HTMLButtonElement, ButtonLike>(({ style, ...props }, ref) => (
-  <button ref={ref} {...props} style={{ ...BTN_BASE, ...style }} />
+  <button
+    ref={ref}
+    {...props}
+    style={{
+      ...BTN_BASE,
+      ...(props.disabled ? { opacity: 0.52, cursor: 'not-allowed', boxShadow: 'none' } : null),
+      ...style,
+    }}
+  />
 ))
 Btn.displayName = 'Btn'
 
@@ -83,25 +249,57 @@ export function TopToolbar(props: TopToolbarProps) {
         position: 'absolute',
         left: '50%',
         transform: 'translateX(-50%)',
-        top: 16,
+        top: 14,
         zIndex: 1000,
         display: 'flex',
-        gap: 8,
+        gap: 10,
         alignItems: 'center',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        maxWidth: 'calc(100vw - 24px)',
-        background: 'rgba(255,255,255,0.85)',
-        backdropFilter: 'blur(6px)',
-        padding: '8px 12px',
-        borderRadius: 16,
-        boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
-        border: '1px solid #e5e7eb',
+        maxWidth: 'calc(100vw - 28px)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,250,252,0.84))',
+        backdropFilter: 'blur(14px) saturate(120%)',
+        padding: '10px 14px',
+        borderRadius: 18,
+        boxShadow: UI_THEME.glow,
+        border: `1px solid ${UI_THEME.line}`,
       }}
     >
-      <Btn onClick={onToggleGrid}>{showGrid ? 'Grid: ON' : 'Grid: OFF'}</Btn>
-      <Btn onClick={onToggleSnap}>{snap ? 'Snap: ON' : 'Snap: OFF'}</Btn>
-      <Btn onClick={onToggleCurve}>{curveTurns ? 'Curve: ON' : 'Curve: OFF'}</Btn>
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '5px 10px 5px 6px',
+          borderRadius: 999,
+          border: `1px solid ${UI_THEME.line}`,
+          background: 'rgba(255,255,255,0.7)',
+          boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset',
+          marginRight: 2,
+        }}
+      >
+        <span
+          aria-hidden
+          style={{
+            width: 18,
+            height: 18,
+            borderRadius: '50%',
+            background: 'conic-gradient(from 210deg, #0ea5e9, #2563eb, #14b8a6, #0ea5e9)',
+            boxShadow: '0 0 0 2px rgba(255,255,255,0.9) inset, 0 6px 12px rgba(37,99,235,0.22)',
+          }}
+        />
+        <span style={{ fontSize: 12, fontWeight: 700, color: UI_THEME.ink, letterSpacing: '.06em' }}>AIPAD</span>
+        <span style={{ fontSize: 10, color: UI_THEME.inkMuted }}>Canvas Lab</span>
+      </div>
+      <Btn onClick={onToggleGrid}>
+        <IconLabel icon="grid">{showGrid ? 'Grid: ON' : 'Grid: OFF'}</IconLabel>
+      </Btn>
+      <Btn onClick={onToggleSnap}>
+        <IconLabel icon="snap">{snap ? 'Snap: ON' : 'Snap: OFF'}</IconLabel>
+      </Btn>
+      <Btn onClick={onToggleCurve}>
+        <IconLabel icon="curve">{curveTurns ? 'Curve: ON' : 'Curve: OFF'}</IconLabel>
+      </Btn>
       <button
         onClick={() => onToggleAutoComplete(!autoComplete)}
         title={`Auto Complete (${autoCompleteState})`}
@@ -109,17 +307,24 @@ export function TopToolbar(props: TopToolbarProps) {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 8,
-          padding: '6px 10px',
+          padding: '7px 10px',
           borderRadius: 999,
-          border: `1px solid ${autoComplete ? '#22c55e' : '#cbd5e1'}`,
-          background: autoComplete ? 'rgba(34,197,94,0.16)' : '#fff',
+          border: `1px solid ${autoComplete ? 'rgba(34,197,94,0.45)' : UI_THEME.lineStrong}`,
+          background: autoComplete
+            ? 'linear-gradient(180deg, rgba(240,253,244,0.95), rgba(220,252,231,0.92))'
+            : 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.9))',
           cursor: 'pointer',
-          color: '#0f172a',
+          color: UI_THEME.ink,
           fontSize: 12,
           fontWeight: 600,
+          boxShadow: autoComplete
+            ? '0 8px 18px rgba(34,197,94,0.12)'
+            : '0 6px 14px rgba(15,23,42,0.05)',
         }}
       >
-        <span>Auto Complete</span>
+        <IconLabel icon="spark">
+          Auto Complete
+        </IconLabel>
         <span
           style={{
             position: 'relative',
@@ -129,6 +334,7 @@ export function TopToolbar(props: TopToolbarProps) {
             background: autoComplete ? '#22c55e' : '#cbd5e1',
             transition: 'background 0.2s ease',
             flexShrink: 0,
+            boxShadow: 'inset 0 1px 2px rgba(15,23,42,0.14)',
           }}
         >
           <span
@@ -140,33 +346,45 @@ export function TopToolbar(props: TopToolbarProps) {
               height: 16,
               borderRadius: '50%',
               background: '#fff',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.25)',
+              boxShadow: '0 1px 3px rgba(15,23,42,0.25)',
               transition: 'left 0.2s ease',
             }}
           />
         </span>
-        <span style={{ fontSize: 11, color: '#64748b', minWidth: 56 }}>{autoCompleteState}</span>
+        <span style={{ fontSize: 11, color: UI_THEME.inkMuted, minWidth: 56 }}>{autoCompleteState}</span>
       </button>
 
-      <div style={{ width: 10, height: 24, borderLeft: '1px solid #e5e7eb', margin: '0 4px' }} />
+      <div style={{ width: 10, height: 24, borderLeft: `1px solid ${UI_THEME.line}`, margin: '0 2px' }} />
 
       <Btn
         onClick={onAskAI}
-        style={{ borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.14)' }}
+        style={{
+          borderColor: 'rgba(59,130,246,0.34)',
+          background: 'linear-gradient(180deg, rgba(239,246,255,0.95), rgba(219,234,254,0.92))',
+          color: '#1d4ed8',
+        }}
       >
-        Ask AI
+        <IconLabel icon="ask" tone="#1d4ed8">Ask AI</IconLabel>
       </Btn>
       <Btn
         onClick={onAcceptAI}
-        style={{ borderColor: '#52d273', background: 'rgba(82,210,115,0.14)' }}
+        style={{
+          borderColor: 'rgba(22,163,74,0.32)',
+          background: 'linear-gradient(180deg, rgba(240,253,244,0.96), rgba(220,252,231,0.92))',
+          color: '#166534',
+        }}
       >
-        Accept
+        <IconLabel icon="check" tone="#166534">Accept</IconLabel>
       </Btn>
       <Btn
         onClick={onDismissAI}
-        style={{ borderColor: '#ff6b6b', background: 'rgba(255,107,107,0.14)' }}
+        style={{
+          borderColor: 'rgba(239,68,68,0.28)',
+          background: 'linear-gradient(180deg, rgba(254,242,242,0.96), rgba(254,226,226,0.92))',
+          color: '#b91c1c',
+        }}
       >
-        Dismiss
+        <IconLabel icon="close" tone="#b91c1c">Dismiss</IconLabel>
       </Btn>
     </div>
   )
@@ -183,14 +401,14 @@ export function SettingsButton(props: SettingsButtonProps) {
   const [pressed, setPressed] = React.useState(false)
   const translateY = pressed ? 1 : hovered ? -1 : 0
   const scale = pressed ? 0.97 : hovered ? 1.04 : 1
-  const shellBorder = open ? '1px solid rgba(129,140,248,0.62)' : '1px solid rgba(148,163,184,0.48)'
+  const shellBorder = open ? '1px solid rgba(37,99,235,0.46)' : `1px solid ${UI_THEME.lineStrong}`
   const shellBackground = open
-    ? 'linear-gradient(150deg, rgba(30,64,175,0.96), rgba(124,58,237,0.92))'
+    ? 'linear-gradient(150deg, rgba(29,78,216,0.98), rgba(14,165,233,0.92))'
     : 'linear-gradient(150deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94))'
   const shellShadow = open
-    ? '0 14px 30px rgba(79,70,229,0.38), 0 4px 10px rgba(30,64,175,0.28)'
+    ? '0 14px 30px rgba(37,99,235,0.3), 0 4px 10px rgba(14,165,233,0.22)'
     : hovered
-      ? '0 12px 24px rgba(59,130,246,0.22), 0 3px 8px rgba(15,23,42,0.12)'
+      ? '0 12px 24px rgba(59,130,246,0.18), 0 3px 8px rgba(15,23,42,0.1)'
       : '0 6px 12px rgba(15,23,42,0.12)'
 
   return (
@@ -207,15 +425,15 @@ export function SettingsButton(props: SettingsButtonProps) {
       onMouseUp={() => setPressed(false)}
       style={{
         position: 'absolute',
-        top: 82,
+        top: 76,
         right: 364,
         zIndex: 1100,
-        width: 44,
-        height: 44,
+        width: 46,
+        height: 46,
         borderRadius: '50%',
         border: shellBorder,
         background: shellBackground,
-        color: open ? '#eef2ff' : '#0f172a',
+        color: open ? '#eff6ff' : UI_THEME.ink,
         fontSize: 19,
         fontWeight: 700,
         lineHeight: 1,
@@ -236,15 +454,15 @@ export function SettingsButton(props: SettingsButtonProps) {
           inset: 0,
           borderRadius: '50%',
           background: open
-            ? 'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.36), transparent 58%)'
-            : 'radial-gradient(circle at 30% 25%, rgba(148,163,184,0.16), transparent 58%)',
+            ? 'radial-gradient(circle at 30% 25%, rgba(255,255,255,0.34), transparent 58%)'
+            : 'radial-gradient(circle at 30% 25%, rgba(148,163,184,0.15), transparent 58%)',
         }}
       />
       <span
         style={{
           position: 'relative',
           zIndex: 1,
-          transform: open ? 'rotate(28deg)' : 'rotate(0deg)',
+          transform: open ? 'rotate(24deg)' : 'rotate(0deg)',
           transition: 'transform 220ms ease',
         }}
       >
@@ -256,6 +474,7 @@ export function SettingsButton(props: SettingsButtonProps) {
 
 type GrowDir = 'down' | 'up' | 'left' | 'right' | 'right-down'
 type GroupPromoteMode = 'heuristic' | 'hybrid' | 'llm'
+type VisionImageMode = 'off' | 'auto' | 'always'
 
 export type SidePanelProps = {
   toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select'
@@ -289,6 +508,8 @@ export type SidePanelProps = {
   onResetLLMSettings: () => void
   groupPromoteMode: GroupPromoteMode
   onGroupPromoteModeChange: (value: GroupPromoteMode) => void
+  visionImageMode: VisionImageMode
+  onVisionImageModeChange: (value: VisionImageMode) => void
   settingsOpen: boolean
   onCloseSettings: () => void
   promptMode: PromptMode
@@ -338,6 +559,8 @@ export function SidePanel(props: SidePanelProps) {
     onResetLLMSettings,
     groupPromoteMode,
     onGroupPromoteModeChange,
+    visionImageMode,
+    onVisionImageModeChange,
     settingsOpen,
     onCloseSettings,
     promptMode,
@@ -348,30 +571,47 @@ export function SidePanel(props: SidePanelProps) {
     onToggleGraphInspector,
     graphInspectorActive,
   } = props
+  const toolButtonsPrimary = [
+    { id: 'hand', label: 'Hand', icon: 'hand' },
+    { id: 'pen', label: 'Pen', icon: 'pen' },
+    { id: 'eraser', label: 'Eraser', icon: 'eraser' },
+    { id: 'ellipse', label: 'Ellipse', icon: 'ellipse' },
+  ] as const
+  const toolButtonsSecondary = [
+    { id: 'text', label: 'Text', icon: 'text' },
+    { id: 'select', label: 'Select', icon: 'select' },
+  ] as const
   return (
     <div
       style={{
         position: 'absolute',
-        top: 80,
-        right: 16,
-        bottom: 180,
-        width: 340,
-        minWidth: 340,
+        top: 74,
+        right: 14,
+        bottom: 176,
+        width: 'min(360px, calc(100vw - 28px))',
+        minWidth: 300,
         zIndex: 1000,
         display: 'flex',
         flexDirection: 'column',
-        gap: 12,
+        gap: 14,
         overflow: 'auto',
-        padding: 12,
-        background: 'rgba(255,255,255,0.75)',
-        backdropFilter: 'blur(8px)',
-        border: '1px solid #e5e7eb',
-        borderRadius: 16,
-        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+        padding: 14,
+        background:
+          'linear-gradient(180deg, rgba(255,255,255,0.78), rgba(248,250,252,0.72))',
+        backdropFilter: 'blur(16px) saturate(125%)',
+        border: `1px solid ${UI_THEME.line}`,
+        borderRadius: 20,
+        boxShadow: UI_THEME.glowStrong,
       }}
     >
       {settingsOpen && (
-        <section style={{ ...CARD, background: 'rgba(248,250,252,0.95)', borderColor: '#cbd5e1' }}>
+        <section
+          style={{
+            ...CARD,
+            background: 'linear-gradient(180deg, rgba(248,250,252,0.98), rgba(241,245,249,0.96))',
+            borderColor: 'rgba(148,163,184,0.28)',
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
             <div style={{ ...CARD_TITLE, marginBottom: 0 }}>Settings</div>
             <Btn onClick={onCloseSettings} style={{ padding: '4px 10px', fontSize: 12 }}>
@@ -479,6 +719,19 @@ export function SidePanel(props: SidePanelProps) {
                 <option value="llm">LLM Review</option>
               </select>
             </label>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <span style={{ fontSize: 12, color: '#475569' }}>Vision Image Mode</span>
+              <select
+                value={visionImageMode}
+                onChange={(e) => onVisionImageModeChange(e.target.value as VisionImageMode)}
+                style={{ ...SEL, borderRadius: 10, width: '100%' }}
+                title="off: text-only, auto: attach snapshot only for complex/ambiguous groups, always: always attach snapshot"
+              >
+                <option value="off">Off (text only)</option>
+                <option value="auto">Auto (recommended)</option>
+                <option value="always">Always attach snapshot</option>
+              </select>
+            </label>
           </div>
 
           {promptMode === 'vision' && (
@@ -501,36 +754,55 @@ export function SidePanel(props: SidePanelProps) {
       <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
-          {(['hand', 'pen', 'eraser', 'ellipse'] as const).map((t) => (
+          {toolButtonsPrimary.map(({ id, label, icon }) => (
             <Btn
-              key={t}
-              onClick={() => onToolModeChange(t)}
+              key={id}
+              onClick={() => onToolModeChange(id)}
               style={{
                 padding: '8px 10px',
-                ...(toolMode === t
-                  ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
+                borderRadius: 12,
+                flexDirection: 'column',
+                gap: 4,
+                minHeight: 54,
+                ...(toolMode === id
+                  ? {
+                      outline: '2px solid rgba(59,130,246,0.38)',
+                      borderColor: 'rgba(59,130,246,0.34)',
+                      background: 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(219,234,254,0.92))',
+                      color: '#1d4ed8',
+                      boxShadow: '0 8px 18px rgba(37,99,235,0.12)',
+                    }
                   : {}),
               }}
-              title={t}
+              title={label}
             >
-              {t}
+              <UiIcon name={icon} size={15} />
+              <span style={{ fontSize: 11, fontWeight: 700, lineHeight: 1 }}>{label}</span>
             </Btn>
           ))}
         </div>
         <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }}>
-          {(['text', 'select'] as const).map((t) => (
+          {toolButtonsSecondary.map(({ id, label, icon }) => (
             <Btn
-              key={t}
-              onClick={() => onToolModeChange(t)}
+              key={id}
+              onClick={() => onToolModeChange(id)}
               style={{
                 padding: '8px 10px',
-                ...(toolMode === t
-                  ? { outline: '2px solid #4aa3ff', background: 'rgba(74,163,255,0.12)' }
+                borderRadius: 12,
+                justifyContent: 'flex-start',
+                ...(toolMode === id
+                  ? {
+                      outline: '2px solid rgba(59,130,246,0.38)',
+                      borderColor: 'rgba(59,130,246,0.34)',
+                      background: 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(219,234,254,0.92))',
+                      color: '#1d4ed8',
+                    }
                   : {}),
               }}
-              title={t}
+              title={label}
             >
-              {t}
+              <UiIcon name={icon} size={14} />
+              <span>{label}</span>
             </Btn>
           ))}
         </div>
@@ -778,29 +1050,29 @@ export function BottomPanel(props: BottomPanelProps) {
     light: {
       title: '轻量补全：仅预测下一笔，快速响应',
       label: 'LIGHT',
-      borderColor: '#4aa3ff',
-      background: 'linear-gradient(135deg, rgba(74,163,255,0.15), rgba(74,163,255,0.05))',
-      color: '#4aa3ff',
-      boxShadow: 'none',
+      borderColor: 'rgba(37,99,235,0.32)',
+      background: 'linear-gradient(135deg, rgba(239,246,255,0.95), rgba(224,242,254,0.9))',
+      color: '#1d4ed8',
+      boxShadow: '0 8px 18px rgba(37,99,235,0.12)',
       textShadow: 'none',
     },
     full: {
       title: '常规补全：可多笔',
       label: 'FULL',
-      borderColor: '#ffb84a',
-      background: 'linear-gradient(135deg, rgba(255,184,74,0.15), rgba(255,184,74,0.05))',
-      color: '#ffb84a',
-      boxShadow: 'none',
+      borderColor: 'rgba(217,119,6,0.28)',
+      background: 'linear-gradient(135deg, rgba(255,251,235,0.97), rgba(254,243,199,0.9))',
+      color: '#b45309',
+      boxShadow: '0 8px 18px rgba(217,119,6,0.1)',
       textShadow: 'none',
     },
     vision: {
       title: '视觉增强：AI 视觉理解与创意绘制',
       label: 'VISION',
-      borderColor: '#9b5cff',
-      background: 'linear-gradient(135deg, rgba(155,92,255,0.25), rgba(255,92,200,0.25))',
-      color: '#c88bff',
-      boxShadow: '0 0 12px rgba(155,92,255,0.6), 0 0 24px rgba(255,92,200,0.4)',
-      textShadow: '0 0 6px rgba(255,255,255,0.8)',
+      borderColor: 'rgba(13,148,136,0.32)',
+      background: 'linear-gradient(135deg, rgba(240,253,250,0.97), rgba(204,251,241,0.9))',
+      color: '#0f766e',
+      boxShadow: '0 8px 20px rgba(13,148,136,0.14)',
+      textShadow: 'none',
     },
   } as const
 
@@ -810,25 +1082,35 @@ export function BottomPanel(props: BottomPanelProps) {
     <div
       style={{
         position: 'absolute',
-        left: 16,
-        right: 16,
-        bottom: 16,
+        left: 14,
+        right: 14,
+        bottom: 14,
         zIndex: 1000,
-        background: 'rgba(255,255,255,0.85)',
-        backdropFilter: 'blur(8px)',
-        border: '1px solid #e5e7eb',
-        borderRadius: 12,
-        padding: '10px 12px',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.82))',
+        backdropFilter: 'blur(16px) saturate(125%)',
+        border: `1px solid ${UI_THEME.line}`,
+        borderRadius: 18,
+        padding: '12px 14px',
+        boxShadow: UI_THEME.glowStrong,
         maxHeight: panelMaxHeight,
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 10, flexWrap: 'wrap' }}>
         <input
-          style={{ ...SEL, width: '100%', borderRadius: 10, height: 40, padding: '0 12px' }}
+          style={{
+            ...SEL,
+            width: '100%',
+            borderRadius: 12,
+            height: 42,
+            padding: '0 14px',
+            flex: '1 1 320px',
+            background: 'rgba(255,255,255,0.92)',
+            borderColor: 'rgba(148,163,184,0.32)',
+            boxShadow: '0 1px 0 rgba(255,255,255,0.95) inset, 0 8px 18px rgba(15,23,42,0.04)',
+          }}
           type="text"
           placeholder="hint for AI, e.g. clean curves / refine hair"
           value={hint}
@@ -847,19 +1129,19 @@ export function BottomPanel(props: BottomPanelProps) {
             onClick={onToggleAutoMaintain}
             disabled={autoMaintainPending}
             style={{
-              padding: '9px 22px',
+              padding: '10px 16px',
               borderRadius: 999,
-              border: '2px solid',
-              borderColor: autoMaintainEnabled ? 'rgba(236,72,153,0.8)' : 'rgba(59,130,246,0.8)',
+              border: '1px solid',
+              borderColor: autoMaintainEnabled ? 'rgba(20,184,166,0.38)' : 'rgba(37,99,235,0.34)',
               background: autoMaintainEnabled
-                ? 'linear-gradient(135deg, rgba(168,85,247,0.95), rgba(236,72,153,0.9))'
-                : 'linear-gradient(135deg, rgba(37,99,235,0.85), rgba(59,130,246,0.75))',
-              color: '#fff',
-              fontWeight: 600,
-              letterSpacing: '0.5px',
+                ? 'linear-gradient(135deg, rgba(240,253,250,0.98), rgba(204,251,241,0.92))'
+                : 'linear-gradient(135deg, rgba(239,246,255,0.98), rgba(219,234,254,0.92))',
+              color: autoMaintainEnabled ? '#0f766e' : '#1d4ed8',
+              fontWeight: 700,
+              letterSpacing: '0.04em',
               boxShadow: autoMaintainEnabled
-                ? '0 0 22px rgba(236,72,153,0.45), 0 0 42px rgba(168,85,247,0.35)'
-                : '0 0 14px rgba(59,130,246,0.35)',
+                ? '0 12px 22px rgba(20,184,166,0.12)'
+                : '0 12px 22px rgba(37,99,235,0.08)',
               cursor: autoMaintainPending ? 'wait' : 'pointer',
               opacity: autoMaintainPending ? 0.75 : 1,
               transition: 'all 0.25s ease',
@@ -881,8 +1163,8 @@ export function BottomPanel(props: BottomPanelProps) {
                 position: 'absolute',
                 inset: 0,
                 background: autoMaintainEnabled
-                  ? 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 55%)'
-                  : 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 50%)',
+                  ? 'radial-gradient(circle at 20% 20%, rgba(20,184,166,0.15), transparent 55%)'
+                  : 'radial-gradient(circle at 20% 20%, rgba(37,99,235,0.12), transparent 52%)',
                 mixBlendMode: 'screen',
               }}
             />
@@ -892,25 +1174,31 @@ export function BottomPanel(props: BottomPanelProps) {
           title={styles.title}
           onClick={onModeCycle}
           style={{
-            padding: '8px 18px',
-            borderRadius: '10px',
-            border: '2px solid',
+            padding: '9px 14px',
+            borderRadius: 12,
+            border: '1px solid',
             fontSize: '14px',
-            fontWeight: 'bold',
+            fontWeight: 700,
             cursor: 'pointer',
-            transition: 'all 0.4s ease',
+            transition: 'all 0.25s ease',
             borderColor: styles.borderColor,
             background: styles.background,
             color: styles.color,
             boxShadow: styles.boxShadow,
             textShadow: styles.textShadow,
+            letterSpacing: '.08em',
           }}
         >
           {styles.label}
         </button>
         <Btn
           onClick={onSubmit}
-          style={{ borderColor: '#4aa3ff', background: 'rgba(74,163,255,0.14)' }}
+          style={{
+            borderColor: 'rgba(37,99,235,0.34)',
+            background: 'linear-gradient(180deg, rgba(239,246,255,0.95), rgba(219,234,254,0.9))',
+            color: '#1d4ed8',
+            minWidth: 76,
+          }}
         >
           Send
         </Btn>
@@ -919,21 +1207,21 @@ export function BottomPanel(props: BottomPanelProps) {
         <div
           title="Planner Hint"
           style={{
-            marginBottom: 8,
-            borderRadius: 10,
-            border: '1px solid #cbd5e1',
+            marginBottom: 10,
+            borderRadius: 14,
+            border: `1px solid ${UI_THEME.line}`,
             background: 'linear-gradient(180deg, rgba(248,250,252,0.98), rgba(241,245,249,0.9))',
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.95)',
-            padding: '10px 12px',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.95), 0 10px 18px rgba(15,23,42,0.03)',
+            padding: '11px 12px',
           }}
         >
-          <div style={{ fontSize: 11, color: '#64748b', letterSpacing: '.2px', marginBottom: 6, textTransform: 'uppercase' }}>
+          <div style={{ fontSize: 11, color: UI_THEME.inkMuted, letterSpacing: '.08em', marginBottom: 6, textTransform: 'uppercase', fontWeight: 700 }}>
             Assistant Planner Focus
           </div>
           <div
             style={{
               fontSize: 12,
-              color: '#1f2937',
+              color: UI_THEME.ink,
               lineHeight: 1.5,
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-word',
@@ -948,24 +1236,24 @@ export function BottomPanel(props: BottomPanelProps) {
         style={{
           flex: '1 1 auto',
           overflowY: 'auto',
-          marginTop: 8,
+          marginTop: 6,
           paddingRight: showDetailedBlocks ? 8 : 0,
         }}
       >
-        <div style={{ fontSize: 12, color: '#666', marginBottom: 6 }}>AI Feed (latest)</div>
+        <div style={{ fontSize: 12, color: UI_THEME.inkMuted, marginBottom: 8, fontWeight: 700, letterSpacing: '.06em' }}>AI Feed (latest)</div>
         {aiFeed.length === 0 ? (
-          <div style={{ fontSize: 12, color: '#999' }}>No AI packages yet.</div>
+          <div style={{ fontSize: 12, color: '#94a3b8', border: `1px dashed ${UI_THEME.line}`, borderRadius: 12, padding: '10px 12px', background: 'rgba(255,255,255,0.55)' }}>No AI packages yet.</div>
         ) : (
           aiFeed.map((entry) => (
-            <div key={entry.payloadId} style={{ marginBottom: 6 }}>
-              <div style={{ fontSize: 12, color: '#444' }}>
+            <div key={entry.payloadId} style={{ marginBottom: 8, border: `1px solid ${UI_THEME.line}`, borderRadius: 12, padding: '8px 10px', background: 'rgba(255,255,255,0.6)' }}>
+              <div style={{ fontSize: 12, color: UI_THEME.inkSoft }}>
                 <b>{new Date(entry.time).toLocaleTimeString()}</b> AIpayload <code>{entry.payloadId}</code>
               </div>
               <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
                 {entry.items.map((item, idx) => (
                   <li
                     key={`${item.id}_${idx}`}
-                    style={{ fontSize: 12, color: '#333', listStyle: 'disc' }}
+                    style={{ fontSize: 12, color: UI_THEME.ink, listStyle: 'disc' }}
                   >
                     <code>{item.id}</code>
                     {item.desc ? ` · ${item.desc}` : ''}
