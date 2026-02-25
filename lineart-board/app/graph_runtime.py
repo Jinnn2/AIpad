@@ -354,6 +354,7 @@ class GraphRuntime:
         self.context = OrchestratorContext()
         self._seen_fragment_ids: Set[str] = set()
         self._fragment_signatures: Dict[str, str] = {}
+        self._manual_fragment_block_overrides: Dict[str, str] = {}
         self._latest_canvas_snapshot: Optional[CanvasSnapshot] = None
 
     def _call_full_backend(self, messages: List[Dict[str, str]], *, mode: Optional[str] = None) -> Dict[str, object]:
@@ -402,10 +403,20 @@ class GraphRuntime:
             raw_stroke = stroke if isinstance(stroke, dict) else {}
             proposal_key = self._stroke_graph_proposal_key(raw_stroke)
             stroke_for_ingest = raw_stroke
+            stroke_id = str(raw_stroke.get("id") or "").strip()
+
+            manual_override_block_id = self._manual_fragment_block_overrides.get(stroke_id) if stroke_id else None
+            if manual_override_block_id:
+                if manual_override_block_id in self.state.blocks:
+                    rebound_manual = self._stroke_with_forced_target(raw_stroke, manual_override_block_id)
+                    if rebound_manual is not None:
+                        stroke_for_ingest = rebound_manual
+                else:
+                    self._manual_fragment_block_overrides.pop(stroke_id, None)
 
             mapped_block_id = proposal_key_to_block.get(proposal_key) if proposal_key else None
             if mapped_block_id:
-                rebound = self._stroke_with_proposal_target(raw_stroke, mapped_block_id)
+                rebound = self._stroke_with_proposal_target(stroke_for_ingest, mapped_block_id)
                 if rebound is not None:
                     stroke_for_ingest = rebound
                     if self.cluster_logger:
@@ -535,6 +546,9 @@ class GraphRuntime:
         for fid in stale_signature_ids:
             self._fragment_signatures.pop(fid, None)
 
+        for fid in removed_ids:
+            self._manual_fragment_block_overrides.pop(fid, None)
+
         for fid in incoming_ids:
             self._fragment_signatures[fid] = self._stroke_signature(incoming_by_id[fid])
 
@@ -628,6 +642,85 @@ class GraphRuntime:
             print(f"[vision] manual promote failed ({group_id}): {exc}")
             return False
         return True
+
+    def apply_selection_block_action(
+        self,
+        *,
+        action: str,
+        fragment_ids: Iterable[str],
+        target_block_id: Optional[str] = None,
+        label_hint: Optional[str] = None,
+        focus_after: bool = True,
+    ) -> Dict[str, object]:
+        normalized_action = str(action or "").strip().lower()
+        cleaned_fragment_ids: List[str] = []
+        seen_ids: Set[str] = set()
+        for raw_fid in fragment_ids or []:
+            fid = str(raw_fid or "").strip()
+            if not fid or fid in seen_ids:
+                continue
+            if fid not in self.state.fragments:
+                continue
+            seen_ids.add(fid)
+            cleaned_fragment_ids.append(fid)
+
+        if normalized_action in {"create_block", "assign_block"} and not cleaned_fragment_ids:
+            raise ValueError("no valid fragments selected")
+
+        # Prevent future vision pending processing from re-consuming manually moved strokes.
+        try:
+            self.vision.remove_fragment_ids(cleaned_fragment_ids)
+        except Exception:
+            pass
+        self.block_manager.remove_unlabeled_strokes(cleaned_fragment_ids)
+
+        block = None
+        if normalized_action == "create_block":
+            block = self.block_manager.manual_create_block_from_fragments(
+                cleaned_fragment_ids,
+                label_hint=label_hint,
+                refresh_related_summaries=True,
+            )
+            if block is None:
+                raise ValueError("failed to create block from selection")
+        elif normalized_action == "assign_block":
+            target = str(target_block_id or "").strip()
+            if not target:
+                raise ValueError("target_block_id required for assign_block")
+            block = self.block_manager.manual_assign_fragments_to_block(
+                target,
+                cleaned_fragment_ids,
+                refresh_related_summaries=True,
+            )
+            if block is None:
+                raise ValueError("failed to assign selection to block")
+        else:
+            raise ValueError(f"unsupported action: {action}")
+
+        if block and focus_after:
+            current_active = list(getattr(self.orchestrator.context, "active_block_ids", []) or [])
+            active = [block.block_id] + [bid for bid in current_active if bid != block.block_id]
+            self.orchestrator.context.main_block_id = block.block_id
+            self.orchestrator.context.active_block_ids = active
+
+        if block:
+            for fid in cleaned_fragment_ids:
+                self._manual_fragment_block_overrides[fid] = block.block_id
+
+        result_block = None
+        if block:
+            result_block = {
+                "blockId": block.block_id,
+                "label": block.label,
+                "summary": block.summary,
+                "contents": list(block.contents),
+            }
+
+        return {
+            "action": normalized_action,
+            "block": result_block,
+            "fragmentIds": cleaned_fragment_ids,
+        }
 
     def update_canvas_snapshot(self, snapshot: Dict[str, object]) -> None:
         data_b64 = snapshot.get("data")
@@ -1752,25 +1845,31 @@ class GraphRuntime:
         return intent in {"create", "create_block", "new", "new_block"}
 
     def _stroke_with_proposal_target(self, stroke: Dict[str, object], block_id: str) -> Optional[Dict[str, object]]:
+        rebound = self._stroke_with_forced_target(stroke, block_id)
+        if rebound is None:
+            return None
+        meta2 = rebound.get("meta")
+        if isinstance(meta2, dict):
+            graph2 = meta2.get("graph")
+            if isinstance(graph2, dict):
+                # Once a proposalKey has been resolved in-batch, later same-key strokes should attach
+                # instead of accidentally creating more blocks even if the model repeats blockIntent.
+                for key in ("blockIntent", "intent"):
+                    raw_val = str(graph2.get(key) or "").strip().lower()
+                    if raw_val in {"create", "create_block", "new", "new_block"}:
+                        graph2.pop(key, None)
+        return rebound
+
+    @staticmethod
+    def _stroke_with_forced_target(stroke: Dict[str, object], block_id: str) -> Optional[Dict[str, object]]:
         if not isinstance(stroke, dict) or not block_id:
             return None
-        meta = stroke.get("meta")
-        if not isinstance(meta, dict):
-            return None
-        graph_meta = meta.get("graph")
-        if not isinstance(graph_meta, dict):
-            return None
-
         stroke2 = dict(stroke)
-        meta2 = dict(meta)
-        graph2 = dict(graph_meta)
+        meta = stroke.get("meta")
+        meta2 = dict(meta) if isinstance(meta, dict) else {}
+        graph_meta = meta2.get("graph")
+        graph2 = dict(graph_meta) if isinstance(graph_meta, dict) else {}
         graph2["targetBlockId"] = block_id
-        # Once a proposalKey has been resolved in-batch, later same-key strokes should attach
-        # instead of accidentally creating more blocks even if the model repeats blockIntent.
-        for key in ("blockIntent", "intent"):
-            raw_val = str(graph2.get(key) or "").strip().lower()
-            if raw_val in {"create", "create_block", "new", "new_block"}:
-                graph2.pop(key, None)
         meta2["graph"] = graph2
         stroke2["meta"] = meta2
         return stroke2

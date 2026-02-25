@@ -193,3 +193,19 @@ class PromoteVisionPendingGroupRequest(BaseModel):
 class PromoteVisionPendingGroupResponse(BaseModel):
     ok: bool = True
 
+
+class GraphSelectionBlockActionRequest(BaseModel):
+    sid: str
+    action: Literal["create_block", "assign_block"]
+    fragment_ids: List[str] = Field(default_factory=list)
+    target_block_id: Optional[str] = None
+    label_hint: Optional[str] = None
+    focus_after: bool = True
+
+
+class GraphSelectionBlockActionResponse(BaseModel):
+    ok: bool = True
+    action: str
+    block: Optional[Dict[str, Any]] = None
+    fragment_ids: List[str] = Field(default_factory=list)
+

@@ -54,7 +54,7 @@ FULL_SYSTEM_WRITE_COMMON_LINES = [
     " - meta.role is recommended: one of {'body','subtitle','title'} for text hierarchy.",
     " - meta.text may use a markdown subset (headings/lists/bold/inline-code only); avoid tables, HTML, and fenced code blocks.",
     " - growDir must be one of {'right-down','down','right','up','left'}; default is 'right-down'.",
-    " - For growDir='right-down': wrap text inside current box first, then auto-fit proportionally toward lower-right (shrink/expand as needed while keeping base width/height ratio).",
+    " - For growDir='right-down': wrap inside current box first; grow downward first, and only widen to the lower-right when the box becomes too tall and wider wrapping clearly improves layout (auto-shrink still allowed).",
 ]
 
 FULL_SYSTEM_WRITE_MAINTAIN_LINES = [
@@ -91,7 +91,7 @@ FULL_CONTRACT_COMMON_LINES = [
     " - intent in {'complete','hint','alt','write'}",
     " - Each stroke: {id, tool in {'pen','line','poly','ellipse','text','edit'}, points, style{size,color,opacity}, meta}",
     " - line: 2 points; poly: >=3 vertices (closed); ellipse: 2 bbox points; pen: keypoints <= {max_pts}",
-    " - text: meta includes text/summary/fontFamily/fontWeight/fontSize/growDir and recommended role in {'body','subtitle','title'} (growDir one of {'right-down','down','right','up','left'}, default 'right-down'; for right-down, wrap in-box first then proportionally auto-fit to lower-right, including shrink/expand as needed). Text should be long enough to be useful. (~10*{max_pts} chars is a good target)",
+    " - text: meta includes text/summary/fontFamily/fontWeight/fontSize/growDir and recommended role in {'body','subtitle','title'} (growDir one of {'right-down','down','right','up','left'}, default 'right-down'; for right-down, wrap in-box first, prefer downward growth, and widen only when a tall box would benefit from reflow; auto-shrink allowed). Text should be long enough to be useful. (~10*{max_pts} chars is a good target)",
     " - markdown in meta.text is allowed only for headings/lists/bold/inline-code; avoid tables/HTML/fenced code blocks",
     " - edit: meta includes targetId/operation/text",
     " - Try to match scale target {max_pts} using stroke length/count.",

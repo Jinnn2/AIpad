@@ -16,7 +16,7 @@ import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/
 import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
-import { TopToolbar, SidePanel, BottomPanel, SettingsButton, AIFeedSidebar, type AIFeedEntry } from './LineArtUI'
+import { TopToolbar, SidePanel, BottomPanel, SettingsButton, AIFeedSidebar, GraphBlocksDrawer, type AIFeedEntry } from './LineArtUI'
 import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT, measureTextWidth } from './textbox/layout'
 import { hasInlineMarkdownStyle, looksLikeMarkdownText, parseMarkdownDisplayBlocks, parseMarkdownInlineRuns, renderMarkdownToCanvasText } from './textbox/markdown'
 /**
@@ -250,6 +250,7 @@ export default function LineArtBoard() {
   const askInFlightRef = useRef(false)
 const stageRef = useRef<any>(null)
 const gridLayerRef = useRef<any>(null)
+const rootRef = useRef<HTMLDivElement | null>(null)
   // Top toolbar state
   const [showGrid, setShowGrid] = useState(true)
   const [snap, setSnap] = useState(true)
@@ -641,10 +642,22 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [autoMaintain, setAutoMaintain] = useState<boolean>(false)
   const [autoMaintainPending, setAutoMaintainPending] = useState<boolean>(false)
   const [settingsOpen, setSettingsOpen] = useState<boolean>(false)
+  const [graphBlocksDrawerOpen, setGraphBlocksDrawerOpen] = useState<boolean>(false)
   const [graphSnapshot, setGraphSnapshot] = useState<GraphSnapshot | null>(null)
   const [graphInspectorVisible, setGraphInspectorVisible] = useState<boolean>(false)
   const [hoveredGraphBlockId, setHoveredGraphBlockId] = useState<string | null>(null)
   const [hoveredGraphFragmentId, setHoveredGraphFragmentId] = useState<string | null>(null)
+  const [graphBlockSelectionMode, setGraphBlockSelectionMode] = useState<boolean>(false)
+  const [graphSelectionRectScreen, setGraphSelectionRectScreen] = useState<{
+    x0: number
+    y0: number
+    x1: number
+    y1: number
+  } | null>(null)
+  const graphSelectionDragRef = useRef<{ pointerId: number; x0: number; y0: number } | null>(null)
+  const [graphSelectedFragmentIds, setGraphSelectedFragmentIds] = useState<string[]>([])
+  const [graphSelectionActionPending, setGraphSelectionActionPending] = useState<'create_block' | 'assign_block' | null>(null)
+  const [graphSelectionTargetBlockId, setGraphSelectionTargetBlockId] = useState<string>('')
   React.useEffect(() => {
     autoMaintainRef.current = autoMaintain
     if (!autoMaintain) {
@@ -675,8 +688,26 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     if (!graphInspectorVisible) {
       setHoveredGraphBlockId(null)
       setHoveredGraphFragmentId(null)
+      setGraphBlocksDrawerOpen(false)
+      setGraphBlockSelectionMode(false)
+      setGraphSelectionRectScreen(null)
+      setGraphSelectedFragmentIds([])
+      graphSelectionDragRef.current = null
     }
   }, [graphInspectorVisible])
+  React.useEffect(() => {
+    if (autoMaintain) return
+    setGraphBlocksDrawerOpen(false)
+    setGraphBlockSelectionMode(false)
+    setGraphSelectionRectScreen(null)
+    setGraphSelectedFragmentIds([])
+    graphSelectionDragRef.current = null
+  }, [autoMaintain])
+  React.useEffect(() => {
+    if (graphInspectorVisible && autoMaintain) {
+      setGraphBlocksDrawerOpen(true)
+    }
+  }, [graphInspectorVisible, autoMaintain])
   const [promoteGroupPending, setPromoteGroupPending] = useState<string | null>(null)
   const [promoteVisionGroupPending, setPromoteVisionGroupPending] = useState<string | null>(null)
   const blockColorMapRef = useRef<Record<string, string>>({})
@@ -965,6 +996,84 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       }
     })
   }, [graphSnapshot, blockColorMap, shapeById])
+  const graphSelectedFragments = useMemo(() => {
+    const selected = new Set(graphSelectedFragmentIds)
+    if (!selected.size) return [] as Array<{
+      id: string
+      type: string
+      text?: string | null
+      bbox: [number, number, number, number]
+      blockId?: string | null
+      blockLabel?: string | null
+    }>
+    const source = graphSnapshot?.fragments ?? []
+    return source
+      .filter((frag) => selected.has(String(frag.id)))
+      .map((frag) => {
+        const bbox = Array.isArray(frag.bbox) && frag.bbox.length === 4
+          ? (frag.bbox as [number, number, number, number])
+          : null
+        if (!bbox) return null
+        return {
+          id: String(frag.id),
+          type: String(frag.type || 'unknown'),
+          text: frag.text ?? null,
+          bbox,
+          blockId: frag.blockId ?? null,
+          blockLabel: frag.blockLabel ?? null,
+        }
+      })
+      .filter((frag): frag is NonNullable<typeof frag> => Boolean(frag))
+  }, [graphSnapshot?.fragments, graphSelectedFragmentIds])
+  React.useEffect(() => {
+    const blocks = graphSnapshot?.blocks ?? []
+    if (!blocks.length) {
+      setGraphSelectionTargetBlockId('')
+      return
+    }
+    setGraphSelectionTargetBlockId((prev) => (
+      prev && blocks.some((block) => block.blockId === prev)
+        ? prev
+        : String(blocks[0].blockId)
+    ))
+  }, [graphSnapshot?.blocks])
+  React.useEffect(() => {
+    const validIds = new Set((graphSnapshot?.fragments ?? []).map((frag) => String(frag.id)))
+    setGraphSelectedFragmentIds((prev) => {
+      const next = prev.filter((fid) => validIds.has(fid))
+      return next.length === prev.length ? prev : next
+    })
+  }, [graphSnapshot?.fragments])
+  const selectGraphFragmentsByScreenRect = useCallback((rect: { x0: number; y0: number; x1: number; y1: number }) => {
+    const left = Math.min(rect.x0, rect.x1)
+    const right = Math.max(rect.x0, rect.x1)
+    const top = Math.min(rect.y0, rect.y1)
+    const bottom = Math.max(rect.y0, rect.y1)
+    const width = right - left
+    const height = bottom - top
+    if (width < 4 || height < 4) {
+      return
+    }
+    const p0 = screenToWorld(left, top)
+    const p1 = screenToWorld(right, bottom)
+    const wx0 = Math.min(p0.x, p1.x)
+    const wy0 = Math.min(p0.y, p1.y)
+    const wx1 = Math.max(p0.x, p1.x)
+    const wy1 = Math.max(p0.y, p1.y)
+    const hits = (graphSnapshot?.fragments ?? [])
+      .filter((frag) => Array.isArray(frag.bbox) && frag.bbox.length === 4)
+      .filter((frag) => {
+        const [fx0, fy0, fx1, fy1] = frag.bbox as [number, number, number, number]
+        const ix = Math.max(0, Math.min(wx1, fx1) - Math.max(wx0, fx0))
+        const iy = Math.max(0, Math.min(wy1, fy1) - Math.max(wy0, fy0))
+        if (ix <= 0 || iy <= 0) return false
+        const interArea = ix * iy
+        const fragArea = Math.max(1, Math.abs((fx1 - fx0) * (fy1 - fy0)))
+        return interArea >= 16 || interArea / fragArea >= 0.08
+      })
+      .map((frag) => String(frag.id))
+    setGraphSelectedFragmentIds(hits)
+  }, [graphSnapshot?.fragments, screenToWorld])
   const clipPointToRect = useCallback(
     (
       origin: { x: number; y: number },
@@ -1118,6 +1227,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     graphBlockCards.some((block) => (block.fragments && block.fragments.length > 0) || !!block.bbox)
     || graphRelationshipEdges.length > 0
     || ((graphSnapshot?.visionPendingGroups?.length ?? 0) > 0)
+    || graphSelectedFragmentIds.length > 0
   )
   const promoteGroup = useCallback(async (groupId: string) => {
     if (!sid) {
@@ -1191,6 +1301,115 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   }, [sid, fetchGraphSnapshot, graphSnapshot?.visionPendingGroups, captureGraphSnapshotPayload])
   const toggleGraphInspector = useCallback(() => {
     setGraphInspectorVisible((prev) => !prev)
+  }, [])
+  const applyGraphSelectionBlockAction = useCallback(async (
+    action: 'create_block' | 'assign_block',
+  ) => {
+    if (!sid) {
+      alert('Need to initialize session first')
+      return
+    }
+    if (!autoMaintain) {
+      alert('Enable Auto Maintain first')
+      return
+    }
+    const fragmentIds = [...graphSelectedFragmentIds]
+    if (!fragmentIds.length) {
+      alert('No fragments selected')
+      return
+    }
+    let labelHint: string | undefined
+    let targetBlockId: string | undefined
+    if (action === 'create_block') {
+      const raw = window.prompt('New block label (optional)', '')
+      if (raw === null) return
+      const compact = raw.trim()
+      labelHint = compact || undefined
+    } else {
+      targetBlockId = (graphSelectionTargetBlockId || '').trim()
+      if (!targetBlockId) {
+        alert('Select a target block first')
+        return
+      }
+    }
+    setGraphSelectionActionPending(action)
+    try {
+      const res = await apiFetch('/graph/selection-block-action', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sid,
+          action,
+          fragment_ids: fragmentIds,
+          ...(targetBlockId ? { target_block_id: targetBlockId } : {}),
+          ...(labelHint ? { label_hint: labelHint } : {}),
+          focus_after: true,
+        }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`selection block action failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      await fetchGraphSnapshot(sid)
+    } catch (err: any) {
+      console.warn('[graph] selection block action error:', err)
+      alert('Selection block action failed:\n' + (err?.message || String(err)))
+    } finally {
+      setGraphSelectionActionPending((prev) => (prev === action ? null : prev))
+    }
+  }, [sid, autoMaintain, graphSelectedFragmentIds, graphSelectionTargetBlockId, fetchGraphSnapshot])
+  const graphSelectionOverlayActive = graphInspectorVisible && autoMaintain && graphBlockSelectionMode
+  const graphSelectionRectNormalized = useMemo(() => {
+    if (!graphSelectionRectScreen) return null
+    const left = Math.min(graphSelectionRectScreen.x0, graphSelectionRectScreen.x1)
+    const top = Math.min(graphSelectionRectScreen.y0, graphSelectionRectScreen.y1)
+    const width = Math.abs(graphSelectionRectScreen.x1 - graphSelectionRectScreen.x0)
+    const height = Math.abs(graphSelectionRectScreen.y1 - graphSelectionRectScreen.y0)
+    return { left, top, width, height }
+  }, [graphSelectionRectScreen])
+  const onGraphSelectionPointerDown = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    if (!graphSelectionOverlayActive) return
+    const rect = rootRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const x = ev.clientX - rect.left
+    const y = ev.clientY - rect.top
+    graphSelectionDragRef.current = { pointerId: ev.pointerId, x0: x, y0: y }
+    setGraphSelectionRectScreen({ x0: x, y0: y, x1: x, y1: y })
+    try { ev.currentTarget.setPointerCapture(ev.pointerId) } catch {}
+    ev.preventDefault()
+  }, [graphSelectionOverlayActive])
+  const onGraphSelectionPointerMove = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    const drag = graphSelectionDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    const rect = rootRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const x = ev.clientX - rect.left
+    const y = ev.clientY - rect.top
+    setGraphSelectionRectScreen({ x0: drag.x0, y0: drag.y0, x1: x, y1: y })
+    ev.preventDefault()
+  }, [])
+  const onGraphSelectionPointerUp = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    const drag = graphSelectionDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    const rect = rootRef.current?.getBoundingClientRect()
+    graphSelectionDragRef.current = null
+    if (!rect) {
+      setGraphSelectionRectScreen(null)
+      return
+    }
+    const x = ev.clientX - rect.left
+    const y = ev.clientY - rect.top
+    const finalRect = { x0: drag.x0, y0: drag.y0, x1: x, y1: y }
+    setGraphSelectionRectScreen(finalRect)
+    selectGraphFragmentsByScreenRect(finalRect)
+    try { ev.currentTarget.releasePointerCapture(ev.pointerId) } catch {}
+    ev.preventDefault()
+  }, [selectGraphFragmentsByScreenRect])
+  const onGraphSelectionPointerCancel = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    const drag = graphSelectionDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    graphSelectionDragRef.current = null
+    try { ev.currentTarget.releasePointerCapture(ev.pointerId) } catch {}
   }, [])
   const pendingVisionGroupOverlays = useMemo(() => {
     const groups = graphSnapshot?.visionPendingGroups ?? []
@@ -3156,6 +3375,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
 // ===== Stage binds camera (x/y/scale); hand mode enables dragging =====
   return (
     <div
+      ref={rootRef}
       style={{
         width: '100vw',
         height: '100vh',
@@ -3262,6 +3482,18 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onClose={() => setAiFeedSidebarOpen(false)}
         entries={aiFeed}
         viewportHeight={size.height}
+      />
+      <GraphBlocksDrawer
+        open={graphBlocksDrawerOpen}
+        onToggle={() => setGraphBlocksDrawerOpen((prev) => !prev)}
+        visible={graphInspectorVisible && autoMaintain}
+        viewportWidth={size.width}
+        viewportHeight={size.height}
+        graphBlocksDetailed={graphBlockCards}
+        onFragmentFocus={focusOnFragment}
+        onBlockFocus={focusOnBlock}
+        onFragmentHover={handleFragmentHover}
+        onBlockHover={handleBlockHover}
       />
       <SidePanel
         toolMode={toolMode}
@@ -3771,6 +4003,29 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 </Group>
               )
             })}
+            {graphSelectedFragments.map((frag) => {
+              const [fx0, fy0, fx1, fy1] = frag.bbox
+              const width = Math.max(8, fx1 - fx0)
+              const height = Math.max(8, fy1 - fy0)
+              return (
+                <KRect
+                  key={`graph-selection-frag-${frag.id}`}
+                  x={fx0}
+                  y={fy0}
+                  width={width}
+                  height={height}
+                  stroke="#22c55e"
+                  strokeWidth={2.2}
+                  dash={[6, 4]}
+                  cornerRadius={10}
+                  fill="rgba(34,197,94,0.08)"
+                  listening={false}
+                  shadowColor="#22c55e"
+                  shadowBlur={12}
+                  shadowOpacity={0.18}
+                />
+              )
+            })}
             {graphBlockCards.map((block) => {
               const fragments = block.fragments?.filter((frag) => frag.type === 'text' && frag.bbox) ?? []
               const hasBlockBox = !!block.bbox
@@ -3870,6 +4125,57 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           ))}
         </Layer>
       </Stage>
+      {graphSelectionOverlayActive && (
+        <div
+          onPointerDown={onGraphSelectionPointerDown}
+          onPointerMove={onGraphSelectionPointerMove}
+          onPointerUp={onGraphSelectionPointerUp}
+          onPointerCancel={onGraphSelectionPointerCancel}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1110,
+            pointerEvents: 'auto',
+            cursor: 'crosshair',
+            background: 'transparent',
+          }}
+        >
+          {graphSelectionRectNormalized && graphSelectionRectNormalized.width >= 2 && graphSelectionRectNormalized.height >= 2 && (
+            <div
+              style={{
+                position: 'absolute',
+                left: graphSelectionRectNormalized.left,
+                top: graphSelectionRectNormalized.top,
+                width: graphSelectionRectNormalized.width,
+                height: graphSelectionRectNormalized.height,
+                border: '1.5px dashed rgba(34,197,94,0.9)',
+                background: 'rgba(34,197,94,0.08)',
+                borderRadius: 10,
+                boxShadow: '0 0 0 1px rgba(255,255,255,0.12) inset',
+                pointerEvents: 'none',
+              }}
+            />
+          )}
+          <div
+            style={{
+              position: 'absolute',
+              left: 16,
+              bottom: 132,
+              zIndex: 1111,
+              pointerEvents: 'none',
+              fontSize: 12,
+              color: '#166534',
+              background: 'rgba(240,253,244,0.9)',
+              border: '1px solid rgba(34,197,94,0.35)',
+              borderRadius: 999,
+              padding: '6px 10px',
+              boxShadow: '0 6px 16px rgba(21,128,61,0.12)',
+            }}
+          >
+            Drag to select fragments for block create/move
+          </div>
+        </div>
+      )}
       {graphInspectorVisible && autoMaintain && pendingVisionGroupOverlays.map((group) => {
         const busy = promoteVisionGroupPending === group.groupId
         return (
@@ -3971,6 +4277,152 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             <>
               <div style={{ fontSize: 12, color: '#a5b4fc', marginBottom: 8 }}>
                 Blocks: {graphSnapshot?.blocks?.length ?? 0} · Fragments: {graphSnapshot?.fragments?.length ?? 0}
+                <div
+                  style={{
+                    marginTop: 10,
+                    marginBottom: 12,
+                    border: '1px solid rgba(34,197,94,0.28)',
+                    borderRadius: 12,
+                    padding: 10,
+                    background: graphBlockSelectionMode
+                      ? 'rgba(34,197,94,0.12)'
+                      : 'rgba(15,23,42,0.24)',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: graphBlockSelectionMode ? '#bbf7d0' : '#dcfce7' }}>
+                      Manual Block Selection
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setGraphBlockSelectionMode((prev) => !prev)
+                        setGraphSelectionRectScreen(null)
+                        graphSelectionDragRef.current = null
+                      }}
+                      style={{
+                        border: `1px solid ${graphBlockSelectionMode ? 'rgba(34,197,94,0.55)' : 'rgba(148,163,184,0.4)'}`,
+                        background: graphBlockSelectionMode ? 'rgba(22,163,74,0.18)' : 'rgba(255,255,255,0.06)',
+                        color: graphBlockSelectionMode ? '#dcfce7' : '#e2e8f0',
+                        borderRadius: 999,
+                        padding: '5px 10px',
+                        fontSize: 11,
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {graphBlockSelectionMode ? 'Exit Select' : 'Box Select'}
+                    </button>
+                  </div>
+                  <div style={{ fontSize: 11, color: '#cbd5e1', marginTop: 6, lineHeight: 1.45 }}>
+                    Drag a rectangle on canvas to select fragments, then create a new block or move them into an existing block.
+                  </div>
+                  <div style={{ marginTop: 8, fontSize: 11, color: '#e2e8f0' }}>
+                    Selected: <strong>{graphSelectedFragmentIds.length}</strong> fragment{graphSelectedFragmentIds.length === 1 ? '' : 's'}
+                  </div>
+                  {graphSelectedFragments.length > 0 && (
+                    <div style={{ marginTop: 6, fontSize: 10, color: '#bbf7d0', lineHeight: 1.4 }}>
+                      {graphSelectedFragments.slice(0, 4).map((frag) => (
+                        <div key={`sel-frag-preview-${frag.id}`}>
+                          {frag.type} · {frag.id}
+                          {frag.blockLabel ? ` · ${frag.blockLabel}` : frag.blockId ? ` · ${frag.blockId}` : ' · (unassigned)'}
+                        </div>
+                      ))}
+                      {graphSelectedFragments.length > 4 && (
+                        <div>… and {graphSelectedFragments.length - 4} more</div>
+                      )}
+                    </div>
+                  )}
+                  <div style={{ display: 'flex', gap: 8, marginTop: 10, flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      onClick={() => void applyGraphSelectionBlockAction('create_block')}
+                      disabled={graphSelectedFragmentIds.length === 0 || graphSelectionActionPending !== null}
+                      style={{
+                        border: '1px solid rgba(34,197,94,0.45)',
+                        background: graphSelectionActionPending === 'create_block'
+                          ? 'rgba(34,197,94,0.12)'
+                          : 'rgba(34,197,94,0.18)',
+                        color: '#dcfce7',
+                        borderRadius: 999,
+                        padding: '6px 10px',
+                        fontSize: 11,
+                        fontWeight: 700,
+                        cursor: graphSelectedFragmentIds.length === 0 || graphSelectionActionPending !== null ? 'not-allowed' : 'pointer',
+                        opacity: graphSelectedFragmentIds.length === 0 ? 0.6 : 1,
+                      }}
+                    >
+                      {graphSelectionActionPending === 'create_block' ? 'Creating…' : 'Create Block'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setGraphSelectedFragmentIds([])
+                        setGraphSelectionRectScreen(null)
+                      }}
+                      disabled={graphSelectionActionPending !== null}
+                      style={{
+                        border: '1px solid rgba(148,163,184,0.35)',
+                        background: 'rgba(255,255,255,0.04)',
+                        color: '#e2e8f0',
+                        borderRadius: 999,
+                        padding: '6px 10px',
+                        fontSize: 11,
+                        fontWeight: 600,
+                        cursor: graphSelectionActionPending !== null ? 'not-allowed' : 'pointer',
+                      }}
+                    >
+                      Clear
+                    </button>
+                  </div>
+                  <div style={{ display: 'flex', gap: 8, marginTop: 8, alignItems: 'center' }}>
+                    <select
+                      value={graphSelectionTargetBlockId}
+                      onChange={(e) => setGraphSelectionTargetBlockId(e.target.value)}
+                      style={{
+                        flex: 1,
+                        minWidth: 0,
+                        borderRadius: 8,
+                        border: '1px solid rgba(148,163,184,0.35)',
+                        background: 'rgba(15,23,42,0.45)',
+                        color: '#e2e8f0',
+                        padding: '6px 8px',
+                        fontSize: 11,
+                      }}
+                    >
+                      {(graphSnapshot?.blocks ?? []).map((block) => (
+                        <option key={`assign-block-opt-${block.blockId}`} value={block.blockId}>
+                          {block.label || block.blockId}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      onClick={() => void applyGraphSelectionBlockAction('assign_block')}
+                      disabled={
+                        graphSelectedFragmentIds.length === 0
+                        || !(graphSelectionTargetBlockId || '').trim()
+                        || graphSelectionActionPending !== null
+                      }
+                      style={{
+                        border: '1px solid rgba(59,130,246,0.45)',
+                        background: graphSelectionActionPending === 'assign_block'
+                          ? 'rgba(59,130,246,0.12)'
+                          : 'rgba(59,130,246,0.18)',
+                        color: '#dbeafe',
+                        borderRadius: 999,
+                        padding: '6px 10px',
+                        fontSize: 11,
+                        fontWeight: 700,
+                        cursor: graphSelectedFragmentIds.length === 0 || graphSelectionActionPending !== null ? 'not-allowed' : 'pointer',
+                        whiteSpace: 'nowrap',
+                        opacity: graphSelectedFragmentIds.length === 0 ? 0.6 : 1,
+                      }}
+                    >
+                      {graphSelectionActionPending === 'assign_block' ? 'Moving…' : 'Move to Block'}
+                    </button>
+                  </div>
+                </div>
                 {graphSnapshot?.visionPendingGroups && graphSnapshot.visionPendingGroups.length > 0 && (
                   <div style={{ marginTop: 10, marginBottom: 12 }}>
                     <div style={{ fontSize: 12, color: '#fdba74', marginBottom: 6 }}>

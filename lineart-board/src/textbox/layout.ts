@@ -219,8 +219,10 @@ const computeLayout = (
   let height = Math.max(wrapped.lines.length * lineHeight, minHeight)
 
   if (rightDownGrow) {
-    // right-down: wrap in the current box first, then auto-fit proportionally
-    // (shrink/expand) while keeping the base aspect ratio.
+    // right-down:
+    // 1) keep the existing auto-shrink behavior (proportional) when text already fits;
+    // 2) when text overflows, prefer "down" growth first (keep width, extend height);
+    // 3) only widen if the box becomes too tall and widening has a meaningful wrapping benefit.
     const minScale = Math.max(
       minWidth / Math.max(baseW, 1e-6),
       minHeight / Math.max(baseH, 1e-6),
@@ -239,6 +241,17 @@ const computeLayout = (
         requiredHeight,
         boxHeight,
         fits,
+      }
+    }
+    const evalRightDownWidth = (nextWidth: number) => {
+      const clampedWidth = Math.max(minWidth, nextWidth)
+      const nextWrapped = wrapTextWithWidth(text, clampedWidth, measure, lineHeight)
+      const requiredHeight = Math.max(nextWrapped.lines.length * lineHeight, minHeight)
+      return {
+        width: clampedWidth,
+        wrapped: nextWrapped,
+        requiredHeight,
+        lineCount: nextWrapped.lines.length,
       }
     }
 
@@ -262,21 +275,86 @@ const computeLayout = (
       wrapped = best.wrapped
       height = best.boxHeight
     } else {
-      // Auto-expand: keep wrapping and grow proportionally until the wrapped text fits.
-      let scale = Math.max(1, baseEval.requiredHeight / Math.max(baseH, 1e-6))
-      let best = baseEval
-      for (let i = 0; i < 8; i++) {
-        const nextEval = evalRightDownScale(scale)
-        best = nextEval
-        const requiredScale = Math.max(1, nextEval.requiredHeight / Math.max(baseH, 1e-6))
-        if (requiredScale <= scale + 1e-3) {
-          break
+      // Auto-expand (heuristic aesthetic block):
+      // start with down-only growth, then widen only if the box becomes too tall
+      // and wider wrapping materially reduces height/line count.
+      const TALL_RATIO_THRESHOLD = 2.0
+      const MIN_ASPECT_IMPROVEMENT = 0.06
+      const MIN_HEIGHT_DROP = lineHeight * 0.75
+      const ABSOLUTE_MAX_WIDTH = Math.max(
+        baseW,
+        Math.min(Math.max(naturalWidth, baseW), baseW * 3.0),
+      )
+
+      let current = evalRightDownWidth(baseW)
+      let currentHeight = Math.max(baseH, current.requiredHeight)
+      let currentAspect = currentHeight / Math.max(current.width, 1e-6)
+
+      if (currentAspect > TALL_RATIO_THRESHOLD && ABSOLUTE_MAX_WIDTH > current.width + 1e-3) {
+        for (let i = 0; i < 5; i++) {
+          if (currentAspect <= TALL_RATIO_THRESHOLD) break
+
+          const candidateWidths = [
+            current.width + fontSize,
+            current.width + fontSize * 2,
+            current.width * 1.15,
+            current.width * 1.3,
+            current.width * 1.5,
+          ]
+            .map((w) => Math.min(ABSOLUTE_MAX_WIDTH, Math.max(current.width + 1, w)))
+            .filter((w, idx, arr) => Number.isFinite(w) && w > current.width + 0.5 && arr.indexOf(w) === idx)
+            .sort((a, b) => a - b)
+
+          let bestCandidate: {
+            width: number
+            wrapped: WrappedResult
+            requiredHeight: number
+            lineCount: number
+          } | null = null
+          let bestScore = Number.NEGATIVE_INFINITY
+
+          for (const candidateWidth of candidateWidths) {
+            const candidate = evalRightDownWidth(candidateWidth)
+            const candidateHeight = Math.max(baseH, candidate.requiredHeight)
+            const candidateAspect = candidateHeight / Math.max(candidate.width, 1e-6)
+            const heightDrop = current.requiredHeight - candidate.requiredHeight
+            const lineDrop = current.lineCount - candidate.lineCount
+            const aspectDrop = currentAspect - candidateAspect
+
+            // "Horizontal expansion has practical meaning":
+            // it should noticeably improve wrapping, not only make the box wider.
+            const meaningfulWrapGain =
+              lineDrop >= 1 ||
+              heightDrop >= MIN_HEIGHT_DROP ||
+              (heightDrop >= lineHeight * 0.35 && candidateAspect <= TALL_RATIO_THRESHOLD)
+            if (!meaningfulWrapGain) continue
+            if (aspectDrop < MIN_ASPECT_IMPROVEMENT && candidateAspect > TALL_RATIO_THRESHOLD) continue
+
+            const widthPenalty = (candidate.width - current.width) / Math.max(baseW, 1)
+            const score =
+              aspectDrop * 3.5 +
+              (heightDrop / Math.max(lineHeight, 1)) * 0.9 +
+              lineDrop * 0.8 -
+              widthPenalty * 0.35
+            if (score > bestScore) {
+              bestScore = score
+              bestCandidate = candidate
+            }
+          }
+
+          if (!bestCandidate) {
+            break
+          }
+
+          current = bestCandidate
+          currentHeight = Math.max(baseH, current.requiredHeight)
+          currentAspect = currentHeight / Math.max(current.width, 1e-6)
         }
-        scale = requiredScale
       }
-      width = best.width
-      wrapped = best.wrapped
-      height = Math.max(best.boxHeight, best.requiredHeight)
+
+      width = current.width
+      wrapped = current.wrapped
+      height = currentHeight
     }
   } else if (height <= baseH) {
     height = Math.min(height, baseH)

@@ -1043,6 +1043,253 @@ export type BottomPanelProps = {
   graphBlocks: Array<{ blockId: string; label: string; summary: string; updatedAt?: string }>
 }
 
+export type GraphBlocksDrawerProps = {
+  open: boolean
+  onToggle: () => void
+  visible: boolean
+  viewportWidth: number
+  viewportHeight?: number
+  graphBlocksDetailed: BottomPanelGraphBlock[]
+  onFragmentFocus: (fragmentId: string) => void
+  onBlockFocus: (blockId: string) => void
+  onFragmentHover?: (fragmentId: string | null, blockId: string | null) => void
+  onBlockHover?: (blockId: string | null) => void
+}
+
+export function GraphBlocksDrawer(props: GraphBlocksDrawerProps) {
+  const {
+    open,
+    onToggle,
+    visible,
+    viewportWidth,
+    viewportHeight,
+    graphBlocksDetailed,
+    onFragmentFocus,
+    onBlockFocus,
+    onFragmentHover,
+    onBlockHover,
+  } = props
+  const resolvedFragmentHover = onFragmentHover ?? (() => {})
+  const resolvedBlockHover = onBlockHover ?? (() => {})
+  if (!visible) return null
+
+  const drawerWidth = Math.max(360, Math.min(680, Math.round((Number.isFinite(viewportWidth) ? viewportWidth : 1200) / 3)))
+  const bottomOffset = 14
+  const topOffset = 126
+  const maxHeight = typeof viewportHeight === 'number' && Number.isFinite(viewportHeight)
+    ? Math.max(280, viewportHeight - topOffset - bottomOffset)
+    : undefined
+  const toRgba = (hex: string, alpha: number) => {
+    const normalized = hex.replace('#', '')
+    if (normalized.length !== 6) return `rgba(148, 163, 184, ${alpha})`
+    const value = parseInt(normalized, 16)
+    const r = (value >> 16) & 255
+    const g = (value >> 8) & 255
+    const b = value & 255
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  }
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: topOffset,
+        left: 14,
+        bottom: bottomOffset,
+        width: drawerWidth,
+        maxHeight,
+        zIndex: 1060,
+        borderRadius: 20,
+        border: `1px solid ${UI_THEME.line}`,
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.88), rgba(248,250,252,0.8))',
+        backdropFilter: 'blur(16px) saturate(125%)',
+        boxShadow: UI_THEME.glowStrong,
+        transform: open ? 'translateX(0)' : 'translateX(calc(-100% + 48px))',
+        transition: 'transform 240ms ease, box-shadow 200ms ease',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        title={open ? 'Hide graph overview' : 'Show graph overview'}
+        style={{
+          position: 'absolute',
+          right: 10,
+          top: 10,
+          zIndex: 1,
+          height: 34,
+          minWidth: 34,
+          padding: '0 10px',
+          borderRadius: 999,
+          border: `1px solid ${UI_THEME.lineStrong}`,
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,245,249,0.92))',
+          color: UI_THEME.ink,
+          cursor: 'pointer',
+          fontSize: 12,
+          fontWeight: 700,
+          boxShadow: '0 6px 14px rgba(15,23,42,0.08)',
+        }}
+      >
+        {open ? '‹' : '›'}
+      </button>
+
+      <div
+        style={{
+          flex: '1 1 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '14px 12px 12px 12px',
+          minWidth: 0,
+        }}
+      >
+        <div style={{ ...CARD, padding: '10px 12px', borderRadius: 14, marginBottom: 10 }}>
+          <div style={{ ...CARD_TITLE, marginBottom: 4 }}>Graph Blocks Overview</div>
+          <div style={{ fontSize: 12, color: UI_THEME.inkSoft, lineHeight: 1.45 }}>
+            {graphBlocksDetailed.length > 0
+              ? `${graphBlocksDetailed.length} blocks · click labels/fragments to focus`
+              : 'No graph blocks available yet.'}
+          </div>
+        </div>
+
+        <div
+          style={{
+            flex: '1 1 auto',
+            overflowY: 'auto',
+            paddingRight: 4,
+          }}
+        >
+          {graphBlocksDetailed.length === 0 ? (
+            <div
+              style={{
+                ...CARD,
+                borderStyle: 'dashed',
+                borderColor: UI_THEME.lineStrong,
+                padding: '12px 14px',
+                color: UI_THEME.inkMuted,
+                fontSize: 12,
+              }}
+            >
+              Blocks will appear here after Auto Maintain creates or promotes them.
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gap: 12, alignItems: 'stretch' }}>
+              {graphBlocksDetailed.map((block) => (
+                <div
+                  key={block.blockId}
+                  style={{
+                    border: `1px solid ${toRgba(block.color, 0.55)}`,
+                    borderRadius: 12,
+                    padding: '12px 14px',
+                    background: `linear-gradient(135deg, ${toRgba(block.color, 0.14)}, ${toRgba(block.color, 0.05)})`,
+                    boxShadow: `0 12px 24px ${toRgba(block.color, 0.16)}`,
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                  onMouseEnter={() => resolvedBlockHover(block.blockId)}
+                  onMouseLeave={() => resolvedBlockHover(null)}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, gap: 8 }}>
+                    <button
+                      type="button"
+                      onClick={() => onBlockFocus(block.blockId)}
+                      style={{
+                        border: 'none',
+                        background: 'none',
+                        padding: 0,
+                        margin: 0,
+                        fontSize: 13,
+                        fontWeight: 700,
+                        color: block.color,
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {block.label || block.blockId}
+                    </button>
+                    <span style={{ fontSize: 11, color: '#475569', whiteSpace: 'nowrap' }}>
+                      {block.fragments.length} fragment{block.fragments.length === 1 ? '' : 's'}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 12, color: '#1f2937', lineHeight: 1.5 }}>
+                    {block.summary || 'No summary yet'}
+                  </div>
+                  {block.updatedAt && (
+                    <div style={{ fontSize: 10, color: '#64748b', marginTop: 6 }}>
+                      {new Date(block.updatedAt).toLocaleTimeString()}
+                    </div>
+                  )}
+                  <div style={{ fontSize: 11, color: '#475569', marginTop: 10, marginBottom: 6 }}>
+                    Fragments
+                  </div>
+                  <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {block.fragments.length === 0 ? (
+                      <li style={{ fontSize: 12, color: '#6b7280' }}>No fragment</li>
+                    ) : (
+                      block.fragments.map((frag) => (
+                        <li key={frag.id}>
+                          <button
+                            type="button"
+                            onClick={() => onFragmentFocus(frag.id)}
+                            style={{
+                              width: '100%',
+                              textAlign: 'left',
+                              border: `1px solid ${toRgba(block.color, 0.45)}`,
+                              background: toRgba(block.color, 0.12),
+                              color: '#0f172a',
+                              borderRadius: 10,
+                              padding: '6px 8px',
+                              cursor: 'pointer',
+                            }}
+                            onMouseEnter={() => resolvedFragmentHover(frag.id, block.blockId)}
+                            onMouseLeave={() => resolvedFragmentHover(null, null)}
+                          >
+                            <div style={{ fontSize: 11, color: block.color, fontWeight: 600 }}>
+                              #{frag.type || 'fragment'}
+                            </div>
+                            <div style={{ fontSize: 12, color: '#0f172a', lineHeight: 1.45 }}>
+                              {frag.text || 'No summary yet'}
+                            </div>
+                          </button>
+                        </li>
+                      ))
+                    )}
+                  </ul>
+                  {block.relationships?.length ? (
+                    <div style={{ marginTop: 10 }}>
+                      <div style={{ fontSize: 11, color: '#475569', marginBottom: 4 }}>Relationships</div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                        {block.relationships.map((rel, idx) => (
+                          <span
+                            key={`${rel.target}_${idx}`}
+                            style={{
+                              fontSize: 11,
+                              padding: '4px 8px',
+                              borderRadius: 999,
+                              background: toRgba(block.color, 0.15),
+                              border: `1px solid ${toRgba(block.color, 0.35)}`,
+                              color: '#0f172a',
+                            }}
+                          >
+                            {rel.type}{' -> '}{rel.target}
+                            {typeof rel.score === 'number' ? ` (${rel.score.toFixed(2)})` : ''}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function BottomPanel(props: BottomPanelProps) {
   const {
     hint,
@@ -1070,8 +1317,7 @@ export function BottomPanel(props: BottomPanelProps) {
   const panelMaxHeight = graphInspectorActive
     ? Math.min(expandedHeight, viewportHeight - 120)
     : 220
-  const showDetailedBlocks =
-    graphInspectorActive && autoMaintainEnabled && graphBlocksDetailed.length > 0
+  const showDetailedBlocks = false
   const toRgba = (hex: string, alpha: number) => {
     const normalized = hex.replace('#', '')
     if (normalized.length !== 6) return `rgba(148, 163, 184, ${alpha})`
@@ -1399,7 +1645,7 @@ export function BottomPanel(props: BottomPanelProps) {
             </div>
           </div>
         ) : (
-          showAutoMaintain && autoMaintainEnabled && graphBlocks.length > 0 && (
+          false && showAutoMaintain && autoMaintainEnabled && graphBlocks.length > 0 && (
             <div style={{ marginTop: 12 }}>
               <div style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>Graph Blocks</div>
               <div

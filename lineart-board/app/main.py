@@ -27,6 +27,8 @@ from app.schemas import (
     PromoteGroupResponse,
     PromoteVisionPendingGroupRequest,
     PromoteVisionPendingGroupResponse,
+    GraphSelectionBlockActionRequest,
+    GraphSelectionBlockActionResponse,
 )
 from app import prompting
 from app.llm_client import call_chat_completions
@@ -1016,4 +1018,27 @@ def graph_promote_vision_group(body: PromoteVisionPendingGroupRequest):
     if not ok:
         raise HTTPException(404, f"pending vision group not found or processing failed: {body.group_id}")
     return PromoteVisionPendingGroupResponse(ok=True)
+
+
+@app.post("/graph/selection-block-action", response_model=GraphSelectionBlockActionResponse)
+def graph_selection_block_action(body: GraphSelectionBlockActionRequest):
+    sess = S.get_session(body.sid)
+    if not sess or not sess.graph_runtime:
+        raise HTTPException(404, f"session not found or graph disabled: {body.sid}")
+    try:
+        result = sess.graph_runtime.apply_selection_block_action(
+            action=body.action,
+            fragment_ids=body.fragment_ids,
+            target_block_id=body.target_block_id,
+            label_hint=body.label_hint,
+            focus_after=body.focus_after,
+        )
+    except Exception as exc:
+        raise HTTPException(400, f"selection block action failed: {exc}")
+    return GraphSelectionBlockActionResponse(
+        ok=True,
+        action=str(result.get("action") or body.action),
+        block=result.get("block"),
+        fragment_ids=[str(fid) for fid in (result.get("fragmentIds") or [])],
+    )
 

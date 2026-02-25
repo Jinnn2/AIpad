@@ -371,6 +371,126 @@ class BlockManager:
             return
         self._unlabeled_strokes = [fid for fid in self._unlabeled_strokes if fid not in removal]
 
+    def manual_create_block_from_fragments(
+        self,
+        fragment_ids: Iterable[str],
+        *,
+        label_hint: Optional[str] = None,
+        refresh_related_summaries: bool = True,
+    ) -> Optional[Block]:
+        fragments, affected_source_blocks = self._detach_fragments_for_manual_action(fragment_ids)
+        if not fragments:
+            return None
+
+        compact_label_hint = " ".join(str(label_hint or "").split()).strip()[:48]
+        relationships = None
+        if self.summarizer:
+            try:
+                proposal = self.summarizer.propose_block(fragments)
+                label, summary, relationships = self._coerce_block_proposal(proposal)
+            except Exception:
+                base = compact_label_hint or (fragments[0].text or f"Block {fragments[0].fragment_id[:6]}")
+                label = base[:40]
+                summary = base[:220]
+        else:
+            base = compact_label_hint or (fragments[0].text or f"Block {fragments[0].fragment_id[:6]}")
+            label = str(base).strip()[:40]
+            summary = str(base).strip()[:220]
+
+        if compact_label_hint:
+            label = compact_label_hint
+            if not (summary or "").strip():
+                summary = compact_label_hint[:220]
+
+        block_id = self._generate_block_id()
+        bbox_candidates = [fragment.bbox for fragment in fragments if fragment.bbox]
+        block = Block(
+            block_id=block_id,
+            label=(label or f"Block {block_id[-4:]}")[:48],
+            summary=(summary or label or "New block")[:220],
+            position=_union_bbox(bbox_candidates) if bbox_candidates else None,
+            contents={fragment.fragment_id for fragment in fragments},
+        )
+        block.last_summary_member_count = len(block.contents)
+        block.last_summary_ts = datetime.utcnow()
+        block.character_count = sum(self._fragment_text_length(fragment) for fragment in fragments)
+        self.state.add_block(block)
+
+        for fragment in fragments:
+            self._fragment_to_block[fragment.fragment_id] = block.block_id
+            self._fragment_to_group.pop(fragment.fragment_id, None)
+            self._tag_fragment_with_block(fragment, block)
+
+        self._refresh_block_embedding(block)
+        if relationships is not None:
+            try:
+                self.register_block_annotation(
+                    block.block_id,
+                    {"label": block.label, "summary": block.summary, "relationships": relationships},
+                )
+            except Exception as exc:
+                print(f"[graph][manual] failed to register relationships for {block.block_id}: {exc}")
+        elif len(self.state.blocks) > 1:
+            self._bootstrap_block_relationships(block.block_id)
+
+        if refresh_related_summaries:
+            self._refresh_blocks_after_manual_move(affected_source_blocks | {block.block_id})
+
+        return block
+
+    def manual_assign_fragments_to_block(
+        self,
+        target_block_id: str,
+        fragment_ids: Iterable[str],
+        *,
+        refresh_related_summaries: bool = True,
+    ) -> Optional[Block]:
+        target_block = self.state.blocks.get(target_block_id)
+        if not target_block:
+            raise BlockNotFoundError(target_block_id)
+
+        unique_ids: List[str] = []
+        seen: set[str] = set()
+        for fid in fragment_ids:
+            sfid = str(fid or "").strip()
+            if not sfid or sfid in seen:
+                continue
+            seen.add(sfid)
+            unique_ids.append(sfid)
+
+        moved_fragments: List[Fragment] = []
+        affected_source_blocks: set[str] = set()
+        for fid in unique_ids:
+            fragment = self.state.fragments.get(fid)
+            if not fragment:
+                continue
+            current_block_id = self._fragment_to_block.get(fid)
+            if current_block_id == target_block_id:
+                continue
+            self._detach_fragment_from_group(fid)
+            detached_from = self._detach_fragment_from_block(fid)
+            if detached_from:
+                affected_source_blocks.add(detached_from)
+            moved_fragments.append(fragment)
+
+        if not moved_fragments:
+            return target_block
+
+        for fragment in moved_fragments:
+            target_block.add_contents({fragment.fragment_id})
+            self._fragment_to_block[fragment.fragment_id] = target_block.block_id
+            self._fragment_to_group.pop(fragment.fragment_id, None)
+            target_block.character_count += self._fragment_text_length(fragment)
+            self._tag_fragment_with_block(fragment, target_block)
+
+        target_block.position = self._refresh_block_bbox(target_block)
+        self._refresh_block_embedding(target_block)
+
+        if refresh_related_summaries:
+            self._refresh_blocks_after_manual_move(affected_source_blocks | {target_block.block_id})
+
+        return target_block
+
     def connect_blocks(
         self,
         source_block_id: str,
@@ -790,6 +910,93 @@ class BlockManager:
         payload["graph"] = graph_meta
         payload["label"] = block.label
         fragment.payload = payload
+
+    def _clear_fragment_block_tag(self, fragment: Fragment) -> None:
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        payload2 = dict(payload)
+        graph_meta = dict(payload2.get("graph") or {})
+        graph_meta.pop("blockId", None)
+        graph_meta.pop("blockLabel", None)
+        payload2["graph"] = graph_meta
+        payload2.pop("label", None)
+        fragment.payload = payload2
+
+    def _detach_fragment_from_group(self, fragment_id: str) -> Optional[str]:
+        group_id = self._fragment_to_group.pop(fragment_id, None)
+        if not group_id:
+            return None
+        group = self.state.groups.get(group_id)
+        if not group:
+            return group_id
+        if fragment_id in group.members:
+            group.members.discard(fragment_id)
+            group.updated_at = datetime.utcnow()
+            group.prototype_vec = None
+        if not group.members:
+            group.state = GroupState.RETIRED
+            self.state.remove_group(group_id)
+            self._group_touch_counts.pop(group_id, None)
+        return group_id
+
+    def _detach_fragment_from_block(self, fragment_id: str) -> Optional[str]:
+        block_id = self._fragment_to_block.pop(fragment_id, None)
+        if not block_id:
+            return None
+        block = self.state.blocks.get(block_id)
+        fragment = self.state.fragments.get(fragment_id)
+        if not block:
+            if fragment:
+                self._clear_fragment_block_tag(fragment)
+            return block_id
+        if fragment_id in block.contents:
+            block.contents.discard(fragment_id)
+            block.updated_at = datetime.utcnow()
+            if fragment:
+                block.character_count = max(0, block.character_count - self._fragment_text_length(fragment))
+        if fragment:
+            self._clear_fragment_block_tag(fragment)
+        if not block.contents:
+            self.state.remove_block(block_id)
+            self._block_incoming_counts.pop(block_id, None)
+            return block_id
+        block.position = self._refresh_block_bbox(block)
+        self._refresh_block_embedding(block)
+        return block_id
+
+    def _detach_fragments_for_manual_action(self, fragment_ids: Iterable[str]) -> Tuple[List[Fragment], set[str]]:
+        fragments: List[Fragment] = []
+        affected_source_blocks: set[str] = set()
+        seen: set[str] = set()
+        for raw_fid in fragment_ids:
+            fid = str(raw_fid or "").strip()
+            if not fid or fid in seen:
+                continue
+            seen.add(fid)
+            fragment = self.state.fragments.get(fid)
+            if not fragment:
+                continue
+            self._detach_fragment_from_group(fid)
+            detached_from = self._detach_fragment_from_block(fid)
+            if detached_from:
+                affected_source_blocks.add(detached_from)
+            fragments.append(fragment)
+        return fragments, affected_source_blocks
+
+    def _refresh_blocks_after_manual_move(self, block_ids: Iterable[str]) -> None:
+        seen: set[str] = set()
+        for raw_bid in block_ids:
+            bid = str(raw_bid or "").strip()
+            if not bid or bid in seen or bid not in self.state.blocks:
+                continue
+            seen.add(bid)
+            block = self.state.blocks.get(bid)
+            if block:
+                block.position = self._refresh_block_bbox(block)
+                self._refresh_block_embedding(block)
+            try:
+                self._maybe_refresh_summary(bid, force=True, allow_group_scan=False)
+            except Exception as exc:
+                print(f"[graph][manual] refresh summary failed for {bid}: {exc}")
 
     def _create_block_from_fragment(self, fragment: Fragment) -> Block:
         graph_label_hint = self._graph_block_label_hint(fragment)

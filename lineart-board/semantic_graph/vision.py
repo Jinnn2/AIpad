@@ -141,6 +141,35 @@ class VisionGrouper:
             return None
         return self._group_to_payload(group, override_reason=reason)
 
+    def remove_fragment_ids(self, fragment_ids: Iterable[str]) -> None:
+        removal = {str(fid or "").strip() for fid in fragment_ids if str(fid or "").strip()}
+        if not removal:
+            return
+        for gid in list(self._pending_groups.keys()):
+            group = self._pending_groups.get(gid)
+            if not group:
+                continue
+            before = len(group.stroke_ids)
+            if before == 0:
+                continue
+            group.stroke_ids = [fid for fid in group.stroke_ids if fid not in removal]
+            if len(group.stroke_ids) == before:
+                continue
+            if not group.stroke_ids:
+                self._pending_groups.pop(gid, None)
+                continue
+            bbox = None
+            for stroke_id in group.stroke_ids:
+                fragment = self.block_manager.state.fragments.get(stroke_id)
+                if not fragment or not fragment.bbox:
+                    continue
+                bbox = fragment.bbox if bbox is None else _merge_bbox(bbox, fragment.bbox)
+            if bbox:
+                group.bbox = bbox
+            group.updated_at = datetime.utcnow()
+            if len(group.stroke_ids) < self.stroke_threshold:
+                group.ready_reason = None
+
     def ingest_fragment(self, fragment, *, reason: str = "auto") -> List[VisionPayload]:
         if fragment.fragment_type != FragmentType.STROKE:
             return []

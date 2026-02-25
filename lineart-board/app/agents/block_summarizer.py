@@ -59,6 +59,7 @@ class LLMBlockSummarizer(BlockSummarizer):
                     "You are the knowledge-graph curator for this collaborative canvas.\n"
                     "Create a new block label/summary from the provided fragments.\n"
                     "Also infer relationships from this new block to existing blocks in `others` when justified.\n"
+                    "The summary could include the relationship hints, but the label should be a concise title for this block.\n"
                     "Always return a JSON object {\"label\": str, \"summary\": str, \"relationships\"?: [{\"type\": str, \"target\": str, \"score\": float?}]}.\n"
                     "Keep the label concise (<= 40 characters) and write a summary that captures the block's purpose for future context.\n"
                     "Only reference IDs that appear in `others`. Use relationship types such as refines, comment_on, subtopic or flow_next. Skip uncertain relationships.\n"
@@ -92,7 +93,7 @@ class LLMBlockSummarizer(BlockSummarizer):
                 "role": "system",
                 "content": (
                     "You are maintaining the structured knowledge blocks on this canvas.\n"
-                    "1. Rewrite the block summary so it covers all current fragments (aim for 120 characters or fewer).\n"
+                    "1. Rewrite the block summary so it covers all current fragments and core relationships (aim for 120 characters or fewer).\n"
                     "2. Identify relationships between this block and other blocks (semantic, functional, or visual flow).\n"
                     "3. If you believe this block should be merged into another block (because they describe the same concept or the other block already subsumes it), add a merge directive. Use merge objects like {\"source\": \"current_block_id\", \"target\": \"block_xyz\"} or simply {\"target\": \"block_xyz\"}. Only merge when you are confident.\n"
                     "Return JSON {\"summary\": str, \"relationships\": [{\"type\": str, \"target\": str, \"score\": float? ...}], \"merge\"?: {... or [...]}}. Use relationship types such as refines, comment_on, or flow_next. Skip any relationship you cannot justify.\n"
