@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Any, Dict, Iterable, List, Optional, Protocol, Set, runtime_checkable
 
 from .block_manager import BlockManager, TextEmbedder
+from .markdown_text import markdown_to_semantic_text
 from .models import Block, BlockRelationshipType, ExecutionPlan
 from .similarity import cosine_distance
 
@@ -144,7 +145,7 @@ class ConversationOrchestrator:
         if not summaries:
             recent_blocks = sorted(
                 self.block_manager.state.list_blocks(),
-                key=lambda b: getattr(b, "updated_at", None) or datetime.min,
+                key=self._block_content_timestamp,
                 reverse=True,
             )
             for block in recent_blocks[:5]:
@@ -184,10 +185,9 @@ class ConversationOrchestrator:
             payload = fragment.payload if isinstance(fragment.payload, dict) else {}
             meta = payload.get("meta") if isinstance(payload, dict) else {}
             text = ""
-            if isinstance(meta, dict):
-                text = str(meta.get("text") or "").strip()
-            if not text:
-                text = str(fragment.text or "").strip()
+            text = str(fragment.text or "").strip()
+            if not text and isinstance(meta, dict):
+                text = markdown_to_semantic_text(str(meta.get("text") or ""))
             if not text:
                 continue
             compact = " ".join(text.split()).strip()
@@ -280,15 +280,15 @@ class ConversationOrchestrator:
         groups = self.block_manager.state.list_groups()
 
         if blocks:
-            latest_block = max(blocks, key=lambda block: getattr(block, "updated_at", None) or datetime.min)
+            latest_block = max(blocks, key=self._block_content_timestamp)
         if groups:
-            latest_group = max(groups, key=lambda group: getattr(group, "updated_at", None) or datetime.min)
+            latest_group = max(groups, key=self._group_content_timestamp)
 
         if not latest_block and not latest_group:
             return None
 
         if latest_group and latest_block:
-            choose_group = (latest_group.updated_at or datetime.min) >= (latest_block.updated_at or datetime.min)
+            choose_group = self._group_content_timestamp(latest_group) >= self._block_content_timestamp(latest_block)
         else:
             choose_group = bool(latest_group)
 
@@ -308,6 +308,7 @@ class ConversationOrchestrator:
                 "kind": "group",
                 "groupId": latest_group.group_id,
                 "updatedAt": latest_group.updated_at.isoformat(),
+                "contentUpdatedAt": self._group_content_timestamp(latest_group).isoformat(),
                 "fragmentCount": len(compact_members),
                 "fragments": compact_members,
             }
@@ -330,6 +331,7 @@ class ConversationOrchestrator:
             "label": latest_block.label,
             "summary": latest_block.summary,
             "updatedAt": latest_block.updated_at.isoformat(),
+            "contentUpdatedAt": self._block_content_timestamp(latest_block).isoformat(),
         }
         compact_latest = self._compact_fragment(latest_fragment) if latest_fragment else None
         if compact_latest:
@@ -363,6 +365,18 @@ class ConversationOrchestrator:
                 latest_ts = ts
         return latest
 
+    def _block_content_timestamp(self, block: Block) -> datetime:
+        latest_fragment = self._latest_fragment_for_ids(getattr(block, "contents", []) or [])
+        if latest_fragment and getattr(latest_fragment, "timestamp", None):
+            return latest_fragment.timestamp or datetime.min
+        return getattr(block, "updated_at", None) or datetime.min
+
+    def _group_content_timestamp(self, group) -> datetime:
+        latest_fragment = self._latest_fragment_for_ids(getattr(group, "members", []) or [])
+        if latest_fragment and getattr(latest_fragment, "timestamp", None):
+            return latest_fragment.timestamp or datetime.min
+        return getattr(group, "updated_at", None) or datetime.min
+
     def _compact_fragment(self, fragment) -> Optional[Dict[str, object]]:
         if fragment is None:
             return None
@@ -372,10 +386,9 @@ class ConversationOrchestrator:
             payload = fragment.payload if isinstance(fragment.payload, dict) else {}
             meta = payload.get("meta") if isinstance(payload, dict) else {}
             text = ""
-            if isinstance(meta, dict):
-                text = str(meta.get("text") or "").strip()
-            if not text:
-                text = str(fragment.text or "").strip()
+            text = str(fragment.text or "").strip()
+            if not text and isinstance(meta, dict):
+                text = markdown_to_semantic_text(str(meta.get("text") or ""))
             result: Dict[str, object] = {
                 "type": "text",
                 "text": text[:320],
@@ -548,7 +561,7 @@ class ConversationOrchestrator:
         blocks = self.block_manager.state.list_blocks()
         if not blocks:
             return None
-        latest = max(blocks, key=lambda block: getattr(block, "updated_at", None) or datetime.min)
+        latest = max(blocks, key=self._block_content_timestamp)
         return latest.block_id
 
     def _update_context(self, main_block_id: Optional[str], plan: ExecutionPlan) -> None:
@@ -615,7 +628,7 @@ system_prompt = (
     "Always return JSON of the form {\"action\": ..., \"targetBlockIds\": [...], "
     "\"comment\": \"...\", \"nextStepHint\": \"...\"}. targetBlockIds may contain block IDs and group IDs.\n\n"
     "Allowed actions:\n"
-    "- CONTINUE: The content provided is what you need to complete the task. Put what you need into targetBlockIds\n"
+    "- CONTINUE: The content provided is what you need to complete the task. Put ALL you need into targetBlockIds.\n"
     "- NOOP: No appropriate action can be determined; the system will quit and wait for user's further input.\n"
     "- SWITCH: Move the focus to the listed context IDs (block/group). After switching, orchestration runs again.\n"
     "- OPEN_RELATED: Other context IDs are related and needed to add to the context. "

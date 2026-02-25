@@ -7,7 +7,7 @@ import math
 import os
 import sys
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
@@ -35,6 +35,7 @@ from semantic_graph import (
     VisionResult,
 )
 from semantic_graph.models import GroupNotFoundError
+from semantic_graph.markdown_text import markdown_to_semantic_text
 from semantic_graph.vision import _bbox_overlap_ratio
 
 from app.embedding_client import embed_text
@@ -220,6 +221,16 @@ class GraphRuntime:
         block_group_distance_threshold = _env_float("GRAPH_BLOCK_GROUP_DISTANCE_THRESHOLD", 0.45, minimum=0.0)
         block_block_distance_threshold = _env_float("GRAPH_BLOCK_BLOCK_DISTANCE_THRESHOLD", 0.40, minimum=0.0)
         block_auto_promote_group_size = _env_int("GRAPH_BLOCK_AUTO_PROMOTE_GROUP_SIZE", 7, minimum=1)
+        block_summary_refresh_ratio = _env_float(
+            "GRAPH_BLOCK_SUMMARY_REFRESH_RATIO",
+            0.8,
+            minimum=0.0,
+        )
+        block_summary_refresh_interval_seconds = _env_int(
+            "GRAPH_BLOCK_SUMMARY_REFRESH_INTERVAL_SECONDS",
+            1800,
+            minimum=1,
+        )
         self.agent_group_promote_enabled = _env_bool("GRAPH_AGENT_GROUP_PROMOTE_ENABLED", True)
         self.agent_group_promote_min_members = _env_int("GRAPH_AGENT_GROUP_PROMOTE_MIN_MEMBERS", 4, minimum=1)
         self.agent_group_promote_min_text_members = _env_int(
@@ -307,9 +318,13 @@ class GraphRuntime:
             summarizer=self.summarizer,
             group_distance_threshold=block_group_distance_threshold,
             block_distance_threshold=block_block_distance_threshold,
+            summary_refresh_ratio=block_summary_refresh_ratio,
+            summary_refresh_interval=timedelta(seconds=block_summary_refresh_interval_seconds),
             canvas_size=(float(width), float(height)),
             auto_promote_group_size=block_auto_promote_group_size,
             cluster_logger=self.cluster_logger,
+            allow_ai_block_intent_create=True,
+            allow_ai_block_target_assign=True,
         )
         self.summarizer.set_block_provider(lambda: self.block_manager.state.blocks.values())
         self.summarizer.set_canvas_size(self.block_manager.canvas_size)
@@ -382,8 +397,32 @@ class GraphRuntime:
     def ingest_strokes(self, strokes: Iterable[Dict[str, object]]) -> GraphIngestResult:
         new_fragments: List[str] = []
         promoted_blocks: List[str] = []
+        proposal_key_to_block: Dict[str, str] = {}
         for stroke in strokes or []:
-            fragment = self._stroke_to_fragment(stroke)
+            raw_stroke = stroke if isinstance(stroke, dict) else {}
+            proposal_key = self._stroke_graph_proposal_key(raw_stroke)
+            stroke_for_ingest = raw_stroke
+
+            mapped_block_id = proposal_key_to_block.get(proposal_key) if proposal_key else None
+            if mapped_block_id:
+                rebound = self._stroke_with_proposal_target(raw_stroke, mapped_block_id)
+                if rebound is not None:
+                    stroke_for_ingest = rebound
+                    if self.cluster_logger:
+                        try:
+                            self.cluster_logger.log(
+                                "proposal_key_target_applied",
+                                {
+                                    "proposalKey": proposal_key,
+                                    "targetBlockId": mapped_block_id,
+                                    "strokeId": str(raw_stroke.get("id") or ""),
+                                    "tool": str(raw_stroke.get("tool") or ""),
+                                },
+                            )
+                        except Exception:
+                            pass
+
+            fragment = self._stroke_to_fragment(stroke_for_ingest)
             if fragment is None:
                 continue
             if fragment.fragment_id in self._seen_fragment_ids:
@@ -391,15 +430,36 @@ class GraphRuntime:
             if fragment.fragment_id in self.state.fragments:
                 self._seen_fragment_ids.add(fragment.fragment_id)
                 if (
-                    isinstance(stroke, dict)
+                    isinstance(raw_stroke, dict)
                     and fragment.fragment_id not in self._fragment_signatures
                 ):
-                    self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(stroke)
+                    self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(raw_stroke)
                 continue
             self._seen_fragment_ids.add(fragment.fragment_id)
             assignment = self.block_manager.register_fragment(fragment)
-            if isinstance(stroke, dict):
-                self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(stroke)
+
+            if proposal_key and assignment.block_id:
+                create_intent = self._stroke_graph_is_block_create(raw_stroke)
+                explicit_target = self._stroke_graph_target_block_id(raw_stroke)
+                if create_intent or explicit_target:
+                    proposal_key_to_block[proposal_key] = assignment.block_id
+                    if self.cluster_logger:
+                        try:
+                            self.cluster_logger.log(
+                                "proposal_key_anchor_resolved",
+                                {
+                                    "proposalKey": proposal_key,
+                                    "blockId": assignment.block_id,
+                                    "strokeId": fragment.fragment_id,
+                                    "fromCreateIntent": create_intent,
+                                    "fromExplicitTarget": bool(explicit_target),
+                                },
+                            )
+                        except Exception:
+                            pass
+
+            if isinstance(raw_stroke, dict):
+                self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(raw_stroke)
             new_fragments.append(fragment.fragment_id)
             if self.cluster_logger:
                 try:
@@ -412,7 +472,8 @@ class GraphRuntime:
                             "group_id": assignment.group_id,
                             "promoted_block_id": assignment.promoted_block_id,
                             "text": _normalize_text(fragment.text)[:80],
-                            "stroke_tool": str(stroke.get("tool")) if isinstance(stroke, dict) else None,
+                            "stroke_tool": str(raw_stroke.get("tool")) if isinstance(raw_stroke, dict) else None,
+                            "proposal_key": proposal_key,
                         },
                     )
                 except Exception:
@@ -630,6 +691,7 @@ class GraphRuntime:
         focus_block_id: Optional[str] = None,
         focus_fragment_id: Optional[str] = None,
         mode: Optional[str] = None,
+        prefer_explanatory_drawing: Optional[bool] = None,
     ) -> Dict[str, object]:
         if not getattr(self.vision, "manual_pending_promotion", False):
             pending_payloads = self.vision.flush_groups(
@@ -727,6 +789,7 @@ class GraphRuntime:
             user_hint=user_input,
             mode=exec_mode or None,
             context=focus_context,
+            prefer_explanatory_drawing=prefer_explanatory_drawing,
         )
         return {
             "plan": {
@@ -1382,7 +1445,7 @@ class GraphRuntime:
         payload = fragment.payload if isinstance(fragment.payload, dict) else {}
         meta = payload.get("meta") if isinstance(payload, dict) else {}
         if isinstance(meta, dict):
-            return str(meta.get("text") or "").strip()
+            return markdown_to_semantic_text(str(meta.get("text") or ""))
         return ""
 
     def _remap_orchestrator_context_ids(self, promoted_map: Dict[str, str]) -> None:
@@ -1628,7 +1691,8 @@ class GraphRuntime:
         text = ""
         if fragment_type == FragmentType.TEXT:
             raw_text = meta_payload.get("text") if isinstance(meta_payload, dict) else None
-            text = _normalize_text(raw_text) or _normalize_text(meta_payload.get("summary"))
+            raw_source = _normalize_text(raw_text) or _normalize_text(meta_payload.get("summary"))
+            text = markdown_to_semantic_text(raw_source)
         payload = {
             "tool": tool,
             "style": stroke.get("style"),
@@ -1648,6 +1712,68 @@ class GraphRuntime:
             timestamp=timestamp,
             payload=payload,
         )
+
+    @staticmethod
+    def _stroke_graph_meta(stroke: Dict[str, object]) -> Optional[Dict[str, object]]:
+        if not isinstance(stroke, dict):
+            return None
+        meta = stroke.get("meta")
+        if not isinstance(meta, dict):
+            return None
+        graph_meta = meta.get("graph")
+        if not isinstance(graph_meta, dict):
+            return None
+        return graph_meta
+
+    def _stroke_graph_proposal_key(self, stroke: Dict[str, object]) -> str:
+        graph_meta = self._stroke_graph_meta(stroke)
+        if not isinstance(graph_meta, dict):
+            return ""
+        key = str(graph_meta.get("proposalKey") or "").strip()
+        if not key:
+            return ""
+        compact = " ".join(key.split()).strip()
+        return compact[:64]
+
+    def _stroke_graph_target_block_id(self, stroke: Dict[str, object]) -> Optional[str]:
+        graph_meta = self._stroke_graph_meta(stroke)
+        if not isinstance(graph_meta, dict):
+            return None
+        candidate = str(graph_meta.get("targetBlockId") or graph_meta.get("assignToBlockId") or "").strip()
+        if not candidate:
+            return None
+        return candidate
+
+    def _stroke_graph_is_block_create(self, stroke: Dict[str, object]) -> bool:
+        graph_meta = self._stroke_graph_meta(stroke)
+        if not isinstance(graph_meta, dict):
+            return False
+        intent = str(graph_meta.get("blockIntent") or graph_meta.get("intent") or "").strip().lower()
+        return intent in {"create", "create_block", "new", "new_block"}
+
+    def _stroke_with_proposal_target(self, stroke: Dict[str, object], block_id: str) -> Optional[Dict[str, object]]:
+        if not isinstance(stroke, dict) or not block_id:
+            return None
+        meta = stroke.get("meta")
+        if not isinstance(meta, dict):
+            return None
+        graph_meta = meta.get("graph")
+        if not isinstance(graph_meta, dict):
+            return None
+
+        stroke2 = dict(stroke)
+        meta2 = dict(meta)
+        graph2 = dict(graph_meta)
+        graph2["targetBlockId"] = block_id
+        # Once a proposalKey has been resolved in-batch, later same-key strokes should attach
+        # instead of accidentally creating more blocks even if the model repeats blockIntent.
+        for key in ("blockIntent", "intent"):
+            raw_val = str(graph2.get(key) or "").strip().lower()
+            if raw_val in {"create", "create_block", "new", "new_block"}:
+                graph2.pop(key, None)
+        meta2["graph"] = graph2
+        stroke2["meta"] = meta2
+        return stroke2
 
     def _is_heading_meta(self, meta: Dict[str, object], style: object) -> bool:
         font_size = meta.get("fontSize") if isinstance(meta, dict) else None
@@ -1686,7 +1812,7 @@ class GraphRuntime:
             return True
         text_val = ""
         if isinstance(meta, dict):
-            text_val = str(meta.get("text") or "").strip()
+            text_val = markdown_to_semantic_text(str(meta.get("text") or ""))
         if isinstance(meta, dict):
             raw_line_count = meta.get("lineCount")
         else:

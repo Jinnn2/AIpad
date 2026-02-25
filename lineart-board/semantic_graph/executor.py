@@ -54,6 +54,7 @@ class ContextExecutor:
         *,
         mode: Optional[str] = None,
         context: Optional[FocusContext] = None,
+        prefer_explanatory_drawing: Optional[bool] = None,
     ) -> Dict[str, object]:
         """Build a local canvas context and ask the FULL-mode backend for new strokes."""
         selected_blocks, selected_groups = self._select_context_entities(plan, context)
@@ -84,6 +85,8 @@ class ContextExecutor:
             context=payload,
             planner_next_step=planner_next_step,
             block_outline=block_outline,
+            auto_maintain_enabled=True,
+            prefer_explanatory_drawing=prefer_explanatory_drawing,
         )
 
         if request_mode == "light":

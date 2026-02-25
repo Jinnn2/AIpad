@@ -17,7 +17,8 @@ import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
 import { TopToolbar, SidePanel, BottomPanel, SettingsButton, AIFeedSidebar, type AIFeedEntry } from './LineArtUI'
-import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from './textbox/layout'
+import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT, measureTextWidth } from './textbox/layout'
+import { hasInlineMarkdownStyle, looksLikeMarkdownText, parseMarkdownDisplayBlocks, parseMarkdownInlineRuns, renderMarkdownToCanvasText } from './textbox/markdown'
 /**
  * LineArtBoard renders a Konva-based workspace with:
  * - Top toolbar for grid/snap toggles, brush settings, import/export helpers.
@@ -327,6 +328,8 @@ const gridLayerRef = useRef<any>(null)
   }), [brushSize, brushColor])
   // Hint text forwarded to /suggest
   const [hint, setHint] = useState<string>('Work as a noting assistant to draw or write.')
+  // When enabled, encourage LLM to add explanatory sketches/diagrams to existing content.
+  const [preferExplanatoryDrawing, setPreferExplanatoryDrawing] = useState<boolean>(false)
   // Runtime LLM controls (editable while app is running).
   const [llmModel, setLlmModel] = useState<string>(VITE_LLM_MODEL_DEFAULT)
   const [llmTemperature, setLlmTemperature] = useState<number>(VITE_LLM_TEMPERATURE_DEFAULT)
@@ -1453,8 +1456,9 @@ const stageCursor = toolMode === 'hand'
     const fallbackHeight = Math.max(160, textEditor.fontSize * 4)
     const baseWidth = textEditor.w > 0 ? Math.max(textEditor.w, 80) : fallbackWidth
     const baseHeight = textEditor.h > 0 ? Math.max(textEditor.h, Math.round(textEditor.fontSize * 1.6)) : fallbackHeight
+    const renderedText = renderMarkdownToCanvasText(content)
     const layout = computeTextBoxLayout({
-      text: content,
+      text: renderedText,
       fontFamily: textEditor.fontFamily,
       fontSize: textEditor.fontSize,
       fontWeight: textEditor.fontWeight,
@@ -1656,6 +1660,7 @@ const openTextEditor = useCallback((params: {
         context: { version: 1, intent: 'complete', strokes: snapshot },
         hint,
         auto_complete_enabled: autoComplete,
+        prefer_explanatory_drawing: preferExplanatoryDrawing,
         group_promote_mode: groupPromoteMode,
         vision_image_mode: visionImageMode,
         ...(runtimeModel ? { model: runtimeModel } : {}),
@@ -1711,6 +1716,7 @@ const openTextEditor = useCallback((params: {
           // Reuse existing parameters such as hint/gen_scale
           hint,
           auto_complete_enabled: autoComplete,
+          prefer_explanatory_drawing: preferExplanatoryDrawing,
           group_promote_mode: groupPromoteMode,
           vision_image_mode: visionImageMode,
           ...(runtimeModel ? { model: runtimeModel } : {}),
@@ -1802,6 +1808,7 @@ const openTextEditor = useCallback((params: {
     size.height,
     hint,
     autoComplete,
+    preferExplanatoryDrawing,
     groupPromoteMode,
     visionImageMode,
     llmModel,
@@ -1915,9 +1922,12 @@ const openTextEditor = useCallback((params: {
         const fillColor = colorToStroke(d.style?.color ?? 'black')
         const fontSize = (d.meta?.fontSize ?? d.meta?.fontsize ?? d.meta?.font_size ?? 16) as number
         const fontFamily = (d.meta?.fontFamily ?? 'sans-serif') as string
-        const fontStyle = (d.meta?.fontWeight === 'bold' || d.meta?.fontWeight === '700')
+        const fontWeightToken = String(d.meta?.fontWeight ?? '400')
+        const fontStyle = (fontWeightToken === 'bold' || fontWeightToken === '700')
           ? 'bold'
           : 'normal'
+        const renderTextRole = String(d.meta?.role ?? inferTextRole(fontSize, fontWeightToken)).toLowerCase()
+        const autoCenterText = renderTextRole === 'title' || renderTextRole === 'subtitle'
         const boxW = d.w ?? 160
         const boxH = d.h ?? 80
         const lineHeight = typeof d.meta?.lineHeight === 'number' && Number.isFinite(d.meta.lineHeight)
@@ -1943,6 +1953,349 @@ const openTextEditor = useCallback((params: {
         }
         const frameCorner = Math.max(8 / view.scale, 2 / view.scale)
         const frameShadowBlur = (isHighlighted || hasCompletion || selected) ? Math.max(16 / view.scale, 4 / view.scale) : 0
+        const rawTextContent = String((d.meta?.text as string) ?? d.text ?? '')
+        const isMarkdownText = looksLikeMarkdownText(rawTextContent)
+        const storedRenderedText = typeof d.meta?.renderedText === 'string'
+          ? (d.meta.renderedText as string)
+          : ''
+        const displayText = isMarkdownText
+          ? (storedRenderedText && storedRenderedText !== rawTextContent
+              ? storedRenderedText
+              : renderMarkdownToCanvasText(rawTextContent))
+          : (storedRenderedText || rawTextContent)
+        const textOpacity = preview ? Math.min(0.35, d.style?.opacity ?? 1) : (d.style?.opacity ?? 1)
+        let markdownStyledContent: React.ReactNode = null
+        if (isMarkdownText && !autoCenterText) {
+          const blocks = parseMarkdownDisplayBlocks(rawTextContent)
+          if (blocks.length > 0) {
+            const nodes: React.ReactNode[] = []
+            let cursorY = d.y
+            const maxY = d.y + boxH
+            const baseLinePx = Math.max(fontSize * lineHeight, fontSize)
+            const baseWeight = String((d.meta?.fontWeight as string) ?? (fontStyle === 'bold' ? '700' : '400'))
+            for (let i = 0; i < blocks.length; i++) {
+              const block = blocks[i]
+              if (block.kind === 'blank') {
+                cursorY += Math.max(baseLinePx * 0.45, 6)
+                continue
+              }
+              if (cursorY > maxY + baseLinePx) break
+
+              let blockText = ''
+              let inlineSource = ''
+              let blockFontSize = fontSize
+              let blockFontWeight = baseWeight
+              let blockFontStyle: 'normal' | 'bold' | 'italic' | 'bold italic' = fontStyle === 'bold' ? 'bold' : 'normal'
+              let blockFill = fillColor
+              let indentPx = 0
+              let afterGap = 0
+              let quoteBar: React.ReactNode = null
+
+              if (block.kind === 'heading') {
+                blockText = block.text
+                inlineSource = String(block.raw ?? block.text ?? '')
+                const level = Math.max(1, Math.min(block.level, 6))
+                const scales = [1.18, 1.1, 1.04, 1, 1, 1]
+                blockFontSize = Math.max(fontSize, Math.round(fontSize * scales[level - 1]))
+                blockFontWeight = '700'
+                blockFontStyle = 'bold'
+                blockFill = level <= 2 ? '#0f172a' : '#1f2937'
+                afterGap = Math.max(blockFontSize * 0.12, 2)
+              } else if (block.kind === 'list-item') {
+                const prefix = block.ordered
+                  ? `${Number.isFinite(block.index as number) ? block.index : 1}. `
+                  : (typeof block.checked === 'boolean'
+                      ? `${block.checked ? '[x]' : '[ ]'} `
+                      : '• ')
+                indentPx = Math.max(0, block.indent) * Math.max(fontSize * 0.7, 10)
+                blockText = `${prefix}${block.text}`
+                inlineSource = String(block.raw ?? block.text ?? '')
+              } else if (block.kind === 'quote') {
+                const depth = Math.max(1, block.depth)
+                indentPx = depth * Math.max(fontSize * 0.45, 8) + 8
+                blockText = block.text || ''
+                inlineSource = String(block.raw ?? block.text ?? '')
+                blockFill = '#475569'
+                blockFontStyle = blockFontStyle === 'bold' ? 'bold italic' : 'italic'
+                const barX = d.x + (depth - 1) * Math.max(fontSize * 0.4, 6)
+                const barW = Math.max(2 / view.scale, 1.5 / view.scale)
+                quoteBar = (
+                  <KRect
+                    key={`md-quote-bar-${d.id}-${i}`}
+                    x={barX}
+                    y={cursorY + 1}
+                    width={barW}
+                    height={Math.max(baseLinePx - 2, 4)}
+                    fill="rgba(148,163,184,0.8)"
+                    cornerRadius={barW / 2}
+                    listening={false}
+                  />
+                )
+              } else {
+                blockText = block.text
+                inlineSource = String(block.raw ?? block.text ?? '')
+              }
+
+              if (!blockText.trim()) {
+                cursorY += Math.max(baseLinePx * 0.35, 4)
+                continue
+              }
+
+              const textX = d.x + indentPx
+              const textWidth = Math.max(24, boxW - indentPx)
+              const measured = computeTextBoxLayout({
+                text: blockText,
+                fontFamily,
+                fontSize: blockFontSize,
+                fontWeight: blockFontWeight,
+                baseWidth: textWidth,
+                baseHeight: Math.max(blockFontSize * lineHeight, 1),
+                growDir: 'down',
+                padding: 0,
+                lineHeight,
+              })
+              const blockHeight = Math.max(
+                Math.max(blockFontSize * lineHeight, 1),
+                measured.contentHeight,
+              )
+              let renderedBlockHeight = blockHeight
+              const canInlineStyle =
+                hasInlineMarkdownStyle(inlineSource) &&
+                textWidth > 12
+              if (canInlineStyle) {
+                const runs = parseMarkdownInlineRuns(inlineSource)
+                const prefixLen = Math.max(0, blockText.length - block.text.length)
+                const prefixText = prefixLen > 0 ? blockText.slice(0, prefixLen) : ''
+                const baseFontWeightForRun = String(blockFontWeight || '400')
+                const baseIsBold = blockFontStyle === 'bold' || blockFontStyle === 'bold italic' || Number(baseFontWeightForRun) >= 600
+                const baseIsItalic = blockFontStyle === 'italic' || blockFontStyle === 'bold italic'
+                type MdInlineSeg = {
+                  text: string
+                  fontFamily: string
+                  fontSize: number
+                  fontWeight: string
+                  fontStyle: 'normal' | 'bold' | 'italic' | 'bold italic'
+                  fill: string
+                  code?: boolean
+                }
+                const prefixW = prefixText
+                  ? measureTextWidth(prefixText, fontFamily, blockFontSize, baseFontWeightForRun)
+                  : 0
+                const continuationIndent = prefixText
+                  ? Math.min(Math.max(prefixW, 0), Math.max(textWidth - 12, 0))
+                  : 0
+                const segments: MdInlineSeg[] = []
+                if (prefixText) {
+                  segments.push({
+                    text: prefixText,
+                    fontFamily,
+                    fontSize: blockFontSize,
+                    fontWeight: baseFontWeightForRun,
+                    fontStyle: blockFontStyle,
+                    fill: blockFill,
+                  })
+                }
+                for (const run of runs) {
+                  const runText = String(run.text ?? '')
+                  if (!runText) continue
+                  const runFontFamily = run.code ? 'monospace' : fontFamily
+                  const runFontSize = run.code ? Math.max(12, Math.round(blockFontSize * 0.92)) : blockFontSize
+                  const runWeight = (run.bold || baseIsBold) ? '700' : baseFontWeightForRun
+                  const runItalic = !!run.italic || baseIsItalic
+                  const runFontStyle: 'normal' | 'bold' | 'italic' | 'bold italic' =
+                    (runWeight === '700' && runItalic)
+                      ? 'bold italic'
+                      : (runWeight === '700')
+                        ? 'bold'
+                        : runItalic
+                          ? 'italic'
+                          : 'normal'
+                  segments.push({
+                    text: runText,
+                    fontFamily: runFontFamily,
+                    fontSize: runFontSize,
+                    fontWeight: runWeight,
+                    fontStyle: runFontStyle,
+                    fill: run.code ? '#334155' : blockFill,
+                    code: !!run.code,
+                  })
+                }
+
+                const lineHeightPx = Math.max(blockFontSize * lineHeight, blockFontSize)
+                let lineIndex = 0
+                let lineCursorX = textX
+                let lineCursorY = cursorY
+                let lineAvail = textWidth
+                let lineHasContent = false
+                let runIndex = 0
+
+                const lineStartX = (index: number) => textX + (index > 0 ? continuationIndent : 0)
+                const lineWidth = (index: number) => Math.max(12, textWidth - (index > 0 ? continuationIndent : 0))
+                const startNewLine = () => {
+                  lineIndex += 1
+                  lineCursorY = cursorY + lineIndex * lineHeightPx
+                  lineCursorX = lineStartX(lineIndex)
+                  lineAvail = lineWidth(lineIndex)
+                  lineHasContent = false
+                }
+                const fitPrefixByWidth = (txt: string, seg: MdInlineSeg, availWidth: number) => {
+                  if (!txt) return { chunk: '', width: 0 }
+                  if (availWidth <= 1) return { chunk: txt.slice(0, 1), width: measureTextWidth(txt.slice(0, 1), seg.fontFamily, seg.fontSize, seg.fontWeight) }
+                  let lo = 1
+                  let hi = txt.length
+                  let bestLen = 1
+                  let bestWidth = measureTextWidth(txt.slice(0, 1), seg.fontFamily, seg.fontSize, seg.fontWeight)
+                  while (lo <= hi) {
+                    const mid = Math.floor((lo + hi) / 2)
+                    const chunk = txt.slice(0, mid)
+                    const w = measureTextWidth(chunk, seg.fontFamily, seg.fontSize, seg.fontWeight)
+                    if (w <= availWidth + 1e-3) {
+                      bestLen = mid
+                      bestWidth = w
+                      lo = mid + 1
+                    } else {
+                      hi = mid - 1
+                    }
+                  }
+                  return { chunk: txt.slice(0, bestLen), width: bestWidth }
+                }
+
+                for (const seg of segments) {
+                  let remaining = seg.text
+                  while (remaining) {
+                    if (!lineHasContent && !seg.code) {
+                      const trimmedLeading = remaining.replace(/^\s+/, '')
+                      if (trimmedLeading !== remaining) {
+                        remaining = trimmedLeading
+                        if (!remaining) break
+                      }
+                    }
+                    if (lineAvail <= 1 && lineHasContent) {
+                      startNewLine()
+                      continue
+                    }
+                    let rawW = measureTextWidth(remaining, seg.fontFamily, seg.fontSize, seg.fontWeight)
+                    let chunk = remaining
+                    if (rawW > lineAvail + 1e-3) {
+                      const canSplitThisLine = !seg.code && remaining.length > 1 && lineAvail > 1
+                      if (canSplitThisLine) {
+                        const fit = fitPrefixByWidth(remaining, seg, lineAvail)
+                        if (fit.chunk && fit.chunk.length < remaining.length) {
+                          chunk = fit.chunk
+                          rawW = fit.width
+                        } else if (lineHasContent) {
+                          startNewLine()
+                          continue
+                        } else {
+                          chunk = fit.chunk
+                          rawW = fit.width
+                        }
+                      } else if (lineHasContent) {
+                        startNewLine()
+                        continue
+                      } else {
+                        const fit = fitPrefixByWidth(remaining, seg, lineAvail)
+                        chunk = fit.chunk
+                        rawW = fit.width
+                      }
+                    }
+                    if (!seg.code && chunk.length < remaining.length) {
+                      const trimmedRight = chunk.replace(/\s+$/g, '')
+                      if (trimmedRight && trimmedRight.length < chunk.length) {
+                        chunk = trimmedRight
+                        rawW = measureTextWidth(chunk, seg.fontFamily, seg.fontSize, seg.fontWeight)
+                      }
+                    }
+                    if (!chunk) break
+                    const codePad = seg.code ? 8 : 0
+                    if (seg.code) {
+                      nodes.push(
+                        <KRect
+                          key={`md-code-bg-${d.id}-${i}-${runIndex}`}
+                          x={lineCursorX}
+                          y={lineCursorY + Math.max(seg.fontSize * 0.12, 1)}
+                          width={Math.max(1, Math.min(rawW + 6, lineAvail))}
+                          height={Math.max(4, lineHeightPx - Math.max(seg.fontSize * 0.22, 2))}
+                          cornerRadius={Math.max(3 / view.scale, 1.5)}
+                          fill="rgba(148,163,184,0.18)"
+                          stroke="rgba(148,163,184,0.26)"
+                          strokeWidth={0.6 / view.scale}
+                          listening={false}
+                        />
+                      )
+                    }
+                    nodes.push(
+                      <KText
+                        key={`md-run-${d.id}-${i}-${runIndex}`}
+                        x={lineCursorX + (seg.code ? 3 : 0)}
+                        y={lineCursorY}
+                        width={Math.max(1, Math.min(rawW + 1, lineAvail))}
+                        height={Math.max(1, lineHeightPx)}
+                        text={chunk}
+                        fontFamily={seg.fontFamily}
+                        fontSize={seg.fontSize}
+                        fontStyle={seg.fontStyle}
+                        fill={seg.fill}
+                        opacity={textOpacity}
+                        align="left"
+                        verticalAlign="top"
+                        listening={false}
+                        wrap="none"
+                        lineHeight={lineHeight}
+                      />
+                    )
+                    lineCursorX += rawW + codePad
+                    lineAvail = Math.max(0, lineAvail - rawW - codePad)
+                    lineHasContent = true
+                    remaining = remaining.slice(chunk.length)
+                    runIndex += 1
+                    if (remaining) startNewLine()
+                  }
+                }
+                renderedBlockHeight = Math.max(blockHeight, (lineIndex + 1) * lineHeightPx)
+              } else {
+                nodes.push(
+                  <KText
+                    key={`md-block-${d.id}-${i}`}
+                    x={textX}
+                    y={cursorY}
+                    width={textWidth}
+                    height={Math.max(1, blockHeight)}
+                    text={measured.renderedText || blockText}
+                    fontFamily={fontFamily}
+                    fontSize={blockFontSize}
+                    fontStyle={blockFontStyle}
+                    fill={blockFill}
+                    opacity={textOpacity}
+                    align="left"
+                    verticalAlign="top"
+                    listening={false}
+                    wrap="char"
+                    lineHeight={lineHeight}
+                  />
+                )
+              }
+              if (quoteBar) {
+                quoteBar = React.cloneElement(quoteBar as React.ReactElement, {
+                  height: Math.max(renderedBlockHeight - 2, 4),
+                })
+                nodes.push(quoteBar)
+              }
+              cursorY += renderedBlockHeight + afterGap
+            }
+            markdownStyledContent = (
+              <Group
+                listening={false}
+                clipX={d.x}
+                clipY={d.y}
+                clipWidth={boxW}
+                clipHeight={boxH}
+              >
+                {nodes}
+              </Group>
+            )
+          }
+        }
         return (
           <Group listening={false}>
             <KRect
@@ -1960,23 +2313,25 @@ const openTextEditor = useCallback((params: {
               shadowOpacity={frameShadowBlur > 0 ? 0.18 : 0}
               opacity={0.85}
             />
-            <KText
-              x={d.x}
-              y={d.y}
-              width={boxW}
-              height={boxH}
-              text={(d.meta?.renderedText as string) ?? d.text ?? ''}
-              fontFamily={fontFamily}
-              fontSize={fontSize}
-              fontStyle={fontStyle}
-              fill={fillColor}
-              opacity={preview ? Math.min(0.35, d.style?.opacity ?? 1) : (d.style?.opacity ?? 1)}
-              align="left"
-              verticalAlign="top"
-              listening={false}
-              wrap="char"
-              lineHeight={lineHeight}
-            />
+            {markdownStyledContent ?? (
+              <KText
+                x={d.x}
+                y={d.y}
+                width={boxW}
+                height={boxH}
+                text={displayText}
+                fontFamily={fontFamily}
+                fontSize={fontSize}
+                fontStyle={fontStyle}
+                fill={fillColor}
+                opacity={textOpacity}
+                align={autoCenterText ? 'center' : 'left'}
+                verticalAlign="top"
+                listening={false}
+                wrap="char"
+                lineHeight={lineHeight}
+              />
+            )}
             {completionText && (
               <KText
                 x={d.x}
@@ -2125,8 +2480,9 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       : typeof currentMeta.lineHeight === 'number'
         ? Number(currentMeta.lineHeight)
         : TEXT_LINE_HEIGHT
+    const renderedText = renderMarkdownToCanvasText(content)
     const layout = computeTextBoxLayout({
-      text: content,
+      text: renderedText,
       fontFamily,
       fontSize,
       fontWeight,
@@ -2862,6 +3218,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         autoCountdown={autoCountdown}
         hasActivePreview={hasActivePreview}
         onToggleAutoComplete={handleAutoCompleteToggle}
+        preferExplanatoryDrawing={preferExplanatoryDrawing}
+        onTogglePreferExplanatoryDrawing={setPreferExplanatoryDrawing}
       />
       <SettingsButton
         open={settingsOpen}
@@ -2970,6 +3328,11 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             backdropFilter: 'blur(10px) saturate(115%)',
           }}
         >
+          {(() => {
+            const editorRole = inferTextRole(textEditor.fontSize, textEditor.fontWeight)
+            const editorAutoCenter = editorRole === 'title' || editorRole === 'subtitle'
+            return (
+              <>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <div
@@ -3189,6 +3552,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
                 fontFamily: textEditor.fontFamily,
                 fontSize: textEditor.fontSize,
                 lineHeight: TEXT_LINE_HEIGHT,
+                textAlign: editorAutoCenter ? 'center' as const : 'left' as const,
                 outline: 'none',
               }}
             />
@@ -3236,6 +3600,9 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
               Save
             </button>
           </div>
+              </>
+            )
+          })()}
         </div>
       )}
       {/* Konva stage spans the viewport; side panel floats above */}

@@ -354,6 +354,7 @@ def suggest(req: SuggestRequest):
             plan_bundle = graph_runtime.run_conversation(
                 user_input=effective_hint,
                 mode=req.mode,
+                prefer_explanatory_drawing=getattr(req, "prefer_explanatory_drawing", None),
             )
             obj = plan_bundle.get("payload") or {}
             dbg = {"mode": "context-executor", "plan": plan_bundle.get("plan")}
@@ -398,6 +399,7 @@ def suggest(req: SuggestRequest):
                 top_p=req.top_p,
                 max_tokens=req.max_tokens,
                 gen_scale=req.gen_scale,
+                prefer_explanatory_drawing=req.prefer_explanatory_drawing,
             )
             messages = prompting.build_messages_by_mode(fake, getattr(req, "mode", None))
             if LOG_IO:

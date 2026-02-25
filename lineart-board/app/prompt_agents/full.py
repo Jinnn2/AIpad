@@ -7,47 +7,118 @@ from typing import Any, Dict, List
 from app.schemas import SuggestRequest
 
 
-FULL_SYSTEM = (
-    "Role: On-canvas note assistant. Return JSON ONLY that conforms to AIStrokePayload.\n"
-    "If canvas is empty, return a text stroke: \"Draw or Type to activate AIPad\".\n"
-    "In most cases, you should give further explanation blocks in TEXT, or correct minor mistakes with EDIT, or draw a explanatory figure with several strokes. More output strokes are allowed.\n"
-    "General:\n"
-    " - Coordinates are ABSOLUTE canvas pixels.\n"
-    " - You can DRAW, WRITE text, or EDIT existing text.\n"
-    " - Use concise keypoints. The position of the keypoints is the most important. Texts should not overlap with each other."
-    " - If planner_next_step is present in user content, treat it as prioritized guidance.\n"
-    " - If block_outline is present, keep semantic continuity with its block structure.\n"
-    "DRAW tools:\n"
-    " - line: exactly 2 points [p0, pn].\n"
-    " - poly: >=3 vertices; repeat first point to close.\n"
-    " - ellipse: exactly 2 points as bounding-box diagonal.\n"
-    " - pen: freeform keypoints (concise, not dense).\n"
-    "WRITE (tool='text'):\n"
-    " - points = [[x,y],[x+w,y+h]] (top-left to bottom-right).\n"
-    " - style.color must be from palette.\n"
-    " - meta MUST include: text, summary(<=30), fontFamily, fontWeight, fontSize, growDir.\n"
-    " - meta.role is recommended: one of {'body','subtitle','title'} for text hierarchy.\n"
-    " - growDir must be one of {'right-down','down','right','up','left'}; default is 'right-down'.\n"
-    " - For growDir='right-down': wrap text inside current box first, then auto-fit proportionally toward lower-right (shrink/expand as needed while keeping base width/height ratio).\n"
-    "EDIT (tool='edit'):\n"
-    " - meta MUST include: targetId(MOST IMPORTANT), operation(<=60 chars), text (updated content).\n"
-    " - points optional; if provided, use target bbox [[x,y],[x+w,y+h]].\n"
-)
+def _join_prompt_lines(lines: List[str]) -> str:
+    return "\n".join(lines).rstrip() + "\n"
+
+
+FULL_SYSTEM_COMMON_PREFIX = [
+    "Role: On-canvas note assistant. Return JSON ONLY that conforms to AIStrokePayload.",
+    "If canvas is empty, return a text stroke: \"Draw or Type to activate AIPad\".",
+    "In most cases, explain with TEXT, fix with EDIT, or add explanatory figures with several strokes.",
+    "General:",
+    " - Coordinates are ABSOLUTE canvas pixels.",
+    " - You can DRAW, WRITE text, or EDIT existing text.",
+    " - Use concise keypoints. Positioning matters most. Avoid text overlap.",
+    " - If planner_next_step is present, treat it as prioritized guidance.",
+    " - If block_outline is present, keep semantic continuity with its structure.",
+    " - If prefer_explanatory_drawing=true, prefer concise explanatory diagrams/sketches (short labels allowed) instead of long prose-only additions.",
+]
+
+FULL_SYSTEM_MAINTAIN_LINES = [
+    " - Auto Maintain is ON: you may manage semantic block placement when confident.",
+    " - If a distinct new topic/subtopic starts, you may start a new semantic block.",
+    " - If a current block is crowded/heavily overlapping, consider starting a new block for better organization.",
+    " - Start a NEW semantic block by emitting a title/subtitle TEXT stroke with meta.graph.blockIntent='create' (optional meta.graph.blockLabel). Use sparingly (at most one per response).",
+    " - If a stroke clearly belongs to an EXISTING block, you may set meta.graph.targetBlockId to an exact blockId from block_outline/context.",
+    " - To create a new block and attach later strokes in the SAME response, share meta.graph.proposalKey across the anchor title/subtitle and later related strokes. Put the anchor first.",
+]
+
+FULL_SYSTEM_NO_MAINTAIN_LINES = [
+    " - Auto Maintain is OFF: do not emit semantic graph control fields (meta.graph.blockIntent / targetBlockId / proposalKey).",
+]
+
+FULL_SYSTEM_DRAW_LINES = [
+    "DRAW tools:",
+    " - Prefer multiple clean strokes for meaningful diagrams rather than one dense stroke.",
+    " - line: exactly 2 points [p0, pn].",
+    " - poly: >=3 vertices; repeat first point to close.",
+    " - ellipse: exactly 2 points as bounding-box diagonal.",
+    " - pen: freeform keypoints (concise, not dense).",
+]
+
+FULL_SYSTEM_WRITE_COMMON_LINES = [
+    "WRITE (tool='text'):",
+    " - points = [[x,y],[x+w,y+h]] (top-left to bottom-right).",
+    " - style.color must be from palette.",
+    " - meta MUST include: text, summary(<=30), fontFamily, fontWeight, fontSize, growDir.",
+    " - meta.role is recommended: one of {'body','subtitle','title'} for text hierarchy.",
+    " - meta.text may use a markdown subset (headings/lists/bold/inline-code only); avoid tables, HTML, and fenced code blocks.",
+    " - growDir must be one of {'right-down','down','right','up','left'}; default is 'right-down'.",
+    " - For growDir='right-down': wrap text inside current box first, then auto-fit proportionally toward lower-right (shrink/expand as needed while keeping base width/height ratio).",
+]
+
+FULL_SYSTEM_WRITE_MAINTAIN_LINES = [
+    " - Optional : meta.graph = {blockIntent:'create', blockLabel?:string} on a heading-like text to request new block creation.",
+    " - Optional : any stroke may include meta.graph.targetBlockId (exact existing blockId) to attach to a known block when certain.",
+    " - Optional : related strokes in the same response may share meta.graph.proposalKey with the anchor create-text.",
+]
+
+FULL_SYSTEM_EDIT_LINES = [
+    "EDIT (tool='edit'):",
+    " - Prefer concise targeted edits to existing strokes over broad replacements.",
+    " - meta MUST include: targetId (MOST IMPORTANT), operation, text (updated content).",
+    " - points optional; if provided, use target bbox [[x,y],[x+w,y+h]].",
+]
+
+
+def _build_full_system_prompt(*, auto_maintain_enabled: bool) -> str:
+    lines: List[str] = []
+    lines.extend(FULL_SYSTEM_COMMON_PREFIX)
+    lines.extend(FULL_SYSTEM_MAINTAIN_LINES if auto_maintain_enabled else FULL_SYSTEM_NO_MAINTAIN_LINES)
+    lines.extend(FULL_SYSTEM_DRAW_LINES)
+    lines.extend(FULL_SYSTEM_WRITE_COMMON_LINES)
+    if auto_maintain_enabled:
+        lines.extend(FULL_SYSTEM_WRITE_MAINTAIN_LINES)
+    lines.extend(FULL_SYSTEM_EDIT_LINES)
+    return _join_prompt_lines(lines)
+
 
 # NOTE: Keep {max_pts} placeholders literal for backward compatibility.
-FULL_CONTRACT = (
-    "Return JSON with fields: version, intent, canvas(optional), replace(optional), strokes[].\n"
-    "Rules:\n"
-    " - version = 1 (integer)\n"
-    " - intent in {'complete','hint','alt','write'}\n"
-    " - Each stroke: {id, tool in {'pen','line','poly','ellipse','text','edit'}, points, style{size,color,opacity}, meta}\n"
-    " - line: 2 points; poly: >=3 vertices (closed); ellipse: 2 bbox points; pen: keypoints <= {max_pts}\n"
-" - text: meta includes text/summary/fontFamily/fontWeight/fontSize/growDir and recommended role in {'body','subtitle','title'} (growDir one of {'right-down','down','right','up','left'}, default 'right-down'; for right-down, wrap in-box first then proportionally auto-fit to lower-right, including shrink/expand as needed). Text should be long enough to be useful. (10*{max_pts} is the best)\n"
-    " - edit: meta includes targetId/operation/text\n"
-    " - Try to match scale target {max_pts} using stroke length/count.\n"
-    " - style.size in {'s','m','l','xl'}; opacity in [0,1]\n"
-    " - Colors ONLY: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow\n"
-)
+FULL_CONTRACT_COMMON_LINES = [
+    "Return JSON with fields: version, intent, canvas(optional), replace(optional), strokes[].",
+    "Rules:",
+    " - version = 1 (integer)",
+    " - intent in {'complete','hint','alt','write'}",
+    " - Each stroke: {id, tool in {'pen','line','poly','ellipse','text','edit'}, points, style{size,color,opacity}, meta}",
+    " - line: 2 points; poly: >=3 vertices (closed); ellipse: 2 bbox points; pen: keypoints <= {max_pts}",
+    " - text: meta includes text/summary/fontFamily/fontWeight/fontSize/growDir and recommended role in {'body','subtitle','title'} (growDir one of {'right-down','down','right','up','left'}, default 'right-down'; for right-down, wrap in-box first then proportionally auto-fit to lower-right, including shrink/expand as needed). Text should be long enough to be useful. (~10*{max_pts} chars is a good target)",
+    " - markdown in meta.text is allowed only for headings/lists/bold/inline-code; avoid tables/HTML/fenced code blocks",
+    " - edit: meta includes targetId/operation/text",
+    " - Try to match scale target {max_pts} using stroke length/count.",
+    " - style.size in {'s','m','l','xl'}; opacity in [0,1]",
+    " - Colors ONLY: black, blue, green, grey, light-blue, light-green, light-red, light-violet, orange, red, violet, white, yellow",
+]
+
+FULL_CONTRACT_MAINTAIN_LINES = [
+    " - text.meta.graph may optionally include {blockIntent:'create', blockLabel?:string} on ONE heading-like anchor text to start a new semantic block",
+    " - Any stroke.meta.graph may optionally include {targetBlockId:string} to attach it to an existing block (must match an exact blockId from context)",
+    " - Related strokes in the same response may share meta.graph.proposalKey:string with the anchor create-text (anchor should appear first)",
+]
+
+FULL_CONTRACT_NO_MAINTAIN_LINES = [
+    " - Do not emit meta.graph block control fields (blockIntent/targetBlockId/proposalKey)",
+]
+
+
+def _build_full_contract(*, auto_maintain_enabled: bool) -> str:
+    lines = list(FULL_CONTRACT_COMMON_LINES)
+    lines.extend(FULL_CONTRACT_MAINTAIN_LINES if auto_maintain_enabled else FULL_CONTRACT_NO_MAINTAIN_LINES)
+    return _join_prompt_lines(lines)
+
+
+# Backward-compatible exports (default = non-maintain version).
+FULL_SYSTEM = _build_full_system_prompt(auto_maintain_enabled=False)
+FULL_CONTRACT = _build_full_contract(auto_maintain_enabled=False)
 
 SAMPLE_STROKES = {
     "version": 1,
@@ -94,8 +165,8 @@ SAMPLE_TEXTBOX = {
             "points": [[100, 120], [260, 200]],
             "style": {"size": "m", "color": "black", "opacity": 1.0},
             "meta": {
-                "text": "鐢佃矾鍒嗘瀽娉ㄦ剰锛歕n1. 鑺傜偣鐢典綅娉昞n2. 鍙犲姞鍘熺悊",
-                "summary": "鐢佃矾鍒嗘瀽瑕佺偣",
+                "text": "Key points of circuit analysis:\n1. Node-voltage method\n2. Superposition principle",
+                "summary": "Key points of circuit analysis",
                 "fontFamily": "sans-serif",
                 "fontWeight": "bold",
                 "fontSize": 16,
@@ -297,12 +368,13 @@ def _build_full_user_content(req: SuggestRequest, include_sample: bool = True) -
     max_pts = max(4, min(64, max_pts))
     pen_context_cap = max(8, min(10, max_pts))
     ctx = _compress_full_context_for_prompt(ctx, pen_cap=pen_context_cap)
+    auto_maintain_enabled = bool(getattr(req, "auto_maintain_enabled", False))
 
     user_content: Dict[str, Any] = {
         "mode": "work assistant",
         "goal": req.hint or "Complete the user's intent with appropriate strokes or text.",
         "context": ctx,
-        "output_contract": FULL_CONTRACT,
+        "output_contract": _build_full_contract(auto_maintain_enabled=auto_maintain_enabled),
         "notes": FULL_NOTES,
         "Setting": {"Scale": max_pts},
     }
@@ -312,15 +384,20 @@ def _build_full_user_content(req: SuggestRequest, include_sample: bool = True) -
     block_outline = getattr(req, "block_outline", None)
     if isinstance(block_outline, list) and block_outline:
         user_content["block_outline"] = block_outline[:8]
+    prefer_explanatory_drawing = getattr(req, "prefer_explanatory_drawing", None)
+    if isinstance(prefer_explanatory_drawing, bool):
+        user_content["prefer_explanatory_drawing"] = prefer_explanatory_drawing
+    user_content["auto_maintain_enabled"] = auto_maintain_enabled
     if include_sample:
         user_content["samples"] = FULL_SAMPLES
     return user_content
 
 
 def build_messages_full(req: SuggestRequest, include_sample: bool = True) -> List[Dict[str, Any]]:
+    auto_maintain_enabled = bool(getattr(req, "auto_maintain_enabled", False))
     user_content = _build_full_user_content(req, include_sample=include_sample)
     return [
-        {"role": "system", "content": FULL_SYSTEM},
+        {"role": "system", "content": _build_full_system_prompt(auto_maintain_enabled=auto_maintain_enabled)},
         {"role": "user", "content": json.dumps(user_content, ensure_ascii=False, separators=(",", ":"), default=str)},
     ]
 

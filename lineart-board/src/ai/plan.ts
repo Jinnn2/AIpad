@@ -1,6 +1,7 @@
 import type { ColorName } from './types'
 import { computeBounds, normalizeAIStrokePayload } from './normalize'
 import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from '../textbox/layout'
+import { renderMarkdownToCanvasText } from '../textbox/markdown'
 
 export type ShapeDraft = {
   id: string
@@ -81,8 +82,9 @@ export function planDrafts(norm: ReturnType<typeof normalizeAIStrokePayload>): S
         const rawLineHeight = Number(rawMeta.lineHeight)
         const lineHeight = Number.isFinite(rawLineHeight) && rawLineHeight > 0 ? rawLineHeight : DEFAULT_TEXTBOX_LINE_HEIGHT
 
+        const renderedText = renderMarkdownToCanvasText(textContent)
         const layout = computeTextBoxLayout({
-          text: textContent,
+          text: renderedText,
           fontFamily,
           fontSize,
           fontWeight,

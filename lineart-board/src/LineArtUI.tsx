@@ -227,6 +227,8 @@ export type TopToolbarProps = {
   autoCountdown: number | null
   hasActivePreview: boolean
   onToggleAutoComplete: (enabled: boolean) => void
+  preferExplanatoryDrawing: boolean
+  onTogglePreferExplanatoryDrawing: (enabled: boolean) => void
 }
 
 export function TopToolbar(props: TopToolbarProps) {
@@ -244,6 +246,8 @@ export function TopToolbar(props: TopToolbarProps) {
     autoCountdown,
     hasActivePreview,
     onToggleAutoComplete,
+    preferExplanatoryDrawing,
+    onTogglePreferExplanatoryDrawing,
   } = props
   const autoCompleteState = hasActivePreview
     ? 'Paused'
@@ -360,6 +364,32 @@ export function TopToolbar(props: TopToolbarProps) {
           />
         </span>
         <span style={{ fontSize: 11, color: UI_THEME.inkMuted, minWidth: 56 }}>{autoCompleteState}</span>
+      </button>
+      <button
+        onClick={() => onTogglePreferExplanatoryDrawing(!preferExplanatoryDrawing)}
+        title={preferExplanatoryDrawing ? 'Prefer explanatory sketches (ON)' : 'Prefer explanatory sketches (OFF)'}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '7px 10px',
+          borderRadius: 999,
+          border: `1px solid ${preferExplanatoryDrawing ? 'rgba(59,130,246,0.4)' : UI_THEME.lineStrong}`,
+          background: preferExplanatoryDrawing
+            ? 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(219,234,254,0.92))'
+            : 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.9))',
+          cursor: 'pointer',
+          color: preferExplanatoryDrawing ? '#1d4ed8' : UI_THEME.ink,
+          fontSize: 12,
+          fontWeight: 600,
+          boxShadow: preferExplanatoryDrawing
+            ? '0 8px 18px rgba(37,99,235,0.12)'
+            : '0 6px 14px rgba(15,23,42,0.05)',
+        }}
+      >
+        <IconLabel icon="pen" tone={preferExplanatoryDrawing ? '#1d4ed8' : undefined}>
+          Explain Draw
+        </IconLabel>
       </button>
 
       <div style={{ width: 10, height: 24, borderLeft: `1px solid ${UI_THEME.line}`, margin: '0 2px' }} />

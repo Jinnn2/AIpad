@@ -84,6 +84,8 @@ class SuggestRequest(BaseModel):
     # 人类指令/偏好，可选
     hint: Optional[str] = None
     auto_complete_enabled: Optional[bool] = None
+    # Prefer explanatory diagrams/sketches over long prose when feasible.
+    prefer_explanatory_drawing: Optional[bool] = None
     # 临时覆盖模型与采样参数，可选
     model: Optional[str] = None
     temperature: Optional[float] = 0.4
@@ -108,6 +110,8 @@ class SuggestRequest(BaseModel):
     group_promote_mode: Optional[Literal["heuristic", "hybrid", "llm"]] = None
     # Optional runtime override for Auto Maintain vision image usage policy.
     vision_image_mode: Optional[Literal["off", "auto", "always"]] = None
+    # Internal hint for prompt builders: whether Auto Maintain / graph runtime is active.
+    auto_maintain_enabled: Optional[bool] = None
 
 class SuggestResponse(BaseModel):
     ok: bool = True

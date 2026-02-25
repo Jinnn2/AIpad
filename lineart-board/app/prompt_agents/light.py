@@ -14,6 +14,7 @@ LIGHT_SYSTEM = (
     " - STRICTLY ONE stroke in 'strokes' (exactly one item).\n"
     " - Tool selection: 'line' (2 pts), 'poly' (>=3 vertices), 'ellipse' (2 opposite corners), 'pen' (freeform keypoints).\n"
     " - Prefer concise keypoints; do not densify samples.\n"
+    " - If prefer_explanatory_drawing=true in user content, favor a clarifying diagrammatic stroke that explains existing content (not decorative marks).\n"
     " - No markdown / no prose / no comments.\n"
 )
 
@@ -130,6 +131,9 @@ def build_messages_light(req: SuggestRequest, include_sample: bool = False) -> L
         "contract": LIGHT_CONTRACT.format(max_pts=max_pts),
         "notes": LIGHT_NOTES.format(max_pts=max_pts),
     }
+    prefer_explanatory_drawing = getattr(req, "prefer_explanatory_drawing", None)
+    if isinstance(prefer_explanatory_drawing, bool):
+        user_content["prefer_explanatory_drawing"] = prefer_explanatory_drawing
 
     if include_sample:
         user_content["sample"] = {

@@ -81,6 +81,8 @@ class BlockManager:
         auto_promote_group_size: int = 5,
         spatial_target_ratio: float = 0.40,
         time_target_ratio: float = 0.08,
+        allow_ai_block_intent_create: bool = False,
+        allow_ai_block_target_assign: bool = False,
         cluster_logger: Optional[Any] = None,
     ) -> None:
         self.state = state or GraphState()
@@ -94,6 +96,8 @@ class BlockManager:
         self.auto_promote_group_size = max(1, auto_promote_group_size)
         self.spatial_target_ratio = max(0.0, float(spatial_target_ratio))
         self.time_target_ratio = max(0.0, float(time_target_ratio))
+        self.allow_ai_block_intent_create = bool(allow_ai_block_intent_create)
+        self.allow_ai_block_target_assign = bool(allow_ai_block_target_assign)
 
         self._time_anchor: Optional[datetime] = None
         self._fragment_to_group: Dict[str, str] = {}
@@ -114,6 +118,18 @@ class BlockManager:
         assignment = FragmentAssignment(fragment_id=fragment.fragment_id, status="stroke")
 
         if fragment.fragment_type != FragmentType.TEXT:
+            explicit_block_id = self._graph_target_block_id_hint(fragment)
+            if explicit_block_id:
+                self._log_cluster(
+                    "graph_hint_attached_block",
+                    fragment_id=fragment.fragment_id,
+                    block_id=explicit_block_id,
+                    fragment_type=fragment.fragment_type.value,
+                )
+                self.attach_fragment_to_block(explicit_block_id, fragment.fragment_id)
+                assignment.status = "block"
+                assignment.block_id = explicit_block_id
+                return assignment
             self._unlabeled_strokes.append(fragment.fragment_id)
             return assignment
 
@@ -140,6 +156,34 @@ class BlockManager:
             assignment.status = "block"
             assignment.block_id = new_block.block_id
             assignment.promoted_block_id = new_block.block_id
+            return assignment
+
+        graph_hint_label = self._graph_block_create_label_hint(fragment)
+        if graph_hint_label is not None:
+            self._log_cluster(
+                "graph_hint_promoted",
+                fragment_id=fragment.fragment_id,
+                text=self._shorten_text(fragment.text),
+                label_hint=graph_hint_label or None,
+            )
+            new_block = self._create_block_from_fragment(fragment)
+            assignment.status = "block"
+            assignment.block_id = new_block.block_id
+            assignment.promoted_block_id = new_block.block_id
+            return assignment
+
+        explicit_block_id = self._graph_target_block_id_hint(fragment)
+        if explicit_block_id:
+            self._log_cluster(
+                "graph_hint_attached_block",
+                fragment_id=fragment.fragment_id,
+                block_id=explicit_block_id,
+                fragment_type=fragment.fragment_type.value,
+                text=self._shorten_text(fragment.text),
+            )
+            self.attach_fragment_to_block(explicit_block_id, fragment.fragment_id)
+            assignment.status = "block"
+            assignment.block_id = explicit_block_id
             return assignment
 
         if self._is_heading_fragment(fragment):
@@ -748,6 +792,7 @@ class BlockManager:
         fragment.payload = payload
 
     def _create_block_from_fragment(self, fragment: Fragment) -> Block:
+        graph_label_hint = self._graph_block_label_hint(fragment)
         if not self.summarizer:
             raw_label = (fragment.text or '').strip() or f'Block {fragment.fragment_id[:6]}'
             label = raw_label[:36]
@@ -756,6 +801,10 @@ class BlockManager:
         else:
             proposal = self.summarizer.propose_block([fragment])
             label, summary, relationships = self._coerce_block_proposal(proposal)
+        if graph_label_hint:
+            label = graph_label_hint[:48]
+            if not (summary or "").strip():
+                summary = graph_label_hint[:220]
         bbox = fragment.bbox
         block_id = self._generate_block_id()
         block = Block(
@@ -784,6 +833,66 @@ class BlockManager:
         else:
             self._bootstrap_block_relationships(block.block_id)
         return block
+
+    def _graph_block_label_hint(self, fragment: Fragment) -> str:
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        if not isinstance(meta, dict):
+            return ""
+        graph_meta = meta.get("graph")
+        if not isinstance(graph_meta, dict):
+            return ""
+        label_hint = str(graph_meta.get("blockLabel") or "").strip()
+        if not label_hint:
+            return ""
+        compact = " ".join(label_hint.split()).strip()
+        if not compact:
+            return ""
+        return compact[:48]
+
+    def _graph_block_create_label_hint(self, fragment: Fragment) -> Optional[str]:
+        if not self.allow_ai_block_intent_create:
+            return None
+        if fragment.fragment_type != FragmentType.TEXT:
+            return None
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        if not isinstance(meta, dict):
+            return None
+        graph_meta = meta.get("graph")
+        if not isinstance(graph_meta, dict):
+            return None
+        intent = str(graph_meta.get("blockIntent") or graph_meta.get("intent") or "").strip().lower()
+        if intent not in {"create", "create_block", "new", "new_block"}:
+            return None
+        text_val = (fragment.text or "").strip()
+        if not text_val:
+            return None
+        line_count = text_val.count("\n") + 1
+        if line_count > 3 or len(text_val) > 180:
+            return None
+        # Require heading-like styling to reduce accidental block creation.
+        if not self._is_heading_fragment(fragment):
+            return None
+        return self._graph_block_label_hint(fragment)
+
+    def _graph_target_block_id_hint(self, fragment: Fragment) -> Optional[str]:
+        if not self.allow_ai_block_target_assign:
+            return None
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        meta = payload.get("meta") if isinstance(payload, dict) else None
+        if not isinstance(meta, dict):
+            return None
+        graph_meta = meta.get("graph")
+        if not isinstance(graph_meta, dict):
+            return None
+        raw_target = graph_meta.get("targetBlockId") or graph_meta.get("assignToBlockId")
+        target_id = str(raw_target or "").strip()
+        if not target_id:
+            return None
+        if target_id not in self.state.blocks:
+            return None
+        return target_id
 
     @staticmethod
     def _coerce_block_proposal(proposal: object) -> Tuple[str, str, Optional[List[Dict[str, object]]]]:

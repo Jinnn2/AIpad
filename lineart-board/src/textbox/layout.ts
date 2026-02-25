@@ -66,6 +66,16 @@ const createMeasure = (fontFamily: string, fontSize: number, fontWeight: string)
   return (txt: string) => ctx.measureText(txt).width
 }
 
+export const measureTextWidth = (
+  text: string,
+  fontFamily: string,
+  fontSize: number,
+  fontWeight: string,
+) => {
+  const measure = createMeasure(fontFamily, fontSize, fontWeight)
+  return measure(String(text ?? ''))
+}
+
 const normalizeParagraph = (paragraph: string) => paragraph.replace(/\s+/g, ' ').trim()
 
 type WrappedResult = {
