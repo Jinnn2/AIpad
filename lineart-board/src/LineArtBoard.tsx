@@ -16,7 +16,7 @@ import { normalizeAIStrokePayload, validateAIStrokePayload, COLORS } from './ai/
 import type { ShapeDraft } from './ai/plan'
 import { planDrafts } from './ai/plan'
 import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, draftToAIStroke } from './ai/draw'
-import { TopToolbar, SidePanel, BottomPanel, SettingsButton, type AIFeedEntry } from './LineArtUI'
+import { TopToolbar, SidePanel, BottomPanel, SettingsButton, AIFeedSidebar, type AIFeedEntry } from './LineArtUI'
 import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT } from './textbox/layout'
 /**
  * LineArtBoard renders a Konva-based workspace with:
@@ -534,6 +534,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [currentPayloadId, setCurrentPayloadId] = useState<string | null>(null)
   // AI feed keeps the latest 50 suggestion entries
   const [aiFeed, setAiFeed] = useState<AIFeedEntry[]>([])
+  const [aiFeedSidebarOpen, setAiFeedSidebarOpen] = useState<boolean>(false)
   const [plannerNextStepHint, setPlannerNextStepHint] = useState<string>('')
   // Session identifiers from backend; lastSentIndex tracks delta uploads
   const [sid, setSid] = useState<string | null>(null)
@@ -1306,6 +1307,16 @@ const stageCursor = toolMode === 'hand'
       clearAutoTimer()
     }
   }, [autoComplete, hasActivePreview, clearAutoTimer, autoMaintainPending])
+
+  const deleteSelectedShape = useCallback(() => {
+    if (!selectedShapeId) return
+    const targetId = selectedShapeId
+    pushHistory()
+    setShapes(prev => prev.filter(s => s.id !== targetId))
+    setDrawStack(prev => prev.filter(entry => entry.draft.id !== targetId))
+    setSelectedShapeId(null)
+    noteUserAction({ forceStart: true })
+  }, [selectedShapeId, pushHistory, setShapes, setDrawStack, noteUserAction])
 
   const clearImportQueue = useCallback(() => {
     if (importTimerRef.current) {
@@ -2649,6 +2660,105 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [currentPayloadId, acceptAI])
+  React.useEffect(() => {
+    const onKey = (ev: KeyboardEvent) => {
+      const tgt = ev.target as HTMLElement | null
+      const isTyping = !!(tgt && (
+        tgt.tagName === 'INPUT' ||
+        tgt.tagName === 'TEXTAREA' ||
+        (tgt as any).isContentEditable
+      ))
+      if (isTyping) return
+
+      const key = (ev.key || '').toLowerCase()
+      const hasPrimaryMod = ev.ctrlKey || ev.metaKey
+
+      if (hasPrimaryMod && !ev.altKey) {
+        if (key === 'z') {
+          ev.preventDefault()
+          if (ev.shiftKey) redo()
+          else undo()
+          return
+        }
+        if (key === 'y' && !ev.shiftKey) {
+          ev.preventDefault()
+          redo()
+          return
+        }
+      }
+
+      if (hasPrimaryMod || ev.altKey) return
+
+      if (key === 'escape') {
+        if (currentPayloadId) {
+          ev.preventDefault()
+          dismissAI()
+        }
+        return
+      }
+      if (key === 'delete' || key === 'backspace') {
+        if (selectedShapeId) {
+          ev.preventDefault()
+          deleteSelectedShape()
+        }
+        return
+      }
+
+      switch (key) {
+        case 'h':
+          ev.preventDefault()
+          setToolMode('hand')
+          return
+        case 'v':
+          ev.preventDefault()
+          setToolMode('select')
+          return
+        case 'p':
+          ev.preventDefault()
+          setToolMode('pen')
+          return
+        case 'e':
+          ev.preventDefault()
+          setToolMode('eraser')
+          return
+        case 'o':
+          ev.preventDefault()
+          setToolMode('ellipse')
+          return
+        case 't':
+          ev.preventDefault()
+          setToolMode('text')
+          return
+        case 'g':
+          ev.preventDefault()
+          toggleGrid()
+          return
+        case 's':
+          ev.preventDefault()
+          toggleSnap()
+          return
+        case 'c':
+          ev.preventDefault()
+          toggleCurveTurns()
+          return
+        default:
+          return
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [
+    undo,
+    redo,
+    currentPayloadId,
+    dismissAI,
+    selectedShapeId,
+    deleteSelectedShape,
+    setToolMode,
+    toggleGrid,
+    toggleSnap,
+    toggleCurveTurns,
+  ])
   React.useEffect(()=>{
     if (toolMode === 'hand') {
       // Cancel any in-progress drawing preview
@@ -2756,6 +2866,44 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       <SettingsButton
         open={settingsOpen}
         onToggle={() => setSettingsOpen((value) => !value)}
+      />
+      {!aiFeedSidebarOpen && (
+        <button
+          type="button"
+          title="Open AI feed"
+          onClick={() => setAiFeedSidebarOpen(true)}
+          style={{
+            position: 'absolute',
+            top: 76,
+            left: 14,
+            zIndex: 1100,
+            height: 42,
+            minWidth: 104,
+            padding: '0 14px',
+            borderRadius: 999,
+            border: '1px solid rgba(148,163,184,0.34)',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94))',
+            color: '#0f172a',
+            fontSize: 12,
+            fontWeight: 700,
+            letterSpacing: '.04em',
+            cursor: 'pointer',
+            boxShadow: '0 8px 16px rgba(15,23,42,0.12)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+          }}
+        >
+          <span aria-hidden style={{ fontSize: 14, lineHeight: 1 }}>≡</span>
+          AI Feed
+        </button>
+      )}
+      <AIFeedSidebar
+        open={aiFeedSidebarOpen}
+        onClose={() => setAiFeedSidebarOpen(false)}
+        entries={aiFeed}
+        viewportHeight={size.height}
       />
       <SidePanel
         toolMode={toolMode}
@@ -3395,7 +3543,6 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onSubmit={askAI}
         mode={mode}
         onModeCycle={cycleMode}
-        aiFeed={aiFeed}
         showAutoMaintain={mode === 'full'}
         autoMaintainEnabled={autoMaintain}
         autoMaintainPending={autoMaintainPending}

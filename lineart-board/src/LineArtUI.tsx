@@ -21,6 +21,7 @@ type UiIconName =
   | 'grid'
   | 'snap'
   | 'curve'
+  | 'feed'
   | 'spark'
   | 'ask'
   | 'check'
@@ -74,6 +75,13 @@ function UiIcon({
           <circle cx="2.3" cy="11.8" r="1.1" />
           <circle cx="9.8" cy="8.2" r="1.1" />
           <circle cx="13.7" cy="8" r="1.1" />
+        </g>
+      )}
+      {name === 'feed' && (
+        <g {...common}>
+          <rect x="2.2" y="2.4" width="11.6" height="10.9" rx="1.8" />
+          <path d="M4.6 5.8h6.8M4.6 8.1h5.2M4.6 10.4h7.1" />
+          <circle cx="12.2" cy="5.8" r=".7" fill={stroke} stroke="none" />
         </g>
       )}
       {name === 'spark' && (
@@ -991,7 +999,6 @@ export type BottomPanelProps = {
   onSubmit: () => void
   mode: PromptMode
   onModeCycle: () => void
-  aiFeed: AIFeedEntry[]
   showAutoMaintain: boolean
   autoMaintainEnabled: boolean
   autoMaintainPending: boolean
@@ -1014,7 +1021,6 @@ export function BottomPanel(props: BottomPanelProps) {
     onSubmit,
     mode,
     onModeCycle,
-    aiFeed,
     showAutoMaintain,
     autoMaintainEnabled,
     autoMaintainPending,
@@ -1240,29 +1246,6 @@ export function BottomPanel(props: BottomPanelProps) {
           paddingRight: showDetailedBlocks ? 8 : 0,
         }}
       >
-        <div style={{ fontSize: 12, color: UI_THEME.inkMuted, marginBottom: 8, fontWeight: 700, letterSpacing: '.06em' }}>AI Feed (latest)</div>
-        {aiFeed.length === 0 ? (
-          <div style={{ fontSize: 12, color: '#94a3b8', border: `1px dashed ${UI_THEME.line}`, borderRadius: 12, padding: '10px 12px', background: 'rgba(255,255,255,0.55)' }}>No AI packages yet.</div>
-        ) : (
-          aiFeed.map((entry) => (
-            <div key={entry.payloadId} style={{ marginBottom: 8, border: `1px solid ${UI_THEME.line}`, borderRadius: 12, padding: '8px 10px', background: 'rgba(255,255,255,0.6)' }}>
-              <div style={{ fontSize: 12, color: UI_THEME.inkSoft }}>
-                <b>{new Date(entry.time).toLocaleTimeString()}</b> AIpayload <code>{entry.payloadId}</code>
-              </div>
-              <ul style={{ margin: '4px 0 0 16px', padding: 0 }}>
-                {entry.items.map((item, idx) => (
-                  <li
-                    key={`${item.id}_${idx}`}
-                    style={{ fontSize: 12, color: UI_THEME.ink, listStyle: 'disc' }}
-                  >
-                    <code>{item.id}</code>
-                    {item.desc ? ` · ${item.desc}` : ''}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        )}
         {showDetailedBlocks ? (
           <div style={{ marginTop: 16 }}>
             <div style={{ fontSize: 13, color: '#1f2937', marginBottom: 12, fontWeight: 600 }}>
@@ -1423,6 +1406,111 @@ export function BottomPanel(props: BottomPanelProps) {
               </div>
             </div>
           )
+        )}
+      </div>
+    </div>
+  )
+}
+
+export type AIFeedSidebarProps = {
+  open: boolean
+  onClose: () => void
+  entries: AIFeedEntry[]
+  viewportHeight?: number
+}
+
+export function AIFeedSidebar(props: AIFeedSidebarProps) {
+  const { open, onClose, entries, viewportHeight } = props
+  if (!open) return null
+  const maxHeight = typeof viewportHeight === 'number' && Number.isFinite(viewportHeight)
+    ? Math.max(260, viewportHeight - 250)
+    : undefined
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 74,
+        left: 14,
+        bottom: 176,
+        width: 'min(360px, calc(100vw - 28px))',
+        minWidth: 300,
+        zIndex: 1040,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+        padding: 14,
+        borderRadius: 20,
+        border: `1px solid ${UI_THEME.line}`,
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.86), rgba(248,250,252,0.8))',
+        backdropFilter: 'blur(16px) saturate(125%)',
+        boxShadow: UI_THEME.glowStrong,
+        overflow: 'hidden',
+      }}
+    >
+      <div style={{ ...CARD, padding: 12, borderRadius: 14 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+          <div>
+            <div style={{ ...CARD_TITLE, marginBottom: 4 }}>
+              <IconLabel icon="feed">AI Feed</IconLabel>
+            </div>
+            <div style={{ fontSize: 12, color: UI_THEME.inkSoft }}>
+              Latest AI packages and applied draft descriptions
+            </div>
+          </div>
+          <Btn onClick={onClose} style={{ padding: '5px 10px', fontSize: 12 }}>
+            Close
+          </Btn>
+        </div>
+      </div>
+
+      <div
+        style={{
+          flex: '1 1 auto',
+          overflowY: 'auto',
+          paddingRight: 4,
+          maxHeight,
+        }}
+      >
+        {entries.length === 0 ? (
+          <div
+            style={{
+              ...CARD,
+              borderStyle: 'dashed',
+              borderColor: UI_THEME.lineStrong,
+              padding: '12px 14px',
+              color: UI_THEME.inkMuted,
+              fontSize: 12,
+            }}
+          >
+            No AI packages yet.
+          </div>
+        ) : (
+          entries.map((entry) => (
+            <div
+              key={entry.payloadId}
+              style={{
+                ...CARD,
+                marginBottom: 10,
+                padding: '10px 12px',
+                borderRadius: 14,
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.82))',
+              }}
+            >
+              <div style={{ fontSize: 12, color: UI_THEME.inkSoft, lineHeight: 1.4 }}>
+                <b>{new Date(entry.time).toLocaleTimeString()}</b>{' '}
+                <span style={{ color: UI_THEME.inkMuted }}>AIPayload</span>{' '}
+                <code>{entry.payloadId}</code>
+              </div>
+              <ul style={{ margin: '6px 0 0 16px', padding: 0, display: 'grid', gap: 4 }}>
+                {entry.items.map((item, idx) => (
+                  <li key={`${item.id}_${idx}`} style={{ fontSize: 12, color: UI_THEME.ink, listStyle: 'disc' }}>
+                    <code>{item.id}</code>
+                    {item.desc ? ` · ${item.desc}` : ''}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
         )}
       </div>
     </div>

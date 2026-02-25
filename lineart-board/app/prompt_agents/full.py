@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
+import json
 from typing import Any, Dict, List
 
 from app.schemas import SuggestRequest
@@ -130,6 +131,162 @@ FULL_NOTES = (
 )
 
 
+def _as_xy_points(points: object) -> List[tuple[float, float]]:
+    if not isinstance(points, list):
+        return []
+    out: List[tuple[float, float]] = []
+    for item in points:
+        if not isinstance(item, (list, tuple)) or len(item) < 2:
+            continue
+        try:
+            out.append((float(item[0]), float(item[1])))
+        except (TypeError, ValueError):
+            continue
+    return out
+
+
+def _dedupe_consecutive_points(points: List[tuple[int, int]]) -> List[tuple[int, int]]:
+    if not points:
+        return []
+    out = [points[0]]
+    for pt in points[1:]:
+        if pt != out[-1]:
+            out.append(pt)
+    return out
+
+
+def _is_closed_like(points: List[tuple[int, int]]) -> bool:
+    if len(points) < 4:
+        return False
+    x0, y0 = points[0]
+    x1, y1 = points[-1]
+    return abs(x0 - x1) <= 2 and abs(y0 - y1) <= 2
+
+
+def _point_area_score(prev_pt: tuple[int, int], cur_pt: tuple[int, int], next_pt: tuple[int, int]) -> float:
+    # Triangle area proxy (twice area) is a cheap curvature/importance signal.
+    return abs(
+        (cur_pt[0] - prev_pt[0]) * (next_pt[1] - prev_pt[1])
+        - (cur_pt[1] - prev_pt[1]) * (next_pt[0] - prev_pt[0])
+    )
+
+
+def _compress_pen_points(points: object, *, cap: int = 10) -> List[List[int]]:
+    raw = _as_xy_points(points)
+    if not raw:
+        return []
+    quantized = _dedupe_consecutive_points([(int(round(x)), int(round(y))) for x, y in raw])
+    n = len(quantized)
+    if n <= cap:
+        return [[x, y] for x, y in quantized]
+
+    key_idx = {0, n - 1}
+
+    xs = [p[0] for p in quantized]
+    ys = [p[1] for p in quantized]
+    key_idx.update(
+        {
+            xs.index(min(xs)),
+            xs.index(max(xs)),
+            ys.index(min(ys)),
+            ys.index(max(ys)),
+        }
+    )
+
+    if _is_closed_like(quantized):
+        for k in (1, 2, 3):
+            key_idx.add(round((n - 1) * k / 4))
+
+    if len(key_idx) < cap and n >= 3:
+        ranked = sorted(
+            (
+                (_point_area_score(quantized[i - 1], quantized[i], quantized[i + 1]), i)
+                for i in range(1, n - 1)
+                if i not in key_idx
+            ),
+            reverse=True,
+        )
+        for _score, idx in ranked:
+            key_idx.add(idx)
+            if len(key_idx) >= cap:
+                break
+
+    if len(key_idx) < cap:
+        for k in range(cap):
+            key_idx.add(round((n - 1) * k / max(1, cap - 1)))
+            if len(key_idx) >= cap:
+                break
+
+    if len(key_idx) < cap:
+        for idx in range(n):
+            key_idx.add(idx)
+            if len(key_idx) >= cap:
+                break
+
+    ordered = sorted(key_idx)
+    if len(ordered) > cap:
+        must_keep = {0, n - 1}
+        keep = set(i for i in ordered if i in must_keep)
+        for idx in ordered:
+            if idx in keep:
+                continue
+            keep.add(idx)
+            if len(keep) >= cap:
+                break
+        ordered = sorted(keep)
+        if len(ordered) > cap:
+            ordered = ordered[:cap]
+            if 0 not in ordered:
+                ordered[0] = 0
+            if (n - 1) not in ordered:
+                ordered[-1] = n - 1
+            ordered = sorted(set(ordered))
+            # Fill again if dedupe made it short.
+            if len(ordered) < cap:
+                for idx in range(n):
+                    if idx in ordered:
+                        continue
+                    ordered.append(idx)
+                    if len(ordered) >= cap:
+                        break
+                ordered = sorted(ordered)
+
+    return [[quantized[i][0], quantized[i][1]] for i in ordered]
+
+
+def _compress_full_context_for_prompt(ctx: Dict[str, Any], *, pen_cap: int) -> Dict[str, Any]:
+    if not isinstance(ctx, dict):
+        return ctx
+    strokes = ctx.get("strokes")
+    if not isinstance(strokes, list):
+        return ctx
+
+    next_ctx = dict(ctx)
+    next_strokes: List[Any] = []
+    for stroke in strokes:
+        if not isinstance(stroke, dict):
+            next_strokes.append(stroke)
+            continue
+        tool = str(stroke.get("tool") or "").lower()
+        if tool != "pen":
+            next_strokes.append(stroke)
+            continue
+        compact_points = _compress_pen_points(stroke.get("points"), cap=pen_cap)
+        if not compact_points:
+            next_strokes.append(stroke)
+            continue
+        new_stroke = dict(stroke)
+        new_stroke["points"] = compact_points
+        meta = stroke.get("meta")
+        if isinstance(meta, dict):
+            meta2 = dict(meta)
+            meta2["promptSimplified"] = True
+            new_stroke["meta"] = meta2
+        next_strokes.append(new_stroke)
+    next_ctx["strokes"] = next_strokes
+    return next_ctx
+
+
 def _build_full_user_content(req: SuggestRequest, include_sample: bool = True) -> Dict[str, Any]:
     N = 200
     ctx = req.context.model_dump()
@@ -138,6 +295,8 @@ def _build_full_user_content(req: SuggestRequest, include_sample: bool = True) -
 
     max_pts = int(req.gen_scale) if (hasattr(req, "gen_scale") and req.gen_scale) else 16
     max_pts = max(4, min(64, max_pts))
+    pen_context_cap = max(8, min(10, max_pts))
+    ctx = _compress_full_context_for_prompt(ctx, pen_cap=pen_context_cap)
 
     user_content: Dict[str, Any] = {
         "mode": "work assistant",
@@ -162,7 +321,7 @@ def build_messages_full(req: SuggestRequest, include_sample: bool = True) -> Lis
     user_content = _build_full_user_content(req, include_sample=include_sample)
     return [
         {"role": "system", "content": FULL_SYSTEM},
-        {"role": "user", "content": f"{user_content}"},
+        {"role": "user", "content": json.dumps(user_content, ensure_ascii=False, separators=(",", ":"), default=str)},
     ]
 
 

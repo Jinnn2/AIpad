@@ -217,7 +217,8 @@ class ConversationOrchestrator:
             context_lines.append(json.dumps(latest_context, ensure_ascii=False))
         if main_block_id:
             main_info = summaries.get(main_block_id) or {}
-            context_lines.append(f"FOCUSED: {main_info.get('label', main_block_id)}")
+            focused_label = str(main_info.get("label") or main_block_id)
+            context_lines.append(f"FOCUSED: [{main_block_id}] {focused_label}")
         latest_context_block_id: Optional[str] = None
         if isinstance(latest_context, dict) and str(latest_context.get("kind") or "").strip().lower() == "block":
             raw_latest_block_id = latest_context.get("blockId")
@@ -231,9 +232,9 @@ class ConversationOrchestrator:
             summary = info.get("summary", "")
             rel = info.get("relationship")
             if rel:
-                related_block_lines.append(f"- [{label}] ({rel}) {summary}")
+                related_block_lines.append(f"- [{block_id}] label={label} ({rel}) {summary}")
             else:
-                related_block_lines.append(f"- [{label}] {summary}")
+                related_block_lines.append(f"- [{block_id}] label={label} {summary}")
         if related_block_lines:
             context_lines.append("RELATED BLOCKS:")
             context_lines.extend(related_block_lines)
