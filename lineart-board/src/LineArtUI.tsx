@@ -22,6 +22,8 @@ type UiIconName =
   | 'snap'
   | 'curve'
   | 'feed'
+  | 'folder'
+  | 'save'
   | 'spark'
   | 'ask'
   | 'check'
@@ -82,6 +84,18 @@ function UiIcon({
           <rect x="2.2" y="2.4" width="11.6" height="10.9" rx="1.8" />
           <path d="M4.6 5.8h6.8M4.6 8.1h5.2M4.6 10.4h7.1" />
           <circle cx="12.2" cy="5.8" r=".7" fill={stroke} stroke="none" />
+        </g>
+      )}
+      {name === 'folder' && (
+        <g {...common}>
+          <path d="M2.6 4.6a1.3 1.3 0 0 1 1.3-1.3h2.5l1.1 1.1h4.4a1.3 1.3 0 0 1 1.3 1.3v6.3a1.3 1.3 0 0 1-1.3 1.3H3.9a1.3 1.3 0 0 1-1.3-1.3V4.6Z" />
+          <path d="M2.8 6h10.5" />
+        </g>
+      )}
+      {name === 'save' && (
+        <g {...common}>
+          <path d="M3.1 2.7h8.7l1 1.1v9.2a1.1 1.1 0 0 1-1.1 1.1H4.2a1.1 1.1 0 0 1-1.1-1.1V3.8a1.1 1.1 0 0 1 1.1-1.1Z" />
+          <path d="M5 2.9v3.2h5.1V2.9M5.2 13V9.6h5.5V13" />
         </g>
       )}
       {name === 'spark' && (
@@ -229,6 +243,12 @@ export type TopToolbarProps = {
   onToggleAutoComplete: (enabled: boolean) => void
   preferExplanatoryDrawing: boolean
   onTogglePreferExplanatoryDrawing: (enabled: boolean) => void
+  onOpenProjectManager: () => void
+  onSaveProjectCurrent: () => void
+  projectHasBinding: boolean
+  projectBoundName?: string
+  projectSavePending?: boolean
+  projectSaveFlash?: boolean
 }
 
 export function TopToolbar(props: TopToolbarProps) {
@@ -248,6 +268,12 @@ export function TopToolbar(props: TopToolbarProps) {
     onToggleAutoComplete,
     preferExplanatoryDrawing,
     onTogglePreferExplanatoryDrawing,
+    onOpenProjectManager,
+    onSaveProjectCurrent,
+    projectHasBinding,
+    projectBoundName,
+    projectSavePending,
+    projectSaveFlash,
   } = props
   const autoCompleteState = hasActivePreview
     ? 'Paused'
@@ -303,6 +329,36 @@ export function TopToolbar(props: TopToolbarProps) {
         <span style={{ fontSize: 12, fontWeight: 700, color: UI_THEME.ink, letterSpacing: '.06em' }}>AIPAD</span>
         <span style={{ fontSize: 10, color: UI_THEME.inkMuted }}>Canvas Lab</span>
       </div>
+      <Btn
+        onClick={onOpenProjectManager}
+        title={projectHasBinding ? `Open Project Manager (${projectBoundName || 'bound'})` : 'Open Project Manager'}
+        style={{
+          border: `1px solid ${projectHasBinding ? 'rgba(59,130,246,0.35)' : UI_THEME.lineStrong}`,
+          background: projectHasBinding
+            ? 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(224,242,254,0.92))'
+            : undefined,
+        }}
+      >
+        <IconLabel icon="folder">Project Manager</IconLabel>
+      </Btn>
+      <Btn
+        onClick={onSaveProjectCurrent}
+        disabled={!!projectSavePending}
+        title={projectHasBinding ? 'Save current project state' : 'Create project and save current state'}
+        style={{
+          border: `1px solid ${projectSaveFlash ? 'rgba(34,197,94,0.45)' : 'rgba(59,130,246,0.35)'}`,
+          background: projectSaveFlash
+            ? 'linear-gradient(180deg, rgba(240,253,244,0.95), rgba(220,252,231,0.92))'
+            : 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(224,242,254,0.92))',
+        }}
+      >
+        <IconLabel icon="save">{projectSavePending ? 'Saving…' : projectSaveFlash ? 'Saved' : 'Save'}</IconLabel>
+        {projectHasBinding && projectBoundName ? (
+          <span style={{ fontSize: 11, color: UI_THEME.inkMuted, maxWidth: 110, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {projectBoundName}
+          </span>
+        ) : null}
+      </Btn>
       <Btn onClick={onToggleGrid}>
         <IconLabel icon="grid">{showGrid ? 'Grid: ON' : 'Grid: OFF'}</IconLabel>
       </Btn>

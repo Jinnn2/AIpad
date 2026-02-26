@@ -2,3 +2,27 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Logs / temp / local runtime artifacts
+logs/
+*.log
+*.log.*
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# Python tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local datasets / generated corpora (keep builder scripts)
+data/**
+!data/*.py
+
+# AIPad local runtime storage
+lineart-board/data/

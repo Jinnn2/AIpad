@@ -35,8 +35,15 @@ from semantic_graph import (
     VisionResult,
 )
 from semantic_graph.models import GroupNotFoundError
+from semantic_graph.models import (
+    Block,
+    BlockRelationship,
+    BlockRelationshipType,
+    Group,
+    GroupState,
+)
 from semantic_graph.markdown_text import markdown_to_semantic_text
-from semantic_graph.vision import _bbox_overlap_ratio
+from semantic_graph.vision import _bbox_overlap_ratio, _PendingGroup
 
 from app.embedding_client import embed_text
 from app.llm_client import call_chat_completions
@@ -148,6 +155,31 @@ def _fragment_export(fragment: Fragment) -> Dict[str, object]:
         "bbox": fragment.bbox,
         "payload": fragment.payload,
     }
+
+
+def _dt_to_iso(value: Optional[datetime]) -> Optional[str]:
+    if not value:
+        return None
+    try:
+        return value.isoformat()
+    except Exception:
+        return None
+
+
+def _parse_dt(value: object) -> Optional[datetime]:
+    if value is None:
+        return None
+    if isinstance(value, datetime):
+        return value
+    try:
+        token = str(value).strip()
+        if not token:
+            return None
+        if token.endswith("Z"):
+            token = token[:-1] + "+00:00"
+        return datetime.fromisoformat(token)
+    except Exception:
+        return None
 
 
 class OpenAIEmbedder(TextEmbedder):
@@ -614,6 +646,469 @@ class GraphRuntime:
             "groups": groups,
             "visionPendingGroups": self.vision.list_pending_groups(),
         }
+
+    def dump_state(self) -> Dict[str, object]:
+        def _serialize_fragment(fragment: Fragment) -> Dict[str, object]:
+            return {
+                "id": fragment.fragment_id,
+                "type": fragment.fragment_type.value,
+                "bbox": list(fragment.bbox) if fragment.bbox else None,
+                "text": fragment.text,
+                "timestamp": _dt_to_iso(fragment.timestamp),
+                "featureVec": list(fragment.feature_vec) if fragment.feature_vec is not None else None,
+                "payload": fragment.payload if isinstance(fragment.payload, dict) else {},
+            }
+
+        def _serialize_group(group: Group) -> Dict[str, object]:
+            return {
+                "groupId": group.group_id,
+                "members": sorted(group.members),
+                "prototypeVec": list(group.prototype_vec) if group.prototype_vec is not None else None,
+                "state": group.state.value,
+                "needLLMReview": bool(group.need_llm_review),
+                "createdAt": _dt_to_iso(group.created_at),
+                "updatedAt": _dt_to_iso(group.updated_at),
+            }
+
+        def _serialize_block(block: Block) -> Dict[str, object]:
+            return {
+                "blockId": block.block_id,
+                "label": block.label,
+                "summary": block.summary,
+                "position": list(block.position) if block.position else None,
+                "contents": sorted(block.contents),
+                "relationships": [
+                    {
+                        "source": rel.source_block_id,
+                        "target": rel.target_block_id,
+                        "type": rel.rel_type.value,
+                        "score": rel.score,
+                        "metadata": rel.metadata,
+                    }
+                    for rel in block.relationships
+                ],
+                "createdAt": _dt_to_iso(block.created_at),
+                "updatedAt": _dt_to_iso(block.updated_at),
+                "revision": int(block.revision),
+                "embedding": list(block.embedding) if block.embedding is not None else None,
+                "lastSummaryMemberCount": int(block.last_summary_member_count),
+                "lastSummaryTs": _dt_to_iso(block.last_summary_ts),
+                "characterCount": int(block.character_count),
+            }
+
+        latest_canvas = None
+        if self._latest_canvas_snapshot is not None:
+            snap = self._latest_canvas_snapshot
+            latest_canvas = {
+                "imageBase64": base64.b64encode(snap.image_bytes).decode("ascii") if snap.image_bytes else "",
+                "mime": snap.mime,
+                "width": int(snap.width),
+                "height": int(snap.height),
+                "bbox": list(snap.bbox) if snap.bbox else None,
+                "updatedAt": _dt_to_iso(snap.updated_at),
+            }
+
+        graph_state = {
+            "fragments": {fid: _serialize_fragment(fragment) for fid, fragment in self.state.fragments.items()},
+            "groups": {gid: _serialize_group(group) for gid, group in self.state.groups.items()},
+            "blocks": {bid: _serialize_block(block) for bid, block in self.state.blocks.items()},
+        }
+        pending_groups = []
+        for group in getattr(self.vision, "_pending_groups", {}).values():
+            pending_groups.append(
+                {
+                    "groupId": group.group_id,
+                    "strokeIds": list(group.stroke_ids),
+                    "bbox": list(group.bbox),
+                    "createdAt": _dt_to_iso(group.created_at),
+                    "updatedAt": _dt_to_iso(group.updated_at),
+                    "readyReason": group.ready_reason,
+                }
+            )
+        return {
+            "schemaVersion": 1,
+            "graphState": graph_state,
+            "blockManager": {
+                "fragmentToGroup": dict(self.block_manager._fragment_to_group),  # type: ignore[attr-defined]
+                "fragmentToBlock": dict(self.block_manager._fragment_to_block),  # type: ignore[attr-defined]
+                "unlabeledStrokes": list(self.block_manager._unlabeled_strokes),  # type: ignore[attr-defined]
+                "blockIncomingCounts": dict(self.block_manager._block_incoming_counts),  # type: ignore[attr-defined]
+                "groupTouchCounts": dict(self.block_manager._group_touch_counts),  # type: ignore[attr-defined]
+            },
+            "vision": {
+                "lastActivity": _dt_to_iso(getattr(self.vision, "_last_activity", None)),
+                "pendingGroups": pending_groups,
+                "diagramBlocks": {
+                    str(bid): list(bbox)
+                    for bid, bbox in (getattr(self.vision, "_diagram_blocks", {}) or {}).items()
+                    if isinstance(bbox, tuple) and len(bbox) == 4
+                },
+            },
+            "orchestrator": {
+                "mainBlockId": self.orchestrator.context.main_block_id,
+                "activeBlockIds": list(self.orchestrator.context.active_block_ids or []),
+            },
+            "runtime": {
+                "sessionId": getattr(self.cluster_logger, "session_id", None),
+                "canvasSize": list(self.block_manager.canvas_size) if getattr(self.block_manager, "canvas_size", None) else None,
+                "visionImageMode": self.vision_image_mode,
+                "groupPromoteMode": self.agent_group_promote_mode,
+            },
+            "internals": {
+                "seenFragmentIds": sorted(self._seen_fragment_ids),
+                "fragmentSignatures": dict(self._fragment_signatures),
+                "manualFragmentBlockOverrides": dict(self._manual_fragment_block_overrides),
+            },
+            "latestCanvasSnapshot": latest_canvas,
+        }
+
+    def load_state(self, data: Dict[str, object]) -> None:
+        if not isinstance(data, dict):
+            raise ValueError("graph runtime state must be an object")
+        graph_state_raw = data.get("graphState") or {}
+        if not isinstance(graph_state_raw, dict):
+            graph_state_raw = {}
+
+        self.state.clear()
+
+        fragments_raw = graph_state_raw.get("fragments") or {}
+        if isinstance(fragments_raw, dict):
+            for fid, item in fragments_raw.items():
+                if not isinstance(item, dict):
+                    continue
+                fragment_id = str(item.get("id") or fid or "").strip()
+                if not fragment_id:
+                    continue
+                bbox_raw = item.get("bbox")
+                bbox = None
+                if isinstance(bbox_raw, (list, tuple)) and len(bbox_raw) == 4:
+                    try:
+                        bbox = (
+                            float(bbox_raw[0]),
+                            float(bbox_raw[1]),
+                            float(bbox_raw[2]),
+                            float(bbox_raw[3]),
+                        )
+                    except Exception:
+                        bbox = None
+                type_token = str(item.get("type") or "text").strip().lower()
+                try:
+                    fragment_type = FragmentType(type_token)
+                except Exception:
+                    fragment_type = FragmentType.TEXT
+                feature_raw = item.get("featureVec")
+                feature_vec = None
+                if isinstance(feature_raw, list):
+                    try:
+                        feature_vec = [float(v) for v in feature_raw]
+                    except Exception:
+                        feature_vec = None
+                payload = item.get("payload")
+                if not isinstance(payload, dict):
+                    payload = {}
+                self.state.fragments[fragment_id] = Fragment(
+                    fragment_id=fragment_id,
+                    fragment_type=fragment_type,
+                    bbox=bbox,
+                    text=item.get("text"),
+                    timestamp=_parse_dt(item.get("timestamp")),
+                    feature_vec=feature_vec,
+                    payload=payload,
+                )
+
+        groups_raw = graph_state_raw.get("groups") or {}
+        if isinstance(groups_raw, dict):
+            for gid, item in groups_raw.items():
+                if not isinstance(item, dict):
+                    continue
+                group_id = str(item.get("groupId") or gid or "").strip()
+                if not group_id:
+                    continue
+                state_token = str(item.get("state") or GroupState.PENDING.value).strip().lower()
+                try:
+                    group_state = GroupState(state_token)
+                except Exception:
+                    group_state = GroupState.PENDING
+                members = item.get("members") or []
+                if not isinstance(members, list):
+                    members = []
+                prototype_vec = item.get("prototypeVec")
+                if isinstance(prototype_vec, list):
+                    try:
+                        prototype_vec = [float(v) for v in prototype_vec]
+                    except Exception:
+                        prototype_vec = None
+                else:
+                    prototype_vec = None
+                self.state.groups[group_id] = Group(
+                    group_id=group_id,
+                    members={str(v) for v in members if str(v or "").strip()},
+                    prototype_vec=prototype_vec,
+                    state=group_state,
+                    need_llm_review=bool(item.get("needLLMReview", False)),
+                    created_at=_parse_dt(item.get("createdAt")) or datetime.utcnow(),
+                    updated_at=_parse_dt(item.get("updatedAt")) or datetime.utcnow(),
+                )
+
+        blocks_raw = graph_state_raw.get("blocks") or {}
+        if isinstance(blocks_raw, dict):
+            for bid, item in blocks_raw.items():
+                if not isinstance(item, dict):
+                    continue
+                block_id = str(item.get("blockId") or bid or "").strip()
+                if not block_id:
+                    continue
+                position_raw = item.get("position")
+                position = None
+                if isinstance(position_raw, (list, tuple)) and len(position_raw) == 4:
+                    try:
+                        position = (
+                            float(position_raw[0]),
+                            float(position_raw[1]),
+                            float(position_raw[2]),
+                            float(position_raw[3]),
+                        )
+                    except Exception:
+                        position = None
+                contents = item.get("contents") or []
+                if not isinstance(contents, list):
+                    contents = []
+                embedding_raw = item.get("embedding")
+                embedding = None
+                if isinstance(embedding_raw, list):
+                    try:
+                        embedding = [float(v) for v in embedding_raw]
+                    except Exception:
+                        embedding = None
+                block = Block(
+                    block_id=block_id,
+                    label=str(item.get("label") or ""),
+                    summary=str(item.get("summary") or ""),
+                    position=position,
+                    contents={str(v) for v in contents if str(v or "").strip()},
+                    relationships=[],
+                    created_at=_parse_dt(item.get("createdAt")) or datetime.utcnow(),
+                    updated_at=_parse_dt(item.get("updatedAt")) or datetime.utcnow(),
+                    revision=int(item.get("revision") or 0),
+                    embedding=embedding,
+                    last_summary_member_count=int(item.get("lastSummaryMemberCount") or 0),
+                    last_summary_ts=_parse_dt(item.get("lastSummaryTs")) or datetime.utcnow(),
+                    character_count=int(item.get("characterCount") or 0),
+                )
+                rels_raw = item.get("relationships") or []
+                if isinstance(rels_raw, list):
+                    for rel_item in rels_raw:
+                        if not isinstance(rel_item, dict):
+                            continue
+                        rel_type_token = str(rel_item.get("type") or "").strip().lower()
+                        try:
+                            rel_type = BlockRelationshipType(rel_type_token)
+                        except Exception:
+                            continue
+                        try:
+                            rel_score = float(rel_item.get("score") or 1.0)
+                        except Exception:
+                            rel_score = 1.0
+                        metadata = rel_item.get("metadata")
+                        if not isinstance(metadata, dict):
+                            metadata = {}
+                        rel = BlockRelationship(
+                            source_block_id=str(rel_item.get("source") or block_id),
+                            target_block_id=str(rel_item.get("target") or ""),
+                            rel_type=rel_type,
+                            score=rel_score,
+                            metadata=metadata,
+                        )
+                        if rel.target_block_id:
+                            block.relationships.append(rel)
+                self.state.blocks[block_id] = block
+
+        block_mgr_raw = data.get("blockManager") or {}
+        if not isinstance(block_mgr_raw, dict):
+            block_mgr_raw = {}
+        self.block_manager._fragment_to_group = {  # type: ignore[attr-defined]
+            str(k): str(v)
+            for k, v in dict(block_mgr_raw.get("fragmentToGroup") or {}).items()
+            if str(k or "").strip() and str(v or "").strip()
+        }
+        self.block_manager._fragment_to_block = {  # type: ignore[attr-defined]
+            str(k): str(v)
+            for k, v in dict(block_mgr_raw.get("fragmentToBlock") or {}).items()
+            if str(k or "").strip() and str(v or "").strip()
+        }
+        unlabeled_raw = block_mgr_raw.get("unlabeledStrokes") or []
+        self.block_manager._unlabeled_strokes = [  # type: ignore[attr-defined]
+            str(fid) for fid in unlabeled_raw if str(fid or "").strip()
+        ]
+        incoming_counts_raw = block_mgr_raw.get("blockIncomingCounts") or {}
+        self.block_manager._block_incoming_counts.clear()  # type: ignore[attr-defined]
+        if isinstance(incoming_counts_raw, dict):
+            for k, v in incoming_counts_raw.items():
+                try:
+                    self.block_manager._block_incoming_counts[str(k)] = int(v)  # type: ignore[attr-defined]
+                except Exception:
+                    continue
+        touch_counts_raw = block_mgr_raw.get("groupTouchCounts") or {}
+        self.block_manager._group_touch_counts.clear()  # type: ignore[attr-defined]
+        if isinstance(touch_counts_raw, dict):
+            for k, v in touch_counts_raw.items():
+                try:
+                    self.block_manager._group_touch_counts[str(k)] = int(v)  # type: ignore[attr-defined]
+                except Exception:
+                    continue
+
+        vision_raw = data.get("vision") or {}
+        if not isinstance(vision_raw, dict):
+            vision_raw = {}
+        self.vision._last_activity = _parse_dt(vision_raw.get("lastActivity"))  # type: ignore[attr-defined]
+        self.vision._pending_groups = {}  # type: ignore[attr-defined]
+        pending_groups_raw = vision_raw.get("pendingGroups") or []
+        if isinstance(pending_groups_raw, list):
+            for item in pending_groups_raw:
+                if not isinstance(item, dict):
+                    continue
+                gid = str(item.get("groupId") or "").strip()
+                if not gid:
+                    continue
+                bbox_raw = item.get("bbox")
+                if not (isinstance(bbox_raw, (list, tuple)) and len(bbox_raw) == 4):
+                    continue
+                try:
+                    bbox = (
+                        float(bbox_raw[0]),
+                        float(bbox_raw[1]),
+                        float(bbox_raw[2]),
+                        float(bbox_raw[3]),
+                    )
+                except Exception:
+                    continue
+                stroke_ids = item.get("strokeIds") or []
+                if not isinstance(stroke_ids, list):
+                    stroke_ids = []
+                self.vision._pending_groups[gid] = _PendingGroup(  # type: ignore[attr-defined]
+                    group_id=gid,
+                    stroke_ids=[str(fid) for fid in stroke_ids if str(fid or "").strip()],
+                    bbox=bbox,
+                    created_at=_parse_dt(item.get("createdAt")) or datetime.utcnow(),
+                    updated_at=_parse_dt(item.get("updatedAt")) or datetime.utcnow(),
+                    ready_reason=(str(item.get("readyReason")).strip() if item.get("readyReason") is not None else None),
+                )
+        diagram_raw = vision_raw.get("diagramBlocks") or {}
+        self.vision._diagram_blocks = {}  # type: ignore[attr-defined]
+        if isinstance(diagram_raw, dict):
+            for bid, bbox_raw in diagram_raw.items():
+                if not (isinstance(bbox_raw, (list, tuple)) and len(bbox_raw) == 4):
+                    continue
+                try:
+                    self.vision._diagram_blocks[str(bid)] = (  # type: ignore[attr-defined]
+                        float(bbox_raw[0]),
+                        float(bbox_raw[1]),
+                        float(bbox_raw[2]),
+                        float(bbox_raw[3]),
+                    )
+                except Exception:
+                    continue
+
+        orchestrator_raw = data.get("orchestrator") or {}
+        if not isinstance(orchestrator_raw, dict):
+            orchestrator_raw = {}
+        self.orchestrator.context.main_block_id = (
+            str(orchestrator_raw.get("mainBlockId")).strip()
+            if orchestrator_raw.get("mainBlockId") is not None
+            else None
+        )
+        active_raw = orchestrator_raw.get("activeBlockIds") or []
+        if not isinstance(active_raw, list):
+            active_raw = []
+        self.orchestrator.context.active_block_ids = [
+            str(v) for v in active_raw if str(v or "").strip()
+        ]
+        self.context.main_block_id = self.orchestrator.context.main_block_id
+        self.context.active_block_ids = list(self.orchestrator.context.active_block_ids)
+
+        runtime_raw = data.get("runtime") or {}
+        if isinstance(runtime_raw, dict):
+            canvas_size_raw = runtime_raw.get("canvasSize")
+            if isinstance(canvas_size_raw, (list, tuple)) and len(canvas_size_raw) >= 2:
+                try:
+                    self.block_manager.canvas_size = (float(canvas_size_raw[0]), float(canvas_size_raw[1]))
+                    if hasattr(self.summarizer, "set_canvas_size"):
+                        self.summarizer.set_canvas_size(self.block_manager.canvas_size)  # type: ignore[attr-defined]
+                except Exception:
+                    pass
+            try:
+                if runtime_raw.get("visionImageMode") is not None:
+                    self.set_vision_image_mode(str(runtime_raw.get("visionImageMode")))
+            except Exception:
+                pass
+            try:
+                if runtime_raw.get("groupPromoteMode") is not None:
+                    self.set_group_promotion_mode(str(runtime_raw.get("groupPromoteMode")))
+            except Exception:
+                pass
+
+        internals_raw = data.get("internals") or {}
+        if not isinstance(internals_raw, dict):
+            internals_raw = {}
+        seen_raw = internals_raw.get("seenFragmentIds") or []
+        if not isinstance(seen_raw, list):
+            seen_raw = []
+        self._seen_fragment_ids = {str(v) for v in seen_raw if str(v or "").strip()}
+        signatures_raw = internals_raw.get("fragmentSignatures") or {}
+        self._fragment_signatures = {
+            str(k): str(v)
+            for k, v in dict(signatures_raw).items()
+            if str(k or "").strip()
+        }
+        overrides_raw = internals_raw.get("manualFragmentBlockOverrides") or {}
+        self._manual_fragment_block_overrides = {
+            str(k): str(v)
+            for k, v in dict(overrides_raw).items()
+            if str(k or "").strip() and str(v or "").strip()
+        }
+
+        latest_canvas_raw = data.get("latestCanvasSnapshot")
+        self._latest_canvas_snapshot = None
+        if isinstance(latest_canvas_raw, dict):
+            image_b64 = str(latest_canvas_raw.get("imageBase64") or "")
+            try:
+                image_bytes = base64.b64decode(image_b64) if image_b64 else b""
+            except Exception:
+                image_bytes = b""
+            bbox = None
+            bbox_raw = latest_canvas_raw.get("bbox")
+            if isinstance(bbox_raw, (list, tuple)) and len(bbox_raw) == 4:
+                try:
+                    bbox = (
+                        float(bbox_raw[0]),
+                        float(bbox_raw[1]),
+                        float(bbox_raw[2]),
+                        float(bbox_raw[3]),
+                    )
+                except Exception:
+                    bbox = None
+            self._latest_canvas_snapshot = CanvasSnapshot(
+                image_bytes=image_bytes,
+                mime=str(latest_canvas_raw.get("mime") or "image/png"),
+                width=int(latest_canvas_raw.get("width") or 0),
+                height=int(latest_canvas_raw.get("height") or 0),
+                bbox=bbox,
+                updated_at=_parse_dt(latest_canvas_raw.get("updatedAt")) or datetime.utcnow(),
+            )
+
+        valid_fragment_ids = set(self.state.fragments.keys())
+        self._seen_fragment_ids.intersection_update(valid_fragment_ids)
+        self._fragment_signatures = {
+            fid: sig for fid, sig in self._fragment_signatures.items() if fid in valid_fragment_ids
+        }
+        self._manual_fragment_block_overrides = {
+            fid: bid
+            for fid, bid in self._manual_fragment_block_overrides.items()
+            if fid in valid_fragment_ids and bid in self.state.blocks
+        }
+        self.block_manager._unlabeled_strokes = [  # type: ignore[attr-defined]
+            fid for fid in self.block_manager._unlabeled_strokes if fid in valid_fragment_ids
+        ]
 
     def promote_group_now(self, group_id: str) -> Optional[Block]:
         try:

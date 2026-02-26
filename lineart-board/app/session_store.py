@@ -170,8 +170,10 @@ class Session:
     call_count: int = 0
     # 最近笔画（已“最小化”）
     strokes: List[dict] = field(default_factory=list)
+    full_strokes: List[dict] = field(default_factory=list)
     graph_auto: bool = False
     graph_runtime: Optional["GraphRuntime"] = None
+    project_id: Optional[str] = None
 
     def append_strokes(self, new_strokes: List[dict]) -> None:
         if not new_strokes: 
@@ -202,7 +204,7 @@ class Session:
             # 保障类型 & 三位小数
             pts2 = [(_r3(float(p[0])), _r3(float(p[1]))) for p in pts if isinstance(p, (list, tuple)) and len(p) >= 2]
 
-            if tool == "poly":
+            if tool == "poly":  
                 pts2 = _ensure_poly_closed(pts2)
             elif tool == "line":
                 pts2 = _ensure_line_valid(pts2)
@@ -278,7 +280,9 @@ class Session:
         覆盖式同步：把前端“当前仍存在的所有笔画”作为快照替换到会话中。
         用于对齐擦除/撤销/重做后的真实画布。
         """
-        mini = [self._minify_stroke(s) for s in (strokes or [])]
+        raw = [dict(s) if isinstance(s, dict) else s for s in (strokes or [])]
+        self.full_strokes = raw
+        mini = [self._minify_stroke(s) for s in raw]
         # 可按容量限制裁剪（例如最近 500 条），避免过大
         self.strokes = mini[-500:]
 # 简单内存会话表（开发环境足够；需要可换成 Redis）
@@ -291,6 +295,13 @@ def create_session(mode: str = "light_helper", init_goal: Optional[str] = None, 
 
 def get_session(sid: str) -> Optional[Session]:
     return _SESS.get(sid)
+
+def put_session(session: Session) -> Session:
+    _SESS[session.sid] = session
+    return session
+
+def list_sessions() -> List[Session]:
+    return list(_SESS.values())
 
 def should_include_sample(call_count: int) -> bool:
     # 0 → 仅首轮；1 → 每轮；N → 每 N 轮

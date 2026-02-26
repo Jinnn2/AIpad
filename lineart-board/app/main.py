@@ -4,6 +4,7 @@ import os, random, time, json, tempfile, math
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional
+from urllib.parse import quote
 from fastapi import FastAPI, HTTPException, Response, Request
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -29,12 +30,31 @@ from app.schemas import (
     PromoteVisionPendingGroupResponse,
     GraphSelectionBlockActionRequest,
     GraphSelectionBlockActionResponse,
+    ProjectListResponse,
+    ProjectCreateRequest,
+    ProjectCreateResponse,
+    ProjectSaveRequest,
+    ProjectSaveResponse,
+    ProjectCommitRequest,
+    ProjectCommitResponse,
+    ProjectCommitCheckoutRequest,
+    ProjectCommitCheckoutResponse,
+    ProjectCurrentSnapshotRequest,
+    ProjectCurrentSnapshotResponse,
+    ProjectDeleteRequest,
+    ProjectDeleteResponse,
+    ProjectCommitDeleteRequest,
+    ProjectCommitDeleteResponse,
+    ProjectOpenRequest,
+    ProjectOpenResponse,
+    ProjectDetailResponse,
 )
 from app import prompting
 from app.llm_client import call_chat_completions
 from starlette.responses import JSONResponse
 import re
 from app import session_store as S
+from app.project_store import ProjectStore
 from app.schemas import InitSessionRequest, InitSessionResponse, DeltaPayload
 from fastapi import Response
 
@@ -109,6 +129,109 @@ def _write_json(dirpath: Path, name: str, data) -> None:
     p = dirpath / name
     with p.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+PROJECT_STORE = ProjectStore()
+
+
+def _serialize_session_canvas(sess: S.Session) -> dict:
+    full_strokes = []
+    for s in (getattr(sess, "full_strokes", None) or []):
+        if isinstance(s, dict):
+            full_strokes.append(s)
+    if not full_strokes:
+        for s in (sess.strokes or []):
+            if isinstance(s, dict):
+                full_strokes.append(s)
+    return {
+        "schemaVersion": 1,
+        "sid": sess.sid,
+        "mode": sess.mode,
+        "initGoal": sess.init_goal,
+        "tags": list(sess.tags or []),
+        "createdAtEpoch": sess.created_at,
+        "callCount": int(getattr(sess, "call_count", 0) or 0),
+        "strokes": full_strokes,
+    }
+
+
+def _serialize_session_runtime(sess: S.Session) -> dict:
+    graph_runtime = getattr(sess, "graph_runtime", None)
+    return {
+        "schemaVersion": 1,
+        "sid": sess.sid,
+        "graphAuto": bool(getattr(sess, "graph_auto", False)),
+        "projectId": getattr(sess, "project_id", None),
+        "visionImageMode": getattr(graph_runtime, "vision_image_mode", None) if graph_runtime else None,
+        "groupPromoteMode": getattr(graph_runtime, "agent_group_promote_mode", None) if graph_runtime else None,
+    }
+
+
+def _serialize_session_graph(sess: S.Session) -> dict:
+    runtime = getattr(sess, "graph_runtime", None)
+    if not getattr(sess, "graph_auto", False) or runtime is None:
+        return {
+            "schemaVersion": 1,
+            "graphEnabled": False,
+            "snapshot": {"blocks": [], "fragments": [], "groups": [], "visionPendingGroups": []},
+            "graphState": None,
+        }
+    graph_state_dump = None
+    try:
+        graph_state_dump = runtime.dump_state()
+    except Exception as exc:
+        print("[project] graph dump failed:", exc)
+    snapshot = {}
+    try:
+        snapshot = runtime.snapshot()
+    except Exception as exc:
+        print("[project] graph snapshot failed:", exc)
+    return {
+        "schemaVersion": 1,
+        "graphEnabled": True,
+        "snapshot": snapshot or {},
+        "graphState": graph_state_dump,
+    }
+
+
+def _persist_project_for_session(
+    sess: Optional[S.Session],
+    *,
+    reason: str,
+    extra: Optional[dict] = None,
+    force_project_id: Optional[str] = None,
+) -> Optional[dict]:
+    if not sess:
+        return None
+    project_id = str(force_project_id or getattr(sess, "project_id", None) or "").strip()
+    if not project_id:
+        return None
+    canvas = _serialize_session_canvas(sess)
+    graph = _serialize_session_graph(sess)
+    runtime = _serialize_session_runtime(sess)
+    snapshot_blocks = (((graph or {}).get("snapshot") or {}).get("blocks") or []) if isinstance(graph, dict) else []
+    graph_state = (graph or {}).get("graphState") if isinstance(graph, dict) else None
+    graph_state_fragments = ((((graph_state or {}).get("graphState") or {}).get("fragments") or {}) if isinstance(graph_state, dict) else {})
+    try:
+        meta = PROJECT_STORE.save_current(
+            project_id,
+            canvas=canvas,
+            graph=graph,
+            runtime=runtime,
+            wal_op=reason,
+            wal_payload=extra or {},
+            meta_patch={
+                "stats": {
+                    "strokeCount": len(canvas.get("strokes") or []),
+                    "blockCount": len(snapshot_blocks) if isinstance(snapshot_blocks, list) else 0,
+                    "fragmentCount": len(graph_state_fragments) if isinstance(graph_state_fragments, dict) else 0,
+                }
+            },
+        )
+        return meta
+    except Exception as exc:
+        print(f"[project] save failed ({project_id}):", exc)
+        return None
 
 @app.get("/health", response_model=Health)
 def health():
@@ -361,6 +484,17 @@ def suggest(req: SuggestRequest):
             obj = plan_bundle.get("payload") or {}
             dbg = {"mode": "context-executor", "plan": plan_bundle.get("plan")}
             used_context_executor = True
+            try:
+                _persist_project_for_session(
+                    sess,
+                    reason="suggest_context_executor",
+                    extra={
+                        "mode": str(req.mode or ""),
+                        "hasPlan": bool(plan_bundle.get("plan")),
+                    },
+                )
+            except Exception:
+                pass
             if LOG_IO and log_dir is not None:
                 try:
                     _write_json(log_dir, "output.context.plan.json", plan_bundle)
@@ -871,6 +1005,399 @@ def session_init(body: InitSessionRequest):
     return InitSessionResponse(sid=s.sid, note="ok")
 
 
+@app.get("/projects", response_model=ProjectListResponse)
+def list_projects():
+    items = PROJECT_STORE.list_projects()
+    return ProjectListResponse(ok=True, projects=items)
+
+
+@app.post("/project/create", response_model=ProjectCreateResponse)
+def project_create(body: ProjectCreateRequest):
+    sess = S.get_session(body.sid) if body.sid else None
+    if body.sid and not sess:
+        raise HTTPException(404, f"session not found: {body.sid}")
+    try:
+        meta = PROJECT_STORE.create_project(name=body.name)
+    except Exception as exc:
+        raise HTTPException(400, f"project create failed: {exc}")
+    project_id = str(meta.get("projectId") or "")
+    if sess:
+        sess.project_id = project_id
+        _persist_project_for_session(sess, reason="project_bind_create", force_project_id=project_id)
+    return ProjectCreateResponse(ok=True, projectId=project_id, sid=(sess.sid if sess else body.sid), meta=meta)
+
+
+@app.post("/project/save", response_model=ProjectSaveResponse)
+def project_save(body: ProjectSaveRequest):
+    sess = S.get_session(body.sid)
+    if not sess:
+        raise HTTPException(404, f"session not found: {body.sid}")
+    project_id = str(body.project_id or sess.project_id or "").strip()
+    if not project_id:
+        raise HTTPException(400, "projectId required (session is not bound to a project)")
+    sess.project_id = project_id
+    meta = _persist_project_for_session(
+        sess,
+        reason="manual_project_save",
+        extra={"note": str(body.note or "")[:200]},
+        force_project_id=project_id,
+    )
+    if meta is None:
+        raise HTTPException(500, "project save failed")
+    if body.snapshot:
+        try:
+            PROJECT_STORE.save_current_preview(
+                project_id,
+                snapshot=body.snapshot.model_dump(),
+                note=body.note,
+            )
+        except Exception as exc:
+            raise HTTPException(500, f"project current preview save failed: {exc}")
+    return ProjectSaveResponse(ok=True, projectId=project_id, saved=True, meta=meta)
+
+
+@app.post("/project/current-snapshot", response_model=ProjectCurrentSnapshotResponse)
+def project_current_snapshot(body: ProjectCurrentSnapshotRequest):
+    sess = S.get_session(body.sid)
+    if not sess:
+        raise HTTPException(404, f"session not found: {body.sid}")
+    project_id = str(body.project_id or sess.project_id or "").strip()
+    if not project_id:
+        raise HTTPException(400, "projectId required (session is not bound to a project)")
+    sess.project_id = project_id
+    try:
+        preview_meta = PROJECT_STORE.save_current_preview(
+            project_id,
+            snapshot=body.snapshot.model_dump(),
+            note="auto-current-preview",
+        )
+    except Exception as exc:
+        raise HTTPException(500, f"project current snapshot save failed: {exc}")
+    return ProjectCurrentSnapshotResponse(
+        ok=True,
+        projectId=project_id,
+        currentPreviewUpdatedAt=str(preview_meta.get("updatedAt") or ""),
+    )
+
+
+@app.post("/project/commit", response_model=ProjectCommitResponse)
+def project_commit(body: ProjectCommitRequest):
+    sess = S.get_session(body.sid)
+    if not sess:
+        raise HTTPException(404, f"session not found: {body.sid}")
+    project_id = str(body.project_id or sess.project_id or "").strip()
+    if not project_id:
+        raise HTTPException(400, "projectId required (session is not bound to a project)")
+    sess.project_id = project_id
+    # Sync current working state first so current/* remains authoritative.
+    meta = _persist_project_for_session(
+        sess,
+        reason="manual_project_commit",
+        extra={"message": str(body.message or "")[:500]},
+        force_project_id=project_id,
+    )
+    if meta is None:
+        raise HTTPException(500, "project current save failed before commit")
+    canvas = _serialize_session_canvas(sess)
+    graph = _serialize_session_graph(sess)
+    runtime = _serialize_session_runtime(sess)
+    try:
+        commit_meta = PROJECT_STORE.create_commit(
+            project_id,
+            canvas=canvas,
+            graph=graph,
+            runtime=runtime,
+            snapshot=body.snapshot.model_dump(),
+            message=body.message,
+        )
+        PROJECT_STORE.save_current_preview(
+            project_id,
+            snapshot=body.snapshot.model_dump(),
+            note=(body.message or "commit"),
+        )
+        meta_doc = (PROJECT_STORE.load_project(project_id).get("meta") or {})
+    except Exception as exc:
+        raise HTTPException(500, f"project commit failed: {exc}")
+    return ProjectCommitResponse(
+        ok=True,
+        projectId=project_id,
+        commitId=str(commit_meta.get("commitId") or ""),
+        meta=meta_doc if isinstance(meta_doc, dict) else (meta or {}),
+        commitSummary=commit_meta,
+    )
+
+
+@app.post("/project/commit/checkout", response_model=ProjectCommitCheckoutResponse)
+def project_commit_checkout(body: ProjectCommitCheckoutRequest):
+    pid = str(body.project_id or "").strip()
+    cid = str(body.commit_id or "").strip()
+    if not pid or not cid:
+        raise HTTPException(400, "projectId and commitId required")
+    try:
+        PROJECT_STORE.checkout_commit_to_current(pid, cid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"commit checkout failed: {exc}")
+    opened = project_open(ProjectOpenRequest(projectId=pid, sid=body.sid))
+    return ProjectCommitCheckoutResponse(
+        ok=True,
+        projectId=pid,
+        sid=opened.sid,
+        graphEnabled=opened.graph_enabled,
+        strokeCount=opened.stroke_count,
+        graphSummary=opened.graph_summary,
+        strokes=opened.strokes,
+        checkedOutCommitId=cid,
+    )
+
+
+@app.post("/project/delete", response_model=ProjectDeleteResponse)
+def project_delete(body: ProjectDeleteRequest):
+    pid = str(body.project_id or "").strip()
+    if not pid:
+        raise HTTPException(400, "projectId required")
+    unbound = False
+    if body.sid:
+        sess = S.get_session(body.sid)
+        if sess and str(getattr(sess, "project_id", "") or "").strip() == pid:
+            sess.project_id = None
+            unbound = True
+    try:
+        PROJECT_STORE.delete_project(pid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"project delete failed: {exc}")
+    return ProjectDeleteResponse(ok=True, projectId=pid, unboundSession=unbound)
+
+
+@app.post("/project/commit/delete", response_model=ProjectCommitDeleteResponse)
+def project_commit_delete(body: ProjectCommitDeleteRequest):
+    pid = str(body.project_id or "").strip()
+    cid = str(body.commit_id or "").strip()
+    if not pid or not cid:
+        raise HTTPException(400, "projectId and commitId required")
+    try:
+        result = PROJECT_STORE.delete_commit(pid, cid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"commit delete failed: {exc}")
+    return ProjectCommitDeleteResponse(
+        ok=True,
+        projectId=pid,
+        commitId=cid,
+        currentRefCleared=bool((result or {}).get("currentRefCleared")),
+    )
+
+
+@app.post("/project/open", response_model=ProjectOpenResponse)
+def project_open(body: ProjectOpenRequest):
+    project_id = str(body.project_id or "").strip()
+    if not project_id:
+        raise HTTPException(400, "projectId required")
+    try:
+        bundle = PROJECT_STORE.load_project(project_id)
+    except FileNotFoundError:
+        raise HTTPException(404, f"project not found: {project_id}")
+    except Exception as exc:
+        raise HTTPException(500, f"project load failed: {exc}")
+
+    canvas = bundle.get("canvas") if isinstance(bundle.get("canvas"), dict) else {}
+    graph_doc = bundle.get("graph") if isinstance(bundle.get("graph"), dict) else {}
+    runtime_doc = bundle.get("runtime") if isinstance(bundle.get("runtime"), dict) else {}
+
+    sess = S.get_session(body.sid) if body.sid else None
+    if sess is None:
+        sess = S.create_session(
+            mode=str(canvas.get("mode") or "light_helper"),
+            init_goal=(str(canvas.get("initGoal")) if canvas.get("initGoal") is not None else None),
+            tags=[str(v) for v in (canvas.get("tags") or []) if str(v or "").strip()] if isinstance(canvas.get("tags"), list) else None,
+        )
+    else:
+        sess.mode = str(canvas.get("mode") or sess.mode or "light_helper")
+        sess.init_goal = (str(canvas.get("initGoal")) if canvas.get("initGoal") is not None else sess.init_goal)
+        if isinstance(canvas.get("tags"), list):
+            sess.tags = [str(v) for v in (canvas.get("tags") or []) if str(v or "").strip()]
+
+    try:
+        if canvas.get("createdAtEpoch") is not None:
+            sess.created_at = float(canvas.get("createdAtEpoch"))
+    except Exception:
+        pass
+    try:
+        if canvas.get("callCount") is not None:
+            sess.call_count = int(canvas.get("callCount"))
+    except Exception:
+        pass
+
+    strokes_payload = canvas.get("strokes") or []
+    if not isinstance(strokes_payload, list):
+        strokes_payload = []
+    try:
+        sess.replace_strokes([s for s in strokes_payload if isinstance(s, dict)])
+    except Exception as exc:
+        raise HTTPException(400, f"project canvas restore failed: {exc}")
+
+    graph_enabled = bool(graph_doc.get("graphEnabled"))
+    graph_state_dump = graph_doc.get("graphState") if isinstance(graph_doc.get("graphState"), dict) else None
+    if graph_enabled and graph_state_dump:
+        runtime_canvas_size = None
+        runtime_dump = graph_state_dump.get("runtime") if isinstance(graph_state_dump, dict) else None
+        if isinstance(runtime_dump, dict):
+            cs = runtime_dump.get("canvasSize")
+            if isinstance(cs, (list, tuple)) and len(cs) >= 2:
+                try:
+                    runtime_canvas_size = (float(cs[0]), float(cs[1]))
+                except Exception:
+                    runtime_canvas_size = None
+        runtime = sess.init_graph_runtime(canvas_size=runtime_canvas_size)
+        try:
+            runtime.load_state(graph_state_dump)
+        except Exception as exc:
+            sess.disable_graph_runtime()
+            raise HTTPException(500, f"project graph restore failed: {exc}")
+    else:
+        sess.disable_graph_runtime()
+
+    # Restore runtime toggles if present (graph runtime already handles detailed mode state when enabled).
+    if isinstance(runtime_doc, dict) and runtime_doc.get("graphAuto") is False:
+        sess.disable_graph_runtime()
+
+    sess.project_id = project_id
+
+    graph_summary = {"blocks": 0, "groups": 0, "fragments": 0, "visionPendingGroups": 0}
+    if sess.graph_runtime:
+        try:
+            snap = sess.graph_runtime.snapshot()
+            graph_summary = {
+                "blocks": len(snap.get("blocks") or []),
+                "groups": len(snap.get("groups") or []),
+                "fragments": len(snap.get("fragments") or []),
+                "visionPendingGroups": len(snap.get("visionPendingGroups") or []),
+            }
+        except Exception:
+            pass
+
+    _persist_project_for_session(
+        sess,
+        reason="project_open",
+        extra={"restoredSid": sess.sid},
+        force_project_id=project_id,
+    )
+
+    return ProjectOpenResponse(
+        ok=True,
+        projectId=project_id,
+        sid=sess.sid,
+        restored=True,
+        graphEnabled=bool(sess.graph_auto and sess.graph_runtime),
+        strokeCount=len(getattr(sess, "full_strokes", None) or sess.strokes or []),
+        graphSummary=graph_summary,
+        strokes=[s for s in (getattr(sess, "full_strokes", None) or []) if isinstance(s, dict)],
+    )
+
+
+@app.get("/project/detail", response_model=ProjectDetailResponse)
+def project_detail(project_id: str):
+    pid = str(project_id or "").strip()
+    if not pid:
+        raise HTTPException(400, "project_id required")
+    try:
+        bundle = PROJECT_STORE.load_project(pid)
+    except FileNotFoundError:
+        raise HTTPException(404, f"project not found: {pid}")
+    except Exception as exc:
+        raise HTTPException(500, f"project detail load failed: {exc}")
+    current_doc = None
+    current_summary = bundle.get("current") if isinstance(bundle.get("current"), dict) else {}
+    preview_meta = (current_summary.get("preview") if isinstance(current_summary, dict) else None)
+    if isinstance(preview_meta, dict) and preview_meta:
+        current_doc = {
+            "updatedAt": preview_meta.get("updatedAt") or current_summary.get("previewUpdatedAt"),
+            "note": preview_meta.get("note"),
+            "mime": preview_meta.get("mime"),
+            "width": preview_meta.get("width"),
+            "height": preview_meta.get("height"),
+            "bbox": preview_meta.get("bbox"),
+            "imageUrl": f"/project/current/image?project_id={quote(pid)}",
+        }
+    commits = []
+    for item in (bundle.get("commits") or []):
+        if not isinstance(item, dict):
+            continue
+        cid = str(item.get("commitId") or "").strip()
+        image_url = None
+        if cid:
+            image_url = f"/project/commit/image?project_id={quote(pid)}&commit_id={quote(cid)}"
+        commits.append({**item, "imageUrl": image_url})
+    snapshots = []
+    for item in (bundle.get("snapshots") or []):
+        if not isinstance(item, dict):
+            continue
+        sid = str(item.get("snapshotId") or "").strip()
+        image_url = None
+        if sid:
+            image_url = (
+                f"/project/snapshot/image?project_id={quote(pid)}&snapshot_id={quote(sid)}"
+            )
+        snapshots.append({**item, "imageUrl": image_url})
+    return ProjectDetailResponse(
+        ok=True,
+        projectId=pid,
+        meta=(bundle.get("meta") or {}),
+        current=current_doc,
+        commits=commits,
+        legacySnapshots=snapshots,
+        snapshots=snapshots,
+    )
+
+
+@app.get("/project/current/image")
+def project_current_image(project_id: str):
+    pid = str(project_id or "").strip()
+    if not pid:
+        raise HTTPException(400, "project_id required")
+    try:
+        data, mime = PROJECT_STORE.read_current_preview_image(pid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"current preview image read failed: {exc}")
+    return Response(content=data, media_type=mime)
+
+
+@app.get("/project/commit/image")
+def project_commit_image(project_id: str, commit_id: str):
+    pid = str(project_id or "").strip()
+    cid = str(commit_id or "").strip()
+    if not pid or not cid:
+        raise HTTPException(400, "project_id and commit_id required")
+    try:
+        data, mime = PROJECT_STORE.read_commit_preview_image(pid, cid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"commit preview image read failed: {exc}")
+    return Response(content=data, media_type=mime)
+
+
+@app.get("/project/snapshot/image")
+def project_snapshot_image(project_id: str, snapshot_id: str):
+    pid = str(project_id or "").strip()
+    sid = str(snapshot_id or "").strip()
+    if not pid or not sid:
+        raise HTTPException(400, "project_id and snapshot_id required")
+    try:
+        data, mime = PROJECT_STORE.read_snapshot_image(pid, sid)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception as exc:
+        raise HTTPException(500, f"snapshot image read failed: {exc}")
+    return Response(content=data, media_type=mime)
+
+
 @app.post("/session/sync", response_model=SyncSessionResponse)
 def session_sync(body: SyncSessionRequest):
     sess = S.get_session(body.sid)
@@ -896,6 +1423,11 @@ def session_sync(body: SyncSessionRequest):
             except Exception as exc:
                 print("[graph] ingest error:", exc)
     sess.replace_strokes(raw)
+    _persist_project_for_session(
+        sess,
+        reason="session_sync",
+        extra={"strokeCount": len(raw)},
+    )
     return SyncSessionResponse(ok=True, count=len(sess.strokes))
 
 
@@ -968,8 +1500,14 @@ def graph_auto_mode(body: GraphAutoModeRequest):
                 runtime.update_canvas_snapshot(body.graph_snapshot.model_dump())
             except Exception as exc:
                 print("[graph] initial snapshot update error:", exc)
+        _persist_project_for_session(
+            sess,
+            reason="graph_auto_mode_on",
+            extra={"strokeCount": len(payloads)},
+        )
         return GraphAutoModeResponse(ok=True, enabled=True)
     sess.disable_graph_runtime()
+    _persist_project_for_session(sess, reason="graph_auto_mode_off")
     return GraphAutoModeResponse(ok=True, enabled=False)
 
 
@@ -1001,6 +1539,11 @@ def graph_promote_group(body: PromoteGroupRequest):
         "summary": block.summary,
         "contents": list(block.contents),
     }
+    _persist_project_for_session(
+        sess,
+        reason="graph_promote_group",
+        extra={"groupId": body.group_id, "blockId": block.block_id},
+    )
     return PromoteGroupResponse(ok=True, block=payload)
 
 
@@ -1017,6 +1560,11 @@ def graph_promote_vision_group(body: PromoteVisionPendingGroupRequest):
     ok = sess.graph_runtime.promote_vision_pending_group_now(body.group_id)
     if not ok:
         raise HTTPException(404, f"pending vision group not found or processing failed: {body.group_id}")
+    _persist_project_for_session(
+        sess,
+        reason="graph_promote_vision_group",
+        extra={"groupId": body.group_id},
+    )
     return PromoteVisionPendingGroupResponse(ok=True)
 
 
@@ -1035,6 +1583,15 @@ def graph_selection_block_action(body: GraphSelectionBlockActionRequest):
         )
     except Exception as exc:
         raise HTTPException(400, f"selection block action failed: {exc}")
+    _persist_project_for_session(
+        sess,
+        reason="graph_selection_block_action",
+        extra={
+            "action": body.action,
+            "fragmentCount": len(body.fragment_ids or []),
+            "targetBlockId": body.target_block_id,
+        },
+    )
     return GraphSelectionBlockActionResponse(
         ok=True,
         action=str(result.get("action") or body.action),

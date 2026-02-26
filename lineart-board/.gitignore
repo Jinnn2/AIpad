@@ -9,6 +9,10 @@ lerna-debug.log*
 __pycache__/
 *.py[cod]
 *$py.class
+data/
+*.tmp
+*.temp
+*.bak
 
 node_modules
 dist

@@ -127,6 +127,11 @@ const apiFetch = async (path: string, init?: RequestInit) => {
   }
   return request(path)
 }
+const apiUrl = (path: string) => {
+  if (/^https?:/i.test(path)) return path
+  if (API_BASE) return withBase(API_BASE, path)
+  return withBase(FALLBACK_API_BASE, path)
+}
 const SIZE_TO_WIDTH: Record<'s'|'m'|'l'|'xl', number> = { s: 2, m: 4, l: 6, xl: 10 }
 const colorToStroke = (c: ColorName) => {
   switch (c) {
@@ -243,6 +248,68 @@ type TextEditorState = {
   pendingCompletion?: string | null
   completing?: boolean
 }
+type ProjectListItem = {
+  projectId: string
+  name: string
+  createdAt?: string | null
+  updatedAt?: string | null
+  lastSavedAt?: string | null
+  commitCount?: number
+  currentPreviewUpdatedAt?: string | null
+  currentPreview?: Record<string, any> | null
+  stats?: Record<string, any>
+}
+type ProjectSnapshotItem = {
+  snapshotId: string
+  createdAt?: string | null
+  note?: string | null
+  mime?: string | null
+  width?: number | null
+  height?: number | null
+  imageUrl?: string | null
+  bbox?: any
+}
+type ProjectCurrentPreviewItem = {
+  updatedAt?: string | null
+  note?: string | null
+  mime?: string | null
+  width?: number | null
+  height?: number | null
+  bbox?: any
+  imageUrl?: string | null
+}
+type ProjectCommitItem = {
+  commitId: string
+  createdAt?: string | null
+  message?: string | null
+  mime?: string | null
+  width?: number | null
+  height?: number | null
+  bbox?: any
+  imageUrl?: string | null
+}
+type ProjectDetail = {
+  projectId: string
+  meta?: Record<string, any>
+  current?: ProjectCurrentPreviewItem | null
+  commits: ProjectCommitItem[]
+  legacySnapshots?: ProjectSnapshotItem[]
+  snapshots: ProjectSnapshotItem[]
+}
+type ProjectContextMenuState =
+  | {
+      kind: 'project'
+      projectId: string
+      x: number
+      y: number
+    }
+  | {
+      kind: 'commit'
+      projectId: string
+      commitId: string
+      x: number
+      y: number
+    }
 export default function LineArtBoard() {
   // Canvas size; swap to ResizeObserver for responsive layout
   const [size] = useState({ width: window.innerWidth, height: window.innerHeight })
@@ -519,6 +586,24 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       data: snap.data,
     }
   }, [snapshotCanvas])
+  const captureProjectSaveSnapshotPayload = useCallback(async (): Promise<GraphSnapshotUpload | null> => {
+    const snap = await snapshotCanvas(1400, "image/jpeg", 0.82, {
+      hideGrid: true,
+      background: "#ffffff",
+    })
+    if (!snap.data) return null
+    const worldLeft = (-view.x) / view.scale
+    const worldTop = (-view.y) / view.scale
+    const worldWidth = size.width / view.scale
+    const worldHeight = size.height / view.scale
+    return {
+      bbox: [worldLeft, worldTop, worldLeft + worldWidth, worldTop + worldHeight],
+      width: snap.w,
+      height: snap.h,
+      mime: snap.mime,
+      data: snap.data,
+    }
+  }, [snapshotCanvas, view.x, view.y, view.scale, size.width, size.height])
   // Store AI previews grouped by payload id
   const [previews, setPreviews] = useState<Record<string, PreviewEntry>>({})
   const previewEntries = useMemo(() => Object.values(previews), [previews])
@@ -539,6 +624,25 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   // AI feed keeps the latest 50 suggestion entries
   const [aiFeed, setAiFeed] = useState<AIFeedEntry[]>([])
   const [aiFeedSidebarOpen, setAiFeedSidebarOpen] = useState<boolean>(false)
+  const [projectManagerOpen, setProjectManagerOpen] = useState<boolean>(false)
+  const [projectManagerBusy, setProjectManagerBusy] = useState<boolean>(false)
+  const [projectManagerError, setProjectManagerError] = useState<string>('')
+  const [projectNameDraft, setProjectNameDraft] = useState<string>('')
+  const [projectPromptOpen, setProjectPromptOpen] = useState<boolean>(false)
+  const [projectPromptNameDraft, setProjectPromptNameDraft] = useState<string>('')
+  const [projectPromptSubmitting, setProjectPromptSubmitting] = useState<boolean>(false)
+  const [projectList, setProjectList] = useState<ProjectListItem[]>([])
+  const [selectedProjectId, setSelectedProjectId] = useState<string>('')
+  const [currentProjectId, setCurrentProjectId] = useState<string | null>(null)
+  const [currentProjectName, setCurrentProjectName] = useState<string | null>(null)
+  const [projectDetail, setProjectDetail] = useState<ProjectDetail | null>(null)
+  const [projectActionPending, setProjectActionPending] = useState<'create' | 'save' | 'commit' | 'open' | 'checkout' | 'delete-project' | 'delete-commit' | 'current-snapshot' | null>(null)
+  const [projectSavePending, setProjectSavePending] = useState<boolean>(false)
+  const [projectSaveFlash, setProjectSaveFlash] = useState<boolean>(false)
+  const projectSaveFlashTimerRef = useRef<number | null>(null)
+  const [projectCommitMessageDraft, setProjectCommitMessageDraft] = useState<string>('')
+  const [projectCurrentPreviewDirty, setProjectCurrentPreviewDirty] = useState<boolean>(false)
+  const [projectContextMenuState, setProjectContextMenuState] = useState<ProjectContextMenuState | null>(null)
   const [plannerNextStepHint, setPlannerNextStepHint] = useState<string>('')
   // Session identifiers from backend; lastSentIndex tracks delta uploads
   const [sid, setSid] = useState<string | null>(null)
@@ -546,6 +650,8 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const lastSentIndexRef = useRef<number>(0)
   // Debounce timer handle for session sync
   const syncTimerRef = useRef<number | null>(null)
+  const projectAutoSnapshotTimerRef = useRef<number | null>(null)
+  const projectSkipNextDirtyRef = useRef(false)
   const graphCaptureBBoxRef = useRef<[number, number, number, number] | null>(null)
   const graphKnownStrokeIdsRef = useRef<Set<string>>(new Set())
   const autoMaintainRef = useRef(false)
@@ -568,17 +674,25 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   }, [drawStack])
   // -------- Undo/redo snapshot stacks --------
   type Snapshot = { shapes: ShapeDraft[]; drawStack: DrawStackEntry[] }
+  const HISTORY_LIMIT = 30
   const [past, setPast] = useState<Snapshot[]>([])
   const [future, setFuture] = useState<Snapshot[]>([])
   const pushHistory = useCallback((snap?: Snapshot) => {
-    setPast(p => [...p, snap ?? { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }])
+    const nextSnap = snap ?? { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }
+    setPast(p => {
+      const next = [...p, nextSnap]
+      return next.length > HISTORY_LIMIT ? next.slice(next.length - HISTORY_LIMIT) : next
+    })
     setFuture([]) // Clear redo branch after a new action
   }, [shapes, drawStack])
   const undo = useCallback(() => {
     setPast(p => {
       if (p.length === 0) return p
       const last = p[p.length - 1]
-      setFuture(f => [{ shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }, ...f])
+      setFuture(f => {
+        const next = [{ shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }, ...f]
+        return next.length > HISTORY_LIMIT ? next.slice(0, HISTORY_LIMIT) : next
+      })
       setShapes(JSON.parse(JSON.stringify(last.shapes)))
       setDrawStack(JSON.parse(JSON.stringify(last.drawStack)))
       return p.slice(0, -1)
@@ -588,13 +702,21 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     setFuture(f => {
       if (f.length === 0) return f
       const head = f[0]
-      setPast(p => [...p, { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }])
+      setPast(p => {
+        const next = [...p, { shapes: JSON.parse(JSON.stringify(shapes)), drawStack: JSON.parse(JSON.stringify(drawStack)) }]
+        return next.length > HISTORY_LIMIT ? next.slice(next.length - HISTORY_LIMIT) : next
+      })
       setShapes(JSON.parse(JSON.stringify(head.shapes)))
       setDrawStack(JSON.parse(JSON.stringify(head.drawStack)))
       return f.slice(1)
     })
   }, [shapes, drawStack])
-  // ----- Auto-sync drawStack to backend session every 300ms -----
+  const [suspendSessionSync, setSuspendSessionSync] = useState<boolean>(false)
+  React.useEffect(() => {
+    if (toolMode === 'select') return
+    setSuspendSessionSync(false)
+  }, [toolMode])
+  // ----- Auto-sync drawStack to backend session (debounced) -----
   const syncSession = useCallback(async (curSid: string) => {
     try {
       const strokes = packAllStrokes()
@@ -626,16 +748,17 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   React.useEffect(() => {
     if (!sid) return
     if (syncTimerRef.current) window.clearTimeout(syncTimerRef.current)
+    if (suspendSessionSync) return
     syncTimerRef.current = window.setTimeout(() => {
       syncSession(sid)
-    }, 300) as unknown as number
+    }, 1000) as unknown as number
     return () => {
       if (syncTimerRef.current) {
         window.clearTimeout(syncTimerRef.current)
         syncTimerRef.current = null
       }
     }
-  }, [drawStack, sid, syncSession])
+  }, [drawStack, sid, syncSession, suspendSessionSync])
   // ----- Auto-complete toggle & countdown (5s) -----
   const [autoComplete, setAutoComplete] = useState<boolean>(false)
   const [autoCountdown, setAutoCountdown] = useState<number|null>(null)
@@ -655,6 +778,14 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     y1: number
   } | null>(null)
   const graphSelectionDragRef = useRef<{ pointerId: number; x0: number; y0: number } | null>(null)
+  const graphSelectionRectRafRef = useRef<number | null>(null)
+  const graphSelectionRectPendingRef = useRef<{
+    x0: number
+    y0: number
+    x1: number
+    y1: number
+  } | null>(null)
+  const [graphSelectionDragging, setGraphSelectionDragging] = useState<boolean>(false)
   const [graphSelectedFragmentIds, setGraphSelectedFragmentIds] = useState<string[]>([])
   const [graphSelectionActionPending, setGraphSelectionActionPending] = useState<'create_block' | 'assign_block' | null>(null)
   const [graphSelectionTargetBlockId, setGraphSelectionTargetBlockId] = useState<string>('')
@@ -693,6 +824,12 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       setGraphSelectionRectScreen(null)
       setGraphSelectedFragmentIds([])
       graphSelectionDragRef.current = null
+      graphSelectionRectPendingRef.current = null
+      setGraphSelectionDragging(false)
+      if (graphSelectionRectRafRef.current != null) {
+        window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+        graphSelectionRectRafRef.current = null
+      }
     }
   }, [graphInspectorVisible])
   React.useEffect(() => {
@@ -702,7 +839,31 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     setGraphSelectionRectScreen(null)
     setGraphSelectedFragmentIds([])
     graphSelectionDragRef.current = null
+    graphSelectionRectPendingRef.current = null
+    setGraphSelectionDragging(false)
+    if (graphSelectionRectRafRef.current != null) {
+      window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+      graphSelectionRectRafRef.current = null
+    }
   }, [autoMaintain])
+  React.useEffect(() => {
+    if (graphBlockSelectionMode) return
+    graphSelectionDragRef.current = null
+    graphSelectionRectPendingRef.current = null
+    setGraphSelectionDragging(false)
+    if (graphSelectionRectRafRef.current != null) {
+      window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+      graphSelectionRectRafRef.current = null
+    }
+  }, [graphBlockSelectionMode])
+  React.useEffect(() => {
+    return () => {
+      if (graphSelectionRectRafRef.current != null) {
+        window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+        graphSelectionRectRafRef.current = null
+      }
+    }
+  }, [])
   React.useEffect(() => {
     if (graphInspectorVisible && autoMaintain) {
       setGraphBlocksDrawerOpen(true)
@@ -1359,6 +1520,21 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     }
   }, [sid, autoMaintain, graphSelectedFragmentIds, graphSelectionTargetBlockId, fetchGraphSnapshot])
   const graphSelectionOverlayActive = graphInspectorVisible && autoMaintain && graphBlockSelectionMode
+  const scheduleGraphSelectionRectScreen = useCallback((nextRect: {
+    x0: number
+    y0: number
+    x1: number
+    y1: number
+  }) => {
+    graphSelectionRectPendingRef.current = nextRect
+    if (graphSelectionRectRafRef.current != null) return
+    graphSelectionRectRafRef.current = window.requestAnimationFrame(() => {
+      graphSelectionRectRafRef.current = null
+      const pending = graphSelectionRectPendingRef.current
+      if (!pending) return
+      setGraphSelectionRectScreen(pending)
+    })
+  }, [])
   const graphSelectionRectNormalized = useMemo(() => {
     if (!graphSelectionRectScreen) return null
     const left = Math.min(graphSelectionRectScreen.x0, graphSelectionRectScreen.x1)
@@ -1373,7 +1549,13 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     if (!rect) return
     const x = ev.clientX - rect.left
     const y = ev.clientY - rect.top
+    if (graphSelectionRectRafRef.current != null) {
+      window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+      graphSelectionRectRafRef.current = null
+    }
+    graphSelectionRectPendingRef.current = null
     graphSelectionDragRef.current = { pointerId: ev.pointerId, x0: x, y0: y }
+    setGraphSelectionDragging(true)
     setGraphSelectionRectScreen({ x0: x, y0: y, x1: x, y1: y })
     try { ev.currentTarget.setPointerCapture(ev.pointerId) } catch {}
     ev.preventDefault()
@@ -1385,14 +1567,20 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     if (!rect) return
     const x = ev.clientX - rect.left
     const y = ev.clientY - rect.top
-    setGraphSelectionRectScreen({ x0: drag.x0, y0: drag.y0, x1: x, y1: y })
+    scheduleGraphSelectionRectScreen({ x0: drag.x0, y0: drag.y0, x1: x, y1: y })
     ev.preventDefault()
-  }, [])
+  }, [scheduleGraphSelectionRectScreen])
   const onGraphSelectionPointerUp = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
     const drag = graphSelectionDragRef.current
     if (!drag || drag.pointerId !== ev.pointerId) return
     const rect = rootRef.current?.getBoundingClientRect()
     graphSelectionDragRef.current = null
+    graphSelectionRectPendingRef.current = null
+    setGraphSelectionDragging(false)
+    if (graphSelectionRectRafRef.current != null) {
+      window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+      graphSelectionRectRafRef.current = null
+    }
     if (!rect) {
       setGraphSelectionRectScreen(null)
       return
@@ -1409,6 +1597,12 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
     const drag = graphSelectionDragRef.current
     if (!drag || drag.pointerId !== ev.pointerId) return
     graphSelectionDragRef.current = null
+    graphSelectionRectPendingRef.current = null
+    setGraphSelectionDragging(false)
+    if (graphSelectionRectRafRef.current != null) {
+      window.cancelAnimationFrame(graphSelectionRectRafRef.current)
+      graphSelectionRectRafRef.current = null
+    }
     try { ev.currentTarget.releasePointerCapture(ev.pointerId) } catch {}
   }, [])
   const pendingVisionGroupOverlays = useMemo(() => {
@@ -1609,6 +1803,572 @@ const stageCursor = toolMode === 'hand'
       alert('Invalid JSON:\n' + (err?.message || String(err)))
     }
   }, [autoMaintain, startDelayedImport, clearImportQueue, noteUserAction])
+  const refreshProjectList = useCallback(async () => {
+    const res = await apiFetch('/projects')
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '')
+      throw new Error(`projects failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+    }
+    const data = await res.json().catch(() => ({}))
+    const next = Array.isArray(data?.projects) ? data.projects as ProjectListItem[] : []
+    setProjectList(next)
+    setCurrentProjectName((prev) => {
+      if (!currentProjectId) return prev
+      const hit = next.find((p) => p.projectId === currentProjectId)
+      return hit ? (hit.name || hit.projectId) : prev
+    })
+    setSelectedProjectId((prev) => {
+      if (prev && next.some((p) => p.projectId === prev)) return prev
+      const currentProject = next.find((p) => p.projectId === (currentProjectId || projectDetail?.projectId || ''))
+      if (currentProject) return currentProject.projectId
+      return next[0]?.projectId || ''
+    })
+    return next
+  }, [projectDetail?.projectId, currentProjectId])
+  const refreshProjectDetail = useCallback(async (projectId: string) => {
+    const pid = String(projectId || '').trim()
+    if (!pid) {
+      setProjectDetail(null)
+      return null
+    }
+    const res = await apiFetch(`/project/detail?project_id=${encodeURIComponent(pid)}`)
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '')
+      throw new Error(`project detail failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+    }
+    const data = await res.json().catch(() => ({}))
+    const snapshots = Array.isArray(data?.snapshots) ? data.snapshots as ProjectSnapshotItem[] : []
+    const legacySnapshots = Array.isArray(data?.legacySnapshots) ? data.legacySnapshots as ProjectSnapshotItem[] : snapshots
+    const commits = Array.isArray(data?.commits) ? data.commits as ProjectCommitItem[] : []
+    const current = (data?.current && typeof data.current === 'object') ? (data.current as ProjectCurrentPreviewItem) : null
+    const detail: ProjectDetail = {
+      projectId: String(data?.projectId || pid),
+      meta: (data?.meta && typeof data.meta === 'object') ? data.meta : {},
+      current,
+      commits,
+      legacySnapshots,
+      snapshots,
+    }
+    setProjectDetail(detail)
+    return detail
+  }, [])
+  const openProjectManager = useCallback(async () => {
+    setProjectManagerOpen(true)
+    setProjectManagerBusy(true)
+    setProjectManagerError('')
+    try {
+      const list = await refreshProjectList()
+      const bound = (projectList.find((p) => p.projectId === (currentProjectId || projectDetail?.projectId || ''))?.projectId)
+      const nextId = selectedProjectId || bound || list?.[0]?.projectId || ''
+      if (nextId) {
+        setSelectedProjectId(nextId)
+        await refreshProjectDetail(nextId)
+      } else {
+        setProjectDetail(null)
+      }
+    } catch (err: any) {
+      console.warn('[project] open manager failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectManagerBusy(false)
+    }
+  }, [refreshProjectList, refreshProjectDetail, selectedProjectId, projectList, projectDetail?.projectId, currentProjectId])
+  React.useEffect(() => {
+    if (!projectManagerOpen) return
+    if (!selectedProjectId) return
+    let alive = true
+    ;(async () => {
+      try {
+        const detail = await refreshProjectDetail(selectedProjectId)
+        if (!alive) return
+        if (detail) setProjectManagerError('')
+      } catch (err: any) {
+        if (!alive) return
+        console.warn('[project] detail refresh failed:', err)
+        setProjectManagerError(err?.message || String(err))
+      }
+    })()
+    return () => { alive = false }
+  }, [projectManagerOpen, selectedProjectId, refreshProjectDetail])
+  const initSessionForProjectAction = useCallback(async () => {
+    let curSid = sid
+    if (curSid) return curSid
+    const initRes = await apiFetch('/session/init', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mode: 'light_helper', init_goal: hint }),
+    })
+    if (!initRes.ok) {
+      const txt = await initRes.text().catch(() => '')
+      throw new Error(`init session failed: ${initRes.status} ${initRes.statusText}${txt ? `\n${txt}` : ''}`)
+    }
+    const j = await initRes.json().catch(() => ({}))
+    curSid = String(j?.sid || '')
+    if (!curSid) throw new Error('invalid session id from /session/init')
+    setSid(curSid)
+    lastSentIndexRef.current = 0
+    return curSid
+  }, [sid, hint])
+  const createProjectAndBind = useCallback(async (name?: string) => {
+    const curSid = await initSessionForProjectAction()
+    const res = await apiFetch('/project/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sid: curSid,
+        name: (name || '').trim() || undefined,
+      }),
+    })
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '')
+      throw new Error(`project create failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+    }
+    const data = await res.json().catch(() => ({}))
+    const pid = String(data?.projectId || '')
+    const pname = String(data?.meta?.name || name || pid || '')
+    if (pid) {
+      setCurrentProjectId(pid)
+      setCurrentProjectName(pname || pid)
+      setSelectedProjectId(pid)
+    }
+    return { sid: curSid, projectId: pid, projectName: pname || pid }
+  }, [initSessionForProjectAction])
+  const markProjectSavedFlash = useCallback(() => {
+    if (projectSaveFlashTimerRef.current) window.clearTimeout(projectSaveFlashTimerRef.current)
+    setProjectSaveFlash(true)
+    projectSaveFlashTimerRef.current = window.setTimeout(() => {
+      setProjectSaveFlash(false)
+      projectSaveFlashTimerRef.current = null
+    }, 1500) as unknown as number
+  }, [])
+  const saveProjectCurrentNow = useCallback(async (opts?: { silent?: boolean; forceProjectId?: string; note?: string }) => {
+    if (projectSavePending) return null
+    setProjectSavePending(true)
+    if (!opts?.silent) setProjectManagerError('')
+    try {
+      const curSid = await initSessionForProjectAction()
+      let pid = String(opts?.forceProjectId || currentProjectId || selectedProjectId || '').trim()
+      if (!pid) {
+        throw new Error('No project bound. Create a project first.')
+      }
+      const snapshot = await captureProjectSaveSnapshotPayload()
+      const res = await apiFetch('/project/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sid: curSid,
+          projectId: pid,
+          mode: 'current',
+          note: opts?.note || undefined,
+          snapshot: snapshot ?? undefined,
+        }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`project save failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = await res.json().catch(() => ({}))
+      pid = String(data?.projectId || pid)
+      setCurrentProjectId(pid)
+      const list = await refreshProjectList()
+      const hit = list.find((p) => p.projectId === pid)
+      setCurrentProjectName(hit ? (hit.name || hit.projectId) : (currentProjectName || pid))
+      setSelectedProjectId(pid)
+      if (projectManagerOpen) await refreshProjectDetail(pid)
+      setProjectCurrentPreviewDirty(false)
+      markProjectSavedFlash()
+      return { projectId: pid }
+    } catch (err: any) {
+      console.warn('[project] save current failed:', err)
+      setProjectManagerError(err?.message || String(err))
+      throw err
+    } finally {
+      setProjectSavePending(false)
+    }
+  }, [
+    projectSavePending,
+    initSessionForProjectAction,
+    currentProjectId,
+    selectedProjectId,
+    captureProjectSaveSnapshotPayload,
+    refreshProjectList,
+    refreshProjectDetail,
+    projectManagerOpen,
+    currentProjectName,
+    markProjectSavedFlash,
+  ])
+  const handleCreateProject = useCallback(async () => {
+    if (projectActionPending) return
+    setProjectActionPending('create')
+    setProjectManagerError('')
+    try {
+      const created = await createProjectAndBind(projectNameDraft)
+      setProjectNameDraft('')
+      const list = await refreshProjectList()
+      const hit = list.find((p) => p.projectId === created.projectId)
+      if (hit) setCurrentProjectName(hit.name || hit.projectId)
+      if (created.projectId) await refreshProjectDetail(created.projectId)
+      setProjectCurrentPreviewDirty(true)
+    } catch (err: any) {
+      console.warn('[project] create failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [projectActionPending, createProjectAndBind, projectNameDraft, refreshProjectList, refreshProjectDetail])
+  const handleTopbarSaveProject = useCallback(async () => {
+    if (projectSavePending || projectPromptSubmitting) return
+    if (!currentProjectId) {
+      setProjectPromptNameDraft(projectNameDraft.trim() || '')
+      setProjectPromptOpen(true)
+      return
+    }
+    try {
+      await saveProjectCurrentNow({ forceProjectId: currentProjectId, note: 'manual current save' })
+    } catch {
+      // error already surfaced
+    }
+  }, [projectSavePending, projectPromptSubmitting, currentProjectId, projectNameDraft, saveProjectCurrentNow])
+  const handleConfirmProjectPromptCreateAndSave = useCallback(async () => {
+    if (projectPromptSubmitting) return
+    const name = projectPromptNameDraft.trim()
+    if (!name) return
+    setProjectPromptSubmitting(true)
+    setProjectManagerError('')
+    try {
+      const created = await createProjectAndBind(name)
+      setProjectPromptOpen(false)
+      setProjectPromptNameDraft('')
+      setProjectNameDraft('')
+      await refreshProjectList()
+      if (created.projectId) {
+        await saveProjectCurrentNow({ forceProjectId: created.projectId, note: 'initial current save' })
+        if (projectManagerOpen) await refreshProjectDetail(created.projectId)
+      }
+    } catch (err: any) {
+      console.warn('[project] create+save failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectPromptSubmitting(false)
+    }
+  }, [projectPromptSubmitting, projectPromptNameDraft, createProjectAndBind, refreshProjectList, saveProjectCurrentNow, projectManagerOpen, refreshProjectDetail])
+  const handleCommitProject = useCallback(async () => {
+    if (projectActionPending) return
+    let pid = String(selectedProjectId || currentProjectId || '').trim()
+    if (!pid) {
+      setProjectManagerError('Select or create a project first.')
+      return
+    }
+    setProjectActionPending('commit')
+    setProjectManagerError('')
+    try {
+      const curSid = await initSessionForProjectAction()
+      const snapshot = await captureProjectSaveSnapshotPayload()
+      if (!snapshot) throw new Error('Failed to capture project snapshot for commit')
+      const res = await apiFetch('/project/commit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sid: curSid,
+          projectId: pid,
+          message: projectCommitMessageDraft.trim() || undefined,
+          snapshot,
+        }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`project commit failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = await res.json().catch(() => ({}))
+      pid = String(data?.projectId || pid)
+      setCurrentProjectId(pid)
+      setSelectedProjectId(pid)
+      await refreshProjectList()
+      await refreshProjectDetail(pid)
+      setProjectCurrentPreviewDirty(false)
+      setProjectCommitMessageDraft('')
+    } catch (err: any) {
+      console.warn('[project] commit failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [
+    projectActionPending,
+    selectedProjectId,
+    currentProjectId,
+    initSessionForProjectAction,
+    captureProjectSaveSnapshotPayload,
+    projectCommitMessageDraft,
+    refreshProjectList,
+    refreshProjectDetail,
+  ])
+  const applyOpenedProjectPayload = useCallback(async (data: any, opts?: { closeManager?: boolean }) => {
+    const openedSid = String(data?.sid || '')
+    const graphEnabled = Boolean(data?.graphEnabled)
+    const openedProjectId = String(data?.projectId || '')
+    const strokes = Array.isArray(data?.strokes) ? (data.strokes as AIStrokeV11[]) : []
+    const entries = buildImportEntriesFromStrokes(strokes)
+    clearImportQueue()
+    projectSkipNextDirtyRef.current = true
+    setPast([])
+    setFuture([])
+    setPreviews({})
+    setCurrentPayloadId(null)
+    setSelectedShapeId(null)
+    setCompletionPreviews({})
+    setShapes(entries.map((entry) => entry.draft))
+    setDrawStack(entries.map((entry) => ({ ai: entry.stroke, draft: entry.draft })))
+    graphKnownStrokeIdsRef.current = new Set(entries.map((entry) => String(entry.stroke.id)))
+    graphCaptureBBoxRef.current = null
+    if (openedSid) {
+      setSid(openedSid)
+      lastSentIndexRef.current = 0
+    }
+    if (graphEnabled) {
+      setMode('full')
+    }
+    setAutoMaintain(graphEnabled)
+    if (!graphEnabled) {
+      setGraphSnapshot(null)
+    } else if (openedSid) {
+      await fetchGraphSnapshot(openedSid)
+    }
+    if (openedProjectId) {
+      setCurrentProjectId(openedProjectId)
+      setSelectedProjectId(openedProjectId)
+    }
+    setProjectCurrentPreviewDirty(false)
+    if (opts?.closeManager !== false) setProjectManagerOpen(false)
+    setProjectManagerError('')
+  }, [clearImportQueue, fetchGraphSnapshot])
+  const handleOpenProject = useCallback(async () => {
+    if (projectActionPending) return
+    const pid = String(selectedProjectId || '').trim()
+    if (!pid) {
+      setProjectManagerError('Select a project to open.')
+      return
+    }
+    setProjectActionPending('open')
+    setProjectManagerError('')
+    try {
+      const res = await apiFetch('/project/open', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          projectId: pid,
+          sid: sid || undefined,
+        }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`project open failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = await res.json().catch(() => ({}))
+      await applyOpenedProjectPayload(data, { closeManager: true })
+      await refreshProjectList()
+      const detail = await refreshProjectDetail(pid)
+      const list = await refreshProjectList()
+      const hit = list.find((p) => p.projectId === pid)
+      if (hit) setCurrentProjectName(hit.name || hit.projectId)
+      else if (detail?.meta?.name) setCurrentProjectName(String(detail.meta.name))
+    } catch (err: any) {
+      console.warn('[project] open failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [projectActionPending, selectedProjectId, sid, applyOpenedProjectPayload, refreshProjectList, refreshProjectDetail])
+  const handleCheckoutCommit = useCallback(async (projectId: string, commitId: string) => {
+    if (projectActionPending) return
+    const pid = String(projectId || '').trim()
+    const cid = String(commitId || '').trim()
+    if (!pid || !cid) return
+    const ok = window.confirm('Switch current to this commit?\nThis will replace the current canvas and graph state with the selected commit snapshot.')
+    if (!ok) return
+    setProjectActionPending('checkout')
+    setProjectManagerError('')
+    try {
+      const curSid = await initSessionForProjectAction()
+      const res = await apiFetch('/project/commit/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sid: curSid, projectId: pid, commitId: cid }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`commit checkout failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      const data = await res.json().catch(() => ({}))
+      await applyOpenedProjectPayload(data, { closeManager: false })
+      const list = await refreshProjectList()
+      await refreshProjectDetail(pid)
+      const hit = list.find((p) => p.projectId === pid)
+      if (hit) setCurrentProjectName(hit.name || hit.projectId)
+    } catch (err: any) {
+      console.warn('[project] commit checkout failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [projectActionPending, initSessionForProjectAction, applyOpenedProjectPayload, refreshProjectList, refreshProjectDetail])
+  const handleDeleteProject = useCallback(async (projectId: string) => {
+    if (projectActionPending) return
+    const pid = String(projectId || '').trim()
+    if (!pid) return
+    const projName = projectList.find((p) => p.projectId === pid)?.name || pid
+    if (!window.confirm(`Delete project "${projName}" and all commits?`)) return
+    setProjectActionPending('delete-project')
+    setProjectManagerError('')
+    try {
+      const res = await apiFetch('/project/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ projectId: pid, sid: sid || undefined }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`project delete failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      if (currentProjectId === pid) {
+        setCurrentProjectId(null)
+        setCurrentProjectName(null)
+      }
+      if (selectedProjectId === pid) {
+        setProjectDetail(null)
+      }
+      setProjectContextMenuState(null)
+      const list = await refreshProjectList()
+      if (selectedProjectId === pid) {
+        const nextId = list[0]?.projectId || ''
+        setSelectedProjectId(nextId)
+        if (nextId) await refreshProjectDetail(nextId)
+      }
+    } catch (err: any) {
+      console.warn('[project] delete failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [projectActionPending, projectList, sid, currentProjectId, selectedProjectId, refreshProjectList, refreshProjectDetail])
+  const handleDeleteCommit = useCallback(async (projectId: string, commitId: string) => {
+    if (projectActionPending) return
+    const pid = String(projectId || '').trim()
+    const cid = String(commitId || '').trim()
+    if (!pid || !cid) return
+    if (!window.confirm('Delete this commit snapshot?')) return
+    setProjectActionPending('delete-commit')
+    setProjectManagerError('')
+    try {
+      const res = await apiFetch('/project/commit/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ projectId: pid, commitId: cid }),
+      })
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '')
+        throw new Error(`commit delete failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+      }
+      setProjectContextMenuState(null)
+      await refreshProjectList()
+      await refreshProjectDetail(pid)
+    } catch (err: any) {
+      console.warn('[project] commit delete failed:', err)
+      setProjectManagerError(err?.message || String(err))
+    } finally {
+      setProjectActionPending(null)
+    }
+  }, [projectActionPending, refreshProjectList, refreshProjectDetail])
+  React.useEffect(() => {
+    if (!currentProjectId) return
+    if (projectSkipNextDirtyRef.current) {
+      projectSkipNextDirtyRef.current = false
+      return
+    }
+    setProjectCurrentPreviewDirty(true)
+  }, [drawStack, currentProjectId])
+  React.useEffect(() => {
+    const onDocPointer = () => setProjectContextMenuState(null)
+    window.addEventListener('pointerdown', onDocPointer)
+    return () => window.removeEventListener('pointerdown', onDocPointer)
+  }, [])
+  React.useEffect(() => {
+    return () => {
+      if (projectSaveFlashTimerRef.current) {
+        window.clearTimeout(projectSaveFlashTimerRef.current)
+        projectSaveFlashTimerRef.current = null
+      }
+      if (projectAutoSnapshotTimerRef.current) {
+        window.clearInterval(projectAutoSnapshotTimerRef.current)
+        projectAutoSnapshotTimerRef.current = null
+      }
+    }
+  }, [])
+  React.useEffect(() => {
+    if (projectAutoSnapshotTimerRef.current) {
+      window.clearInterval(projectAutoSnapshotTimerRef.current)
+      projectAutoSnapshotTimerRef.current = null
+    }
+    if (!currentProjectId || !sid) return
+    if (projectSavePending || projectPromptSubmitting || projectActionPending) return
+    const tick = async () => {
+      if (!projectCurrentPreviewDirty) return
+      if (document.visibilityState !== 'visible') return
+      try {
+        const snapshot = await captureProjectSaveSnapshotPayload()
+        if (!snapshot) return
+        const res = await apiFetch('/project/current-snapshot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sid,
+            projectId: currentProjectId,
+            snapshot,
+          }),
+        })
+        if (!res.ok) {
+          const txt = await res.text().catch(() => '')
+          throw new Error(`project current snapshot failed: ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
+        }
+        setProjectCurrentPreviewDirty(false)
+        if (projectManagerOpen && selectedProjectId === currentProjectId) {
+          void refreshProjectDetail(currentProjectId)
+          void refreshProjectList()
+        }
+      } catch (err) {
+        console.warn('[project] auto current snapshot failed:', err)
+      }
+    }
+    projectAutoSnapshotTimerRef.current = window.setInterval(() => { void tick() }, 300000) as unknown as number
+    return () => {
+      if (projectAutoSnapshotTimerRef.current) {
+        window.clearInterval(projectAutoSnapshotTimerRef.current)
+        projectAutoSnapshotTimerRef.current = null
+      }
+    }
+  }, [
+    currentProjectId,
+    sid,
+    projectCurrentPreviewDirty,
+    projectSavePending,
+    projectPromptSubmitting,
+    projectActionPending,
+    captureProjectSaveSnapshotPayload,
+    projectManagerOpen,
+    selectedProjectId,
+    refreshProjectDetail,
+    refreshProjectList,
+  ])
+  const formatProjectTime = useCallback((raw?: string | null) => {
+    if (!raw) return ''
+    const t = Date.parse(String(raw))
+    if (!Number.isFinite(t)) return String(raw)
+    try {
+      return new Date(t).toLocaleString()
+    } catch {
+      return String(raw)
+    }
+  }, [])
   const updateTextEditorState = useCallback((patch: Partial<TextEditorState>) => {
     setTextEditor((prev) => (prev ? { ...prev, ...patch } : prev))
   }, [])
@@ -2060,6 +2820,13 @@ const openTextEditor = useCallback((params: {
       }
       return
     }
+    if (graphSelectionDragging) {
+      if (graphPollRef.current) {
+        window.clearInterval(graphPollRef.current)
+        graphPollRef.current = null
+      }
+      return
+    }
     void fetchGraphSnapshot(sid)
     if (graphPollRef.current) window.clearInterval(graphPollRef.current)
     graphPollRef.current = window.setInterval(() => {
@@ -2071,7 +2838,7 @@ const openTextEditor = useCallback((params: {
         graphPollRef.current = null
       }
     }
-  }, [autoMaintain, sid, fetchGraphSnapshot])
+  }, [autoMaintain, sid, fetchGraphSnapshot, graphSelectionDragging])
   // Infinite grid that follows the camera viewport
   const Grid: React.FC = () => {
     const STEP = 32
@@ -2939,10 +3706,12 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       if (!target) {
         setSelectedShapeId(null)
         selectDragRef.current = null
+        setSuspendSessionSync(false)
         return
       }
       noteUserAction()
       setSelectedShapeId(target.id)
+      setSuspendSessionSync(false)
       selectDragRef.current = {
         id: target.id,
         offsetX: wpt.x - target.x,
@@ -3015,6 +3784,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         const dist = Math.hypot(nextX - drag.startX, nextY - drag.startY)
         if (dist > 0.5) {
           drag.moved = true
+          setSuspendSessionSync(true)
           pushHistory()
         } else {
           return
@@ -3072,6 +3842,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       const drag = selectDragRef.current
       const targetId = drag?.id ?? selectedShapeId
       selectDragRef.current = null
+      setSuspendSessionSync(false)
       if (drag && drag.moved) {
         return
       }
@@ -3440,6 +4211,12 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onToggleAutoComplete={handleAutoCompleteToggle}
         preferExplanatoryDrawing={preferExplanatoryDrawing}
         onTogglePreferExplanatoryDrawing={setPreferExplanatoryDrawing}
+        onOpenProjectManager={() => { void openProjectManager() }}
+        onSaveProjectCurrent={() => { void handleTopbarSaveProject() }}
+        projectHasBinding={!!currentProjectId}
+        projectBoundName={currentProjectName || undefined}
+        projectSavePending={projectSavePending}
+        projectSaveFlash={projectSaveFlash}
       />
       <SettingsButton
         open={settingsOpen}
@@ -3476,6 +4253,463 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           <span aria-hidden style={{ fontSize: 14, lineHeight: 1 }}>≡</span>
           AI Feed
         </button>
+      )}
+      {projectManagerOpen && (
+        <div
+          onMouseDown={(ev) => {
+            if (ev.target === ev.currentTarget) setProjectManagerOpen(false)
+          }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 2500,
+            background: 'rgba(15,23,42,0.18)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 16,
+          }}
+        >
+          <div
+            style={{
+              width: `min(86vw, 900px)`,
+              height: `min(86vh, 900px)`,
+              aspectRatio: '1 / 1',
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96))',
+              border: '1px solid rgba(148,163,184,0.28)',
+              borderRadius: 22,
+              boxShadow: '0 28px 80px rgba(15,23,42,0.22), 0 8px 24px rgba(15,23,42,0.12)',
+              display: 'grid',
+              gridTemplateRows: 'auto 1fr',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 12,
+                padding: '14px 16px',
+                borderBottom: '1px solid rgba(148,163,184,0.2)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.94), rgba(248,250,252,0.9))',
+              }}
+            >
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: '#0f172a', letterSpacing: '.02em' }}>Project Manager</div>
+                <div style={{ fontSize: 12, color: '#64748b' }}>
+                  Current saves live state. Commit stores an immutable node with preview.
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <input
+                  value={projectNameDraft}
+                  onChange={(e) => setProjectNameDraft(e.target.value)}
+                  placeholder="Project name"
+                  style={{ ...INPUT_BASE, width: 180, padding: '6px 10px', borderRadius: 10, fontSize: 12 }}
+                />
+                <button
+                  type="button"
+                  onClick={() => { void handleCreateProject() }}
+                  disabled={projectActionPending !== null}
+                  style={{
+                    ...BUTTON_BASE,
+                    opacity: projectActionPending ? 0.65 : 1,
+                    padding: '7px 12px',
+                    fontSize: 12,
+                  }}
+                >
+                  {projectActionPending === 'create' ? 'Creating…' : 'Create'}
+                </button>
+                <input
+                  value={projectCommitMessageDraft}
+                  onChange={(e) => setProjectCommitMessageDraft(e.target.value)}
+                  placeholder="Commit message (optional)"
+                  style={{ ...INPUT_BASE, width: 210, padding: '6px 10px', borderRadius: 10, fontSize: 12 }}
+                />
+                <button
+                  type="button"
+                  onClick={() => { void handleCommitProject() }}
+                  disabled={projectActionPending !== null || !selectedProjectId}
+                  style={{
+                    ...BUTTON_BASE,
+                    opacity: (projectActionPending || !selectedProjectId) ? 0.65 : 1,
+                    padding: '7px 12px',
+                    fontSize: 12,
+                  }}
+                >
+                  {projectActionPending === 'commit' ? 'Committing…' : 'Commit'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { void handleOpenProject() }}
+                  disabled={projectActionPending !== null || !selectedProjectId}
+                  style={{
+                    ...BUTTON_BASE,
+                    opacity: (projectActionPending || !selectedProjectId) ? 0.65 : 1,
+                    padding: '7px 12px',
+                    fontSize: 12,
+                  }}
+                >
+                  {projectActionPending === 'open' ? 'Opening…' : 'Open'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setProjectManagerOpen(false)}
+                  style={{ ...BUTTON_BASE, padding: '7px 12px', fontSize: 12 }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'minmax(240px, 30%) 1fr',
+                minHeight: 0,
+              }}
+            >
+              <div
+                style={{
+                  borderRight: '1px solid rgba(148,163,184,0.18)',
+                  padding: 12,
+                  overflow: 'auto',
+                  background: 'linear-gradient(180deg, rgba(248,250,252,0.75), rgba(241,245,249,0.7))',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#334155', letterSpacing: '.04em', textTransform: 'uppercase' }}>
+                    Projects
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => { void refreshProjectList() }}
+                    style={{ ...BUTTON_BASE, padding: '4px 10px', fontSize: 11 }}
+                  >
+                    Refresh
+                  </button>
+                </div>
+                {projectManagerBusy && projectList.length === 0 ? (
+                  <div style={{ fontSize: 12, color: '#64748b' }}>Loading projects…</div>
+                ) : projectList.length === 0 ? (
+                  <div style={{ fontSize: 12, color: '#64748b' }}>
+                    No local projects yet. Create one, then use topbar Save to persist current state.
+                  </div>
+                ) : (
+                  <div style={{ display: 'grid', gap: 8 }}>
+                    {projectList.map((proj) => {
+                      const active = selectedProjectId === proj.projectId
+                      const stats = proj.stats || {}
+                      const previewUrl = proj.currentPreview ? apiUrl(`/project/current/image?project_id=${encodeURIComponent(proj.projectId)}`) : null
+                      return (
+                        <button
+                          key={proj.projectId}
+                          type="button"
+                          onClick={() => setSelectedProjectId(proj.projectId)}
+                          onContextMenu={(ev) => {
+                            ev.preventDefault()
+                            ev.stopPropagation()
+                            setProjectContextMenuState({ kind: 'project', projectId: proj.projectId, x: ev.clientX, y: ev.clientY })
+                          }}
+                          style={{
+                            textAlign: 'left',
+                            borderRadius: 14,
+                            padding: '10px 11px',
+                            border: active ? '1px solid rgba(59,130,246,0.45)' : '1px solid rgba(148,163,184,0.22)',
+                            background: active
+                              ? 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(224,242,254,0.9))'
+                              : 'linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,250,252,0.86))',
+                            boxShadow: active ? '0 10px 20px rgba(59,130,246,0.1)' : '0 4px 12px rgba(15,23,42,0.04)',
+                            cursor: 'pointer',
+                            color: '#0f172a',
+                            display: 'grid',
+                            gap: 8,
+                          }}
+                        >
+                          <div
+                            style={{
+                              aspectRatio: '16 / 10',
+                              borderRadius: 10,
+                              border: '1px solid rgba(148,163,184,0.14)',
+                              overflow: 'hidden',
+                              background: 'linear-gradient(135deg, rgba(226,232,240,0.7), rgba(241,245,249,0.8))',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }}
+                          >
+                            {previewUrl ? (
+                              <img src={previewUrl} alt={proj.projectId} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                            ) : (
+                              <span style={{ fontSize: 11, color: '#64748b' }}>No current preview</span>
+                            )}
+                          </div>
+                          <div style={{ fontSize: 13, fontWeight: 700, lineHeight: 1.25 }}>
+                            {proj.name || proj.projectId}
+                          </div>
+                          <div style={{ fontSize: 11, color: '#64748b', lineHeight: 1.35, wordBreak: 'break-all' }}>
+                            {proj.projectId}
+                          </div>
+                          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', fontSize: 11, color: '#334155' }}>
+                            <span>{Number(stats.strokeCount || 0)} strokes</span>
+                            <span>{Number(stats.blockCount || 0)} blocks</span>
+                            <span>{Number(proj.commitCount || 0)} commits</span>
+                          </div>
+                          <div style={{ fontSize: 11, color: '#64748b' }}>
+                            Saved: {formatProjectTime(proj.lastSavedAt || proj.updatedAt) || '—'}
+                          </div>
+                        </button>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateRows: 'auto 1fr', minHeight: 0 }}>
+                <div style={{ padding: '12px 14px 8px', borderBottom: '1px solid rgba(148,163,184,0.14)' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#334155', letterSpacing: '.04em', textTransform: 'uppercase' }}>
+                    Project History {selectedProjectId ? `• ${selectedProjectId}` : ''}
+                  </div>
+                  <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>
+                    Current preview updates on Save / Commit (and auto current snapshots). Commits are immutable checkpoints.
+                  </div>
+                  {projectManagerError && (
+                    <div style={{ marginTop: 8, fontSize: 12, color: '#b91c1c', background: 'rgba(254,242,242,0.9)', border: '1px solid rgba(248,113,113,0.25)', borderRadius: 10, padding: '8px 10px' }}>
+                      {projectManagerError}
+                    </div>
+                  )}
+                </div>
+                <div style={{ padding: 14, overflow: 'auto' }}>
+                  {!selectedProjectId ? (
+                    <div style={{ fontSize: 13, color: '#64748b' }}>Select a project to view current state and commits.</div>
+                  ) : !projectDetail || projectDetail.projectId !== selectedProjectId ? (
+                    <div style={{ fontSize: 13, color: '#64748b' }}>Loading project detail…</div>
+                  ) : (
+                    <div style={{ display: 'grid', gap: 14, alignContent: 'start' }}>
+                      <div
+                        style={{
+                          borderRadius: 14,
+                          border: '1px solid rgba(148,163,184,0.2)',
+                          background: 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92))',
+                          boxShadow: '0 8px 18px rgba(15,23,42,0.06)',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        <div style={{ padding: '10px 12px', borderBottom: '1px solid rgba(148,163,184,0.14)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+                          <div style={{ fontSize: 12, fontWeight: 700, color: '#334155', letterSpacing: '.04em', textTransform: 'uppercase' }}>Current</div>
+                          <div style={{ fontSize: 11, color: '#64748b' }}>
+                            Ref: {String(projectDetail.meta?.currentRef || 'none')}
+                          </div>
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 320px) 1fr', gap: 12, padding: 12 }}>
+                          <div style={{ aspectRatio: '16 / 10', borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(148,163,184,0.14)', background: 'linear-gradient(135deg, rgba(226,232,240,0.7), rgba(241,245,249,0.8))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            {projectDetail.current?.imageUrl ? (
+                              <img src={apiUrl(projectDetail.current.imageUrl)} alt="current preview" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                            ) : (
+                              <span style={{ fontSize: 12, color: '#64748b' }}>No current preview yet</span>
+                            )}
+                          </div>
+                          <div style={{ display: 'grid', gap: 6, alignContent: 'start' }}>
+                            <div style={{ fontSize: 13, fontWeight: 700, color: '#0f172a' }}>
+                              {(projectList.find((p) => p.projectId === selectedProjectId)?.name) || selectedProjectId}
+                            </div>
+                            <div style={{ fontSize: 12, color: '#64748b' }}>
+                              Current preview updated: {formatProjectTime(projectDetail.current?.updatedAt || (projectDetail.meta?.currentPreviewUpdatedAt as any)) || '—'}
+                            </div>
+                            {projectDetail.current?.width && projectDetail.current?.height ? (
+                              <div style={{ fontSize: 11, color: '#475569' }}>
+                                {projectDetail.current.width}×{projectDetail.current.height} • {String(projectDetail.current.mime || '').replace('image/', '')}
+                              </div>
+                            ) : null}
+                            <div style={{ fontSize: 11, color: '#64748b' }}>
+                              Last saved: {formatProjectTime((projectDetail.meta?.lastSavedAt as any) || (projectList.find((p) => p.projectId === selectedProjectId)?.lastSavedAt as any)) || '—'}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, gap: 10 }}>
+                          <div style={{ fontSize: 12, fontWeight: 700, color: '#334155', letterSpacing: '.04em', textTransform: 'uppercase' }}>
+                            Commits ({projectDetail.commits?.length || 0})
+                          </div>
+                          <div style={{ fontSize: 11, color: '#64748b' }}>
+                            Click a commit to switch current (with confirmation)
+                          </div>
+                        </div>
+                        {(projectDetail.commits?.length || 0) === 0 ? (
+                          <div style={{ fontSize: 13, color: '#64748b' }}>
+                            No commits yet. Use <strong>Commit</strong> to capture an immutable checkpoint.
+                          </div>
+                        ) : (
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, alignContent: 'start' }}>
+                            {projectDetail.commits.map((commit) => {
+                              const isCurrentRef = String(projectDetail.meta?.currentRef || '') === commit.commitId
+                              return (
+                                <button
+                                  key={commit.commitId}
+                                  type="button"
+                                  onClick={() => { void handleCheckoutCommit(selectedProjectId, commit.commitId) }}
+                                  onContextMenu={(ev) => {
+                                    ev.preventDefault()
+                                    ev.stopPropagation()
+                                    setProjectContextMenuState({ kind: 'commit', projectId: selectedProjectId, commitId: commit.commitId, x: ev.clientX, y: ev.clientY })
+                                  }}
+                                  style={{
+                                    textAlign: 'left',
+                                    borderRadius: 14,
+                                    overflow: 'hidden',
+                                    border: isCurrentRef ? '1px solid rgba(34,197,94,0.34)' : '1px solid rgba(148,163,184,0.2)',
+                                    background: isCurrentRef
+                                      ? 'linear-gradient(180deg, rgba(240,253,244,0.96), rgba(236,253,245,0.92))'
+                                      : 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92))',
+                                    boxShadow: isCurrentRef ? '0 8px 18px rgba(34,197,94,0.09)' : '0 8px 18px rgba(15,23,42,0.06)',
+                                    display: 'grid',
+                                    gridTemplateRows: 'auto auto',
+                                    cursor: 'pointer',
+                                    padding: 0,
+                                  }}
+                                >
+                                  <div style={{ aspectRatio: '16 / 10', background: 'linear-gradient(135deg, rgba(226,232,240,0.7), rgba(241,245,249,0.7))', borderBottom: '1px solid rgba(148,163,184,0.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                                    {commit.imageUrl ? (
+                                      <img src={apiUrl(commit.imageUrl)} alt={commit.commitId} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                    ) : (
+                                      <span style={{ fontSize: 12, color: '#64748b' }}>No Preview</span>
+                                    )}
+                                  </div>
+                                  <div style={{ padding: '9px 10px', display: 'grid', gap: 5 }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
+                                      <div style={{ fontSize: 12, fontWeight: 700, color: '#0f172a', lineHeight: 1.2 }}>
+                                        {formatProjectTime(commit.createdAt) || commit.commitId}
+                                      </div>
+                                      {isCurrentRef ? (
+                                        <span style={{ fontSize: 10, fontWeight: 700, color: '#166534', background: 'rgba(187,247,208,0.9)', borderRadius: 999, padding: '2px 6px' }}>CURRENT</span>
+                                      ) : null}
+                                    </div>
+                                    <div style={{ fontSize: 11, color: '#64748b', wordBreak: 'break-word' }}>
+                                      {commit.message || 'No message'}
+                                    </div>
+                                    <div style={{ fontSize: 10, color: '#94a3b8', wordBreak: 'break-all' }}>
+                                      {commit.commitId}
+                                    </div>
+                                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', fontSize: 11, color: '#475569' }}>
+                                      {commit.width && commit.height ? <span>{commit.width}×{commit.height}</span> : null}
+                                      {commit.mime ? <span>{String(commit.mime).replace('image/', '')}</span> : null}
+                                    </div>
+                                  </div>
+                                </button>
+                              )
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {projectPromptOpen && (
+        <div
+          onMouseDown={(ev) => {
+            if (ev.target === ev.currentTarget && !projectPromptSubmitting) setProjectPromptOpen(false)
+          }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 2600,
+            background: 'rgba(15,23,42,0.18)',
+            backdropFilter: 'blur(6px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 16,
+          }}
+        >
+          <div
+            style={{
+              width: 'min(92vw, 420px)',
+              borderRadius: 18,
+              border: '1px solid rgba(148,163,184,0.24)',
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96))',
+              boxShadow: '0 24px 60px rgba(15,23,42,0.2)',
+              padding: 16,
+              display: 'grid',
+              gap: 12,
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#0f172a' }}>Create Project Before Save</div>
+              <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>
+                Topbar Save stores the current working state in a project. Enter a project name to continue.
+              </div>
+            </div>
+            <input
+              autoFocus
+              value={projectPromptNameDraft}
+              onChange={(e) => setProjectPromptNameDraft(e.target.value)}
+              placeholder="Project name"
+              style={{ ...INPUT_BASE, width: '100%', padding: '8px 10px', borderRadius: 10, fontSize: 13 }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+              <button
+                type="button"
+                onClick={() => setProjectPromptOpen(false)}
+                disabled={projectPromptSubmitting}
+                style={{ ...BUTTON_BASE, padding: '7px 12px', fontSize: 12, opacity: projectPromptSubmitting ? 0.65 : 1 }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => { void handleConfirmProjectPromptCreateAndSave() }}
+                disabled={projectPromptSubmitting || !projectPromptNameDraft.trim()}
+                style={{ ...BUTTON_BASE, padding: '7px 12px', fontSize: 12, opacity: (projectPromptSubmitting || !projectPromptNameDraft.trim()) ? 0.65 : 1 }}
+              >
+                {projectPromptSubmitting ? 'Creating & Saving…' : 'Create & Save'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {projectContextMenuState && (
+        <div
+          style={{
+            position: 'absolute',
+            left: Math.min(projectContextMenuState.x, size.width - 200),
+            top: Math.min(projectContextMenuState.y, size.height - 120),
+            zIndex: 2700,
+            minWidth: 180,
+            borderRadius: 12,
+            border: '1px solid rgba(148,163,184,0.24)',
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96))',
+            boxShadow: '0 18px 40px rgba(15,23,42,0.18)',
+            padding: 6,
+          }}
+          onMouseDown={(e) => e.stopPropagation()}
+        >
+          {projectContextMenuState.kind === 'project' ? (
+            <button
+              type="button"
+              onClick={() => { void handleDeleteProject(projectContextMenuState.projectId) }}
+              style={{ ...BUTTON_BASE, width: '100%', justifyContent: 'flex-start', borderRadius: 10, fontSize: 12, color: '#b91c1c', border: '1px solid rgba(248,113,113,0.2)', background: 'rgba(254,242,242,0.7)' }}
+            >
+              Delete Project
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => { void handleDeleteCommit(projectContextMenuState.projectId, projectContextMenuState.commitId) }}
+              style={{ ...BUTTON_BASE, width: '100%', justifyContent: 'flex-start', borderRadius: 10, fontSize: 12, color: '#b91c1c', border: '1px solid rgba(248,113,113,0.2)', background: 'rgba(254,242,242,0.7)' }}
+            >
+              Delete Commit
+            </button>
+          )}
+        </div>
       )}
       <AIFeedSidebar
         open={aiFeedSidebarOpen}

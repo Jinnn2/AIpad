@@ -209,3 +209,212 @@ class GraphSelectionBlockActionResponse(BaseModel):
     block: Optional[Dict[str, Any]] = None
     fragment_ids: List[str] = Field(default_factory=list)
 
+
+class ProjectListItem(BaseModel):
+    project_id: str = Field(alias="projectId")
+    name: str
+    created_at: Optional[str] = Field(default=None, alias="createdAt")
+    updated_at: Optional[str] = Field(default=None, alias="updatedAt")
+    last_saved_at: Optional[str] = Field(default=None, alias="lastSavedAt")
+    commit_count: int = Field(default=0, alias="commitCount")
+    current_preview_updated_at: Optional[str] = Field(default=None, alias="currentPreviewUpdatedAt")
+    current_preview: Optional[Dict[str, Any]] = Field(default=None, alias="currentPreview")
+    stats: Dict[str, Any] = Field(default_factory=dict)
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectListResponse(BaseModel):
+    ok: bool = True
+    projects: List[ProjectListItem] = Field(default_factory=list)
+
+
+class ProjectCreateRequest(BaseModel):
+    sid: Optional[str] = None
+    name: Optional[str] = None
+
+
+class ProjectCreateResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    sid: Optional[str] = None
+    meta: Dict[str, Any] = Field(default_factory=dict)
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectSaveRequest(BaseModel):
+    sid: str
+    project_id: Optional[str] = Field(default=None, alias="projectId")
+    mode: Optional[Literal["current"]] = "current"
+    note: Optional[str] = None
+    snapshot: Optional["GraphSnapshotPayload"] = None
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectSaveResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    saved: bool = True
+    meta: Dict[str, Any] = Field(default_factory=dict)
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectOpenRequest(BaseModel):
+    project_id: str = Field(alias="projectId")
+    sid: Optional[str] = None
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectOpenResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    sid: str
+    restored: bool = True
+    graph_enabled: bool = Field(alias="graphEnabled")
+    stroke_count: int = Field(alias="strokeCount")
+    graph_summary: Dict[str, Any] = Field(default_factory=dict, alias="graphSummary")
+    strokes: List[AIStrokeV11] = Field(default_factory=list)
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectSnapshotItem(BaseModel):
+    snapshot_id: str = Field(alias="snapshotId")
+    created_at: Optional[str] = Field(default=None, alias="createdAt")
+    note: Optional[str] = None
+    mime: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    bbox: Optional[Any] = None
+    image_url: Optional[str] = Field(default=None, alias="imageUrl")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCurrentPreviewItem(BaseModel):
+    updated_at: Optional[str] = Field(default=None, alias="updatedAt")
+    note: Optional[str] = None
+    mime: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    bbox: Optional[Any] = None
+    image_url: Optional[str] = Field(default=None, alias="imageUrl")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitItem(BaseModel):
+    commit_id: str = Field(alias="commitId")
+    created_at: Optional[str] = Field(default=None, alias="createdAt")
+    message: Optional[str] = None
+    mime: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    bbox: Optional[Any] = None
+    image_url: Optional[str] = Field(default=None, alias="imageUrl")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectDetailResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    meta: Dict[str, Any] = Field(default_factory=dict)
+    current: Optional[ProjectCurrentPreviewItem] = None
+    commits: List[ProjectCommitItem] = Field(default_factory=list)
+    legacy_snapshots: List[ProjectSnapshotItem] = Field(default_factory=list, alias="legacySnapshots")
+    snapshots: List[ProjectSnapshotItem] = Field(default_factory=list)
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitRequest(BaseModel):
+    sid: str
+    project_id: Optional[str] = Field(default=None, alias="projectId")
+    message: Optional[str] = None
+    snapshot: "GraphSnapshotPayload"
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    commit_id: str = Field(alias="commitId")
+    meta: Dict[str, Any] = Field(default_factory=dict)
+    commit_summary: Dict[str, Any] = Field(default_factory=dict, alias="commitSummary")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitCheckoutRequest(BaseModel):
+    sid: str
+    project_id: str = Field(alias="projectId")
+    commit_id: str = Field(alias="commitId")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitCheckoutResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    sid: str
+    graph_enabled: bool = Field(alias="graphEnabled")
+    stroke_count: int = Field(alias="strokeCount")
+    graph_summary: Dict[str, Any] = Field(default_factory=dict, alias="graphSummary")
+    strokes: List[AIStrokeV11] = Field(default_factory=list)
+    checked_out_commit_id: str = Field(alias="checkedOutCommitId")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCurrentSnapshotRequest(BaseModel):
+    sid: str
+    project_id: Optional[str] = Field(default=None, alias="projectId")
+    snapshot: "GraphSnapshotPayload"
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCurrentSnapshotResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    current_preview_updated_at: Optional[str] = Field(default=None, alias="currentPreviewUpdatedAt")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectDeleteRequest(BaseModel):
+    project_id: str = Field(alias="projectId")
+    sid: Optional[str] = None
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectDeleteResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    unbound_session: bool = Field(default=False, alias="unboundSession")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitDeleteRequest(BaseModel):
+    project_id: str = Field(alias="projectId")
+    commit_id: str = Field(alias="commitId")
+
+    model_config = {"populate_by_name": True}
+
+
+class ProjectCommitDeleteResponse(BaseModel):
+    ok: bool = True
+    project_id: str = Field(alias="projectId")
+    commit_id: str = Field(alias="commitId")
+    current_ref_cleared: bool = Field(default=False, alias="currentRefCleared")
+
+    model_config = {"populate_by_name": True}
+
