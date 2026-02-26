@@ -228,12 +228,6 @@ const Btn = React.forwardRef<HTMLButtonElement, ButtonLike>(({ style, ...props }
 Btn.displayName = 'Btn'
 
 export type TopToolbarProps = {
-  showGrid: boolean
-  snap: boolean
-  curveTurns: boolean
-  onToggleGrid: () => void
-  onToggleSnap: () => void
-  onToggleCurve: () => void
   onAskAI: () => void
   onAcceptAI: () => void
   onDismissAI: () => void
@@ -243,7 +237,6 @@ export type TopToolbarProps = {
   onToggleAutoComplete: (enabled: boolean) => void
   preferExplanatoryDrawing: boolean
   onTogglePreferExplanatoryDrawing: (enabled: boolean) => void
-  onOpenProjectManager: () => void
   onSaveProjectCurrent: () => void
   projectHasBinding: boolean
   projectBoundName?: string
@@ -253,12 +246,6 @@ export type TopToolbarProps = {
 
 export function TopToolbar(props: TopToolbarProps) {
   const {
-    showGrid,
-    snap,
-    curveTurns,
-    onToggleGrid,
-    onToggleSnap,
-    onToggleCurve,
     onAskAI,
     onAcceptAI,
     onDismissAI,
@@ -268,7 +255,6 @@ export function TopToolbar(props: TopToolbarProps) {
     onToggleAutoComplete,
     preferExplanatoryDrawing,
     onTogglePreferExplanatoryDrawing,
-    onOpenProjectManager,
     onSaveProjectCurrent,
     projectHasBinding,
     projectBoundName,
@@ -330,18 +316,6 @@ export function TopToolbar(props: TopToolbarProps) {
         <span style={{ fontSize: 10, color: UI_THEME.inkMuted }}>Canvas Lab</span>
       </div>
       <Btn
-        onClick={onOpenProjectManager}
-        title={projectHasBinding ? `Open Project Manager (${projectBoundName || 'bound'})` : 'Open Project Manager'}
-        style={{
-          border: `1px solid ${projectHasBinding ? 'rgba(59,130,246,0.35)' : UI_THEME.lineStrong}`,
-          background: projectHasBinding
-            ? 'linear-gradient(180deg, rgba(239,246,255,0.96), rgba(224,242,254,0.92))'
-            : undefined,
-        }}
-      >
-        <IconLabel icon="folder">Project Manager</IconLabel>
-      </Btn>
-      <Btn
         onClick={onSaveProjectCurrent}
         disabled={!!projectSavePending}
         title={projectHasBinding ? 'Save current project state' : 'Create project and save current state'}
@@ -358,15 +332,6 @@ export function TopToolbar(props: TopToolbarProps) {
             {projectBoundName}
           </span>
         ) : null}
-      </Btn>
-      <Btn onClick={onToggleGrid}>
-        <IconLabel icon="grid">{showGrid ? 'Grid: ON' : 'Grid: OFF'}</IconLabel>
-      </Btn>
-      <Btn onClick={onToggleSnap}>
-        <IconLabel icon="snap">{snap ? 'Snap: ON' : 'Snap: OFF'}</IconLabel>
-      </Btn>
-      <Btn onClick={onToggleCurve}>
-        <IconLabel icon="curve">{curveTurns ? 'Curve: ON' : 'Curve: OFF'}</IconLabel>
       </Btn>
       <button
         onClick={() => onToggleAutoComplete(!autoComplete)}
@@ -571,6 +536,12 @@ type GroupPromoteMode = 'heuristic' | 'hybrid' | 'llm'
 type VisionImageMode = 'off' | 'auto' | 'always'
 
 export type SidePanelProps = {
+  showGrid: boolean
+  snap: boolean
+  curveTurns: boolean
+  onToggleGrid: () => void
+  onToggleSnap: () => void
+  onToggleCurve: () => void
   toolMode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select'
   onToolModeChange: (mode: 'pen' | 'eraser' | 'ellipse' | 'hand' | 'text' | 'select') => void
   eraserRadius: number
@@ -622,6 +593,12 @@ export type SidePanelProps = {
 
 export function SidePanel(props: SidePanelProps) {
   const {
+    showGrid,
+    snap,
+    curveTurns,
+    onToggleGrid,
+    onToggleSnap,
+    onToggleCurve,
     toolMode,
     onToolModeChange,
     eraserRadius,
@@ -844,6 +821,30 @@ export function SidePanel(props: SidePanelProps) {
           )}
         </section>
       )}
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Canvas</div>
+        <div style={{ display: 'grid', gap: 8 }}>
+          <Btn onClick={onToggleGrid} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="grid">Grid</IconLabel>
+            <span style={{ fontSize: 11, color: showGrid ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {showGrid ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
+          <Btn onClick={onToggleSnap} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="snap">Snap</IconLabel>
+            <span style={{ fontSize: 11, color: snap ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {snap ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
+          <Btn onClick={onToggleCurve} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="curve">Curve Turns</IconLabel>
+            <span style={{ fontSize: 11, color: curveTurns ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {curveTurns ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
+        </div>
+      </section>
 
       <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>

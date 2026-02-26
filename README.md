@@ -206,11 +206,61 @@ lineart-board/
 
 ### Prerequisites
 
-- Python 3.10+ (conda env recommended)
-- Node.js 18+
-- Valid OpenAI-compatible API key
+- Python `3.10+` (recommended: `3.10` or `3.11`)
+- Node.js `18+` (recommended: `18/20`)
+- An OpenAI-compatible API endpoint + model + API key
 
-### 1) Backend
+### 1) Prepare the backend environment
+
+Backend requirements are now maintained in:
+
+- `lineart-board/requirements.txt` (canonical)
+- `lineart-board/app/requirements.txt` (compatibility wrapper)
+
+#### Option A (recommended): conda
+
+```powershell
+cd lineart-board
+conda create -n lineart python=3.10 -y
+conda activate lineart
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### Option B: venv
+
+```powershell
+cd lineart-board
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 2) Configure `.env`
+
+Create/update `lineart-board/.env` and fill at least:
+
+```env
+OPENAI_API_KEY=your_key_here
+OPENAI_BASE_URL=https://your-openai-compatible-endpoint/v1
+OPENAI_MODEL=your-model-name
+```
+
+Recommended local dev CORS (Vite defaults):
+
+```env
+CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,http://[::1]:5173
+```
+
+### 3) Install frontend dependencies
+
+```powershell
+cd lineart-board
+npm install
+```
+
+### 4) Start backend (terminal A)
 
 ```powershell
 cd lineart-board
@@ -220,16 +270,26 @@ python -m uvicorn app.main:app --reload --reload-exclude "logs" --host 0.0.0.0 -
 
 Backend: `http://localhost:8000`
 
-### 2) Frontend
+### 5) Start frontend (terminal B)
 
 ```powershell
 cd lineart-board
-npm install
 npm run dev
 ```
 
-Frontend: `http://localhost:5173`  
-Some environments use IPv6 loopback: `http://[::1]:5173`.
+Frontend: `http://localhost:5173` (or `http://[::1]:5173`)
+
+### 6) First run checklist (recommended)
+
+1. Open the frontend and draw a few strokes.
+2. Click `Ask AI` once to confirm backend + LLM connectivity.
+3. If requests fail, check `lineart-board/logs/` and the `.env` model/base URL values.
+
+### Common setup notes
+
+- This repo uses a React + Vite frontend; `npm install` is required before `npm run dev`.
+- Backend imports `.env` from `lineart-board/.env` automatically.
+- In this workspace, `npm run build` may not be available/supported during development; use `npm run dev` + runtime verification instead.
 
 ---
 

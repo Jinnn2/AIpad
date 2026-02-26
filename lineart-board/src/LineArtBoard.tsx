@@ -4196,12 +4196,6 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         }}
       />
       <TopToolbar
-        showGrid={showGrid}
-        snap={snap}
-        curveTurns={curveTurns}
-        onToggleGrid={toggleGrid}
-        onToggleSnap={toggleSnap}
-        onToggleCurve={toggleCurveTurns}
         onAskAI={askAI}
         onAcceptAI={acceptAI}
         onDismissAI={dismissAI}
@@ -4211,7 +4205,6 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onToggleAutoComplete={handleAutoCompleteToggle}
         preferExplanatoryDrawing={preferExplanatoryDrawing}
         onTogglePreferExplanatoryDrawing={setPreferExplanatoryDrawing}
-        onOpenProjectManager={() => { void openProjectManager() }}
         onSaveProjectCurrent={() => { void handleTopbarSaveProject() }}
         projectHasBinding={!!currentProjectId}
         projectBoundName={currentProjectName || undefined}
@@ -4254,6 +4247,47 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           AI Feed
         </button>
       )}
+      <button
+        type="button"
+        title={currentProjectId ? `Open Project Manager (${currentProjectName || currentProjectId})` : 'Open Project Manager'}
+        onClick={() => { void openProjectManager() }}
+        style={{
+          position: 'absolute',
+          top: aiFeedSidebarOpen ? 76 : 124,
+          left: 14,
+          zIndex: 1100,
+          height: 48,
+          minWidth: 176,
+          padding: '0 16px',
+          borderRadius: 14,
+          border: currentProjectId ? '1px solid rgba(59,130,246,0.35)' : '1px solid rgba(148,163,184,0.34)',
+          background: projectManagerOpen
+            ? 'linear-gradient(135deg, rgba(219,234,254,0.98), rgba(224,231,255,0.94))'
+            : currentProjectId
+              ? 'linear-gradient(135deg, rgba(239,246,255,0.98), rgba(224,242,254,0.94))'
+              : 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94))',
+          color: '#0f172a',
+          fontSize: 13,
+          fontWeight: 800,
+          letterSpacing: '.03em',
+          cursor: 'pointer',
+          boxShadow: '0 10px 20px rgba(15,23,42,0.14)',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+        }}
+      >
+        <span aria-hidden style={{ fontSize: 16, lineHeight: 1 }}>▣</span>
+        <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: 1.05 }}>
+          <span>Project Manager</span>
+          {currentProjectId ? (
+            <span style={{ fontSize: 10, fontWeight: 700, color: '#64748b', maxWidth: 120, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {currentProjectName || currentProjectId}
+            </span>
+          ) : null}
+        </span>
+      </button>
       {projectManagerOpen && (
         <div
           onMouseDown={(ev) => {
@@ -4690,6 +4724,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             boxShadow: '0 18px 40px rgba(15,23,42,0.18)',
             padding: 6,
           }}
+          onPointerDown={(e) => e.stopPropagation()}
           onMouseDown={(e) => e.stopPropagation()}
         >
           {projectContextMenuState.kind === 'project' ? (
@@ -4730,6 +4765,12 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onBlockHover={handleBlockHover}
       />
       <SidePanel
+        showGrid={showGrid}
+        snap={snap}
+        curveTurns={curveTurns}
+        onToggleGrid={toggleGrid}
+        onToggleSnap={toggleSnap}
+        onToggleCurve={toggleCurveTurns}
         toolMode={toolMode}
         onToolModeChange={setToolMode}
         eraserRadius={eraserRadius}
