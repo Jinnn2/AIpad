@@ -346,7 +346,6 @@ class BlockManager:
         self._fragment_to_block[fragment_id] = block_id
         self._fragment_to_group.pop(fragment_id, None)
         self._block_incoming_counts[block_id] += 1
-        self._maybe_refresh_summary(block_id)
         self._refresh_block_embedding(block)
         return block
 
@@ -1388,9 +1387,8 @@ class BlockManager:
         member_count = len(block.contents)
         previous = block.last_summary_member_count or 1
         ratio = (member_count - previous) / previous
-        elapsed = datetime.utcnow() - block.last_summary_ts
         if not force:
-            refresh_needed = ratio >= self.summary_refresh_ratio or elapsed >= self.summary_refresh_interval
+            refresh_needed = ratio >= self.summary_refresh_ratio
             if not refresh_needed:
                 return
         fragments = [self.state.fragments[fid] for fid in block.contents]
@@ -1477,3 +1475,47 @@ class BlockManager:
             self._handle_merge_instructions(block_id, merge_payload)
         if block_id in self.state.blocks:
             self._reevaluate_groups_for_block(block_id)
+
+    def refresh_fragment_geometry(self, fragment_id: str) -> None:
+        """
+        Refresh only geometry/time-derived parts of fragment feature vectors.
+        Keeps semantic embedding components unchanged and does not trigger summary updates.
+        """
+        fragment = self.state.fragments.get(fragment_id)
+        if not fragment:
+            return
+        vec = fragment.feature_vec
+        if not vec:
+            return
+        raw_vec = [float(v) for v in vec]
+        if not raw_vec:
+            return
+
+        # Text vector layout:
+        # [embedding..., size_feature, weight_feature, bbox4, timestamp, type_indicator]
+        if fragment.fragment_type == FragmentType.TEXT and len(raw_vec) > 8:
+            embedding_dims = len(raw_vec) - 8
+            embedding = raw_vec[:embedding_dims]
+            semantic_norm = max(math.sqrt(sum(value * value for value in embedding)), 1e-6)
+            size_feature, weight_feature = self._text_style_features(fragment)
+            bbox_features = self._weighted_bbox(fragment.bbox, semantic_norm)
+            ts_feature = self._weighted_timestamp(fragment.timestamp, semantic_norm)
+            fragment.feature_vec = (
+                embedding
+                + [size_feature, weight_feature]
+                + bbox_features
+                + [ts_feature, self._type_indicator(fragment.fragment_type)]
+            )
+            return
+
+        # Stroke (or fallback) vector layout:
+        # [semantic_placeholder2, bbox4, timestamp, type_indicator]
+        semantic_prefix = raw_vec[:2] if len(raw_vec) >= 2 else [0.0, 0.0]
+        semantic_norm = max(math.sqrt(sum(value * value for value in semantic_prefix)), 1e-6)
+        bbox_features = self._weighted_bbox(fragment.bbox, semantic_norm)
+        ts_feature = self._weighted_timestamp(fragment.timestamp, semantic_norm)
+        fragment.feature_vec = (
+            semantic_prefix
+            + bbox_features
+            + [ts_feature, self._type_indicator(fragment.fragment_type)]
+        )

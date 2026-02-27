@@ -57,9 +57,10 @@ class ContextExecutor:
         prefer_explanatory_drawing: Optional[bool] = None,
     ) -> Dict[str, object]:
         """Build a local canvas context and ask the FULL-mode backend for new strokes."""
-        selected_blocks, selected_groups = self._select_context_entities(plan, context)
-        block_outline = self._build_block_outline(selected_blocks, selected_groups)
-        strokes = self._collect_strokes(selected_blocks, selected_groups)
+        _selected_blocks, selected_groups, primary_blocks, related_blocks = self._select_context_entities(plan, context)
+        block_outline = self._build_block_outline(primary_blocks, selected_groups, related_blocks)
+        # Keep related blocks in outline summaries, but do not inject their full strokes.
+        strokes = self._collect_strokes(primary_blocks, selected_groups)
 
         if not strokes:
             return {"version": 1, "intent": "complete", "strokes": []}
@@ -135,7 +136,11 @@ class ContextExecutor:
 
         return seeds
 
-    def _select_context_entities(self, plan: ExecutionPlan, context: Optional[FocusContext]) -> tuple[List[str], List[str]]:
+    def _select_context_entities(
+        self,
+        plan: ExecutionPlan,
+        context: Optional[FocusContext],
+    ) -> tuple[List[str], List[str], List[str], List[str]]:
         seeds = self._collect_seed_ids(plan, context)
         seed_blocks: List[str] = []
         seed_groups: List[str] = []
@@ -171,7 +176,21 @@ class ContextExecutor:
                     break
             selected_groups = self._select_groups(seed_groups)
 
-        return selected_blocks, selected_groups
+        primary_blocks: List[str] = []
+        primary_seen: Set[str] = set()
+        for block_id in seed_blocks:
+            if block_id not in primary_seen and block_id in selected_blocks:
+                primary_blocks.append(block_id)
+                primary_seen.add(block_id)
+
+        # Safety fallback: keep at least one block as primary when available.
+        if not primary_blocks and selected_blocks:
+            primary_blocks.append(selected_blocks[0])
+            primary_seen.add(selected_blocks[0])
+
+        related_blocks = [block_id for block_id in selected_blocks if block_id not in primary_seen]
+
+        return selected_blocks, selected_groups, primary_blocks, related_blocks
 
     def _select_groups(self, seed_group_ids: Sequence[str]) -> List[str]:
         selected: List[str] = []
@@ -282,7 +301,12 @@ class ContextExecutor:
 
         return strokes
 
-    def _build_block_outline(self, block_ids: Sequence[str], group_ids: Sequence[str] = ()) -> List[Dict[str, object]]:
+    def _build_block_outline(
+        self,
+        block_ids: Sequence[str],
+        group_ids: Sequence[str] = (),
+        related_block_ids: Sequence[str] = (),
+    ) -> List[Dict[str, object]]:
         outline: List[Dict[str, object]] = []
         rank = 1
         for block_id in block_ids:
@@ -318,6 +342,22 @@ class ContextExecutor:
                 item["relationships"] = relationships
 
             outline.append(item)
+            rank += 1
+
+        for block_id in related_block_ids:
+            block = self.block_manager.state.blocks.get(block_id)
+            if not block:
+                continue
+            # Related blocks are summary-only by design to reduce prompt bloat and focus drift.
+            outline.append(
+                {
+                    "rank": rank,
+                    "entityType": "related_block",
+                    "blockId": block.block_id,
+                    "label": block.label,
+                    "summary": block.summary,
+                }
+            )
             rank += 1
 
         for group_id in group_ids:

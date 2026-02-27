@@ -823,30 +823,6 @@ export function SidePanel(props: SidePanelProps) {
       )}
 
       <section style={CARD}>
-        <div style={CARD_TITLE}>Canvas</div>
-        <div style={{ display: 'grid', gap: 8 }}>
-          <Btn onClick={onToggleGrid} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
-            <IconLabel icon="grid">Grid</IconLabel>
-            <span style={{ fontSize: 11, color: showGrid ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
-              {showGrid ? 'ON' : 'OFF'}
-            </span>
-          </Btn>
-          <Btn onClick={onToggleSnap} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
-            <IconLabel icon="snap">Snap</IconLabel>
-            <span style={{ fontSize: 11, color: snap ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
-              {snap ? 'ON' : 'OFF'}
-            </span>
-          </Btn>
-          <Btn onClick={onToggleCurve} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
-            <IconLabel icon="curve">Curve Turns</IconLabel>
-            <span style={{ fontSize: 11, color: curveTurns ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
-              {curveTurns ? 'ON' : 'OFF'}
-            </span>
-          </Btn>
-        </div>
-      </section>
-
-      <section style={CARD}>
         <div style={CARD_TITLE}>Tools</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
           {toolButtonsPrimary.map(({ id, label, icon }) => (
@@ -1047,6 +1023,30 @@ export function SidePanel(props: SidePanelProps) {
             style={{ flex: 1 }}
           />
           <span style={{ fontSize: 12, color: '#333', width: 32, textAlign: 'right' }}>{aiScale}</span>
+        </div>
+      </section>
+
+      <section style={CARD}>
+        <div style={CARD_TITLE}>Canvas</div>
+        <div style={{ display: 'grid', gap: 8 }}>
+          <Btn onClick={onToggleGrid} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="grid">Grid</IconLabel>
+            <span style={{ fontSize: 11, color: showGrid ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {showGrid ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
+          <Btn onClick={onToggleSnap} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="snap">Snap</IconLabel>
+            <span style={{ fontSize: 11, color: snap ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {snap ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
+          <Btn onClick={onToggleCurve} style={{ justifyContent: 'space-between', borderRadius: 12 }}>
+            <IconLabel icon="curve">Curve Turns</IconLabel>
+            <span style={{ fontSize: 11, color: curveTurns ? '#166534' : UI_THEME.inkMuted, fontWeight: 700 }}>
+              {curveTurns ? 'ON' : 'OFF'}
+            </span>
+          </Btn>
         </div>
       </section>
 

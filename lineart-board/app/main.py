@@ -30,6 +30,8 @@ from app.schemas import (
     PromoteVisionPendingGroupResponse,
     GraphSelectionBlockActionRequest,
     GraphSelectionBlockActionResponse,
+    GraphRemoveFragmentsRequest,
+    GraphRemoveFragmentsResponse,
     ProjectListResponse,
     ProjectCreateRequest,
     ProjectCreateResponse,
@@ -1597,5 +1599,42 @@ def graph_selection_block_action(body: GraphSelectionBlockActionRequest):
         action=str(result.get("action") or body.action),
         block=result.get("block"),
         fragment_ids=[str(fid) for fid in (result.get("fragmentIds") or [])],
+    )
+
+
+@app.post("/graph/remove-fragments", response_model=GraphRemoveFragmentsResponse)
+def graph_remove_fragments(body: GraphRemoveFragmentsRequest):
+    sess = S.get_session(body.sid)
+    if not sess or not sess.graph_runtime:
+        raise HTTPException(404, f"session not found or graph disabled: {body.sid}")
+    try:
+        result = sess.graph_runtime.remove_fragments_now(body.fragment_ids)
+    except Exception as exc:
+        raise HTTPException(400, f"remove fragments failed: {exc}")
+
+    removed_ids = [str(fid) for fid in (result.get("removedFragmentIds") or []) if str(fid or "").strip()]
+    removed_set = set(removed_ids)
+    if removed_set:
+        # Keep session snapshot aligned to avoid re-ingesting deleted fragments later.
+        sess.full_strokes = [
+            stroke
+            for stroke in (sess.full_strokes or [])
+            if str((stroke or {}).get("id") or "").strip() not in removed_set
+        ]
+        sess.strokes = [
+            stroke
+            for stroke in (sess.strokes or [])
+            if str((stroke or {}).get("id") or "").strip() not in removed_set
+        ]
+        _persist_project_for_session(
+            sess,
+            reason="graph_remove_fragments",
+            extra={"removedCount": len(removed_set), "fragmentIds": removed_ids[:200]},
+        )
+
+    return GraphRemoveFragmentsResponse(
+        ok=True,
+        removedFragmentIds=removed_ids,
+        removedCount=len(removed_ids),
     )
 

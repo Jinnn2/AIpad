@@ -425,6 +425,8 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   })
   const [textEditor, setTextEditor] = useState<TextEditorState | null>(null)
   const [selectedShapeId, setSelectedShapeId] = useState<string | null>(null)
+  const [selectDeleteDragActive, setSelectDeleteDragActive] = useState(false)
+  const [selectDeleteHover, setSelectDeleteHover] = useState(false)
   const [completionPreviews, setCompletionPreviews] = useState<Record<string, string>>({})
   const updateTextSettings = useCallback((patch: Partial<TextSettings>) => {
     setTextSettings((prev) => ({ ...prev, ...patch }))
@@ -789,6 +791,28 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [graphSelectedFragmentIds, setGraphSelectedFragmentIds] = useState<string[]>([])
   const [graphSelectionActionPending, setGraphSelectionActionPending] = useState<'create_block' | 'assign_block' | null>(null)
   const [graphSelectionTargetBlockId, setGraphSelectionTargetBlockId] = useState<string>('')
+  const bottomPanelHeight = useMemo(() => {
+    const expandedHeight = Math.max(size.height * 0.5, 360)
+    return graphInspectorVisible
+      ? Math.min(expandedHeight, size.height - 120)
+      : 220
+  }, [graphInspectorVisible, size.height])
+  const selectDeleteZone = useMemo(() => {
+    const width = Math.max(220, Math.min(360, Math.round(size.width * 0.28)))
+    const height = 76
+    const bottom = 14 + bottomPanelHeight + 12
+    const left = Math.max(16, Math.round((size.width - width) / 2))
+    const top = Math.max(16, size.height - bottom - height)
+    return { left, top, width, height }
+  }, [size.width, size.height, bottomPanelHeight])
+  const isPointInSelectDeleteZone = useCallback((screenX: number, screenY: number) => {
+    return (
+      screenX >= selectDeleteZone.left &&
+      screenX <= selectDeleteZone.left + selectDeleteZone.width &&
+      screenY >= selectDeleteZone.top &&
+      screenY <= selectDeleteZone.top + selectDeleteZone.height
+    )
+  }, [selectDeleteZone])
   React.useEffect(() => {
     autoMaintainRef.current = autoMaintain
     if (!autoMaintain) {
@@ -1724,15 +1748,18 @@ const stageCursor = toolMode === 'hand'
     }
   }, [autoComplete, hasActivePreview, clearAutoTimer, autoMaintainPending])
 
-  const deleteSelectedShape = useCallback(() => {
-    if (!selectedShapeId) return
-    const targetId = selectedShapeId
-    pushHistory()
+  const deleteShapeById = useCallback((targetId: string, opts?: { skipHistory?: boolean }) => {
+    if (!targetId) return
+    if (!opts?.skipHistory) pushHistory()
     setShapes(prev => prev.filter(s => s.id !== targetId))
     setDrawStack(prev => prev.filter(entry => entry.draft.id !== targetId))
-    setSelectedShapeId(null)
+    setSelectedShapeId(prev => (prev === targetId ? null : prev))
     noteUserAction({ forceStart: true })
-  }, [selectedShapeId, pushHistory, setShapes, setDrawStack, noteUserAction])
+  }, [pushHistory, setShapes, setDrawStack, noteUserAction])
+  const deleteSelectedShape = useCallback(() => {
+    if (!selectedShapeId) return
+    deleteShapeById(selectedShapeId)
+  }, [selectedShapeId, deleteShapeById])
 
   const clearImportQueue = useCallback(() => {
     if (importTimerRef.current) {
@@ -3705,12 +3732,16 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       const target = findTextShapeAtPoint(wpt.x, wpt.y)
       if (!target) {
         setSelectedShapeId(null)
+        setSelectDeleteDragActive(false)
+        setSelectDeleteHover(false)
         selectDragRef.current = null
         setSuspendSessionSync(false)
         return
       }
       noteUserAction()
       setSelectedShapeId(target.id)
+      setSelectDeleteDragActive(false)
+      setSelectDeleteHover(false)
       setSuspendSessionSync(false)
       selectDragRef.current = {
         id: target.id,
@@ -3776,7 +3807,11 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     if (!pos) return
     if (toolMode === 'select') {
       const drag = selectDragRef.current
-      if (!drag) return
+      if (!drag) {
+        setSelectDeleteDragActive(false)
+        setSelectDeleteHover(false)
+        return
+      }
       const wpt = screenToWorld(pos.x, pos.y)
       const nextX = wpt.x - drag.offsetX
       const nextY = wpt.y - drag.offsetY
@@ -3784,13 +3819,16 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         const dist = Math.hypot(nextX - drag.startX, nextY - drag.startY)
         if (dist > 0.5) {
           drag.moved = true
+          setSelectDeleteDragActive(true)
           setSuspendSessionSync(true)
           pushHistory()
         } else {
+          setSelectDeleteHover(false)
           return
         }
       }
       moveTextShape(drag.id, nextX, nextY)
+      setSelectDeleteHover(isPointInSelectDeleteZone(pos.x, pos.y))
       return
     }
     if (toolMode === 'pen') {
@@ -3834,16 +3872,22 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       setEraserCursor({ x: sx, y: sy })           // Show eraser cursor indicator
       eraseWholeStrokesAt(sx, sy, eraserRadius)    // Continue erasing whole strokes
     }
-  }, [isDrawing, boxDraft, snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld, textEditor, moveTextShape, pushHistory])
+  }, [isDrawing, boxDraft, snap, snapPoint, toolMode, eraserRadius, eraseWholeStrokesAt, screenToWorld, textEditor, moveTextShape, pushHistory, isPointInSelectDeleteZone])
   const onMouseUp = useCallback(() => {
     if (textEditor) return
     if (toolMode === 'hand') return
     if (toolMode === 'select') {
       const drag = selectDragRef.current
       const targetId = drag?.id ?? selectedShapeId
+      const shouldDelete = !!(drag && drag.moved && selectDeleteHover)
       selectDragRef.current = null
+      setSelectDeleteDragActive(false)
+      setSelectDeleteHover(false)
       setSuspendSessionSync(false)
       if (drag && drag.moved) {
+        if (shouldDelete && drag.id) {
+          deleteShapeById(drag.id, { skipHistory: true })
+        }
         return
       }
       if (targetId) {
@@ -3986,7 +4030,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       setEraserCursor(null)
       eraseGestureStarted.current = false
     }
-  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack, brushColor, openTextEditor, textEditor, openEditorForShape, shapes, selectedShapeId])
+  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack, brushColor, openTextEditor, textEditor, openEditorForShape, shapes, selectedShapeId, selectDeleteHover, deleteShapeById])
   // --- Enter shortcut: auto-accept preview when focus is outside inputs ---
   React.useEffect(()=>{
     const onKey = (ev: KeyboardEvent) => {
@@ -4116,6 +4160,8 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
   React.useEffect(() => {
     if (toolMode !== 'select') {
       setSelectedShapeId(null)
+      setSelectDeleteDragActive(false)
+      setSelectDeleteHover(false)
       selectDragRef.current = null
     }
   }, [toolMode])
@@ -4138,6 +4184,13 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [textEditor, cancelTextEditor, commitTextEditor])
+  const selectEditDialogActive = !!(textEditor?.isEditing && toolMode === 'select')
+  const fixedSelectEditDialogSize = selectEditDialogActive
+    ? {
+        width: Math.max(320, Math.min(560, size.width - 24)),
+        height: Math.max(640, Math.min(800, size.height - 88)),
+      }
+    : null
   const textEditorScreen = textEditor ? worldToScreen(textEditor.x, textEditor.y) : null
   const textEditorSize = textEditor ? {
     width: Math.max(textEditor.w * view.scale, 260),
@@ -4253,7 +4306,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         onClick={() => { void openProjectManager() }}
         style={{
           position: 'absolute',
-          top: aiFeedSidebarOpen ? 76 : 124,
+          top: aiFeedSidebarOpen ? 76 : 24,
           left: 14,
           zIndex: 1100,
           height: 48,
@@ -4818,11 +4871,15 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         <div
           style={{
             position: 'absolute',
-            left: textEditorScreen.x,
-            top: textEditorScreen.y,
-            width: textEditorSize.width,
+            left: selectEditDialogActive ? '50%' : textEditorScreen.x,
+            top: selectEditDialogActive ? '50%' : textEditorScreen.y,
+            transform: selectEditDialogActive ? 'translate(-50%, -50%)' : undefined,
+            width: selectEditDialogActive
+              ? (fixedSelectEditDialogSize?.width ?? textEditorSize.width)
+              : textEditorSize.width,
+            height: selectEditDialogActive ? (fixedSelectEditDialogSize?.height ?? undefined) : undefined,
             minWidth: 260,
-            maxWidth: 420,
+            maxWidth: selectEditDialogActive ? (fixedSelectEditDialogSize?.width ?? undefined) : 420,
             background: 'linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,252,0.94))',
             border: '1px solid rgba(148,163,184,0.28)',
             borderRadius: 18,
@@ -4833,6 +4890,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             flexDirection: 'column',
             gap: 12,
             backdropFilter: 'blur(10px) saturate(115%)',
+            overflowY: selectEditDialogActive ? 'auto' : undefined,
           }}
         >
           {(() => {
@@ -5400,6 +5458,39 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
           ))}
         </Layer>
       </Stage>
+      {toolMode === 'select' && selectDeleteDragActive && (
+        <div
+          style={{
+            position: 'absolute',
+            left: selectDeleteZone.left,
+            top: selectDeleteZone.top,
+            width: selectDeleteZone.width,
+            height: selectDeleteZone.height,
+            zIndex: 1140,
+            pointerEvents: 'none',
+            borderRadius: 14,
+            border: selectDeleteHover
+              ? '2px solid rgba(220,38,38,0.9)'
+              : '1.5px dashed rgba(239,68,68,0.72)',
+            background: selectDeleteHover
+              ? 'linear-gradient(180deg, rgba(254,226,226,0.92), rgba(254,202,202,0.84))'
+              : 'linear-gradient(180deg, rgba(254,242,242,0.76), rgba(254,226,226,0.7))',
+            color: selectDeleteHover ? '#991b1b' : '#b91c1c',
+            boxShadow: selectDeleteHover
+              ? '0 14px 30px rgba(220,38,38,0.24)'
+              : '0 10px 22px rgba(220,38,38,0.14)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 13,
+            fontWeight: 700,
+            letterSpacing: '.02em',
+            transition: 'all 120ms ease',
+          }}
+        >
+          {selectDeleteHover ? 'Release to delete text' : 'Drag text here to delete'}
+        </div>
+      )}
       {graphSelectionOverlayActive && (
         <div
           onPointerDown={onGraphSelectionPointerDown}

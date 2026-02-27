@@ -386,6 +386,7 @@ class GraphRuntime:
         self.context = OrchestratorContext()
         self._seen_fragment_ids: Set[str] = set()
         self._fragment_signatures: Dict[str, str] = {}
+        self._fragment_content_signatures: Dict[str, str] = {}
         self._manual_fragment_block_overrides: Dict[str, str] = {}
         self._latest_canvas_snapshot: Optional[CanvasSnapshot] = None
 
@@ -477,6 +478,11 @@ class GraphRuntime:
                     and fragment.fragment_id not in self._fragment_signatures
                 ):
                     self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(raw_stroke)
+                if (
+                    isinstance(raw_stroke, dict)
+                    and fragment.fragment_id not in self._fragment_content_signatures
+                ):
+                    self._fragment_content_signatures[fragment.fragment_id] = self._stroke_content_signature(raw_stroke)
                 continue
             self._seen_fragment_ids.add(fragment.fragment_id)
             assignment = self.block_manager.register_fragment(fragment)
@@ -503,6 +509,7 @@ class GraphRuntime:
 
             if isinstance(raw_stroke, dict):
                 self._fragment_signatures[fragment.fragment_id] = self._stroke_signature(raw_stroke)
+                self._fragment_content_signatures[fragment.fragment_id] = self._stroke_content_signature(raw_stroke)
             new_fragments.append(fragment.fragment_id)
             if self.cluster_logger:
                 try:
@@ -552,21 +559,36 @@ class GraphRuntime:
         existing_ids = set(self.state.fragments.keys())
         removed_ids = existing_ids - incoming_ids
 
-        updated_ids: Set[str] = set()
+        updated_content_ids: Set[str] = set()
+        geometry_only_ids: Set[str] = set()
         common_ids = incoming_ids & existing_ids
         for fid in common_ids:
             previous = self._fragment_signatures.get(fid)
             if not previous:
                 continue
-            current = self._stroke_signature(incoming_by_id[fid])
-            if current != previous:
-                updated_ids.add(fid)
+            current_stroke = incoming_by_id[fid]
+            current = self._stroke_signature(current_stroke)
+            if current == previous:
+                continue
+            previous_content = self._fragment_content_signatures.get(fid)
+            if not previous_content:
+                fragment = self.state.fragments.get(fid)
+                if fragment:
+                    previous_content = self._fragment_content_signature_from_fragment(fragment)
+            current_content = self._stroke_content_signature(current_stroke)
+            if previous_content and previous_content == current_content:
+                geometry_only_ids.add(fid)
+            else:
+                updated_content_ids.add(fid)
 
-        to_remove = removed_ids | updated_ids
+        to_remove = removed_ids | updated_content_ids
         if to_remove:
             self._remove_fragments(to_remove)
 
-        to_ingest_ids = (incoming_ids - existing_ids) | updated_ids
+        if geometry_only_ids:
+            self._apply_geometry_only_updates(geometry_only_ids, incoming_by_id)
+
+        to_ingest_ids = (incoming_ids - existing_ids) | updated_content_ids
         ingest_batch = [incoming_by_id[fid] for fid in ordered_ids if fid in to_ingest_ids]
         result = (
             self.ingest_strokes(ingest_batch)
@@ -577,12 +599,17 @@ class GraphRuntime:
         stale_signature_ids = set(self._fragment_signatures.keys()) - incoming_ids
         for fid in stale_signature_ids:
             self._fragment_signatures.pop(fid, None)
+        stale_content_signature_ids = set(self._fragment_content_signatures.keys()) - incoming_ids
+        for fid in stale_content_signature_ids:
+            self._fragment_content_signatures.pop(fid, None)
 
         for fid in removed_ids:
             self._manual_fragment_block_overrides.pop(fid, None)
 
         for fid in incoming_ids:
-            self._fragment_signatures[fid] = self._stroke_signature(incoming_by_id[fid])
+            stroke = incoming_by_id[fid]
+            self._fragment_signatures[fid] = self._stroke_signature(stroke)
+            self._fragment_content_signatures[fid] = self._stroke_content_signature(stroke)
 
         self._seen_fragment_ids.intersection_update(set(self.state.fragments.keys()))
         return result
@@ -757,6 +784,7 @@ class GraphRuntime:
             "internals": {
                 "seenFragmentIds": sorted(self._seen_fragment_ids),
                 "fragmentSignatures": dict(self._fragment_signatures),
+                "fragmentContentSignatures": dict(self._fragment_content_signatures),
                 "manualFragmentBlockOverrides": dict(self._manual_fragment_block_overrides),
             },
             "latestCanvasSnapshot": latest_canvas,
@@ -1060,6 +1088,12 @@ class GraphRuntime:
             for k, v in dict(signatures_raw).items()
             if str(k or "").strip()
         }
+        content_signatures_raw = internals_raw.get("fragmentContentSignatures") or {}
+        self._fragment_content_signatures = {
+            str(k): str(v)
+            for k, v in dict(content_signatures_raw).items()
+            if str(k or "").strip()
+        }
         overrides_raw = internals_raw.get("manualFragmentBlockOverrides") or {}
         self._manual_fragment_block_overrides = {
             str(k): str(v)
@@ -1101,6 +1135,9 @@ class GraphRuntime:
         self._fragment_signatures = {
             fid: sig for fid, sig in self._fragment_signatures.items() if fid in valid_fragment_ids
         }
+        self._fragment_content_signatures = {
+            fid: sig for fid, sig in self._fragment_content_signatures.items() if fid in valid_fragment_ids
+        }
         self._manual_fragment_block_overrides = {
             fid: bid
             for fid, bid in self._manual_fragment_block_overrides.items()
@@ -1116,6 +1153,21 @@ class GraphRuntime:
         except GroupNotFoundError:
             return None
         return block
+
+    def remove_fragments_now(self, fragment_ids: Iterable[str]) -> Dict[str, object]:
+        normalized: List[str] = []
+        seen: Set[str] = set()
+        for raw in fragment_ids or []:
+            fid = str(raw or "").strip()
+            if not fid or fid in seen:
+                continue
+            seen.add(fid)
+            if fid in self.state.fragments:
+                normalized.append(fid)
+        if not normalized:
+            return {"removedFragmentIds": [], "removedCount": 0}
+        self._remove_fragments(set(normalized))
+        return {"removedFragmentIds": normalized, "removedCount": len(normalized)}
 
     def promote_vision_pending_group_now(self, group_id: str) -> bool:
         payload = self.vision.pop_pending_group_payload(group_id, reason="manual_promote")
@@ -2466,6 +2518,43 @@ class GraphRuntime:
             body = repr(payload)
         return hashlib.sha1(body.encode("utf-8", "replace")).hexdigest()
 
+    def _stroke_content_signature(self, stroke: Dict[str, object]) -> str:
+        payload = {
+            "tool": stroke.get("tool"),
+            "style": stroke.get("style"),
+            "meta": stroke.get("meta"),
+        }
+        try:
+            body = json.dumps(
+                payload,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+                default=str,
+            )
+        except Exception:
+            body = repr(payload)
+        return hashlib.sha1(body.encode("utf-8", "replace")).hexdigest()
+
+    def _fragment_content_signature_from_fragment(self, fragment: Fragment) -> str:
+        payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+        stroke_like = {
+            "tool": payload.get("tool"),
+            "style": payload.get("style"),
+            "meta": payload.get("meta"),
+        }
+        try:
+            body = json.dumps(
+                stroke_like,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+                default=str,
+            )
+        except Exception:
+            body = repr(stroke_like)
+        return hashlib.sha1(body.encode("utf-8", "replace")).hexdigest()
+
     def _remove_fragments(self, fragment_ids: Set[str]) -> None:
         if not fragment_ids:
             return
@@ -2474,6 +2563,7 @@ class GraphRuntime:
             fragment = self.state.fragments.pop(fragment_id, None)
             self._seen_fragment_ids.discard(fragment_id)
             self._fragment_signatures.pop(fragment_id, None)
+            self._fragment_content_signatures.pop(fragment_id, None)
             self.block_manager.remove_unlabeled_strokes([fragment_id])
 
             group_id = self.block_manager.get_group_id_for_fragment(fragment_id)
@@ -2489,6 +2579,7 @@ class GraphRuntime:
                     continue
                 group.members.discard(fragment_id)
                 group.updated_at = now
+                group.prototype_vec = None
                 if not group.members:
                     self.state.remove_group(gid)
                     self.block_manager._group_touch_counts.pop(gid, None)  # pylint: disable=protected-access
@@ -2522,6 +2613,8 @@ class GraphRuntime:
                         self.orchestrator.context.active_block_ids = [
                             item for item in self.orchestrator.context.active_block_ids if item != bid
                         ]
+                else:
+                    self.block_manager._refresh_block_embedding(block)  # pylint: disable=protected-access
 
             self.block_manager.orphan_fragment(fragment_id)
 
@@ -2532,3 +2625,60 @@ class GraphRuntime:
             pending.stroke_ids = [fid for fid in pending.stroke_ids if fid not in fragment_ids]
             if not pending.stroke_ids:
                 self.vision._pending_groups.pop(gid, None)  # pylint: disable=protected-access
+
+    def _apply_geometry_only_updates(
+        self,
+        fragment_ids: Set[str],
+        incoming_by_id: Dict[str, Dict[str, object]],
+    ) -> None:
+        if not fragment_ids:
+            return
+
+        affected_block_ids: Set[str] = set()
+        affected_group_ids: Set[str] = set()
+        for fragment_id in fragment_ids:
+            fragment = self.state.fragments.get(fragment_id)
+            stroke = incoming_by_id.get(fragment_id)
+            if fragment is None or not isinstance(stroke, dict):
+                continue
+            refreshed = self._stroke_to_fragment(stroke)
+            if refreshed is None:
+                continue
+
+            fragment.bbox = refreshed.bbox
+            # Keep content recency unchanged for pure geometry updates: do not overwrite timestamp.
+            # Update shape payload (points/style/meta) but preserve existing block tags.
+            existing_payload = fragment.payload if isinstance(fragment.payload, dict) else {}
+            existing_graph = existing_payload.get("graph") if isinstance(existing_payload, dict) else None
+            existing_graph = dict(existing_graph) if isinstance(existing_graph, dict) else {}
+
+            new_payload = refreshed.payload if isinstance(refreshed.payload, dict) else {}
+            merged_payload = dict(new_payload)
+            merged_graph = merged_payload.get("graph") if isinstance(merged_payload, dict) else None
+            merged_graph = dict(merged_graph) if isinstance(merged_graph, dict) else {}
+            for key in ("blockId", "blockLabel"):
+                if key in existing_graph:
+                    merged_graph[key] = existing_graph[key]
+            merged_payload["graph"] = merged_graph
+            fragment.payload = merged_payload
+
+            self.block_manager.refresh_fragment_geometry(fragment_id)
+
+            block_id = self.block_manager.get_block_id_for_fragment(fragment_id)
+            if block_id:
+                affected_block_ids.add(block_id)
+            group_id = self.block_manager.get_group_id_for_fragment(fragment_id)
+            if group_id:
+                affected_group_ids.add(group_id)
+
+        for group_id in affected_group_ids:
+            group = self.state.groups.get(group_id)
+            if group:
+                group.prototype_vec = None
+
+        for block_id in affected_block_ids:
+            block = self.state.blocks.get(block_id)
+            if not block:
+                continue
+            block.position = self.block_manager._refresh_block_bbox(block)  # pylint: disable=protected-access
+            self.block_manager._refresh_block_embedding(block)  # pylint: disable=protected-access

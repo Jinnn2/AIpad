@@ -210,6 +210,19 @@ class GraphSelectionBlockActionResponse(BaseModel):
     fragment_ids: List[str] = Field(default_factory=list)
 
 
+class GraphRemoveFragmentsRequest(BaseModel):
+    sid: str
+    fragment_ids: List[str] = Field(default_factory=list)
+
+
+class GraphRemoveFragmentsResponse(BaseModel):
+    ok: bool = True
+    removed_fragment_ids: List[str] = Field(default_factory=list, alias="removedFragmentIds")
+    removed_count: int = Field(default=0, alias="removedCount")
+
+    model_config = {"populate_by_name": True}
+
+
 class ProjectListItem(BaseModel):
     project_id: str = Field(alias="projectId")
     name: str
