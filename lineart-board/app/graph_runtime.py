@@ -389,9 +389,11 @@ class GraphRuntime:
         self._fragment_content_signatures: Dict[str, str] = {}
         self._manual_fragment_block_overrides: Dict[str, str] = {}
         self._latest_canvas_snapshot: Optional[CanvasSnapshot] = None
+        self._last_full_backend_usage: Dict[str, object] = {}
 
     def _call_full_backend(self, messages: List[Dict[str, str]], *, mode: Optional[str] = None) -> Dict[str, object]:
         parsed, dbg = call_chat_completions(messages, model=DEFAULT_LLM_MODEL, max_tokens=9000)
+        self._last_full_backend_usage = dict((dbg or {}).get("usage") or {})
         if isinstance(parsed, dict):
             return parsed
         if isinstance(parsed, str):
@@ -400,6 +402,42 @@ class GraphRuntime:
             except Exception as exc:
                 raise RuntimeError(f"LLM returned non-JSON response: {parsed!r}") from exc
         raise RuntimeError(f"Unexpected LLM response: {type(parsed)!r}")
+
+    @staticmethod
+    def _merge_usage_payloads(*usage_docs: Optional[Dict[str, object]]) -> Dict[str, object]:
+        merged: Dict[str, object] = {}
+        prompt_tokens = 0
+        completion_tokens = 0
+        total_tokens = 0
+        hit = False
+        for usage in usage_docs:
+            if not isinstance(usage, dict):
+                continue
+            for key, target in (
+                ("prompt_tokens", "prompt_tokens"),
+                ("completion_tokens", "completion_tokens"),
+                ("total_tokens", "total_tokens"),
+            ):
+                value = usage.get(key)
+                if value is None:
+                    continue
+                try:
+                    number = int(value)
+                except Exception:
+                    continue
+                if key == "prompt_tokens":
+                    prompt_tokens += number
+                elif key == "completion_tokens":
+                    completion_tokens += number
+                else:
+                    total_tokens += number
+                hit = True
+                merged[target] = 0
+        if hit:
+            merged["prompt_tokens"] = prompt_tokens
+            merged["completion_tokens"] = completion_tokens
+            merged["total_tokens"] = total_tokens or (prompt_tokens + completion_tokens)
+        return merged
 
     def set_group_promotion_mode(self, mode: Optional[str]) -> None:
         normalized = _normalize_group_promote_mode(mode)
@@ -1333,6 +1371,12 @@ class GraphRuntime:
         mode: Optional[str] = None,
         prefer_explanatory_drawing: Optional[bool] = None,
     ) -> Dict[str, object]:
+        self._last_full_backend_usage = {}
+        if hasattr(self.plan_backend, "last_usage"):
+            try:
+                self.plan_backend.last_usage = {}  # type: ignore[attr-defined]
+            except Exception:
+                pass
         if not getattr(self.vision, "manual_pending_promotion", False):
             pending_payloads = self.vision.flush_groups(
                 reason="ask_ai",
@@ -1389,6 +1433,7 @@ class GraphRuntime:
             main_block_id=self.orchestrator.context.main_block_id,
             active_block_ids=list(self.orchestrator.context.active_block_ids),
         )
+        planner_usage = dict(getattr(self.plan_backend, "last_usage", {}) or {})
         exec_mode = (mode or "").lower()
         if not exec_mode and plan.action:
             candidate = plan.action.lower()
@@ -1401,10 +1446,13 @@ class GraphRuntime:
                 "plan": {
                     "action": plan.action,
                     "targetBlockIds": plan.target_block_ids,
+                    "activeBlockIds": list(focus_context.active_block_ids),
+                    "mainBlockId": focus_context.main_block_id,
                     "comment": plan.comment,
                     "nextStepHint": plan.next_step_hint,
                 },
                 "payload": placeholder_payload,
+                "usage": self._merge_usage_payloads(planner_usage),
             }
         if (
             action_upper == "CONTINUE"
@@ -1415,6 +1463,8 @@ class GraphRuntime:
                 "plan": {
                     "action": plan.action,
                     "targetBlockIds": plan.target_block_ids,
+                    "activeBlockIds": list(focus_context.active_block_ids),
+                    "mainBlockId": focus_context.main_block_id,
                     "comment": plan.comment,
                     "nextStepHint": plan.next_step_hint,
                 },
@@ -1423,6 +1473,7 @@ class GraphRuntime:
                     "intent": "noop",
                     "strokes": [],
                 },
+                "usage": self._merge_usage_payloads(planner_usage),
             }
         response = self.context_executor.execute(
             plan,
@@ -1431,14 +1482,18 @@ class GraphRuntime:
             context=focus_context,
             prefer_explanatory_drawing=prefer_explanatory_drawing,
         )
+        total_usage = self._merge_usage_payloads(planner_usage, self._last_full_backend_usage)
         return {
             "plan": {
                 "action": plan.action,
                 "targetBlockIds": plan.target_block_ids,
+                "activeBlockIds": list(focus_context.active_block_ids),
+                "mainBlockId": focus_context.main_block_id,
                 "comment": plan.comment,
                 "nextStepHint": plan.next_step_hint,
             },
             "payload": response,
+            "usage": total_usage,
         }
 
     def _maybe_promote_plan_groups(self, plan, *, user_input: str) -> None:

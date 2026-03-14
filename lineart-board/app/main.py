@@ -3,7 +3,7 @@ from __future__ import annotations
 import os, random, time, json, tempfile, math
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 from urllib.parse import quote
 from fastapi import FastAPI, HTTPException, Response, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -131,6 +131,23 @@ def _write_json(dirpath: Path, name: str, data) -> None:
     p = dirpath / name
     with p.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def _with_llm_usage(base: Optional[Dict[str, Any]], dbg: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    usage: Dict[str, Any] = dict(base or {})
+    raw_usage = (dbg or {}).get("usage") if isinstance(dbg, dict) else None
+    if isinstance(raw_usage, dict):
+        for key in (
+            "prompt_tokens",
+            "completion_tokens",
+            "total_tokens",
+            "prompt_tokens_details",
+            "completion_tokens_details",
+        ):
+            value = raw_usage.get(key)
+            if value is not None:
+                usage[key] = value
+    return usage
 
 
 PROJECT_STORE = ProjectStore()
@@ -343,7 +360,7 @@ def suggest(req: SuggestRequest):
                 # Step-1 emits no strokes; it only returns vision metadata for Step-2.
                 return SuggestResponse(
                     payload=AIStrokePayload(version=2, intent="hint", strokes=[]),
-                    usage={"mode":"vision-2.0-step1","raw_text": (dbg or {}).get("raw_text")},
+                    usage=_with_llm_usage({"mode":"vision-2.0-step1","raw_text": (dbg or {}).get("raw_text")}, dbg),
                     vision2={"analysis": analysis, "instruction": instruction}
                 )
             except Exception as e:
@@ -405,7 +422,7 @@ def suggest(req: SuggestRequest):
                 if not (isinstance(obj, dict) and "version" in obj and "strokes" in obj):
                     raise ValueError("model did not return v1.1 JSON")
                 payload = AIStrokePayload(**obj)
-                usage = {"mode":"vision-2.0-step2", "raw_text": (dbg or {}).get("raw_text")}
+                usage = _with_llm_usage({"mode":"vision-2.0-step2", "raw_text": (dbg or {}).get("raw_text")}, dbg)
                 return SuggestResponse(payload=payload, usage=usage)
             except Exception as e:
                 raise HTTPException(502, f"vision 2.0 step2 failed: {e}")
@@ -484,7 +501,7 @@ def suggest(req: SuggestRequest):
                 prefer_explanatory_drawing=getattr(req, "prefer_explanatory_drawing", None),
             )
             obj = plan_bundle.get("payload") or {}
-            dbg = {"mode": "context-executor", "plan": plan_bundle.get("plan")}
+            dbg = {"mode": "context-executor", "plan": plan_bundle.get("plan"), "usage": plan_bundle.get("usage")}
             used_context_executor = True
             try:
                 _persist_project_for_session(
@@ -957,18 +974,30 @@ def suggest(req: SuggestRequest):
         if LOG_IO and log_dir is not None:
             try: _write_json(log_dir, "output.cleaned.json", payload.model_dump())
             except Exception: pass
-        usage = {
+        usage = _with_llm_usage({
             "stage": "ok",
             "raw_text": dbg.get("raw_text"),
             "mode": dbg.get("mode"),
             "model": dbg.get("model"),
             "response_id": (dbg.get("response_dump") or {}).get("id"),
-        }
+        }, dbg)
         plan_info = dbg.get("plan")
         if isinstance(plan_info, dict):
             planner_next_step = str(plan_info.get("nextStepHint") or "").strip()
             if planner_next_step:
                 usage["planner_next_step"] = planner_next_step
+            target_block_ids = plan_info.get("targetBlockIds")
+            if isinstance(target_block_ids, list):
+                usage["plan_target_block_ids"] = [str(v) for v in target_block_ids if str(v or "").strip()]
+            active_block_ids = plan_info.get("activeBlockIds")
+            if isinstance(active_block_ids, list):
+                usage["active_block_ids"] = [str(v) for v in active_block_ids if str(v or "").strip()]
+            main_block_id = str(plan_info.get("mainBlockId") or "").strip()
+            if main_block_id:
+                usage["main_block_id"] = main_block_id
+            plan_action = str(plan_info.get("action") or "").strip()
+            if plan_action:
+                usage["plan_action"] = plan_action
         if clean_errors:
             usage["clean_dropped_strokes"] = len(clean_errors)
             usage["clean_failed_rules"] = _summarize_clean_errors(clean_errors)

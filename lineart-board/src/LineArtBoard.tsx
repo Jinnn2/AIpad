@@ -19,6 +19,28 @@ import { chaikin, resampleEvenly, geomMaxDeviationFromChord, mergeCollinear, dra
 import { TopToolbar, SidePanel, BottomPanel, SettingsButton, AIFeedSidebar, GraphBlocksDrawer, type AIFeedEntry } from './LineArtUI'
 import { computeTextBoxLayout, DEFAULT_TEXTBOX_LINE_HEIGHT, measureTextWidth } from './textbox/layout'
 import { hasInlineMarkdownStyle, looksLikeMarkdownText, parseMarkdownDisplayBlocks, parseMarkdownInlineRuns, renderMarkdownToCanvasText } from './textbox/markdown'
+import {
+  addAcceptedSuggestion,
+  addDismissRecord,
+  addPreviewRecord,
+  addRequestCompleted,
+  addRequestFailed,
+  addRequestSent,
+  bboxIntersects,
+  computeShapeBBox,
+  createExperimentRun,
+  endExperimentRun,
+  estimateDraftUsableUnits,
+  extractUsageUpdate,
+  mergeBBox,
+  normalizePhaseId,
+  refreshAcceptedSuggestionMutations,
+  shapeToSnapshot,
+  summarizeExperimentRun,
+  updateExperimentPhase,
+  type BBox,
+  type ExperimentRun,
+} from './experiment'
 /**
  * LineArtBoard renders a Konva-based workspace with:
  * - Top toolbar for grid/snap toggles, brush settings, import/export helpers.
@@ -220,8 +242,18 @@ const hexToRgba = (hex: string, alpha: number) => {
   const b = bigint & 255
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
+const EXPERIMENT_STORAGE_KEY = 'aipad_experiment_run_v1'
+const EXPERIMENT_WIDGET_STORAGE_KEY = 'aipad_experiment_widget_v1'
 // Preview entries keep drafts grouped by payload id
-type PreviewEntry = { payloadId: string; drafts: ShapeDraft[] }
+type PreviewEntry = {
+  payloadId: string
+  drafts: ShapeDraft[]
+  requestId?: string | null
+  phaseId?: string
+  promptTokens?: number
+  activeBlockIds?: string[]
+  planTargetBlockIds?: string[]
+}
 type TextGrowDir = 'down' | 'up' | 'left' | 'right' | 'right-down'
 type TextSettings = {
   fontFamily: string
@@ -310,6 +342,11 @@ type ProjectContextMenuState =
       x: number
       y: number
     }
+type ExperimentWidgetState = {
+  open: boolean
+  x: number
+  y: number
+}
 export default function LineArtBoard() {
   // Canvas size; swap to ResizeObserver for responsive layout
   const [size] = useState({ width: window.innerWidth, height: window.innerHeight })
@@ -608,6 +645,7 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   }, [snapshotCanvas, view.x, view.y, view.scale, size.width, size.height])
   // Store AI previews grouped by payload id
   const [previews, setPreviews] = useState<Record<string, PreviewEntry>>({})
+  const lastCommittedShapeCountRef = useRef(shapes.length)
   const previewEntries = useMemo(() => Object.values(previews), [previews])
   const activeEditTargets = useMemo(() => {
     const ids = new Set<string>()
@@ -646,6 +684,81 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
   const [projectCurrentPreviewDirty, setProjectCurrentPreviewDirty] = useState<boolean>(false)
   const [projectContextMenuState, setProjectContextMenuState] = useState<ProjectContextMenuState | null>(null)
   const [plannerNextStepHint, setPlannerNextStepHint] = useState<string>('')
+  const [experimentPhaseId, setExperimentPhaseId] = useState<string>('phase-1')
+  const [experimentRun, setExperimentRun] = useState<ExperimentRun | null>(() => {
+    try {
+      const raw = localStorage.getItem(EXPERIMENT_STORAGE_KEY)
+      if (!raw) return null
+      const parsed = JSON.parse(raw) as ExperimentRun
+      return parsed && typeof parsed === 'object' ? parsed : null
+    } catch {
+      return null
+    }
+  })
+  const [experimentWidget, setExperimentWidget] = useState<ExperimentWidgetState>(() => {
+    try {
+      const raw = localStorage.getItem(EXPERIMENT_WIDGET_STORAGE_KEY)
+      if (raw) {
+        const parsed = JSON.parse(raw) as Partial<ExperimentWidgetState>
+        if (typeof parsed?.x === 'number' && typeof parsed?.y === 'number') {
+          return {
+            open: parsed.open !== false,
+            x: parsed.x,
+            y: parsed.y,
+          }
+        }
+      }
+    } catch {}
+    return {
+      open: true,
+      x: Math.max(12, window.innerWidth - 360 - 72),
+      y: 76,
+    }
+  })
+  const experimentRunRef = useRef<ExperimentRun | null>(experimentRun)
+  const experimentDragRef = useRef<{
+    pointerId: number
+    startX: number
+    startY: number
+    baseX: number
+    baseY: number
+    moved: boolean
+  } | null>(null)
+  const experimentDragSuppressClickRef = useRef(false)
+  const commitExperimentRun = useCallback((updater: (current: ExperimentRun) => ExperimentRun) => {
+    const current = experimentRunRef.current
+    if (!current || current.endedAt) return null
+    const next = updater(current)
+    experimentRunRef.current = next
+    setExperimentRun(next)
+    return next
+  }, [])
+  const replaceExperimentRun = useCallback((next: ExperimentRun | null) => {
+    experimentRunRef.current = next
+    setExperimentRun(next)
+  }, [])
+  React.useEffect(() => {
+    experimentRunRef.current = experimentRun
+  }, [experimentRun])
+  React.useEffect(() => {
+    if (experimentRun?.currentPhaseId) {
+      setExperimentPhaseId(experimentRun.currentPhaseId)
+    }
+  }, [])
+  React.useEffect(() => {
+    try {
+      if (!experimentRun) {
+        localStorage.removeItem(EXPERIMENT_STORAGE_KEY)
+      } else {
+        localStorage.setItem(EXPERIMENT_STORAGE_KEY, JSON.stringify(experimentRun))
+      }
+    } catch {}
+  }, [experimentRun])
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(EXPERIMENT_WIDGET_STORAGE_KEY, JSON.stringify(experimentWidget))
+    } catch {}
+  }, [experimentWidget])
   // Session identifiers from backend; lastSentIndex tracks delta uploads
   const [sid, setSid] = useState<string | null>(null)
   const [visionVersion, setVisionVersion] = useState<number>(2.0)
@@ -1181,6 +1294,142 @@ const [textSettings, setTextSettings] = useState<TextSettings>({
       }
     })
   }, [graphSnapshot, blockColorMap, shapeById])
+  const experimentPanelWidth = useMemo(() => Math.min(360, Math.max(300, size.width * 0.24)), [size.width])
+  const experimentChipWidth = 188
+  const clampExperimentWidgetPosition = useCallback((x: number, y: number, open: boolean) => {
+    const width = open ? experimentPanelWidth : experimentChipWidth
+    const clampedX = clamp(x, 12, Math.max(12, size.width - width - 12))
+    const clampedY = clamp(y, 76, Math.max(76, size.height - 56))
+    return { x: clampedX, y: clampedY }
+  }, [experimentPanelWidth, size.height, size.width])
+  const experimentActive = Boolean(experimentRun && !experimentRun.endedAt)
+  const experimentSummary = useMemo(() => (
+    experimentRun ? summarizeExperimentRun(experimentRun, shapes) : null
+  ), [experimentRun, shapes])
+  React.useEffect(() => {
+    setExperimentWidget((current) => {
+      const nextPos = clampExperimentWidgetPosition(current.x, current.y, current.open)
+      if (nextPos.x === current.x && nextPos.y === current.y) return current
+      return { ...current, ...nextPos }
+    })
+  }, [clampExperimentWidgetPosition])
+  React.useEffect(() => {
+    if (!experimentActive) return
+    commitExperimentRun((current) => refreshAcceptedSuggestionMutations(current, shapes))
+  }, [experimentActive, commitExperimentRun, shapes])
+  const handleExperimentPhaseChange = useCallback((value: string) => {
+    const normalized = normalizePhaseId(value)
+    setExperimentPhaseId(normalized)
+    if (!experimentActive) return
+    commitExperimentRun((current) => updateExperimentPhase(current, normalized))
+  }, [commitExperimentRun, experimentActive])
+  const startExperiment = useCallback(() => {
+    const phaseId = normalizePhaseId(experimentPhaseId)
+    setExperimentPhaseId(phaseId)
+    replaceExperimentRun(createExperimentRun(phaseId, sid))
+  }, [experimentPhaseId, replaceExperimentRun, sid])
+  const endExperiment = useCallback(() => {
+    if (!experimentRunRef.current || experimentRunRef.current.endedAt) return
+    replaceExperimentRun(endExperimentRun(experimentRunRef.current))
+  }, [replaceExperimentRun])
+  const exportExperiment = useCallback(() => {
+    if (!experimentRunRef.current) return
+    const summary = summarizeExperimentRun(experimentRunRef.current, shapes)
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      run: experimentRunRef.current,
+      summary,
+      graphBlockCount: graphBlockCards.length,
+      currentShapeCount: shapes.length,
+      config: {
+        editThreshold: experimentRunRef.current.editThreshold,
+        textUnitChars: 20,
+      },
+    }
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
+    const anchor = document.createElement('a')
+    anchor.href = URL.createObjectURL(blob)
+    anchor.download = `aipad-experiment-${experimentRunRef.current.runId}.json`
+    anchor.click()
+    URL.revokeObjectURL(anchor.href)
+  }, [graphBlockCards.length, shapes])
+  const openExperimentWidget = useCallback(() => {
+    setExperimentWidget((current) => {
+      const nextPos = clampExperimentWidgetPosition(current.x, current.y, true)
+      return { ...current, open: true, ...nextPos }
+    })
+  }, [clampExperimentWidgetPosition])
+  const closeExperimentWidget = useCallback(() => {
+    setExperimentWidget((current) => ({ ...current, open: false }))
+  }, [])
+  const onExperimentChipPointerDown = useCallback((ev: React.PointerEvent<HTMLButtonElement>) => {
+    experimentDragRef.current = {
+      pointerId: ev.pointerId,
+      startX: ev.clientX,
+      startY: ev.clientY,
+      baseX: experimentWidget.x,
+      baseY: experimentWidget.y,
+      moved: false,
+    }
+    experimentDragSuppressClickRef.current = false
+    try { ev.currentTarget.setPointerCapture(ev.pointerId) } catch {}
+  }, [experimentWidget.x, experimentWidget.y])
+  const onExperimentChipPointerMove = useCallback((ev: React.PointerEvent<HTMLButtonElement>) => {
+    const drag = experimentDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    const dx = ev.clientX - drag.startX
+    const dy = ev.clientY - drag.startY
+    if (!drag.moved && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
+      drag.moved = true
+      experimentDragSuppressClickRef.current = true
+    }
+    if (!drag.moved) return
+    const nextPos = clampExperimentWidgetPosition(drag.baseX + dx, drag.baseY + dy, false)
+    setExperimentWidget((current) => ({ ...current, ...nextPos }))
+  }, [clampExperimentWidgetPosition])
+  const onExperimentChipPointerUp = useCallback((ev: React.PointerEvent<HTMLButtonElement>) => {
+    const drag = experimentDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    experimentDragRef.current = null
+    try { ev.currentTarget.releasePointerCapture(ev.pointerId) } catch {}
+  }, [])
+  const onExperimentChipPointerCancel = useCallback((ev: React.PointerEvent<HTMLButtonElement>) => {
+    const drag = experimentDragRef.current
+    if (!drag || drag.pointerId !== ev.pointerId) return
+    experimentDragRef.current = null
+    try { ev.currentTarget.releasePointerCapture(ev.pointerId) } catch {}
+  }, [])
+  const recordExperimentRequestSent = useCallback((requestMode: PromptMode) => {
+    if (!experimentActive) return null
+    let requestId: string | null = null
+    commitExperimentRun((current) => {
+      const recorded = addRequestSent(current, {
+        phaseId: experimentPhaseId,
+        sessionId: sid,
+        requestMode,
+      })
+      requestId = recorded.requestId
+      return recorded.run
+    })
+    return requestId
+  }, [commitExperimentRun, experimentActive, experimentPhaseId, sid])
+  const recordExperimentRequestCompleted = useCallback((requestId: string | null, rawUsage: any) => {
+    if (!requestId || !experimentActive) return
+    const update = extractUsageUpdate(rawUsage)
+    commitExperimentRun((current) => addRequestCompleted(current, requestId, update))
+  }, [commitExperimentRun, experimentActive])
+  const recordExperimentRequestFailed = useCallback((requestId: string | null, errorMessage: string) => {
+    if (!requestId || !experimentActive) return
+    commitExperimentRun((current) => addRequestFailed(current, requestId, errorMessage))
+  }, [commitExperimentRun, experimentActive])
+  const recordExperimentPreview = useCallback((payloadId: string, requestId: string | null, phaseId: string) => {
+    if (!experimentActive) return
+    commitExperimentRun((current) => addPreviewRecord(current, { payloadId, requestId, phaseId }))
+  }, [commitExperimentRun, experimentActive])
+  const recordExperimentDismiss = useCallback((payloadId: string, requestId: string | null, phaseId: string, reason?: string | null) => {
+    if (!experimentActive) return
+    commitExperimentRun((current) => addDismissRecord(current, { payloadId, requestId, phaseId, reason }))
+  }, [commitExperimentRun, experimentActive])
   const graphSelectedFragments = useMemo(() => {
     const selected = new Set(graphSelectedFragmentIds)
     if (!selected.size) return [] as Array<{
@@ -1701,11 +1950,18 @@ const stageCursor = toolMode === 'hand'
   }, [])
   // Drop previews when the committed shape count changes
   React.useEffect(() => {
+    const prevShapeCount = lastCommittedShapeCountRef.current
+    lastCommittedShapeCountRef.current = shapes.length
+    if (prevShapeCount === shapes.length) return
     if (Object.keys(previews).length > 0) {
+      if (currentPayloadId && previews[currentPayloadId]) {
+        const entry = previews[currentPayloadId]
+        recordExperimentDismiss(entry.payloadId, entry.requestId ?? null, entry.phaseId ?? experimentPhaseId, 'canvas_mutation')
+      }
       setPreviews({})
       setCurrentPayloadId(null)
     }
-  }, [shapes.length])
+  }, [shapes.length, previews, currentPayloadId, recordExperimentDismiss, experimentPhaseId])
   // Preview pipeline: localStorage -> validate -> normalize -> plan -> store
   const previewAI = useCallback(() => {
     const raw = localStorage.getItem('ai_suggestions_v1')
@@ -2450,6 +2706,17 @@ const stageCursor = toolMode === 'hand'
     })
     if (targetId) clearCompletionPreview(targetId)
   }, [textEditor, setSelectedShapeId, clearCompletionPreview])
+  const getDefaultTextBoxSize = useCallback((fontSize: number) => {
+    const safeScale = Math.max(view.scale || 1, 0.2)
+    const minScreenWidth = Math.max(220, fontSize * 10)
+    const minScreenHeight = Math.max(140, fontSize * 4)
+    const targetScreenWidth = clamp(size.width * 0.18, minScreenWidth, 520)
+    const targetScreenHeight = clamp(size.height * 0.16, minScreenHeight, 320)
+    return {
+      width: Math.max(80, targetScreenWidth / safeScale),
+      height: Math.max(Math.round(fontSize * 1.6), targetScreenHeight / safeScale),
+    }
+  }, [size.height, size.width, view.scale])
   const commitTextEditor = useCallback(() => {
     if (!textEditor) return
     const content = textEditor.text.replace(/\s+$/g, '')
@@ -2458,8 +2725,7 @@ const stageCursor = toolMode === 'hand'
       return
     }
     const summary = textEditor.summary.trim().slice(0, 30)
-    const fallbackWidth = Math.max(240, textEditor.fontSize * 10)
-    const fallbackHeight = Math.max(160, textEditor.fontSize * 4)
+    const { width: fallbackWidth, height: fallbackHeight } = getDefaultTextBoxSize(textEditor.fontSize)
     const baseWidth = textEditor.w > 0 ? Math.max(textEditor.w, 80) : fallbackWidth
     const baseHeight = textEditor.h > 0 ? Math.max(textEditor.h, Math.round(textEditor.fontSize * 1.6)) : fallbackHeight
     const renderedText = renderMarkdownToCanvasText(content)
@@ -2547,7 +2813,7 @@ const stageCursor = toolMode === 'hand'
       growDir: textEditor.growDir,
     })
     noteUserAction({ forceStart: true })
-  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction, computeTextBoxLayout, setSelectedShapeId, clearCompletionPreview])
+  }, [textEditor, pushHistory, setShapes, setDrawStack, updateTextSettings, noteUserAction, computeTextBoxLayout, setSelectedShapeId, clearCompletionPreview, getDefaultTextBoxSize])
 const openTextEditor = useCallback((params: {
     id: string
     x: number
@@ -2565,8 +2831,7 @@ const openTextEditor = useCallback((params: {
     editing?: boolean
   }) => {
     const fontSize = params.fontSize ?? textSettings.fontSize
-    const fallbackWidth = Math.max(240, fontSize * 10)
-    const fallbackHeight = Math.max(160, fontSize * 4)
+    const { width: fallbackWidth, height: fallbackHeight } = getDefaultTextBoxSize(fontSize)
     const baseWidth = params.w > 0 ? Math.max(params.w, 80) : fallbackWidth
     const baseHeight = params.h > 0 ? Math.max(params.h, Math.round(fontSize * 1.6)) : fallbackHeight
     setTextEditor({
@@ -2588,7 +2853,7 @@ const openTextEditor = useCallback((params: {
       pendingCompletion: completionPreviews[params.id] ?? null,
       completing: false,
     })
-  }, [textSettings, completionPreviews])
+  }, [textSettings, completionPreviews, getDefaultTextBoxSize])
   const openEditorForShape = useCallback((shape: ShapeDraft) => {
     if (shape.kind !== 'text') return
     const meta = shape.meta ?? {}
@@ -2615,6 +2880,7 @@ const openTextEditor = useCallback((params: {
     askInFlightRef.current = true
     clearAutoTimer()
     try {
+      const requestPhaseId = normalizePhaseId(experimentPhaseId)
       // 1) Ensure session exists
       let curSid = sid
       if (!curSid) {
@@ -2692,12 +2958,15 @@ const openTextEditor = useCallback((params: {
       if (mode === "vision" && visionVersion >= 2) {
         // Step 1: image analysis without stroke context
         const req1 = { ...baseReq, seq: 1, context: { version: 1, intent: 'hint', strokes: [] } }
+        const requestId1 = recordExperimentRequestSent(mode)
         let res1 = await doPost(req1)
         if (!res1.ok) {
           const t = await res1.text().catch(()=> '')
+          recordExperimentRequestFailed(requestId1, `Vision 2.0 step1 failed: ${res1.status} ${res1.statusText}${t ? `\n${t}` : ''}`)
           throw new Error(`Vision 2.0 step1 failed: ${res1.status} ${res1.statusText}\n${t}`)
         }
         const data1 = await res1.json()
+        recordExperimentRequestCompleted(requestId1, data1?.usage)
         const v2 = data1?.vision2 || {}
         const instruction: string = (v2.instruction || '').toString()
         // Fall back to hint when server returns no instruction
@@ -2731,12 +3000,15 @@ const openTextEditor = useCallback((params: {
           max_tokens: runtimeMaxTokens,
           gen_scale: aiScale,
         }
+        const requestId2 = recordExperimentRequestSent(mode)
         let res2 = await doPost(req2)
         if (!res2.ok) {
           const t = await res2.text().catch(()=> '')
+          recordExperimentRequestFailed(requestId2, `Vision 2.0 step2 failed: ${res2.status} ${res2.statusText}${t ? `\n${t}` : ''}`)
           throw new Error(`Vision 2.0 step2 failed: ${res2.status} ${res2.statusText}\n${t}`)
         }
         const data2 = await res2.json()
+        recordExperimentRequestCompleted(requestId2, data2?.usage)
         if (data2?.usage?.new_sid) setSid(String(data2.usage.new_sid))
         setPlannerNextStepHint(String(data2?.usage?.planner_next_step || '').trim())
         const payload2 = data2?.payload
@@ -2748,16 +3020,31 @@ const openTextEditor = useCallback((params: {
         if (!v.ok || !v.payload) throw new Error('Invalid AI payload: ' + v.errors.join('; '))
         const norm = normalizeAIStrokePayload(v.payload)
         const drafts = planDrafts(norm)
-        setPreviews(prev => ({ ...prev, [norm.payloadId]: { payloadId: norm.payloadId, drafts } }))
+        const usage2 = extractUsageUpdate(data2?.usage)
+        setPreviews(prev => ({
+          ...prev,
+          [norm.payloadId]: {
+            payloadId: norm.payloadId,
+            drafts,
+            requestId: requestId2,
+            phaseId: requestPhaseId,
+            promptTokens: usage2.promptTokens,
+            activeBlockIds: usage2.activeBlockIds,
+            planTargetBlockIds: usage2.planTargetBlockIds,
+          },
+        }))
         setCurrentPayloadId(norm.payloadId)
+        recordExperimentPreview(norm.payloadId, requestId2, requestPhaseId)
         return
       }
       // === Legacy flow (Vision 1.0 / full / light) ===
+      let requestId = recordExperimentRequestSent(mode)
       let res = await doPost({ ...baseReq, sid: curSid! })
       if (!res.ok) {
         // If session expired, re-initialize once then retry
         const txt = await res.text().catch(()=>'')
         if (res.status === 404 && /session not found/i.test(txt)) {
+          recordExperimentRequestFailed(requestId, `HTTP ${res.status} ${res.statusText}${txt ? `\n${txt}` : ''}`)
           const r1 = await apiFetch('/session/init', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -2767,7 +3054,8 @@ const openTextEditor = useCallback((params: {
             const j1 = await r1.json()
             curSid = j1.sid
             setSid(curSid)
-            res = await doPost(curSid!)
+            requestId = recordExperimentRequestSent(mode)
+            res = await doPost({ ...baseReq, sid: curSid! })
           }
         }
       }
@@ -2781,10 +3069,12 @@ const openTextEditor = useCallback((params: {
           const t = await res.text().catch(()=> '')
           if (t) msg += `\n${t}`
         }
+        recordExperimentRequestFailed(requestId, msg)
         throw new Error(msg)
       }
       // 4) Parse response payload and stage previews
       const data = await res.json()
+      recordExperimentRequestCompleted(requestId, data?.usage)
       if (data?.usage?.new_sid) setSid(String(data.usage.new_sid))
       setPlannerNextStepHint(String(data?.usage?.planner_next_step || '').trim())
       const payload = data?.payload as AIStrokePayload | undefined
@@ -2799,11 +3089,25 @@ const openTextEditor = useCallback((params: {
       if (!v.ok || !v.payload) throw new Error('Invalid AI payload: ' + v.errors.join('; '))
       const norm = normalizeAIStrokePayload(v.payload)
       const drafts = planDrafts(norm)   // Already supports poly/line/pen
-      setPreviews(prev => ({ ...prev, [norm.payloadId]: { payloadId: norm.payloadId, drafts } }))
+      const usage = extractUsageUpdate(data?.usage)
+      setPreviews(prev => ({
+        ...prev,
+        [norm.payloadId]: {
+          payloadId: norm.payloadId,
+          drafts,
+          requestId,
+          phaseId: requestPhaseId,
+          promptTokens: usage.promptTokens,
+          activeBlockIds: usage.activeBlockIds,
+          planTargetBlockIds: usage.planTargetBlockIds,
+        },
+      }))
       setCurrentPayloadId(norm.payloadId)
+      recordExperimentPreview(norm.payloadId, requestId, requestPhaseId)
     } catch (err: any) {
+      const errorMessage = err?.message || String(err)
       console.error('[askAI] error:', err)
-      alert('Ask AI failed:\n' + (err?.message || String(err)))
+      alert('Ask AI failed:\n' + errorMessage)
     } finally {
       askInFlightRef.current = false
     }
@@ -2825,6 +3129,11 @@ const openTextEditor = useCallback((params: {
     mode,
     visionVersion,
     clearAutoTimer,
+    experimentPhaseId,
+    recordExperimentPreview,
+    recordExperimentRequestCompleted,
+    recordExperimentRequestFailed,
+    recordExperimentRequestSent,
   ])
   React.useEffect(() => {
     askAIRef.current = askAI
@@ -3289,7 +3598,7 @@ const openTextEditor = useCallback((params: {
                 )
               }
               if (quoteBar) {
-                quoteBar = React.cloneElement(quoteBar as React.ReactElement, {
+                quoteBar = React.cloneElement(quoteBar as React.ReactElement<any>, {
                   height: Math.max(renderedBlockHeight - 2, 4),
                 })
                 nodes.push(quoteBar)
@@ -3577,6 +3886,46 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         if (ai) nextDrawStack = [...nextDrawStack, { ai, draft }]
       }
     }
+    const acceptedShapeIds: string[] = []
+    const userChangeTrackedShapeIds: string[] = []
+    const baselineShapes: Record<string, ReturnType<typeof shapeToSnapshot>> = {}
+    let targetBBox: BBox | null = null
+    const seenAccepted = new Set<string>()
+    for (const draft of entry.drafts) {
+      const meta = draft.meta ?? {}
+      const acceptedShapeId = draft.kind === 'edit'
+        ? String(draft.targetId ?? meta.targetId ?? meta.target ?? meta.id ?? '').trim()
+        : String(draft.id || '').trim()
+      if (!acceptedShapeId || seenAccepted.has(acceptedShapeId)) continue
+      const acceptedShape = nextShapes.find((shape) => String(shape.id) === acceptedShapeId)
+      if (!acceptedShape) continue
+      seenAccepted.add(acceptedShapeId)
+      acceptedShapeIds.push(acceptedShapeId)
+      if (draft.kind === 'text' && acceptedShape.kind === 'text') {
+        userChangeTrackedShapeIds.push(acceptedShapeId)
+      }
+      baselineShapes[acceptedShapeId] = shapeToSnapshot(acceptedShape)
+      targetBBox = mergeBBox(targetBBox, computeShapeBBox(acceptedShape))
+    }
+    if (experimentActive && acceptedShapeIds.length > 0) {
+      const activeBlockIdSet = new Set((entry.activeBlockIds ?? []).map((blockId) => String(blockId)))
+      const activeAligned = graphBlockCards
+        .filter((block) => activeBlockIdSet.has(block.blockId))
+        .some((block) => bboxIntersects(targetBBox, block.bbox ?? null))
+      commitExperimentRun((current) => addAcceptedSuggestion(current, {
+        payloadId: entry.payloadId,
+        requestId: entry.requestId ?? null,
+        phaseId: entry.phaseId ?? experimentPhaseId,
+        acceptedShapeIds,
+        userChangeTrackedShapeIds,
+        baselineShapes,
+        usableUnits: estimateDraftUsableUnits(entry.drafts),
+        targetBBox,
+        activeBlockIds: [...(entry.activeBlockIds ?? [])],
+        planTargetBlockIds: [...(entry.planTargetBlockIds ?? [])],
+        activeBlockAligned: activeAligned,
+      }))
+    }
     setShapes(nextShapes)
     setDrawStack(nextDrawStack)
     setPreviews((prev) => {
@@ -3595,16 +3944,20 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       return next
     })
     noteUserAction({ forceStart: true })
-  }, [currentPayloadId, previews, pushHistory, noteUserAction, shapes, drawStack, applyEditDraftToState])
+  }, [currentPayloadId, previews, pushHistory, noteUserAction, shapes, drawStack, applyEditDraftToState, experimentActive, graphBlockCards, commitExperimentRun, experimentPhaseId])
   const dismissAI = useCallback(() => {
     if (!currentPayloadId) { alert('No current payloadId'); return }
+    const entry = previews[currentPayloadId]
+    if (entry) {
+      recordExperimentDismiss(entry.payloadId, entry.requestId ?? null, entry.phaseId ?? experimentPhaseId, 'manual')
+    }
     setPreviews((prev) => {
       const { [currentPayloadId]: _omit, ...rest } = prev
       return rest
     })
     setCurrentPayloadId(null)
     clearAutoTimer()
-  }, [currentPayloadId, clearAutoTimer])
+  }, [currentPayloadId, previews, recordExperimentDismiss, experimentPhaseId, clearAutoTimer])
   const buildEditPreviewNode = useCallback((draft: ShapeDraft, key: string) => {
     const meta = draft.meta ?? {}
     const targetId = (meta.targetId ?? draft.targetId) as string | undefined
@@ -4003,8 +4356,11 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       let width = bx1 - bx0
       let height = by1 - by0
       if (width <= 1 && height <= 1) {
-        width = 240
-        height = 160
+        const meta = boxDraft.meta ?? {}
+        const fontSize = Number((meta as any).fontSize ?? textSettings.fontSize) || textSettings.fontSize
+        const defaults = getDefaultTextBoxSize(fontSize)
+        width = defaults.width
+        height = defaults.height
       }
       const meta = boxDraft.meta ?? {}
       const styleColor = (boxDraft.style?.color ?? brushColor) as ColorName
@@ -4030,7 +4386,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
       setEraserCursor(null)
       eraseGestureStarted.current = false
     }
-  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack, brushColor, openTextEditor, textEditor, openEditorForShape, shapes, selectedShapeId, selectDeleteHover, deleteShapeById])
+  }, [isDrawing, rawPoints, boxDraft, snap, snapPoint, toolMode, curveTurns, currentBrush, pushHistory, setShapes, setDrawStack, brushColor, openTextEditor, textEditor, openEditorForShape, shapes, selectedShapeId, selectDeleteHover, deleteShapeById, textSettings.fontSize, getDefaultTextBoxSize])
   // --- Enter shortcut: auto-accept preview when focus is outside inputs ---
   React.useEffect(()=>{
     const onKey = (ev: KeyboardEvent) => {
@@ -4185,6 +4541,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     return () => window.removeEventListener('keydown', onKey)
   }, [textEditor, cancelTextEditor, commitTextEditor])
   const selectEditDialogActive = !!(textEditor?.isEditing && toolMode === 'select')
+  const centerTextEditorDialog = !!textEditor && (!textEditor.isEditing || selectEditDialogActive)
   const fixedSelectEditDialogSize = selectEditDialogActive
     ? {
         width: Math.max(320, Math.min(560, size.width - 24)),
@@ -4196,6 +4553,15 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
     width: Math.max(textEditor.w * view.scale, 260),
     height: Math.max(textEditor.h * view.scale, 200),
   } : null
+  const formatExperimentMetric = useCallback((value: number | null | undefined, digits = 2) => {
+    if (value == null || Number.isNaN(value)) return 'n/a'
+    return Number(value).toFixed(digits)
+  }, [])
+  const formatExperimentPercent = useCallback((value: number | null | undefined) => {
+    if (value == null || Number.isNaN(value)) return 'n/a'
+    return `${(value * 100).toFixed(1)}%`
+  }, [])
+  const experimentStatusLabel = experimentActive ? 'RUNNING' : experimentRun ? 'ENDED' : 'IDLE'
 // ===== Stage binds camera (x/y/scale); hand mode enables dragging =====
   return (
     <div
@@ -4268,6 +4634,226 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         open={settingsOpen}
         onToggle={() => setSettingsOpen((value) => !value)}
       />
+      {experimentWidget.open ? (
+        <div
+          style={{
+            position: 'absolute',
+            top: experimentWidget.y,
+            left: experimentWidget.x,
+            zIndex: 1120,
+            width: experimentPanelWidth,
+            maxWidth: 'calc(100vw - 96px)',
+            borderRadius: 18,
+            border: '1px solid rgba(148,163,184,0.24)',
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92))',
+            boxShadow: '0 18px 40px rgba(15,23,42,0.14)',
+            backdropFilter: 'blur(12px) saturate(120%)',
+            padding: 14,
+            display: 'grid',
+            gap: 10,
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '.08em', color: '#0f172a' }}>EXPERIMENT</div>
+              <div style={{ fontSize: 11, color: '#64748b', marginTop: 2 }}>
+                Status: {experimentStatusLabel}{experimentRun ? ` · ${experimentRun.runId}` : ''}
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 800,
+                  color: experimentActive ? '#166534' : experimentRun ? '#92400e' : '#475569',
+                  background: experimentActive
+                    ? 'rgba(220,252,231,0.96)'
+                    : experimentRun
+                      ? 'rgba(254,243,199,0.96)'
+                      : 'rgba(226,232,240,0.96)',
+                  borderRadius: 999,
+                  padding: '4px 8px',
+                  letterSpacing: '.06em',
+                }}
+              >
+                {experimentStatusLabel}
+              </span>
+              <button
+                type="button"
+                onClick={closeExperimentWidget}
+                title="关闭实验面板"
+                style={{
+                  width: 28,
+                  height: 28,
+                  borderRadius: 999,
+                  border: '1px solid rgba(148,163,184,0.28)',
+                  background: 'rgba(255,255,255,0.78)',
+                  color: '#64748b',
+                  cursor: 'pointer',
+                  fontSize: 16,
+                  lineHeight: 1,
+                }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '88px 1fr', alignItems: 'center', gap: 8 }}>
+            <label htmlFor="experiment-phase" style={{ fontSize: 11, fontWeight: 700, color: '#334155' }}>
+              Phase ID
+            </label>
+            <input
+              id="experiment-phase"
+              type="text"
+              value={experimentPhaseId}
+              onChange={(e) => handleExperimentPhaseChange(e.target.value)}
+              placeholder="phase-1"
+              style={{ ...INPUT_BASE, width: '100%', padding: '7px 10px', fontSize: 12 }}
+            />
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            <button
+              type="button"
+              onClick={experimentActive ? endExperiment : startExperiment}
+              style={{
+                ...BUTTON_BASE,
+                padding: '7px 12px',
+                fontSize: 12,
+                color: experimentActive ? '#b91c1c' : '#166534',
+                border: experimentActive ? '1px solid rgba(248,113,113,0.28)' : '1px solid rgba(34,197,94,0.28)',
+                background: experimentActive ? 'rgba(254,242,242,0.86)' : 'rgba(240,253,244,0.92)',
+              }}
+            >
+              {experimentActive ? '结束实验' : '开始实验'}
+            </button>
+            <button
+              type="button"
+              onClick={exportExperiment}
+              disabled={!experimentRun}
+              style={{
+                ...BUTTON_BASE,
+                padding: '7px 12px',
+                fontSize: 12,
+                opacity: experimentRun ? 1 : 0.55,
+              }}
+            >
+              导出 JSON
+            </button>
+          </div>
+          {experimentSummary ? (
+            <>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '6px 10px', fontSize: 11, color: '#334155' }}>
+                <span>ai_invoke_times</span>
+                <strong style={{ color: '#0f172a' }}>{experimentSummary.aiInvokeTimes}</strong>
+                <span>suggestion_acceptance_rate</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentPercent(experimentSummary.suggestionAcceptanceRate)}</strong>
+                <span>dismiss_rate</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentPercent(experimentSummary.dismissRate)}</strong>
+                <span>straight_use_rate</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentPercent(experimentSummary.straightUseRate)}</strong>
+                <span>user_changed_rate</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentPercent(experimentSummary.userChangedRate)}</strong>
+                <span>prompt_tokens_per_round</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentMetric(experimentSummary.promptTokensPerRound, 1)}</strong>
+                <span>accepted_usable_content_per_1k_tokens</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentMetric(experimentSummary.acceptedUsableContentPer1kTokens, 2)}</strong>
+                <span>active_block_alignment_rate</span>
+                <strong style={{ color: '#0f172a' }}>{formatExperimentPercent(experimentSummary.activeBlockAlignmentRate)}</strong>
+              </div>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', fontSize: 10, color: '#64748b' }}>
+                <span>preview={experimentSummary.previewCount}</span>
+                <span>accept={experimentSummary.acceptCount}</span>
+                <span>dismiss={experimentSummary.dismissCount}</span>
+                <span>prompt_tokens={experimentSummary.totalPromptTokens}</span>
+                <span>usable_units={experimentSummary.acceptedUsableUnits}</span>
+                <span>accepted_text_chars={experimentSummary.acceptedTextChars}</span>
+                <span>changed_text_chars={experimentSummary.changedTextChars}</span>
+              </div>
+              <div style={{ borderTop: '1px solid rgba(148,163,184,0.2)', paddingTop: 8, display: 'grid', gap: 6 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: '#334155' }}>phase_specific_efficiency</div>
+                {experimentSummary.phaseSpecificEfficiency.length === 0 ? (
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>尚无 phase 数据</div>
+                ) : (
+                  experimentSummary.phaseSpecificEfficiency.map((item) => (
+                    <div
+                      key={item.phaseId}
+                      style={{
+                        border: '1px solid rgba(148,163,184,0.18)',
+                        borderRadius: 12,
+                        padding: '8px 10px',
+                        background: 'rgba(255,255,255,0.78)',
+                        display: 'grid',
+                        gap: 4,
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
+                        <strong style={{ fontSize: 11, color: '#0f172a' }}>{item.phaseId}</strong>
+                        <span style={{ fontSize: 10, color: '#64748b' }}>invoke={item.invoke}</span>
+                      </div>
+                      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', fontSize: 10, color: '#475569' }}>
+                        <span>straight-use={formatExperimentPercent(item.straightUseRate)}</span>
+                        <span>accepted/1k={formatExperimentMetric(item.acceptedOutputPer1kToken, 2)}</span>
+                        <span>usable={item.acceptedUsableUnits}</span>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </>
+          ) : (
+            <div style={{ fontSize: 11, color: '#94a3b8' }}>点击“开始实验”后开始实时统计。</div>
+          )}
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={() => {
+            if (experimentDragSuppressClickRef.current) {
+              experimentDragSuppressClickRef.current = false
+              return
+            }
+            openExperimentWidget()
+          }}
+          onPointerDown={onExperimentChipPointerDown}
+          onPointerMove={onExperimentChipPointerMove}
+          onPointerUp={onExperimentChipPointerUp}
+          onPointerCancel={onExperimentChipPointerCancel}
+          title="点击展开实验面板，按住拖动位置"
+          style={{
+            position: 'absolute',
+            top: experimentWidget.y,
+            left: experimentWidget.x,
+            zIndex: 1120,
+            minHeight: 44,
+            minWidth: experimentChipWidth,
+            padding: '10px 14px',
+            borderRadius: 999,
+            border: '1px solid rgba(148,163,184,0.28)',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.98), rgba(241,245,249,0.94))',
+            boxShadow: '0 14px 28px rgba(15,23,42,0.12)',
+            color: '#0f172a',
+            cursor: 'grab',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+          }}
+        >
+          <span
+            style={{
+              width: 10,
+              height: 10,
+              borderRadius: '50%',
+              background: experimentActive ? '#22c55e' : experimentRun ? '#f59e0b' : '#94a3b8',
+              boxShadow: experimentActive ? '0 0 0 4px rgba(34,197,94,0.16)' : 'none',
+              flexShrink: 0,
+            }}
+          />
+          <span style={{ display: 'grid', textAlign: 'left' }}>
+            <strong style={{ fontSize: 12, letterSpacing: '.05em' }}>Experiment</strong>
+            <span style={{ fontSize: 10, color: '#64748b' }}>{experimentStatusLabel}</span>
+          </span>
+        </button>
+      )}
       {!aiFeedSidebarOpen && (
         <button
           type="button"
@@ -4871,9 +5457,9 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
         <div
           style={{
             position: 'absolute',
-            left: selectEditDialogActive ? '50%' : textEditorScreen.x,
-            top: selectEditDialogActive ? '50%' : textEditorScreen.y,
-            transform: selectEditDialogActive ? 'translate(-50%, -50%)' : undefined,
+            left: centerTextEditorDialog ? '50%' : textEditorScreen.x,
+            top: centerTextEditorDialog ? '50%' : textEditorScreen.y,
+            transform: centerTextEditorDialog ? 'translate(-50%, -50%)' : undefined,
             width: selectEditDialogActive
               ? (fixedSelectEditDialogSize?.width ?? textEditorSize.width)
               : textEditorSize.width,
@@ -6173,4 +6759,3 @@ function sanitizeStroke(raw: any, index: number): AIStrokeV11 | null {
   }
   return stroke
 }
-

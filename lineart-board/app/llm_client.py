@@ -117,6 +117,23 @@ def _inject_vision_content(messages: list[dict]) -> list[dict]:
         out.append({"role": "user", "content": mm_content})
     return out
 
+def _extract_usage_payload(response_dump: Dict[str, Any]) -> Dict[str, Any]:
+    usage = response_dump.get("usage") if isinstance(response_dump, dict) else None
+    if not isinstance(usage, dict):
+        return {}
+    out: Dict[str, Any] = {}
+    for key in (
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "prompt_tokens_details",
+        "completion_tokens_details",
+    ):
+        value = usage.get(key)
+        if value is not None:
+            out[key] = value
+    return out
+
 def call_chat_completions(
     messages: list[dict[str, Any]],
     model: Optional[str] = None,
@@ -145,14 +162,16 @@ def call_chat_completions(
             )
             content = resp.choices[0].message.content or "{}"
             parsed = json.loads(content)
+            response_dump = resp.model_dump(exclude_none=True)
             debug = {
                 "raw_text": content,
-                "response_dump": resp.model_dump(exclude_none=True),
+                "response_dump": response_dump,
                 "mode": "json_object",
                 "model": model or DEFAULT_MODEL,
                 "temperature": temperature,
                 "top_p": top_p,
                 "max_tokens": max_tokens,
+                "usage": _extract_usage_payload(response_dump),
                 # Log only the head/tail of messages to keep debug output small
                 "messages_head": messages[:3],
                 "messages_tail": messages[-3:] if len(messages) > 3 else [],
@@ -171,14 +190,16 @@ def call_chat_completions(
                 )
                 content2 = resp2.choices[0].message.content or "{}"
                 parsed2 = _extract_first_json(content2)
+                response_dump2 = resp2.model_dump(exclude_none=True)
                 debug = {
                     "raw_text": content2,
-                    "response_dump": resp2.model_dump(exclude_none=True),
+                    "response_dump": response_dump2,
                     "mode": "fallback_extract",
                     "model": model or DEFAULT_MODEL,
                     "temperature": temperature,
                     "top_p": top_p,
                     "max_tokens": max_tokens,
+                    "usage": _extract_usage_payload(response_dump2),
                     "messages_head": messages[:3],
                     "messages_tail": messages[-3:] if len(messages) > 3 else [],
                 }

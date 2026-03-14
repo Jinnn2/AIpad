@@ -17,9 +17,11 @@ class LLMPlanBackend(PlanBackend):
     def __init__(self, model: str = DEFAULT_PLAN_MODEL, max_tokens: int = 1200) -> None:
         self.model = model
         self.max_tokens = max_tokens
+        self.last_usage: Dict[str, object] = {}
 
     def complete(self, messages: List[Dict[str, str]]) -> str:
-        parsed, _ = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
+        parsed, dbg = call_chat_completions(messages, model=self.model, max_tokens=self.max_tokens)
+        self.last_usage = dict((dbg or {}).get("usage") or {})
         if isinstance(parsed, str):
             return parsed
         try:
