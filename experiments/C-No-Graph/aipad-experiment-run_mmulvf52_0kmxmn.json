@@ -1,0 +1,1588 @@
+{
+  "exportedAt": "2026-03-17T13:01:48.182Z",
+  "run": {
+    "runId": "run_mmulvf52_0kmxmn",
+    "startedAt": 1773751544678,
+    "endedAt": null,
+    "initialSessionId": "sess_1773751475_ic56bu",
+    "currentPhaseId": "C-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmulvqyq_7kescg",
+        "phaseId": "C-P1",
+        "sentAt": 1773751560002,
+        "respondedAt": 1773751564429,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1359,
+        "completionTokens": 98,
+        "totalTokens": 1457,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulvudq_cyuzav",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulx2bw_mladnu",
+        "phaseId": "C-P1",
+        "sentAt": 1773751621388,
+        "respondedAt": 1773751625043,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1782,
+        "completionTokens": 126,
+        "totalTokens": 1908,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulx55g_iff6wu",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulxwux_qyiyrl",
+        "phaseId": "C-P1",
+        "sentAt": 1773751660953,
+        "respondedAt": 1773751665242,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2082,
+        "completionTokens": 111,
+        "totalTokens": 2193,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuly064_tswjzw",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulyntl_eisa9d",
+        "phaseId": "C-P1",
+        "sentAt": 1773751695897,
+        "respondedAt": 1773751699395,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2263,
+        "completionTokens": 118,
+        "totalTokens": 2381,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulyqis_g3iy8h",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulz0x7_rbsyvr",
+        "phaseId": "C-P1",
+        "sentAt": 1773751712875,
+        "respondedAt": 1773751717730,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2203,
+        "completionTokens": 125,
+        "totalTokens": 2328,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulz4o2_clvcpg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulzkll_4h0hha",
+        "phaseId": "C-P1",
+        "sentAt": 1773751738377,
+        "respondedAt": 1773751742125,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2382,
+        "completionTokens": 127,
+        "totalTokens": 2509,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulznht_gshasi",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum00me_p7jxdk",
+        "phaseId": "C-P1",
+        "sentAt": 1773751759142,
+        "respondedAt": 1773751763627,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2580,
+        "completionTokens": 120,
+        "totalTokens": 2700,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum0430_nq14ha",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum0xse_3kd8nj",
+        "phaseId": "C-P1",
+        "sentAt": 1773751802126,
+        "respondedAt": 1773751806088,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3182,
+        "completionTokens": 124,
+        "totalTokens": 3306,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum10ug_796hxg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum2j35_ru0qo2",
+        "phaseId": "C-P1",
+        "sentAt": 1773751876385,
+        "respondedAt": 1773751880554,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3259,
+        "completionTokens": 108,
+        "totalTokens": 3367,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum2maz_zw7me5",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum3lhj_52ri67",
+        "phaseId": "C-P1",
+        "sentAt": 1773751926151,
+        "respondedAt": 1773751929992,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3473,
+        "completionTokens": 118,
+        "totalTokens": 3591,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum3og9_hbzzfy",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum53o8_fk60y8",
+        "phaseId": "C-P1",
+        "sentAt": 1773751996376,
+        "respondedAt": 1773752001376,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4087,
+        "completionTokens": 114,
+        "totalTokens": 4201,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum57j5_4ybl8e",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum6ffw_z7mpf1",
+        "phaseId": "C-P2",
+        "sentAt": 1773752058284,
+        "respondedAt": 1773752061677,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4444,
+        "completionTokens": 167,
+        "totalTokens": 4611,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum6i25_0axztd",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum9bl9_0sw1f6",
+        "phaseId": "C-P2",
+        "sentAt": 1773752193261,
+        "respondedAt": 1773752197127,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4968,
+        "completionTokens": 120,
+        "totalTokens": 5088,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum9eko_9z54yz",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumb6pz_sbfwvr",
+        "phaseId": "C-P2",
+        "sentAt": 1773752280263,
+        "respondedAt": 1773752284747,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5496,
+        "completionTokens": 132,
+        "totalTokens": 5628,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumba6k_ol1j6n",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumby7c_clsblk",
+        "phaseId": "C-P2",
+        "sentAt": 1773752315880,
+        "respondedAt": 1773752319906,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5648,
+        "completionTokens": 119,
+        "totalTokens": 5767,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumc1b6_4193pz",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumcd6y_d1dxcz",
+        "phaseId": "C-P2",
+        "sentAt": 1773752335306,
+        "respondedAt": 1773752338366,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5882,
+        "completionTokens": 157,
+        "totalTokens": 6039,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumcfjy_zs63di",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumd149_uc0qmc",
+        "phaseId": "C-P2",
+        "sentAt": 1773752366313,
+        "respondedAt": 1773752371232,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6128,
+        "completionTokens": 101,
+        "totalTokens": 6229,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumd4wx_f8e8p9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumdw57_5x9x2s",
+        "phaseId": "C-P2",
+        "sentAt": 1773752406523,
+        "respondedAt": 1773752409455,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6428,
+        "completionTokens": 120,
+        "totalTokens": 6548,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumdyeo_sgq2kq",
+        "error": null
+      },
+      {
+        "requestId": "req_mmume3rn_n2iatj",
+        "phaseId": "C-P2",
+        "sentAt": 1773752416403,
+        "respondedAt": 1773752424114,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6428,
+        "completionTokens": 125,
+        "totalTokens": 6553,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmume9pu_c7pksi",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumfpdz_gr747s",
+        "phaseId": "C-P3",
+        "sentAt": 1773752491079,
+        "respondedAt": 1773752493531,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6886,
+        "completionTokens": 117,
+        "totalTokens": 7003,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumfra4_u574rh",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumfwbq_xqq0ue",
+        "phaseId": "C-P3",
+        "sentAt": 1773752500070,
+        "respondedAt": 1773752504910,
+        "sessionId": "sess_1773751475_ic56bu",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6907,
+        "completionTokens": 112,
+        "totalTokens": 7019,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumg026_nnc92f",
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmulvudq_cyuzav",
+        "requestId": "req_mmulvqyq_7kescg",
+        "phaseId": "C-P1",
+        "at": 1773751564436
+      },
+      {
+        "payloadId": "ai_mmulx55g_iff6wu",
+        "requestId": "req_mmulx2bw_mladnu",
+        "phaseId": "C-P1",
+        "at": 1773751625046
+      },
+      {
+        "payloadId": "ai_mmuly064_tswjzw",
+        "requestId": "req_mmulxwux_qyiyrl",
+        "phaseId": "C-P1",
+        "at": 1773751665246
+      },
+      {
+        "payloadId": "ai_mmulyqis_g3iy8h",
+        "requestId": "req_mmulyntl_eisa9d",
+        "phaseId": "C-P1",
+        "at": 1773751699399
+      },
+      {
+        "payloadId": "ai_mmulz4o2_clvcpg",
+        "requestId": "req_mmulz0x7_rbsyvr",
+        "phaseId": "C-P1",
+        "at": 1773751717733
+      },
+      {
+        "payloadId": "ai_mmulznht_gshasi",
+        "requestId": "req_mmulzkll_4h0hha",
+        "phaseId": "C-P1",
+        "at": 1773751742131
+      },
+      {
+        "payloadId": "ai_mmum0430_nq14ha",
+        "requestId": "req_mmum00me_p7jxdk",
+        "phaseId": "C-P1",
+        "at": 1773751763631
+      },
+      {
+        "payloadId": "ai_mmum10ug_796hxg",
+        "requestId": "req_mmum0xse_3kd8nj",
+        "phaseId": "C-P1",
+        "at": 1773751806090
+      },
+      {
+        "payloadId": "ai_mmum2maz_zw7me5",
+        "requestId": "req_mmum2j35_ru0qo2",
+        "phaseId": "C-P1",
+        "at": 1773751880556
+      },
+      {
+        "payloadId": "ai_mmum3og9_hbzzfy",
+        "requestId": "req_mmum3lhj_52ri67",
+        "phaseId": "C-P1",
+        "at": 1773751929996
+      },
+      {
+        "payloadId": "ai_mmum57j5_4ybl8e",
+        "requestId": "req_mmum53o8_fk60y8",
+        "phaseId": "C-P1",
+        "at": 1773752001379
+      },
+      {
+        "payloadId": "ai_mmum6i25_0axztd",
+        "requestId": "req_mmum6ffw_z7mpf1",
+        "phaseId": "C-P2",
+        "at": 1773752061681
+      },
+      {
+        "payloadId": "ai_mmum9eko_9z54yz",
+        "requestId": "req_mmum9bl9_0sw1f6",
+        "phaseId": "C-P2",
+        "at": 1773752197129
+      },
+      {
+        "payloadId": "ai_mmumba6k_ol1j6n",
+        "requestId": "req_mmumb6pz_sbfwvr",
+        "phaseId": "C-P2",
+        "at": 1773752284750
+      },
+      {
+        "payloadId": "ai_mmumc1b6_4193pz",
+        "requestId": "req_mmumby7c_clsblk",
+        "phaseId": "C-P2",
+        "at": 1773752319912
+      },
+      {
+        "payloadId": "ai_mmumcfjy_zs63di",
+        "requestId": "req_mmumcd6y_d1dxcz",
+        "phaseId": "C-P2",
+        "at": 1773752338370
+      },
+      {
+        "payloadId": "ai_mmumd4wx_f8e8p9",
+        "requestId": "req_mmumd149_uc0qmc",
+        "phaseId": "C-P2",
+        "at": 1773752371234
+      },
+      {
+        "payloadId": "ai_mmumdyeo_sgq2kq",
+        "requestId": "req_mmumdw57_5x9x2s",
+        "phaseId": "C-P2",
+        "at": 1773752409458
+      },
+      {
+        "payloadId": "ai_mmume9pu_c7pksi",
+        "requestId": "req_mmume3rn_n2iatj",
+        "phaseId": "C-P2",
+        "at": 1773752424116
+      },
+      {
+        "payloadId": "ai_mmumfra4_u574rh",
+        "requestId": "req_mmumfpdz_gr747s",
+        "phaseId": "C-P3",
+        "at": 1773752493536
+      },
+      {
+        "payloadId": "ai_mmumg026_nnc92f",
+        "requestId": "req_mmumfwbq_xqq0ue",
+        "phaseId": "C-P3",
+        "at": 1773752504914
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmulvudq_cyuzav",
+        "requestId": "req_mmulvqyq_7kescg",
+        "phaseId": "C-P1",
+        "at": 1773751616182,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulx55g_iff6wu",
+        "requestId": "req_mmulx2bw_mladnu",
+        "phaseId": "C-P1",
+        "at": 1773751633777,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmuly064_tswjzw",
+        "requestId": "req_mmulxwux_qyiyrl",
+        "phaseId": "C-P1",
+        "at": 1773751675754,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulyqis_g3iy8h",
+        "requestId": "req_mmulyntl_eisa9d",
+        "phaseId": "C-P1",
+        "at": 1773751707810,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulz4o2_clvcpg",
+        "requestId": "req_mmulz0x7_rbsyvr",
+        "phaseId": "C-P1",
+        "at": 1773751730660,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulznht_gshasi",
+        "requestId": "req_mmulzkll_4h0hha",
+        "phaseId": "C-P1",
+        "at": 1773751749959,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum0430_nq14ha",
+        "requestId": "req_mmum00me_p7jxdk",
+        "phaseId": "C-P1",
+        "at": 1773751793826,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum10ug_796hxg",
+        "requestId": "req_mmum0xse_3kd8nj",
+        "phaseId": "C-P1",
+        "at": 1773751866406,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum2maz_zw7me5",
+        "requestId": "req_mmum2j35_ru0qo2",
+        "phaseId": "C-P1",
+        "at": 1773751919011,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum3og9_hbzzfy",
+        "requestId": "req_mmum3lhj_52ri67",
+        "phaseId": "C-P1",
+        "at": 1773751962343,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum57j5_4ybl8e",
+        "requestId": "req_mmum53o8_fk60y8",
+        "phaseId": "C-P1",
+        "at": 1773752049915,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum6i25_0axztd",
+        "requestId": "req_mmum6ffw_z7mpf1",
+        "phaseId": "C-P2",
+        "at": 1773752177650,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum9eko_9z54yz",
+        "requestId": "req_mmum9bl9_0sw1f6",
+        "phaseId": "C-P2",
+        "at": 1773752271842,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumba6k_ol1j6n",
+        "requestId": "req_mmumb6pz_sbfwvr",
+        "phaseId": "C-P2",
+        "at": 1773752305455,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumc1b6_4193pz",
+        "requestId": "req_mmumby7c_clsblk",
+        "phaseId": "C-P2",
+        "at": 1773752320382,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumcfjy_zs63di",
+        "requestId": "req_mmumcd6y_d1dxcz",
+        "phaseId": "C-P2",
+        "at": 1773752356676,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumd4wx_f8e8p9",
+        "requestId": "req_mmumd149_uc0qmc",
+        "phaseId": "C-P2",
+        "at": 1773752379433,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumdyeo_sgq2kq",
+        "requestId": "req_mmumdw57_5x9x2s",
+        "phaseId": "C-P2",
+        "at": 1773752409707,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmume9pu_c7pksi",
+        "requestId": "req_mmume3rn_n2iatj",
+        "phaseId": "C-P2",
+        "at": 1773752469099,
+        "reason": "canvas_mutation"
+      }
+    ],
+    "acceptedSuggestions": [],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773751544678,
+        "data": {
+          "phaseId": "C-P1",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751560002,
+        "data": {
+          "requestId": "req_mmulvqyq_7kescg",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751564429,
+        "data": {
+          "requestId": "req_mmulvqyq_7kescg",
+          "promptTokens": 1359,
+          "completionTokens": 98,
+          "totalTokens": 1457,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751564436,
+        "data": {
+          "payloadId": "ai_mmulvudq_cyuzav",
+          "requestId": "req_mmulvqyq_7kescg",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751616182,
+        "data": {
+          "payloadId": "ai_mmulvudq_cyuzav",
+          "requestId": "req_mmulvqyq_7kescg",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751621388,
+        "data": {
+          "requestId": "req_mmulx2bw_mladnu",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751625043,
+        "data": {
+          "requestId": "req_mmulx2bw_mladnu",
+          "promptTokens": 1782,
+          "completionTokens": 126,
+          "totalTokens": 1908,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751625046,
+        "data": {
+          "payloadId": "ai_mmulx55g_iff6wu",
+          "requestId": "req_mmulx2bw_mladnu",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751633777,
+        "data": {
+          "payloadId": "ai_mmulx55g_iff6wu",
+          "requestId": "req_mmulx2bw_mladnu",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751660953,
+        "data": {
+          "requestId": "req_mmulxwux_qyiyrl",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751665242,
+        "data": {
+          "requestId": "req_mmulxwux_qyiyrl",
+          "promptTokens": 2082,
+          "completionTokens": 111,
+          "totalTokens": 2193,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751665246,
+        "data": {
+          "payloadId": "ai_mmuly064_tswjzw",
+          "requestId": "req_mmulxwux_qyiyrl",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751675754,
+        "data": {
+          "payloadId": "ai_mmuly064_tswjzw",
+          "requestId": "req_mmulxwux_qyiyrl",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751695897,
+        "data": {
+          "requestId": "req_mmulyntl_eisa9d",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751699395,
+        "data": {
+          "requestId": "req_mmulyntl_eisa9d",
+          "promptTokens": 2263,
+          "completionTokens": 118,
+          "totalTokens": 2381,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751699399,
+        "data": {
+          "payloadId": "ai_mmulyqis_g3iy8h",
+          "requestId": "req_mmulyntl_eisa9d",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751707810,
+        "data": {
+          "payloadId": "ai_mmulyqis_g3iy8h",
+          "requestId": "req_mmulyntl_eisa9d",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751712875,
+        "data": {
+          "requestId": "req_mmulz0x7_rbsyvr",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751717730,
+        "data": {
+          "requestId": "req_mmulz0x7_rbsyvr",
+          "promptTokens": 2203,
+          "completionTokens": 125,
+          "totalTokens": 2328,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751717733,
+        "data": {
+          "payloadId": "ai_mmulz4o2_clvcpg",
+          "requestId": "req_mmulz0x7_rbsyvr",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751730660,
+        "data": {
+          "payloadId": "ai_mmulz4o2_clvcpg",
+          "requestId": "req_mmulz0x7_rbsyvr",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751738377,
+        "data": {
+          "requestId": "req_mmulzkll_4h0hha",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751742125,
+        "data": {
+          "requestId": "req_mmulzkll_4h0hha",
+          "promptTokens": 2382,
+          "completionTokens": 127,
+          "totalTokens": 2509,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751742131,
+        "data": {
+          "payloadId": "ai_mmulznht_gshasi",
+          "requestId": "req_mmulzkll_4h0hha",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751749959,
+        "data": {
+          "payloadId": "ai_mmulznht_gshasi",
+          "requestId": "req_mmulzkll_4h0hha",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751759142,
+        "data": {
+          "requestId": "req_mmum00me_p7jxdk",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751763627,
+        "data": {
+          "requestId": "req_mmum00me_p7jxdk",
+          "promptTokens": 2580,
+          "completionTokens": 120,
+          "totalTokens": 2700,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751763631,
+        "data": {
+          "payloadId": "ai_mmum0430_nq14ha",
+          "requestId": "req_mmum00me_p7jxdk",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751793826,
+        "data": {
+          "payloadId": "ai_mmum0430_nq14ha",
+          "requestId": "req_mmum00me_p7jxdk",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751802126,
+        "data": {
+          "requestId": "req_mmum0xse_3kd8nj",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751806088,
+        "data": {
+          "requestId": "req_mmum0xse_3kd8nj",
+          "promptTokens": 3182,
+          "completionTokens": 124,
+          "totalTokens": 3306,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751806090,
+        "data": {
+          "payloadId": "ai_mmum10ug_796hxg",
+          "requestId": "req_mmum0xse_3kd8nj",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751866406,
+        "data": {
+          "payloadId": "ai_mmum10ug_796hxg",
+          "requestId": "req_mmum0xse_3kd8nj",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751876385,
+        "data": {
+          "requestId": "req_mmum2j35_ru0qo2",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751880554,
+        "data": {
+          "requestId": "req_mmum2j35_ru0qo2",
+          "promptTokens": 3259,
+          "completionTokens": 108,
+          "totalTokens": 3367,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751880556,
+        "data": {
+          "payloadId": "ai_mmum2maz_zw7me5",
+          "requestId": "req_mmum2j35_ru0qo2",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751919011,
+        "data": {
+          "payloadId": "ai_mmum2maz_zw7me5",
+          "requestId": "req_mmum2j35_ru0qo2",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751926151,
+        "data": {
+          "requestId": "req_mmum3lhj_52ri67",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751929992,
+        "data": {
+          "requestId": "req_mmum3lhj_52ri67",
+          "promptTokens": 3473,
+          "completionTokens": 118,
+          "totalTokens": 3591,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751929996,
+        "data": {
+          "payloadId": "ai_mmum3og9_hbzzfy",
+          "requestId": "req_mmum3lhj_52ri67",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751962343,
+        "data": {
+          "payloadId": "ai_mmum3og9_hbzzfy",
+          "requestId": "req_mmum3lhj_52ri67",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751996376,
+        "data": {
+          "requestId": "req_mmum53o8_fk60y8",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752001376,
+        "data": {
+          "requestId": "req_mmum53o8_fk60y8",
+          "promptTokens": 4087,
+          "completionTokens": 114,
+          "totalTokens": 4201,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752001379,
+        "data": {
+          "payloadId": "ai_mmum57j5_4ybl8e",
+          "requestId": "req_mmum53o8_fk60y8",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773752012379,
+        "data": {
+          "phaseId": "C-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773752012483,
+        "data": {
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752049915,
+        "data": {
+          "payloadId": "ai_mmum57j5_4ybl8e",
+          "requestId": "req_mmum53o8_fk60y8",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752058284,
+        "data": {
+          "requestId": "req_mmum6ffw_z7mpf1",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752061677,
+        "data": {
+          "requestId": "req_mmum6ffw_z7mpf1",
+          "promptTokens": 4444,
+          "completionTokens": 167,
+          "totalTokens": 4611,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752061681,
+        "data": {
+          "payloadId": "ai_mmum6i25_0axztd",
+          "requestId": "req_mmum6ffw_z7mpf1",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752177650,
+        "data": {
+          "payloadId": "ai_mmum6i25_0axztd",
+          "requestId": "req_mmum6ffw_z7mpf1",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752193261,
+        "data": {
+          "requestId": "req_mmum9bl9_0sw1f6",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752197127,
+        "data": {
+          "requestId": "req_mmum9bl9_0sw1f6",
+          "promptTokens": 4968,
+          "completionTokens": 120,
+          "totalTokens": 5088,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752197129,
+        "data": {
+          "payloadId": "ai_mmum9eko_9z54yz",
+          "requestId": "req_mmum9bl9_0sw1f6",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752271842,
+        "data": {
+          "payloadId": "ai_mmum9eko_9z54yz",
+          "requestId": "req_mmum9bl9_0sw1f6",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752280263,
+        "data": {
+          "requestId": "req_mmumb6pz_sbfwvr",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752284747,
+        "data": {
+          "requestId": "req_mmumb6pz_sbfwvr",
+          "promptTokens": 5496,
+          "completionTokens": 132,
+          "totalTokens": 5628,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752284750,
+        "data": {
+          "payloadId": "ai_mmumba6k_ol1j6n",
+          "requestId": "req_mmumb6pz_sbfwvr",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752305455,
+        "data": {
+          "payloadId": "ai_mmumba6k_ol1j6n",
+          "requestId": "req_mmumb6pz_sbfwvr",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752315880,
+        "data": {
+          "requestId": "req_mmumby7c_clsblk",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752319906,
+        "data": {
+          "requestId": "req_mmumby7c_clsblk",
+          "promptTokens": 5648,
+          "completionTokens": 119,
+          "totalTokens": 5767,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752319912,
+        "data": {
+          "payloadId": "ai_mmumc1b6_4193pz",
+          "requestId": "req_mmumby7c_clsblk",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752320382,
+        "data": {
+          "payloadId": "ai_mmumc1b6_4193pz",
+          "requestId": "req_mmumby7c_clsblk",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752335306,
+        "data": {
+          "requestId": "req_mmumcd6y_d1dxcz",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752338366,
+        "data": {
+          "requestId": "req_mmumcd6y_d1dxcz",
+          "promptTokens": 5882,
+          "completionTokens": 157,
+          "totalTokens": 6039,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752338370,
+        "data": {
+          "payloadId": "ai_mmumcfjy_zs63di",
+          "requestId": "req_mmumcd6y_d1dxcz",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752356676,
+        "data": {
+          "payloadId": "ai_mmumcfjy_zs63di",
+          "requestId": "req_mmumcd6y_d1dxcz",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752366313,
+        "data": {
+          "requestId": "req_mmumd149_uc0qmc",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752371232,
+        "data": {
+          "requestId": "req_mmumd149_uc0qmc",
+          "promptTokens": 6128,
+          "completionTokens": 101,
+          "totalTokens": 6229,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752371234,
+        "data": {
+          "payloadId": "ai_mmumd4wx_f8e8p9",
+          "requestId": "req_mmumd149_uc0qmc",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752379433,
+        "data": {
+          "payloadId": "ai_mmumd4wx_f8e8p9",
+          "requestId": "req_mmumd149_uc0qmc",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752406523,
+        "data": {
+          "requestId": "req_mmumdw57_5x9x2s",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752409455,
+        "data": {
+          "requestId": "req_mmumdw57_5x9x2s",
+          "promptTokens": 6428,
+          "completionTokens": 120,
+          "totalTokens": 6548,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752409458,
+        "data": {
+          "payloadId": "ai_mmumdyeo_sgq2kq",
+          "requestId": "req_mmumdw57_5x9x2s",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752409707,
+        "data": {
+          "payloadId": "ai_mmumdyeo_sgq2kq",
+          "requestId": "req_mmumdw57_5x9x2s",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752416403,
+        "data": {
+          "requestId": "req_mmume3rn_n2iatj",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752424114,
+        "data": {
+          "requestId": "req_mmume3rn_n2iatj",
+          "promptTokens": 6428,
+          "completionTokens": 125,
+          "totalTokens": 6553,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752424116,
+        "data": {
+          "payloadId": "ai_mmume9pu_c7pksi",
+          "requestId": "req_mmume3rn_n2iatj",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773752426895,
+        "data": {
+          "phaseId": "C-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773752426944,
+        "data": {
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752469099,
+        "data": {
+          "payloadId": "ai_mmume9pu_c7pksi",
+          "requestId": "req_mmume3rn_n2iatj",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752491079,
+        "data": {
+          "requestId": "req_mmumfpdz_gr747s",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752493531,
+        "data": {
+          "requestId": "req_mmumfpdz_gr747s",
+          "promptTokens": 6886,
+          "completionTokens": 117,
+          "totalTokens": 7003,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752493536,
+        "data": {
+          "payloadId": "ai_mmumfra4_u574rh",
+          "requestId": "req_mmumfpdz_gr747s",
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752500070,
+        "data": {
+          "requestId": "req_mmumfwbq_xqq0ue",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751475_ic56bu"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752504910,
+        "data": {
+          "requestId": "req_mmumfwbq_xqq0ue",
+          "promptTokens": 6907,
+          "completionTokens": 112,
+          "totalTokens": 7019,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752504914,
+        "data": {
+          "payloadId": "ai_mmumg026_nnc92f",
+          "requestId": "req_mmumfwbq_xqq0ue",
+          "phaseId": "C-P3"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 21,
+    "previewCount": 21,
+    "acceptCount": 0,
+    "dismissCount": 19,
+    "completedRoundCount": 21,
+    "totalPromptTokens": 87867,
+    "acceptedUsableUnits": 0,
+    "acceptedTextChars": 0,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": 0,
+    "dismissRate": 0.9047619047619048,
+    "straightUseRate": null,
+    "userChangedRate": null,
+    "promptTokensPerRound": 4184.142857142857,
+    "acceptedUsableContentPer1kTokens": 0,
+    "activeBlockAlignmentRate": null,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "C-P1",
+        "invoke": 11,
+        "straightUseRate": null,
+        "acceptedOutputPer1kToken": 0,
+        "promptTokens": 28652,
+        "acceptedUsableUnits": 0,
+        "acceptedCount": 0
+      },
+      {
+        "phaseId": "C-P2",
+        "invoke": 8,
+        "straightUseRate": null,
+        "acceptedOutputPer1kToken": 0,
+        "promptTokens": 45422,
+        "acceptedUsableUnits": 0,
+        "acceptedCount": 0
+      },
+      {
+        "phaseId": "C-P3",
+        "invoke": 2,
+        "straightUseRate": null,
+        "acceptedOutputPer1kToken": 0,
+        "promptTokens": 13793,
+        "acceptedUsableUnits": 0,
+        "acceptedCount": 0
+      }
+    ],
+    "acceptedSuggestions": []
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 29,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

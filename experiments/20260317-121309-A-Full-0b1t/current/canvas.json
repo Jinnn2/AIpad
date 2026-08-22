@@ -1,0 +1,10639 @@
+{
+  "schemaVersion": 1,
+  "sid": "sess_1773749589_uczjue",
+  "mode": "light_helper",
+  "initGoal": "Work as a noting assistant to draw or write.",
+  "tags": [],
+  "createdAtEpoch": 1773749589.9509375,
+  "callCount": 25,
+  "strokes": [
+    {
+      "id": "text_mmukpscb_tjne",
+      "tool": "text",
+      "points": [
+        [
+          832.0,
+          160.0,
+          null,
+          null
+        ],
+        [
+          1089.766,
+          220.48,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "red",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Bio-Architecture",
+        "summary": "",
+        "role": "title",
+        "fontFamily": "sans-serif",
+        "fontWeight": "700",
+        "fontSize": 32,
+        "growDir": "right",
+        "baseWidth": 256,
+        "baseHeight": 105.27999999999999,
+        "configuredWidth": 256,
+        "configuredHeight": 105.27999999999999,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 257.7662353515625,
+        "contentHeight": 44.8,
+        "lineCount": 1,
+        "renderedText": "Bio-Architecture"
+      }
+    },
+    {
+      "id": "text_mmukq57f_llwj",
+      "tool": "text",
+      "points": [
+        [
+          636.0,
+          360.0,
+          null,
+          null
+        ],
+        [
+          1344.313,
+          405.36,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Title: Trabecular Bone Principles and Topology Optimization",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right",
+        "baseWidth": 448,
+        "baseHeight": 160,
+        "configuredWidth": 448,
+        "configuredHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 708.3134155273438,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Title: Trabecular Bone Principles and Topology Optimization"
+      }
+    },
+    {
+      "id": "text_mmukqsmd_6da5",
+      "tool": "text",
+      "points": [
+        [
+          672.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          1248.016,
+          626.425,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Core Concept: Wolff’s Law\nHuman bones are not static; they follow \"Wolff's Law,\" which states that bone grows and remodels in response to the loads placed upon it. Specifically, the Trabecular bone (the spongy inner layer) forms a lattice-like structure. The struts of this lattice, called trabeculae, align themselves precisely along the lines of maximum stress. This creates a structure that is \"anisotropic\"—meaning it is incredibly strong in the direction of common pressure but lightweight overall.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 640,
+        "baseHeight": 224,
+        "configuredWidth": 640,
+        "configuredHeight": 224,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 576.015625,
+        "contentHeight": 201.6,
+        "lineCount": 8,
+        "renderedText": "Core Concept: Wolff’s Law\nHuman bones are not static; they follow \"Wolff's Law,\" which states\nthat bone grows and remodels in response to the loads placed upon\nit. Specifically, the Trabecular bone (the spongy inner layer) forms a\nlattice-like structure. The struts of this lattice, called trabeculae, align\nthemselves precisely along the lines of maximum stress. This creates\na structure that is \"anisotropic\"—meaning it is incredibly strong in\nthe direction of common pressure but lightweight overall."
+      }
+    },
+    {
+      "id": "text_mmukrc1u_fnlj",
+      "tool": "text",
+      "points": [
+        [
+          150.291,
+          721.439,
+          null,
+          null
+        ],
+        [
+          475.121,
+          814.406,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Technical Application: Topology Optimization (TO)",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 384,
+        "baseHeight": 96,
+        "configuredWidth": 384,
+        "configuredHeight": 96,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 324.8296875,
+        "contentHeight": 67.19999999999999,
+        "lineCount": 2,
+        "renderedText": "Technical Application:\nTopology Optimization (TO)"
+      }
+    },
+    {
+      "id": "text_ai_wolff_implications",
+      "tool": "text",
+      "points": [
+        [
+          672.0,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1248.016,
+          875.62,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "Implications and Optimization:\nWolff's Law has profound implications for both biology and engineering. In Trabecular bone, the alignment of trabeculae along stress lines ensures maximum strength with minimal material, exemplifying nature's efficiency. This principle inspires modern topology optimization techniques, where structures are designed to mimic this anisotropic efficiency. Applications include lightweight aerospace components, prosthetics, and architectural designs that balance strength and material usage.",
+        "summary": "Wolff's Law inspires topology optimization, mimicking efficient bone structure.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "contentWidth": 576.0160000000001,
+        "contentHeight": 226.79999999999998,
+        "lineHeight": 1.4,
+        "meta.graph.targetBlockId": "block_b1a5ae0f",
+        "configuredWidth": 576.0160000000001,
+        "configuredHeight": 210.42499999999995,
+        "baseWidth": 576.0160000000001,
+        "baseHeight": 210.42499999999995,
+        "padding": 0,
+        "lineCount": 9,
+        "renderedText": "Implications and Optimization:\nWolff's Law has profound implications for both biology and\nengineering. In Trabecular bone, the alignment of trabeculae along\nstress lines ensures maximum strength with minimal material,\nexemplifying nature's efficiency. This principle inspires modern\ntopology optimization techniques, where structures are designed to\nmimic this anisotropic efficiency. Applications include lightweight\naerospace components, prosthetics, and architectural designs that\nbalance strength and material usage.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_mmukrp4z_6gxg",
+      "tool": "text",
+      "points": [
+        [
+          61.649,
+          851.971,
+          null,
+          null
+        ],
+        [
+          540.485,
+          1012.002,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "In modern engineering, we use \"Topology Optimization\" to mimic this biological efficiency. TO is a mathematical method that optimizes material layout within a given physical design space for a set of loads. Instead of making a solid beam, the algorithm \"carves away\" unnecessary material, leaving a bone-like web.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 608,
+        "baseHeight": 192,
+        "configuredWidth": 608,
+        "configuredHeight": 192,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 478.83593749999994,
+        "contentHeight": 151.2,
+        "lineCount": 6,
+        "renderedText": "In modern engineering, we use \"Topology Optimization\"\nto mimic this biological efficiency. TO is a mathematical\nmethod that optimizes material layout within a given\nphysical design space for a set of loads. Instead of\nmaking a solid beam, the algorithm \"carves away\"\nunnecessary material, leaving a bone-like web."
+      }
+    },
+    {
+      "id": "text_practical_to_examples",
+      "tool": "text",
+      "points": [
+        [
+          13.822,
+          1024.478,
+          null,
+          null
+        ],
+        [
+          663.822,
+          1260.098,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "Practical Applications of Topology Optimization:\n1. Aerospace: Lightweight structures for aircraft wings and spacecraft components.\n2. Automotive: Optimized chassis and suspension systems for weight reduction and performance.\n3. Architecture: Designing efficient load-bearing structures and bridges.\n4. Medical: Custom implants and prosthetics with improved functionality.\n5. Consumer Products: Lightweight and durable designs for electronics and sports equipment.",
+        "summary": "Examples of Topology Optimization applications",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_5e16e9dd"
+        },
+        "configuredWidth": 650,
+        "configuredHeight": 100,
+        "baseWidth": 650,
+        "baseHeight": 100,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 650,
+        "contentHeight": 226.79999999999998,
+        "lineCount": 9,
+        "renderedText": "Practical Applications of Topology Optimization:\n1. Aerospace: Lightweight structures for aircraft wings and spacecraft\ncomponents.\n2. Automotive: Optimized chassis and suspension systems for weight\nreduction and performance.\n3. Architecture: Designing efficient load-bearing structures and bridges.\n4. Medical: Custom implants and prosthetics with improved functionality.\n5. Consumer Products: Lightweight and durable designs for electronics and\nsports equipment.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_medical_to_applications",
+      "tool": "text",
+      "points": [
+        [
+          13.822,
+          1270.098,
+          null,
+          null
+        ],
+        [
+          601.726,
+          1441.722,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "In the medical field, topology optimization is revolutionizing the design of implants and prosthetics. By using TO, engineers can create structures that mimic the natural geometry and density of bones, improving biocompatibility and reducing weight. Additionally, TO enables the development of custom surgical tools and devices tailored to individual patient needs, enhancing precision and outcomes.",
+        "summary": "Medical applications of TO: implants, prosthetics, surgical tools.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_5e16e9dd"
+        },
+        "configuredWidth": 650,
+        "configuredHeight": 180,
+        "baseWidth": 650,
+        "baseHeight": 180,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 587.904052734375,
+        "contentHeight": 151.2,
+        "lineCount": 6,
+        "renderedText": "In the medical field, topology optimization is revolutionizing the\ndesign of implants and prosthetics. By using TO, engineers can create\nstructures that mimic the natural geometry and density of bones,\nimproving biocompatibility and reducing weight. Additionally, TO\nenables the development of custom surgical tools and devices tailored\nto individual patient needs, enhancing precision and outcomes.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_mmuksib4_w44b",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          1808.051,
+          461.375,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Aspect",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 320,
+        "baseHeight": 96,
+        "configuredWidth": 320,
+        "configuredHeight": 96,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 96,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Aspect"
+      }
+    },
+    {
+      "id": "text_mmuksptu_4naz",
+      "tool": "text",
+      "points": [
+        [
+          1536.0,
+          480.0,
+          null,
+          null
+        ],
+        [
+          1632.016,
+          530.166,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Driver",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 160,
+        "baseHeight": 64,
+        "configuredWidth": 160,
+        "configuredHeight": 64,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 96,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Driver"
+      }
+    },
+    {
+      "id": "text_mmuksuyg_837o",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          480.0,
+          null,
+          null
+        ],
+        [
+          1847.203,
+          539.221,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Metabolic Response",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 192,
+        "baseHeight": 64,
+        "configuredWidth": 192,
+        "configuredHeight": 64,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 151.203125,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "Metabolic\nResponse"
+      }
+    },
+    {
+      "id": "text_expand_metabolic",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          560.0,
+          null,
+          null
+        ],
+        [
+          1900.0,
+          747.04,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Metabolic responses are critical for energy balance and adaptation during stress. They often involve hormonal regulation, nutrient utilization, and cellular signaling pathways.",
+        "summary": "Key aspects of metabolic responses",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "text_mmuksuyg_837o"
+        },
+        "configuredWidth": 204,
+        "configuredHeight": 80,
+        "baseWidth": 204,
+        "baseHeight": 80,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 204,
+        "contentHeight": 179.2,
+        "lineCount": 8,
+        "renderedText": "Metabolic responses are\ncritical for energy balance\nand adaptation during\nstress. They often involve\nhormonal regulation,\nnutrient utilization, and\ncellular signaling\npathways.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_expand_broader_themes",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          760.0,
+          null,
+          null
+        ],
+        [
+          1900.0,
+          1014.24,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Metabolic responses also intersect with broader themes such as environmental adaptation, aging, and disease mechanisms. For instance, stress-induced metabolic shifts can influence immune function and chronic conditions like diabetes.",
+        "summary": "Broader themes of metabolic responses",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "text_mmuksuyg_837o"
+        },
+        "configuredWidth": 204,
+        "configuredHeight": 160,
+        "baseWidth": 204,
+        "baseHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 204,
+        "contentHeight": 246.39999999999998,
+        "lineCount": 11,
+        "renderedText": "Metabolic responses also\nintersect with broader\nthemes such as\nenvironmental adaptation,\naging, and disease\nmechanisms. For instance,\nstress-induced metabolic\nshifts can influence\nimmune function and\nchronic conditions like\ndiabetes.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_expand_environmental_adaptation",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          1020.0,
+          null,
+          null
+        ],
+        [
+          1900.0,
+          1207.04,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Environmental adaptation often relies on metabolic flexibility. For example, organisms in extreme climates adjust their energy expenditure and nutrient metabolism to survive harsh conditions.",
+        "summary": "Metabolic role in environmental adaptation",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "text_mmuksuyg_837o"
+        },
+        "configuredWidth": 204,
+        "configuredHeight": 160,
+        "baseWidth": 204,
+        "baseHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 204,
+        "contentHeight": 179.2,
+        "lineCount": 8,
+        "renderedText": "Environmental adaptation\noften relies on metabolic\nflexibility. For example,\norganisms in extreme\nclimates adjust their\nenergy expenditure and\nnutrient metabolism to\nsurvive harsh conditions.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_expand_aging_disease",
+      "tool": "text",
+      "points": [
+        [
+          1696.0,
+          1220.0,
+          null,
+          null
+        ],
+        [
+          1900.0,
+          1541.44,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Aging and disease mechanisms are deeply influenced by metabolic responses. Cellular aging often involves oxidative stress and mitochondrial dysfunction, which are tied to metabolic regulation. Similarly, metabolic imbalances are central to diseases like cancer, cardiovascular conditions, and neurodegenerative disorders.",
+        "summary": "Metabolic links to aging and disease",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_3771047e"
+        },
+        "configuredWidth": 204,
+        "configuredHeight": 160,
+        "baseWidth": 204,
+        "baseHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 204,
+        "contentHeight": 313.59999999999997,
+        "lineCount": 14,
+        "renderedText": "Aging and disease\nmechanisms are deeply\ninfluenced by metabolic\nresponses. Cellular aging\noften involves oxidative\nstress and mitochondrial\ndysfunction, which are tied\nto metabolic regulation.\nSimilarly, metabolic\nimbalances are central to\ndiseases like cancer,\ncardiovascular conditions,\nand neurodegenerative\ndisorders.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "expand_metabolic_flexibility_aging",
+      "tool": "text",
+      "points": [
+        [
+          1925.229,
+          559.659,
+          null,
+          null
+        ],
+        [
+          2231.229,
+          867.499,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Metabolic flexibility plays a crucial role in aging and disease mechanisms. It allows cells to adapt energy production and usage under varying conditions, reducing oxidative stress and mitigating mitochondrial dysfunction. This adaptability can influence the progression of age-related diseases like Alzheimer's, diabetes, and cardiovascular disorders by maintaining cellular homeostasis and reducing damage from metabolic imbalances.",
+        "summary": "Impact of metabolic flexibility on aging and diseases",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_3771047e"
+        },
+        "configuredWidth": 204,
+        "configuredHeight": 300,
+        "baseWidth": 204,
+        "baseHeight": 300,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 306,
+        "contentHeight": 268.79999999999995,
+        "lineCount": 12,
+        "renderedText": "Metabolic flexibility plays a crucial role in\naging and disease mechanisms. It allows\ncells to adapt energy production and\nusage under varying conditions,\nreducing oxidative stress and mitigating\nmitochondrial dysfunction. This\nadaptability can influence the\nprogression of age-related diseases like\nAlzheimer's, diabetes, and\ncardiovascular disorders by maintaining\ncellular homeostasis and reducing\ndamage from metabolic imbalances.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "expand_mechanisms_metabolic_flexibility",
+      "tool": "text",
+      "points": [
+        [
+          1925.229,
+          880.0,
+          null,
+          null
+        ],
+        [
+          2231.229,
+          1246.24,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Metabolic flexibility impacts age-related diseases through several mechanisms:\n1. **Alzheimer's Disease**: Enhanced glucose and lipid metabolism can reduce amyloid-beta accumulation and improve neuronal health.\n2. **Type 2 Diabetes**: Adaptive insulin sensitivity and energy utilization prevent hyperglycemia and beta-cell stress.\n3. **Cardiovascular Disease**: Efficient energy substrate switching in cardiac cells minimizes ischemic damage and oxidative stress.\nThese mechanisms highlight the importance of metabolic adaptability in mitigating disease progression.",
+        "summary": "Mechanisms linking metabolic flexibility to diseases",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_3771047e"
+        },
+        "configuredWidth": 305.9999999999998,
+        "configuredHeight": 300,
+        "baseWidth": 305.9999999999998,
+        "baseHeight": 300,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 305.9999999999998,
+        "contentHeight": 358.4,
+        "lineCount": 16,
+        "renderedText": "Metabolic flexibility impacts age-related\ndiseases through several mechanisms:\n1. Alzheimer's Disease: Enhanced\nglucose and lipid metabolism can reduce\namyloid-beta accumulation and improve\nneuronal health.\n2. Type 2 Diabetes: Adaptive insulin\nsensitivity and energy utilization prevent\nhyperglycemia and beta-cell stress.\n3. Cardiovascular Disease: Efficient\nenergy substrate switching in cardiac\ncells minimizes ischemic damage and\noxidative stress.\nThese mechanisms highlight the\nimportance of metabolic adaptability in\nmitigating disease progression.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "expand_mechanisms_metabolic_flexibility_connection",
+      "tool": "text",
+      "points": [
+        [
+          1925.229,
+          1250.0,
+          null,
+          null
+        ],
+        [
+          2199.448,
+          1526.682,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "These mechanisms are interconnected with broader metabolic responses. For instance, the ability to efficiently switch between energy substrates in cardiovascular disease also supports resilience during environmental stress. Similarly, adaptive insulin sensitivity in diabetes can influence immune responses, showcasing the systemic impact of metabolic flexibility.",
+        "summary": "Connecting metabolic flexibility to broader responses",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_3771047e"
+        },
+        "configuredWidth": 305.9999999999998,
+        "configuredHeight": 300,
+        "baseWidth": 305.9999999999998,
+        "baseHeight": 300,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 274.21874999999983,
+        "contentHeight": 268.79999999999995,
+        "lineCount": 12,
+        "renderedText": "These mechanisms are\ninterconnected with broader\nmetabolic responses. For instance,\nthe ability to efficiently switch\nbetween energy substrates in\ncardiovascular disease also supports\nresilience during environmental\nstress. Similarly, adaptive insulin\nsensitivity in diabetes can influence\nimmune responses, showcasing the\nsystemic impact of metabolic\nflexibility.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "expand_resilience_metabolic_flexibility",
+      "tool": "text",
+      "points": [
+        [
+          1925.229,
+          1570.0,
+          null,
+          null
+        ],
+        [
+          2222.291,
+          1869.077,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Metabolic flexibility enhances resilience in cardiovascular disease by enabling the heart to efficiently switch between glucose and fatty acids during stress, reducing ischemic damage and oxidative stress. In diabetes, it supports adaptive insulin sensitivity, preventing chronic hyperglycemia and related complications. Broadly, this adaptability underpins survival during environmental and physiological challenges, highlighting its role in systemic health.",
+        "summary": "Resilience in cardiovascular disease and diabetes via metabolic flexibility",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "graph": {
+          "targetBlockId": "block_3771047e"
+        },
+        "configuredWidth": 305.9999999999998,
+        "configuredHeight": 300,
+        "baseWidth": 305.9999999999998,
+        "baseHeight": 300,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 297.0615234374998,
+        "contentHeight": 291.2,
+        "lineCount": 13,
+        "renderedText": "Metabolic flexibility enhances resilience\nin cardiovascular disease by enabling\nthe heart to efficiently switch between\nglucose and fatty acids during stress,\nreducing ischemic damage and\noxidative stress. In diabetes, it supports\nadaptive insulin sensitivity, preventing\nchronic hyperglycemia and related\ncomplications. Broadly, this\nadaptability underpins survival during\nenvironmental and physiological\nchallenges, highlighting its role in\nsystemic health.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_mmul289t_47o4",
+      "tool": "text",
+      "points": [
+        [
+          992.0,
+          960.0,
+          null,
+          null
+        ],
+        [
+          1151.93,
+          1039.9,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Constraint\tCalcium Availability",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 288,
+        "baseHeight": 128,
+        "configuredWidth": 288,
+        "configuredHeight": 128,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 159.92968749999994,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "Constraint Calcium\nAvailability"
+      }
+    },
+    {
+      "id": "text_calcium_metabolic_001",
+      "tool": "text",
+      "points": [
+        [
+          1200.0,
+          960.0,
+          null,
+          null
+        ],
+        [
+          1455.725,
+          1036.928,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "Calcium as a Constraint:\nImpact on Metabolic Flexibility",
+        "summary": "Calcium's role in metabolism",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "graph": {
+          "blockIntent": "create",
+          "blockLabel": "Calcium & Metabolic Flexibility"
+        },
+        "configuredWidth": 300,
+        "configuredHeight": 79.90000000000009,
+        "baseWidth": 300,
+        "baseHeight": 79.90000000000009,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 255.677734375,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "Calcium as a Constraint:\nImpact on Metabolic Flexibility",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_calcium_metabolic_002",
+      "tool": "text",
+      "points": [
+        [
+          1200.0,
+          1050.0,
+          null,
+          null
+        ],
+        [
+          1500.0,
+          1169.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "1. Calcium signaling regulates energy pathways.\n2. Adaptive responses depend on calcium-mediated processes.\n3. Constraints affect cellular flexibility.",
+        "summary": "Key impacts of calcium on metabolism",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "down",
+        "graph": {
+          "targetBlockId": "text_calcium_metabolic_001"
+        },
+        "configuredWidth": 300,
+        "configuredHeight": 80,
+        "baseWidth": 300,
+        "baseHeight": 80,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 300,
+        "contentHeight": 112,
+        "lineCount": 5,
+        "renderedText": "1. Calcium signaling regulates energy\npathways.\n2. Adaptive responses depend on\ncalcium-mediated processes.\n3. Constraints affect cellular flexibility.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_ai_calcium_constraints",
+      "tool": "text",
+      "points": [
+        [
+          978.741,
+          1188.552,
+          null,
+          null
+        ],
+        [
+          1546.038,
+          1419.577,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "ai",
+        "text": "Calcium Availability and Cellular Adaptation:\nCalcium plays a critical role in cellular processes, including signaling, structural functions, and metabolic pathways. Constraints on calcium availability can influence metabolic adaptation by altering enzyme activation, ion transport mechanisms, and energy production efficiency. Additionally, cellular flexibility in response to calcium limitations may involve changes in membrane dynamics, protein expression, and intracellular signaling cascades.",
+        "summary": "Explores how calcium constraints affect metabolism and cellular adaptation.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "meta.graph.blockIntent": "create",
+        "meta.graph.blockLabel": "Calcium Constraints & Adaptation",
+        "configuredWidth": 576.0160000000001,
+        "configuredHeight": 225.6199999999999,
+        "baseWidth": 576.0160000000001,
+        "baseHeight": 225.6199999999999,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 567.29696875,
+        "contentHeight": 201.6,
+        "lineCount": 8,
+        "renderedText": "Calcium Availability and Cellular Adaptation:\nCalcium plays a critical role in cellular processes, including\nsignaling, structural functions, and metabolic pathways. Constraints\non calcium availability can influence metabolic adaptation by\naltering enzyme activation, ion transport mechanisms, and energy\nproduction efficiency. Additionally, cellular flexibility in response to\ncalcium limitations may involve changes in membrane dynamics,\nprotein expression, and intracellular signaling cascades.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_causal_chain_title",
+      "tool": "text",
+      "points": [
+        [
+          -186.072,
+          147.276,
+          null,
+          null
+        ],
+        [
+          365.641,
+          205.012,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Causal Chain: Mechanical Stress to Bone Shape",
+        "summary": "Title for causal chain explanation",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "role": "title",
+        "meta.graph.blockIntent": "create",
+        "meta.graph.blockLabel": "Causal Chain",
+        "configuredWidth": 600,
+        "configuredHeight": 50,
+        "baseWidth": 600,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 551.6981811523438,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Causal Chain: Mechanical Stress to Bone Shape",
+        "heightPadding": 11.759999999999998
+      }
+    },
+    {
+      "id": "text_causal_chain_step1",
+      "tool": "text",
+      "points": [
+        [
+          -103.761,
+          229.672,
+          null,
+          null
+        ],
+        [
+          252.763,
+          276.691,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "1. Mechanical stress is applied to the bone.",
+        "summary": "Step 1: Stress applied",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_causal_chain",
+        "configuredWidth": 560,
+        "configuredHeight": 60,
+        "baseWidth": 560,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 356.5189208984375,
+        "contentHeight": 25.2,
+        "lineCount": 1,
+        "renderedText": "1. Mechanical stress is applied to the bone.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_causal_chain_step2",
+      "tool": "text",
+      "points": [
+        [
+          -106.158,
+          314.465,
+          null,
+          null
+        ],
+        [
+          312.218,
+          368.111,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "2. Bone cells detect stress and initiate remodeling.",
+        "summary": "Step 2: Cells detect stress",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_causal_chain",
+        "configuredWidth": 560,
+        "configuredHeight": 60,
+        "baseWidth": 560,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 418.29742431640625,
+        "contentHeight": 25.2,
+        "lineCount": 1,
+        "renderedText": "2. Bone cells detect stress and initiate remodeling.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_causal_chain_step3",
+      "tool": "text",
+      "points": [
+        [
+          -108.555,
+          411.241,
+          null,
+          null
+        ],
+        [
+          311.883,
+          465.108,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "3. Trabeculae align along stress lines for efficiency.",
+        "summary": "Step 3: Trabeculae align",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_causal_chain",
+        "configuredWidth": 560,
+        "configuredHeight": 60,
+        "baseWidth": 560,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 420.36822509765625,
+        "contentHeight": 25.2,
+        "lineCount": 1,
+        "renderedText": "3. Trabeculae align along stress lines for efficiency.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_causal_chain_step4",
+      "tool": "text",
+      "points": [
+        [
+          -98.968,
+          510.414,
+          null,
+          null
+        ],
+        [
+          371.426,
+          569.633,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "4. Final bone shape reflects optimized stress distribution.",
+        "summary": "Step 4: Optimized bone shape",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_causal_chain",
+        "configuredWidth": 560,
+        "configuredHeight": 60,
+        "baseWidth": 560,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 470.39453125000006,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "4. Final bone shape reflects optimized stress\ndistribution.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_anisotropy_vs_isotropy",
+      "tool": "text",
+      "points": [
+        [
+          -939.481,
+          479.414,
+          null,
+          null
+        ],
+        [
+          -466.859,
+          677.283,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "**Anisotropy vs. Isotropy**:\nAnisotropic materials, like bone, have direction-dependent properties, allowing them to optimize strength and flexibility based on load orientation. In contrast, isotropic materials, such as solid steel, exhibit uniform properties in all directions, making them predictable but less adaptable to varying stresses.",
+        "summary": "Comparison of anisotropy in bones vs isotropy in steel.",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "graph": {
+          "blockIntent": "create",
+          "blockLabel": "Anisotropy vs Isotropy"
+        },
+        "configuredWidth": 500,
+        "configuredHeight": 200,
+        "baseWidth": 500,
+        "baseHeight": 200,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 472.62207031250006,
+        "contentHeight": 176.4,
+        "lineCount": 7,
+        "renderedText": "Anisotropy vs. Isotropy:\nAnisotropic materials, like bone, have\ndirection-dependent properties, allowing them to\noptimize strength and flexibility based on load\norientation. In contrast, isotropic materials, such as solid\nsteel, exhibit uniform properties in all directions, making\nthem predictable but less adaptable to varying stresses.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "pen_mmul6j24_i7go",
+      "tool": "pen",
+      "points": [
+        [
+          -352.0,
+          96.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          99.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          102.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          105.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          108.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          111.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          114.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          117.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          120.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          123.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          126.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          129.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          132.0,
+          null,
+          null
+        ],
+        [
+          -352.0,
+          135.0,
+          null,
+          null
+        ],
+        [
+          -351.752,
+          137.985,
+          null,
+          null
+        ],
+        [
+          -351.38,
+          140.961,
+          null,
+          null
+        ],
+        [
+          -351.008,
+          143.938,
+          null,
+          null
+        ],
+        [
+          -350.636,
+          146.915,
+          null,
+          null
+        ],
+        [
+          -350.264,
+          149.892,
+          null,
+          null
+        ],
+        [
+          -349.788,
+          152.849,
+          null,
+          null
+        ],
+        [
+          -349.06,
+          155.76,
+          null,
+          null
+        ],
+        [
+          -348.332,
+          158.67,
+          null,
+          null
+        ],
+        [
+          -347.605,
+          161.581,
+          null,
+          null
+        ],
+        [
+          -346.877,
+          164.491,
+          null,
+          null
+        ],
+        [
+          -346.15,
+          167.401,
+          null,
+          null
+        ],
+        [
+          -345.163,
+          170.231,
+          null,
+          null
+        ],
+        [
+          -344.11,
+          173.04,
+          null,
+          null
+        ],
+        [
+          -343.057,
+          175.849,
+          null,
+          null
+        ],
+        [
+          -342.003,
+          178.658,
+          null,
+          null
+        ],
+        [
+          -340.95,
+          181.467,
+          null,
+          null
+        ],
+        [
+          -339.868,
+          184.264,
+          null,
+          null
+        ],
+        [
+          -338.526,
+          186.947,
+          null,
+          null
+        ],
+        [
+          -337.185,
+          189.63,
+          null,
+          null
+        ],
+        [
+          -335.843,
+          192.314,
+          null,
+          null
+        ],
+        [
+          -334.501,
+          194.997,
+          null,
+          null
+        ],
+        [
+          -333.16,
+          197.68,
+          null,
+          null
+        ],
+        [
+          -331.925,
+          200.4,
+          null,
+          null
+        ],
+        [
+          -331.372,
+          203.348,
+          null,
+          null
+        ],
+        [
+          -330.819,
+          206.297,
+          null,
+          null
+        ],
+        [
+          -330.266,
+          209.245,
+          null,
+          null
+        ],
+        [
+          -329.714,
+          212.194,
+          null,
+          null
+        ],
+        [
+          -329.161,
+          215.143,
+          null,
+          null
+        ],
+        [
+          -328.608,
+          218.091,
+          null,
+          null
+        ],
+        [
+          -328.055,
+          221.04,
+          null,
+          null
+        ],
+        [
+          -327.502,
+          223.988,
+          null,
+          null
+        ],
+        [
+          -326.949,
+          226.937,
+          null,
+          null
+        ],
+        [
+          -326.396,
+          229.886,
+          null,
+          null
+        ],
+        [
+          -325.93,
+          232.846,
+          null,
+          null
+        ],
+        [
+          -325.68,
+          235.836,
+          null,
+          null
+        ],
+        [
+          -325.431,
+          238.825,
+          null,
+          null
+        ],
+        [
+          -325.182,
+          241.815,
+          null,
+          null
+        ],
+        [
+          -324.933,
+          244.804,
+          null,
+          null
+        ],
+        [
+          -324.684,
+          247.794,
+          null,
+          null
+        ],
+        [
+          -324.435,
+          250.784,
+          null,
+          null
+        ],
+        [
+          -324.186,
+          253.773,
+          null,
+          null
+        ],
+        [
+          -323.936,
+          256.763,
+          null,
+          null
+        ],
+        [
+          -323.687,
+          259.753,
+          null,
+          null
+        ],
+        [
+          -323.438,
+          262.742,
+          null,
+          null
+        ],
+        [
+          -323.189,
+          265.732,
+          null,
+          null
+        ],
+        [
+          -322.94,
+          268.722,
+          null,
+          null
+        ],
+        [
+          -322.691,
+          271.711,
+          null,
+          null
+        ],
+        [
+          -322.442,
+          274.701,
+          null,
+          null
+        ],
+        [
+          -322.192,
+          277.69,
+          null,
+          null
+        ],
+        [
+          -321.979,
+          280.682,
+          null,
+          null
+        ],
+        [
+          -321.885,
+          283.681,
+          null,
+          null
+        ],
+        [
+          -321.791,
+          286.679,
+          null,
+          null
+        ],
+        [
+          -321.698,
+          289.678,
+          null,
+          null
+        ],
+        [
+          -321.604,
+          292.676,
+          null,
+          null
+        ],
+        [
+          -321.51,
+          295.675,
+          null,
+          null
+        ],
+        [
+          -321.416,
+          298.673,
+          null,
+          null
+        ],
+        [
+          -321.323,
+          301.672,
+          null,
+          null
+        ],
+        [
+          -321.229,
+          304.67,
+          null,
+          null
+        ],
+        [
+          -321.135,
+          307.669,
+          null,
+          null
+        ],
+        [
+          -321.042,
+          310.668,
+          null,
+          null
+        ],
+        [
+          -320.948,
+          313.666,
+          null,
+          null
+        ],
+        [
+          -320.854,
+          316.665,
+          null,
+          null
+        ],
+        [
+          -320.761,
+          319.663,
+          null,
+          null
+        ],
+        [
+          -320.667,
+          322.662,
+          null,
+          null
+        ],
+        [
+          -320.573,
+          325.66,
+          null,
+          null
+        ],
+        [
+          -320.479,
+          328.659,
+          null,
+          null
+        ],
+        [
+          -320.386,
+          331.657,
+          null,
+          null
+        ],
+        [
+          -320.292,
+          334.656,
+          null,
+          null
+        ],
+        [
+          -320.198,
+          337.654,
+          null,
+          null
+        ],
+        [
+          -320.105,
+          340.653,
+          null,
+          null
+        ],
+        [
+          -320.011,
+          343.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          346.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          349.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          352.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          355.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          358.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          361.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          364.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          367.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          370.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          373.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          376.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          379.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          382.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          385.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          388.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          391.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          394.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          397.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          400.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          403.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          406.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          409.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          412.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          415.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          418.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          421.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          424.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          427.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          430.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          433.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          436.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          439.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          442.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          445.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          448.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          451.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          454.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          457.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          460.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          463.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          466.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          469.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          472.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          475.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          478.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          481.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          484.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          487.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          490.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          493.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          496.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          499.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          502.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          505.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          508.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          511.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          514.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          517.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          520.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          523.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          526.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          529.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          532.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          535.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          538.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          541.651,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          544.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmul6kj1_v5am",
+      "tool": "pen",
+      "points": [
+        [
+          -320.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -317.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -314.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -311.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -308.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -305.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -302.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -299.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -296.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -293.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -290.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -287.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -284.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -281.0,
+          64.0,
+          null,
+          null
+        ],
+        [
+          -278.012,
+          64.221,
+          null,
+          null
+        ],
+        [
+          -275.031,
+          64.552,
+          null,
+          null
+        ],
+        [
+          -272.049,
+          64.883,
+          null,
+          null
+        ],
+        [
+          -269.067,
+          65.215,
+          null,
+          null
+        ],
+        [
+          -266.086,
+          65.546,
+          null,
+          null
+        ],
+        [
+          -263.104,
+          65.877,
+          null,
+          null
+        ],
+        [
+          -260.147,
+          66.371,
+          null,
+          null
+        ],
+        [
+          -257.206,
+          66.959,
+          null,
+          null
+        ],
+        [
+          -254.264,
+          67.547,
+          null,
+          null
+        ],
+        [
+          -251.322,
+          68.136,
+          null,
+          null
+        ],
+        [
+          -248.38,
+          68.724,
+          null,
+          null
+        ],
+        [
+          -245.439,
+          69.312,
+          null,
+          null
+        ],
+        [
+          -242.497,
+          69.901,
+          null,
+          null
+        ],
+        [
+          -239.595,
+          70.656,
+          null,
+          null
+        ],
+        [
+          -236.7,
+          71.445,
+          null,
+          null
+        ],
+        [
+          -233.806,
+          72.235,
+          null,
+          null
+        ],
+        [
+          -230.912,
+          73.024,
+          null,
+          null
+        ],
+        [
+          -228.018,
+          73.813,
+          null,
+          null
+        ],
+        [
+          -225.123,
+          74.603,
+          null,
+          null
+        ],
+        [
+          -222.229,
+          75.392,
+          null,
+          null
+        ],
+        [
+          -219.346,
+          76.218,
+          null,
+          null
+        ],
+        [
+          -216.5,
+          77.167,
+          null,
+          null
+        ],
+        [
+          -213.654,
+          78.115,
+          null,
+          null
+        ],
+        [
+          -210.808,
+          79.064,
+          null,
+          null
+        ],
+        [
+          -207.962,
+          80.013,
+          null,
+          null
+        ],
+        [
+          -205.115,
+          80.962,
+          null,
+          null
+        ],
+        [
+          -202.269,
+          81.91,
+          null,
+          null
+        ],
+        [
+          -199.423,
+          82.859,
+          null,
+          null
+        ],
+        [
+          -196.577,
+          83.808,
+          null,
+          null
+        ],
+        [
+          -193.621,
+          84.246,
+          null,
+          null
+        ],
+        [
+          -190.637,
+          84.555,
+          null,
+          null
+        ],
+        [
+          -187.653,
+          84.863,
+          null,
+          null
+        ],
+        [
+          -184.669,
+          85.172,
+          null,
+          null
+        ],
+        [
+          -181.685,
+          85.481,
+          null,
+          null
+        ],
+        [
+          -178.701,
+          85.79,
+          null,
+          null
+        ],
+        [
+          -175.717,
+          86.098,
+          null,
+          null
+        ],
+        [
+          -172.733,
+          86.407,
+          null,
+          null
+        ],
+        [
+          -169.749,
+          86.716,
+          null,
+          null
+        ],
+        [
+          -166.765,
+          87.024,
+          null,
+          null
+        ],
+        [
+          -163.781,
+          87.333,
+          null,
+          null
+        ],
+        [
+          -160.796,
+          87.642,
+          null,
+          null
+        ],
+        [
+          -157.812,
+          87.95,
+          null,
+          null
+        ],
+        [
+          -154.828,
+          88.259,
+          null,
+          null
+        ],
+        [
+          -151.844,
+          88.568,
+          null,
+          null
+        ],
+        [
+          -148.86,
+          88.877,
+          null,
+          null
+        ],
+        [
+          -145.876,
+          89.185,
+          null,
+          null
+        ],
+        [
+          -142.892,
+          89.494,
+          null,
+          null
+        ],
+        [
+          -139.908,
+          89.803,
+          null,
+          null
+        ],
+        [
+          -136.919,
+          90.047,
+          null,
+          null
+        ],
+        [
+          -133.922,
+          90.177,
+          null,
+          null
+        ],
+        [
+          -130.925,
+          90.308,
+          null,
+          null
+        ],
+        [
+          -127.928,
+          90.438,
+          null,
+          null
+        ],
+        [
+          -124.93,
+          90.568,
+          null,
+          null
+        ],
+        [
+          -121.933,
+          90.699,
+          null,
+          null
+        ],
+        [
+          -118.936,
+          90.829,
+          null,
+          null
+        ],
+        [
+          -115.939,
+          90.959,
+          null,
+          null
+        ],
+        [
+          -112.942,
+          91.089,
+          null,
+          null
+        ],
+        [
+          -109.945,
+          91.22,
+          null,
+          null
+        ],
+        [
+          -106.947,
+          91.35,
+          null,
+          null
+        ],
+        [
+          -103.95,
+          91.48,
+          null,
+          null
+        ],
+        [
+          -100.953,
+          91.611,
+          null,
+          null
+        ],
+        [
+          -97.956,
+          91.741,
+          null,
+          null
+        ],
+        [
+          -94.959,
+          91.871,
+          null,
+          null
+        ],
+        [
+          -91.962,
+          92.002,
+          null,
+          null
+        ],
+        [
+          -88.964,
+          92.132,
+          null,
+          null
+        ],
+        [
+          -85.967,
+          92.262,
+          null,
+          null
+        ],
+        [
+          -82.97,
+          92.393,
+          null,
+          null
+        ],
+        [
+          -79.973,
+          92.523,
+          null,
+          null
+        ],
+        [
+          -76.976,
+          92.653,
+          null,
+          null
+        ],
+        [
+          -73.979,
+          92.784,
+          null,
+          null
+        ],
+        [
+          -70.981,
+          92.914,
+          null,
+          null
+        ],
+        [
+          -67.984,
+          93.044,
+          null,
+          null
+        ],
+        [
+          -64.987,
+          93.174,
+          null,
+          null
+        ],
+        [
+          -61.99,
+          93.305,
+          null,
+          null
+        ],
+        [
+          -58.993,
+          93.435,
+          null,
+          null
+        ],
+        [
+          -55.996,
+          93.565,
+          null,
+          null
+        ],
+        [
+          -52.998,
+          93.696,
+          null,
+          null
+        ],
+        [
+          -50.001,
+          93.826,
+          null,
+          null
+        ],
+        [
+          -47.004,
+          93.956,
+          null,
+          null
+        ],
+        [
+          -44.005,
+          94.032,
+          null,
+          null
+        ],
+        [
+          -41.006,
+          94.079,
+          null,
+          null
+        ],
+        [
+          -38.006,
+          94.127,
+          null,
+          null
+        ],
+        [
+          -35.006,
+          94.175,
+          null,
+          null
+        ],
+        [
+          -32.007,
+          94.222,
+          null,
+          null
+        ],
+        [
+          -29.007,
+          94.27,
+          null,
+          null
+        ],
+        [
+          -26.008,
+          94.317,
+          null,
+          null
+        ],
+        [
+          -23.008,
+          94.365,
+          null,
+          null
+        ],
+        [
+          -20.008,
+          94.413,
+          null,
+          null
+        ],
+        [
+          -17.009,
+          94.46,
+          null,
+          null
+        ],
+        [
+          -14.009,
+          94.508,
+          null,
+          null
+        ],
+        [
+          -11.009,
+          94.555,
+          null,
+          null
+        ],
+        [
+          -8.01,
+          94.603,
+          null,
+          null
+        ],
+        [
+          -5.01,
+          94.651,
+          null,
+          null
+        ],
+        [
+          -2.011,
+          94.698,
+          null,
+          null
+        ],
+        [
+          0.989,
+          94.746,
+          null,
+          null
+        ],
+        [
+          3.989,
+          94.793,
+          null,
+          null
+        ],
+        [
+          6.988,
+          94.841,
+          null,
+          null
+        ],
+        [
+          9.988,
+          94.889,
+          null,
+          null
+        ],
+        [
+          12.988,
+          94.936,
+          null,
+          null
+        ],
+        [
+          15.987,
+          94.984,
+          null,
+          null
+        ],
+        [
+          18.987,
+          95.032,
+          null,
+          null
+        ],
+        [
+          21.986,
+          95.079,
+          null,
+          null
+        ],
+        [
+          24.986,
+          95.127,
+          null,
+          null
+        ],
+        [
+          27.986,
+          95.174,
+          null,
+          null
+        ],
+        [
+          30.985,
+          95.222,
+          null,
+          null
+        ],
+        [
+          33.985,
+          95.27,
+          null,
+          null
+        ],
+        [
+          36.985,
+          95.317,
+          null,
+          null
+        ],
+        [
+          39.984,
+          95.365,
+          null,
+          null
+        ],
+        [
+          42.984,
+          95.412,
+          null,
+          null
+        ],
+        [
+          45.983,
+          95.46,
+          null,
+          null
+        ],
+        [
+          48.983,
+          95.508,
+          null,
+          null
+        ],
+        [
+          51.983,
+          95.555,
+          null,
+          null
+        ],
+        [
+          54.982,
+          95.603,
+          null,
+          null
+        ],
+        [
+          57.982,
+          95.651,
+          null,
+          null
+        ],
+        [
+          60.982,
+          95.698,
+          null,
+          null
+        ],
+        [
+          63.981,
+          95.746,
+          null,
+          null
+        ],
+        [
+          66.981,
+          95.793,
+          null,
+          null
+        ],
+        [
+          69.98,
+          95.841,
+          null,
+          null
+        ],
+        [
+          72.98,
+          95.889,
+          null,
+          null
+        ],
+        [
+          75.98,
+          95.936,
+          null,
+          null
+        ],
+        [
+          78.979,
+          95.984,
+          null,
+          null
+        ],
+        [
+          81.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          84.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          87.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          90.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          93.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          96.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          99.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          102.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          105.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          108.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          111.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          114.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          117.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          120.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          123.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          126.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          129.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          132.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          135.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          138.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          141.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          144.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          147.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          150.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          153.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          156.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          159.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          162.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          165.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          168.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          171.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          174.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          177.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          180.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          183.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          186.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          189.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          192.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          195.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          198.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          201.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          204.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          207.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          210.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          213.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          216.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          219.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          222.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          225.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          228.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          231.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          234.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          237.979,
+          96.0,
+          null,
+          null
+        ],
+        [
+          240.979,
+          96.016,
+          null,
+          null
+        ],
+        [
+          243.979,
+          96.065,
+          null,
+          null
+        ],
+        [
+          246.978,
+          96.114,
+          null,
+          null
+        ],
+        [
+          249.978,
+          96.164,
+          null,
+          null
+        ],
+        [
+          252.977,
+          96.213,
+          null,
+          null
+        ],
+        [
+          255.977,
+          96.262,
+          null,
+          null
+        ],
+        [
+          258.977,
+          96.311,
+          null,
+          null
+        ],
+        [
+          261.976,
+          96.36,
+          null,
+          null
+        ],
+        [
+          264.976,
+          96.409,
+          null,
+          null
+        ],
+        [
+          267.975,
+          96.459,
+          null,
+          null
+        ],
+        [
+          270.975,
+          96.508,
+          null,
+          null
+        ],
+        [
+          273.975,
+          96.557,
+          null,
+          null
+        ],
+        [
+          276.974,
+          96.606,
+          null,
+          null
+        ],
+        [
+          279.974,
+          96.655,
+          null,
+          null
+        ],
+        [
+          282.973,
+          96.704,
+          null,
+          null
+        ],
+        [
+          285.973,
+          96.754,
+          null,
+          null
+        ],
+        [
+          288.973,
+          96.803,
+          null,
+          null
+        ],
+        [
+          291.972,
+          96.852,
+          null,
+          null
+        ],
+        [
+          294.972,
+          96.901,
+          null,
+          null
+        ],
+        [
+          297.971,
+          96.95,
+          null,
+          null
+        ],
+        [
+          300.971,
+          97.0,
+          null,
+          null
+        ],
+        [
+          303.971,
+          97.049,
+          null,
+          null
+        ],
+        [
+          306.97,
+          97.098,
+          null,
+          null
+        ],
+        [
+          309.97,
+          97.147,
+          null,
+          null
+        ],
+        [
+          312.969,
+          97.196,
+          null,
+          null
+        ],
+        [
+          315.969,
+          97.245,
+          null,
+          null
+        ],
+        [
+          318.969,
+          97.295,
+          null,
+          null
+        ],
+        [
+          321.968,
+          97.344,
+          null,
+          null
+        ],
+        [
+          324.968,
+          97.393,
+          null,
+          null
+        ],
+        [
+          327.967,
+          97.442,
+          null,
+          null
+        ],
+        [
+          330.967,
+          97.491,
+          null,
+          null
+        ],
+        [
+          333.966,
+          97.54,
+          null,
+          null
+        ],
+        [
+          336.966,
+          97.59,
+          null,
+          null
+        ],
+        [
+          339.966,
+          97.639,
+          null,
+          null
+        ],
+        [
+          342.965,
+          97.688,
+          null,
+          null
+        ],
+        [
+          345.965,
+          97.737,
+          null,
+          null
+        ],
+        [
+          348.964,
+          97.786,
+          null,
+          null
+        ],
+        [
+          351.964,
+          97.835,
+          null,
+          null
+        ],
+        [
+          354.964,
+          97.885,
+          null,
+          null
+        ],
+        [
+          357.963,
+          97.934,
+          null,
+          null
+        ],
+        [
+          360.963,
+          97.983,
+          null,
+          null
+        ],
+        [
+          363.961,
+          98.093,
+          null,
+          null
+        ],
+        [
+          366.957,
+          98.236,
+          null,
+          null
+        ],
+        [
+          369.954,
+          98.379,
+          null,
+          null
+        ],
+        [
+          372.95,
+          98.521,
+          null,
+          null
+        ],
+        [
+          375.947,
+          98.664,
+          null,
+          null
+        ],
+        [
+          378.944,
+          98.807,
+          null,
+          null
+        ],
+        [
+          381.94,
+          98.95,
+          null,
+          null
+        ],
+        [
+          384.937,
+          99.092,
+          null,
+          null
+        ],
+        [
+          387.933,
+          99.235,
+          null,
+          null
+        ],
+        [
+          390.93,
+          99.378,
+          null,
+          null
+        ],
+        [
+          393.927,
+          99.52,
+          null,
+          null
+        ],
+        [
+          396.923,
+          99.663,
+          null,
+          null
+        ],
+        [
+          399.92,
+          99.806,
+          null,
+          null
+        ],
+        [
+          402.916,
+          99.948,
+          null,
+          null
+        ],
+        [
+          405.913,
+          100.091,
+          null,
+          null
+        ],
+        [
+          408.91,
+          100.234,
+          null,
+          null
+        ],
+        [
+          411.906,
+          100.376,
+          null,
+          null
+        ],
+        [
+          414.903,
+          100.519,
+          null,
+          null
+        ],
+        [
+          417.899,
+          100.662,
+          null,
+          null
+        ],
+        [
+          420.896,
+          100.805,
+          null,
+          null
+        ],
+        [
+          423.893,
+          100.947,
+          null,
+          null
+        ],
+        [
+          426.889,
+          101.09,
+          null,
+          null
+        ],
+        [
+          429.886,
+          101.233,
+          null,
+          null
+        ],
+        [
+          432.882,
+          101.375,
+          null,
+          null
+        ],
+        [
+          435.879,
+          101.518,
+          null,
+          null
+        ],
+        [
+          438.876,
+          101.661,
+          null,
+          null
+        ],
+        [
+          441.872,
+          101.803,
+          null,
+          null
+        ],
+        [
+          444.869,
+          101.946,
+          null,
+          null
+        ],
+        [
+          447.852,
+          102.242,
+          null,
+          null
+        ],
+        [
+          450.827,
+          102.63,
+          null,
+          null
+        ],
+        [
+          453.801,
+          103.018,
+          null,
+          null
+        ],
+        [
+          456.776,
+          103.406,
+          null,
+          null
+        ],
+        [
+          459.751,
+          103.794,
+          null,
+          null
+        ],
+        [
+          462.726,
+          104.182,
+          null,
+          null
+        ],
+        [
+          465.701,
+          104.57,
+          null,
+          null
+        ],
+        [
+          468.675,
+          104.958,
+          null,
+          null
+        ],
+        [
+          471.65,
+          105.346,
+          null,
+          null
+        ],
+        [
+          474.625,
+          105.734,
+          null,
+          null
+        ],
+        [
+          477.6,
+          106.122,
+          null,
+          null
+        ],
+        [
+          480.575,
+          106.51,
+          null,
+          null
+        ],
+        [
+          483.549,
+          106.898,
+          null,
+          null
+        ],
+        [
+          486.524,
+          107.286,
+          null,
+          null
+        ],
+        [
+          489.499,
+          107.674,
+          null,
+          null
+        ],
+        [
+          492.338,
+          108.338,
+          null,
+          null
+        ],
+        [
+          494.459,
+          110.459,
+          null,
+          null
+        ],
+        [
+          496.581,
+          112.581,
+          null,
+          null
+        ],
+        [
+          498.702,
+          114.702,
+          null,
+          null
+        ],
+        [
+          500.699,
+          116.931,
+          null,
+          null
+        ],
+        [
+          502.499,
+          119.331,
+          null,
+          null
+        ],
+        [
+          504.299,
+          121.731,
+          null,
+          null
+        ],
+        [
+          506.073,
+          124.147,
+          null,
+          null
+        ],
+        [
+          507.415,
+          126.83,
+          null,
+          null
+        ],
+        [
+          508.757,
+          129.513,
+          null,
+          null
+        ],
+        [
+          510.053,
+          132.213,
+          null,
+          null
+        ],
+        [
+          510.781,
+          135.124,
+          null,
+          null
+        ],
+        [
+          511.509,
+          138.034,
+          null,
+          null
+        ],
+        [
+          512.0,
+          140.974,
+          null,
+          null
+        ],
+        [
+          512.0,
+          143.974,
+          null,
+          null
+        ],
+        [
+          512.0,
+          146.974,
+          null,
+          null
+        ],
+        [
+          512.479,
+          149.915,
+          null,
+          null
+        ],
+        [
+          513.206,
+          152.825,
+          null,
+          null
+        ],
+        [
+          513.934,
+          155.736,
+          null,
+          null
+        ],
+        [
+          515.22,
+          158.44,
+          null,
+          null
+        ],
+        [
+          516.561,
+          161.123,
+          null,
+          null
+        ],
+        [
+          517.903,
+          163.806,
+          null,
+          null
+        ],
+        [
+          519.67,
+          166.227,
+          null,
+          null
+        ],
+        [
+          521.47,
+          168.627,
+          null,
+          null
+        ],
+        [
+          523.27,
+          171.027,
+          null,
+          null
+        ],
+        [
+          525.261,
+          173.261,
+          null,
+          null
+        ],
+        [
+          527.382,
+          175.382,
+          null,
+          null
+        ],
+        [
+          529.504,
+          177.504,
+          null,
+          null
+        ],
+        [
+          531.625,
+          179.625,
+          null,
+          null
+        ],
+        [
+          532.555,
+          182.406,
+          null,
+          null
+        ],
+        [
+          533.23,
+          185.329,
+          null,
+          null
+        ],
+        [
+          533.904,
+          188.253,
+          null,
+          null
+        ],
+        [
+          534.579,
+          191.176,
+          null,
+          null
+        ],
+        [
+          535.254,
+          194.099,
+          null,
+          null
+        ],
+        [
+          535.928,
+          197.022,
+          null,
+          null
+        ],
+        [
+          536.603,
+          199.945,
+          null,
+          null
+        ],
+        [
+          537.277,
+          202.868,
+          null,
+          null
+        ],
+        [
+          537.952,
+          205.792,
+          null,
+          null
+        ],
+        [
+          538.252,
+          208.775,
+          null,
+          null
+        ],
+        [
+          538.524,
+          211.762,
+          null,
+          null
+        ],
+        [
+          538.795,
+          214.75,
+          null,
+          null
+        ],
+        [
+          539.067,
+          217.738,
+          null,
+          null
+        ],
+        [
+          539.339,
+          220.725,
+          null,
+          null
+        ],
+        [
+          539.61,
+          223.713,
+          null,
+          null
+        ],
+        [
+          539.882,
+          226.701,
+          null,
+          null
+        ],
+        [
+          540.153,
+          229.688,
+          null,
+          null
+        ],
+        [
+          540.425,
+          232.676,
+          null,
+          null
+        ],
+        [
+          540.697,
+          235.664,
+          null,
+          null
+        ],
+        [
+          540.968,
+          238.652,
+          null,
+          null
+        ],
+        [
+          541.24,
+          241.639,
+          null,
+          null
+        ],
+        [
+          541.512,
+          244.627,
+          null,
+          null
+        ],
+        [
+          541.783,
+          247.615,
+          null,
+          null
+        ],
+        [
+          542.019,
+          250.604,
+          null,
+          null
+        ],
+        [
+          542.116,
+          253.603,
+          null,
+          null
+        ],
+        [
+          542.213,
+          256.601,
+          null,
+          null
+        ],
+        [
+          542.31,
+          259.6,
+          null,
+          null
+        ],
+        [
+          542.406,
+          262.598,
+          null,
+          null
+        ],
+        [
+          542.503,
+          265.597,
+          null,
+          null
+        ],
+        [
+          542.6,
+          268.595,
+          null,
+          null
+        ],
+        [
+          542.697,
+          271.593,
+          null,
+          null
+        ],
+        [
+          542.793,
+          274.592,
+          null,
+          null
+        ],
+        [
+          542.89,
+          277.59,
+          null,
+          null
+        ],
+        [
+          542.987,
+          280.589,
+          null,
+          null
+        ],
+        [
+          543.083,
+          283.587,
+          null,
+          null
+        ],
+        [
+          543.18,
+          286.586,
+          null,
+          null
+        ],
+        [
+          543.277,
+          289.584,
+          null,
+          null
+        ],
+        [
+          543.374,
+          292.583,
+          null,
+          null
+        ],
+        [
+          543.47,
+          295.581,
+          null,
+          null
+        ],
+        [
+          543.567,
+          298.579,
+          null,
+          null
+        ],
+        [
+          543.664,
+          301.578,
+          null,
+          null
+        ],
+        [
+          543.761,
+          304.576,
+          null,
+          null
+        ],
+        [
+          543.857,
+          307.575,
+          null,
+          null
+        ],
+        [
+          543.954,
+          310.573,
+          null,
+          null
+        ],
+        [
+          544.0,
+          313.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          316.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          319.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          322.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          325.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          328.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          331.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          334.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          337.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          340.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          343.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          346.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          349.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          352.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          355.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          358.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          361.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          364.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          367.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          370.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          373.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          376.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          379.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          382.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          385.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          388.572,
+          null,
+          null
+        ],
+        [
+          544.0,
+          391.572,
+          null,
+          null
+        ],
+        [
+          543.917,
+          394.571,
+          null,
+          null
+        ],
+        [
+          543.82,
+          397.57,
+          null,
+          null
+        ],
+        [
+          543.724,
+          400.568,
+          null,
+          null
+        ],
+        [
+          543.627,
+          403.566,
+          null,
+          null
+        ],
+        [
+          543.53,
+          406.565,
+          null,
+          null
+        ],
+        [
+          543.433,
+          409.563,
+          null,
+          null
+        ],
+        [
+          543.337,
+          412.562,
+          null,
+          null
+        ],
+        [
+          543.24,
+          415.56,
+          null,
+          null
+        ],
+        [
+          543.143,
+          418.559,
+          null,
+          null
+        ],
+        [
+          543.047,
+          421.557,
+          null,
+          null
+        ],
+        [
+          542.95,
+          424.556,
+          null,
+          null
+        ],
+        [
+          542.853,
+          427.554,
+          null,
+          null
+        ],
+        [
+          542.756,
+          430.552,
+          null,
+          null
+        ],
+        [
+          542.66,
+          433.551,
+          null,
+          null
+        ],
+        [
+          542.563,
+          436.549,
+          null,
+          null
+        ],
+        [
+          542.466,
+          439.548,
+          null,
+          null
+        ],
+        [
+          542.369,
+          442.546,
+          null,
+          null
+        ],
+        [
+          542.273,
+          445.545,
+          null,
+          null
+        ],
+        [
+          542.176,
+          448.543,
+          null,
+          null
+        ],
+        [
+          542.079,
+          451.542,
+          null,
+          null
+        ],
+        [
+          541.951,
+          454.538,
+          null,
+          null
+        ],
+        [
+          541.679,
+          457.526,
+          null,
+          null
+        ],
+        [
+          541.408,
+          460.513,
+          null,
+          null
+        ],
+        [
+          541.136,
+          463.501,
+          null,
+          null
+        ],
+        [
+          540.865,
+          466.489,
+          null,
+          null
+        ],
+        [
+          540.593,
+          469.476,
+          null,
+          null
+        ],
+        [
+          540.321,
+          472.464,
+          null,
+          null
+        ],
+        [
+          540.05,
+          475.452,
+          null,
+          null
+        ],
+        [
+          539.778,
+          478.439,
+          null,
+          null
+        ],
+        [
+          539.507,
+          481.427,
+          null,
+          null
+        ],
+        [
+          539.235,
+          484.415,
+          null,
+          null
+        ],
+        [
+          538.963,
+          487.402,
+          null,
+          null
+        ],
+        [
+          538.692,
+          490.39,
+          null,
+          null
+        ],
+        [
+          538.42,
+          493.378,
+          null,
+          null
+        ],
+        [
+          538.149,
+          496.366,
+          null,
+          null
+        ],
+        [
+          537.694,
+          499.324,
+          null,
+          null
+        ],
+        [
+          537.02,
+          502.247,
+          null,
+          null
+        ],
+        [
+          536.345,
+          505.17,
+          null,
+          null
+        ],
+        [
+          535.671,
+          508.094,
+          null,
+          null
+        ],
+        [
+          534.996,
+          511.017,
+          null,
+          null
+        ],
+        [
+          534.322,
+          513.94,
+          null,
+          null
+        ],
+        [
+          533.647,
+          516.863,
+          null,
+          null
+        ],
+        [
+          532.972,
+          519.786,
+          null,
+          null
+        ],
+        [
+          532.298,
+          522.709,
+          null,
+          null
+        ],
+        [
+          530.815,
+          525.185,
+          null,
+          null
+        ],
+        [
+          528.694,
+          527.306,
+          null,
+          null
+        ],
+        [
+          526.573,
+          529.427,
+          null,
+          null
+        ],
+        [
+          524.451,
+          531.549,
+          null,
+          null
+        ],
+        [
+          522.785,
+          534.025,
+          null,
+          null
+        ],
+        [
+          521.241,
+          536.598,
+          null,
+          null
+        ],
+        [
+          519.698,
+          539.17,
+          null,
+          null
+        ],
+        [
+          518.154,
+          541.743,
+          null,
+          null
+        ],
+        [
+          517.146,
+          544.561,
+          null,
+          null
+        ],
+        [
+          516.198,
+          547.407,
+          null,
+          null
+        ],
+        [
+          515.249,
+          550.253,
+          null,
+          null
+        ],
+        [
+          514.3,
+          553.099,
+          null,
+          null
+        ],
+        [
+          513.71,
+          556.03,
+          null,
+          null
+        ],
+        [
+          513.286,
+          559.0,
+          null,
+          null
+        ],
+        [
+          512.861,
+          561.97,
+          null,
+          null
+        ],
+        [
+          512.437,
+          564.94,
+          null,
+          null
+        ],
+        [
+          512.013,
+          567.91,
+          null,
+          null
+        ],
+        [
+          512.0,
+          570.909,
+          null,
+          null
+        ],
+        [
+          512.0,
+          573.909,
+          null,
+          null
+        ],
+        [
+          512.0,
+          576.909,
+          null,
+          null
+        ],
+        [
+          512.0,
+          579.909,
+          null,
+          null
+        ],
+        [
+          512.0,
+          582.909,
+          null,
+          null
+        ],
+        [
+          511.73,
+          585.889,
+          null,
+          null
+        ],
+        [
+          511.306,
+          588.859,
+          null,
+          null
+        ],
+        [
+          510.882,
+          591.829,
+          null,
+          null
+        ],
+        [
+          510.457,
+          594.799,
+          null,
+          null
+        ],
+        [
+          510.033,
+          597.769,
+          null,
+          null
+        ],
+        [
+          509.125,
+          600.624,
+          null,
+          null
+        ],
+        [
+          508.176,
+          603.471,
+          null,
+          null
+        ],
+        [
+          507.228,
+          606.317,
+          null,
+          null
+        ],
+        [
+          506.279,
+          609.163,
+          null,
+          null
+        ],
+        [
+          504.911,
+          611.816,
+          null,
+          null
+        ],
+        [
+          503.367,
+          614.388,
+          null,
+          null
+        ],
+        [
+          501.824,
+          616.961,
+          null,
+          null
+        ],
+        [
+          500.28,
+          619.533,
+          null,
+          null
+        ],
+        [
+          498.264,
+          621.736,
+          null,
+          null
+        ],
+        [
+          496.142,
+          623.858,
+          null,
+          null
+        ],
+        [
+          494.021,
+          625.979,
+          null,
+          null
+        ],
+        [
+          491.915,
+          628.113,
+          null,
+          null
+        ],
+        [
+          490.115,
+          630.513,
+          null,
+          null
+        ],
+        [
+          488.315,
+          632.913,
+          null,
+          null
+        ],
+        [
+          486.515,
+          635.313,
+          null,
+          null
+        ],
+        [
+          485.042,
+          637.916,
+          null,
+          null
+        ],
+        [
+          483.701,
+          640.599,
+          null,
+          null
+        ],
+        [
+          482.359,
+          643.282,
+          null,
+          null
+        ],
+        [
+          481.467,
+          646.132,
+          null,
+          null
+        ],
+        [
+          480.739,
+          649.042,
+          null,
+          null
+        ],
+        [
+          480.012,
+          651.953,
+          null,
+          null
+        ],
+        [
+          480.0,
+          654.951,
+          null,
+          null
+        ],
+        [
+          480.0,
+          657.951,
+          null,
+          null
+        ],
+        [
+          479.098,
+          660.301,
+          null,
+          null
+        ],
+        [
+          476.252,
+          661.249,
+          null,
+          null
+        ],
+        [
+          473.405,
+          662.198,
+          null,
+          null
+        ],
+        [
+          470.559,
+          663.147,
+          null,
+          null
+        ],
+        [
+          467.713,
+          664.096,
+          null,
+          null
+        ],
+        [
+          464.867,
+          665.044,
+          null,
+          null
+        ],
+        [
+          462.021,
+          665.993,
+          null,
+          null
+        ],
+        [
+          459.041,
+          666.329,
+          null,
+          null
+        ],
+        [
+          456.059,
+          666.66,
+          null,
+          null
+        ],
+        [
+          453.077,
+          666.991,
+          null,
+          null
+        ],
+        [
+          450.096,
+          667.323,
+          null,
+          null
+        ],
+        [
+          447.114,
+          667.654,
+          null,
+          null
+        ],
+        [
+          444.132,
+          667.985,
+          null,
+          null
+        ],
+        [
+          441.151,
+          668.317,
+          null,
+          null
+        ],
+        [
+          438.169,
+          668.648,
+          null,
+          null
+        ],
+        [
+          435.187,
+          668.979,
+          null,
+          null
+        ],
+        [
+          432.206,
+          669.31,
+          null,
+          null
+        ],
+        [
+          429.224,
+          669.642,
+          null,
+          null
+        ],
+        [
+          426.242,
+          669.973,
+          null,
+          null
+        ],
+        [
+          423.246,
+          670.102,
+          null,
+          null
+        ],
+        [
+          420.248,
+          670.213,
+          null,
+          null
+        ],
+        [
+          417.25,
+          670.324,
+          null,
+          null
+        ],
+        [
+          414.252,
+          670.435,
+          null,
+          null
+        ],
+        [
+          411.254,
+          670.546,
+          null,
+          null
+        ],
+        [
+          408.256,
+          670.657,
+          null,
+          null
+        ],
+        [
+          405.258,
+          670.768,
+          null,
+          null
+        ],
+        [
+          402.26,
+          670.879,
+          null,
+          null
+        ],
+        [
+          399.262,
+          670.99,
+          null,
+          null
+        ],
+        [
+          396.264,
+          671.101,
+          null,
+          null
+        ],
+        [
+          393.266,
+          671.212,
+          null,
+          null
+        ],
+        [
+          390.268,
+          671.323,
+          null,
+          null
+        ],
+        [
+          387.271,
+          671.434,
+          null,
+          null
+        ],
+        [
+          384.273,
+          671.545,
+          null,
+          null
+        ],
+        [
+          381.275,
+          671.656,
+          null,
+          null
+        ],
+        [
+          378.277,
+          671.768,
+          null,
+          null
+        ],
+        [
+          375.279,
+          671.879,
+          null,
+          null
+        ],
+        [
+          372.281,
+          671.99,
+          null,
+          null
+        ],
+        [
+          369.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          366.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          363.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          360.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          357.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          354.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          351.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          348.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          345.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          342.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          339.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          336.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          333.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          330.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          327.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          324.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          321.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          318.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          315.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          312.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          309.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          306.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          303.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          300.281,
+          672.0,
+          null,
+          null
+        ],
+        [
+          297.282,
+          671.909,
+          null,
+          null
+        ],
+        [
+          294.284,
+          671.809,
+          null,
+          null
+        ],
+        [
+          291.286,
+          671.71,
+          null,
+          null
+        ],
+        [
+          288.287,
+          671.61,
+          null,
+          null
+        ],
+        [
+          285.289,
+          671.51,
+          null,
+          null
+        ],
+        [
+          282.291,
+          671.41,
+          null,
+          null
+        ],
+        [
+          279.292,
+          671.31,
+          null,
+          null
+        ],
+        [
+          276.294,
+          671.21,
+          null,
+          null
+        ],
+        [
+          273.296,
+          671.11,
+          null,
+          null
+        ],
+        [
+          270.297,
+          671.01,
+          null,
+          null
+        ],
+        [
+          267.299,
+          670.91,
+          null,
+          null
+        ],
+        [
+          264.301,
+          670.81,
+          null,
+          null
+        ],
+        [
+          261.302,
+          670.71,
+          null,
+          null
+        ],
+        [
+          258.304,
+          670.61,
+          null,
+          null
+        ],
+        [
+          255.306,
+          670.51,
+          null,
+          null
+        ],
+        [
+          252.307,
+          670.41,
+          null,
+          null
+        ],
+        [
+          249.309,
+          670.31,
+          null,
+          null
+        ],
+        [
+          246.311,
+          670.21,
+          null,
+          null
+        ],
+        [
+          243.312,
+          670.11,
+          null,
+          null
+        ],
+        [
+          240.314,
+          670.01,
+          null,
+          null
+        ],
+        [
+          237.324,
+          669.777,
+          null,
+          null
+        ],
+        [
+          234.334,
+          669.528,
+          null,
+          null
+        ],
+        [
+          231.344,
+          669.279,
+          null,
+          null
+        ],
+        [
+          228.355,
+          669.03,
+          null,
+          null
+        ],
+        [
+          225.365,
+          668.78,
+          null,
+          null
+        ],
+        [
+          222.375,
+          668.531,
+          null,
+          null
+        ],
+        [
+          219.386,
+          668.282,
+          null,
+          null
+        ],
+        [
+          216.396,
+          668.033,
+          null,
+          null
+        ],
+        [
+          213.406,
+          667.784,
+          null,
+          null
+        ],
+        [
+          210.417,
+          667.535,
+          null,
+          null
+        ],
+        [
+          207.427,
+          667.286,
+          null,
+          null
+        ],
+        [
+          204.438,
+          667.036,
+          null,
+          null
+        ],
+        [
+          201.448,
+          666.787,
+          null,
+          null
+        ],
+        [
+          198.458,
+          666.538,
+          null,
+          null
+        ],
+        [
+          195.469,
+          666.289,
+          null,
+          null
+        ],
+        [
+          192.479,
+          666.04,
+          null,
+          null
+        ],
+        [
+          189.515,
+          665.586,
+          null,
+          null
+        ],
+        [
+          186.556,
+          665.093,
+          null,
+          null
+        ],
+        [
+          183.597,
+          664.599,
+          null,
+          null
+        ],
+        [
+          180.637,
+          664.106,
+          null,
+          null
+        ],
+        [
+          177.678,
+          663.613,
+          null,
+          null
+        ],
+        [
+          174.719,
+          663.12,
+          null,
+          null
+        ],
+        [
+          171.76,
+          662.627,
+          null,
+          null
+        ],
+        [
+          168.801,
+          662.133,
+          null,
+          null
+        ],
+        [
+          165.841,
+          661.64,
+          null,
+          null
+        ],
+        [
+          162.882,
+          661.147,
+          null,
+          null
+        ],
+        [
+          159.923,
+          660.654,
+          null,
+          null
+        ],
+        [
+          156.964,
+          660.161,
+          null,
+          null
+        ],
+        [
+          154.081,
+          659.36,
+          null,
+          null
+        ],
+        [
+          151.235,
+          658.412,
+          null,
+          null
+        ],
+        [
+          148.389,
+          657.463,
+          null,
+          null
+        ],
+        [
+          145.543,
+          656.514,
+          null,
+          null
+        ],
+        [
+          142.697,
+          655.566,
+          null,
+          null
+        ],
+        [
+          139.851,
+          654.617,
+          null,
+          null
+        ],
+        [
+          137.005,
+          653.668,
+          null,
+          null
+        ],
+        [
+          134.159,
+          652.72,
+          null,
+          null
+        ],
+        [
+          131.285,
+          651.881,
+          null,
+          null
+        ],
+        [
+          128.326,
+          651.388,
+          null,
+          null
+        ],
+        [
+          125.367,
+          650.894,
+          null,
+          null
+        ],
+        [
+          122.408,
+          650.401,
+          null,
+          null
+        ],
+        [
+          119.449,
+          649.908,
+          null,
+          null
+        ],
+        [
+          116.489,
+          649.415,
+          null,
+          null
+        ],
+        [
+          113.53,
+          648.922,
+          null,
+          null
+        ],
+        [
+          110.571,
+          648.429,
+          null,
+          null
+        ],
+        [
+          107.612,
+          647.935,
+          null,
+          null
+        ],
+        [
+          104.653,
+          647.442,
+          null,
+          null
+        ],
+        [
+          101.694,
+          646.949,
+          null,
+          null
+        ],
+        [
+          98.734,
+          646.456,
+          null,
+          null
+        ],
+        [
+          95.773,
+          645.981,
+          null,
+          null
+        ],
+        [
+          92.783,
+          645.732,
+          null,
+          null
+        ],
+        [
+          89.794,
+          645.483,
+          null,
+          null
+        ],
+        [
+          86.804,
+          645.234,
+          null,
+          null
+        ],
+        [
+          83.814,
+          644.985,
+          null,
+          null
+        ],
+        [
+          80.825,
+          644.735,
+          null,
+          null
+        ],
+        [
+          77.835,
+          644.486,
+          null,
+          null
+        ],
+        [
+          74.845,
+          644.237,
+          null,
+          null
+        ],
+        [
+          71.856,
+          643.988,
+          null,
+          null
+        ],
+        [
+          68.866,
+          643.739,
+          null,
+          null
+        ],
+        [
+          65.876,
+          643.49,
+          null,
+          null
+        ],
+        [
+          62.887,
+          643.241,
+          null,
+          null
+        ],
+        [
+          59.897,
+          642.991,
+          null,
+          null
+        ],
+        [
+          56.908,
+          642.742,
+          null,
+          null
+        ],
+        [
+          53.918,
+          642.493,
+          null,
+          null
+        ],
+        [
+          50.928,
+          642.244,
+          null,
+          null
+        ],
+        [
+          47.938,
+          641.998,
+          null,
+          null
+        ],
+        [
+          44.94,
+          641.898,
+          null,
+          null
+        ],
+        [
+          41.942,
+          641.798,
+          null,
+          null
+        ],
+        [
+          38.943,
+          641.698,
+          null,
+          null
+        ],
+        [
+          35.945,
+          641.598,
+          null,
+          null
+        ],
+        [
+          32.947,
+          641.498,
+          null,
+          null
+        ],
+        [
+          29.948,
+          641.398,
+          null,
+          null
+        ],
+        [
+          26.95,
+          641.298,
+          null,
+          null
+        ],
+        [
+          23.952,
+          641.198,
+          null,
+          null
+        ],
+        [
+          20.953,
+          641.098,
+          null,
+          null
+        ],
+        [
+          17.955,
+          640.999,
+          null,
+          null
+        ],
+        [
+          14.957,
+          640.899,
+          null,
+          null
+        ],
+        [
+          11.958,
+          640.799,
+          null,
+          null
+        ],
+        [
+          8.96,
+          640.699,
+          null,
+          null
+        ],
+        [
+          5.962,
+          640.599,
+          null,
+          null
+        ],
+        [
+          2.963,
+          640.499,
+          null,
+          null
+        ],
+        [
+          -0.035,
+          640.399,
+          null,
+          null
+        ],
+        [
+          -3.033,
+          640.299,
+          null,
+          null
+        ],
+        [
+          -6.032,
+          640.199,
+          null,
+          null
+        ],
+        [
+          -9.03,
+          640.099,
+          null,
+          null
+        ],
+        [
+          -12.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -15.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -18.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -21.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -24.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -27.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -30.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -33.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -36.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -39.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -42.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -45.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -48.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -51.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -54.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -57.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -60.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -63.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -66.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -69.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -72.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -75.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -78.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -81.028,
+          640.0,
+          null,
+          null
+        ],
+        [
+          -84.028,
+          639.999,
+          null,
+          null
+        ],
+        [
+          -87.026,
+          639.892,
+          null,
+          null
+        ],
+        [
+          -90.024,
+          639.785,
+          null,
+          null
+        ],
+        [
+          -93.022,
+          639.678,
+          null,
+          null
+        ],
+        [
+          -96.021,
+          639.571,
+          null,
+          null
+        ],
+        [
+          -99.019,
+          639.464,
+          null,
+          null
+        ],
+        [
+          -102.017,
+          639.357,
+          null,
+          null
+        ],
+        [
+          -105.015,
+          639.249,
+          null,
+          null
+        ],
+        [
+          -108.013,
+          639.142,
+          null,
+          null
+        ],
+        [
+          -111.011,
+          639.035,
+          null,
+          null
+        ],
+        [
+          -114.009,
+          638.928,
+          null,
+          null
+        ],
+        [
+          -117.007,
+          638.821,
+          null,
+          null
+        ],
+        [
+          -120.005,
+          638.714,
+          null,
+          null
+        ],
+        [
+          -123.003,
+          638.607,
+          null,
+          null
+        ],
+        [
+          -126.001,
+          638.5,
+          null,
+          null
+        ],
+        [
+          -129.0,
+          638.393,
+          null,
+          null
+        ],
+        [
+          -131.998,
+          638.286,
+          null,
+          null
+        ],
+        [
+          -134.996,
+          638.179,
+          null,
+          null
+        ],
+        [
+          -137.994,
+          638.072,
+          null,
+          null
+        ],
+        [
+          -140.988,
+          637.901,
+          null,
+          null
+        ],
+        [
+          -143.973,
+          637.603,
+          null,
+          null
+        ],
+        [
+          -146.958,
+          637.304,
+          null,
+          null
+        ],
+        [
+          -149.943,
+          637.006,
+          null,
+          null
+        ],
+        [
+          -152.928,
+          636.707,
+          null,
+          null
+        ],
+        [
+          -155.913,
+          636.409,
+          null,
+          null
+        ],
+        [
+          -158.898,
+          636.11,
+          null,
+          null
+        ],
+        [
+          -161.883,
+          635.812,
+          null,
+          null
+        ],
+        [
+          -164.869,
+          635.513,
+          null,
+          null
+        ],
+        [
+          -167.854,
+          635.215,
+          null,
+          null
+        ],
+        [
+          -170.839,
+          634.916,
+          null,
+          null
+        ],
+        [
+          -173.824,
+          634.618,
+          null,
+          null
+        ],
+        [
+          -176.809,
+          634.319,
+          null,
+          null
+        ],
+        [
+          -179.794,
+          634.021,
+          null,
+          null
+        ],
+        [
+          -182.71,
+          633.323,
+          null,
+          null
+        ],
+        [
+          -185.62,
+          632.595,
+          null,
+          null
+        ],
+        [
+          -188.531,
+          631.867,
+          null,
+          null
+        ],
+        [
+          -191.441,
+          631.14,
+          null,
+          null
+        ],
+        [
+          -194.351,
+          630.412,
+          null,
+          null
+        ],
+        [
+          -197.262,
+          629.685,
+          null,
+          null
+        ],
+        [
+          -200.172,
+          628.957,
+          null,
+          null
+        ],
+        [
+          -203.083,
+          628.229,
+          null,
+          null
+        ],
+        [
+          -205.453,
+          626.547,
+          null,
+          null
+        ],
+        [
+          -207.574,
+          624.426,
+          null,
+          null
+        ],
+        [
+          -209.695,
+          622.305,
+          null,
+          null
+        ],
+        [
+          -211.817,
+          620.183,
+          null,
+          null
+        ],
+        [
+          -214.35,
+          618.59,
+          null,
+          null
+        ],
+        [
+          -216.923,
+          617.046,
+          null,
+          null
+        ],
+        [
+          -219.495,
+          615.503,
+          null,
+          null
+        ],
+        [
+          -222.075,
+          613.975,
+          null,
+          null
+        ],
+        [
+          -224.921,
+          613.026,
+          null,
+          null
+        ],
+        [
+          -227.767,
+          612.078,
+          null,
+          null
+        ],
+        [
+          -230.613,
+          611.129,
+          null,
+          null
+        ],
+        [
+          -233.459,
+          610.18,
+          null,
+          null
+        ],
+        [
+          -236.405,
+          609.656,
+          null,
+          null
+        ],
+        [
+          -239.375,
+          609.232,
+          null,
+          null
+        ],
+        [
+          -242.345,
+          608.808,
+          null,
+          null
+        ],
+        [
+          -245.315,
+          608.384,
+          null,
+          null
+        ],
+        [
+          -248.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -251.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -254.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -257.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -260.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -263.288,
+          608.0,
+          null,
+          null
+        ],
+        [
+          -266.256,
+          607.624,
+          null,
+          null
+        ],
+        [
+          -269.216,
+          607.131,
+          null,
+          null
+        ],
+        [
+          -272.175,
+          606.638,
+          null,
+          null
+        ],
+        [
+          -275.134,
+          606.144,
+          null,
+          null
+        ],
+        [
+          -277.898,
+          605.051,
+          null,
+          null
+        ],
+        [
+          -280.581,
+          603.709,
+          null,
+          null
+        ],
+        [
+          -283.265,
+          602.368,
+          null,
+          null
+        ],
+        [
+          -285.208,
+          600.188,
+          null,
+          null
+        ],
+        [
+          -286.872,
+          597.692,
+          null,
+          null
+        ],
+        [
+          -288.0,
+          595.033,
+          null,
+          null
+        ],
+        [
+          -288.0,
+          592.033,
+          null,
+          null
+        ],
+        [
+          -288.0,
+          589.033,
+          null,
+          null
+        ],
+        [
+          -288.477,
+          586.092,
+          null,
+          null
+        ],
+        [
+          -289.205,
+          583.182,
+          null,
+          null
+        ],
+        [
+          -289.932,
+          580.271,
+          null,
+          null
+        ],
+        [
+          -291.217,
+          577.567,
+          null,
+          null
+        ],
+        [
+          -292.558,
+          574.883,
+          null,
+          null
+        ],
+        [
+          -293.9,
+          572.2,
+          null,
+          null
+        ],
+        [
+          -295.666,
+          569.779,
+          null,
+          null
+        ],
+        [
+          -297.466,
+          567.379,
+          null,
+          null
+        ],
+        [
+          -299.266,
+          564.979,
+          null,
+          null
+        ],
+        [
+          -301.256,
+          562.744,
+          null,
+          null
+        ],
+        [
+          -303.377,
+          560.623,
+          null,
+          null
+        ],
+        [
+          -305.499,
+          558.501,
+          null,
+          null
+        ],
+        [
+          -307.62,
+          556.38,
+          null,
+          null
+        ],
+        [
+          -309.741,
+          554.259,
+          null,
+          null
+        ],
+        [
+          -311.863,
+          552.137,
+          null,
+          null
+        ],
+        [
+          -313.984,
+          550.016,
+          null,
+          null
+        ],
+        [
+          -316.105,
+          547.895,
+          null,
+          null
+        ],
+        [
+          -318.227,
+          545.773,
+          null,
+          null
+        ],
+        [
+          -320.0,
+          544.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmul6ovm_n8ok",
+      "tool": "pen",
+      "points": [
+        [
+          -1024.0,
+          448.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          451.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          454.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          457.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          460.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          463.0,
+          null,
+          null
+        ],
+        [
+          -1024.0,
+          466.0,
+          null,
+          null
+        ],
+        [
+          -1023.757,
+          468.97,
+          null,
+          null
+        ],
+        [
+          -1023.03,
+          471.881,
+          null,
+          null
+        ],
+        [
+          -1022.302,
+          474.791,
+          null,
+          null
+        ],
+        [
+          -1021.216,
+          477.569,
+          null,
+          null
+        ],
+        [
+          -1019.874,
+          480.252,
+          null,
+          null
+        ],
+        [
+          -1018.532,
+          482.935,
+          null,
+          null
+        ],
+        [
+          -1016.914,
+          485.448,
+          null,
+          null
+        ],
+        [
+          -1015.114,
+          487.848,
+          null,
+          null
+        ],
+        [
+          -1013.314,
+          490.248,
+          null,
+          null
+        ],
+        [
+          -1011.428,
+          492.572,
+          null,
+          null
+        ],
+        [
+          -1009.306,
+          494.694,
+          null,
+          null
+        ],
+        [
+          -1007.185,
+          496.815,
+          null,
+          null
+        ],
+        [
+          -1005.064,
+          498.936,
+          null,
+          null
+        ],
+        [
+          -1003.411,
+          501.375,
+          null,
+          null
+        ],
+        [
+          -1002.229,
+          504.132,
+          null,
+          null
+        ],
+        [
+          -1001.047,
+          506.89,
+          null,
+          null
+        ],
+        [
+          -999.865,
+          509.647,
+          null,
+          null
+        ],
+        [
+          -998.684,
+          512.405,
+          null,
+          null
+        ],
+        [
+          -997.752,
+          515.24,
+          null,
+          null
+        ],
+        [
+          -997.164,
+          518.181,
+          null,
+          null
+        ],
+        [
+          -996.575,
+          521.123,
+          null,
+          null
+        ],
+        [
+          -995.987,
+          524.065,
+          null,
+          null
+        ],
+        [
+          -995.399,
+          527.007,
+          null,
+          null
+        ],
+        [
+          -994.81,
+          529.948,
+          null,
+          null
+        ],
+        [
+          -994.222,
+          532.89,
+          null,
+          null
+        ],
+        [
+          -993.857,
+          535.863,
+          null,
+          null
+        ],
+        [
+          -993.627,
+          538.854,
+          null,
+          null
+        ],
+        [
+          -993.397,
+          541.845,
+          null,
+          null
+        ],
+        [
+          -993.166,
+          544.836,
+          null,
+          null
+        ],
+        [
+          -992.936,
+          547.827,
+          null,
+          null
+        ],
+        [
+          -992.706,
+          550.818,
+          null,
+          null
+        ],
+        [
+          -992.476,
+          553.81,
+          null,
+          null
+        ],
+        [
+          -992.246,
+          556.801,
+          null,
+          null
+        ],
+        [
+          -992.016,
+          559.792,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          562.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          565.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          568.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          571.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          574.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          577.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          580.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          583.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          586.791,
+          null,
+          null
+        ],
+        [
+          -992.0,
+          589.791,
+          null,
+          null
+        ],
+        [
+          -991.944,
+          592.789,
+          null,
+          null
+        ],
+        [
+          -991.73,
+          595.782,
+          null,
+          null
+        ],
+        [
+          -991.516,
+          598.774,
+          null,
+          null
+        ],
+        [
+          -991.302,
+          601.766,
+          null,
+          null
+        ],
+        [
+          -991.089,
+          604.759,
+          null,
+          null
+        ],
+        [
+          -990.875,
+          607.751,
+          null,
+          null
+        ],
+        [
+          -990.661,
+          610.744,
+          null,
+          null
+        ],
+        [
+          -990.447,
+          613.736,
+          null,
+          null
+        ],
+        [
+          -990.234,
+          616.728,
+          null,
+          null
+        ],
+        [
+          -990.02,
+          619.721,
+          null,
+          null
+        ],
+        [
+          -989.553,
+          622.683,
+          null,
+          null
+        ],
+        [
+          -989.06,
+          625.642,
+          null,
+          null
+        ],
+        [
+          -988.566,
+          628.601,
+          null,
+          null
+        ],
+        [
+          -988.073,
+          631.561,
+          null,
+          null
+        ],
+        [
+          -987.58,
+          634.52,
+          null,
+          null
+        ],
+        [
+          -987.087,
+          637.479,
+          null,
+          null
+        ],
+        [
+          -986.594,
+          640.438,
+          null,
+          null
+        ],
+        [
+          -986.1,
+          643.397,
+          null,
+          null
+        ],
+        [
+          -985.314,
+          646.288,
+          null,
+          null
+        ],
+        [
+          -984.451,
+          649.162,
+          null,
+          null
+        ],
+        [
+          -983.589,
+          652.035,
+          null,
+          null
+        ],
+        [
+          -982.727,
+          654.909,
+          null,
+          null
+        ],
+        [
+          -981.865,
+          657.782,
+          null,
+          null
+        ],
+        [
+          -981.003,
+          660.656,
+          null,
+          null
+        ],
+        [
+          -980.141,
+          663.529,
+          null,
+          null
+        ],
+        [
+          -978.878,
+          666.244,
+          null,
+          null
+        ],
+        [
+          -977.537,
+          668.927,
+          null,
+          null
+        ],
+        [
+          -976.195,
+          671.61,
+          null,
+          null
+        ],
+        [
+          -974.853,
+          674.293,
+          null,
+          null
+        ],
+        [
+          -973.512,
+          676.977,
+          null,
+          null
+        ],
+        [
+          -972.17,
+          679.66,
+          null,
+          null
+        ],
+        [
+          -970.968,
+          682.408,
+          null,
+          null
+        ],
+        [
+          -969.786,
+          685.165,
+          null,
+          null
+        ],
+        [
+          -968.604,
+          687.923,
+          null,
+          null
+        ],
+        [
+          -967.423,
+          690.68,
+          null,
+          null
+        ],
+        [
+          -966.241,
+          693.438,
+          null,
+          null
+        ],
+        [
+          -965.245,
+          696.266,
+          null,
+          null
+        ],
+        [
+          -964.296,
+          699.112,
+          null,
+          null
+        ],
+        [
+          -963.347,
+          701.958,
+          null,
+          null
+        ],
+        [
+          -962.399,
+          704.804,
+          null,
+          null
+        ],
+        [
+          -961.659,
+          707.705,
+          null,
+          null
+        ],
+        [
+          -961.071,
+          710.647,
+          null,
+          null
+        ],
+        [
+          -960.482,
+          713.589,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          716.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          719.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          722.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          725.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          728.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          731.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          734.541,
+          null,
+          null
+        ],
+        [
+          -960.0,
+          736.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmul6q1e_hf3m",
+      "tool": "pen",
+      "points": [
+        [
+          -992.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -989.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -986.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -983.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -980.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -977.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -974.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -971.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -968.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -965.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -962.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -959.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -956.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -953.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -950.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -947.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -944.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -941.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -938.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -935.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -932.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -929.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -926.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -923.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -920.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -917.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -914.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -911.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -908.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -905.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -902.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -899.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -893.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -890.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -887.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -884.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -881.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -878.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -875.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -872.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -869.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -866.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -863.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -860.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -857.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -854.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -851.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -848.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -845.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -842.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -839.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -836.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -833.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -830.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -827.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -824.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -821.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -818.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -815.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -812.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -809.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -806.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -803.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -800.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -797.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -794.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -791.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -788.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -785.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -782.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -779.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -776.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -773.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -770.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -767.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -764.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -761.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -758.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -755.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -752.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -749.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -746.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -743.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -740.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -737.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -734.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -731.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -728.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -725.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -722.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -719.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -716.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -713.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -710.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -707.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -704.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -701.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -698.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -695.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -692.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -689.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -686.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -683.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -680.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -677.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -674.0,
+          416.0,
+          null,
+          null
+        ],
+        [
+          -671.0,
+          416.021,
+          null,
+          null
+        ],
+        [
+          -668.001,
+          416.083,
+          null,
+          null
+        ],
+        [
+          -665.002,
+          416.146,
+          null,
+          null
+        ],
+        [
+          -662.002,
+          416.208,
+          null,
+          null
+        ],
+        [
+          -659.003,
+          416.271,
+          null,
+          null
+        ],
+        [
+          -656.003,
+          416.333,
+          null,
+          null
+        ],
+        [
+          -653.004,
+          416.396,
+          null,
+          null
+        ],
+        [
+          -650.005,
+          416.458,
+          null,
+          null
+        ],
+        [
+          -647.005,
+          416.521,
+          null,
+          null
+        ],
+        [
+          -644.006,
+          416.583,
+          null,
+          null
+        ],
+        [
+          -641.007,
+          416.646,
+          null,
+          null
+        ],
+        [
+          -638.007,
+          416.708,
+          null,
+          null
+        ],
+        [
+          -635.008,
+          416.771,
+          null,
+          null
+        ],
+        [
+          -632.009,
+          416.833,
+          null,
+          null
+        ],
+        [
+          -629.009,
+          416.896,
+          null,
+          null
+        ],
+        [
+          -626.01,
+          416.958,
+          null,
+          null
+        ],
+        [
+          -623.011,
+          417.021,
+          null,
+          null
+        ],
+        [
+          -620.011,
+          417.083,
+          null,
+          null
+        ],
+        [
+          -617.012,
+          417.146,
+          null,
+          null
+        ],
+        [
+          -614.013,
+          417.208,
+          null,
+          null
+        ],
+        [
+          -611.013,
+          417.271,
+          null,
+          null
+        ],
+        [
+          -608.014,
+          417.333,
+          null,
+          null
+        ],
+        [
+          -605.015,
+          417.396,
+          null,
+          null
+        ],
+        [
+          -602.015,
+          417.458,
+          null,
+          null
+        ],
+        [
+          -599.016,
+          417.521,
+          null,
+          null
+        ],
+        [
+          -596.016,
+          417.583,
+          null,
+          null
+        ],
+        [
+          -593.017,
+          417.645,
+          null,
+          null
+        ],
+        [
+          -590.018,
+          417.708,
+          null,
+          null
+        ],
+        [
+          -587.018,
+          417.77,
+          null,
+          null
+        ],
+        [
+          -584.019,
+          417.833,
+          null,
+          null
+        ],
+        [
+          -581.02,
+          417.895,
+          null,
+          null
+        ],
+        [
+          -578.02,
+          417.958,
+          null,
+          null
+        ],
+        [
+          -575.023,
+          418.061,
+          null,
+          null
+        ],
+        [
+          -572.029,
+          418.248,
+          null,
+          null
+        ],
+        [
+          -569.034,
+          418.435,
+          null,
+          null
+        ],
+        [
+          -566.04,
+          418.622,
+          null,
+          null
+        ],
+        [
+          -563.046,
+          418.81,
+          null,
+          null
+        ],
+        [
+          -560.052,
+          418.997,
+          null,
+          null
+        ],
+        [
+          -557.058,
+          419.184,
+          null,
+          null
+        ],
+        [
+          -554.064,
+          419.371,
+          null,
+          null
+        ],
+        [
+          -551.069,
+          419.558,
+          null,
+          null
+        ],
+        [
+          -548.075,
+          419.745,
+          null,
+          null
+        ],
+        [
+          -545.081,
+          419.932,
+          null,
+          null
+        ],
+        [
+          -542.087,
+          420.12,
+          null,
+          null
+        ],
+        [
+          -539.093,
+          420.307,
+          null,
+          null
+        ],
+        [
+          -536.099,
+          420.494,
+          null,
+          null
+        ],
+        [
+          -533.105,
+          420.681,
+          null,
+          null
+        ],
+        [
+          -530.11,
+          420.868,
+          null,
+          null
+        ],
+        [
+          -527.116,
+          421.055,
+          null,
+          null
+        ],
+        [
+          -524.122,
+          421.242,
+          null,
+          null
+        ],
+        [
+          -521.128,
+          421.43,
+          null,
+          null
+        ],
+        [
+          -518.134,
+          421.617,
+          null,
+          null
+        ],
+        [
+          -515.14,
+          421.804,
+          null,
+          null
+        ],
+        [
+          -512.145,
+          421.991,
+          null,
+          null
+        ],
+        [
+          -509.195,
+          422.526,
+          null,
+          null
+        ],
+        [
+          -506.246,
+          423.079,
+          null,
+          null
+        ],
+        [
+          -503.297,
+          423.632,
+          null,
+          null
+        ],
+        [
+          -500.349,
+          424.185,
+          null,
+          null
+        ],
+        [
+          -497.4,
+          424.737,
+          null,
+          null
+        ],
+        [
+          -494.452,
+          425.29,
+          null,
+          null
+        ],
+        [
+          -491.503,
+          425.843,
+          null,
+          null
+        ],
+        [
+          -488.554,
+          426.396,
+          null,
+          null
+        ],
+        [
+          -485.606,
+          426.949,
+          null,
+          null
+        ],
+        [
+          -482.657,
+          427.502,
+          null,
+          null
+        ],
+        [
+          -480.0,
+          428.297,
+          null,
+          null
+        ],
+        [
+          -480.0,
+          431.297,
+          null,
+          null
+        ],
+        [
+          -480.0,
+          434.297,
+          null,
+          null
+        ],
+        [
+          -479.686,
+          437.258,
+          null,
+          null
+        ],
+        [
+          -478.958,
+          440.168,
+          null,
+          null
+        ],
+        [
+          -478.23,
+          443.079,
+          null,
+          null
+        ],
+        [
+          -477.083,
+          445.834,
+          null,
+          null
+        ],
+        [
+          -475.741,
+          448.517,
+          null,
+          null
+        ],
+        [
+          -474.4,
+          451.201,
+          null,
+          null
+        ],
+        [
+          -472.736,
+          453.685,
+          null,
+          null
+        ],
+        [
+          -470.936,
+          456.085,
+          null,
+          null
+        ],
+        [
+          -469.136,
+          458.485,
+          null,
+          null
+        ],
+        [
+          -467.218,
+          460.782,
+          null,
+          null
+        ],
+        [
+          -465.097,
+          462.903,
+          null,
+          null
+        ],
+        [
+          -462.975,
+          465.025,
+          null,
+          null
+        ],
+        [
+          -460.854,
+          467.146,
+          null,
+          null
+        ],
+        [
+          -458.925,
+          469.434,
+          null,
+          null
+        ],
+        [
+          -457.125,
+          471.834,
+          null,
+          null
+        ],
+        [
+          -455.325,
+          474.234,
+          null,
+          null
+        ],
+        [
+          -453.646,
+          476.709,
+          null,
+          null
+        ],
+        [
+          -452.304,
+          479.392,
+          null,
+          null
+        ],
+        [
+          -450.962,
+          482.075,
+          null,
+          null
+        ],
+        [
+          -449.794,
+          484.823,
+          null,
+          null
+        ],
+        [
+          -449.067,
+          487.733,
+          null,
+          null
+        ],
+        [
+          -448.339,
+          490.644,
+          null,
+          null
+        ],
+        [
+          -448.0,
+          493.602,
+          null,
+          null
+        ],
+        [
+          -448.0,
+          496.602,
+          null,
+          null
+        ],
+        [
+          -448.0,
+          499.602,
+          null,
+          null
+        ],
+        [
+          -447.177,
+          502.468,
+          null,
+          null
+        ],
+        [
+          -446.229,
+          505.314,
+          null,
+          null
+        ],
+        [
+          -444.39,
+          507.61,
+          null,
+          null
+        ],
+        [
+          -442.268,
+          509.732,
+          null,
+          null
+        ],
+        [
+          -439.514,
+          510.829,
+          null,
+          null
+        ],
+        [
+          -436.668,
+          511.777,
+          null,
+          null
+        ],
+        [
+          -433.704,
+          512.0,
+          null,
+          null
+        ],
+        [
+          -430.704,
+          512.0,
+          null,
+          null
+        ],
+        [
+          -427.791,
+          512.209,
+          null,
+          null
+        ],
+        [
+          -425.669,
+          514.331,
+          null,
+          null
+        ],
+        [
+          -423.548,
+          516.452,
+          null,
+          null
+        ],
+        [
+          -421.744,
+          518.769,
+          null,
+          null
+        ],
+        [
+          -420.795,
+          521.615,
+          null,
+          null
+        ],
+        [
+          -419.846,
+          524.461,
+          null,
+          null
+        ],
+        [
+          -418.898,
+          527.307,
+          null,
+          null
+        ],
+        [
+          -417.982,
+          530.161,
+          null,
+          null
+        ],
+        [
+          -417.651,
+          533.142,
+          null,
+          null
+        ],
+        [
+          -417.32,
+          536.124,
+          null,
+          null
+        ],
+        [
+          -416.988,
+          539.106,
+          null,
+          null
+        ],
+        [
+          -416.657,
+          542.087,
+          null,
+          null
+        ],
+        [
+          -416.326,
+          545.069,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          548.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          551.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          554.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          557.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          560.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          563.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          566.051,
+          null,
+          null
+        ],
+        [
+          -416.0,
+          569.051,
+          null,
+          null
+        ],
+        [
+          -415.995,
+          572.051,
+          null,
+          null
+        ],
+        [
+          -415.696,
+          575.036,
+          null,
+          null
+        ],
+        [
+          -415.398,
+          578.021,
+          null,
+          null
+        ],
+        [
+          -415.099,
+          581.006,
+          null,
+          null
+        ],
+        [
+          -414.801,
+          583.991,
+          null,
+          null
+        ],
+        [
+          -414.502,
+          586.976,
+          null,
+          null
+        ],
+        [
+          -414.204,
+          589.961,
+          null,
+          null
+        ],
+        [
+          -413.769,
+          592.923,
+          null,
+          null
+        ],
+        [
+          -413.042,
+          595.833,
+          null,
+          null
+        ],
+        [
+          -412.314,
+          598.744,
+          null,
+          null
+        ],
+        [
+          -411.587,
+          601.654,
+          null,
+          null
+        ],
+        [
+          -410.859,
+          604.564,
+          null,
+          null
+        ],
+        [
+          -410.131,
+          607.475,
+          null,
+          null
+        ],
+        [
+          -408.9,
+          610.199,
+          null,
+          null
+        ],
+        [
+          -407.559,
+          612.882,
+          null,
+          null
+        ],
+        [
+          -406.217,
+          615.566,
+          null,
+          null
+        ],
+        [
+          -404.876,
+          618.249,
+          null,
+          null
+        ],
+        [
+          -403.263,
+          620.737,
+          null,
+          null
+        ],
+        [
+          -401.142,
+          622.858,
+          null,
+          null
+        ],
+        [
+          -399.02,
+          624.98,
+          null,
+          null
+        ],
+        [
+          -396.899,
+          627.101,
+          null,
+          null
+        ],
+        [
+          -395.319,
+          629.589,
+          null,
+          null
+        ],
+        [
+          -394.137,
+          632.346,
+          null,
+          null
+        ],
+        [
+          -392.956,
+          635.104,
+          null,
+          null
+        ],
+        [
+          -391.774,
+          637.861,
+          null,
+          null
+        ],
+        [
+          -390.592,
+          640.619,
+          null,
+          null
+        ],
+        [
+          -389.706,
+          643.468,
+          null,
+          null
+        ],
+        [
+          -389.118,
+          646.41,
+          null,
+          null
+        ],
+        [
+          -388.53,
+          649.351,
+          null,
+          null
+        ],
+        [
+          -387.941,
+          652.293,
+          null,
+          null
+        ],
+        [
+          -387.353,
+          655.235,
+          null,
+          null
+        ],
+        [
+          -386.765,
+          658.177,
+          null,
+          null
+        ],
+        [
+          -386.176,
+          661.118,
+          null,
+          null
+        ],
+        [
+          -385.839,
+          664.095,
+          null,
+          null
+        ],
+        [
+          -385.609,
+          667.086,
+          null,
+          null
+        ],
+        [
+          -385.379,
+          670.077,
+          null,
+          null
+        ],
+        [
+          -385.149,
+          673.068,
+          null,
+          null
+        ],
+        [
+          -384.919,
+          676.059,
+          null,
+          null
+        ],
+        [
+          -384.688,
+          679.051,
+          null,
+          null
+        ],
+        [
+          -384.458,
+          682.042,
+          null,
+          null
+        ],
+        [
+          -384.228,
+          685.033,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          688.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          691.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          694.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          697.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          700.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          703.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          706.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          709.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          712.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          715.024,
+          null,
+          null
+        ],
+        [
+          -384.0,
+          718.024,
+          null,
+          null
+        ],
+        [
+          -384.516,
+          720.885,
+          null,
+          null
+        ],
+        [
+          -386.028,
+          723.476,
+          null,
+          null
+        ],
+        [
+          -387.539,
+          726.067,
+          null,
+          null
+        ],
+        [
+          -389.051,
+          728.659,
+          null,
+          null
+        ],
+        [
+          -390.562,
+          731.25,
+          null,
+          null
+        ],
+        [
+          -392.074,
+          733.841,
+          null,
+          null
+        ],
+        [
+          -393.586,
+          736.433,
+          null,
+          null
+        ],
+        [
+          -395.097,
+          739.024,
+          null,
+          null
+        ],
+        [
+          -396.609,
+          741.615,
+          null,
+          null
+        ],
+        [
+          -398.208,
+          744.119,
+          null,
+          null
+        ],
+        [
+          -400.812,
+          745.607,
+          null,
+          null
+        ],
+        [
+          -403.417,
+          747.096,
+          null,
+          null
+        ],
+        [
+          -406.022,
+          748.584,
+          null,
+          null
+        ],
+        [
+          -408.627,
+          750.072,
+          null,
+          null
+        ],
+        [
+          -411.231,
+          751.561,
+          null,
+          null
+        ],
+        [
+          -413.836,
+          753.049,
+          null,
+          null
+        ],
+        [
+          -416.441,
+          754.538,
+          null,
+          null
+        ],
+        [
+          -419.046,
+          756.026,
+          null,
+          null
+        ],
+        [
+          -421.65,
+          757.514,
+          null,
+          null
+        ],
+        [
+          -424.255,
+          759.003,
+          null,
+          null
+        ],
+        [
+          -426.973,
+          760.185,
+          null,
+          null
+        ],
+        [
+          -429.92,
+          760.747,
+          null,
+          null
+        ],
+        [
+          -432.867,
+          761.308,
+          null,
+          null
+        ],
+        [
+          -435.814,
+          761.869,
+          null,
+          null
+        ],
+        [
+          -438.761,
+          762.431,
+          null,
+          null
+        ],
+        [
+          -441.708,
+          762.992,
+          null,
+          null
+        ],
+        [
+          -444.655,
+          763.553,
+          null,
+          null
+        ],
+        [
+          -447.602,
+          764.115,
+          null,
+          null
+        ],
+        [
+          -450.549,
+          764.676,
+          null,
+          null
+        ],
+        [
+          -453.496,
+          765.237,
+          null,
+          null
+        ],
+        [
+          -456.443,
+          765.799,
+          null,
+          null
+        ],
+        [
+          -459.39,
+          766.36,
+          null,
+          null
+        ],
+        [
+          -462.337,
+          766.921,
+          null,
+          null
+        ],
+        [
+          -465.284,
+          767.483,
+          null,
+          null
+        ],
+        [
+          -468.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -471.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -474.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -477.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -480.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -483.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -486.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -489.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -492.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -495.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -498.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -501.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -504.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -507.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -510.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -513.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -516.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -519.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -522.235,
+          768.0,
+          null,
+          null
+        ],
+        [
+          -525.234,
+          767.944,
+          null,
+          null
+        ],
+        [
+          -528.231,
+          767.808,
+          null,
+          null
+        ],
+        [
+          -531.228,
+          767.671,
+          null,
+          null
+        ],
+        [
+          -534.225,
+          767.535,
+          null,
+          null
+        ],
+        [
+          -537.221,
+          767.399,
+          null,
+          null
+        ],
+        [
+          -540.218,
+          767.263,
+          null,
+          null
+        ],
+        [
+          -543.215,
+          767.127,
+          null,
+          null
+        ],
+        [
+          -546.212,
+          766.99,
+          null,
+          null
+        ],
+        [
+          -549.209,
+          766.854,
+          null,
+          null
+        ],
+        [
+          -552.206,
+          766.718,
+          null,
+          null
+        ],
+        [
+          -555.203,
+          766.582,
+          null,
+          null
+        ],
+        [
+          -558.2,
+          766.445,
+          null,
+          null
+        ],
+        [
+          -561.197,
+          766.309,
+          null,
+          null
+        ],
+        [
+          -564.194,
+          766.173,
+          null,
+          null
+        ],
+        [
+          -567.19,
+          766.037,
+          null,
+          null
+        ],
+        [
+          -570.173,
+          765.728,
+          null,
+          null
+        ],
+        [
+          -573.15,
+          765.356,
+          null,
+          null
+        ],
+        [
+          -576.126,
+          764.984,
+          null,
+          null
+        ],
+        [
+          -579.103,
+          764.612,
+          null,
+          null
+        ],
+        [
+          -582.08,
+          764.24,
+          null,
+          null
+        ],
+        [
+          -585.057,
+          763.868,
+          null,
+          null
+        ],
+        [
+          -588.034,
+          763.496,
+          null,
+          null
+        ],
+        [
+          -591.011,
+          763.124,
+          null,
+          null
+        ],
+        [
+          -593.987,
+          762.752,
+          null,
+          null
+        ],
+        [
+          -596.964,
+          762.379,
+          null,
+          null
+        ],
+        [
+          -599.941,
+          762.007,
+          null,
+          null
+        ],
+        [
+          -602.817,
+          761.155,
+          null,
+          null
+        ],
+        [
+          -605.69,
+          760.293,
+          null,
+          null
+        ],
+        [
+          -608.564,
+          759.431,
+          null,
+          null
+        ],
+        [
+          -611.437,
+          758.569,
+          null,
+          null
+        ],
+        [
+          -614.311,
+          757.707,
+          null,
+          null
+        ],
+        [
+          -617.184,
+          756.845,
+          null,
+          null
+        ],
+        [
+          -620.042,
+          755.958,
+          null,
+          null
+        ],
+        [
+          -622.164,
+          753.836,
+          null,
+          null
+        ],
+        [
+          -624.285,
+          751.715,
+          null,
+          null
+        ],
+        [
+          -626.406,
+          749.594,
+          null,
+          null
+        ],
+        [
+          -628.72,
+          747.804,
+          null,
+          null
+        ],
+        [
+          -631.614,
+          747.014,
+          null,
+          null
+        ],
+        [
+          -634.509,
+          746.225,
+          null,
+          null
+        ],
+        [
+          -637.403,
+          745.436,
+          null,
+          null
+        ],
+        [
+          -640.297,
+          744.646,
+          null,
+          null
+        ],
+        [
+          -643.191,
+          743.857,
+          null,
+          null
+        ],
+        [
+          -646.086,
+          743.068,
+          null,
+          null
+        ],
+        [
+          -648.98,
+          742.278,
+          null,
+          null
+        ],
+        [
+          -651.931,
+          741.785,
+          null,
+          null
+        ],
+        [
+          -654.913,
+          741.454,
+          null,
+          null
+        ],
+        [
+          -657.894,
+          741.123,
+          null,
+          null
+        ],
+        [
+          -660.876,
+          740.792,
+          null,
+          null
+        ],
+        [
+          -663.858,
+          740.46,
+          null,
+          null
+        ],
+        [
+          -666.839,
+          740.129,
+          null,
+          null
+        ],
+        [
+          -669.821,
+          739.798,
+          null,
+          null
+        ],
+        [
+          -672.802,
+          739.466,
+          null,
+          null
+        ],
+        [
+          -675.784,
+          739.135,
+          null,
+          null
+        ],
+        [
+          -678.766,
+          738.804,
+          null,
+          null
+        ],
+        [
+          -681.747,
+          738.473,
+          null,
+          null
+        ],
+        [
+          -684.729,
+          738.141,
+          null,
+          null
+        ],
+        [
+          -687.72,
+          737.931,
+          null,
+          null
+        ],
+        [
+          -690.717,
+          737.811,
+          null,
+          null
+        ],
+        [
+          -693.715,
+          737.691,
+          null,
+          null
+        ],
+        [
+          -696.713,
+          737.571,
+          null,
+          null
+        ],
+        [
+          -699.71,
+          737.452,
+          null,
+          null
+        ],
+        [
+          -702.708,
+          737.332,
+          null,
+          null
+        ],
+        [
+          -705.705,
+          737.212,
+          null,
+          null
+        ],
+        [
+          -708.703,
+          737.092,
+          null,
+          null
+        ],
+        [
+          -711.701,
+          736.972,
+          null,
+          null
+        ],
+        [
+          -714.698,
+          736.852,
+          null,
+          null
+        ],
+        [
+          -717.696,
+          736.732,
+          null,
+          null
+        ],
+        [
+          -720.694,
+          736.612,
+          null,
+          null
+        ],
+        [
+          -723.691,
+          736.492,
+          null,
+          null
+        ],
+        [
+          -726.689,
+          736.372,
+          null,
+          null
+        ],
+        [
+          -729.686,
+          736.253,
+          null,
+          null
+        ],
+        [
+          -732.684,
+          736.133,
+          null,
+          null
+        ],
+        [
+          -735.682,
+          736.013,
+          null,
+          null
+        ],
+        [
+          -738.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -741.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -744.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -747.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -750.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -753.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -756.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -759.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -762.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -765.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -768.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -771.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -774.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -777.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -780.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -783.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -786.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -789.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -792.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -795.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -798.681,
+          736.0,
+          null,
+          null
+        ],
+        [
+          -801.68,
+          735.93,
+          null,
+          null
+        ],
+        [
+          -804.677,
+          735.805,
+          null,
+          null
+        ],
+        [
+          -807.675,
+          735.68,
+          null,
+          null
+        ],
+        [
+          -810.672,
+          735.555,
+          null,
+          null
+        ],
+        [
+          -813.669,
+          735.43,
+          null,
+          null
+        ],
+        [
+          -816.667,
+          735.306,
+          null,
+          null
+        ],
+        [
+          -819.664,
+          735.181,
+          null,
+          null
+        ],
+        [
+          -822.662,
+          735.056,
+          null,
+          null
+        ],
+        [
+          -825.659,
+          734.931,
+          null,
+          null
+        ],
+        [
+          -828.656,
+          734.806,
+          null,
+          null
+        ],
+        [
+          -831.654,
+          734.681,
+          null,
+          null
+        ],
+        [
+          -834.651,
+          734.556,
+          null,
+          null
+        ],
+        [
+          -837.649,
+          734.431,
+          null,
+          null
+        ],
+        [
+          -840.646,
+          734.306,
+          null,
+          null
+        ],
+        [
+          -843.643,
+          734.182,
+          null,
+          null
+        ],
+        [
+          -846.641,
+          734.057,
+          null,
+          null
+        ],
+        [
+          -849.627,
+          733.797,
+          null,
+          null
+        ],
+        [
+          -852.604,
+          733.425,
+          null,
+          null
+        ],
+        [
+          -855.581,
+          733.052,
+          null,
+          null
+        ],
+        [
+          -858.557,
+          732.68,
+          null,
+          null
+        ],
+        [
+          -861.534,
+          732.308,
+          null,
+          null
+        ],
+        [
+          -864.511,
+          731.936,
+          null,
+          null
+        ],
+        [
+          -867.488,
+          731.564,
+          null,
+          null
+        ],
+        [
+          -870.465,
+          731.192,
+          null,
+          null
+        ],
+        [
+          -873.442,
+          730.82,
+          null,
+          null
+        ],
+        [
+          -876.418,
+          730.448,
+          null,
+          null
+        ],
+        [
+          -879.395,
+          730.076,
+          null,
+          null
+        ],
+        [
+          -882.238,
+          729.161,
+          null,
+          null
+        ],
+        [
+          -885.047,
+          728.107,
+          null,
+          null
+        ],
+        [
+          -887.856,
+          727.054,
+          null,
+          null
+        ],
+        [
+          -890.665,
+          726.0,
+          null,
+          null
+        ],
+        [
+          -893.474,
+          724.947,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          723.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          720.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          717.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          714.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          711.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          708.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          705.697,
+          null,
+          null
+        ],
+        [
+          -896.0,
+          704.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "text_biomimetic_workflow_title",
+      "tool": "text",
+      "points": [
+        [
+          240.201,
+          -316.887,
+          null,
+          null
+        ],
+        [
+          752.995,
+          -265.681,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Design Workflow: Biomimetic Stadium Roof",
+        "summary": "Title for biomimetic workflow",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "role": "title",
+        "meta.graph.blockIntent": "create",
+        "meta.graph.blockLabel": "Biomimetic Workflow",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 512.77978515625,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Design Workflow: Biomimetic Stadium Roof",
+        "heightPadding": 11.759999999999998
+      }
+    },
+    {
+      "id": "text_biomimetic_step1",
+      "tool": "text",
+      "points": [
+        [
+          142.465,
+          -239.369,
+          null,
+          null
+        ],
+        [
+          792.465,
+          -180.149,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "1. Analyze biological structures (e.g., trabeculae) for anisotropic stress distribution.",
+        "summary": "Step 1: Analyze biological structures",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_biomimetic_workflow",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 650,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "1. Analyze biological structures (e.g., trabeculae) for anisotropic stress\ndistribution.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_biomimetic_step2",
+      "tool": "text",
+      "points": [
+        [
+          131.939,
+          -161.325,
+          null,
+          null
+        ],
+        [
+          781.939,
+          -102.105,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "2. Simulate roof behavior under variable wind and gravity loads using AI optimization.",
+        "summary": "Step 2: Simulate roof behavior",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_biomimetic_workflow",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 650,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "2. Simulate roof behavior under variable wind and gravity loads using AI\noptimization.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_biomimetic_step3",
+      "tool": "text",
+      "points": [
+        [
+          133.443,
+          -83.281,
+          null,
+          null
+        ],
+        [
+          783.443,
+          -24.061,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "3. Align structural elements to optimize stress distribution, inspired by trabeculae alignment.",
+        "summary": "Step 3: Align structural elements",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_biomimetic_workflow",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 650,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "3. Align structural elements to optimize stress distribution, inspired by\ntrabeculae alignment.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_biomimetic_step4",
+      "tool": "text",
+      "points": [
+        [
+          131.939,
+          -0.727,
+          null,
+          null
+        ],
+        [
+          725.268,
+          53.734,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "4. Validate design under extreme wind scenarios to ensure adaptability.",
+        "summary": "Step 4: Validate under extreme scenarios",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_biomimetic_workflow",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 593.2549438476562,
+        "contentHeight": 25.2,
+        "lineCount": 1,
+        "renderedText": "4. Validate design under extreme wind scenarios to ensure adaptability.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_extreme_wind_validation_title",
+      "tool": "text",
+      "points": [
+        [
+          994.421,
+          -273.97,
+          null,
+          null
+        ],
+        [
+          1397.669,
+          -228.606,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Extreme Wind Scenario Validation",
+        "summary": "Title for wind validation block",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "role": "title",
+        "meta.graph.blockIntent": "create",
+        "meta.graph.blockLabel": "Wind Validation Block",
+        "configuredWidth": 600,
+        "configuredHeight": 50,
+        "baseWidth": 600,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 396.63751220703125,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Extreme Wind Scenario Validation",
+        "heightPadding": 11.759999999999998
+      }
+    },
+    {
+      "id": "text_extreme_wind_step1",
+      "tool": "text",
+      "points": [
+        [
+          958.216,
+          -206.573,
+          null,
+          null
+        ],
+        [
+          1445.41,
+          -147.353,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "1. Simulate wind loads under extreme conditions using CFD tools.",
+        "summary": "Step 1: Simulate extreme wind loads",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_extreme_wind_validation",
+        "configuredWidth": 580,
+        "configuredHeight": 60,
+        "baseWidth": 580,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 487.19433593750006,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "1. Simulate wind loads under extreme conditions using\nCFD tools.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_extreme_wind_step2",
+      "tool": "text",
+      "points": [
+        [
+          958.216,
+          -115.161,
+          null,
+          null
+        ],
+        [
+          1445.41,
+          -55.942,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "2. Integrate biomimetic stress distribution principles to optimize structure.",
+        "summary": "Step 2: Biomimetic stress integration",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_extreme_wind_validation",
+        "configuredWidth": 580,
+        "configuredHeight": 60,
+        "baseWidth": 580,
+        "baseHeight": 60,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 487.19433593750006,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "2. Integrate biomimetic stress distribution principles to\noptimize structure.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_connection_review",
+      "tool": "text",
+      "points": [
+        [
+          918.915,
+          -24.61,
+          null,
+          null
+        ],
+        [
+          1518.915,
+          135.41,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Review connections between biomimetic principles and extreme wind validation:\n- Identify how anisotropic stress distribution can enhance wind-resistant structures.\n- Explore trabeculae alignment as a model for structural optimization under dynamic loads.",
+        "summary": "Review biomimetic principles for wind validation.",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "graph": {
+          "blockIntent": "create",
+          "blockLabel": "Biomimetic and Wind Validation"
+        },
+        "configuredWidth": 600,
+        "configuredHeight": 100,
+        "baseWidth": 600,
+        "baseHeight": 100,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 600,
+        "contentHeight": 151.2,
+        "lineCount": 6,
+        "renderedText": "Review connections between biomimetic principles and extreme wind\nvalidation:\n- Identify how anisotropic stress distribution can enhance\nwind-resistant structures.\n- Explore trabeculae alignment as a model for structural optimization\nunder dynamic loads.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "text_trabecular_biomimetic_connection",
+      "tool": "text",
+      "points": [
+        [
+          850.0,
+          300.0,
+          null,
+          null
+        ],
+        [
+          1500.0,
+          359.22,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "4. Apply trabecular alignment principles to enhance wind resistance in stadium roofs.",
+        "summary": "Step 4: Enhance wind resistance using trabecular principles",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "role": "body",
+        "meta.graph.targetBlockId": "block_b1a5ae0f",
+        "configuredWidth": 650,
+        "configuredHeight": 50,
+        "baseWidth": 650,
+        "baseHeight": 50,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 650,
+        "contentHeight": 50.4,
+        "lineCount": 2,
+        "renderedText": "4. Apply trabecular alignment principles to enhance wind resistance in\nstadium roofs.",
+        "heightPadding": 8.819999999999999
+      }
+    }
+  ]
+}

@@ -1,0 +1,3522 @@
+{
+  "exportedAt": "2026-03-17T12:47:06.184Z",
+  "run": {
+    "runId": "run_mmulerx1_z27te6",
+    "startedAt": 1773750768085,
+    "endedAt": 1773751625606,
+    "initialSessionId": "sess_1773750753_vkyiqk",
+    "currentPhaseId": "B-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmulf0lv_b6v96b",
+        "phaseId": "B-P1",
+        "sentAt": 1773750779347,
+        "respondedAt": 1773750783471,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1749,
+        "completionTokens": 247,
+        "totalTokens": 1996,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulf3sf_e7ig5n",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulfm1g_644wy5",
+        "phaseId": "B-P1",
+        "sentAt": 1773750807124,
+        "respondedAt": 1773750810499,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1913,
+        "completionTokens": 135,
+        "totalTokens": 2048,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulfon7_4cpu84",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulgav2_ai6r8m",
+        "phaseId": "B-P1",
+        "sentAt": 1773750839294,
+        "respondedAt": 1773750843299,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2135,
+        "completionTokens": 129,
+        "totalTokens": 2264,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulgdyb_d6k93y",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulgys8_sergzp",
+        "phaseId": "B-P1",
+        "sentAt": 1773750870296,
+        "respondedAt": 1773750874376,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2341,
+        "completionTokens": 219,
+        "totalTokens": 2560,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulh1xk_vocd1p",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulhbxl_8l8i0g",
+        "phaseId": "B-P1",
+        "sentAt": 1773750887337,
+        "respondedAt": 1773750889625,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2520,
+        "completionTokens": 217,
+        "totalTokens": 2737,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulhdp6_14txd3",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulhimu_hjvqr5",
+        "phaseId": "B-P1",
+        "sentAt": 1773750896022,
+        "respondedAt": 1773750899597,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2520,
+        "completionTokens": 218,
+        "totalTokens": 2738,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulhle5_0worzo",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulhv0a_4mzc0t",
+        "phaseId": "B-P1",
+        "sentAt": 1773750912058,
+        "respondedAt": 1773750915499,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2734,
+        "completionTokens": 133,
+        "totalTokens": 2867,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulhxnv_9jcn4d",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuli3vl_p01ygp",
+        "phaseId": "B-P1",
+        "sentAt": 1773750923553,
+        "respondedAt": 1773750926497,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2964,
+        "completionTokens": 130,
+        "totalTokens": 3094,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuli65d_0e5ocr",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulicxm_41220s",
+        "phaseId": "B-P1",
+        "sentAt": 1773750935290,
+        "respondedAt": 1773750937930,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3197,
+        "completionTokens": 129,
+        "totalTokens": 3326,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulieyy_z3ti4p",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulin51_kcgow7",
+        "phaseId": "B-P1",
+        "sentAt": 1773750948517,
+        "respondedAt": 1773750951711,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3672,
+        "completionTokens": 224,
+        "totalTokens": 3896,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuliplr_3rpxcd",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuliw6t_14oonr",
+        "phaseId": "B-P1",
+        "sentAt": 1773750960245,
+        "respondedAt": 1773750963253,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3905,
+        "completionTokens": 138,
+        "totalTokens": 4043,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuliyid_mznd5c",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulj7xa_wt4kba",
+        "phaseId": "B-P1",
+        "sentAt": 1773750975454,
+        "respondedAt": 1773750980180,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4135,
+        "completionTokens": 229,
+        "totalTokens": 4364,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuljbkk_y09yqj",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuljhtx_kb8pwc",
+        "phaseId": "B-P2",
+        "sentAt": 1773750988293,
+        "respondedAt": 1773750992402,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4353,
+        "completionTokens": 132,
+        "totalTokens": 4485,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuljl02_uujf7x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuljsq9_ai5l6o",
+        "phaseId": "B-P2",
+        "sentAt": 1773751002417,
+        "respondedAt": 1773751007541,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4373,
+        "completionTokens": 324,
+        "totalTokens": 4697,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuljwol_jqq3yg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulkg2a_80egl6",
+        "phaseId": "B-P2",
+        "sentAt": 1773751032658,
+        "respondedAt": 1773751036707,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4922,
+        "completionTokens": 183,
+        "totalTokens": 5105,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulkj6r_l3n2h9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulku8w_2i7pxl",
+        "phaseId": "B-P2",
+        "sentAt": 1773751051040,
+        "respondedAt": 1773751115063,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5224,
+        "completionTokens": 254,
+        "totalTokens": 5478,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulm7nb_26sih2",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulmhyu_2kqrsd",
+        "phaseId": "B-P2",
+        "sentAt": 1773751128438,
+        "respondedAt": 1773751132383,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5460,
+        "completionTokens": 252,
+        "totalTokens": 5712,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulml0f_gul3tk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulmxa8_2z03pk",
+        "phaseId": "B-P2",
+        "sentAt": 1773751148288,
+        "respondedAt": 1773751156345,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5698,
+        "completionTokens": 250,
+        "totalTokens": 5948,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuln3i1_4iusbf",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulnocn_bcvf1o",
+        "phaseId": "B-P2",
+        "sentAt": 1773751183367,
+        "respondedAt": 1773751188602,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5721,
+        "completionTokens": 337,
+        "totalTokens": 6058,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulnse2_f6kuo3",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulouco_easgvw",
+        "phaseId": "B-P3",
+        "sentAt": 1773751237800,
+        "respondedAt": 1773751243734,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6161,
+        "completionTokens": 382,
+        "totalTokens": 6543,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuloyxj_24mndj",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulp6bg_uzqiio",
+        "phaseId": "B-P3",
+        "sentAt": 1773751253308,
+        "respondedAt": 1773751260391,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6479,
+        "completionTokens": 228,
+        "totalTokens": 6707,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulpbs7_w8n0h8",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulpj1w_m27yql",
+        "phaseId": "B-P3",
+        "sentAt": 1773751269812,
+        "respondedAt": 1773751398917,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6693,
+        "completionTokens": 242,
+        "totalTokens": 6935,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulsao6_c8fhvk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulvrb6_i8b7ix",
+        "phaseId": "B-P3",
+        "sentAt": 1773751560450,
+        "respondedAt": 1773751563969,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6983,
+        "completionTokens": 267,
+        "totalTokens": 7250,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulvu0x_vtkpto",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulwxi9_c8aq48",
+        "phaseId": "B-P3",
+        "sentAt": 1773751615137,
+        "respondedAt": 1773751620191,
+        "sessionId": "sess_1773750753_vkyiqk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6983,
+        "completionTokens": 240,
+        "totalTokens": 7223,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulx1eo_ynn8fx",
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmulf3sf_e7ig5n",
+        "requestId": "req_mmulf0lv_b6v96b",
+        "phaseId": "B-P1",
+        "at": 1773750783473
+      },
+      {
+        "payloadId": "ai_mmulfon7_4cpu84",
+        "requestId": "req_mmulfm1g_644wy5",
+        "phaseId": "B-P1",
+        "at": 1773750810500
+      },
+      {
+        "payloadId": "ai_mmulgdyb_d6k93y",
+        "requestId": "req_mmulgav2_ai6r8m",
+        "phaseId": "B-P1",
+        "at": 1773750843300
+      },
+      {
+        "payloadId": "ai_mmulh1xk_vocd1p",
+        "requestId": "req_mmulgys8_sergzp",
+        "phaseId": "B-P1",
+        "at": 1773750874382
+      },
+      {
+        "payloadId": "ai_mmulhdp6_14txd3",
+        "requestId": "req_mmulhbxl_8l8i0g",
+        "phaseId": "B-P1",
+        "at": 1773750889627
+      },
+      {
+        "payloadId": "ai_mmulhle5_0worzo",
+        "requestId": "req_mmulhimu_hjvqr5",
+        "phaseId": "B-P1",
+        "at": 1773750899597
+      },
+      {
+        "payloadId": "ai_mmulhxnv_9jcn4d",
+        "requestId": "req_mmulhv0a_4mzc0t",
+        "phaseId": "B-P1",
+        "at": 1773750915501
+      },
+      {
+        "payloadId": "ai_mmuli65d_0e5ocr",
+        "requestId": "req_mmuli3vl_p01ygp",
+        "phaseId": "B-P1",
+        "at": 1773750926499
+      },
+      {
+        "payloadId": "ai_mmulieyy_z3ti4p",
+        "requestId": "req_mmulicxm_41220s",
+        "phaseId": "B-P1",
+        "at": 1773750937934
+      },
+      {
+        "payloadId": "ai_mmuliplr_3rpxcd",
+        "requestId": "req_mmulin51_kcgow7",
+        "phaseId": "B-P1",
+        "at": 1773750951711
+      },
+      {
+        "payloadId": "ai_mmuliyid_mznd5c",
+        "requestId": "req_mmuliw6t_14oonr",
+        "phaseId": "B-P1",
+        "at": 1773750963256
+      },
+      {
+        "payloadId": "ai_mmuljbkk_y09yqj",
+        "requestId": "req_mmulj7xa_wt4kba",
+        "phaseId": "B-P1",
+        "at": 1773750980181
+      },
+      {
+        "payloadId": "ai_mmuljl02_uujf7x",
+        "requestId": "req_mmuljhtx_kb8pwc",
+        "phaseId": "B-P2",
+        "at": 1773750992404
+      },
+      {
+        "payloadId": "ai_mmuljwol_jqq3yg",
+        "requestId": "req_mmuljsq9_ai5l6o",
+        "phaseId": "B-P2",
+        "at": 1773751007542
+      },
+      {
+        "payloadId": "ai_mmulkj6r_l3n2h9",
+        "requestId": "req_mmulkg2a_80egl6",
+        "phaseId": "B-P2",
+        "at": 1773751036709
+      },
+      {
+        "payloadId": "ai_mmulm7nb_26sih2",
+        "requestId": "req_mmulku8w_2i7pxl",
+        "phaseId": "B-P2",
+        "at": 1773751115066
+      },
+      {
+        "payloadId": "ai_mmulml0f_gul3tk",
+        "requestId": "req_mmulmhyu_2kqrsd",
+        "phaseId": "B-P2",
+        "at": 1773751132385
+      },
+      {
+        "payloadId": "ai_mmuln3i1_4iusbf",
+        "requestId": "req_mmulmxa8_2z03pk",
+        "phaseId": "B-P2",
+        "at": 1773751156348
+      },
+      {
+        "payloadId": "ai_mmulnse2_f6kuo3",
+        "requestId": "req_mmulnocn_bcvf1o",
+        "phaseId": "B-P2",
+        "at": 1773751188603
+      },
+      {
+        "payloadId": "ai_mmuloyxj_24mndj",
+        "requestId": "req_mmulouco_easgvw",
+        "phaseId": "B-P3",
+        "at": 1773751243737
+      },
+      {
+        "payloadId": "ai_mmulpbs7_w8n0h8",
+        "requestId": "req_mmulp6bg_uzqiio",
+        "phaseId": "B-P3",
+        "at": 1773751260393
+      },
+      {
+        "payloadId": "ai_mmulsao6_c8fhvk",
+        "requestId": "req_mmulpj1w_m27yql",
+        "phaseId": "B-P3",
+        "at": 1773751398920
+      },
+      {
+        "payloadId": "ai_mmulvu0x_vtkpto",
+        "requestId": "req_mmulvrb6_i8b7ix",
+        "phaseId": "B-P3",
+        "at": 1773751563973
+      },
+      {
+        "payloadId": "ai_mmulx1eo_ynn8fx",
+        "requestId": "req_mmulwxi9_c8aq48",
+        "phaseId": "B-P3",
+        "at": 1773751620195
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmulf3sf_e7ig5n",
+        "requestId": "req_mmulf0lv_b6v96b",
+        "phaseId": "B-P1",
+        "at": 1773750802132,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulh1xk_vocd1p",
+        "requestId": "req_mmulgys8_sergzp",
+        "phaseId": "B-P1",
+        "at": 1773750882338,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulhdp6_14txd3",
+        "requestId": "req_mmulhbxl_8l8i0g",
+        "phaseId": "B-P1",
+        "at": 1773750894178,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulieyy_z3ti4p",
+        "requestId": "req_mmulicxm_41220s",
+        "phaseId": "B-P1",
+        "at": 1773750943519,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmuljl02_uujf7x",
+        "requestId": "req_mmuljhtx_kb8pwc",
+        "phaseId": "B-P2",
+        "at": 1773750995570,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmuln3i1_4iusbf",
+        "requestId": "req_mmulmxa8_2z03pk",
+        "phaseId": "B-P2",
+        "at": 1773751158344,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulvu0x_vtkpto",
+        "requestId": "req_mmulvrb6_i8b7ix",
+        "phaseId": "B-P3",
+        "at": 1773751598321,
+        "reason": "manual"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulekss_9d3m28",
+        "requestId": null,
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              768,
+              270,
+              1125.4296875,
+              380.94471754807694
+            ],
+            "text": "Key concepts: - Positive feedback loops in networks - User lock-in through high switching costs - Value increases with user base (Metcalfe's Law)",
+            "summary": "Key concepts of digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          270,
+          1125.4296875,
+          380.94471754807694
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulewqt_7r3is8",
+        "acceptedAt": 1773750774341,
+        "maxPostAcceptEdit": 0.8818959758586965,
+        "maxChangedTextChars": 136,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulfon7_4cpu84",
+        "requestId": "req_mmulfm1g_644wy5",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              768,
+              400,
+              1118.37890625,
+              517.333408203125
+            ],
+            "text": "Examples: - Social media platforms (Facebook, Instagram) - E-commerce marketplaces (Amazon, eBay) - Operating systems (Windows, Android)",
+            "summary": "Examples of platforms with network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          768,
+          400,
+          1118.37890625,
+          517.333408203125
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulg6jl_zdazyx",
+        "acceptedAt": 1773750833697,
+        "maxPostAcceptEdit": 0.8868089278655377,
+        "maxChangedTextChars": 130,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulgdyb_d6k93y",
+        "requestId": "req_mmulgav2_ai6r8m",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              768,
+              540,
+              1130,
+              659.84
+            ],
+            "text": "Challenges: - Overcoming initial adoption barriers - Balancing openness vs. control - Managing competitive pressures in winner-takes-all markets",
+            "summary": "Challenges in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          540,
+          1130,
+          659.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulgul7_tpu77c",
+        "acceptedAt": 1773750864859,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulhle5_0worzo",
+        "requestId": "req_mmulhimu_hjvqr5",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              768,
+              680,
+              1130,
+              822.24
+            ],
+            "text": "Opportunities: - Leveraging data for personalization - Creating ecosystems with complementary products - Encouraging user-generated content to enhance value",
+            "summary": "Opportunities in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          680,
+          1130,
+          822.24
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulhr4w_3w4ac4",
+        "acceptedAt": 1773750907040,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulhxnv_9jcn4d",
+        "requestId": "req_mmulhv0a_4mzc0t",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              1344,
+              320,
+              1619.7155041503906,
+              459.56546139899564
+            ],
+            "text": "Implications of Network Effects: - Accelerated growth for early movers - Risk of monopolistic tendencies - Challenges in maintaining user trust and engagement",
+            "summary": "Implications of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          320,
+          1619.7155041503906,
+          459.56546139899564
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuli00g_gikui7",
+        "acceptedAt": 1773750918544,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuli65d_0e5ocr",
+        "requestId": "req_mmuli3vl_p01ygp",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_007"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_007"
+        ],
+        "baselineShapes": {
+          "ai_text_007": {
+            "id": "ai_text_007",
+            "kind": "text",
+            "bbox": [
+              1344,
+              480,
+              1611.4496748046874,
+              623.6426174493183
+            ],
+            "text": "Strategies for Success: - Focus on user experience and trust - Build scalable infrastructure for growth - Foster partnerships to expand ecosystem",
+            "summary": "Strategies for success in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          480,
+          1611.4496748046874,
+          623.6426174493183
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuli8w2_u3es9l",
+        "acceptedAt": 1773750930050,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuliplr_3rpxcd",
+        "requestId": "req_mmulin51_kcgow7",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_008"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_008"
+        ],
+        "baselineShapes": {
+          "ai_text_008": {
+            "id": "ai_text_008",
+            "kind": "text",
+            "bbox": [
+              1344,
+              640,
+              1619.716,
+              804.64
+            ],
+            "text": "Future Trends: - Integration of AI in platform ecosystems - Expansion of decentralized networks - Enhanced focus on data privacy and security",
+            "summary": "Future trends in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          640,
+          1619.716,
+          804.64
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulisbv_i6kcfw",
+        "acceptedAt": 1773750955243,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuliyid_mznd5c",
+        "requestId": "req_mmuliw6t_14oonr",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_009"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_009"
+        ],
+        "baselineShapes": {
+          "ai_text_009": {
+            "id": "ai_text_009",
+            "kind": "text",
+            "bbox": [
+              96,
+              740,
+              643.2623437499999,
+              874.83435546875
+            ],
+            "text": "Conclusion: Understanding network effects and lock-in mechanisms is crucial for navigating digital economics. Platforms thrive by leveraging user growth, managing challenges, and seizing opportunities to create sustainable ecosystems.",
+            "summary": "Conclusion on network effects and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          740,
+          643.2623437499999,
+          874.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulj42d_993lrv",
+        "acceptedAt": 1773750970453,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuljbkk_y09yqj",
+        "requestId": "req_mmulj7xa_wt4kba",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_010"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_010"
+        ],
+        "baselineShapes": {
+          "ai_text_010": {
+            "id": "ai_text_010",
+            "kind": "text",
+            "bbox": [
+              1344,
+              840,
+              1619.716,
+              959.84
+            ],
+            "text": "Key Takeaway: Platforms leveraging network effects must balance growth with user trust and innovation to ensure long-term success.",
+            "summary": "Key takeaway on platforms and network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          1344,
+          840,
+          1619.716,
+          959.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuljdop_foljxu",
+        "acceptedAt": 1773750982921,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuljwol_jqq3yg",
+        "requestId": "req_mmuljsq9_ai5l6o",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_poly_001",
+          "ai_text_001",
+          "ai_text_002",
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001",
+          "ai_text_002",
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_poly_001": {
+            "id": "ai_poly_001",
+            "kind": "poly",
+            "bbox": [
+              400,
+              400,
+              700,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 5,
+            "sampledPoints": [
+              [
+                400,
+                400
+              ],
+              [
+                600,
+                400
+              ],
+              [
+                700,
+                600
+              ],
+              [
+                500,
+                600
+              ],
+              [
+                400,
+                400
+              ]
+            ]
+          },
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              420,
+              380,
+              500,
+              427.84
+            ],
+            "text": "Users",
+            "summary": "Users in flywheel",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              768,
+              270,
+              1125.4296875,
+              380.94471754807694
+            ],
+            "text": "Key concepts: - Positive feedback loops in networks - User lock-in through high switching costs - Value increases with user base (Metcalfe's Law)",
+            "summary": "Key concepts of digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              768,
+              400,
+              1118.37890625,
+              517.333408203125
+            ],
+            "text": "Examples: - Social media platforms (Facebook, Instagram) - E-commerce marketplaces (Amazon, eBay) - Operating systems (Windows, Android)",
+            "summary": "Examples of platforms with network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          400,
+          270,
+          1125.4296875,
+          600
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuljzti_rmd9f3",
+        "acceptedAt": 1773751011606,
+        "maxPostAcceptEdit": 0.44217622593105854,
+        "maxChangedTextChars": 266,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulkj6r_l3n2h9",
+        "requestId": "req_mmulkg2a_80egl6",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_011"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_011"
+        ],
+        "baselineShapes": {
+          "ai_text_011": {
+            "id": "ai_text_011",
+            "kind": "text",
+            "bbox": [
+              768,
+              860,
+              1130,
+              1091.84
+            ],
+            "text": "**Financial Switching Costs**: These are tangible costs incurred when switching platforms, such as subscription fees, cancellation penalties, or the cost of purchasing a new product/service. **Psychological/Data Switching Costs**: These are intangible costs, including emotional attachment, learning a new interface, or losing access to stored data and history. They often create a deeper sense of user lock-in.",
+            "summary": "Differences between financial and psychological/data switching costs.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          768,
+          860,
+          1130,
+          1091.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulkmgx_3i935k",
+        "acceptedAt": 1773751040961,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulm7nb_26sih2",
+        "requestId": "req_mmulku8w_2i7pxl",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_012"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_012"
+        ],
+        "baselineShapes": {
+          "ai_text_012": {
+            "id": "ai_text_012",
+            "kind": "text",
+            "bbox": [
+              96,
+              900,
+              643.2623437499999,
+              1034.83435546875
+            ],
+            "text": "Actionable Insight: To succeed in digital ecosystems, businesses should prioritize creating value for users, fostering strong network effects, and minimizing switching costs to ensure long-term user retention and competitive advantage.",
+            "summary": "Actionable insight for digital ecosystems.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          900,
+          643.2623437499999,
+          1034.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulm9sw_yeuuwl",
+        "acceptedAt": 1773751117856,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulml0f_gul3tk",
+        "requestId": "req_mmulmhyu_2kqrsd",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_013"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_013"
+        ],
+        "baselineShapes": {
+          "ai_text_013": {
+            "id": "ai_text_013",
+            "kind": "text",
+            "bbox": [
+              96,
+              1100,
+              643.2623437499999,
+              1234.83435546875
+            ],
+            "text": "Practical Advice: Focus on creating a seamless user experience and invest in tools that reduce switching costs. Encourage user engagement and foster an ecosystem where users, developers, and content creators thrive together.",
+            "summary": "Practical advice for platforms.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          1100,
+          643.2623437499999,
+          1234.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulmrnw_eid2kq",
+        "acceptedAt": 1773751141004,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulnse2_f6kuo3",
+        "requestId": "req_mmulnocn_bcvf1o",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_014"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_014"
+        ],
+        "baselineShapes": {
+          "ai_text_014": {
+            "id": "ai_text_014",
+            "kind": "text",
+            "bbox": [
+              96,
+              1160,
+              704,
+              1345.22
+            ],
+            "text": "Categorization of Apps: 1. **WhatsApp**: Relies more on Direct Network Effects (value increases as more users join). 2. **Adobe Creative Cloud**: Relies on Indirect Network Effects (value grows with complementary tools and plugins). 3. **Amazon**: Combines both Direct (user reviews, marketplace activity) and Indirect (third-party sellers, product diversity) effects.",
+            "summary": "Categorization of apps by network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          96,
+          1160,
+          704,
+          1345.22
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulnuol_kvpk17",
+        "acceptedAt": 1773751191573,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuloyxj_24mndj",
+        "requestId": "req_mmulouco_easgvw",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_015"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_015"
+        ],
+        "baselineShapes": {
+          "ai_text_015": {
+            "id": "ai_text_015",
+            "kind": "text",
+            "bbox": [
+              96,
+              1300,
+              704,
+              1586.02
+            ],
+            "text": "Strategy Note: To overcome the incumbent's network effects, the startup should: 1. **Target niche audiences**: Build critical mass in underserved segments. 2. **Leverage multi-homing**: Offer unique features that complement existing platforms. 3. **Minimize switching costs**: Simplify migration and provide interoperability with competitors. 4. **Prioritize privacy**: Cultivate trust by emphasizing data security and transparency. 5. **Encourage viral growth**: Incentivize user referrals and community building.",
+            "summary": "Strategy for overcoming network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          96,
+          1300,
+          704,
+          1586.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulp2gd_i7sveu",
+        "acceptedAt": 1773751248301,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulpbs7_w8n0h8",
+        "requestId": "req_mmulp6bg_uzqiio",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_016"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_016"
+        ],
+        "baselineShapes": {
+          "ai_text_016": {
+            "id": "ai_text_016",
+            "kind": "text",
+            "bbox": [
+              96,
+              1400,
+              619.770625,
+              1529.425078125
+            ],
+            "text": "Additional Insight: Platforms can further enhance network effects by integrating cross-platform compatibility, incentivizing active participation, and leveraging analytics to optimize user engagement.",
+            "summary": "Enhancing network effects through strategies.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          96,
+          1400,
+          619.770625,
+          1529.425078125
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulpe48_120wcy",
+        "acceptedAt": 1773751263416,
+        "maxPostAcceptEdit": 0.1436103374482261,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulsao6_c8fhvk",
+        "requestId": "req_mmulpj1w_m27yql",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_017"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_017"
+        ],
+        "baselineShapes": {
+          "ai_text_017": {
+            "id": "ai_text_017",
+            "kind": "text",
+            "bbox": [
+              96,
+              1750,
+              630.481875,
+              1881.891484375
+            ],
+            "text": "Final Thought: The interplay of network effects and lock-in mechanisms shapes the competitive landscape of digital platforms. Success hinges on balancing innovation, user trust, and strategic growth.",
+            "summary": "Final thoughts on network effects and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          96,
+          1750,
+          630.481875,
+          1881.891484375
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulvng5_a21od2",
+        "acceptedAt": 1773751555445,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulx1eo_ynn8fx",
+        "requestId": "req_mmulwxi9_c8aq48",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_018"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_018"
+        ],
+        "baselineShapes": {
+          "ai_text_018": {
+            "id": "ai_text_018",
+            "kind": "text",
+            "bbox": [
+              96,
+              1900,
+              643.2623437499999,
+              2034.83435546875
+            ],
+            "text": "Final Reflection: Digital platforms must continuously innovate while maintaining user trust and minimizing barriers to entry. Success lies in creating ecosystems that benefit all stakeholders and adapt to evolving trends.",
+            "summary": "Final reflection on digital platforms.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          1900,
+          643.2623437499999,
+          2034.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulx2m8_a3yza7",
+        "acceptedAt": 1773751621760,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773750768085,
+        "data": {
+          "phaseId": "B-P1",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750774341,
+        "data": {
+          "acceptId": "accept_mmulewqt_7r3is8",
+          "payloadId": "ai_mmulekss_9d3m28",
+          "requestId": null,
+          "phaseId": "A-P3",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750779347,
+        "data": {
+          "requestId": "req_mmulf0lv_b6v96b",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750783471,
+        "data": {
+          "requestId": "req_mmulf0lv_b6v96b",
+          "promptTokens": 1749,
+          "completionTokens": 247,
+          "totalTokens": 1996,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750783473,
+        "data": {
+          "payloadId": "ai_mmulf3sf_e7ig5n",
+          "requestId": "req_mmulf0lv_b6v96b",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750802132,
+        "data": {
+          "payloadId": "ai_mmulf3sf_e7ig5n",
+          "requestId": "req_mmulf0lv_b6v96b",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750807124,
+        "data": {
+          "requestId": "req_mmulfm1g_644wy5",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750810499,
+        "data": {
+          "requestId": "req_mmulfm1g_644wy5",
+          "promptTokens": 1913,
+          "completionTokens": 135,
+          "totalTokens": 2048,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750810500,
+        "data": {
+          "payloadId": "ai_mmulfon7_4cpu84",
+          "requestId": "req_mmulfm1g_644wy5",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750833697,
+        "data": {
+          "acceptId": "accept_mmulg6jl_zdazyx",
+          "payloadId": "ai_mmulfon7_4cpu84",
+          "requestId": "req_mmulfm1g_644wy5",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750839294,
+        "data": {
+          "requestId": "req_mmulgav2_ai6r8m",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750843299,
+        "data": {
+          "requestId": "req_mmulgav2_ai6r8m",
+          "promptTokens": 2135,
+          "completionTokens": 129,
+          "totalTokens": 2264,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750843300,
+        "data": {
+          "payloadId": "ai_mmulgdyb_d6k93y",
+          "requestId": "req_mmulgav2_ai6r8m",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750864859,
+        "data": {
+          "acceptId": "accept_mmulgul7_tpu77c",
+          "payloadId": "ai_mmulgdyb_d6k93y",
+          "requestId": "req_mmulgav2_ai6r8m",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750870296,
+        "data": {
+          "requestId": "req_mmulgys8_sergzp",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750874376,
+        "data": {
+          "requestId": "req_mmulgys8_sergzp",
+          "promptTokens": 2341,
+          "completionTokens": 219,
+          "totalTokens": 2560,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750874382,
+        "data": {
+          "payloadId": "ai_mmulh1xk_vocd1p",
+          "requestId": "req_mmulgys8_sergzp",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750882338,
+        "data": {
+          "payloadId": "ai_mmulh1xk_vocd1p",
+          "requestId": "req_mmulgys8_sergzp",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750887337,
+        "data": {
+          "requestId": "req_mmulhbxl_8l8i0g",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750889625,
+        "data": {
+          "requestId": "req_mmulhbxl_8l8i0g",
+          "promptTokens": 2520,
+          "completionTokens": 217,
+          "totalTokens": 2737,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750889627,
+        "data": {
+          "payloadId": "ai_mmulhdp6_14txd3",
+          "requestId": "req_mmulhbxl_8l8i0g",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750894178,
+        "data": {
+          "payloadId": "ai_mmulhdp6_14txd3",
+          "requestId": "req_mmulhbxl_8l8i0g",
+          "phaseId": "B-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750896022,
+        "data": {
+          "requestId": "req_mmulhimu_hjvqr5",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750899597,
+        "data": {
+          "requestId": "req_mmulhimu_hjvqr5",
+          "promptTokens": 2520,
+          "completionTokens": 218,
+          "totalTokens": 2738,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750899597,
+        "data": {
+          "payloadId": "ai_mmulhle5_0worzo",
+          "requestId": "req_mmulhimu_hjvqr5",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750907040,
+        "data": {
+          "acceptId": "accept_mmulhr4w_3w4ac4",
+          "payloadId": "ai_mmulhle5_0worzo",
+          "requestId": "req_mmulhimu_hjvqr5",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750912058,
+        "data": {
+          "requestId": "req_mmulhv0a_4mzc0t",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750915499,
+        "data": {
+          "requestId": "req_mmulhv0a_4mzc0t",
+          "promptTokens": 2734,
+          "completionTokens": 133,
+          "totalTokens": 2867,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750915501,
+        "data": {
+          "payloadId": "ai_mmulhxnv_9jcn4d",
+          "requestId": "req_mmulhv0a_4mzc0t",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750918544,
+        "data": {
+          "acceptId": "accept_mmuli00g_gikui7",
+          "payloadId": "ai_mmulhxnv_9jcn4d",
+          "requestId": "req_mmulhv0a_4mzc0t",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750923553,
+        "data": {
+          "requestId": "req_mmuli3vl_p01ygp",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750926497,
+        "data": {
+          "requestId": "req_mmuli3vl_p01ygp",
+          "promptTokens": 2964,
+          "completionTokens": 130,
+          "totalTokens": 3094,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750926499,
+        "data": {
+          "payloadId": "ai_mmuli65d_0e5ocr",
+          "requestId": "req_mmuli3vl_p01ygp",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750930050,
+        "data": {
+          "acceptId": "accept_mmuli8w2_u3es9l",
+          "payloadId": "ai_mmuli65d_0e5ocr",
+          "requestId": "req_mmuli3vl_p01ygp",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750935290,
+        "data": {
+          "requestId": "req_mmulicxm_41220s",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750937930,
+        "data": {
+          "requestId": "req_mmulicxm_41220s",
+          "promptTokens": 3197,
+          "completionTokens": 129,
+          "totalTokens": 3326,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750937934,
+        "data": {
+          "payloadId": "ai_mmulieyy_z3ti4p",
+          "requestId": "req_mmulicxm_41220s",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750943519,
+        "data": {
+          "payloadId": "ai_mmulieyy_z3ti4p",
+          "requestId": "req_mmulicxm_41220s",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750948517,
+        "data": {
+          "requestId": "req_mmulin51_kcgow7",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750951711,
+        "data": {
+          "requestId": "req_mmulin51_kcgow7",
+          "promptTokens": 3672,
+          "completionTokens": 224,
+          "totalTokens": 3896,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750951711,
+        "data": {
+          "payloadId": "ai_mmuliplr_3rpxcd",
+          "requestId": "req_mmulin51_kcgow7",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750955243,
+        "data": {
+          "acceptId": "accept_mmulisbv_i6kcfw",
+          "payloadId": "ai_mmuliplr_3rpxcd",
+          "requestId": "req_mmulin51_kcgow7",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750960245,
+        "data": {
+          "requestId": "req_mmuliw6t_14oonr",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750963253,
+        "data": {
+          "requestId": "req_mmuliw6t_14oonr",
+          "promptTokens": 3905,
+          "completionTokens": 138,
+          "totalTokens": 4043,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750963256,
+        "data": {
+          "payloadId": "ai_mmuliyid_mznd5c",
+          "requestId": "req_mmuliw6t_14oonr",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750970453,
+        "data": {
+          "acceptId": "accept_mmulj42d_993lrv",
+          "payloadId": "ai_mmuliyid_mznd5c",
+          "requestId": "req_mmuliw6t_14oonr",
+          "phaseId": "B-P1",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750975454,
+        "data": {
+          "requestId": "req_mmulj7xa_wt4kba",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750975817,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750980180,
+        "data": {
+          "requestId": "req_mmulj7xa_wt4kba",
+          "promptTokens": 4135,
+          "completionTokens": 229,
+          "totalTokens": 4364,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750980181,
+        "data": {
+          "payloadId": "ai_mmuljbkk_y09yqj",
+          "requestId": "req_mmulj7xa_wt4kba",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750982921,
+        "data": {
+          "acceptId": "accept_mmuljdop_foljxu",
+          "payloadId": "ai_mmuljbkk_y09yqj",
+          "requestId": "req_mmulj7xa_wt4kba",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750988293,
+        "data": {
+          "requestId": "req_mmuljhtx_kb8pwc",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750992402,
+        "data": {
+          "requestId": "req_mmuljhtx_kb8pwc",
+          "promptTokens": 4353,
+          "completionTokens": 132,
+          "totalTokens": 4485,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750992404,
+        "data": {
+          "payloadId": "ai_mmuljl02_uujf7x",
+          "requestId": "req_mmuljhtx_kb8pwc",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750995570,
+        "data": {
+          "payloadId": "ai_mmuljl02_uujf7x",
+          "requestId": "req_mmuljhtx_kb8pwc",
+          "phaseId": "B-P2",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751002417,
+        "data": {
+          "requestId": "req_mmuljsq9_ai5l6o",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751007541,
+        "data": {
+          "requestId": "req_mmuljsq9_ai5l6o",
+          "promptTokens": 4373,
+          "completionTokens": 324,
+          "totalTokens": 4697,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751007542,
+        "data": {
+          "payloadId": "ai_mmuljwol_jqq3yg",
+          "requestId": "req_mmuljsq9_ai5l6o",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751011606,
+        "data": {
+          "acceptId": "accept_mmuljzti_rmd9f3",
+          "payloadId": "ai_mmuljwol_jqq3yg",
+          "requestId": "req_mmuljsq9_ai5l6o",
+          "phaseId": "B-P2",
+          "usableUnits": 4,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751032658,
+        "data": {
+          "requestId": "req_mmulkg2a_80egl6",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751036707,
+        "data": {
+          "requestId": "req_mmulkg2a_80egl6",
+          "promptTokens": 4922,
+          "completionTokens": 183,
+          "totalTokens": 5105,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751036709,
+        "data": {
+          "payloadId": "ai_mmulkj6r_l3n2h9",
+          "requestId": "req_mmulkg2a_80egl6",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751040961,
+        "data": {
+          "acceptId": "accept_mmulkmgx_3i935k",
+          "payloadId": "ai_mmulkj6r_l3n2h9",
+          "requestId": "req_mmulkg2a_80egl6",
+          "phaseId": "B-P2",
+          "usableUnits": 21,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751051040,
+        "data": {
+          "requestId": "req_mmulku8w_2i7pxl",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751115063,
+        "data": {
+          "requestId": "req_mmulku8w_2i7pxl",
+          "promptTokens": 5224,
+          "completionTokens": 254,
+          "totalTokens": 5478,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751115066,
+        "data": {
+          "payloadId": "ai_mmulm7nb_26sih2",
+          "requestId": "req_mmulku8w_2i7pxl",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751117856,
+        "data": {
+          "acceptId": "accept_mmulm9sw_yeuuwl",
+          "payloadId": "ai_mmulm7nb_26sih2",
+          "requestId": "req_mmulku8w_2i7pxl",
+          "phaseId": "B-P2",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751128438,
+        "data": {
+          "requestId": "req_mmulmhyu_2kqrsd",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751132383,
+        "data": {
+          "requestId": "req_mmulmhyu_2kqrsd",
+          "promptTokens": 5460,
+          "completionTokens": 252,
+          "totalTokens": 5712,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751132385,
+        "data": {
+          "payloadId": "ai_mmulml0f_gul3tk",
+          "requestId": "req_mmulmhyu_2kqrsd",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751141004,
+        "data": {
+          "acceptId": "accept_mmulmrnw_eid2kq",
+          "payloadId": "ai_mmulml0f_gul3tk",
+          "requestId": "req_mmulmhyu_2kqrsd",
+          "phaseId": "B-P2",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751148288,
+        "data": {
+          "requestId": "req_mmulmxa8_2z03pk",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751156345,
+        "data": {
+          "requestId": "req_mmulmxa8_2z03pk",
+          "promptTokens": 5698,
+          "completionTokens": 250,
+          "totalTokens": 5948,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751156348,
+        "data": {
+          "payloadId": "ai_mmuln3i1_4iusbf",
+          "requestId": "req_mmulmxa8_2z03pk",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751158344,
+        "data": {
+          "payloadId": "ai_mmuln3i1_4iusbf",
+          "requestId": "req_mmulmxa8_2z03pk",
+          "phaseId": "B-P2",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751183367,
+        "data": {
+          "requestId": "req_mmulnocn_bcvf1o",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751188602,
+        "data": {
+          "requestId": "req_mmulnocn_bcvf1o",
+          "promptTokens": 5721,
+          "completionTokens": 337,
+          "totalTokens": 6058,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751188603,
+        "data": {
+          "payloadId": "ai_mmulnse2_f6kuo3",
+          "requestId": "req_mmulnocn_bcvf1o",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751191573,
+        "data": {
+          "acceptId": "accept_mmulnuol_kvpk17",
+          "payloadId": "ai_mmulnse2_f6kuo3",
+          "requestId": "req_mmulnocn_bcvf1o",
+          "phaseId": "B-P2",
+          "usableUnits": 19,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751210382,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751237800,
+        "data": {
+          "requestId": "req_mmulouco_easgvw",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751243734,
+        "data": {
+          "requestId": "req_mmulouco_easgvw",
+          "promptTokens": 6161,
+          "completionTokens": 382,
+          "totalTokens": 6543,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751243737,
+        "data": {
+          "payloadId": "ai_mmuloyxj_24mndj",
+          "requestId": "req_mmulouco_easgvw",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751248301,
+        "data": {
+          "acceptId": "accept_mmulp2gd_i7sveu",
+          "payloadId": "ai_mmuloyxj_24mndj",
+          "requestId": "req_mmulouco_easgvw",
+          "phaseId": "B-P3",
+          "usableUnits": 26,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751253308,
+        "data": {
+          "requestId": "req_mmulp6bg_uzqiio",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751260391,
+        "data": {
+          "requestId": "req_mmulp6bg_uzqiio",
+          "promptTokens": 6479,
+          "completionTokens": 228,
+          "totalTokens": 6707,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751260393,
+        "data": {
+          "payloadId": "ai_mmulpbs7_w8n0h8",
+          "requestId": "req_mmulp6bg_uzqiio",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751263416,
+        "data": {
+          "acceptId": "accept_mmulpe48_120wcy",
+          "payloadId": "ai_mmulpbs7_w8n0h8",
+          "requestId": "req_mmulp6bg_uzqiio",
+          "phaseId": "B-P3",
+          "usableUnits": 10,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751269812,
+        "data": {
+          "requestId": "req_mmulpj1w_m27yql",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751398917,
+        "data": {
+          "requestId": "req_mmulpj1w_m27yql",
+          "promptTokens": 6693,
+          "completionTokens": 242,
+          "totalTokens": 6935,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751398920,
+        "data": {
+          "payloadId": "ai_mmulsao6_c8fhvk",
+          "requestId": "req_mmulpj1w_m27yql",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751555445,
+        "data": {
+          "acceptId": "accept_mmulvng5_a21od2",
+          "payloadId": "ai_mmulsao6_c8fhvk",
+          "requestId": "req_mmulpj1w_m27yql",
+          "phaseId": "B-P3",
+          "usableUnits": 10,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751560450,
+        "data": {
+          "requestId": "req_mmulvrb6_i8b7ix",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751563969,
+        "data": {
+          "requestId": "req_mmulvrb6_i8b7ix",
+          "promptTokens": 6983,
+          "completionTokens": 267,
+          "totalTokens": 7250,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751563973,
+        "data": {
+          "payloadId": "ai_mmulvu0x_vtkpto",
+          "requestId": "req_mmulvrb6_i8b7ix",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751598321,
+        "data": {
+          "payloadId": "ai_mmulvu0x_vtkpto",
+          "requestId": "req_mmulvrb6_i8b7ix",
+          "phaseId": "B-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751615137,
+        "data": {
+          "requestId": "req_mmulwxi9_c8aq48",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773750753_vkyiqk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751620191,
+        "data": {
+          "requestId": "req_mmulwxi9_c8aq48",
+          "promptTokens": 6983,
+          "completionTokens": 240,
+          "totalTokens": 7223,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751620195,
+        "data": {
+          "payloadId": "ai_mmulx1eo_ynn8fx",
+          "requestId": "req_mmulwxi9_c8aq48",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751621760,
+        "data": {
+          "acceptId": "accept_mmulx2m8_a3yza7",
+          "payloadId": "ai_mmulx1eo_ynn8fx",
+          "requestId": "req_mmulwxi9_c8aq48",
+          "phaseId": "B-P3",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773751625606
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 24,
+    "previewCount": 24,
+    "acceptCount": 18,
+    "dismissCount": 7,
+    "completedRoundCount": 24,
+    "totalPromptTokens": 102835,
+    "acceptedUsableUnits": 200,
+    "acceptedTextChars": 4047,
+    "changedTextChars": 532,
+    "suggestionAcceptanceRate": 0.75,
+    "dismissRate": 0.2916666666666667,
+    "straightUseRate": 0.7777777777777778,
+    "userChangedRate": 0.13145539906103287,
+    "promptTokensPerRound": 4284.791666666667,
+    "acceptedUsableContentPer1kTokens": 1.9448631302572081,
+    "activeBlockAlignmentRate": 0,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "B-P1",
+        "invoke": 12,
+        "straightUseRate": 0.875,
+        "acceptedOutputPer1kToken": 1.9535296729317744,
+        "promptTokens": 33785,
+        "acceptedUsableUnits": 66,
+        "acceptedCount": 8
+      },
+      {
+        "phaseId": "B-P2",
+        "invoke": 7,
+        "straightUseRate": 0.6,
+        "acceptedOutputPer1kToken": 1.9020446980504042,
+        "promptTokens": 35751,
+        "acceptedUsableUnits": 68,
+        "acceptedCount": 5
+      },
+      {
+        "phaseId": "B-P3",
+        "invoke": 5,
+        "straightUseRate": 1,
+        "acceptedOutputPer1kToken": 1.7417940478693055,
+        "promptTokens": 33299,
+        "acceptedUsableUnits": 58,
+        "acceptedCount": 4
+      },
+      {
+        "phaseId": "A-P3",
+        "invoke": 0,
+        "straightUseRate": 0,
+        "acceptedOutputPer1kToken": null,
+        "promptTokens": 0,
+        "acceptedUsableUnits": 8,
+        "acceptedCount": 1
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulekss_9d3m28",
+        "requestId": null,
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              768,
+              270,
+              1125.4296875,
+              380.94471754807694
+            ],
+            "text": "Key concepts: - Positive feedback loops in networks - User lock-in through high switching costs - Value increases with user base (Metcalfe's Law)",
+            "summary": "Key concepts of digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          270,
+          1125.4296875,
+          380.94471754807694
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulewqt_7r3is8",
+        "acceptedAt": 1773750774341,
+        "maxPostAcceptEdit": 0.8818959758586965,
+        "maxChangedTextChars": 136,
+        "changedEver": true,
+        "postAcceptEdit": 0.8818959758586965,
+        "acceptedTextChars": 145,
+        "changedTextChars": 136,
+        "changedTextRatio": 0.9379310344827586,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulfon7_4cpu84",
+        "requestId": "req_mmulfm1g_644wy5",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              768,
+              400,
+              1118.37890625,
+              517.333408203125
+            ],
+            "text": "Examples: - Social media platforms (Facebook, Instagram) - E-commerce marketplaces (Amazon, eBay) - Operating systems (Windows, Android)",
+            "summary": "Examples of platforms with network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          768,
+          400,
+          1118.37890625,
+          517.333408203125
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulg6jl_zdazyx",
+        "acceptedAt": 1773750833697,
+        "maxPostAcceptEdit": 0.8868089278655377,
+        "maxChangedTextChars": 130,
+        "changedEver": true,
+        "postAcceptEdit": 0.8868089278655377,
+        "acceptedTextChars": 136,
+        "changedTextChars": 130,
+        "changedTextRatio": 0.9558823529411765,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulgdyb_d6k93y",
+        "requestId": "req_mmulgav2_ai6r8m",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              768,
+              540,
+              1130,
+              659.84
+            ],
+            "text": "Challenges: - Overcoming initial adoption barriers - Balancing openness vs. control - Managing competitive pressures in winner-takes-all markets",
+            "summary": "Challenges in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          540,
+          1130,
+          659.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulgul7_tpu77c",
+        "acceptedAt": 1773750864859,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 144,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulhle5_0worzo",
+        "requestId": "req_mmulhimu_hjvqr5",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              768,
+              680,
+              1130,
+              822.24
+            ],
+            "text": "Opportunities: - Leveraging data for personalization - Creating ecosystems with complementary products - Encouraging user-generated content to enhance value",
+            "summary": "Opportunities in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          768,
+          680,
+          1130,
+          822.24
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulhr4w_3w4ac4",
+        "acceptedAt": 1773750907040,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 156,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulhxnv_9jcn4d",
+        "requestId": "req_mmulhv0a_4mzc0t",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              1344,
+              320,
+              1619.7155041503906,
+              459.56546139899564
+            ],
+            "text": "Implications of Network Effects: - Accelerated growth for early movers - Risk of monopolistic tendencies - Challenges in maintaining user trust and engagement",
+            "summary": "Implications of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          320,
+          1619.7155041503906,
+          459.56546139899564
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuli00g_gikui7",
+        "acceptedAt": 1773750918544,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 158,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuli65d_0e5ocr",
+        "requestId": "req_mmuli3vl_p01ygp",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_007"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_007"
+        ],
+        "baselineShapes": {
+          "ai_text_007": {
+            "id": "ai_text_007",
+            "kind": "text",
+            "bbox": [
+              1344,
+              480,
+              1611.4496748046874,
+              623.6426174493183
+            ],
+            "text": "Strategies for Success: - Focus on user experience and trust - Build scalable infrastructure for growth - Foster partnerships to expand ecosystem",
+            "summary": "Strategies for success in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          480,
+          1611.4496748046874,
+          623.6426174493183
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuli8w2_u3es9l",
+        "acceptedAt": 1773750930050,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 145,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuliplr_3rpxcd",
+        "requestId": "req_mmulin51_kcgow7",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_008"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_008"
+        ],
+        "baselineShapes": {
+          "ai_text_008": {
+            "id": "ai_text_008",
+            "kind": "text",
+            "bbox": [
+              1344,
+              640,
+              1619.716,
+              804.64
+            ],
+            "text": "Future Trends: - Integration of AI in platform ecosystems - Expansion of decentralized networks - Enhanced focus on data privacy and security",
+            "summary": "Future trends in digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          1344,
+          640,
+          1619.716,
+          804.64
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulisbv_i6kcfw",
+        "acceptedAt": 1773750955243,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 141,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuliyid_mznd5c",
+        "requestId": "req_mmuliw6t_14oonr",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_009"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_009"
+        ],
+        "baselineShapes": {
+          "ai_text_009": {
+            "id": "ai_text_009",
+            "kind": "text",
+            "bbox": [
+              96,
+              740,
+              643.2623437499999,
+              874.83435546875
+            ],
+            "text": "Conclusion: Understanding network effects and lock-in mechanisms is crucial for navigating digital economics. Platforms thrive by leveraging user growth, managing challenges, and seizing opportunities to create sustainable ecosystems.",
+            "summary": "Conclusion on network effects and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          740,
+          643.2623437499999,
+          874.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulj42d_993lrv",
+        "acceptedAt": 1773750970453,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 234,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuljbkk_y09yqj",
+        "requestId": "req_mmulj7xa_wt4kba",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_010"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_010"
+        ],
+        "baselineShapes": {
+          "ai_text_010": {
+            "id": "ai_text_010",
+            "kind": "text",
+            "bbox": [
+              1344,
+              840,
+              1619.716,
+              959.84
+            ],
+            "text": "Key Takeaway: Platforms leveraging network effects must balance growth with user trust and innovation to ensure long-term success.",
+            "summary": "Key takeaway on platforms and network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          1344,
+          840,
+          1619.716,
+          959.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuljdop_foljxu",
+        "acceptedAt": 1773750982921,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 130,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuljwol_jqq3yg",
+        "requestId": "req_mmuljsq9_ai5l6o",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_poly_001",
+          "ai_text_001",
+          "ai_text_002",
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001",
+          "ai_text_002",
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_poly_001": {
+            "id": "ai_poly_001",
+            "kind": "poly",
+            "bbox": [
+              400,
+              400,
+              700,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 5,
+            "sampledPoints": [
+              [
+                400,
+                400
+              ],
+              [
+                600,
+                400
+              ],
+              [
+                700,
+                600
+              ],
+              [
+                500,
+                600
+              ],
+              [
+                400,
+                400
+              ]
+            ]
+          },
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              420,
+              380,
+              500,
+              427.84
+            ],
+            "text": "Users",
+            "summary": "Users in flywheel",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              768,
+              270,
+              1125.4296875,
+              380.94471754807694
+            ],
+            "text": "Key concepts: - Positive feedback loops in networks - User lock-in through high switching costs - Value increases with user base (Metcalfe's Law)",
+            "summary": "Key concepts of digital economics",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              768,
+              400,
+              1118.37890625,
+              517.333408203125
+            ],
+            "text": "Examples: - Social media platforms (Facebook, Instagram) - E-commerce marketplaces (Amazon, eBay) - Operating systems (Windows, Android)",
+            "summary": "Examples of platforms with network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          400,
+          270,
+          1125.4296875,
+          600
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuljzti_rmd9f3",
+        "acceptedAt": 1773751011606,
+        "maxPostAcceptEdit": 0.44217622593105854,
+        "maxChangedTextChars": 266,
+        "changedEver": true,
+        "postAcceptEdit": 0.44217622593105854,
+        "acceptedTextChars": 286,
+        "changedTextChars": 266,
+        "changedTextRatio": 0.9300699300699301,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulkj6r_l3n2h9",
+        "requestId": "req_mmulkg2a_80egl6",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_011"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_011"
+        ],
+        "baselineShapes": {
+          "ai_text_011": {
+            "id": "ai_text_011",
+            "kind": "text",
+            "bbox": [
+              768,
+              860,
+              1130,
+              1091.84
+            ],
+            "text": "**Financial Switching Costs**: These are tangible costs incurred when switching platforms, such as subscription fees, cancellation penalties, or the cost of purchasing a new product/service. **Psychological/Data Switching Costs**: These are intangible costs, including emotional attachment, learning a new interface, or losing access to stored data and history. They often create a deeper sense of user lock-in.",
+            "summary": "Differences between financial and psychological/data switching costs.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          768,
+          860,
+          1130,
+          1091.84
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulkmgx_3i935k",
+        "acceptedAt": 1773751040961,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 411,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulm7nb_26sih2",
+        "requestId": "req_mmulku8w_2i7pxl",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_012"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_012"
+        ],
+        "baselineShapes": {
+          "ai_text_012": {
+            "id": "ai_text_012",
+            "kind": "text",
+            "bbox": [
+              96,
+              900,
+              643.2623437499999,
+              1034.83435546875
+            ],
+            "text": "Actionable Insight: To succeed in digital ecosystems, businesses should prioritize creating value for users, fostering strong network effects, and minimizing switching costs to ensure long-term user retention and competitive advantage.",
+            "summary": "Actionable insight for digital ecosystems.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          900,
+          643.2623437499999,
+          1034.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulm9sw_yeuuwl",
+        "acceptedAt": 1773751117856,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 235,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulml0f_gul3tk",
+        "requestId": "req_mmulmhyu_2kqrsd",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_013"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_013"
+        ],
+        "baselineShapes": {
+          "ai_text_013": {
+            "id": "ai_text_013",
+            "kind": "text",
+            "bbox": [
+              96,
+              1100,
+              643.2623437499999,
+              1234.83435546875
+            ],
+            "text": "Practical Advice: Focus on creating a seamless user experience and invest in tools that reduce switching costs. Encourage user engagement and foster an ecosystem where users, developers, and content creators thrive together.",
+            "summary": "Practical advice for platforms.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          1100,
+          643.2623437499999,
+          1234.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulmrnw_eid2kq",
+        "acceptedAt": 1773751141004,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 224,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulnse2_f6kuo3",
+        "requestId": "req_mmulnocn_bcvf1o",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_014"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_014"
+        ],
+        "baselineShapes": {
+          "ai_text_014": {
+            "id": "ai_text_014",
+            "kind": "text",
+            "bbox": [
+              96,
+              1160,
+              704,
+              1345.22
+            ],
+            "text": "Categorization of Apps: 1. **WhatsApp**: Relies more on Direct Network Effects (value increases as more users join). 2. **Adobe Creative Cloud**: Relies on Indirect Network Effects (value grows with complementary tools and plugins). 3. **Amazon**: Combines both Direct (user reviews, marketplace activity) and Indirect (third-party sellers, product diversity) effects.",
+            "summary": "Categorization of apps by network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          96,
+          1160,
+          704,
+          1345.22
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulnuol_kvpk17",
+        "acceptedAt": 1773751191573,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 368,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuloyxj_24mndj",
+        "requestId": "req_mmulouco_easgvw",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_015"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_015"
+        ],
+        "baselineShapes": {
+          "ai_text_015": {
+            "id": "ai_text_015",
+            "kind": "text",
+            "bbox": [
+              96,
+              1300,
+              704,
+              1586.02
+            ],
+            "text": "Strategy Note: To overcome the incumbent's network effects, the startup should: 1. **Target niche audiences**: Build critical mass in underserved segments. 2. **Leverage multi-homing**: Offer unique features that complement existing platforms. 3. **Minimize switching costs**: Simplify migration and provide interoperability with competitors. 4. **Prioritize privacy**: Cultivate trust by emphasizing data security and transparency. 5. **Encourage viral growth**: Incentivize user referrals and community building.",
+            "summary": "Strategy for overcoming network effects.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          96,
+          1300,
+          704,
+          1586.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulp2gd_i7sveu",
+        "acceptedAt": 1773751248301,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 514,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulpbs7_w8n0h8",
+        "requestId": "req_mmulp6bg_uzqiio",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_016"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_016"
+        ],
+        "baselineShapes": {
+          "ai_text_016": {
+            "id": "ai_text_016",
+            "kind": "text",
+            "bbox": [
+              96,
+              1400,
+              619.770625,
+              1529.425078125
+            ],
+            "text": "Additional Insight: Platforms can further enhance network effects by integrating cross-platform compatibility, incentivizing active participation, and leveraging analytics to optimize user engagement.",
+            "summary": "Enhancing network effects through strategies.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          96,
+          1400,
+          619.770625,
+          1529.425078125
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulpe48_120wcy",
+        "acceptedAt": 1773751263416,
+        "maxPostAcceptEdit": 0.1436103374482261,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.1436103374482261,
+        "acceptedTextChars": 200,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulsao6_c8fhvk",
+        "requestId": "req_mmulpj1w_m27yql",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_017"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_017"
+        ],
+        "baselineShapes": {
+          "ai_text_017": {
+            "id": "ai_text_017",
+            "kind": "text",
+            "bbox": [
+              96,
+              1750,
+              630.481875,
+              1881.891484375
+            ],
+            "text": "Final Thought: The interplay of network effects and lock-in mechanisms shapes the competitive landscape of digital platforms. Success hinges on balancing innovation, user trust, and strategic growth.",
+            "summary": "Final thoughts on network effects and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          96,
+          1750,
+          630.481875,
+          1881.891484375
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulvng5_a21od2",
+        "acceptedAt": 1773751555445,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 199,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulx1eo_ynn8fx",
+        "requestId": "req_mmulwxi9_c8aq48",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_018"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_018"
+        ],
+        "baselineShapes": {
+          "ai_text_018": {
+            "id": "ai_text_018",
+            "kind": "text",
+            "bbox": [
+              96,
+              1900,
+              643.2623437499999,
+              2034.83435546875
+            ],
+            "text": "Final Reflection: Digital platforms must continuously innovate while maintaining user trust and minimizing barriers to entry. Success lies in creating ecosystems that benefit all stakeholders and adapt to evolving trends.",
+            "summary": "Final reflection on digital platforms.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          96,
+          1900,
+          643.2623437499999,
+          2034.83435546875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulx2m8_a3yza7",
+        "acceptedAt": 1773751621760,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 221,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      }
+    ]
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 27,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

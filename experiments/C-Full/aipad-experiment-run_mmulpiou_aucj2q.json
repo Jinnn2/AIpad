@@ -1,0 +1,1952 @@
+{
+  "exportedAt": "2026-03-17T12:54:29.851Z",
+  "run": {
+    "runId": "run_mmulpiou_aucj2q",
+    "startedAt": 1773751269342,
+    "endedAt": 1773752069059,
+    "initialSessionId": "sess_1773751124_zrwrxk",
+    "currentPhaseId": "C-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmulri7b_8pvsul",
+        "phaseId": "C-P1",
+        "sentAt": 1773751362023,
+        "respondedAt": 1773751367011,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 360,
+        "completionTokens": 46,
+        "totalTokens": 406,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmulrm1v_ch0mqb",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulslra_kydktu",
+        "phaseId": "C-P1",
+        "sentAt": 1773751413286,
+        "respondedAt": 1773751425391,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2877,
+        "completionTokens": 288,
+        "totalTokens": 3165,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulsv3k_q53z4t",
+        "error": null
+      },
+      {
+        "requestId": "req_mmultyql_nfd1e4",
+        "phaseId": "C-P1",
+        "sentAt": 1773751476765,
+        "respondedAt": 1773751487377,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3673,
+        "completionTokens": 334,
+        "totalTokens": 4007,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulu6xe_x71vi7",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulucan_ogkrre",
+        "phaseId": "C-P1",
+        "sentAt": 1773751494335,
+        "respondedAt": 1773751504644,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4147,
+        "completionTokens": 488,
+        "totalTokens": 4635,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuluk90_oaci3j",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuluy5b_974395",
+        "phaseId": "C-P1",
+        "sentAt": 1773751522655,
+        "respondedAt": 1773751531179,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4506,
+        "completionTokens": 293,
+        "totalTokens": 4799,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulv4q4_bz7hmj",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulvk4s_ilvbpv",
+        "phaseId": "C-P1",
+        "sentAt": 1773751551148,
+        "respondedAt": 1773751563933,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4869,
+        "completionTokens": 502,
+        "totalTokens": 5371,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulvtzy_d2b20i",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulvvf7_sn65q1",
+        "phaseId": "C-P1",
+        "sentAt": 1773751565779,
+        "respondedAt": 1773751574870,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4869,
+        "completionTokens": 325,
+        "totalTokens": 5194,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulw2fq_g6o7lb",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulw2on_thaf8x",
+        "phaseId": "C-P1",
+        "sentAt": 1773751575191,
+        "respondedAt": 1773751590200,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4869,
+        "completionTokens": 600,
+        "totalTokens": 5469,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulwe9l_7rdfz0",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulwl64_fhxi6n",
+        "phaseId": "C-P1",
+        "sentAt": 1773751599148,
+        "respondedAt": 1773751610301,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5342,
+        "completionTokens": 557,
+        "totalTokens": 5899,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulwtry_dwmjla",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulxcg6_9tdoat",
+        "phaseId": "C-P1",
+        "sentAt": 1773751634502,
+        "respondedAt": 1773751644079,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5320,
+        "completionTokens": 335,
+        "totalTokens": 5655,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulxju8_qh8n56",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulycg7_zgf4ei",
+        "phaseId": "C-P1",
+        "sentAt": 1773751681159,
+        "respondedAt": 1773751696469,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6031,
+        "completionTokens": 388,
+        "totalTokens": 6419,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulyo9i_nz093q",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulzhne_u4ckhn",
+        "phaseId": "C-P1",
+        "sentAt": 1773751734554,
+        "respondedAt": 1773751741613,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6399,
+        "completionTokens": 282,
+        "totalTokens": 6681,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmulzn3i_aakcwd",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum0c7k_unp1r0",
+        "phaseId": "C-P2",
+        "sentAt": 1773751774160,
+        "respondedAt": 1773751784074,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6405,
+        "completionTokens": 367,
+        "totalTokens": 6772,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmum0juz_oxqtkt",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum0xsz_dzfji1",
+        "phaseId": "C-P2",
+        "sentAt": 1773751802147,
+        "respondedAt": 1773751814346,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6798,
+        "completionTokens": 378,
+        "totalTokens": 7176,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmum177u_epudae",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum1zm0_6ioq93",
+        "phaseId": "C-P2",
+        "sentAt": 1773751851144,
+        "respondedAt": 1773751863508,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7050,
+        "completionTokens": 306,
+        "totalTokens": 7356,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmum295h_7awqw7",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum4nqh_cgl6lr",
+        "phaseId": "C-P3",
+        "sentAt": 1773751975721,
+        "respondedAt": 1773751987925,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2948,
+        "completionTokens": 273,
+        "totalTokens": 3221,
+        "planTargetBlockIds": [
+          "group_210ad87c"
+        ],
+        "activeBlockIds": [
+          "group_210ad87c"
+        ],
+        "mainBlockId": "block_572faaed",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmum4x5i_cfiay5",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum58v2_22n02l",
+        "phaseId": "C-P3",
+        "sentAt": 1773752003102,
+        "respondedAt": 1773752013783,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2942,
+        "completionTokens": 303,
+        "totalTokens": 3245,
+        "planTargetBlockIds": [
+          "group_210ad87c"
+        ],
+        "activeBlockIds": [
+          "group_210ad87c"
+        ],
+        "mainBlockId": "block_572faaed",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmum5h3u_70dogi",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum5ufx_pynk4b",
+        "phaseId": "C-P3",
+        "sentAt": 1773752031069,
+        "respondedAt": 1773752042398,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 8216,
+        "completionTokens": 364,
+        "totalTokens": 8580,
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockIds": [
+          "group_210ad87c"
+        ],
+        "mainBlockId": "block_572faaed",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmum636n_iqsjpe",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum6hz3_q3948i",
+        "phaseId": "C-P3",
+        "sentAt": 1773752061567,
+        "respondedAt": null,
+        "sessionId": "sess_1773751124_zrwrxk",
+        "requestMode": "full",
+        "status": "sent",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": null,
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmulrm1v_ch0mqb",
+        "requestId": "req_mmulri7b_8pvsul",
+        "phaseId": "C-P1",
+        "at": 1773751367017
+      },
+      {
+        "payloadId": "ai_mmulsv3k_q53z4t",
+        "requestId": "req_mmulslra_kydktu",
+        "phaseId": "C-P1",
+        "at": 1773751425396
+      },
+      {
+        "payloadId": "ai_mmulu6xe_x71vi7",
+        "requestId": "req_mmultyql_nfd1e4",
+        "phaseId": "C-P1",
+        "at": 1773751487384
+      },
+      {
+        "payloadId": "ai_mmuluk90_oaci3j",
+        "requestId": "req_mmulucan_ogkrre",
+        "phaseId": "C-P1",
+        "at": 1773751504659
+      },
+      {
+        "payloadId": "ai_mmulv4q4_bz7hmj",
+        "requestId": "req_mmuluy5b_974395",
+        "phaseId": "C-P1",
+        "at": 1773751531185
+      },
+      {
+        "payloadId": "ai_mmulvtzy_d2b20i",
+        "requestId": "req_mmulvk4s_ilvbpv",
+        "phaseId": "C-P1",
+        "at": 1773751563939
+      },
+      {
+        "payloadId": "ai_mmulw2fq_g6o7lb",
+        "requestId": "req_mmulvvf7_sn65q1",
+        "phaseId": "C-P1",
+        "at": 1773751574875
+      },
+      {
+        "payloadId": "ai_mmulwe9l_7rdfz0",
+        "requestId": "req_mmulw2on_thaf8x",
+        "phaseId": "C-P1",
+        "at": 1773751590213
+      },
+      {
+        "payloadId": "ai_mmulwtry_dwmjla",
+        "requestId": "req_mmulwl64_fhxi6n",
+        "phaseId": "C-P1",
+        "at": 1773751610313
+      },
+      {
+        "payloadId": "ai_mmulxju8_qh8n56",
+        "requestId": "req_mmulxcg6_9tdoat",
+        "phaseId": "C-P1",
+        "at": 1773751644094
+      },
+      {
+        "payloadId": "ai_mmulyo9i_nz093q",
+        "requestId": "req_mmulycg7_zgf4ei",
+        "phaseId": "C-P1",
+        "at": 1773751696480
+      },
+      {
+        "payloadId": "ai_mmulzn3i_aakcwd",
+        "requestId": "req_mmulzhne_u4ckhn",
+        "phaseId": "C-P1",
+        "at": 1773751741618
+      },
+      {
+        "payloadId": "ai_mmum0juz_oxqtkt",
+        "requestId": "req_mmum0c7k_unp1r0",
+        "phaseId": "C-P2",
+        "at": 1773751784082
+      },
+      {
+        "payloadId": "ai_mmum177u_epudae",
+        "requestId": "req_mmum0xsz_dzfji1",
+        "phaseId": "C-P2",
+        "at": 1773751814353
+      },
+      {
+        "payloadId": "ai_mmum295h_7awqw7",
+        "requestId": "req_mmum1zm0_6ioq93",
+        "phaseId": "C-P2",
+        "at": 1773751863517
+      },
+      {
+        "payloadId": "ai_mmum4x5i_cfiay5",
+        "requestId": "req_mmum4nqh_cgl6lr",
+        "phaseId": "C-P3",
+        "at": 1773751987929
+      },
+      {
+        "payloadId": "ai_mmum5h3u_70dogi",
+        "requestId": "req_mmum58v2_22n02l",
+        "phaseId": "C-P3",
+        "at": 1773752013804
+      },
+      {
+        "payloadId": "ai_mmum636n_iqsjpe",
+        "requestId": "req_mmum5ufx_pynk4b",
+        "phaseId": "C-P3",
+        "at": 1773752042411
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmulrm1v_ch0mqb",
+        "requestId": "req_mmulri7b_8pvsul",
+        "phaseId": "C-P1",
+        "at": 1773751399446,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmuluk90_oaci3j",
+        "requestId": "req_mmulucan_ogkrre",
+        "phaseId": "C-P1",
+        "at": 1773751515870,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulwe9l_7rdfz0",
+        "requestId": "req_mmulw2on_thaf8x",
+        "phaseId": "C-P1",
+        "at": 1773751593080,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulwtry_dwmjla",
+        "requestId": "req_mmulwl64_fhxi6n",
+        "phaseId": "C-P1",
+        "at": 1773751629011,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulxju8_qh8n56",
+        "requestId": "req_mmulxcg6_9tdoat",
+        "phaseId": "C-P1",
+        "at": 1773751669361,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulyo9i_nz093q",
+        "requestId": "req_mmulycg7_zgf4ei",
+        "phaseId": "C-P1",
+        "at": 1773751709968,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulzn3i_aakcwd",
+        "requestId": "req_mmulzhne_u4ckhn",
+        "phaseId": "C-P1",
+        "at": 1773751755720,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum0juz_oxqtkt",
+        "requestId": "req_mmum0c7k_unp1r0",
+        "phaseId": "C-P2",
+        "at": 1773751792835,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum177u_epudae",
+        "requestId": "req_mmum0xsz_dzfji1",
+        "phaseId": "C-P2",
+        "at": 1773751834169,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum295h_7awqw7",
+        "requestId": "req_mmum1zm0_6ioq93",
+        "phaseId": "C-P2",
+        "at": 1773751970779,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum5h3u_70dogi",
+        "requestId": "req_mmum58v2_22n02l",
+        "phaseId": "C-P3",
+        "at": 1773752025648,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmum636n_iqsjpe",
+        "requestId": "req_mmum5ufx_pynk4b",
+        "phaseId": "C-P3",
+        "at": 1773752052139,
+        "reason": "manual"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulsv3k_q53z4t",
+        "requestId": "req_mmulslra_kydktu",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_uhi_design_impact"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_uhi_design_impact"
+        ],
+        "baselineShapes": {
+          "text_uhi_design_impact": {
+            "id": "text_uhi_design_impact",
+            "kind": "text",
+            "bbox": [
+              86.689,
+              350,
+              497.519,
+              636.02
+            ],
+            "text": "* Urban Design Impact on UHI: - Surface Materials: Paved areas and rooftops with dark colors absorb more heat. - Vegetation: Lack of greenery reduces shading and evapotranspiration, increasing heat retention. - Building Density: Closely packed structures trap heat, reducing airflow and cooling. - Urban Geometry: Narrow streets and high-rise buildings create \"urban canyons,\" amplifying heat absorption and retention.",
+            "summary": "Urban design factors influencing UHI.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          86.689,
+          350,
+          497.519,
+          636.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmultk9e_tiv69q",
+        "acceptedAt": 1773751458002,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulu6xe_x71vi7",
+        "requestId": "req_mmultyql_nfd1e4",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_grey_infra_impact"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_grey_infra_impact"
+        ],
+        "baselineShapes": {
+          "text_grey_infra_impact": {
+            "id": "text_grey_infra_impact",
+            "kind": "text",
+            "bbox": [
+              543.39,
+              350,
+              954.221,
+              787.22
+            ],
+            "text": "* Grey Infrastructure and UHI: - Heat Absorption: Asphalt, concrete, and other impervious surfaces absorb and retain heat, exacerbating temperature rise. - Reduced Evapotranspiration: Lack of vegetation eliminates natural cooling processes, increasing urban temperatures. - Solutions: - Green Roofs: Plant-covered rooftops reduce heat absorption and enhance evapotranspiration. - Urban Trees: Increasing tree cover provides shade and improves cooling through evapotranspiration. - Permeable Surfaces: Replacing impervious surfaces with permeable materials allows water infiltration and cooling.",
+            "summary": "Impact of grey infrastructure on UHI and solutions like vegetation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 30,
+        "targetBBox": [
+          543.39,
+          350,
+          954.221,
+          787.22
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulu7zh_cedibq",
+        "acceptedAt": 1773751488749,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulv4q4_bz7hmj",
+        "requestId": "req_mmuluy5b_974395",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_green_infra_challenges"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_green_infra_challenges"
+        ],
+        "baselineShapes": {
+          "text_green_infra_challenges": {
+            "id": "text_green_infra_challenges",
+            "kind": "text",
+            "bbox": [
+              993.229,
+              360,
+              1454.838,
+              646.02
+            ],
+            "text": "Green Infrastructure Detailed Explanation: * Mechanism: - Shading: Trees and vegetation reduce direct solar exposure, lowering surface temperatures. - Evapotranspiration: Plants release moisture, cooling the air and mitigating heat. * Primary Challenge: - High Maintenance: Regular care, pruning, and irrigation are required to sustain vegetation. - Water Demand: Green infrastructure can strain water resources, especially in arid regions.",
+            "summary": "Detailed explanation of green infrastructure and its challenges.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          993.229,
+          360,
+          1454.838,
+          646.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulv99t_uk4agj",
+        "acceptedAt": 1773751537073,
+        "maxPostAcceptEdit": 0.02342941984255821,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmulw2fq_g6o7lb",
+        "requestId": "req_mmulvvf7_sn65q1",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_green_infra_mitigation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_green_infra_mitigation"
+        ],
+        "baselineShapes": {
+          "text_green_infra_mitigation": {
+            "id": "text_green_infra_mitigation",
+            "kind": "text",
+            "bbox": [
+              993.229,
+              670.13,
+              1454.838,
+              1082.15
+            ],
+            "text": "Green Infrastructure Mitigation: * Urban Heat Island Reduction: - Tree Canopy: Provides extensive shading, reducing heat absorption by surfaces. - Vegetative Barriers: Lowers ambient temperatures through evapotranspiration. * Water Management Synergy: - Rain Gardens: Capture stormwater, reducing heat from impervious surfaces. - Permeable Landscapes: Enhance soil moisture retention, boosting cooling effects. * Challenges & Solutions: - Maintenance: Employ automated irrigation systems to reduce labor. - Water Demand: Use drought-resistant native plants to minimize resource strain.",
+            "summary": "Green infrastructure strategies to mitigate urban heat islands and address challenges.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 30,
+        "targetBBox": [
+          993.229,
+          670.13,
+          1454.838,
+          1082.15
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulw5oh_fctwy0",
+        "acceptedAt": 1773751579073,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 585,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmum4x5i_cfiay5",
+        "requestId": "req_mmum4nqh_cgl6lr",
+        "phaseId": "C-P3",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              2500,
+              400,
+              2800,
+              837.22
+            ],
+            "text": "To integrate 'Physics Fundamentals' into the micro-climate intervention strategy: 1. Use **Albedo** to select reflective materials for cooling. 2. Leverage **Thermal Mass** for temperature regulation. 3. Incorporate **Evapotranspiration** by planting vegetation. 4. Optimize **Conductivity** in materials for efficient energy transfer. 5. Account for **Inertia** in structural designs. 6. Manage **Entropy** to maintain system order.",
+            "summary": "Integrating Physics into micro-climate strategy",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          2500,
+          400,
+          2800,
+          837.22
+        ],
+        "activeBlockIds": [
+          "group_210ad87c"
+        ],
+        "planTargetBlockIds": [
+          "group_210ad87c"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum54ed_452uy1",
+        "acceptedAt": 1773751997317,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773751269342,
+        "data": {
+          "phaseId": "C-P1",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751362023,
+        "data": {
+          "requestId": "req_mmulri7b_8pvsul",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751367011,
+        "data": {
+          "requestId": "req_mmulri7b_8pvsul",
+          "promptTokens": 360,
+          "completionTokens": 46,
+          "totalTokens": 406,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751367017,
+        "data": {
+          "payloadId": "ai_mmulrm1v_ch0mqb",
+          "requestId": "req_mmulri7b_8pvsul",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751399446,
+        "data": {
+          "payloadId": "ai_mmulrm1v_ch0mqb",
+          "requestId": "req_mmulri7b_8pvsul",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751413286,
+        "data": {
+          "requestId": "req_mmulslra_kydktu",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751425391,
+        "data": {
+          "requestId": "req_mmulslra_kydktu",
+          "promptTokens": 2877,
+          "completionTokens": 288,
+          "totalTokens": 3165,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751425396,
+        "data": {
+          "payloadId": "ai_mmulsv3k_q53z4t",
+          "requestId": "req_mmulslra_kydktu",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751458002,
+        "data": {
+          "acceptId": "accept_mmultk9e_tiv69q",
+          "payloadId": "ai_mmulsv3k_q53z4t",
+          "requestId": "req_mmulslra_kydktu",
+          "phaseId": "C-P1",
+          "usableUnits": 21,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751476765,
+        "data": {
+          "requestId": "req_mmultyql_nfd1e4",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751487377,
+        "data": {
+          "requestId": "req_mmultyql_nfd1e4",
+          "promptTokens": 3673,
+          "completionTokens": 334,
+          "totalTokens": 4007,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751487384,
+        "data": {
+          "payloadId": "ai_mmulu6xe_x71vi7",
+          "requestId": "req_mmultyql_nfd1e4",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751488749,
+        "data": {
+          "acceptId": "accept_mmulu7zh_cedibq",
+          "payloadId": "ai_mmulu6xe_x71vi7",
+          "requestId": "req_mmultyql_nfd1e4",
+          "phaseId": "C-P1",
+          "usableUnits": 30,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751494335,
+        "data": {
+          "requestId": "req_mmulucan_ogkrre",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751504644,
+        "data": {
+          "requestId": "req_mmulucan_ogkrre",
+          "promptTokens": 4147,
+          "completionTokens": 488,
+          "totalTokens": 4635,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751504659,
+        "data": {
+          "payloadId": "ai_mmuluk90_oaci3j",
+          "requestId": "req_mmulucan_ogkrre",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751515870,
+        "data": {
+          "payloadId": "ai_mmuluk90_oaci3j",
+          "requestId": "req_mmulucan_ogkrre",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751522655,
+        "data": {
+          "requestId": "req_mmuluy5b_974395",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751531179,
+        "data": {
+          "requestId": "req_mmuluy5b_974395",
+          "promptTokens": 4506,
+          "completionTokens": 293,
+          "totalTokens": 4799,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751531185,
+        "data": {
+          "payloadId": "ai_mmulv4q4_bz7hmj",
+          "requestId": "req_mmuluy5b_974395",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751537073,
+        "data": {
+          "acceptId": "accept_mmulv99t_uk4agj",
+          "payloadId": "ai_mmulv4q4_bz7hmj",
+          "requestId": "req_mmuluy5b_974395",
+          "phaseId": "C-P1",
+          "usableUnits": 22,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751551148,
+        "data": {
+          "requestId": "req_mmulvk4s_ilvbpv",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751563933,
+        "data": {
+          "requestId": "req_mmulvk4s_ilvbpv",
+          "promptTokens": 4869,
+          "completionTokens": 502,
+          "totalTokens": 5371,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751563939,
+        "data": {
+          "payloadId": "ai_mmulvtzy_d2b20i",
+          "requestId": "req_mmulvk4s_ilvbpv",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751565779,
+        "data": {
+          "requestId": "req_mmulvvf7_sn65q1",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751574870,
+        "data": {
+          "requestId": "req_mmulvvf7_sn65q1",
+          "promptTokens": 4869,
+          "completionTokens": 325,
+          "totalTokens": 5194,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751574875,
+        "data": {
+          "payloadId": "ai_mmulw2fq_g6o7lb",
+          "requestId": "req_mmulvvf7_sn65q1",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751575191,
+        "data": {
+          "requestId": "req_mmulw2on_thaf8x",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751579073,
+        "data": {
+          "acceptId": "accept_mmulw5oh_fctwy0",
+          "payloadId": "ai_mmulw2fq_g6o7lb",
+          "requestId": "req_mmulvvf7_sn65q1",
+          "phaseId": "C-P1",
+          "usableUnits": 30,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751590200,
+        "data": {
+          "requestId": "req_mmulw2on_thaf8x",
+          "promptTokens": 4869,
+          "completionTokens": 600,
+          "totalTokens": 5469,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751590213,
+        "data": {
+          "payloadId": "ai_mmulwe9l_7rdfz0",
+          "requestId": "req_mmulw2on_thaf8x",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751593080,
+        "data": {
+          "payloadId": "ai_mmulwe9l_7rdfz0",
+          "requestId": "req_mmulw2on_thaf8x",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751599148,
+        "data": {
+          "requestId": "req_mmulwl64_fhxi6n",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751610301,
+        "data": {
+          "requestId": "req_mmulwl64_fhxi6n",
+          "promptTokens": 5342,
+          "completionTokens": 557,
+          "totalTokens": 5899,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751610313,
+        "data": {
+          "payloadId": "ai_mmulwtry_dwmjla",
+          "requestId": "req_mmulwl64_fhxi6n",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751629011,
+        "data": {
+          "payloadId": "ai_mmulwtry_dwmjla",
+          "requestId": "req_mmulwl64_fhxi6n",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751634502,
+        "data": {
+          "requestId": "req_mmulxcg6_9tdoat",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751644079,
+        "data": {
+          "requestId": "req_mmulxcg6_9tdoat",
+          "promptTokens": 5320,
+          "completionTokens": 335,
+          "totalTokens": 5655,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751644094,
+        "data": {
+          "payloadId": "ai_mmulxju8_qh8n56",
+          "requestId": "req_mmulxcg6_9tdoat",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751669361,
+        "data": {
+          "payloadId": "ai_mmulxju8_qh8n56",
+          "requestId": "req_mmulxcg6_9tdoat",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751681159,
+        "data": {
+          "requestId": "req_mmulycg7_zgf4ei",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751696469,
+        "data": {
+          "requestId": "req_mmulycg7_zgf4ei",
+          "promptTokens": 6031,
+          "completionTokens": 388,
+          "totalTokens": 6419,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751696480,
+        "data": {
+          "payloadId": "ai_mmulyo9i_nz093q",
+          "requestId": "req_mmulycg7_zgf4ei",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751709968,
+        "data": {
+          "payloadId": "ai_mmulyo9i_nz093q",
+          "requestId": "req_mmulycg7_zgf4ei",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751734554,
+        "data": {
+          "requestId": "req_mmulzhne_u4ckhn",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751741613,
+        "data": {
+          "requestId": "req_mmulzhne_u4ckhn",
+          "promptTokens": 6399,
+          "completionTokens": 282,
+          "totalTokens": 6681,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751741618,
+        "data": {
+          "payloadId": "ai_mmulzn3i_aakcwd",
+          "requestId": "req_mmulzhne_u4ckhn",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751749268,
+        "data": {
+          "phaseId": "C-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751749615,
+        "data": {
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751755720,
+        "data": {
+          "payloadId": "ai_mmulzn3i_aakcwd",
+          "requestId": "req_mmulzhne_u4ckhn",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751774160,
+        "data": {
+          "requestId": "req_mmum0c7k_unp1r0",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751784074,
+        "data": {
+          "requestId": "req_mmum0c7k_unp1r0",
+          "promptTokens": 6405,
+          "completionTokens": 367,
+          "totalTokens": 6772,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751784082,
+        "data": {
+          "payloadId": "ai_mmum0juz_oxqtkt",
+          "requestId": "req_mmum0c7k_unp1r0",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751792835,
+        "data": {
+          "payloadId": "ai_mmum0juz_oxqtkt",
+          "requestId": "req_mmum0c7k_unp1r0",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751802147,
+        "data": {
+          "requestId": "req_mmum0xsz_dzfji1",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751814346,
+        "data": {
+          "requestId": "req_mmum0xsz_dzfji1",
+          "promptTokens": 6798,
+          "completionTokens": 378,
+          "totalTokens": 7176,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751814353,
+        "data": {
+          "payloadId": "ai_mmum177u_epudae",
+          "requestId": "req_mmum0xsz_dzfji1",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751834169,
+        "data": {
+          "payloadId": "ai_mmum177u_epudae",
+          "requestId": "req_mmum0xsz_dzfji1",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751851144,
+        "data": {
+          "requestId": "req_mmum1zm0_6ioq93",
+          "phaseId": "C-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751863508,
+        "data": {
+          "requestId": "req_mmum1zm0_6ioq93",
+          "promptTokens": 7050,
+          "completionTokens": 306,
+          "totalTokens": 7356,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751863517,
+        "data": {
+          "payloadId": "ai_mmum295h_7awqw7",
+          "requestId": "req_mmum1zm0_6ioq93",
+          "phaseId": "C-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751874572,
+        "data": {
+          "phaseId": "C-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751874759,
+        "data": {
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751970779,
+        "data": {
+          "payloadId": "ai_mmum295h_7awqw7",
+          "requestId": "req_mmum1zm0_6ioq93",
+          "phaseId": "C-P2",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751975721,
+        "data": {
+          "requestId": "req_mmum4nqh_cgl6lr",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751987925,
+        "data": {
+          "requestId": "req_mmum4nqh_cgl6lr",
+          "promptTokens": 2948,
+          "completionTokens": 273,
+          "totalTokens": 3221,
+          "activeBlockIds": [
+            "group_210ad87c"
+          ],
+          "planTargetBlockIds": [
+            "group_210ad87c"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751987929,
+        "data": {
+          "payloadId": "ai_mmum4x5i_cfiay5",
+          "requestId": "req_mmum4nqh_cgl6lr",
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751997317,
+        "data": {
+          "acceptId": "accept_mmum54ed_452uy1",
+          "payloadId": "ai_mmum4x5i_cfiay5",
+          "requestId": "req_mmum4nqh_cgl6lr",
+          "phaseId": "C-P3",
+          "usableUnits": 22,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752003102,
+        "data": {
+          "requestId": "req_mmum58v2_22n02l",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752013783,
+        "data": {
+          "requestId": "req_mmum58v2_22n02l",
+          "promptTokens": 2942,
+          "completionTokens": 303,
+          "totalTokens": 3245,
+          "activeBlockIds": [
+            "group_210ad87c"
+          ],
+          "planTargetBlockIds": [
+            "group_210ad87c"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752013804,
+        "data": {
+          "payloadId": "ai_mmum5h3u_70dogi",
+          "requestId": "req_mmum58v2_22n02l",
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752025648,
+        "data": {
+          "payloadId": "ai_mmum5h3u_70dogi",
+          "requestId": "req_mmum58v2_22n02l",
+          "phaseId": "C-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752031069,
+        "data": {
+          "requestId": "req_mmum5ufx_pynk4b",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752042398,
+        "data": {
+          "requestId": "req_mmum5ufx_pynk4b",
+          "promptTokens": 8216,
+          "completionTokens": 364,
+          "totalTokens": 8580,
+          "activeBlockIds": [
+            "group_210ad87c"
+          ],
+          "planTargetBlockIds": [
+            "block_572faaed"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752042411,
+        "data": {
+          "payloadId": "ai_mmum636n_iqsjpe",
+          "requestId": "req_mmum5ufx_pynk4b",
+          "phaseId": "C-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752052139,
+        "data": {
+          "payloadId": "ai_mmum636n_iqsjpe",
+          "requestId": "req_mmum5ufx_pynk4b",
+          "phaseId": "C-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752061567,
+        "data": {
+          "requestId": "req_mmum6hz3_q3948i",
+          "phaseId": "C-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773751124_zrwrxk"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773752069059
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 19,
+    "previewCount": 18,
+    "acceptCount": 5,
+    "dismissCount": 12,
+    "completedRoundCount": 18,
+    "totalPromptTokens": 87621,
+    "acceptedUsableUnits": 125,
+    "acceptedTextChars": 2470,
+    "changedTextChars": 585,
+    "suggestionAcceptanceRate": 0.2777777777777778,
+    "dismissRate": 0.6666666666666666,
+    "straightUseRate": 0.6,
+    "userChangedRate": 0.23684210526315788,
+    "promptTokensPerRound": 4867.833333333333,
+    "acceptedUsableContentPer1kTokens": 1.426598646443204,
+    "activeBlockAlignmentRate": 0,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "C-P1",
+        "invoke": 12,
+        "straightUseRate": 0.75,
+        "acceptedOutputPer1kToken": 1.9338365063272125,
+        "promptTokens": 53262,
+        "acceptedUsableUnits": 103,
+        "acceptedCount": 4
+      },
+      {
+        "phaseId": "C-P2",
+        "invoke": 3,
+        "straightUseRate": null,
+        "acceptedOutputPer1kToken": 0,
+        "promptTokens": 20253,
+        "acceptedUsableUnits": 0,
+        "acceptedCount": 0
+      },
+      {
+        "phaseId": "C-P3",
+        "invoke": 4,
+        "straightUseRate": 0,
+        "acceptedOutputPer1kToken": 1.5596200198497094,
+        "promptTokens": 14106,
+        "acceptedUsableUnits": 22,
+        "acceptedCount": 1
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulsv3k_q53z4t",
+        "requestId": "req_mmulslra_kydktu",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_uhi_design_impact"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_uhi_design_impact"
+        ],
+        "baselineShapes": {
+          "text_uhi_design_impact": {
+            "id": "text_uhi_design_impact",
+            "kind": "text",
+            "bbox": [
+              86.689,
+              350,
+              497.519,
+              636.02
+            ],
+            "text": "* Urban Design Impact on UHI: - Surface Materials: Paved areas and rooftops with dark colors absorb more heat. - Vegetation: Lack of greenery reduces shading and evapotranspiration, increasing heat retention. - Building Density: Closely packed structures trap heat, reducing airflow and cooling. - Urban Geometry: Narrow streets and high-rise buildings create \"urban canyons,\" amplifying heat absorption and retention.",
+            "summary": "Urban design factors influencing UHI.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          86.689,
+          350,
+          497.519,
+          636.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmultk9e_tiv69q",
+        "acceptedAt": 1773751458002,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 418,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulu6xe_x71vi7",
+        "requestId": "req_mmultyql_nfd1e4",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_grey_infra_impact"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_grey_infra_impact"
+        ],
+        "baselineShapes": {
+          "text_grey_infra_impact": {
+            "id": "text_grey_infra_impact",
+            "kind": "text",
+            "bbox": [
+              543.39,
+              350,
+              954.221,
+              787.22
+            ],
+            "text": "* Grey Infrastructure and UHI: - Heat Absorption: Asphalt, concrete, and other impervious surfaces absorb and retain heat, exacerbating temperature rise. - Reduced Evapotranspiration: Lack of vegetation eliminates natural cooling processes, increasing urban temperatures. - Solutions: - Green Roofs: Plant-covered rooftops reduce heat absorption and enhance evapotranspiration. - Urban Trees: Increasing tree cover provides shade and improves cooling through evapotranspiration. - Permeable Surfaces: Replacing impervious surfaces with permeable materials allows water infiltration and cooling.",
+            "summary": "Impact of grey infrastructure on UHI and solutions like vegetation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 30,
+        "targetBBox": [
+          543.39,
+          350,
+          954.221,
+          787.22
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulu7zh_cedibq",
+        "acceptedAt": 1773751488749,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 594,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulv4q4_bz7hmj",
+        "requestId": "req_mmuluy5b_974395",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_green_infra_challenges"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_green_infra_challenges"
+        ],
+        "baselineShapes": {
+          "text_green_infra_challenges": {
+            "id": "text_green_infra_challenges",
+            "kind": "text",
+            "bbox": [
+              993.229,
+              360,
+              1454.838,
+              646.02
+            ],
+            "text": "Green Infrastructure Detailed Explanation: * Mechanism: - Shading: Trees and vegetation reduce direct solar exposure, lowering surface temperatures. - Evapotranspiration: Plants release moisture, cooling the air and mitigating heat. * Primary Challenge: - High Maintenance: Regular care, pruning, and irrigation are required to sustain vegetation. - Water Demand: Green infrastructure can strain water resources, especially in arid regions.",
+            "summary": "Detailed explanation of green infrastructure and its challenges.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          993.229,
+          360,
+          1454.838,
+          646.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulv99t_uk4agj",
+        "acceptedAt": 1773751537073,
+        "maxPostAcceptEdit": 0.02342941984255821,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.02342941984255821,
+        "acceptedTextChars": 440,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmulw2fq_g6o7lb",
+        "requestId": "req_mmulvvf7_sn65q1",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "text_green_infra_mitigation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_green_infra_mitigation"
+        ],
+        "baselineShapes": {
+          "text_green_infra_mitigation": {
+            "id": "text_green_infra_mitigation",
+            "kind": "text",
+            "bbox": [
+              993.229,
+              670.13,
+              1454.838,
+              1082.15
+            ],
+            "text": "Green Infrastructure Mitigation: * Urban Heat Island Reduction: - Tree Canopy: Provides extensive shading, reducing heat absorption by surfaces. - Vegetative Barriers: Lowers ambient temperatures through evapotranspiration. * Water Management Synergy: - Rain Gardens: Capture stormwater, reducing heat from impervious surfaces. - Permeable Landscapes: Enhance soil moisture retention, boosting cooling effects. * Challenges & Solutions: - Maintenance: Employ automated irrigation systems to reduce labor. - Water Demand: Use drought-resistant native plants to minimize resource strain.",
+            "summary": "Green infrastructure strategies to mitigate urban heat islands and address challenges.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 30,
+        "targetBBox": [
+          993.229,
+          670.13,
+          1454.838,
+          1082.15
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_572faaed"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulw5oh_fctwy0",
+        "acceptedAt": 1773751579073,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 585,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 585,
+        "changedTextChars": 585,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmum4x5i_cfiay5",
+        "requestId": "req_mmum4nqh_cgl6lr",
+        "phaseId": "C-P3",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              2500,
+              400,
+              2800,
+              837.22
+            ],
+            "text": "To integrate 'Physics Fundamentals' into the micro-climate intervention strategy: 1. Use **Albedo** to select reflective materials for cooling. 2. Leverage **Thermal Mass** for temperature regulation. 3. Incorporate **Evapotranspiration** by planting vegetation. 4. Optimize **Conductivity** in materials for efficient energy transfer. 5. Account for **Inertia** in structural designs. 6. Manage **Entropy** to maintain system order.",
+            "summary": "Integrating Physics into micro-climate strategy",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          2500,
+          400,
+          2800,
+          837.22
+        ],
+        "activeBlockIds": [
+          "group_210ad87c"
+        ],
+        "planTargetBlockIds": [
+          "group_210ad87c"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum54ed_452uy1",
+        "acceptedAt": 1773751997317,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 433,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      }
+    ]
+  },
+  "graphBlockCount": 1,
+  "currentShapeCount": 16,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

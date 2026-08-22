@@ -1,0 +1,55 @@
+{
+  "exportedAt": "2026-03-17T13:08:16.171Z",
+  "run": {
+    "runId": "run_mmulyah6_3isjmd",
+    "startedAt": 1773751678602,
+    "endedAt": 1773752895623,
+    "initialSessionId": "sess_1773751672_wblm1j",
+    "currentPhaseId": "C-P1",
+    "editThreshold": 0.2,
+    "requestRounds": [],
+    "previews": [],
+    "dismisses": [],
+    "acceptedSuggestions": [],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773751678602,
+        "data": {
+          "phaseId": "C-P1",
+          "sessionId": "sess_1773751672_wblm1j"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773752895623
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 0,
+    "previewCount": 0,
+    "acceptCount": 0,
+    "dismissCount": 0,
+    "completedRoundCount": 0,
+    "totalPromptTokens": 0,
+    "acceptedUsableUnits": 0,
+    "acceptedTextChars": 0,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": null,
+    "dismissRate": null,
+    "straightUseRate": null,
+    "userChangedRate": null,
+    "promptTokensPerRound": null,
+    "acceptedUsableContentPer1kTokens": null,
+    "activeBlockAlignmentRate": null,
+    "phaseSpecificEfficiency": [],
+    "acceptedSuggestions": []
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 17,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

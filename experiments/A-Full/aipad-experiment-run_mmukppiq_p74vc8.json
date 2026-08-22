@@ -1,0 +1,4245 @@
+{
+  "exportedAt": "2026-03-17T12:30:54.114Z",
+  "run": {
+    "runId": "run_mmukppiq_p74vc8",
+    "startedAt": 1773749598578,
+    "endedAt": 1773750652657,
+    "initialSessionId": "sess_1773749589_uczjue",
+    "currentPhaseId": "A-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmukr7bc_9jzaze",
+        "phaseId": "A-P1",
+        "sentAt": 1773749668296,
+        "respondedAt": 1773749680233,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3135,
+        "completionTokens": 341,
+        "totalTokens": 3476,
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukrgiy_ms8okd",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukrxz6_q7ijlm",
+        "phaseId": "A-P1",
+        "sentAt": 1773749702850,
+        "respondedAt": 1773749710704,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2994,
+        "completionTokens": 278,
+        "totalTokens": 3272,
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuks41c_co1dpx",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukscz9_djhu4p",
+        "phaseId": "A-P1",
+        "sentAt": 1773749722293,
+        "respondedAt": 1773749729215,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3377,
+        "completionTokens": 269,
+        "totalTokens": 3646,
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuksibj_sk4sir",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukt69r_zpzwbu",
+        "phaseId": "A-P1",
+        "sentAt": 1773749760255,
+        "respondedAt": 1773749773247,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2595,
+        "completionTokens": 225,
+        "totalTokens": 2820,
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "mainBlockId": "group_4e37a81d",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuktgan_vncrly",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukxkic_m5ssix",
+        "phaseId": "A-P1",
+        "sentAt": 1773749965332,
+        "respondedAt": 1773749976204,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2987,
+        "completionTokens": 358,
+        "totalTokens": 3345,
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "mainBlockId": "group_4e37a81d",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukxswd_mir79m",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukxy7k_4noaq9",
+        "phaseId": "A-P1",
+        "sentAt": 1773749983088,
+        "respondedAt": 1773749990519,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3432,
+        "completionTokens": 314,
+        "totalTokens": 3746,
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "mainBlockId": "group_4e37a81d",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuky3xz_d0hn3q",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukym87_yeod55",
+        "phaseId": "A-P1",
+        "sentAt": 1773750014215,
+        "respondedAt": 1773750029706,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3709,
+        "completionTokens": 391,
+        "totalTokens": 4100,
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukyy6i_s8z86e",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukz4w2_21cllq",
+        "phaseId": "A-P1",
+        "sentAt": 1773750038402,
+        "respondedAt": 1773750044460,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3793,
+        "completionTokens": 267,
+        "totalTokens": 4060,
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukz9kc_hymwbk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukzn49_j9tb9e",
+        "phaseId": "A-P1",
+        "sentAt": 1773750062025,
+        "respondedAt": 1773750069765,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4119,
+        "completionTokens": 296,
+        "totalTokens": 4415,
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukzt39_2xnsyt",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukzzt5_jf6ft4",
+        "phaseId": "A-P1",
+        "sentAt": 1773750078473,
+        "respondedAt": 1773750085857,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4558,
+        "completionTokens": 416,
+        "totalTokens": 4974,
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmul05i9_pq0ik9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul0aj2_rrkd67",
+        "phaseId": "A-P1",
+        "sentAt": 1773750092366,
+        "respondedAt": 1773750101577,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4866,
+        "completionTokens": 439,
+        "totalTokens": 5305,
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmul0hmx_6u2ni0",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul0zy5_38zqhk",
+        "phaseId": "A-P1",
+        "sentAt": 1773750125309,
+        "respondedAt": 1773750126928,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 869,
+        "completionTokens": 78,
+        "totalTokens": 947,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "mainBlockId": "block_3771047e",
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmul1174_lteuy5",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul1f9k_ukik8x",
+        "phaseId": "A-P1",
+        "sentAt": 1773750145160,
+        "respondedAt": 1773750151418,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 729,
+        "completionTokens": 73,
+        "totalTokens": 802,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmul1k3e_mcq5pt",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul2eu0_cavtq2",
+        "phaseId": "A-P1",
+        "sentAt": 1773750191256,
+        "respondedAt": 1773750200021,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2565,
+        "completionTokens": 354,
+        "totalTokens": 2919,
+        "planTargetBlockIds": [
+          "group_7ff155b7"
+        ],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmul2llh_k9t2yz",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul2t9k_v7r2br",
+        "phaseId": "A-P1",
+        "sentAt": 1773750209960,
+        "respondedAt": 1773750218901,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3520,
+        "completionTokens": 271,
+        "totalTokens": 3791,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmul305x_s0vpsw",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul3fpq_zi5mku",
+        "phaseId": "A-P1",
+        "sentAt": 1773750239054,
+        "respondedAt": 1773750243909,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 842,
+        "completionTokens": 59,
+        "totalTokens": 901,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "block_8c6cea8e",
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_8c6cea8e",
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmul3jgl_0aqkrl",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul42nr_cwx02a",
+        "phaseId": "A-P1",
+        "sentAt": 1773750268791,
+        "respondedAt": 1773750270917,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 847,
+        "completionTokens": 57,
+        "totalTokens": 904,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "block_8c6cea8e",
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_8c6cea8e",
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmul44au_73bei3",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul4z67_3tw63y",
+        "phaseId": "A-P1",
+        "sentAt": 1773750310927,
+        "respondedAt": 1773750326719,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3696,
+        "completionTokens": 621,
+        "totalTokens": 4317,
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "SWITCH",
+        "previewPayloadId": "ai_mmul5bcw_lx7ghk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul62g1_7r3ar9",
+        "phaseId": "A-P1",
+        "sentAt": 1773750361825,
+        "respondedAt": 1773750368908,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6757,
+        "completionTokens": 290,
+        "totalTokens": 7047,
+        "planTargetBlockIds": [
+          "block_8c6cea8e",
+          "block_3771047e"
+        ],
+        "activeBlockIds": [
+          "block_3771047e",
+          "block_8c6cea8e",
+          "block_b1a5ae0f"
+        ],
+        "mainBlockId": "block_b1a5ae0f",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmul67ws_nmxn7z",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul6xqu_fh8b8h",
+        "phaseId": "A-P1",
+        "sentAt": 1773750402390,
+        "respondedAt": 1773750412679,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1062,
+        "completionTokens": 65,
+        "totalTokens": 1127,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "group_0c935650"
+        ],
+        "mainBlockId": "group_0c935650",
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmul75oo_9a931j",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul9cf3_f08m3l",
+        "phaseId": "A-P1",
+        "sentAt": 1773750514719,
+        "respondedAt": 1773750531350,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4027,
+        "completionTokens": 1078,
+        "totalTokens": 5105,
+        "planTargetBlockIds": [
+          "block_98ecc0fb",
+          "group_09ef80d0"
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "block_98ecc0fb",
+          "group_0c935650"
+        ],
+        "mainBlockId": "group_0c935650",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmul9p93_2otivg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulaltk_d8oc35",
+        "phaseId": "A-P3",
+        "sentAt": 1773750573560,
+        "respondedAt": 1773750585784,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3374,
+        "completionTokens": 612,
+        "totalTokens": 3986,
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99"
+        ],
+        "activeBlockIds": [
+          "group_0c935650",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "block_98ecc0fb"
+        ],
+        "mainBlockId": "group_0c935650",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmulav95_thv5hk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulb61d_224deg",
+        "phaseId": "A-P3",
+        "sentAt": 1773750599761,
+        "respondedAt": 1773750613296,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3728,
+        "completionTokens": 252,
+        "totalTokens": 3980,
+        "planTargetBlockIds": [
+          "group_0d235a99",
+          "group_0c935650",
+          "group_09ef80d0"
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "group_0d235a99",
+          "group_0c935650"
+        ],
+        "mainBlockId": "group_0d235a99",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmulbghc_wwg1mr",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulbnwq_bes0h3",
+        "phaseId": "A-P3",
+        "sentAt": 1773750622922,
+        "respondedAt": 1773750632582,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3781,
+        "completionTokens": 427,
+        "totalTokens": 4208,
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "group_09ef80d0"
+        ],
+        "activeBlockIds": [
+          "group_0d235a99",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0c935650"
+        ],
+        "mainBlockId": "group_0d235a99",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmulbvd3_c72l38",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulc555_oo0p91",
+        "phaseId": "A-P3",
+        "sentAt": 1773750645257,
+        "respondedAt": 1773750650290,
+        "sessionId": "sess_1773749589_uczjue",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3095,
+        "completionTokens": 259,
+        "totalTokens": 3354,
+        "planTargetBlockIds": [
+          "block_e77b9d6f"
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "group_0d235a99",
+          "block_e77b9d6f",
+          "group_0c935650"
+        ],
+        "mainBlockId": "group_0d235a99",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmulc90z_3hn5br",
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmukrgiy_ms8okd",
+        "requestId": "req_mmukr7bc_9jzaze",
+        "phaseId": "A-P1",
+        "at": 1773749680236
+      },
+      {
+        "payloadId": "ai_mmuks41c_co1dpx",
+        "requestId": "req_mmukrxz6_q7ijlm",
+        "phaseId": "A-P1",
+        "at": 1773749710707
+      },
+      {
+        "payloadId": "ai_mmuksibj_sk4sir",
+        "requestId": "req_mmukscz9_djhu4p",
+        "phaseId": "A-P1",
+        "at": 1773749729221
+      },
+      {
+        "payloadId": "ai_mmuktgan_vncrly",
+        "requestId": "req_mmukt69r_zpzwbu",
+        "phaseId": "A-P1",
+        "at": 1773749773249
+      },
+      {
+        "payloadId": "ai_mmukxswd_mir79m",
+        "requestId": "req_mmukxkic_m5ssix",
+        "phaseId": "A-P1",
+        "at": 1773749976206
+      },
+      {
+        "payloadId": "ai_mmuky3xz_d0hn3q",
+        "requestId": "req_mmukxy7k_4noaq9",
+        "phaseId": "A-P1",
+        "at": 1773749990519
+      },
+      {
+        "payloadId": "ai_mmukyy6i_s8z86e",
+        "requestId": "req_mmukym87_yeod55",
+        "phaseId": "A-P1",
+        "at": 1773750029709
+      },
+      {
+        "payloadId": "ai_mmukz9kc_hymwbk",
+        "requestId": "req_mmukz4w2_21cllq",
+        "phaseId": "A-P1",
+        "at": 1773750044463
+      },
+      {
+        "payloadId": "ai_mmukzt39_2xnsyt",
+        "requestId": "req_mmukzn49_j9tb9e",
+        "phaseId": "A-P1",
+        "at": 1773750069767
+      },
+      {
+        "payloadId": "ai_mmul05i9_pq0ik9",
+        "requestId": "req_mmukzzt5_jf6ft4",
+        "phaseId": "A-P1",
+        "at": 1773750085860
+      },
+      {
+        "payloadId": "ai_mmul0hmx_6u2ni0",
+        "requestId": "req_mmul0aj2_rrkd67",
+        "phaseId": "A-P1",
+        "at": 1773750101594
+      },
+      {
+        "payloadId": "ai_mmul1174_lteuy5",
+        "requestId": "req_mmul0zy5_38zqhk",
+        "phaseId": "A-P1",
+        "at": 1773750126930
+      },
+      {
+        "payloadId": "ai_mmul1k3e_mcq5pt",
+        "requestId": "req_mmul1f9k_ukik8x",
+        "phaseId": "A-P1",
+        "at": 1773750151420
+      },
+      {
+        "payloadId": "ai_mmul2llh_k9t2yz",
+        "requestId": "req_mmul2eu0_cavtq2",
+        "phaseId": "A-P1",
+        "at": 1773750200023
+      },
+      {
+        "payloadId": "ai_mmul305x_s0vpsw",
+        "requestId": "req_mmul2t9k_v7r2br",
+        "phaseId": "A-P1",
+        "at": 1773750218907
+      },
+      {
+        "payloadId": "ai_mmul3jgl_0aqkrl",
+        "requestId": "req_mmul3fpq_zi5mku",
+        "phaseId": "A-P1",
+        "at": 1773750243911
+      },
+      {
+        "payloadId": "ai_mmul44au_73bei3",
+        "requestId": "req_mmul42nr_cwx02a",
+        "phaseId": "A-P1",
+        "at": 1773750270920
+      },
+      {
+        "payloadId": "ai_mmul5bcw_lx7ghk",
+        "requestId": "req_mmul4z67_3tw63y",
+        "phaseId": "A-P1",
+        "at": 1773750326723
+      },
+      {
+        "payloadId": "ai_mmul67ws_nmxn7z",
+        "requestId": "req_mmul62g1_7r3ar9",
+        "phaseId": "A-P1",
+        "at": 1773750368912
+      },
+      {
+        "payloadId": "ai_mmul75oo_9a931j",
+        "requestId": "req_mmul6xqu_fh8b8h",
+        "phaseId": "A-P1",
+        "at": 1773750412681
+      },
+      {
+        "payloadId": "ai_mmul9p93_2otivg",
+        "requestId": "req_mmul9cf3_f08m3l",
+        "phaseId": "A-P1",
+        "at": 1773750531354
+      },
+      {
+        "payloadId": "ai_mmulav95_thv5hk",
+        "requestId": "req_mmulaltk_d8oc35",
+        "phaseId": "A-P3",
+        "at": 1773750585787
+      },
+      {
+        "payloadId": "ai_mmulbghc_wwg1mr",
+        "requestId": "req_mmulb61d_224deg",
+        "phaseId": "A-P3",
+        "at": 1773750613297
+      },
+      {
+        "payloadId": "ai_mmulbvd3_c72l38",
+        "requestId": "req_mmulbnwq_bes0h3",
+        "phaseId": "A-P3",
+        "at": 1773750632583
+      },
+      {
+        "payloadId": "ai_mmulc90z_3hn5br",
+        "requestId": "req_mmulc555_oo0p91",
+        "phaseId": "A-P3",
+        "at": 1773750650292
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmul1174_lteuy5",
+        "requestId": "req_mmul0zy5_38zqhk",
+        "phaseId": "A-P1",
+        "at": 1773750129816,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmul1k3e_mcq5pt",
+        "requestId": "req_mmul1f9k_ukik8x",
+        "phaseId": "A-P1",
+        "at": 1773750168493,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmul3jgl_0aqkrl",
+        "requestId": "req_mmul3fpq_zi5mku",
+        "phaseId": "A-P1",
+        "at": 1773750249298,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmul44au_73bei3",
+        "requestId": "req_mmul42nr_cwx02a",
+        "phaseId": "A-P1",
+        "at": 1773750280146,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmul75oo_9a931j",
+        "requestId": "req_mmul6xqu_fh8b8h",
+        "phaseId": "A-P1",
+        "at": 1773750516331,
+        "reason": "manual"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmukrgiy_ms8okd",
+        "requestId": "req_mmukr7bc_9jzaze",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_ai_wolff_implications"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_ai_wolff_implications"
+        ],
+        "baselineShapes": {
+          "text_ai_wolff_implications": {
+            "id": "text_ai_wolff_implications",
+            "kind": "text",
+            "bbox": [
+              672,
+              640,
+              1248.016,
+              875.62
+            ],
+            "text": "Implications and Optimization: Wolff's Law has profound implications for both biology and engineering. In Trabecular bone, the alignment of trabeculae along stress lines ensures maximum strength with minimal material, exemplifying nature's efficiency. This principle inspires modern topology optimization techniques, where structures are designed to mimic this anisotropic efficiency. Applications include lightweight aerospace components, prosthetics, and architectural designs that balance strength and material usage.",
+            "summary": "Wolff's Law inspires topology optimization, mimicking efficient bone structure.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          672,
+          640,
+          1248.016,
+          875.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukrhv0_09yv7b",
+        "acceptedAt": 1773749681964,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuks41c_co1dpx",
+        "requestId": "req_mmukrxz6_q7ijlm",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_practical_to_examples"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_practical_to_examples"
+        ],
+        "baselineShapes": {
+          "text_practical_to_examples": {
+            "id": "text_practical_to_examples",
+            "kind": "text",
+            "bbox": [
+              150,
+              850,
+              800,
+              1085.62
+            ],
+            "text": "Practical Applications of Topology Optimization: 1. Aerospace: Lightweight structures for aircraft wings and spacecraft components. 2. Automotive: Optimized chassis and suspension systems for weight reduction and performance. 3. Architecture: Designing efficient load-bearing structures and bridges. 4. Medical: Custom implants and prosthetics with improved functionality. 5. Consumer Products: Lightweight and durable designs for electronics and sports equipment.",
+            "summary": "Examples of Topology Optimization applications",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          150,
+          850,
+          800,
+          1085.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuks5gl_iqqzdp",
+        "acceptedAt": 1773749712549,
+        "maxPostAcceptEdit": 0.11350275230381754,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuksibj_sk4sir",
+        "requestId": "req_mmukscz9_djhu4p",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_medical_to_applications"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_medical_to_applications"
+        ],
+        "baselineShapes": {
+          "text_medical_to_applications": {
+            "id": "text_medical_to_applications",
+            "kind": "text",
+            "bbox": [
+              13.822,
+              1270.098,
+              601.726052734375,
+              1441.72219921875
+            ],
+            "text": "In the medical field, topology optimization is revolutionizing the design of implants and prosthetics. By using TO, engineers can create structures that mimic the natural geometry and density of bones, improving biocompatibility and reducing weight. Additionally, TO enables the development of custom surgical tools and devices tailored to individual patient needs, enhancing precision and outcomes.",
+            "summary": "Medical applications of TO: implants, prosthetics, surgical tools.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 20,
+        "targetBBox": [
+          13.822,
+          1270.098,
+          601.726052734375,
+          1441.72219921875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuksjt9_l8pbx3",
+        "acceptedAt": 1773749731149,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuktgan_vncrly",
+        "requestId": "req_mmukt69r_zpzwbu",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_metabolic"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_metabolic"
+        ],
+        "baselineShapes": {
+          "text_expand_metabolic": {
+            "id": "text_expand_metabolic",
+            "kind": "text",
+            "bbox": [
+              1696,
+              560,
+              1900,
+              747.04
+            ],
+            "text": "Metabolic responses are critical for energy balance and adaptation during stress. They often involve hormonal regulation, nutrient utilization, and cellular signaling pathways.",
+            "summary": "Key aspects of metabolic responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          1696,
+          560,
+          1900,
+          747.04
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukxgne_dk0rlu",
+        "acceptedAt": 1773749960330,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukxswd_mir79m",
+        "requestId": "req_mmukxkic_m5ssix",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_broader_themes"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_broader_themes"
+        ],
+        "baselineShapes": {
+          "text_expand_broader_themes": {
+            "id": "text_expand_broader_themes",
+            "kind": "text",
+            "bbox": [
+              1696,
+              760,
+              1900,
+              1014.24
+            ],
+            "text": "Metabolic responses also intersect with broader themes such as environmental adaptation, aging, and disease mechanisms. For instance, stress-induced metabolic shifts can influence immune function and chronic conditions like diabetes.",
+            "summary": "Broader themes of metabolic responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          1696,
+          760,
+          1900,
+          1014.24
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukxuch_j3f7em",
+        "acceptedAt": 1773749978081,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuky3xz_d0hn3q",
+        "requestId": "req_mmukxy7k_4noaq9",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_environmental_adaptation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_environmental_adaptation"
+        ],
+        "baselineShapes": {
+          "text_expand_environmental_adaptation": {
+            "id": "text_expand_environmental_adaptation",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1020,
+              1900,
+              1207.04
+            ],
+            "text": "Environmental adaptation often relies on metabolic flexibility. For example, organisms in extreme climates adjust their energy expenditure and nutrient metabolism to survive harsh conditions.",
+            "summary": "Metabolic role in environmental adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          1696,
+          1020,
+          1900,
+          1207.04
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukyglv_bucke2",
+        "acceptedAt": 1773750006931,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukyy6i_s8z86e",
+        "requestId": "req_mmukym87_yeod55",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_aging_disease"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_aging_disease"
+        ],
+        "baselineShapes": {
+          "text_expand_aging_disease": {
+            "id": "text_expand_aging_disease",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1220,
+              1900,
+              1541.44
+            ],
+            "text": "Aging and disease mechanisms are deeply influenced by metabolic responses. Cellular aging often involves oxidative stress and mitochondrial dysfunction, which are tied to metabolic regulation. Similarly, metabolic imbalances are central to diseases like cancer, cardiovascular conditions, and neurodegenerative disorders.",
+            "summary": "Metabolic links to aging and disease",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 17,
+        "targetBBox": [
+          1696,
+          1220,
+          1900,
+          1541.44
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukz0h4_c211r9",
+        "acceptedAt": 1773750032680,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukz9kc_hymwbk",
+        "requestId": "req_mmukz4w2_21cllq",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_metabolic_flexibility_aging"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_metabolic_flexibility_aging"
+        ],
+        "baselineShapes": {
+          "expand_metabolic_flexibility_aging": {
+            "id": "expand_metabolic_flexibility_aging",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1550,
+              2002,
+              1857.84
+            ],
+            "text": "Metabolic flexibility plays a crucial role in aging and disease mechanisms. It allows cells to adapt energy production and usage under varying conditions, reducing oxidative stress and mitigating mitochondrial dysfunction. This adaptability can influence the progression of age-related diseases like Alzheimer's, diabetes, and cardiovascular disorders by maintaining cellular homeostasis and reducing damage from metabolic imbalances.",
+            "summary": "Impact of metabolic flexibility on aging and diseases",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          1696,
+          1550,
+          2002,
+          1857.84
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukzfui_frbv1p",
+        "acceptedAt": 1773750052602,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukzt39_2xnsyt",
+        "requestId": "req_mmukzn49_j9tb9e",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility"
+        ],
+        "baselineShapes": {
+          "expand_mechanisms_metabolic_flexibility": {
+            "id": "expand_mechanisms_metabolic_flexibility",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              880,
+              2231.229,
+              1246.24
+            ],
+            "text": "Metabolic flexibility impacts age-related diseases through several mechanisms: 1. **Alzheimer's Disease**: Enhanced glucose and lipid metabolism can reduce amyloid-beta accumulation and improve neuronal health. 2. **Type 2 Diabetes**: Adaptive insulin sensitivity and energy utilization prevent hyperglycemia and beta-cell stress. 3. **Cardiovascular Disease**: Efficient energy substrate switching in cardiac cells minimizes ischemic damage and oxidative stress. These mechanisms highlight the importance of metabolic adaptability in mitigating disease progression.",
+            "summary": "Mechanisms linking metabolic flexibility to diseases",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 29,
+        "targetBBox": [
+          1925.229,
+          880,
+          2231.229,
+          1246.24
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukzvy4_pq16ld",
+        "acceptedAt": 1773750073468,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul05i9_pq0ik9",
+        "requestId": "req_mmukzzt5_jf6ft4",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility_connection"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility_connection"
+        ],
+        "baselineShapes": {
+          "expand_mechanisms_metabolic_flexibility_connection": {
+            "id": "expand_mechanisms_metabolic_flexibility_connection",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              1250,
+              2199.44775,
+              1526.681911764706
+            ],
+            "text": "These mechanisms are interconnected with broader metabolic responses. For instance, the ability to efficiently switch between energy substrates in cardiovascular disease also supports resilience during environmental stress. Similarly, adaptive insulin sensitivity in diabetes can influence immune responses, showcasing the systemic impact of metabolic flexibility.",
+            "summary": "Connecting metabolic flexibility to broader responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          1925.229,
+          1250,
+          2199.44775,
+          1526.681911764706
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul06o5_nijdqr",
+        "acceptedAt": 1773750087365,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul0hmx_6u2ni0",
+        "requestId": "req_mmul0aj2_rrkd67",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_resilience_metabolic_flexibility"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_resilience_metabolic_flexibility"
+        ],
+        "baselineShapes": {
+          "expand_resilience_metabolic_flexibility": {
+            "id": "expand_resilience_metabolic_flexibility",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              1570,
+              2222.2905234375,
+              1869.0767876838236
+            ],
+            "text": "Metabolic flexibility enhances resilience in cardiovascular disease by enabling the heart to efficiently switch between glucose and fatty acids during stress, reducing ischemic damage and oxidative stress. In diabetes, it supports adaptive insulin sensitivity, preventing chronic hyperglycemia and related complications. Broadly, this adaptability underpins survival during environmental and physiological challenges, highlighting its role in systemic health.",
+            "summary": "Resilience in cardiovascular disease and diabetes via metabolic flexibility",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          1925.229,
+          1570,
+          2222.2905234375,
+          1869.0767876838236
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul0qu0_fsy80l",
+        "acceptedAt": 1773750113496,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul2llh_k9t2yz",
+        "requestId": "req_mmul2eu0_cavtq2",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_calcium_metabolic_001",
+          "text_calcium_metabolic_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_calcium_metabolic_001",
+          "text_calcium_metabolic_002"
+        ],
+        "baselineShapes": {
+          "text_calcium_metabolic_001": {
+            "id": "text_calcium_metabolic_001",
+            "kind": "text",
+            "bbox": [
+              1200,
+              960,
+              1455.7245934859982,
+              1036.9279833984376
+            ],
+            "text": "Calcium as a Constraint: Impact on Metabolic Flexibility",
+            "summary": "Calcium's role in metabolism",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_calcium_metabolic_002": {
+            "id": "text_calcium_metabolic_002",
+            "kind": "text",
+            "bbox": [
+              1200,
+              1050,
+              1500,
+              1169.84
+            ],
+            "text": "1. Calcium signaling regulates energy pathways. 2. Adaptive responses depend on calcium-mediated processes. 3. Constraints affect cellular flexibility.",
+            "summary": "Key impacts of calcium on metabolism",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1200,
+          960,
+          1500,
+          1169.84
+        ],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "group_7ff155b7"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul2pen_6j0jvb",
+        "acceptedAt": 1773750204959,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul305x_s0vpsw",
+        "requestId": "req_mmul2t9k_v7r2br",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_ai_calcium_constraints"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_ai_calcium_constraints"
+        ],
+        "baselineShapes": {
+          "text_ai_calcium_constraints": {
+            "id": "text_ai_calcium_constraints",
+            "kind": "text",
+            "bbox": [
+              672,
+              960,
+              1239.29696875,
+              1191.0248382152145
+            ],
+            "text": "Calcium Availability and Cellular Adaptation: Calcium plays a critical role in cellular processes, including signaling, structural functions, and metabolic pathways. Constraints on calcium availability can influence metabolic adaptation by altering enzyme activation, ion transport mechanisms, and energy production efficiency. Additionally, cellular flexibility in response to calcium limitations may involve changes in membrane dynamics, protein expression, and intracellular signaling cascades.",
+            "summary": "Explores how calcium constraints affect metabolism and cellular adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 25,
+        "targetBBox": [
+          672,
+          960,
+          1239.29696875,
+          1191.0248382152145
+        ],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul3bzs_d342pn",
+        "acceptedAt": 1773750234232,
+        "maxPostAcceptEdit": 0.2654818004615951,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul5bcw_lx7ghk",
+        "requestId": "req_mmul4z67_3tw63y",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_causal_chain_title",
+          "text_causal_chain_step1",
+          "text_causal_chain_step2",
+          "text_causal_chain_step3",
+          "text_causal_chain_step4"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_causal_chain_title",
+          "text_causal_chain_step1",
+          "text_causal_chain_step2",
+          "text_causal_chain_step3",
+          "text_causal_chain_step4"
+        ],
+        "baselineShapes": {
+          "text_causal_chain_title": {
+            "id": "text_causal_chain_title",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1151.712890625,
+              257.73607421875
+            ],
+            "text": "Causal Chain: Mechanical Stress to Bone Shape",
+            "summary": "Title for causal chain explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step1": {
+            "id": "text_causal_chain_step1",
+            "kind": "text",
+            "bbox": [
+              620,
+              280,
+              976.52421875,
+              327.0190234375
+            ],
+            "text": "1. Mechanical stress is applied to the bone.",
+            "summary": "Step 1: Stress applied",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step2": {
+            "id": "text_causal_chain_step2",
+            "kind": "text",
+            "bbox": [
+              620,
+              360,
+              1038.37578125,
+              413.6459765625
+            ],
+            "text": "2. Bone cells detect stress and initiate remodeling.",
+            "summary": "Step 2: Cells detect stress",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step3": {
+            "id": "text_causal_chain_step3",
+            "kind": "text",
+            "bbox": [
+              620,
+              440,
+              1040.4375,
+              493.866875
+            ],
+            "text": "3. Trabeculae align along stress lines for efficiency.",
+            "summary": "Step 3: Trabeculae align",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step4": {
+            "id": "text_causal_chain_step4",
+            "kind": "text",
+            "bbox": [
+              620,
+              520,
+              1090.39453125,
+              579.2194140625
+            ],
+            "text": "4. Final bone shape reflects optimized stress distribution.",
+            "summary": "Step 4: Optimized bone shape",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 15,
+        "targetBBox": [
+          600,
+          200,
+          1151.712890625,
+          579.2194140625
+        ],
+        "activeBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul5d0r_c0jnjv",
+        "acceptedAt": 1773750328875,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul67ws_nmxn7z",
+        "requestId": "req_mmul62g1_7r3ar9",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_anisotropy_vs_isotropy"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_anisotropy_vs_isotropy"
+        ],
+        "baselineShapes": {
+          "text_anisotropy_vs_isotropy": {
+            "id": "text_anisotropy_vs_isotropy",
+            "kind": "text",
+            "bbox": [
+              400,
+              200,
+              872.6220703125,
+              397.868828125
+            ],
+            "text": "**Anisotropy vs. Isotropy**: Anisotropic materials, like bone, have direction-dependent properties, allowing them to optimize strength and flexibility based on load orientation. In contrast, isotropic materials, such as solid steel, exhibit uniform properties in all directions, making them predictable but less adaptable to varying stresses.",
+            "summary": "Comparison of anisotropy in bones vs isotropy in steel.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 18,
+        "targetBBox": [
+          400,
+          200,
+          872.6220703125,
+          397.868828125
+        ],
+        "activeBlockIds": [
+          "block_3771047e",
+          "block_8c6cea8e",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "block_8c6cea8e",
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul6d72_ger4ru",
+        "acceptedAt": 1773750375758,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul9p93_2otivg",
+        "requestId": "req_mmul9cf3_f08m3l",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_biomimetic_workflow_title",
+          "text_biomimetic_step1",
+          "text_biomimetic_step2",
+          "text_biomimetic_step3",
+          "text_biomimetic_step4"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_biomimetic_workflow_title",
+          "text_biomimetic_step1",
+          "text_biomimetic_step2",
+          "text_biomimetic_step3",
+          "text_biomimetic_step4"
+        ],
+        "baselineShapes": {
+          "text_biomimetic_workflow_title": {
+            "id": "text_biomimetic_workflow_title",
+            "kind": "text",
+            "bbox": [
+              -50,
+              50,
+              462.79414062499995,
+              101.20570312499999
+            ],
+            "text": "Design Workflow: Biomimetic Stadium Roof",
+            "summary": "Title for biomimetic workflow",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step1": {
+            "id": "text_biomimetic_step1",
+            "kind": "text",
+            "bbox": [
+              -50,
+              120,
+              600,
+              179.22
+            ],
+            "text": "1. Analyze biological structures (e.g., trabeculae) for anisotropic stress distribution.",
+            "summary": "Step 1: Analyze biological structures",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step2": {
+            "id": "text_biomimetic_step2",
+            "kind": "text",
+            "bbox": [
+              -50,
+              180,
+              600,
+              239.22
+            ],
+            "text": "2. Simulate roof behavior under variable wind and gravity loads using AI optimization.",
+            "summary": "Step 2: Simulate roof behavior",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step3": {
+            "id": "text_biomimetic_step3",
+            "kind": "text",
+            "bbox": [
+              -50,
+              240,
+              600,
+              299.22
+            ],
+            "text": "3. Align structural elements to optimize stress distribution, inspired by trabeculae alignment.",
+            "summary": "Step 3: Align structural elements",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step4": {
+            "id": "text_biomimetic_step4",
+            "kind": "text",
+            "bbox": [
+              -50,
+              300,
+              543.328125,
+              354.460625
+            ],
+            "text": "4. Validate design under extreme wind scenarios to ensure adaptability.",
+            "summary": "Step 4: Validate under extreme scenarios",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          -50,
+          50,
+          600,
+          354.460625
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "block_98ecc0fb",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "block_98ecc0fb",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul9tj5_eil5ie",
+        "acceptedAt": 1773750536897,
+        "maxPostAcceptEdit": 0.21991299376485332,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulav95_thv5hk",
+        "requestId": "req_mmulaltk_d8oc35",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_extreme_wind_validation_title",
+          "text_extreme_wind_step1",
+          "text_extreme_wind_step2"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_extreme_wind_validation_title",
+          "text_extreme_wind_step1",
+          "text_extreme_wind_step2"
+        ],
+        "baselineShapes": {
+          "text_extreme_wind_validation_title": {
+            "id": "text_extreme_wind_validation_title",
+            "kind": "text",
+            "bbox": [
+              150,
+              -100,
+              553.248046875,
+              -54.63599609375001
+            ],
+            "text": "Extreme Wind Scenario Validation",
+            "summary": "Title for wind validation block",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_extreme_wind_step1": {
+            "id": "text_extreme_wind_step1",
+            "kind": "text",
+            "bbox": [
+              170,
+              -50,
+              657.1943359375,
+              9.219414062500007
+            ],
+            "text": "1. Simulate wind loads under extreme conditions using CFD tools.",
+            "summary": "Step 1: Simulate extreme wind loads",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_extreme_wind_step2": {
+            "id": "text_extreme_wind_step2",
+            "kind": "text",
+            "bbox": [
+              170,
+              20,
+              657.1943359375,
+              79.21941406250001
+            ],
+            "text": "2. Integrate biomimetic stress distribution principles to optimize structure.",
+            "summary": "Step 2: Biomimetic stress integration",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          150,
+          -100,
+          657.1943359375,
+          79.21941406250001
+        ],
+        "activeBlockIds": [
+          "group_0c935650",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "block_98ecc0fb"
+        ],
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulaxvh_lddhrk",
+        "acceptedAt": 1773750589181,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulbghc_wwg1mr",
+        "requestId": "req_mmulb61d_224deg",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_connection_review"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_connection_review"
+        ],
+        "baselineShapes": {
+          "text_connection_review": {
+            "id": "text_connection_review",
+            "kind": "text",
+            "bbox": [
+              600,
+              300,
+              1200,
+              460.02
+            ],
+            "text": "Review connections between biomimetic principles and extreme wind validation: - Identify how anisotropic stress distribution can enhance wind-resistant structures. - Explore trabeculae alignment as a model for structural optimization under dynamic loads.",
+            "summary": "Review biomimetic principles for wind validation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          600,
+          300,
+          1200,
+          460.02
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "group_0d235a99",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "group_0d235a99",
+          "group_0c935650",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulbhte_1beora",
+        "acceptedAt": 1773750615026,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmulbvd3_c72l38",
+        "requestId": "req_mmulbnwq_bes0h3",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_trabecular_biomimetic_connection"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_trabecular_biomimetic_connection"
+        ],
+        "baselineShapes": {
+          "text_trabecular_biomimetic_connection": {
+            "id": "text_trabecular_biomimetic_connection",
+            "kind": "text",
+            "bbox": [
+              850,
+              300,
+              1500,
+              359.22
+            ],
+            "text": "4. Apply trabecular alignment principles to enhance wind resistance in stadium roofs.",
+            "summary": "Step 4: Enhance wind resistance using trabecular principles",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 5,
+        "targetBBox": [
+          850,
+          300,
+          1500,
+          359.22
+        ],
+        "activeBlockIds": [
+          "group_0d235a99",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulc1a8_azqaqx",
+        "acceptedAt": 1773750640256,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773749598578,
+        "data": {
+          "phaseId": "A-P1",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749668296,
+        "data": {
+          "requestId": "req_mmukr7bc_9jzaze",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749680233,
+        "data": {
+          "requestId": "req_mmukr7bc_9jzaze",
+          "promptTokens": 3135,
+          "completionTokens": 341,
+          "totalTokens": 3476,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_b1a5ae0f"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749680236,
+        "data": {
+          "payloadId": "ai_mmukrgiy_ms8okd",
+          "requestId": "req_mmukr7bc_9jzaze",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749681964,
+        "data": {
+          "acceptId": "accept_mmukrhv0_09yv7b",
+          "payloadId": "ai_mmukrgiy_ms8okd",
+          "requestId": "req_mmukr7bc_9jzaze",
+          "phaseId": "A-P1",
+          "usableUnits": 26,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749702850,
+        "data": {
+          "requestId": "req_mmukrxz6_q7ijlm",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749710704,
+        "data": {
+          "requestId": "req_mmukrxz6_q7ijlm",
+          "promptTokens": 2994,
+          "completionTokens": 278,
+          "totalTokens": 3272,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_5e16e9dd"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749710707,
+        "data": {
+          "payloadId": "ai_mmuks41c_co1dpx",
+          "requestId": "req_mmukrxz6_q7ijlm",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749712549,
+        "data": {
+          "acceptId": "accept_mmuks5gl_iqqzdp",
+          "payloadId": "ai_mmuks41c_co1dpx",
+          "requestId": "req_mmukrxz6_q7ijlm",
+          "phaseId": "A-P1",
+          "usableUnits": 24,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749722293,
+        "data": {
+          "requestId": "req_mmukscz9_djhu4p",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749729215,
+        "data": {
+          "requestId": "req_mmukscz9_djhu4p",
+          "promptTokens": 3377,
+          "completionTokens": 269,
+          "totalTokens": 3646,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_5e16e9dd"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749729221,
+        "data": {
+          "payloadId": "ai_mmuksibj_sk4sir",
+          "requestId": "req_mmukscz9_djhu4p",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749731149,
+        "data": {
+          "acceptId": "accept_mmuksjt9_l8pbx3",
+          "payloadId": "ai_mmuksibj_sk4sir",
+          "requestId": "req_mmukscz9_djhu4p",
+          "phaseId": "A-P1",
+          "usableUnits": 20,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749760255,
+        "data": {
+          "requestId": "req_mmukt69r_zpzwbu",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749773247,
+        "data": {
+          "requestId": "req_mmukt69r_zpzwbu",
+          "promptTokens": 2595,
+          "completionTokens": 225,
+          "totalTokens": 2820,
+          "activeBlockIds": [
+            "group_4e37a81d"
+          ],
+          "planTargetBlockIds": [
+            "group_4e37a81d"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749773249,
+        "data": {
+          "payloadId": "ai_mmuktgan_vncrly",
+          "requestId": "req_mmukt69r_zpzwbu",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749960330,
+        "data": {
+          "acceptId": "accept_mmukxgne_dk0rlu",
+          "payloadId": "ai_mmuktgan_vncrly",
+          "requestId": "req_mmukt69r_zpzwbu",
+          "phaseId": "A-P1",
+          "usableUnits": 9,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749965332,
+        "data": {
+          "requestId": "req_mmukxkic_m5ssix",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749976204,
+        "data": {
+          "requestId": "req_mmukxkic_m5ssix",
+          "promptTokens": 2987,
+          "completionTokens": 358,
+          "totalTokens": 3345,
+          "activeBlockIds": [
+            "group_4e37a81d"
+          ],
+          "planTargetBlockIds": [
+            "group_4e37a81d"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749976206,
+        "data": {
+          "payloadId": "ai_mmukxswd_mir79m",
+          "requestId": "req_mmukxkic_m5ssix",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749978081,
+        "data": {
+          "acceptId": "accept_mmukxuch_j3f7em",
+          "payloadId": "ai_mmukxswd_mir79m",
+          "requestId": "req_mmukxkic_m5ssix",
+          "phaseId": "A-P1",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749983088,
+        "data": {
+          "requestId": "req_mmukxy7k_4noaq9",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749990519,
+        "data": {
+          "requestId": "req_mmukxy7k_4noaq9",
+          "promptTokens": 3432,
+          "completionTokens": 314,
+          "totalTokens": 3746,
+          "activeBlockIds": [
+            "group_4e37a81d"
+          ],
+          "planTargetBlockIds": [
+            "group_4e37a81d"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749990519,
+        "data": {
+          "payloadId": "ai_mmuky3xz_d0hn3q",
+          "requestId": "req_mmukxy7k_4noaq9",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750006931,
+        "data": {
+          "acceptId": "accept_mmukyglv_bucke2",
+          "payloadId": "ai_mmuky3xz_d0hn3q",
+          "requestId": "req_mmukxy7k_4noaq9",
+          "phaseId": "A-P1",
+          "usableUnits": 10,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750014215,
+        "data": {
+          "requestId": "req_mmukym87_yeod55",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750029706,
+        "data": {
+          "requestId": "req_mmukym87_yeod55",
+          "promptTokens": 3709,
+          "completionTokens": 391,
+          "totalTokens": 4100,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": [
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750029709,
+        "data": {
+          "payloadId": "ai_mmukyy6i_s8z86e",
+          "requestId": "req_mmukym87_yeod55",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750032680,
+        "data": {
+          "acceptId": "accept_mmukz0h4_c211r9",
+          "payloadId": "ai_mmukyy6i_s8z86e",
+          "requestId": "req_mmukym87_yeod55",
+          "phaseId": "A-P1",
+          "usableUnits": 17,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750038402,
+        "data": {
+          "requestId": "req_mmukz4w2_21cllq",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750044460,
+        "data": {
+          "requestId": "req_mmukz4w2_21cllq",
+          "promptTokens": 3793,
+          "completionTokens": 267,
+          "totalTokens": 4060,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": [
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750044463,
+        "data": {
+          "payloadId": "ai_mmukz9kc_hymwbk",
+          "requestId": "req_mmukz4w2_21cllq",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750052602,
+        "data": {
+          "acceptId": "accept_mmukzfui_frbv1p",
+          "payloadId": "ai_mmukz9kc_hymwbk",
+          "requestId": "req_mmukz4w2_21cllq",
+          "phaseId": "A-P1",
+          "usableUnits": 22,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750062025,
+        "data": {
+          "requestId": "req_mmukzn49_j9tb9e",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750069765,
+        "data": {
+          "requestId": "req_mmukzn49_j9tb9e",
+          "promptTokens": 4119,
+          "completionTokens": 296,
+          "totalTokens": 4415,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": [
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750069767,
+        "data": {
+          "payloadId": "ai_mmukzt39_2xnsyt",
+          "requestId": "req_mmukzn49_j9tb9e",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750073468,
+        "data": {
+          "acceptId": "accept_mmukzvy4_pq16ld",
+          "payloadId": "ai_mmukzt39_2xnsyt",
+          "requestId": "req_mmukzn49_j9tb9e",
+          "phaseId": "A-P1",
+          "usableUnits": 29,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750078473,
+        "data": {
+          "requestId": "req_mmukzzt5_jf6ft4",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750085857,
+        "data": {
+          "requestId": "req_mmukzzt5_jf6ft4",
+          "promptTokens": 4558,
+          "completionTokens": 416,
+          "totalTokens": 4974,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": [
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750085860,
+        "data": {
+          "payloadId": "ai_mmul05i9_pq0ik9",
+          "requestId": "req_mmukzzt5_jf6ft4",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750087365,
+        "data": {
+          "acceptId": "accept_mmul06o5_nijdqr",
+          "payloadId": "ai_mmul05i9_pq0ik9",
+          "requestId": "req_mmukzzt5_jf6ft4",
+          "phaseId": "A-P1",
+          "usableUnits": 19,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750092366,
+        "data": {
+          "requestId": "req_mmul0aj2_rrkd67",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750101577,
+        "data": {
+          "requestId": "req_mmul0aj2_rrkd67",
+          "promptTokens": 4866,
+          "completionTokens": 439,
+          "totalTokens": 5305,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": [
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750101594,
+        "data": {
+          "payloadId": "ai_mmul0hmx_6u2ni0",
+          "requestId": "req_mmul0aj2_rrkd67",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750113496,
+        "data": {
+          "acceptId": "accept_mmul0qu0_fsy80l",
+          "payloadId": "ai_mmul0hmx_6u2ni0",
+          "requestId": "req_mmul0aj2_rrkd67",
+          "phaseId": "A-P1",
+          "usableUnits": 23,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750125309,
+        "data": {
+          "requestId": "req_mmul0zy5_38zqhk",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750126928,
+        "data": {
+          "requestId": "req_mmul0zy5_38zqhk",
+          "promptTokens": 869,
+          "completionTokens": 78,
+          "totalTokens": 947,
+          "activeBlockIds": [
+            "block_3771047e"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750126930,
+        "data": {
+          "payloadId": "ai_mmul1174_lteuy5",
+          "requestId": "req_mmul0zy5_38zqhk",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750129816,
+        "data": {
+          "payloadId": "ai_mmul1174_lteuy5",
+          "requestId": "req_mmul0zy5_38zqhk",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750145160,
+        "data": {
+          "requestId": "req_mmul1f9k_ukik8x",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750151418,
+        "data": {
+          "requestId": "req_mmul1f9k_ukik8x",
+          "promptTokens": 729,
+          "completionTokens": 73,
+          "totalTokens": 802,
+          "activeBlockIds": [
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750151420,
+        "data": {
+          "payloadId": "ai_mmul1k3e_mcq5pt",
+          "requestId": "req_mmul1f9k_ukik8x",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750168493,
+        "data": {
+          "payloadId": "ai_mmul1k3e_mcq5pt",
+          "requestId": "req_mmul1f9k_ukik8x",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750191256,
+        "data": {
+          "requestId": "req_mmul2eu0_cavtq2",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750200021,
+        "data": {
+          "requestId": "req_mmul2eu0_cavtq2",
+          "promptTokens": 2565,
+          "completionTokens": 354,
+          "totalTokens": 2919,
+          "activeBlockIds": [
+            "group_7ff155b7",
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": [
+            "group_7ff155b7"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750200023,
+        "data": {
+          "payloadId": "ai_mmul2llh_k9t2yz",
+          "requestId": "req_mmul2eu0_cavtq2",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750204959,
+        "data": {
+          "acceptId": "accept_mmul2pen_6j0jvb",
+          "payloadId": "ai_mmul2llh_k9t2yz",
+          "requestId": "req_mmul2eu0_cavtq2",
+          "phaseId": "A-P1",
+          "usableUnits": 11,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750209960,
+        "data": {
+          "requestId": "req_mmul2t9k_v7r2br",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750218901,
+        "data": {
+          "requestId": "req_mmul2t9k_v7r2br",
+          "promptTokens": 3520,
+          "completionTokens": 271,
+          "totalTokens": 3791,
+          "activeBlockIds": [
+            "group_7ff155b7",
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750218907,
+        "data": {
+          "payloadId": "ai_mmul305x_s0vpsw",
+          "requestId": "req_mmul2t9k_v7r2br",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750234232,
+        "data": {
+          "acceptId": "accept_mmul3bzs_d342pn",
+          "payloadId": "ai_mmul305x_s0vpsw",
+          "requestId": "req_mmul2t9k_v7r2br",
+          "phaseId": "A-P1",
+          "usableUnits": 25,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750239054,
+        "data": {
+          "requestId": "req_mmul3fpq_zi5mku",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750243909,
+        "data": {
+          "requestId": "req_mmul3fpq_zi5mku",
+          "promptTokens": 842,
+          "completionTokens": 59,
+          "totalTokens": 901,
+          "activeBlockIds": [
+            "block_8c6cea8e",
+            "group_7ff155b7",
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750243911,
+        "data": {
+          "payloadId": "ai_mmul3jgl_0aqkrl",
+          "requestId": "req_mmul3fpq_zi5mku",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750249298,
+        "data": {
+          "payloadId": "ai_mmul3jgl_0aqkrl",
+          "requestId": "req_mmul3fpq_zi5mku",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750268791,
+        "data": {
+          "requestId": "req_mmul42nr_cwx02a",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750270917,
+        "data": {
+          "requestId": "req_mmul42nr_cwx02a",
+          "promptTokens": 847,
+          "completionTokens": 57,
+          "totalTokens": 904,
+          "activeBlockIds": [
+            "block_8c6cea8e",
+            "group_7ff155b7",
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750270920,
+        "data": {
+          "payloadId": "ai_mmul44au_73bei3",
+          "requestId": "req_mmul42nr_cwx02a",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750280146,
+        "data": {
+          "payloadId": "ai_mmul44au_73bei3",
+          "requestId": "req_mmul42nr_cwx02a",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750310927,
+        "data": {
+          "requestId": "req_mmul4z67_3tw63y",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750326719,
+        "data": {
+          "requestId": "req_mmul4z67_3tw63y",
+          "promptTokens": 3696,
+          "completionTokens": 621,
+          "totalTokens": 4317,
+          "activeBlockIds": [
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": [
+            "block_b1a5ae0f"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750326723,
+        "data": {
+          "payloadId": "ai_mmul5bcw_lx7ghk",
+          "requestId": "req_mmul4z67_3tw63y",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750328875,
+        "data": {
+          "acceptId": "accept_mmul5d0r_c0jnjv",
+          "payloadId": "ai_mmul5bcw_lx7ghk",
+          "requestId": "req_mmul4z67_3tw63y",
+          "phaseId": "A-P1",
+          "usableUnits": 15,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750361825,
+        "data": {
+          "requestId": "req_mmul62g1_7r3ar9",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750368908,
+        "data": {
+          "requestId": "req_mmul62g1_7r3ar9",
+          "promptTokens": 6757,
+          "completionTokens": 290,
+          "totalTokens": 7047,
+          "activeBlockIds": [
+            "block_3771047e",
+            "block_8c6cea8e",
+            "block_b1a5ae0f"
+          ],
+          "planTargetBlockIds": [
+            "block_8c6cea8e",
+            "block_3771047e"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750368912,
+        "data": {
+          "payloadId": "ai_mmul67ws_nmxn7z",
+          "requestId": "req_mmul62g1_7r3ar9",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750375758,
+        "data": {
+          "acceptId": "accept_mmul6d72_ger4ru",
+          "payloadId": "ai_mmul67ws_nmxn7z",
+          "requestId": "req_mmul62g1_7r3ar9",
+          "phaseId": "A-P1",
+          "usableUnits": 18,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750402390,
+        "data": {
+          "requestId": "req_mmul6xqu_fh8b8h",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750412679,
+        "data": {
+          "requestId": "req_mmul6xqu_fh8b8h",
+          "promptTokens": 1062,
+          "completionTokens": 65,
+          "totalTokens": 1127,
+          "activeBlockIds": [
+            "group_0c935650"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750412681,
+        "data": {
+          "payloadId": "ai_mmul75oo_9a931j",
+          "requestId": "req_mmul6xqu_fh8b8h",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750514719,
+        "data": {
+          "requestId": "req_mmul9cf3_f08m3l",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750516331,
+        "data": {
+          "payloadId": "ai_mmul75oo_9a931j",
+          "requestId": "req_mmul6xqu_fh8b8h",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750529781,
+        "data": {
+          "phaseId": "A-P2"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750531350,
+        "data": {
+          "requestId": "req_mmul9cf3_f08m3l",
+          "promptTokens": 4027,
+          "completionTokens": 1078,
+          "totalTokens": 5105,
+          "activeBlockIds": [
+            "group_09ef80d0",
+            "block_98ecc0fb",
+            "group_0c935650"
+          ],
+          "planTargetBlockIds": [
+            "block_98ecc0fb",
+            "group_09ef80d0"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750531354,
+        "data": {
+          "payloadId": "ai_mmul9p93_2otivg",
+          "requestId": "req_mmul9cf3_f08m3l",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750535012,
+        "data": {
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750536897,
+        "data": {
+          "acceptId": "accept_mmul9tj5_eil5ie",
+          "payloadId": "ai_mmul9p93_2otivg",
+          "requestId": "req_mmul9cf3_f08m3l",
+          "phaseId": "A-P1",
+          "usableUnits": 21,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750573560,
+        "data": {
+          "requestId": "req_mmulaltk_d8oc35",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750585784,
+        "data": {
+          "requestId": "req_mmulaltk_d8oc35",
+          "promptTokens": 3374,
+          "completionTokens": 612,
+          "totalTokens": 3986,
+          "activeBlockIds": [
+            "group_0c935650",
+            "group_09ef80d0",
+            "block_e77b9d6f",
+            "group_0d235a99",
+            "block_98ecc0fb"
+          ],
+          "planTargetBlockIds": [
+            "block_e77b9d6f",
+            "group_0d235a99"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750585787,
+        "data": {
+          "payloadId": "ai_mmulav95_thv5hk",
+          "requestId": "req_mmulaltk_d8oc35",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750589181,
+        "data": {
+          "acceptId": "accept_mmulaxvh_lddhrk",
+          "payloadId": "ai_mmulav95_thv5hk",
+          "requestId": "req_mmulaltk_d8oc35",
+          "phaseId": "A-P3",
+          "usableUnits": 10,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750599761,
+        "data": {
+          "requestId": "req_mmulb61d_224deg",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750613296,
+        "data": {
+          "requestId": "req_mmulb61d_224deg",
+          "promptTokens": 3728,
+          "completionTokens": 252,
+          "totalTokens": 3980,
+          "activeBlockIds": [
+            "group_09ef80d0",
+            "group_0d235a99",
+            "group_0c935650"
+          ],
+          "planTargetBlockIds": [
+            "group_0d235a99",
+            "group_0c935650",
+            "group_09ef80d0"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750613297,
+        "data": {
+          "payloadId": "ai_mmulbghc_wwg1mr",
+          "requestId": "req_mmulb61d_224deg",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750615026,
+        "data": {
+          "acceptId": "accept_mmulbhte_1beora",
+          "payloadId": "ai_mmulbghc_wwg1mr",
+          "requestId": "req_mmulb61d_224deg",
+          "phaseId": "A-P3",
+          "usableUnits": 13,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750622922,
+        "data": {
+          "requestId": "req_mmulbnwq_bes0h3",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750632582,
+        "data": {
+          "requestId": "req_mmulbnwq_bes0h3",
+          "promptTokens": 3781,
+          "completionTokens": 427,
+          "totalTokens": 4208,
+          "activeBlockIds": [
+            "group_0d235a99",
+            "group_09ef80d0",
+            "block_e77b9d6f",
+            "group_0c935650"
+          ],
+          "planTargetBlockIds": [
+            "block_e77b9d6f",
+            "group_0d235a99",
+            "group_09ef80d0"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750632583,
+        "data": {
+          "payloadId": "ai_mmulbvd3_c72l38",
+          "requestId": "req_mmulbnwq_bes0h3",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750640256,
+        "data": {
+          "acceptId": "accept_mmulc1a8_azqaqx",
+          "payloadId": "ai_mmulbvd3_c72l38",
+          "requestId": "req_mmulbnwq_bes0h3",
+          "phaseId": "A-P3",
+          "usableUnits": 5,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750645257,
+        "data": {
+          "requestId": "req_mmulc555_oo0p91",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749589_uczjue"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750650290,
+        "data": {
+          "requestId": "req_mmulc555_oo0p91",
+          "promptTokens": 3095,
+          "completionTokens": 259,
+          "totalTokens": 3354,
+          "activeBlockIds": [
+            "group_09ef80d0",
+            "group_0d235a99",
+            "block_e77b9d6f",
+            "group_0c935650"
+          ],
+          "planTargetBlockIds": [
+            "block_e77b9d6f"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750650292,
+        "data": {
+          "payloadId": "ai_mmulc90z_3hn5br",
+          "requestId": "req_mmulc555_oo0p91",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773750652657
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 25,
+    "previewCount": 25,
+    "acceptCount": 19,
+    "dismissCount": 5,
+    "completedRoundCount": 25,
+    "totalPromptTokens": 78457,
+    "acceptedUsableUnits": 329,
+    "acceptedTextChars": 6319,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": 0.76,
+    "dismissRate": 0.2,
+    "straightUseRate": 0.631578947368421,
+    "userChangedRate": 0,
+    "promptTokensPerRound": 3138.28,
+    "acceptedUsableContentPer1kTokens": 4.193379813146055,
+    "activeBlockAlignmentRate": 0.2631578947368421,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "A-P1",
+        "invoke": 21,
+        "straightUseRate": 0.6875,
+        "acceptedOutputPer1kToken": 4.668186541354549,
+        "promptTokens": 64479,
+        "acceptedUsableUnits": 301,
+        "acceptedCount": 16
+      },
+      {
+        "phaseId": "A-P3",
+        "invoke": 4,
+        "straightUseRate": 0.3333333333333333,
+        "acceptedOutputPer1kToken": 2.003147803691515,
+        "promptTokens": 13978,
+        "acceptedUsableUnits": 28,
+        "acceptedCount": 3
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmukrgiy_ms8okd",
+        "requestId": "req_mmukr7bc_9jzaze",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_ai_wolff_implications"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_ai_wolff_implications"
+        ],
+        "baselineShapes": {
+          "text_ai_wolff_implications": {
+            "id": "text_ai_wolff_implications",
+            "kind": "text",
+            "bbox": [
+              672,
+              640,
+              1248.016,
+              875.62
+            ],
+            "text": "Implications and Optimization: Wolff's Law has profound implications for both biology and engineering. In Trabecular bone, the alignment of trabeculae along stress lines ensures maximum strength with minimal material, exemplifying nature's efficiency. This principle inspires modern topology optimization techniques, where structures are designed to mimic this anisotropic efficiency. Applications include lightweight aerospace components, prosthetics, and architectural designs that balance strength and material usage.",
+            "summary": "Wolff's Law inspires topology optimization, mimicking efficient bone structure.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          672,
+          640,
+          1248.016,
+          875.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukrhv0_09yv7b",
+        "acceptedAt": 1773749681964,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 520,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuks41c_co1dpx",
+        "requestId": "req_mmukrxz6_q7ijlm",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_practical_to_examples"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_practical_to_examples"
+        ],
+        "baselineShapes": {
+          "text_practical_to_examples": {
+            "id": "text_practical_to_examples",
+            "kind": "text",
+            "bbox": [
+              150,
+              850,
+              800,
+              1085.62
+            ],
+            "text": "Practical Applications of Topology Optimization: 1. Aerospace: Lightweight structures for aircraft wings and spacecraft components. 2. Automotive: Optimized chassis and suspension systems for weight reduction and performance. 3. Architecture: Designing efficient load-bearing structures and bridges. 4. Medical: Custom implants and prosthetics with improved functionality. 5. Consumer Products: Lightweight and durable designs for electronics and sports equipment.",
+            "summary": "Examples of Topology Optimization applications",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          150,
+          850,
+          800,
+          1085.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuks5gl_iqqzdp",
+        "acceptedAt": 1773749712549,
+        "maxPostAcceptEdit": 0.11350275230381754,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.11350275230381754,
+        "acceptedTextChars": 464,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuksibj_sk4sir",
+        "requestId": "req_mmukscz9_djhu4p",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_medical_to_applications"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_medical_to_applications"
+        ],
+        "baselineShapes": {
+          "text_medical_to_applications": {
+            "id": "text_medical_to_applications",
+            "kind": "text",
+            "bbox": [
+              13.822,
+              1270.098,
+              601.726052734375,
+              1441.72219921875
+            ],
+            "text": "In the medical field, topology optimization is revolutionizing the design of implants and prosthetics. By using TO, engineers can create structures that mimic the natural geometry and density of bones, improving biocompatibility and reducing weight. Additionally, TO enables the development of custom surgical tools and devices tailored to individual patient needs, enhancing precision and outcomes.",
+            "summary": "Medical applications of TO: implants, prosthetics, surgical tools.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 20,
+        "targetBBox": [
+          13.822,
+          1270.098,
+          601.726052734375,
+          1441.72219921875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_5e16e9dd"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuksjt9_l8pbx3",
+        "acceptedAt": 1773749731149,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 399,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuktgan_vncrly",
+        "requestId": "req_mmukt69r_zpzwbu",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_metabolic"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_metabolic"
+        ],
+        "baselineShapes": {
+          "text_expand_metabolic": {
+            "id": "text_expand_metabolic",
+            "kind": "text",
+            "bbox": [
+              1696,
+              560,
+              1900,
+              747.04
+            ],
+            "text": "Metabolic responses are critical for energy balance and adaptation during stress. They often involve hormonal regulation, nutrient utilization, and cellular signaling pathways.",
+            "summary": "Key aspects of metabolic responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          1696,
+          560,
+          1900,
+          747.04
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukxgne_dk0rlu",
+        "acceptedAt": 1773749960330,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 176,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukxswd_mir79m",
+        "requestId": "req_mmukxkic_m5ssix",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_broader_themes"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_broader_themes"
+        ],
+        "baselineShapes": {
+          "text_expand_broader_themes": {
+            "id": "text_expand_broader_themes",
+            "kind": "text",
+            "bbox": [
+              1696,
+              760,
+              1900,
+              1014.24
+            ],
+            "text": "Metabolic responses also intersect with broader themes such as environmental adaptation, aging, and disease mechanisms. For instance, stress-induced metabolic shifts can influence immune function and chronic conditions like diabetes.",
+            "summary": "Broader themes of metabolic responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          1696,
+          760,
+          1900,
+          1014.24
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukxuch_j3f7em",
+        "acceptedAt": 1773749978081,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 233,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuky3xz_d0hn3q",
+        "requestId": "req_mmukxy7k_4noaq9",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_environmental_adaptation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_environmental_adaptation"
+        ],
+        "baselineShapes": {
+          "text_expand_environmental_adaptation": {
+            "id": "text_expand_environmental_adaptation",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1020,
+              1900,
+              1207.04
+            ],
+            "text": "Environmental adaptation often relies on metabolic flexibility. For example, organisms in extreme climates adjust their energy expenditure and nutrient metabolism to survive harsh conditions.",
+            "summary": "Metabolic role in environmental adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          1696,
+          1020,
+          1900,
+          1207.04
+        ],
+        "activeBlockIds": [
+          "group_4e37a81d"
+        ],
+        "planTargetBlockIds": [
+          "group_4e37a81d"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukyglv_bucke2",
+        "acceptedAt": 1773750006931,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 191,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukyy6i_s8z86e",
+        "requestId": "req_mmukym87_yeod55",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_expand_aging_disease"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_expand_aging_disease"
+        ],
+        "baselineShapes": {
+          "text_expand_aging_disease": {
+            "id": "text_expand_aging_disease",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1220,
+              1900,
+              1541.44
+            ],
+            "text": "Aging and disease mechanisms are deeply influenced by metabolic responses. Cellular aging often involves oxidative stress and mitochondrial dysfunction, which are tied to metabolic regulation. Similarly, metabolic imbalances are central to diseases like cancer, cardiovascular conditions, and neurodegenerative disorders.",
+            "summary": "Metabolic links to aging and disease",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 17,
+        "targetBBox": [
+          1696,
+          1220,
+          1900,
+          1541.44
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukz0h4_c211r9",
+        "acceptedAt": 1773750032680,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 321,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukz9kc_hymwbk",
+        "requestId": "req_mmukz4w2_21cllq",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_metabolic_flexibility_aging"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_metabolic_flexibility_aging"
+        ],
+        "baselineShapes": {
+          "expand_metabolic_flexibility_aging": {
+            "id": "expand_metabolic_flexibility_aging",
+            "kind": "text",
+            "bbox": [
+              1696,
+              1550,
+              2002,
+              1857.84
+            ],
+            "text": "Metabolic flexibility plays a crucial role in aging and disease mechanisms. It allows cells to adapt energy production and usage under varying conditions, reducing oxidative stress and mitigating mitochondrial dysfunction. This adaptability can influence the progression of age-related diseases like Alzheimer's, diabetes, and cardiovascular disorders by maintaining cellular homeostasis and reducing damage from metabolic imbalances.",
+            "summary": "Impact of metabolic flexibility on aging and diseases",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          1696,
+          1550,
+          2002,
+          1857.84
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukzfui_frbv1p",
+        "acceptedAt": 1773750052602,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 434,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukzt39_2xnsyt",
+        "requestId": "req_mmukzn49_j9tb9e",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility"
+        ],
+        "baselineShapes": {
+          "expand_mechanisms_metabolic_flexibility": {
+            "id": "expand_mechanisms_metabolic_flexibility",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              880,
+              2231.229,
+              1246.24
+            ],
+            "text": "Metabolic flexibility impacts age-related diseases through several mechanisms: 1. **Alzheimer's Disease**: Enhanced glucose and lipid metabolism can reduce amyloid-beta accumulation and improve neuronal health. 2. **Type 2 Diabetes**: Adaptive insulin sensitivity and energy utilization prevent hyperglycemia and beta-cell stress. 3. **Cardiovascular Disease**: Efficient energy substrate switching in cardiac cells minimizes ischemic damage and oxidative stress. These mechanisms highlight the importance of metabolic adaptability in mitigating disease progression.",
+            "summary": "Mechanisms linking metabolic flexibility to diseases",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 29,
+        "targetBBox": [
+          1925.229,
+          880,
+          2231.229,
+          1246.24
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukzvy4_pq16ld",
+        "acceptedAt": 1773750073468,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 566,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul05i9_pq0ik9",
+        "requestId": "req_mmukzzt5_jf6ft4",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility_connection"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_mechanisms_metabolic_flexibility_connection"
+        ],
+        "baselineShapes": {
+          "expand_mechanisms_metabolic_flexibility_connection": {
+            "id": "expand_mechanisms_metabolic_flexibility_connection",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              1250,
+              2199.44775,
+              1526.681911764706
+            ],
+            "text": "These mechanisms are interconnected with broader metabolic responses. For instance, the ability to efficiently switch between energy substrates in cardiovascular disease also supports resilience during environmental stress. Similarly, adaptive insulin sensitivity in diabetes can influence immune responses, showcasing the systemic impact of metabolic flexibility.",
+            "summary": "Connecting metabolic flexibility to broader responses",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          1925.229,
+          1250,
+          2199.44775,
+          1526.681911764706
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul06o5_nijdqr",
+        "acceptedAt": 1773750087365,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 364,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul0hmx_6u2ni0",
+        "requestId": "req_mmul0aj2_rrkd67",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "expand_resilience_metabolic_flexibility"
+        ],
+        "userChangeTrackedShapeIds": [
+          "expand_resilience_metabolic_flexibility"
+        ],
+        "baselineShapes": {
+          "expand_resilience_metabolic_flexibility": {
+            "id": "expand_resilience_metabolic_flexibility",
+            "kind": "text",
+            "bbox": [
+              1925.229,
+              1570,
+              2222.2905234375,
+              1869.0767876838236
+            ],
+            "text": "Metabolic flexibility enhances resilience in cardiovascular disease by enabling the heart to efficiently switch between glucose and fatty acids during stress, reducing ischemic damage and oxidative stress. In diabetes, it supports adaptive insulin sensitivity, preventing chronic hyperglycemia and related complications. Broadly, this adaptability underpins survival during environmental and physiological challenges, highlighting its role in systemic health.",
+            "summary": "Resilience in cardiovascular disease and diabetes via metabolic flexibility",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          1925.229,
+          1570,
+          2222.2905234375,
+          1869.0767876838236
+        ],
+        "activeBlockIds": [
+          "block_3771047e"
+        ],
+        "planTargetBlockIds": [
+          "block_3771047e"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul0qu0_fsy80l",
+        "acceptedAt": 1773750113496,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 459,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul2llh_k9t2yz",
+        "requestId": "req_mmul2eu0_cavtq2",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_calcium_metabolic_001",
+          "text_calcium_metabolic_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_calcium_metabolic_001",
+          "text_calcium_metabolic_002"
+        ],
+        "baselineShapes": {
+          "text_calcium_metabolic_001": {
+            "id": "text_calcium_metabolic_001",
+            "kind": "text",
+            "bbox": [
+              1200,
+              960,
+              1455.7245934859982,
+              1036.9279833984376
+            ],
+            "text": "Calcium as a Constraint: Impact on Metabolic Flexibility",
+            "summary": "Calcium's role in metabolism",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_calcium_metabolic_002": {
+            "id": "text_calcium_metabolic_002",
+            "kind": "text",
+            "bbox": [
+              1200,
+              1050,
+              1500,
+              1169.84
+            ],
+            "text": "1. Calcium signaling regulates energy pathways. 2. Adaptive responses depend on calcium-mediated processes. 3. Constraints affect cellular flexibility.",
+            "summary": "Key impacts of calcium on metabolism",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1200,
+          960,
+          1500,
+          1169.84
+        ],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "group_7ff155b7"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul2pen_6j0jvb",
+        "acceptedAt": 1773750204959,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 207,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul305x_s0vpsw",
+        "requestId": "req_mmul2t9k_v7r2br",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_ai_calcium_constraints"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_ai_calcium_constraints"
+        ],
+        "baselineShapes": {
+          "text_ai_calcium_constraints": {
+            "id": "text_ai_calcium_constraints",
+            "kind": "text",
+            "bbox": [
+              672,
+              960,
+              1239.29696875,
+              1191.0248382152145
+            ],
+            "text": "Calcium Availability and Cellular Adaptation: Calcium plays a critical role in cellular processes, including signaling, structural functions, and metabolic pathways. Constraints on calcium availability can influence metabolic adaptation by altering enzyme activation, ion transport mechanisms, and energy production efficiency. Additionally, cellular flexibility in response to calcium limitations may involve changes in membrane dynamics, protein expression, and intracellular signaling cascades.",
+            "summary": "Explores how calcium constraints affect metabolism and cellular adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 25,
+        "targetBBox": [
+          672,
+          960,
+          1239.29696875,
+          1191.0248382152145
+        ],
+        "activeBlockIds": [
+          "group_7ff155b7",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul3bzs_d342pn",
+        "acceptedAt": 1773750234232,
+        "maxPostAcceptEdit": 0.2654818004615951,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.2654818004615951,
+        "acceptedTextChars": 497,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul5bcw_lx7ghk",
+        "requestId": "req_mmul4z67_3tw63y",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_causal_chain_title",
+          "text_causal_chain_step1",
+          "text_causal_chain_step2",
+          "text_causal_chain_step3",
+          "text_causal_chain_step4"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_causal_chain_title",
+          "text_causal_chain_step1",
+          "text_causal_chain_step2",
+          "text_causal_chain_step3",
+          "text_causal_chain_step4"
+        ],
+        "baselineShapes": {
+          "text_causal_chain_title": {
+            "id": "text_causal_chain_title",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1151.712890625,
+              257.73607421875
+            ],
+            "text": "Causal Chain: Mechanical Stress to Bone Shape",
+            "summary": "Title for causal chain explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step1": {
+            "id": "text_causal_chain_step1",
+            "kind": "text",
+            "bbox": [
+              620,
+              280,
+              976.52421875,
+              327.0190234375
+            ],
+            "text": "1. Mechanical stress is applied to the bone.",
+            "summary": "Step 1: Stress applied",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step2": {
+            "id": "text_causal_chain_step2",
+            "kind": "text",
+            "bbox": [
+              620,
+              360,
+              1038.37578125,
+              413.6459765625
+            ],
+            "text": "2. Bone cells detect stress and initiate remodeling.",
+            "summary": "Step 2: Cells detect stress",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step3": {
+            "id": "text_causal_chain_step3",
+            "kind": "text",
+            "bbox": [
+              620,
+              440,
+              1040.4375,
+              493.866875
+            ],
+            "text": "3. Trabeculae align along stress lines for efficiency.",
+            "summary": "Step 3: Trabeculae align",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_causal_chain_step4": {
+            "id": "text_causal_chain_step4",
+            "kind": "text",
+            "bbox": [
+              620,
+              520,
+              1090.39453125,
+              579.2194140625
+            ],
+            "text": "4. Final bone shape reflects optimized stress distribution.",
+            "summary": "Step 4: Optimized bone shape",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 15,
+        "targetBBox": [
+          600,
+          200,
+          1151.712890625,
+          579.2194140625
+        ],
+        "activeBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "block_b1a5ae0f"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul5d0r_c0jnjv",
+        "acceptedAt": 1773750328875,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 254,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul67ws_nmxn7z",
+        "requestId": "req_mmul62g1_7r3ar9",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_anisotropy_vs_isotropy"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_anisotropy_vs_isotropy"
+        ],
+        "baselineShapes": {
+          "text_anisotropy_vs_isotropy": {
+            "id": "text_anisotropy_vs_isotropy",
+            "kind": "text",
+            "bbox": [
+              400,
+              200,
+              872.6220703125,
+              397.868828125
+            ],
+            "text": "**Anisotropy vs. Isotropy**: Anisotropic materials, like bone, have direction-dependent properties, allowing them to optimize strength and flexibility based on load orientation. In contrast, isotropic materials, such as solid steel, exhibit uniform properties in all directions, making them predictable but less adaptable to varying stresses.",
+            "summary": "Comparison of anisotropy in bones vs isotropy in steel.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 18,
+        "targetBBox": [
+          400,
+          200,
+          872.6220703125,
+          397.868828125
+        ],
+        "activeBlockIds": [
+          "block_3771047e",
+          "block_8c6cea8e",
+          "block_b1a5ae0f"
+        ],
+        "planTargetBlockIds": [
+          "block_8c6cea8e",
+          "block_3771047e"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul6d72_ger4ru",
+        "acceptedAt": 1773750375758,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 342,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul9p93_2otivg",
+        "requestId": "req_mmul9cf3_f08m3l",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_biomimetic_workflow_title",
+          "text_biomimetic_step1",
+          "text_biomimetic_step2",
+          "text_biomimetic_step3",
+          "text_biomimetic_step4"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_biomimetic_workflow_title",
+          "text_biomimetic_step1",
+          "text_biomimetic_step2",
+          "text_biomimetic_step3",
+          "text_biomimetic_step4"
+        ],
+        "baselineShapes": {
+          "text_biomimetic_workflow_title": {
+            "id": "text_biomimetic_workflow_title",
+            "kind": "text",
+            "bbox": [
+              -50,
+              50,
+              462.79414062499995,
+              101.20570312499999
+            ],
+            "text": "Design Workflow: Biomimetic Stadium Roof",
+            "summary": "Title for biomimetic workflow",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step1": {
+            "id": "text_biomimetic_step1",
+            "kind": "text",
+            "bbox": [
+              -50,
+              120,
+              600,
+              179.22
+            ],
+            "text": "1. Analyze biological structures (e.g., trabeculae) for anisotropic stress distribution.",
+            "summary": "Step 1: Analyze biological structures",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step2": {
+            "id": "text_biomimetic_step2",
+            "kind": "text",
+            "bbox": [
+              -50,
+              180,
+              600,
+              239.22
+            ],
+            "text": "2. Simulate roof behavior under variable wind and gravity loads using AI optimization.",
+            "summary": "Step 2: Simulate roof behavior",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step3": {
+            "id": "text_biomimetic_step3",
+            "kind": "text",
+            "bbox": [
+              -50,
+              240,
+              600,
+              299.22
+            ],
+            "text": "3. Align structural elements to optimize stress distribution, inspired by trabeculae alignment.",
+            "summary": "Step 3: Align structural elements",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_biomimetic_step4": {
+            "id": "text_biomimetic_step4",
+            "kind": "text",
+            "bbox": [
+              -50,
+              300,
+              543.328125,
+              354.460625
+            ],
+            "text": "4. Validate design under extreme wind scenarios to ensure adaptability.",
+            "summary": "Step 4: Validate under extreme scenarios",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 21,
+        "targetBBox": [
+          -50,
+          50,
+          600,
+          354.460625
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "block_98ecc0fb",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "block_98ecc0fb",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmul9tj5_eil5ie",
+        "acceptedAt": 1773750536897,
+        "maxPostAcceptEdit": 0.21991299376485332,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.21991299376485332,
+        "acceptedTextChars": 380,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulav95_thv5hk",
+        "requestId": "req_mmulaltk_d8oc35",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_extreme_wind_validation_title",
+          "text_extreme_wind_step1",
+          "text_extreme_wind_step2"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_extreme_wind_validation_title",
+          "text_extreme_wind_step1",
+          "text_extreme_wind_step2"
+        ],
+        "baselineShapes": {
+          "text_extreme_wind_validation_title": {
+            "id": "text_extreme_wind_validation_title",
+            "kind": "text",
+            "bbox": [
+              150,
+              -100,
+              553.248046875,
+              -54.63599609375001
+            ],
+            "text": "Extreme Wind Scenario Validation",
+            "summary": "Title for wind validation block",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_extreme_wind_step1": {
+            "id": "text_extreme_wind_step1",
+            "kind": "text",
+            "bbox": [
+              170,
+              -50,
+              657.1943359375,
+              9.219414062500007
+            ],
+            "text": "1. Simulate wind loads under extreme conditions using CFD tools.",
+            "summary": "Step 1: Simulate extreme wind loads",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_extreme_wind_step2": {
+            "id": "text_extreme_wind_step2",
+            "kind": "text",
+            "bbox": [
+              170,
+              20,
+              657.1943359375,
+              79.21941406250001
+            ],
+            "text": "2. Integrate biomimetic stress distribution principles to optimize structure.",
+            "summary": "Step 2: Biomimetic stress integration",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 10,
+        "targetBBox": [
+          150,
+          -100,
+          657.1943359375,
+          79.21941406250001
+        ],
+        "activeBlockIds": [
+          "group_0c935650",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "block_98ecc0fb"
+        ],
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulaxvh_lddhrk",
+        "acceptedAt": 1773750589181,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 173,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulbghc_wwg1mr",
+        "requestId": "req_mmulb61d_224deg",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_connection_review"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_connection_review"
+        ],
+        "baselineShapes": {
+          "text_connection_review": {
+            "id": "text_connection_review",
+            "kind": "text",
+            "bbox": [
+              600,
+              300,
+              1200,
+              460.02
+            ],
+            "text": "Review connections between biomimetic principles and extreme wind validation: - Identify how anisotropic stress distribution can enhance wind-resistant structures. - Explore trabeculae alignment as a model for structural optimization under dynamic loads.",
+            "summary": "Review biomimetic principles for wind validation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          600,
+          300,
+          1200,
+          460.02
+        ],
+        "activeBlockIds": [
+          "group_09ef80d0",
+          "group_0d235a99",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "group_0d235a99",
+          "group_0c935650",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulbhte_1beora",
+        "acceptedAt": 1773750615026,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 254,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmulbvd3_c72l38",
+        "requestId": "req_mmulbnwq_bes0h3",
+        "phaseId": "A-P3",
+        "acceptedShapeIds": [
+          "text_trabecular_biomimetic_connection"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_trabecular_biomimetic_connection"
+        ],
+        "baselineShapes": {
+          "text_trabecular_biomimetic_connection": {
+            "id": "text_trabecular_biomimetic_connection",
+            "kind": "text",
+            "bbox": [
+              850,
+              300,
+              1500,
+              359.22
+            ],
+            "text": "4. Apply trabecular alignment principles to enhance wind resistance in stadium roofs.",
+            "summary": "Step 4: Enhance wind resistance using trabecular principles",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 5,
+        "targetBBox": [
+          850,
+          300,
+          1500,
+          359.22
+        ],
+        "activeBlockIds": [
+          "group_0d235a99",
+          "group_09ef80d0",
+          "block_e77b9d6f",
+          "group_0c935650"
+        ],
+        "planTargetBlockIds": [
+          "block_e77b9d6f",
+          "group_0d235a99",
+          "group_09ef80d0"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulc1a8_azqaqx",
+        "acceptedAt": 1773750640256,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 85,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      }
+    ]
+  },
+  "graphBlockCount": 10,
+  "currentShapeCount": 43,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

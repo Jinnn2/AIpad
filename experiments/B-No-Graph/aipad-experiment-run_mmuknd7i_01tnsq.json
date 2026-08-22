@@ -1,0 +1,1128 @@
+{
+  "exportedAt": "2026-03-17T12:15:31.999Z",
+  "run": {
+    "runId": "run_mmuknd7i_01tnsq",
+    "startedAt": 1773749489310,
+    "endedAt": 1773749714734,
+    "initialSessionId": null,
+    "currentPhaseId": "B-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmuknr2q_wmiwf8",
+        "phaseId": "B-P1",
+        "sentAt": 1773749507282,
+        "respondedAt": 1773749515226,
+        "sessionId": null,
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1583,
+        "completionTokens": 274,
+        "totalTokens": 1857,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuknx7f_i3v699",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukomob_6zzrn0",
+        "phaseId": "B-P2",
+        "sentAt": 1773749548235,
+        "respondedAt": 1773749551653,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1850,
+        "completionTokens": 172,
+        "totalTokens": 2022,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukopb9_agjros",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukpf3m_9tmlfn",
+        "phaseId": "B-P2",
+        "sentAt": 1773749585074,
+        "respondedAt": 1773749589961,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1850,
+        "completionTokens": 219,
+        "totalTokens": 2069,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukpivd_3xkgnl",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukpuwt_87ztt2",
+        "phaseId": "B-P2",
+        "sentAt": 1773749605565,
+        "respondedAt": 1773749612507,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2225,
+        "completionTokens": 204,
+        "totalTokens": 2429,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukq09n_lkcgpi",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukq7ms_vw66m2",
+        "phaseId": "B-P2",
+        "sentAt": 1773749622052,
+        "respondedAt": 1773749625469,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2572,
+        "completionTokens": 201,
+        "totalTokens": 2773,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukqa9q_0axl6a",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukqkmu_eew6j1",
+        "phaseId": "B-P3",
+        "sentAt": 1773749638902,
+        "respondedAt": 1773749645276,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2908,
+        "completionTokens": 204,
+        "totalTokens": 3112,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukqpjw_smty5h",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukqxud_36tswx",
+        "phaseId": "B-P3",
+        "sentAt": 1773749656021,
+        "respondedAt": 1773749660522,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2908,
+        "completionTokens": 189,
+        "totalTokens": 3097,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmukr1bf_dr0tnu",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukrycn_gzufld",
+        "phaseId": "B-P3",
+        "sentAt": 1773749703335,
+        "respondedAt": 1773749706326,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2908,
+        "completionTokens": 152,
+        "totalTokens": 3060,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuks0nq_och4de",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuks682_ti3ppx",
+        "phaseId": "B-P3",
+        "sentAt": 1773749713538,
+        "respondedAt": null,
+        "sessionId": "sess_1773749507_gq351e",
+        "requestMode": "full",
+        "status": "sent",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": null,
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmuknx7f_i3v699",
+        "requestId": "req_mmuknr2q_wmiwf8",
+        "phaseId": "B-P1",
+        "at": 1773749515237
+      },
+      {
+        "payloadId": "ai_mmukopb9_agjros",
+        "requestId": "req_mmukomob_6zzrn0",
+        "phaseId": "B-P2",
+        "at": 1773749551656
+      },
+      {
+        "payloadId": "ai_mmukpivd_3xkgnl",
+        "requestId": "req_mmukpf3m_9tmlfn",
+        "phaseId": "B-P2",
+        "at": 1773749589965
+      },
+      {
+        "payloadId": "ai_mmukq09n_lkcgpi",
+        "requestId": "req_mmukpuwt_87ztt2",
+        "phaseId": "B-P2",
+        "at": 1773749612510
+      },
+      {
+        "payloadId": "ai_mmukqa9q_0axl6a",
+        "requestId": "req_mmukq7ms_vw66m2",
+        "phaseId": "B-P2",
+        "at": 1773749625472
+      },
+      {
+        "payloadId": "ai_mmukqpjw_smty5h",
+        "requestId": "req_mmukqkmu_eew6j1",
+        "phaseId": "B-P3",
+        "at": 1773749645279
+      },
+      {
+        "payloadId": "ai_mmukr1bf_dr0tnu",
+        "requestId": "req_mmukqxud_36tswx",
+        "phaseId": "B-P3",
+        "at": 1773749660530
+      },
+      {
+        "payloadId": "ai_mmuks0nq_och4de",
+        "requestId": "req_mmukrycn_gzufld",
+        "phaseId": "B-P3",
+        "at": 1773749706332
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmukopb9_agjros",
+        "requestId": "req_mmukomob_6zzrn0",
+        "phaseId": "B-P2",
+        "at": 1773749574376,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmukr1bf_dr0tnu",
+        "requestId": "req_mmukqxud_36tswx",
+        "phaseId": "B-P3",
+        "at": 1773749680008,
+        "reason": "manual"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmuknx7f_i3v699",
+        "requestId": "req_mmuknr2q_wmiwf8",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001"
+        ],
+        "baselineShapes": {
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              100,
+              100,
+              600,
+              440.06
+            ],
+            "text": "**The Dynamics of Platform Ecosystems** **Core Concept: Network Effects (Metcalfe’s Law)** - A product/service becomes more valuable as more people use it. - **Direct Network Effects**: Value increases directly with usage (e.g., social networks). - **Indirect Network Effects**: More users attract complementary goods, increasing value (e.g., game consoles). **The Lock-in Mechanism** - **Switching Costs**: Financial, data lock-in, and search costs. - High switching costs create \"Lock-in,\" making it hard for competitors to unseat incumbents. **Key Terms** - **Critical Mass**: Self-sustaining system point; hard for startups to reach. - **Multi-homing**: Users on multiple platforms; weakens lock-in.",
+            "summary": "Overview of platform ecosystems, network effects, and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 36,
+        "targetBBox": [
+          100,
+          100,
+          600,
+          440.06
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuko2gm_mnbq2v",
+        "acceptedAt": 1773749522038,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukpivd_3xkgnl",
+        "requestId": "req_mmukpf3m_9tmlfn",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              100,
+              460,
+              600,
+              721.66
+            ],
+            "text": "**Strategies for Platform Growth** **1. Achieving Critical Mass** - Incentives for early adopters (e.g., discounts, exclusive features). - Partnerships to attract complementary goods or services. **2. Reducing Multi-homing** - Offer unique features or better integration. - Loyalty programs to encourage single-platform usage. **3. Managing Lock-in** - Continually innovate to minimize user churn. - Provide seamless migration tools to reduce perceived switching costs.",
+            "summary": "Strategies for platform growth: critical mass, reducing multi-homing, managing lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          100,
+          460,
+          600,
+          721.66
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukpr1i_jwu4zb",
+        "acceptedAt": 1773749600550,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukq09n_lkcgpi",
+        "requestId": "req_mmukpuwt_87ztt2",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              100,
+              750,
+              600,
+              1011.66
+            ],
+            "text": "**Challenges in Platform Ecosystems** **1. Balancing Growth and Quality** - Rapid scaling can dilute user experience. - Quality control mechanisms are essential. **2. Overcoming Network Saturation** - Growth slows as saturation approaches. - Diversification of offerings can help maintain momentum. **3. Managing Competition** - New entrants may disrupt established ecosystems. - Continuous innovation is key to staying ahead.",
+            "summary": "Challenges in platform ecosystems: growth vs. quality, saturation, competition.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          100,
+          750,
+          600,
+          1011.66
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukq3rm_miprta",
+        "acceptedAt": 1773749617042,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmukqa9q_0axl6a",
+        "requestId": "req_mmukq7ms_vw66m2",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              100,
+              1040,
+              600,
+              1321.26
+            ],
+            "text": "**Emerging Trends in Platform Ecosystems** **1. Decentralized Platforms** - Blockchain-based platforms reducing reliance on centralized authorities. - Enhanced transparency and security. **2. AI and Machine Learning Integration** - Personalized user experiences. - Improved matchmaking and recommendations. **3. Sustainability and Ethical Practices** - Focus on reducing environmental impact. - Promoting ethical data usage and user privacy.",
+            "summary": "Emerging trends: decentralization, AI, sustainability.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          100,
+          1040,
+          600,
+          1321.26
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukqgrl_gtv5sw",
+        "acceptedAt": 1773749633889,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmuks0nq_och4de",
+        "requestId": "req_mmukrycn_gzufld",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              100,
+              1350,
+              555.8056640625,
+              1493.60169921875
+            ],
+            "text": "**Conclusion** Platform ecosystems are dynamic and complex, driven by network effects, lock-in mechanisms, and innovation. Understanding their growth strategies, challenges, and emerging trends is crucial for businesses aiming to succeed in this competitive space.",
+            "summary": "Conclusion on platform ecosystems' dynamics and importance.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 14,
+        "targetBBox": [
+          100,
+          1350,
+          555.8056640625,
+          1493.60169921875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuks2d4_6ryzhx",
+        "acceptedAt": 1773749708536,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773749489310,
+        "data": {
+          "phaseId": "B-P1",
+          "sessionId": null
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749507282,
+        "data": {
+          "requestId": "req_mmuknr2q_wmiwf8",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": null
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749515226,
+        "data": {
+          "requestId": "req_mmuknr2q_wmiwf8",
+          "promptTokens": 1583,
+          "completionTokens": 274,
+          "totalTokens": 1857,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749515237,
+        "data": {
+          "payloadId": "ai_mmuknx7f_i3v699",
+          "requestId": "req_mmuknr2q_wmiwf8",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749522038,
+        "data": {
+          "acceptId": "accept_mmuko2gm_mnbq2v",
+          "payloadId": "ai_mmuknx7f_i3v699",
+          "requestId": "req_mmuknr2q_wmiwf8",
+          "phaseId": "B-P1",
+          "usableUnits": 36,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749533507,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749534000,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749548235,
+        "data": {
+          "requestId": "req_mmukomob_6zzrn0",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749551653,
+        "data": {
+          "requestId": "req_mmukomob_6zzrn0",
+          "promptTokens": 1850,
+          "completionTokens": 172,
+          "totalTokens": 2022,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749551656,
+        "data": {
+          "payloadId": "ai_mmukopb9_agjros",
+          "requestId": "req_mmukomob_6zzrn0",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749574376,
+        "data": {
+          "payloadId": "ai_mmukopb9_agjros",
+          "requestId": "req_mmukomob_6zzrn0",
+          "phaseId": "B-P2",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749585074,
+        "data": {
+          "requestId": "req_mmukpf3m_9tmlfn",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749589961,
+        "data": {
+          "requestId": "req_mmukpf3m_9tmlfn",
+          "promptTokens": 1850,
+          "completionTokens": 219,
+          "totalTokens": 2069,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749589965,
+        "data": {
+          "payloadId": "ai_mmukpivd_3xkgnl",
+          "requestId": "req_mmukpf3m_9tmlfn",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749600550,
+        "data": {
+          "acceptId": "accept_mmukpr1i_jwu4zb",
+          "payloadId": "ai_mmukpivd_3xkgnl",
+          "requestId": "req_mmukpf3m_9tmlfn",
+          "phaseId": "B-P2",
+          "usableUnits": 24,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749605565,
+        "data": {
+          "requestId": "req_mmukpuwt_87ztt2",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749612507,
+        "data": {
+          "requestId": "req_mmukpuwt_87ztt2",
+          "promptTokens": 2225,
+          "completionTokens": 204,
+          "totalTokens": 2429,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749612510,
+        "data": {
+          "payloadId": "ai_mmukq09n_lkcgpi",
+          "requestId": "req_mmukpuwt_87ztt2",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749617042,
+        "data": {
+          "acceptId": "accept_mmukq3rm_miprta",
+          "payloadId": "ai_mmukq09n_lkcgpi",
+          "requestId": "req_mmukpuwt_87ztt2",
+          "phaseId": "B-P2",
+          "usableUnits": 22,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749622052,
+        "data": {
+          "requestId": "req_mmukq7ms_vw66m2",
+          "phaseId": "B-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749625469,
+        "data": {
+          "requestId": "req_mmukq7ms_vw66m2",
+          "promptTokens": 2572,
+          "completionTokens": 201,
+          "totalTokens": 2773,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749625472,
+        "data": {
+          "payloadId": "ai_mmukqa9q_0axl6a",
+          "requestId": "req_mmukq7ms_vw66m2",
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749633889,
+        "data": {
+          "acceptId": "accept_mmukqgrl_gtv5sw",
+          "payloadId": "ai_mmukqa9q_0axl6a",
+          "requestId": "req_mmukq7ms_vw66m2",
+          "phaseId": "B-P2",
+          "usableUnits": 23,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749638281,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749638574,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749638902,
+        "data": {
+          "requestId": "req_mmukqkmu_eew6j1",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749645276,
+        "data": {
+          "requestId": "req_mmukqkmu_eew6j1",
+          "promptTokens": 2908,
+          "completionTokens": 204,
+          "totalTokens": 3112,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749645279,
+        "data": {
+          "payloadId": "ai_mmukqpjw_smty5h",
+          "requestId": "req_mmukqkmu_eew6j1",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749656021,
+        "data": {
+          "requestId": "req_mmukqxud_36tswx",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749660522,
+        "data": {
+          "requestId": "req_mmukqxud_36tswx",
+          "promptTokens": 2908,
+          "completionTokens": 189,
+          "totalTokens": 3097,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749660530,
+        "data": {
+          "payloadId": "ai_mmukr1bf_dr0tnu",
+          "requestId": "req_mmukqxud_36tswx",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749680008,
+        "data": {
+          "payloadId": "ai_mmukr1bf_dr0tnu",
+          "requestId": "req_mmukqxud_36tswx",
+          "phaseId": "B-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749703335,
+        "data": {
+          "requestId": "req_mmukrycn_gzufld",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749706326,
+        "data": {
+          "requestId": "req_mmukrycn_gzufld",
+          "promptTokens": 2908,
+          "completionTokens": 152,
+          "totalTokens": 3060,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749706332,
+        "data": {
+          "payloadId": "ai_mmuks0nq_och4de",
+          "requestId": "req_mmukrycn_gzufld",
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749708536,
+        "data": {
+          "acceptId": "accept_mmuks2d4_6ryzhx",
+          "payloadId": "ai_mmuks0nq_och4de",
+          "requestId": "req_mmukrycn_gzufld",
+          "phaseId": "B-P3",
+          "usableUnits": 14,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749713538,
+        "data": {
+          "requestId": "req_mmuks682_ti3ppx",
+          "phaseId": "B-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773749507_gq351e"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773749714734
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 9,
+    "previewCount": 8,
+    "acceptCount": 5,
+    "dismissCount": 2,
+    "completedRoundCount": 8,
+    "totalPromptTokens": 18804,
+    "acceptedUsableUnits": 119,
+    "acceptedTextChars": 2303,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": 0.625,
+    "dismissRate": 0.25,
+    "straightUseRate": 1,
+    "userChangedRate": 0,
+    "promptTokensPerRound": 2350.5,
+    "acceptedUsableContentPer1kTokens": 6.3284407572856844,
+    "activeBlockAlignmentRate": 0,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "B-P1",
+        "invoke": 1,
+        "straightUseRate": 1,
+        "acceptedOutputPer1kToken": 22.74162981680354,
+        "promptTokens": 1583,
+        "acceptedUsableUnits": 36,
+        "acceptedCount": 1
+      },
+      {
+        "phaseId": "B-P2",
+        "invoke": 4,
+        "straightUseRate": 1,
+        "acceptedOutputPer1kToken": 8.120513122278451,
+        "promptTokens": 8497,
+        "acceptedUsableUnits": 69,
+        "acceptedCount": 3
+      },
+      {
+        "phaseId": "B-P3",
+        "invoke": 4,
+        "straightUseRate": 1,
+        "acceptedOutputPer1kToken": 1.6047684548372307,
+        "promptTokens": 8724,
+        "acceptedUsableUnits": 14,
+        "acceptedCount": 1
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmuknx7f_i3v699",
+        "requestId": "req_mmuknr2q_wmiwf8",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001"
+        ],
+        "baselineShapes": {
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              100,
+              100,
+              600,
+              440.06
+            ],
+            "text": "**The Dynamics of Platform Ecosystems** **Core Concept: Network Effects (Metcalfe’s Law)** - A product/service becomes more valuable as more people use it. - **Direct Network Effects**: Value increases directly with usage (e.g., social networks). - **Indirect Network Effects**: More users attract complementary goods, increasing value (e.g., game consoles). **The Lock-in Mechanism** - **Switching Costs**: Financial, data lock-in, and search costs. - High switching costs create \"Lock-in,\" making it hard for competitors to unseat incumbents. **Key Terms** - **Critical Mass**: Self-sustaining system point; hard for startups to reach. - **Multi-homing**: Users on multiple platforms; weakens lock-in.",
+            "summary": "Overview of platform ecosystems, network effects, and lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 36,
+        "targetBBox": [
+          100,
+          100,
+          600,
+          440.06
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuko2gm_mnbq2v",
+        "acceptedAt": 1773749522038,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 703,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukpivd_3xkgnl",
+        "requestId": "req_mmukpf3m_9tmlfn",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              100,
+              460,
+              600,
+              721.66
+            ],
+            "text": "**Strategies for Platform Growth** **1. Achieving Critical Mass** - Incentives for early adopters (e.g., discounts, exclusive features). - Partnerships to attract complementary goods or services. **2. Reducing Multi-homing** - Offer unique features or better integration. - Loyalty programs to encourage single-platform usage. **3. Managing Lock-in** - Continually innovate to minimize user churn. - Provide seamless migration tools to reduce perceived switching costs.",
+            "summary": "Strategies for platform growth: critical mass, reducing multi-homing, managing lock-in.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          100,
+          460,
+          600,
+          721.66
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukpr1i_jwu4zb",
+        "acceptedAt": 1773749600550,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 469,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukq09n_lkcgpi",
+        "requestId": "req_mmukpuwt_87ztt2",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              100,
+              750,
+              600,
+              1011.66
+            ],
+            "text": "**Challenges in Platform Ecosystems** **1. Balancing Growth and Quality** - Rapid scaling can dilute user experience. - Quality control mechanisms are essential. **2. Overcoming Network Saturation** - Growth slows as saturation approaches. - Diversification of offerings can help maintain momentum. **3. Managing Competition** - New entrants may disrupt established ecosystems. - Continuous innovation is key to staying ahead.",
+            "summary": "Challenges in platform ecosystems: growth vs. quality, saturation, competition.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          100,
+          750,
+          600,
+          1011.66
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukq3rm_miprta",
+        "acceptedAt": 1773749617042,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 426,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmukqa9q_0axl6a",
+        "requestId": "req_mmukq7ms_vw66m2",
+        "phaseId": "B-P2",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              100,
+              1040,
+              600,
+              1321.26
+            ],
+            "text": "**Emerging Trends in Platform Ecosystems** **1. Decentralized Platforms** - Blockchain-based platforms reducing reliance on centralized authorities. - Enhanced transparency and security. **2. AI and Machine Learning Integration** - Personalized user experiences. - Improved matchmaking and recommendations. **3. Sustainability and Ethical Practices** - Focus on reducing environmental impact. - Promoting ethical data usage and user privacy.",
+            "summary": "Emerging trends: decentralization, AI, sustainability.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          100,
+          1040,
+          600,
+          1321.26
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukqgrl_gtv5sw",
+        "acceptedAt": 1773749633889,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 441,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmuks0nq_och4de",
+        "requestId": "req_mmukrycn_gzufld",
+        "phaseId": "B-P3",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              100,
+              1350,
+              555.8056640625,
+              1493.60169921875
+            ],
+            "text": "**Conclusion** Platform ecosystems are dynamic and complex, driven by network effects, lock-in mechanisms, and innovation. Understanding their growth strategies, challenges, and emerging trends is crucial for businesses aiming to succeed in this competitive space.",
+            "summary": "Conclusion on platform ecosystems' dynamics and importance.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 14,
+        "targetBBox": [
+          100,
+          1350,
+          555.8056640625,
+          1493.60169921875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuks2d4_6ryzhx",
+        "acceptedAt": 1773749708536,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 264,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      }
+    ]
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 5,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

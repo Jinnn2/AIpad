@@ -1,0 +1,3315 @@
+{
+  "exportedAt": "2026-03-17T12:59:01.723Z",
+  "run": {
+    "runId": "run_mmulu3wd_s1pttq",
+    "startedAt": 1773751483453,
+    "endedAt": 1773752340651,
+    "initialSessionId": "sess_1773751416_b4kc6y",
+    "currentPhaseId": "C-P1",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmuluowj_b8bc09",
+        "phaseId": "C-P1",
+        "sentAt": 1773751510675,
+        "respondedAt": 1773751517547,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1359,
+        "completionTokens": 98,
+        "totalTokens": 1457,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuluu7f_vi7wcg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuluzer_zebwip",
+        "phaseId": "C-P1",
+        "sentAt": 1773751524291,
+        "respondedAt": 1773751531253,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1552,
+        "completionTokens": 140,
+        "totalTokens": 1692,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulv4s5_3e444x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulvfmf_h2ly2e",
+        "phaseId": "C-P1",
+        "sentAt": 1773751545303,
+        "respondedAt": 1773751551920,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1715,
+        "completionTokens": 147,
+        "totalTokens": 1862,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulvkq9_bovcg6",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulvvgy_zmcaa1",
+        "phaseId": "C-P1",
+        "sentAt": 1773751565842,
+        "respondedAt": 1773751572715,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1890,
+        "completionTokens": 183,
+        "totalTokens": 2073,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulw0rv_jyn03a",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulwa57_hycevy",
+        "phaseId": "C-P1",
+        "sentAt": 1773751584859,
+        "respondedAt": 1773751592190,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2074,
+        "completionTokens": 127,
+        "totalTokens": 2201,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulwfsu_a9rr15",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulxmr6_om699t",
+        "phaseId": "C-P1",
+        "sentAt": 1773751647858,
+        "respondedAt": 1773751658021,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3056,
+        "completionTokens": 133,
+        "totalTokens": 3189,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulxuli_phek8z",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuly62d_jjfbw4",
+        "phaseId": "C-P1",
+        "sentAt": 1773751672885,
+        "respondedAt": 1773751681765,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3348,
+        "completionTokens": 142,
+        "totalTokens": 3490,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulycx1_764bvs",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulyiyk_cyu8gv",
+        "phaseId": "C-P1",
+        "sentAt": 1773751689596,
+        "respondedAt": 1773751698166,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3348,
+        "completionTokens": 129,
+        "totalTokens": 3477,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulypkm_zu9ho9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulyrw8_1m3j9i",
+        "phaseId": "C-P1",
+        "sentAt": 1773751701176,
+        "respondedAt": 1773751706327,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3348,
+        "completionTokens": 129,
+        "totalTokens": 3477,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulyvvb_klvtc6",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulz6ba_h1zv8z",
+        "phaseId": "C-P1",
+        "sentAt": 1773751719862,
+        "respondedAt": 1773751727358,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3565,
+        "completionTokens": 140,
+        "totalTokens": 3705,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulzc3i_ji05lw",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulzthz_6quwo5",
+        "phaseId": "C-P1",
+        "sentAt": 1773751749911,
+        "respondedAt": 1773751763323,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "vision",
+        "status": "completed",
+        "promptTokens": 856,
+        "completionTokens": 103,
+        "totalTokens": 959,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": null,
+        "error": null
+      },
+      {
+        "requestId": "req_mmum03uj_c1n9oo",
+        "phaseId": "C-P1",
+        "sentAt": 1773751763324,
+        "respondedAt": 1773751771473,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "vision",
+        "status": "completed",
+        "promptTokens": 3657,
+        "completionTokens": 303,
+        "totalTokens": 3960,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum0a4y_mf631n",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum0kte_geiv5u",
+        "phaseId": "C-P1",
+        "sentAt": 1773751785314,
+        "respondedAt": 1773751793048,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3804,
+        "completionTokens": 133,
+        "totalTokens": 3937,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum0qs8_5w1q5h",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum1ji7_jez49i",
+        "phaseId": "C-P1",
+        "sentAt": 1773751830271,
+        "respondedAt": 1773751837082,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4278,
+        "completionTokens": 90,
+        "totalTokens": 4368,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum1orf_mnptnr",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum24j8_yj97la",
+        "phaseId": "C-P1",
+        "sentAt": 1773751857524,
+        "respondedAt": 1773751865456,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4450,
+        "completionTokens": 89,
+        "totalTokens": 4539,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum2ank_bv14fv",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum36qb_qwbcck",
+        "phaseId": "C-P1",
+        "sentAt": 1773751907027,
+        "respondedAt": 1773751914846,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5201,
+        "completionTokens": 120,
+        "totalTokens": 5321,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum3crj_2egzuu",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum40xm_n2s68s",
+        "phaseId": "C-P1",
+        "sentAt": 1773751946170,
+        "respondedAt": 1773751952654,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5427,
+        "completionTokens": 138,
+        "totalTokens": 5565,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum45xr_tszd7v",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum4dbq_lxx7wy",
+        "phaseId": "C-P1",
+        "sentAt": 1773751962230,
+        "respondedAt": 1773751969597,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5451,
+        "completionTokens": 232,
+        "totalTokens": 5683,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum4j0d_0sshy4",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum4r6p_4w7jrc",
+        "phaseId": "C-P1",
+        "sentAt": 1773751980193,
+        "respondedAt": 1773751987350,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5902,
+        "completionTokens": 256,
+        "totalTokens": 6158,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum4wpi_lkwsi3",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum6cmo_y1myul",
+        "phaseId": "C-P1",
+        "sentAt": 1773752054640,
+        "respondedAt": 1773752060111,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5902,
+        "completionTokens": 90,
+        "totalTokens": 5992,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum6gun_nz984x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum6mjv_b97eu5",
+        "phaseId": "C-P1",
+        "sentAt": 1773752067499,
+        "respondedAt": 1773752073630,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5902,
+        "completionTokens": 261,
+        "totalTokens": 6163,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum6ra6_l7cz2k",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum6rbl_im77c0",
+        "phaseId": "C-P1",
+        "sentAt": 1773752073681,
+        "respondedAt": 1773752080385,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5974,
+        "completionTokens": 273,
+        "totalTokens": 6247,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum6wht_7y9u2x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum71qg_6hts1b",
+        "phaseId": "C-P1",
+        "sentAt": 1773752087176,
+        "respondedAt": 1773752092167,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6238,
+        "completionTokens": 85,
+        "totalTokens": 6323,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum75l3_mm30sg",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum7auz_xj0qxl",
+        "phaseId": "C-P1",
+        "sentAt": 1773752099003,
+        "respondedAt": 1773752106605,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6166,
+        "completionTokens": 287,
+        "totalTokens": 6453,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum7gq5_5fc6xu",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum7yne_02hahr",
+        "phaseId": "C-P1",
+        "sentAt": 1773752129834,
+        "respondedAt": 1773752137606,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6366,
+        "completionTokens": 212,
+        "totalTokens": 6578,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum84nb_abajh2",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum8w4y_lpbeul",
+        "phaseId": "C-P1",
+        "sentAt": 1773752173234,
+        "respondedAt": 1773752179211,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6370,
+        "completionTokens": 260,
+        "totalTokens": 6630,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum90qz_xq64nl",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum98j3_kldsa2",
+        "phaseId": "C-P1",
+        "sentAt": 1773752189295,
+        "respondedAt": 1773752194869,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6430,
+        "completionTokens": 240,
+        "totalTokens": 6670,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum9ctx_tm3wd9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmum9t2m_2ek6xq",
+        "phaseId": "C-P1",
+        "sentAt": 1773752215918,
+        "respondedAt": 1773752221305,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6672,
+        "completionTokens": 266,
+        "totalTokens": 6938,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmum9x89_124plt",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumaa2b_r12psj",
+        "phaseId": "C-P1",
+        "sentAt": 1773752237939,
+        "respondedAt": 1773752244024,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6923,
+        "completionTokens": 264,
+        "totalTokens": 7187,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumaerd_1g2v92",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumaskv_n1zw15",
+        "phaseId": "C-P1",
+        "sentAt": 1773752261935,
+        "respondedAt": 1773752268611,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7223,
+        "completionTokens": 126,
+        "totalTokens": 7349,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumaxqb_7salm9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumbc0c_o75r12",
+        "phaseId": "C-P1",
+        "sentAt": 1773752287116,
+        "respondedAt": 1773752295021,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7223,
+        "completionTokens": 267,
+        "totalTokens": 7490,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumbi3x_jrb35f",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumbwgt_ltn01o",
+        "phaseId": "C-P1",
+        "sentAt": 1773752313629,
+        "respondedAt": 1773752319387,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7483,
+        "completionTokens": 75,
+        "totalTokens": 7558,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumc0wr_48r5ux",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumc473_1jk9yb",
+        "phaseId": "C-P1",
+        "sentAt": 1773752323647,
+        "respondedAt": 1773752328152,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7791,
+        "completionTokens": 121,
+        "totalTokens": 7912,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmumc7o8_uy7u9y",
+        "error": null
+      },
+      {
+        "requestId": "req_mmumcevf_kxnztd",
+        "phaseId": "C-P1",
+        "sentAt": 1773752337483,
+        "respondedAt": null,
+        "sessionId": "sess_1773751416_b4kc6y",
+        "requestMode": "full",
+        "status": "sent",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": null,
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmuluu7f_vi7wcg",
+        "requestId": "req_mmuluowj_b8bc09",
+        "phaseId": "C-P1",
+        "at": 1773751517551
+      },
+      {
+        "payloadId": "ai_mmulv4s5_3e444x",
+        "requestId": "req_mmuluzer_zebwip",
+        "phaseId": "C-P1",
+        "at": 1773751531258
+      },
+      {
+        "payloadId": "ai_mmulvkq9_bovcg6",
+        "requestId": "req_mmulvfmf_h2ly2e",
+        "phaseId": "C-P1",
+        "at": 1773751551924
+      },
+      {
+        "payloadId": "ai_mmulw0rv_jyn03a",
+        "requestId": "req_mmulvvgy_zmcaa1",
+        "phaseId": "C-P1",
+        "at": 1773751572719
+      },
+      {
+        "payloadId": "ai_mmulwfsu_a9rr15",
+        "requestId": "req_mmulwa57_hycevy",
+        "phaseId": "C-P1",
+        "at": 1773751592194
+      },
+      {
+        "payloadId": "ai_mmulxuli_phek8z",
+        "requestId": "req_mmulxmr6_om699t",
+        "phaseId": "C-P1",
+        "at": 1773751658026
+      },
+      {
+        "payloadId": "ai_mmulycx1_764bvs",
+        "requestId": "req_mmuly62d_jjfbw4",
+        "phaseId": "C-P1",
+        "at": 1773751681769
+      },
+      {
+        "payloadId": "ai_mmulypkm_zu9ho9",
+        "requestId": "req_mmulyiyk_cyu8gv",
+        "phaseId": "C-P1",
+        "at": 1773751698173
+      },
+      {
+        "payloadId": "ai_mmulyvvb_klvtc6",
+        "requestId": "req_mmulyrw8_1m3j9i",
+        "phaseId": "C-P1",
+        "at": 1773751706329
+      },
+      {
+        "payloadId": "ai_mmulzc3i_ji05lw",
+        "requestId": "req_mmulz6ba_h1zv8z",
+        "phaseId": "C-P1",
+        "at": 1773751727361
+      },
+      {
+        "payloadId": "ai_mmum0a4y_mf631n",
+        "requestId": "req_mmum03uj_c1n9oo",
+        "phaseId": "C-P1",
+        "at": 1773751771475
+      },
+      {
+        "payloadId": "ai_mmum0qs8_5w1q5h",
+        "requestId": "req_mmum0kte_geiv5u",
+        "phaseId": "C-P1",
+        "at": 1773751793051
+      },
+      {
+        "payloadId": "ai_mmum1orf_mnptnr",
+        "requestId": "req_mmum1ji7_jez49i",
+        "phaseId": "C-P1",
+        "at": 1773751837083
+      },
+      {
+        "payloadId": "ai_mmum2ank_bv14fv",
+        "requestId": "req_mmum24j8_yj97la",
+        "phaseId": "C-P1",
+        "at": 1773751865456
+      },
+      {
+        "payloadId": "ai_mmum3crj_2egzuu",
+        "requestId": "req_mmum36qb_qwbcck",
+        "phaseId": "C-P1",
+        "at": 1773751914851
+      },
+      {
+        "payloadId": "ai_mmum45xr_tszd7v",
+        "requestId": "req_mmum40xm_n2s68s",
+        "phaseId": "C-P1",
+        "at": 1773751952658
+      },
+      {
+        "payloadId": "ai_mmum4j0d_0sshy4",
+        "requestId": "req_mmum4dbq_lxx7wy",
+        "phaseId": "C-P1",
+        "at": 1773751969600
+      },
+      {
+        "payloadId": "ai_mmum4wpi_lkwsi3",
+        "requestId": "req_mmum4r6p_4w7jrc",
+        "phaseId": "C-P1",
+        "at": 1773751987352
+      },
+      {
+        "payloadId": "ai_mmum6gun_nz984x",
+        "requestId": "req_mmum6cmo_y1myul",
+        "phaseId": "C-P1",
+        "at": 1773752060111
+      },
+      {
+        "payloadId": "ai_mmum6ra6_l7cz2k",
+        "requestId": "req_mmum6mjv_b97eu5",
+        "phaseId": "C-P1",
+        "at": 1773752073632
+      },
+      {
+        "payloadId": "ai_mmum6wht_7y9u2x",
+        "requestId": "req_mmum6rbl_im77c0",
+        "phaseId": "C-P1",
+        "at": 1773752080387
+      },
+      {
+        "payloadId": "ai_mmum75l3_mm30sg",
+        "requestId": "req_mmum71qg_6hts1b",
+        "phaseId": "C-P1",
+        "at": 1773752092167
+      },
+      {
+        "payloadId": "ai_mmum7gq5_5fc6xu",
+        "requestId": "req_mmum7auz_xj0qxl",
+        "phaseId": "C-P1",
+        "at": 1773752106609
+      },
+      {
+        "payloadId": "ai_mmum84nb_abajh2",
+        "requestId": "req_mmum7yne_02hahr",
+        "phaseId": "C-P1",
+        "at": 1773752137608
+      },
+      {
+        "payloadId": "ai_mmum90qz_xq64nl",
+        "requestId": "req_mmum8w4y_lpbeul",
+        "phaseId": "C-P1",
+        "at": 1773752179213
+      },
+      {
+        "payloadId": "ai_mmum9ctx_tm3wd9",
+        "requestId": "req_mmum98j3_kldsa2",
+        "phaseId": "C-P1",
+        "at": 1773752194871
+      },
+      {
+        "payloadId": "ai_mmum9x89_124plt",
+        "requestId": "req_mmum9t2m_2ek6xq",
+        "phaseId": "C-P1",
+        "at": 1773752221307
+      },
+      {
+        "payloadId": "ai_mmumaerd_1g2v92",
+        "requestId": "req_mmumaa2b_r12psj",
+        "phaseId": "C-P1",
+        "at": 1773752244027
+      },
+      {
+        "payloadId": "ai_mmumaxqb_7salm9",
+        "requestId": "req_mmumaskv_n1zw15",
+        "phaseId": "C-P1",
+        "at": 1773752268616
+      },
+      {
+        "payloadId": "ai_mmumbi3x_jrb35f",
+        "requestId": "req_mmumbc0c_o75r12",
+        "phaseId": "C-P1",
+        "at": 1773752295024
+      },
+      {
+        "payloadId": "ai_mmumc0wr_48r5ux",
+        "requestId": "req_mmumbwgt_ltn01o",
+        "phaseId": "C-P1",
+        "at": 1773752319388
+      },
+      {
+        "payloadId": "ai_mmumc7o8_uy7u9y",
+        "requestId": "req_mmumc473_1jk9yb",
+        "phaseId": "C-P1",
+        "at": 1773752328157
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmulu2gl_ubgll8",
+        "requestId": null,
+        "phaseId": "B-P3",
+        "at": 1773751493390,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulv4s5_3e444x",
+        "requestId": "req_mmuluzer_zebwip",
+        "phaseId": "C-P1",
+        "at": 1773751540314,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulvkq9_bovcg6",
+        "requestId": "req_mmulvfmf_h2ly2e",
+        "phaseId": "C-P1",
+        "at": 1773751555913,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulw0rv_jyn03a",
+        "requestId": "req_mmulvvgy_zmcaa1",
+        "phaseId": "C-P1",
+        "at": 1773751574371,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulwfsu_a9rr15",
+        "requestId": "req_mmulwa57_hycevy",
+        "phaseId": "C-P1",
+        "at": 1773751608144,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulxuli_phek8z",
+        "requestId": "req_mmulxmr6_om699t",
+        "phaseId": "C-P1",
+        "at": 1773751667886,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulycx1_764bvs",
+        "requestId": "req_mmuly62d_jjfbw4",
+        "phaseId": "C-P1",
+        "at": 1773751692347,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmulzc3i_ji05lw",
+        "requestId": "req_mmulz6ba_h1zv8z",
+        "phaseId": "C-P1",
+        "at": 1773751737513,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmum0qs8_5w1q5h",
+        "requestId": "req_mmum0kte_geiv5u",
+        "phaseId": "C-P1",
+        "at": 1773751817583,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmum1orf_mnptnr",
+        "requestId": "req_mmum1ji7_jez49i",
+        "phaseId": "C-P1",
+        "at": 1773751839596,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum2ank_bv14fv",
+        "requestId": "req_mmum24j8_yj97la",
+        "phaseId": "C-P1",
+        "at": 1773751882190,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum3crj_2egzuu",
+        "requestId": "req_mmum36qb_qwbcck",
+        "phaseId": "C-P1",
+        "at": 1773751941189,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum4wpi_lkwsi3",
+        "requestId": "req_mmum4r6p_4w7jrc",
+        "phaseId": "C-P1",
+        "at": 1773752045190,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmum75l3_mm30sg",
+        "requestId": "req_mmum71qg_6hts1b",
+        "phaseId": "C-P1",
+        "at": 1773752093514,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum7gq5_5fc6xu",
+        "requestId": "req_mmum7auz_xj0qxl",
+        "phaseId": "C-P1",
+        "at": 1773752120181,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum84nb_abajh2",
+        "requestId": "req_mmum7yne_02hahr",
+        "phaseId": "C-P1",
+        "at": 1773752159624,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmum90qz_xq64nl",
+        "requestId": "req_mmum8w4y_lpbeul",
+        "phaseId": "C-P1",
+        "at": 1773752183218,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmum9ctx_tm3wd9",
+        "requestId": "req_mmum98j3_kldsa2",
+        "phaseId": "C-P1",
+        "at": 1773752210931,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumaerd_1g2v92",
+        "requestId": "req_mmumaa2b_r12psj",
+        "phaseId": "C-P1",
+        "at": 1773752251020,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmumaxqb_7salm9",
+        "requestId": "req_mmumaskv_n1zw15",
+        "phaseId": "C-P1",
+        "at": 1773752278776,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmumc0wr_48r5ux",
+        "requestId": "req_mmumbwgt_ltn01o",
+        "phaseId": "C-P1",
+        "at": 1773752319801,
+        "reason": "canvas_mutation"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulyvvb_klvtc6",
+        "requestId": "req_mmulyrw8_1m3j9i",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001"
+        ],
+        "baselineShapes": {
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              -128,
+              680,
+              450,
+              826.16
+            ],
+            "text": "Solutions to mitigate UHI include increasing urban greenery, implementing reflective roofing materials, and using permeable pavements to reduce heat absorption and enhance cooling.",
+            "summary": "Solutions to mitigate UHI",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          -128,
+          680,
+          450,
+          826.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulyy8g_3ryyv8",
+        "acceptedAt": 1773751709392,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 180,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmum0a4y_mf631n",
+        "requestId": "req_mmum03uj_c1n9oo",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "arrow_solar_to_asphalt",
+          "arrow_asphalt_to_air",
+          "label_solar_to_asphalt",
+          "label_asphalt_to_air"
+        ],
+        "userChangeTrackedShapeIds": [
+          "label_solar_to_asphalt",
+          "label_asphalt_to_air"
+        ],
+        "baselineShapes": {
+          "arrow_solar_to_asphalt": {
+            "id": "arrow_solar_to_asphalt",
+            "kind": "pen",
+            "bbox": [
+              50,
+              150,
+              150,
+              250
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                50,
+                150
+              ],
+              [
+                150,
+                250
+              ]
+            ]
+          },
+          "arrow_asphalt_to_air": {
+            "id": "arrow_asphalt_to_air",
+            "kind": "pen",
+            "bbox": [
+              150,
+              250,
+              250,
+              350
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                150,
+                250
+              ],
+              [
+                250,
+                350
+              ]
+            ]
+          },
+          "label_solar_to_asphalt": {
+            "id": "label_solar_to_asphalt",
+            "kind": "text",
+            "bbox": [
+              70,
+              180,
+              167.998046875,
+              226.05921874999999
+            ],
+            "text": "Energy Absorbed",
+            "summary": "Label energy movement",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "label_asphalt_to_air": {
+            "id": "label_asphalt_to_air",
+            "kind": "text",
+            "bbox": [
+              170,
+              280,
+              262.7392578125,
+              323.955703125
+            ],
+            "text": "Heat Released",
+            "summary": "Label heat movement",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          50,
+          150,
+          262.7392578125,
+          350
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum0p3i_7g84yy",
+        "acceptedAt": 1773751790862,
+        "maxPostAcceptEdit": 0.08333333333333334,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmum45xr_tszd7v",
+        "requestId": "req_mmum40xm_n2s68s",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              800,
+              300,
+              1300,
+              513.3599999999999
+            ],
+            "text": "Cool Roofs reflect sunlight and reduce heat absorption, making them ideal for desert cities with intense solar radiation. Green Roofs provide insulation and evapotranspiration, better suited for tropical cities with higher humidity and rainfall.",
+            "summary": "Cool vs Green Roofs for climates",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          800,
+          300,
+          1300,
+          513.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum47kv_jeaqk1",
+        "acceptedAt": 1773751954783,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmum4j0d_0sshy4",
+        "requestId": "req_mmum4dbq_lxx7wy",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              1500,
+              500,
+              2000,
+              646.16
+            ],
+            "text": "Planting urban trees and creating vertical gardens can enhance evapotranspiration, reducing the Urban Heat Island effect while improving air quality and aesthetics.",
+            "summary": "Urban greenery reduces UHI",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          1500,
+          500,
+          2000,
+          646.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum4ln2_vi90nx",
+        "acceptedAt": 1773751973006,
+        "maxPostAcceptEdit": 0.08834848636278123,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmum6gun_nz984x",
+        "requestId": "req_mmum6cmo_y1myul",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_diagram_001"
+        ],
+        "userChangeTrackedShapeIds": [],
+        "baselineShapes": {
+          "ai_diagram_001": {
+            "id": "ai_diagram_001",
+            "kind": "line",
+            "bbox": [
+              400,
+              200,
+              600,
+              400
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                400,
+                200
+              ],
+              [
+                600,
+                400
+              ]
+            ]
+          }
+        },
+        "usableUnits": 1,
+        "targetBBox": [
+          400,
+          200,
+          600,
+          400
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum6ofj_jsb7u9",
+        "acceptedAt": 1773752069935,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmum6wht_7y9u2x",
+        "requestId": "req_mmum6rbl_im77c0",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_next_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_next_001"
+        ],
+        "baselineShapes": {
+          "ai_next_001": {
+            "id": "ai_next_001",
+            "kind": "text",
+            "bbox": [
+              1362.326,
+              700,
+              1862.326,
+              913.3599999999999
+            ],
+            "text": "Comparing Cool Roofs and Green Roofs: - Cool Roofs: Reflect sunlight, reducing heat absorption; ideal for hot, dry climates. - Green Roofs: Provide insulation and evapotranspiration; better for humid, tropical areas.",
+            "summary": "Cool Roofs vs Green Roofs",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1362.326,
+          700,
+          1862.326,
+          913.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum6xvi_z4o2x4",
+        "acceptedAt": 1773752082174,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmum9x89_124plt",
+        "requestId": "req_mmum9t2m_2ek6xq",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              1362.326,
+              950,
+              1862.326,
+              1196.96
+            ],
+            "text": "Physics Fundamentals: - Albedo: Reflectivity of surfaces; impacts heat absorption. - Thermal Mass: Material's ability to store and release heat. - Evapotranspiration: Cooling through water vapor release by plants.",
+            "summary": "Physics Fundamentals overview",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1362.326,
+          950,
+          1862.326,
+          1196.96
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuma0hd_mt6en9",
+        "acceptedAt": 1773752225521,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmumbi3x_jrb35f",
+        "requestId": "req_mmumbc0c_o75r12",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              2100,
+              1000,
+              2600,
+              1246.96
+            ],
+            "text": "Micro-Climate Intervention Proposal: - Use reflective coatings on building facades to increase Albedo. - Replace asphalt with permeable pavements to reduce heat retention. - Install small vertical gardens on walls to enhance evapotranspiration.",
+            "summary": "Micro-Climate Intervention",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          2100,
+          1000,
+          2600,
+          1246.96
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmumbmr3_puy9qv",
+        "acceptedAt": 1773752301039,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmumc7o8_uy7u9y",
+        "requestId": "req_mmumc473_1jk9yb",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              3000,
+              1200,
+              3420.0087890625,
+              1379.763515625
+            ],
+            "text": "Urban Heat Island mitigation strategies should prioritize solutions like reflective surfaces, permeable pavements, and urban greenery to balance cooling and sustainability.",
+            "summary": "UHI mitigation strategies",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          3000,
+          1200,
+          3420.0087890625,
+          1379.763515625
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmumc9q6_lk1vrj",
+        "acceptedAt": 1773752330814,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773751483453,
+        "data": {
+          "phaseId": "C-P1",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751493390,
+        "data": {
+          "payloadId": "ai_mmulu2gl_ubgll8",
+          "requestId": null,
+          "phaseId": "B-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751510675,
+        "data": {
+          "requestId": "req_mmuluowj_b8bc09",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751517547,
+        "data": {
+          "requestId": "req_mmuluowj_b8bc09",
+          "promptTokens": 1359,
+          "completionTokens": 98,
+          "totalTokens": 1457,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751517551,
+        "data": {
+          "payloadId": "ai_mmuluu7f_vi7wcg",
+          "requestId": "req_mmuluowj_b8bc09",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751524291,
+        "data": {
+          "requestId": "req_mmuluzer_zebwip",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751531253,
+        "data": {
+          "requestId": "req_mmuluzer_zebwip",
+          "promptTokens": 1552,
+          "completionTokens": 140,
+          "totalTokens": 1692,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751531258,
+        "data": {
+          "payloadId": "ai_mmulv4s5_3e444x",
+          "requestId": "req_mmuluzer_zebwip",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751540314,
+        "data": {
+          "payloadId": "ai_mmulv4s5_3e444x",
+          "requestId": "req_mmuluzer_zebwip",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751545303,
+        "data": {
+          "requestId": "req_mmulvfmf_h2ly2e",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751551920,
+        "data": {
+          "requestId": "req_mmulvfmf_h2ly2e",
+          "promptTokens": 1715,
+          "completionTokens": 147,
+          "totalTokens": 1862,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751551924,
+        "data": {
+          "payloadId": "ai_mmulvkq9_bovcg6",
+          "requestId": "req_mmulvfmf_h2ly2e",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751555913,
+        "data": {
+          "payloadId": "ai_mmulvkq9_bovcg6",
+          "requestId": "req_mmulvfmf_h2ly2e",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751565842,
+        "data": {
+          "requestId": "req_mmulvvgy_zmcaa1",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751572715,
+        "data": {
+          "requestId": "req_mmulvvgy_zmcaa1",
+          "promptTokens": 1890,
+          "completionTokens": 183,
+          "totalTokens": 2073,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751572719,
+        "data": {
+          "payloadId": "ai_mmulw0rv_jyn03a",
+          "requestId": "req_mmulvvgy_zmcaa1",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751574371,
+        "data": {
+          "payloadId": "ai_mmulw0rv_jyn03a",
+          "requestId": "req_mmulvvgy_zmcaa1",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751584859,
+        "data": {
+          "requestId": "req_mmulwa57_hycevy",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751592190,
+        "data": {
+          "requestId": "req_mmulwa57_hycevy",
+          "promptTokens": 2074,
+          "completionTokens": 127,
+          "totalTokens": 2201,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751592194,
+        "data": {
+          "payloadId": "ai_mmulwfsu_a9rr15",
+          "requestId": "req_mmulwa57_hycevy",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751608144,
+        "data": {
+          "payloadId": "ai_mmulwfsu_a9rr15",
+          "requestId": "req_mmulwa57_hycevy",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751647858,
+        "data": {
+          "requestId": "req_mmulxmr6_om699t",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751658021,
+        "data": {
+          "requestId": "req_mmulxmr6_om699t",
+          "promptTokens": 3056,
+          "completionTokens": 133,
+          "totalTokens": 3189,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751658026,
+        "data": {
+          "payloadId": "ai_mmulxuli_phek8z",
+          "requestId": "req_mmulxmr6_om699t",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751667886,
+        "data": {
+          "payloadId": "ai_mmulxuli_phek8z",
+          "requestId": "req_mmulxmr6_om699t",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751672885,
+        "data": {
+          "requestId": "req_mmuly62d_jjfbw4",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751681765,
+        "data": {
+          "requestId": "req_mmuly62d_jjfbw4",
+          "promptTokens": 3348,
+          "completionTokens": 142,
+          "totalTokens": 3490,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751681769,
+        "data": {
+          "payloadId": "ai_mmulycx1_764bvs",
+          "requestId": "req_mmuly62d_jjfbw4",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751689596,
+        "data": {
+          "requestId": "req_mmulyiyk_cyu8gv",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751692347,
+        "data": {
+          "payloadId": "ai_mmulycx1_764bvs",
+          "requestId": "req_mmuly62d_jjfbw4",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751698166,
+        "data": {
+          "requestId": "req_mmulyiyk_cyu8gv",
+          "promptTokens": 3348,
+          "completionTokens": 129,
+          "totalTokens": 3477,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751698173,
+        "data": {
+          "payloadId": "ai_mmulypkm_zu9ho9",
+          "requestId": "req_mmulyiyk_cyu8gv",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751701176,
+        "data": {
+          "requestId": "req_mmulyrw8_1m3j9i",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751706327,
+        "data": {
+          "requestId": "req_mmulyrw8_1m3j9i",
+          "promptTokens": 3348,
+          "completionTokens": 129,
+          "totalTokens": 3477,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751706329,
+        "data": {
+          "payloadId": "ai_mmulyvvb_klvtc6",
+          "requestId": "req_mmulyrw8_1m3j9i",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751709392,
+        "data": {
+          "acceptId": "accept_mmulyy8g_3ryyv8",
+          "payloadId": "ai_mmulyvvb_klvtc6",
+          "requestId": "req_mmulyrw8_1m3j9i",
+          "phaseId": "C-P1",
+          "usableUnits": 9,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751719862,
+        "data": {
+          "requestId": "req_mmulz6ba_h1zv8z",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751727358,
+        "data": {
+          "requestId": "req_mmulz6ba_h1zv8z",
+          "promptTokens": 3565,
+          "completionTokens": 140,
+          "totalTokens": 3705,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751727361,
+        "data": {
+          "payloadId": "ai_mmulzc3i_ji05lw",
+          "requestId": "req_mmulz6ba_h1zv8z",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751737513,
+        "data": {
+          "payloadId": "ai_mmulzc3i_ji05lw",
+          "requestId": "req_mmulz6ba_h1zv8z",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751749911,
+        "data": {
+          "requestId": "req_mmulzthz_6quwo5",
+          "phaseId": "C-P1",
+          "requestMode": "vision",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751763323,
+        "data": {
+          "requestId": "req_mmulzthz_6quwo5",
+          "promptTokens": 856,
+          "completionTokens": 103,
+          "totalTokens": 959,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751763324,
+        "data": {
+          "requestId": "req_mmum03uj_c1n9oo",
+          "phaseId": "C-P1",
+          "requestMode": "vision",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751771473,
+        "data": {
+          "requestId": "req_mmum03uj_c1n9oo",
+          "promptTokens": 3657,
+          "completionTokens": 303,
+          "totalTokens": 3960,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751771475,
+        "data": {
+          "payloadId": "ai_mmum0a4y_mf631n",
+          "requestId": "req_mmum03uj_c1n9oo",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751785314,
+        "data": {
+          "requestId": "req_mmum0kte_geiv5u",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751790862,
+        "data": {
+          "acceptId": "accept_mmum0p3i_7g84yy",
+          "payloadId": "ai_mmum0a4y_mf631n",
+          "requestId": "req_mmum03uj_c1n9oo",
+          "phaseId": "C-P1",
+          "usableUnits": 4,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751793048,
+        "data": {
+          "requestId": "req_mmum0kte_geiv5u",
+          "promptTokens": 3804,
+          "completionTokens": 133,
+          "totalTokens": 3937,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751793051,
+        "data": {
+          "payloadId": "ai_mmum0qs8_5w1q5h",
+          "requestId": "req_mmum0kte_geiv5u",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751817583,
+        "data": {
+          "payloadId": "ai_mmum0qs8_5w1q5h",
+          "requestId": "req_mmum0kte_geiv5u",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751830271,
+        "data": {
+          "requestId": "req_mmum1ji7_jez49i",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751837082,
+        "data": {
+          "requestId": "req_mmum1ji7_jez49i",
+          "promptTokens": 4278,
+          "completionTokens": 90,
+          "totalTokens": 4368,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751837083,
+        "data": {
+          "payloadId": "ai_mmum1orf_mnptnr",
+          "requestId": "req_mmum1ji7_jez49i",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751839596,
+        "data": {
+          "payloadId": "ai_mmum1orf_mnptnr",
+          "requestId": "req_mmum1ji7_jez49i",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751857524,
+        "data": {
+          "requestId": "req_mmum24j8_yj97la",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751865456,
+        "data": {
+          "requestId": "req_mmum24j8_yj97la",
+          "promptTokens": 4450,
+          "completionTokens": 89,
+          "totalTokens": 4539,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751865456,
+        "data": {
+          "payloadId": "ai_mmum2ank_bv14fv",
+          "requestId": "req_mmum24j8_yj97la",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751882190,
+        "data": {
+          "payloadId": "ai_mmum2ank_bv14fv",
+          "requestId": "req_mmum24j8_yj97la",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751907027,
+        "data": {
+          "requestId": "req_mmum36qb_qwbcck",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751914846,
+        "data": {
+          "requestId": "req_mmum36qb_qwbcck",
+          "promptTokens": 5201,
+          "completionTokens": 120,
+          "totalTokens": 5321,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751914851,
+        "data": {
+          "payloadId": "ai_mmum3crj_2egzuu",
+          "requestId": "req_mmum36qb_qwbcck",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773751941189,
+        "data": {
+          "payloadId": "ai_mmum3crj_2egzuu",
+          "requestId": "req_mmum36qb_qwbcck",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751946170,
+        "data": {
+          "requestId": "req_mmum40xm_n2s68s",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751952654,
+        "data": {
+          "requestId": "req_mmum40xm_n2s68s",
+          "promptTokens": 5427,
+          "completionTokens": 138,
+          "totalTokens": 5565,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751952658,
+        "data": {
+          "payloadId": "ai_mmum45xr_tszd7v",
+          "requestId": "req_mmum40xm_n2s68s",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751954783,
+        "data": {
+          "acceptId": "accept_mmum47kv_jeaqk1",
+          "payloadId": "ai_mmum45xr_tszd7v",
+          "requestId": "req_mmum40xm_n2s68s",
+          "phaseId": "C-P1",
+          "usableUnits": 13,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751962230,
+        "data": {
+          "requestId": "req_mmum4dbq_lxx7wy",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751969597,
+        "data": {
+          "requestId": "req_mmum4dbq_lxx7wy",
+          "promptTokens": 5451,
+          "completionTokens": 232,
+          "totalTokens": 5683,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751969600,
+        "data": {
+          "payloadId": "ai_mmum4j0d_0sshy4",
+          "requestId": "req_mmum4dbq_lxx7wy",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773751973006,
+        "data": {
+          "acceptId": "accept_mmum4ln2_vi90nx",
+          "payloadId": "ai_mmum4j0d_0sshy4",
+          "requestId": "req_mmum4dbq_lxx7wy",
+          "phaseId": "C-P1",
+          "usableUnits": 9,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773751980193,
+        "data": {
+          "requestId": "req_mmum4r6p_4w7jrc",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773751987350,
+        "data": {
+          "requestId": "req_mmum4r6p_4w7jrc",
+          "promptTokens": 5902,
+          "completionTokens": 256,
+          "totalTokens": 6158,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773751987352,
+        "data": {
+          "payloadId": "ai_mmum4wpi_lkwsi3",
+          "requestId": "req_mmum4r6p_4w7jrc",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752045190,
+        "data": {
+          "payloadId": "ai_mmum4wpi_lkwsi3",
+          "requestId": "req_mmum4r6p_4w7jrc",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752054640,
+        "data": {
+          "requestId": "req_mmum6cmo_y1myul",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752060111,
+        "data": {
+          "requestId": "req_mmum6cmo_y1myul",
+          "promptTokens": 5902,
+          "completionTokens": 90,
+          "totalTokens": 5992,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752060111,
+        "data": {
+          "payloadId": "ai_mmum6gun_nz984x",
+          "requestId": "req_mmum6cmo_y1myul",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752067499,
+        "data": {
+          "requestId": "req_mmum6mjv_b97eu5",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773752069935,
+        "data": {
+          "acceptId": "accept_mmum6ofj_jsb7u9",
+          "payloadId": "ai_mmum6gun_nz984x",
+          "requestId": "req_mmum6cmo_y1myul",
+          "phaseId": "C-P1",
+          "usableUnits": 1,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752073630,
+        "data": {
+          "requestId": "req_mmum6mjv_b97eu5",
+          "promptTokens": 5902,
+          "completionTokens": 261,
+          "totalTokens": 6163,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752073632,
+        "data": {
+          "payloadId": "ai_mmum6ra6_l7cz2k",
+          "requestId": "req_mmum6mjv_b97eu5",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752073681,
+        "data": {
+          "requestId": "req_mmum6rbl_im77c0",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752080385,
+        "data": {
+          "requestId": "req_mmum6rbl_im77c0",
+          "promptTokens": 5974,
+          "completionTokens": 273,
+          "totalTokens": 6247,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752080387,
+        "data": {
+          "payloadId": "ai_mmum6wht_7y9u2x",
+          "requestId": "req_mmum6rbl_im77c0",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773752082174,
+        "data": {
+          "acceptId": "accept_mmum6xvi_z4o2x4",
+          "payloadId": "ai_mmum6wht_7y9u2x",
+          "requestId": "req_mmum6rbl_im77c0",
+          "phaseId": "C-P1",
+          "usableUnits": 11,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752087176,
+        "data": {
+          "requestId": "req_mmum71qg_6hts1b",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752092167,
+        "data": {
+          "requestId": "req_mmum71qg_6hts1b",
+          "promptTokens": 6238,
+          "completionTokens": 85,
+          "totalTokens": 6323,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752092167,
+        "data": {
+          "payloadId": "ai_mmum75l3_mm30sg",
+          "requestId": "req_mmum71qg_6hts1b",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752093514,
+        "data": {
+          "payloadId": "ai_mmum75l3_mm30sg",
+          "requestId": "req_mmum71qg_6hts1b",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752099003,
+        "data": {
+          "requestId": "req_mmum7auz_xj0qxl",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752106605,
+        "data": {
+          "requestId": "req_mmum7auz_xj0qxl",
+          "promptTokens": 6166,
+          "completionTokens": 287,
+          "totalTokens": 6453,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752106609,
+        "data": {
+          "payloadId": "ai_mmum7gq5_5fc6xu",
+          "requestId": "req_mmum7auz_xj0qxl",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752120181,
+        "data": {
+          "payloadId": "ai_mmum7gq5_5fc6xu",
+          "requestId": "req_mmum7auz_xj0qxl",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752129834,
+        "data": {
+          "requestId": "req_mmum7yne_02hahr",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752137606,
+        "data": {
+          "requestId": "req_mmum7yne_02hahr",
+          "promptTokens": 6366,
+          "completionTokens": 212,
+          "totalTokens": 6578,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752137608,
+        "data": {
+          "payloadId": "ai_mmum84nb_abajh2",
+          "requestId": "req_mmum7yne_02hahr",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752159624,
+        "data": {
+          "payloadId": "ai_mmum84nb_abajh2",
+          "requestId": "req_mmum7yne_02hahr",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752173234,
+        "data": {
+          "requestId": "req_mmum8w4y_lpbeul",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752179211,
+        "data": {
+          "requestId": "req_mmum8w4y_lpbeul",
+          "promptTokens": 6370,
+          "completionTokens": 260,
+          "totalTokens": 6630,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752179213,
+        "data": {
+          "payloadId": "ai_mmum90qz_xq64nl",
+          "requestId": "req_mmum8w4y_lpbeul",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752183218,
+        "data": {
+          "payloadId": "ai_mmum90qz_xq64nl",
+          "requestId": "req_mmum8w4y_lpbeul",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752189295,
+        "data": {
+          "requestId": "req_mmum98j3_kldsa2",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752194869,
+        "data": {
+          "requestId": "req_mmum98j3_kldsa2",
+          "promptTokens": 6430,
+          "completionTokens": 240,
+          "totalTokens": 6670,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752194871,
+        "data": {
+          "payloadId": "ai_mmum9ctx_tm3wd9",
+          "requestId": "req_mmum98j3_kldsa2",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752210931,
+        "data": {
+          "payloadId": "ai_mmum9ctx_tm3wd9",
+          "requestId": "req_mmum98j3_kldsa2",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752215918,
+        "data": {
+          "requestId": "req_mmum9t2m_2ek6xq",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752221305,
+        "data": {
+          "requestId": "req_mmum9t2m_2ek6xq",
+          "promptTokens": 6672,
+          "completionTokens": 266,
+          "totalTokens": 6938,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752221307,
+        "data": {
+          "payloadId": "ai_mmum9x89_124plt",
+          "requestId": "req_mmum9t2m_2ek6xq",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773752225521,
+        "data": {
+          "acceptId": "accept_mmuma0hd_mt6en9",
+          "payloadId": "ai_mmum9x89_124plt",
+          "requestId": "req_mmum9t2m_2ek6xq",
+          "phaseId": "C-P1",
+          "usableUnits": 11,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752237939,
+        "data": {
+          "requestId": "req_mmumaa2b_r12psj",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752244024,
+        "data": {
+          "requestId": "req_mmumaa2b_r12psj",
+          "promptTokens": 6923,
+          "completionTokens": 264,
+          "totalTokens": 7187,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752244027,
+        "data": {
+          "payloadId": "ai_mmumaerd_1g2v92",
+          "requestId": "req_mmumaa2b_r12psj",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752251020,
+        "data": {
+          "payloadId": "ai_mmumaerd_1g2v92",
+          "requestId": "req_mmumaa2b_r12psj",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752261935,
+        "data": {
+          "requestId": "req_mmumaskv_n1zw15",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752268611,
+        "data": {
+          "requestId": "req_mmumaskv_n1zw15",
+          "promptTokens": 7223,
+          "completionTokens": 126,
+          "totalTokens": 7349,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752268616,
+        "data": {
+          "payloadId": "ai_mmumaxqb_7salm9",
+          "requestId": "req_mmumaskv_n1zw15",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752278776,
+        "data": {
+          "payloadId": "ai_mmumaxqb_7salm9",
+          "requestId": "req_mmumaskv_n1zw15",
+          "phaseId": "C-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752287116,
+        "data": {
+          "requestId": "req_mmumbc0c_o75r12",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752295021,
+        "data": {
+          "requestId": "req_mmumbc0c_o75r12",
+          "promptTokens": 7223,
+          "completionTokens": 267,
+          "totalTokens": 7490,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752295024,
+        "data": {
+          "payloadId": "ai_mmumbi3x_jrb35f",
+          "requestId": "req_mmumbc0c_o75r12",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773752301039,
+        "data": {
+          "acceptId": "accept_mmumbmr3_puy9qv",
+          "payloadId": "ai_mmumbi3x_jrb35f",
+          "requestId": "req_mmumbc0c_o75r12",
+          "phaseId": "C-P1",
+          "usableUnits": 13,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752313629,
+        "data": {
+          "requestId": "req_mmumbwgt_ltn01o",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752319387,
+        "data": {
+          "requestId": "req_mmumbwgt_ltn01o",
+          "promptTokens": 7483,
+          "completionTokens": 75,
+          "totalTokens": 7558,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752319388,
+        "data": {
+          "payloadId": "ai_mmumc0wr_48r5ux",
+          "requestId": "req_mmumbwgt_ltn01o",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773752319801,
+        "data": {
+          "payloadId": "ai_mmumc0wr_48r5ux",
+          "requestId": "req_mmumbwgt_ltn01o",
+          "phaseId": "C-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752323647,
+        "data": {
+          "requestId": "req_mmumc473_1jk9yb",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773752328152,
+        "data": {
+          "requestId": "req_mmumc473_1jk9yb",
+          "promptTokens": 7791,
+          "completionTokens": 121,
+          "totalTokens": 7912,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773752328157,
+        "data": {
+          "payloadId": "ai_mmumc7o8_uy7u9y",
+          "requestId": "req_mmumc473_1jk9yb",
+          "phaseId": "C-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773752330814,
+        "data": {
+          "acceptId": "accept_mmumc9q6_lk1vrj",
+          "payloadId": "ai_mmumc7o8_uy7u9y",
+          "requestId": "req_mmumc473_1jk9yb",
+          "phaseId": "C-P1",
+          "usableUnits": 9,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773752337483,
+        "data": {
+          "requestId": "req_mmumcevf_kxnztd",
+          "phaseId": "C-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773751416_b4kc6y"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773752340651
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 34,
+    "previewCount": 32,
+    "acceptCount": 9,
+    "dismissCount": 21,
+    "completedRoundCount": 33,
+    "totalPromptTokens": 156944,
+    "acceptedUsableUnits": 80,
+    "acceptedTextChars": 1462,
+    "changedTextChars": 180,
+    "suggestionAcceptanceRate": 0.28125,
+    "dismissRate": 0.65625,
+    "straightUseRate": 0.3333333333333333,
+    "userChangedRate": 0.12311901504787962,
+    "promptTokensPerRound": 4755.878787878788,
+    "acceptedUsableContentPer1kTokens": 0.5097359567743908,
+    "activeBlockAlignmentRate": 0,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "C-P1",
+        "invoke": 34,
+        "straightUseRate": 0.3333333333333333,
+        "acceptedOutputPer1kToken": 0.5097359567743908,
+        "promptTokens": 156944,
+        "acceptedUsableUnits": 80,
+        "acceptedCount": 9
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmulyvvb_klvtc6",
+        "requestId": "req_mmulyrw8_1m3j9i",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_001"
+        ],
+        "baselineShapes": {
+          "ai_text_001": {
+            "id": "ai_text_001",
+            "kind": "text",
+            "bbox": [
+              -128,
+              680,
+              450,
+              826.16
+            ],
+            "text": "Solutions to mitigate UHI include increasing urban greenery, implementing reflective roofing materials, and using permeable pavements to reduce heat absorption and enhance cooling.",
+            "summary": "Solutions to mitigate UHI",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          -128,
+          680,
+          450,
+          826.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmulyy8g_3ryyv8",
+        "acceptedAt": 1773751709392,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 180,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 180,
+        "changedTextChars": 180,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmum0a4y_mf631n",
+        "requestId": "req_mmum03uj_c1n9oo",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "arrow_solar_to_asphalt",
+          "arrow_asphalt_to_air",
+          "label_solar_to_asphalt",
+          "label_asphalt_to_air"
+        ],
+        "userChangeTrackedShapeIds": [
+          "label_solar_to_asphalt",
+          "label_asphalt_to_air"
+        ],
+        "baselineShapes": {
+          "arrow_solar_to_asphalt": {
+            "id": "arrow_solar_to_asphalt",
+            "kind": "pen",
+            "bbox": [
+              50,
+              150,
+              150,
+              250
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                50,
+                150
+              ],
+              [
+                150,
+                250
+              ]
+            ]
+          },
+          "arrow_asphalt_to_air": {
+            "id": "arrow_asphalt_to_air",
+            "kind": "pen",
+            "bbox": [
+              150,
+              250,
+              250,
+              350
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                150,
+                250
+              ],
+              [
+                250,
+                350
+              ]
+            ]
+          },
+          "label_solar_to_asphalt": {
+            "id": "label_solar_to_asphalt",
+            "kind": "text",
+            "bbox": [
+              70,
+              180,
+              167.998046875,
+              226.05921874999999
+            ],
+            "text": "Energy Absorbed",
+            "summary": "Label energy movement",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "label_asphalt_to_air": {
+            "id": "label_asphalt_to_air",
+            "kind": "text",
+            "bbox": [
+              170,
+              280,
+              262.7392578125,
+              323.955703125
+            ],
+            "text": "Heat Released",
+            "summary": "Label heat movement",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          50,
+          150,
+          262.7392578125,
+          350
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum0p3i_7g84yy",
+        "acceptedAt": 1773751790862,
+        "maxPostAcceptEdit": 0.08333333333333334,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.08333333333333334,
+        "acceptedTextChars": 28,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmum45xr_tszd7v",
+        "requestId": "req_mmum40xm_n2s68s",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              800,
+              300,
+              1300,
+              513.3599999999999
+            ],
+            "text": "Cool Roofs reflect sunlight and reduce heat absorption, making them ideal for desert cities with intense solar radiation. Green Roofs provide insulation and evapotranspiration, better suited for tropical cities with higher humidity and rainfall.",
+            "summary": "Cool vs Green Roofs for climates",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          800,
+          300,
+          1300,
+          513.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum47kv_jeaqk1",
+        "acceptedAt": 1773751954783,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 245,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmum4j0d_0sshy4",
+        "requestId": "req_mmum4dbq_lxx7wy",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              1500,
+              500,
+              2000,
+              646.16
+            ],
+            "text": "Planting urban trees and creating vertical gardens can enhance evapotranspiration, reducing the Urban Heat Island effect while improving air quality and aesthetics.",
+            "summary": "Urban greenery reduces UHI",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          1500,
+          500,
+          2000,
+          646.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum4ln2_vi90nx",
+        "acceptedAt": 1773751973006,
+        "maxPostAcceptEdit": 0.08834848636278123,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.08834848636278123,
+        "acceptedTextChars": 164,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmum6gun_nz984x",
+        "requestId": "req_mmum6cmo_y1myul",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_diagram_001"
+        ],
+        "userChangeTrackedShapeIds": [],
+        "baselineShapes": {
+          "ai_diagram_001": {
+            "id": "ai_diagram_001",
+            "kind": "line",
+            "bbox": [
+              400,
+              200,
+              600,
+              400
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                400,
+                200
+              ],
+              [
+                600,
+                400
+              ]
+            ]
+          }
+        },
+        "usableUnits": 1,
+        "targetBBox": [
+          400,
+          200,
+          600,
+          400
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum6ofj_jsb7u9",
+        "acceptedAt": 1773752069935,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 0,
+        "changedTextChars": 0,
+        "changedTextRatio": null,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmum6wht_7y9u2x",
+        "requestId": "req_mmum6rbl_im77c0",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_next_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_next_001"
+        ],
+        "baselineShapes": {
+          "ai_next_001": {
+            "id": "ai_next_001",
+            "kind": "text",
+            "bbox": [
+              1362.326,
+              700,
+              1862.326,
+              913.3599999999999
+            ],
+            "text": "Comparing Cool Roofs and Green Roofs: - Cool Roofs: Reflect sunlight, reducing heat absorption; ideal for hot, dry climates. - Green Roofs: Provide insulation and evapotranspiration; better for humid, tropical areas.",
+            "summary": "Cool Roofs vs Green Roofs",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1362.326,
+          700,
+          1862.326,
+          913.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmum6xvi_z4o2x4",
+        "acceptedAt": 1773752082174,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 216,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmum9x89_124plt",
+        "requestId": "req_mmum9t2m_2ek6xq",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              1362.326,
+              950,
+              1862.326,
+              1196.96
+            ],
+            "text": "Physics Fundamentals: - Albedo: Reflectivity of surfaces; impacts heat absorption. - Thermal Mass: Material's ability to store and release heat. - Evapotranspiration: Cooling through water vapor release by plants.",
+            "summary": "Physics Fundamentals overview",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 11,
+        "targetBBox": [
+          1362.326,
+          950,
+          1862.326,
+          1196.96
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuma0hd_mt6en9",
+        "acceptedAt": 1773752225521,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 213,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmumbi3x_jrb35f",
+        "requestId": "req_mmumbc0c_o75r12",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              2100,
+              1000,
+              2600,
+              1246.96
+            ],
+            "text": "Micro-Climate Intervention Proposal: - Use reflective coatings on building facades to increase Albedo. - Replace asphalt with permeable pavements to reduce heat retention. - Install small vertical gardens on walls to enhance evapotranspiration.",
+            "summary": "Micro-Climate Intervention",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 13,
+        "targetBBox": [
+          2100,
+          1000,
+          2600,
+          1246.96
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmumbmr3_puy9qv",
+        "acceptedAt": 1773752301039,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 244,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmumc7o8_uy7u9y",
+        "requestId": "req_mmumc473_1jk9yb",
+        "phaseId": "C-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              3000,
+              1200,
+              3420.0087890625,
+              1379.763515625
+            ],
+            "text": "Urban Heat Island mitigation strategies should prioritize solutions like reflective surfaces, permeable pavements, and urban greenery to balance cooling and sustainability.",
+            "summary": "UHI mitigation strategies",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          3000,
+          1200,
+          3420.0087890625,
+          1379.763515625
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmumc9q6_lk1vrj",
+        "acceptedAt": 1773752330814,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 172,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      }
+    ]
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 42,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

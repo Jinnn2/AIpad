@@ -196,9 +196,9 @@ type TextStylePreset = {
   color: ColorName
 }
 const TEXT_STYLE_PRESETS: TextStylePreset[] = [
-  { id: 'body', label: '正文', fontSize: 18, fontWeight: '400', color: 'black' },
-  { id: 'subtitle', label: '副标题', fontSize: 24, fontWeight: '600', color: 'blue' },
-  { id: 'title', label: '标题', fontSize: 32, fontWeight: '700', color: 'red' },
+  { id: 'body', label: 'Text', fontSize: 18, fontWeight: '400', color: 'black' },
+  { id: 'subtitle', label: 'Subtitle', fontSize: 24, fontWeight: '600', color: 'blue' },
+  { id: 'title', label: 'Title', fontSize: 32, fontWeight: '700', color: 'red' },
 ]
 type TextRole = 'body' | 'subtitle' | 'title'
 const parseFontWeight = (raw: string | number | null | undefined) => {
@@ -5543,7 +5543,7 @@ const moveTextShape = useCallback((id: string, nextX: number, nextY: number) => 
             </span>
           </label>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <span style={{ fontSize: 12, color: '#4b5563' }}>快捷样式</span>
+            <span style={{ fontSize: 12, color: '#4b5563' }}>Style</span>
             <div style={{ display: 'flex', gap: 8 }}>
               {TEXT_STYLE_PRESETS.map((preset) => {
                 const active =

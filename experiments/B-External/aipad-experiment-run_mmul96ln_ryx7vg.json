@@ -1,0 +1,107 @@
+{
+  "exportedAt": "2026-03-17T12:44:04.848Z",
+  "run": {
+    "runId": "run_mmul96ln_ryx7vg",
+    "startedAt": 1773750507179,
+    "endedAt": null,
+    "initialSessionId": "sess_1773750505_1ogzbu",
+    "currentPhaseId": "B-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [],
+    "previews": [],
+    "dismisses": [],
+    "acceptedSuggestions": [],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773750507179,
+        "data": {
+          "phaseId": "B-P1",
+          "sessionId": "sess_1773750505_1ogzbu"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750847622,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750847715,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751302338,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751302459,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751303655,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751303813,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751307394,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773751307431,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 0,
+    "previewCount": 0,
+    "acceptCount": 0,
+    "dismissCount": 0,
+    "completedRoundCount": 0,
+    "totalPromptTokens": 0,
+    "acceptedUsableUnits": 0,
+    "acceptedTextChars": 0,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": null,
+    "dismissRate": null,
+    "straightUseRate": null,
+    "userChangedRate": null,
+    "promptTokensPerRound": null,
+    "acceptedUsableContentPer1kTokens": null,
+    "activeBlockAlignmentRate": null,
+    "phaseSpecificEfficiency": [],
+    "acceptedSuggestions": []
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 31,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

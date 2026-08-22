@@ -1,0 +1,2288 @@
+{
+  "exportedAt": "2026-03-17T12:37:10.488Z",
+  "run": {
+    "runId": "run_mmukuumt_unaqzl",
+    "startedAt": 1773749838485,
+    "endedAt": 1773751028536,
+    "initialSessionId": null,
+    "currentPhaseId": "B-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmul0sdz_et6a65",
+        "phaseId": "B-P1",
+        "sentAt": 1773750115511,
+        "respondedAt": 1773750120238,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1593,
+        "completionTokens": 109,
+        "totalTokens": 1702,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul0w1b_mv8dbp",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul1cck_bolkfs",
+        "phaseId": "B-P1",
+        "sentAt": 1773750141380,
+        "respondedAt": 1773750144758,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 1868,
+        "completionTokens": 119,
+        "totalTokens": 1987,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul1eyf_rn68gs",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul1k3j_7skuq9",
+        "phaseId": "B-P1",
+        "sentAt": 1773750151423,
+        "respondedAt": 1773750154808,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2065,
+        "completionTokens": 213,
+        "totalTokens": 2278,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul1mpk_icfl8t",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul1s83_mqnq6t",
+        "phaseId": "B-P1",
+        "sentAt": 1773750161955,
+        "respondedAt": 1773750164628,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2264,
+        "completionTokens": 121,
+        "totalTokens": 2385,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul1uac_bref9c",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul1xa7_mvv32j",
+        "phaseId": "B-P1",
+        "sentAt": 1773750168511,
+        "respondedAt": 1773750173184,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2480,
+        "completionTokens": 235,
+        "totalTokens": 2715,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul20w0_3i5tza",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul2a4f_9e01rv",
+        "phaseId": "B-P1",
+        "sentAt": 1773750185151,
+        "respondedAt": 1773750190144,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2702,
+        "completionTokens": 238,
+        "totalTokens": 2940,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul2dz5_jsjtku",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul34zi_7h01gd",
+        "phaseId": "B-P1",
+        "sentAt": 1773750225150,
+        "respondedAt": 1773750229551,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2954,
+        "completionTokens": 122,
+        "totalTokens": 3076,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul38ds_fh0pv2",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul47c4_pddltq",
+        "phaseId": "B-P1",
+        "sentAt": 1773750274852,
+        "respondedAt": 1773750278832,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3376,
+        "completionTokens": 127,
+        "totalTokens": 3503,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul4aep_gwf15h",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul53ju_rzt2rd",
+        "phaseId": "B-P1",
+        "sentAt": 1773750316602,
+        "respondedAt": 1773750319218,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3570,
+        "completionTokens": 123,
+        "totalTokens": 3693,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul55kj_gaeraf",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul5t18_rjxv5q",
+        "phaseId": "B-P1",
+        "sentAt": 1773750349628,
+        "respondedAt": 1773750352727,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3570,
+        "completionTokens": 114,
+        "totalTokens": 3684,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul5vfc_6rfpmu",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul63tg_q24kio",
+        "phaseId": "B-P1",
+        "sentAt": 1773750363604,
+        "respondedAt": 1773750366059,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3754,
+        "completionTokens": 126,
+        "totalTokens": 3880,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul65po_adtqxf",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul6fz1_yn99r2",
+        "phaseId": "B-P1",
+        "sentAt": 1773750379357,
+        "respondedAt": 1773750382742,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3656,
+        "completionTokens": 118,
+        "totalTokens": 3774,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul6il3_uklldp",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul6opm_fgmwk3",
+        "phaseId": "B-P1",
+        "sentAt": 1773750390682,
+        "respondedAt": 1773750393693,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3799,
+        "completionTokens": 139,
+        "totalTokens": 3938,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul6r19_gy1pxh",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul8166_c2wcub",
+        "phaseId": "B-P1",
+        "sentAt": 1773750453486,
+        "respondedAt": 1773750458031,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4068,
+        "completionTokens": 130,
+        "totalTokens": 4198,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul84og_st1g3h",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul8zgj_w618nd",
+        "phaseId": "B-P1",
+        "sentAt": 1773750497923,
+        "respondedAt": 1773750501635,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4347,
+        "completionTokens": 225,
+        "totalTokens": 4572,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul92bo_huyqdz",
+        "error": null
+      },
+      {
+        "requestId": "req_mmul9fh5_q8s3wa",
+        "phaseId": "B-P1",
+        "sentAt": 1773750518681,
+        "respondedAt": 1773750523449,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4554,
+        "completionTokens": 214,
+        "totalTokens": 4768,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmul9j5l_1cgrs9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmula275_ey9dwu",
+        "phaseId": "B-P1",
+        "sentAt": 1773750548129,
+        "respondedAt": 1773750553351,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4742,
+        "completionTokens": 147,
+        "totalTokens": 4889,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmula688_6uiopz",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulae5t_im8h43",
+        "phaseId": "B-P1",
+        "sentAt": 1773750563633,
+        "respondedAt": 1773750567772,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4742,
+        "completionTokens": 142,
+        "totalTokens": 4884,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulahct_wgdi5e",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulan7y_3326sn",
+        "phaseId": "B-P1",
+        "sentAt": 1773750575374,
+        "respondedAt": 1773750579044,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4742,
+        "completionTokens": 128,
+        "totalTokens": 4870,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulaq1x_3i3s1x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulbu7n_y74h6f",
+        "phaseId": "B-P1",
+        "sentAt": 1773750631091,
+        "respondedAt": 1773750635169,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5295,
+        "completionTokens": 128,
+        "totalTokens": 5423,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulbxcy_nerlrr",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulcsz6_au4sjx",
+        "phaseId": "B-P1",
+        "sentAt": 1773750676146,
+        "respondedAt": 1773750682156,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5716,
+        "completionTokens": 145,
+        "totalTokens": 5861,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulcxm5_tzj116",
+        "error": null
+      },
+      {
+        "requestId": "req_mmulgm6s_v8em89",
+        "phaseId": "B-P1",
+        "sentAt": 1773750853972,
+        "respondedAt": 1773750858850,
+        "sessionId": "sess_1773749953_lsl55y",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 7178,
+        "completionTokens": 132,
+        "totalTokens": 7310,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmulgpyb_s6c810",
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmul0w1b_mv8dbp",
+        "requestId": "req_mmul0sdz_et6a65",
+        "phaseId": "B-P1",
+        "at": 1773750120242
+      },
+      {
+        "payloadId": "ai_mmul1eyf_rn68gs",
+        "requestId": "req_mmul1cck_bolkfs",
+        "phaseId": "B-P1",
+        "at": 1773750144761
+      },
+      {
+        "payloadId": "ai_mmul1mpk_icfl8t",
+        "requestId": "req_mmul1k3j_7skuq9",
+        "phaseId": "B-P1",
+        "at": 1773750154810
+      },
+      {
+        "payloadId": "ai_mmul1uac_bref9c",
+        "requestId": "req_mmul1s83_mqnq6t",
+        "phaseId": "B-P1",
+        "at": 1773750164630
+      },
+      {
+        "payloadId": "ai_mmul20w0_3i5tza",
+        "requestId": "req_mmul1xa7_mvv32j",
+        "phaseId": "B-P1",
+        "at": 1773750173186
+      },
+      {
+        "payloadId": "ai_mmul2dz5_jsjtku",
+        "requestId": "req_mmul2a4f_9e01rv",
+        "phaseId": "B-P1",
+        "at": 1773750190149
+      },
+      {
+        "payloadId": "ai_mmul38ds_fh0pv2",
+        "requestId": "req_mmul34zi_7h01gd",
+        "phaseId": "B-P1",
+        "at": 1773750229560
+      },
+      {
+        "payloadId": "ai_mmul4aep_gwf15h",
+        "requestId": "req_mmul47c4_pddltq",
+        "phaseId": "B-P1",
+        "at": 1773750278839
+      },
+      {
+        "payloadId": "ai_mmul55kj_gaeraf",
+        "requestId": "req_mmul53ju_rzt2rd",
+        "phaseId": "B-P1",
+        "at": 1773750319222
+      },
+      {
+        "payloadId": "ai_mmul5vfc_6rfpmu",
+        "requestId": "req_mmul5t18_rjxv5q",
+        "phaseId": "B-P1",
+        "at": 1773750352730
+      },
+      {
+        "payloadId": "ai_mmul65po_adtqxf",
+        "requestId": "req_mmul63tg_q24kio",
+        "phaseId": "B-P1",
+        "at": 1773750366062
+      },
+      {
+        "payloadId": "ai_mmul6il3_uklldp",
+        "requestId": "req_mmul6fz1_yn99r2",
+        "phaseId": "B-P1",
+        "at": 1773750382746
+      },
+      {
+        "payloadId": "ai_mmul6r19_gy1pxh",
+        "requestId": "req_mmul6opm_fgmwk3",
+        "phaseId": "B-P1",
+        "at": 1773750393715
+      },
+      {
+        "payloadId": "ai_mmul84og_st1g3h",
+        "requestId": "req_mmul8166_c2wcub",
+        "phaseId": "B-P1",
+        "at": 1773750458042
+      },
+      {
+        "payloadId": "ai_mmul92bo_huyqdz",
+        "requestId": "req_mmul8zgj_w618nd",
+        "phaseId": "B-P1",
+        "at": 1773750501640
+      },
+      {
+        "payloadId": "ai_mmul9j5l_1cgrs9",
+        "requestId": "req_mmul9fh5_q8s3wa",
+        "phaseId": "B-P1",
+        "at": 1773750523455
+      },
+      {
+        "payloadId": "ai_mmula688_6uiopz",
+        "requestId": "req_mmula275_ey9dwu",
+        "phaseId": "B-P1",
+        "at": 1773750553356
+      },
+      {
+        "payloadId": "ai_mmulahct_wgdi5e",
+        "requestId": "req_mmulae5t_im8h43",
+        "phaseId": "B-P1",
+        "at": 1773750567780
+      },
+      {
+        "payloadId": "ai_mmulaq1x_3i3s1x",
+        "requestId": "req_mmulan7y_3326sn",
+        "phaseId": "B-P1",
+        "at": 1773750579053
+      },
+      {
+        "payloadId": "ai_mmulbxcy_nerlrr",
+        "requestId": "req_mmulbu7n_y74h6f",
+        "phaseId": "B-P1",
+        "at": 1773750635174
+      },
+      {
+        "payloadId": "ai_mmulcxm5_tzj116",
+        "requestId": "req_mmulcsz6_au4sjx",
+        "phaseId": "B-P1",
+        "at": 1773750682169
+      },
+      {
+        "payloadId": "ai_mmulgpyb_s6c810",
+        "requestId": "req_mmulgm6s_v8em89",
+        "phaseId": "B-P1",
+        "at": 1773750858859
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmul2dz5_jsjtku",
+        "requestId": "req_mmul2a4f_9e01rv",
+        "phaseId": "B-P1",
+        "at": 1773750196952,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul38ds_fh0pv2",
+        "requestId": "req_mmul34zi_7h01gd",
+        "phaseId": "B-P1",
+        "at": 1773750244826,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmul55kj_gaeraf",
+        "requestId": "req_mmul53ju_rzt2rd",
+        "phaseId": "B-P1",
+        "at": 1773750338939,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul5vfc_6rfpmu",
+        "requestId": "req_mmul5t18_rjxv5q",
+        "phaseId": "B-P1",
+        "at": 1773750355194,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul65po_adtqxf",
+        "requestId": "req_mmul63tg_q24kio",
+        "phaseId": "B-P1",
+        "at": 1773750367366,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul6il3_uklldp",
+        "requestId": "req_mmul6fz1_yn99r2",
+        "phaseId": "B-P1",
+        "at": 1773750383820,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul6r19_gy1pxh",
+        "requestId": "req_mmul6opm_fgmwk3",
+        "phaseId": "B-P1",
+        "at": 1773750441955,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul84og_st1g3h",
+        "requestId": "req_mmul8166_c2wcub",
+        "phaseId": "B-P1",
+        "at": 1773750483993,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmul9j5l_1cgrs9",
+        "requestId": "req_mmul9fh5_q8s3wa",
+        "phaseId": "B-P1",
+        "at": 1773750525130,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmula688_6uiopz",
+        "requestId": "req_mmula275_ey9dwu",
+        "phaseId": "B-P1",
+        "at": 1773750553529,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulahct_wgdi5e",
+        "requestId": "req_mmulae5t_im8h43",
+        "phaseId": "B-P1",
+        "at": 1773750569273,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulaq1x_3i3s1x",
+        "requestId": "req_mmulan7y_3326sn",
+        "phaseId": "B-P1",
+        "at": 1773750580516,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulbxcy_nerlrr",
+        "requestId": "req_mmulbu7n_y74h6f",
+        "phaseId": "B-P1",
+        "at": 1773750640462,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmulcxm5_tzj116",
+        "requestId": "req_mmulcsz6_au4sjx",
+        "phaseId": "B-P1",
+        "at": 1773750823912,
+        "reason": "canvas_mutation"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmul0w1b_mv8dbp",
+        "requestId": "req_mmul0sdz_et6a65",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              420,
+              320,
+              680,
+              429.62
+            ],
+            "text": "* Examples: Social media platforms, messaging apps, and marketplaces thrive as they gain users.",
+            "summary": "Examples of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 5,
+        "targetBBox": [
+          420,
+          320,
+          680,
+          429.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul12gt_ed7zum",
+        "acceptedAt": 1773750128573,
+        "maxPostAcceptEdit": 0.31067993978299185,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul1eyf_rn68gs",
+        "requestId": "req_mmul1cck_bolkfs",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              534,
+              250,
+              794,
+              384.82
+            ],
+            "text": "* Challenges: Network effects can lead to monopolies or reduced competition, as dominant platforms benefit disproportionately.",
+            "summary": "Challenges of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          534,
+          250,
+          794,
+          384.82
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1hel_b9c4sl",
+        "acceptedAt": 1773750147933,
+        "maxPostAcceptEdit": 0.013074409009212268,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul1mpk_icfl8t",
+        "requestId": "req_mmul1k3j_7skuq9",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              535,
+              400,
+              795,
+              560.02
+            ],
+            "text": "* Opportunities: Network effects can accelerate innovation and value creation, as larger user bases attract more investment and development.",
+            "summary": "Opportunities from network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          535,
+          400,
+          795,
+          560.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1qmb_k7x7go",
+        "acceptedAt": 1773750159875,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false
+      },
+      {
+        "payloadId": "ai_mmul1uac_bref9c",
+        "requestId": "req_mmul1s83_mqnq6t",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              256,
+              500,
+              494.578,
+              660.02
+            ],
+            "text": "* Implications: Network effects influence market dynamics, user behaviors, and strategic decisions in technology-driven industries.",
+            "summary": "Implications of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          256,
+          500,
+          494.578,
+          660.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1viz_ve7ey1",
+        "acceptedAt": 1773750166235,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul20w0_3i5tza",
+        "requestId": "req_mmul1xa7_mvv32j",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              256,
+              680,
+              494.578,
+              840.02
+            ],
+            "text": "* Strategies: To leverage network effects, companies often focus on user acquisition, retention, and fostering community engagement.",
+            "summary": "Strategies for utilizing network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          256,
+          680,
+          494.578,
+          840.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul22af_y1dasv",
+        "acceptedAt": 1773750174999,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul4aep_gwf15h",
+        "requestId": "req_mmul47c4_pddltq",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_007"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_007"
+        ],
+        "baselineShapes": {
+          "ai_text_007": {
+            "id": "ai_text_007",
+            "kind": "text",
+            "bbox": [
+              256,
+              1100,
+              487.9692890625,
+              1275.2589468921303
+            ],
+            "text": "* Strategic Actions: Companies can counteract lock-in mechanisms by enabling interoperability, reducing switching costs, or focusing on niche markets.",
+            "summary": "Counteracting lock-in mechanisms",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          256,
+          1100,
+          487.9692890625,
+          1275.2589468921303
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul4su3_zu1p11",
+        "acceptedAt": 1773750302715,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmul92bo_huyqdz",
+        "requestId": "req_mmul8zgj_w618nd",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_008"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_008"
+        ],
+        "baselineShapes": {
+          "ai_text_008": {
+            "id": "ai_text_008",
+            "kind": "text",
+            "bbox": [
+              1240,
+              320,
+              1540,
+              454.82
+            ],
+            "text": "3. Ecosystem (生态系统) A thriving ecosystem includes users, developers, and partners working together to enhance the platform's value.",
+            "summary": "Ecosystem dynamics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          1240,
+          320,
+          1540,
+          454.82
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul9bm0_2szpm8",
+        "acceptedAt": 1773750513672,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 131,
+        "changedEver": true
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773749838485,
+        "data": {
+          "phaseId": "B-P1",
+          "sessionId": null
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750115511,
+        "data": {
+          "requestId": "req_mmul0sdz_et6a65",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750120238,
+        "data": {
+          "requestId": "req_mmul0sdz_et6a65",
+          "promptTokens": 1593,
+          "completionTokens": 109,
+          "totalTokens": 1702,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750120242,
+        "data": {
+          "payloadId": "ai_mmul0w1b_mv8dbp",
+          "requestId": "req_mmul0sdz_et6a65",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750128573,
+        "data": {
+          "acceptId": "accept_mmul12gt_ed7zum",
+          "payloadId": "ai_mmul0w1b_mv8dbp",
+          "requestId": "req_mmul0sdz_et6a65",
+          "phaseId": "B-P1",
+          "usableUnits": 5,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750141380,
+        "data": {
+          "requestId": "req_mmul1cck_bolkfs",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750144758,
+        "data": {
+          "requestId": "req_mmul1cck_bolkfs",
+          "promptTokens": 1868,
+          "completionTokens": 119,
+          "totalTokens": 1987,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750144761,
+        "data": {
+          "payloadId": "ai_mmul1eyf_rn68gs",
+          "requestId": "req_mmul1cck_bolkfs",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750147933,
+        "data": {
+          "acceptId": "accept_mmul1hel_b9c4sl",
+          "payloadId": "ai_mmul1eyf_rn68gs",
+          "requestId": "req_mmul1cck_bolkfs",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750151423,
+        "data": {
+          "requestId": "req_mmul1k3j_7skuq9",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750154808,
+        "data": {
+          "requestId": "req_mmul1k3j_7skuq9",
+          "promptTokens": 2065,
+          "completionTokens": 213,
+          "totalTokens": 2278,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750154810,
+        "data": {
+          "payloadId": "ai_mmul1mpk_icfl8t",
+          "requestId": "req_mmul1k3j_7skuq9",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750159875,
+        "data": {
+          "acceptId": "accept_mmul1qmb_k7x7go",
+          "payloadId": "ai_mmul1mpk_icfl8t",
+          "requestId": "req_mmul1k3j_7skuq9",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750161955,
+        "data": {
+          "requestId": "req_mmul1s83_mqnq6t",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750164628,
+        "data": {
+          "requestId": "req_mmul1s83_mqnq6t",
+          "promptTokens": 2264,
+          "completionTokens": 121,
+          "totalTokens": 2385,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750164630,
+        "data": {
+          "payloadId": "ai_mmul1uac_bref9c",
+          "requestId": "req_mmul1s83_mqnq6t",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750166235,
+        "data": {
+          "acceptId": "accept_mmul1viz_ve7ey1",
+          "payloadId": "ai_mmul1uac_bref9c",
+          "requestId": "req_mmul1s83_mqnq6t",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750168511,
+        "data": {
+          "requestId": "req_mmul1xa7_mvv32j",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750173184,
+        "data": {
+          "requestId": "req_mmul1xa7_mvv32j",
+          "promptTokens": 2480,
+          "completionTokens": 235,
+          "totalTokens": 2715,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750173186,
+        "data": {
+          "payloadId": "ai_mmul20w0_3i5tza",
+          "requestId": "req_mmul1xa7_mvv32j",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750174999,
+        "data": {
+          "acceptId": "accept_mmul22af_y1dasv",
+          "payloadId": "ai_mmul20w0_3i5tza",
+          "requestId": "req_mmul1xa7_mvv32j",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750185151,
+        "data": {
+          "requestId": "req_mmul2a4f_9e01rv",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750190144,
+        "data": {
+          "requestId": "req_mmul2a4f_9e01rv",
+          "promptTokens": 2702,
+          "completionTokens": 238,
+          "totalTokens": 2940,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750190149,
+        "data": {
+          "payloadId": "ai_mmul2dz5_jsjtku",
+          "requestId": "req_mmul2a4f_9e01rv",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750196952,
+        "data": {
+          "payloadId": "ai_mmul2dz5_jsjtku",
+          "requestId": "req_mmul2a4f_9e01rv",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750225150,
+        "data": {
+          "requestId": "req_mmul34zi_7h01gd",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750229551,
+        "data": {
+          "requestId": "req_mmul34zi_7h01gd",
+          "promptTokens": 2954,
+          "completionTokens": 122,
+          "totalTokens": 3076,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750229560,
+        "data": {
+          "payloadId": "ai_mmul38ds_fh0pv2",
+          "requestId": "req_mmul34zi_7h01gd",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750244826,
+        "data": {
+          "payloadId": "ai_mmul38ds_fh0pv2",
+          "requestId": "req_mmul34zi_7h01gd",
+          "phaseId": "B-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750274852,
+        "data": {
+          "requestId": "req_mmul47c4_pddltq",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750278832,
+        "data": {
+          "requestId": "req_mmul47c4_pddltq",
+          "promptTokens": 3376,
+          "completionTokens": 127,
+          "totalTokens": 3503,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750278839,
+        "data": {
+          "payloadId": "ai_mmul4aep_gwf15h",
+          "requestId": "req_mmul47c4_pddltq",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750302715,
+        "data": {
+          "acceptId": "accept_mmul4su3_zu1p11",
+          "payloadId": "ai_mmul4aep_gwf15h",
+          "requestId": "req_mmul47c4_pddltq",
+          "phaseId": "B-P1",
+          "usableUnits": 8,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750316602,
+        "data": {
+          "requestId": "req_mmul53ju_rzt2rd",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750319218,
+        "data": {
+          "requestId": "req_mmul53ju_rzt2rd",
+          "promptTokens": 3570,
+          "completionTokens": 123,
+          "totalTokens": 3693,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750319222,
+        "data": {
+          "payloadId": "ai_mmul55kj_gaeraf",
+          "requestId": "req_mmul53ju_rzt2rd",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750338939,
+        "data": {
+          "payloadId": "ai_mmul55kj_gaeraf",
+          "requestId": "req_mmul53ju_rzt2rd",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750349628,
+        "data": {
+          "requestId": "req_mmul5t18_rjxv5q",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750352727,
+        "data": {
+          "requestId": "req_mmul5t18_rjxv5q",
+          "promptTokens": 3570,
+          "completionTokens": 114,
+          "totalTokens": 3684,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750352730,
+        "data": {
+          "payloadId": "ai_mmul5vfc_6rfpmu",
+          "requestId": "req_mmul5t18_rjxv5q",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750355194,
+        "data": {
+          "payloadId": "ai_mmul5vfc_6rfpmu",
+          "requestId": "req_mmul5t18_rjxv5q",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750363604,
+        "data": {
+          "requestId": "req_mmul63tg_q24kio",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750366059,
+        "data": {
+          "requestId": "req_mmul63tg_q24kio",
+          "promptTokens": 3754,
+          "completionTokens": 126,
+          "totalTokens": 3880,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750366062,
+        "data": {
+          "payloadId": "ai_mmul65po_adtqxf",
+          "requestId": "req_mmul63tg_q24kio",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750367366,
+        "data": {
+          "payloadId": "ai_mmul65po_adtqxf",
+          "requestId": "req_mmul63tg_q24kio",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750379357,
+        "data": {
+          "requestId": "req_mmul6fz1_yn99r2",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750382742,
+        "data": {
+          "requestId": "req_mmul6fz1_yn99r2",
+          "promptTokens": 3656,
+          "completionTokens": 118,
+          "totalTokens": 3774,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750382746,
+        "data": {
+          "payloadId": "ai_mmul6il3_uklldp",
+          "requestId": "req_mmul6fz1_yn99r2",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750383820,
+        "data": {
+          "payloadId": "ai_mmul6il3_uklldp",
+          "requestId": "req_mmul6fz1_yn99r2",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750390682,
+        "data": {
+          "requestId": "req_mmul6opm_fgmwk3",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750393693,
+        "data": {
+          "requestId": "req_mmul6opm_fgmwk3",
+          "promptTokens": 3799,
+          "completionTokens": 139,
+          "totalTokens": 3938,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750393715,
+        "data": {
+          "payloadId": "ai_mmul6r19_gy1pxh",
+          "requestId": "req_mmul6opm_fgmwk3",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750441955,
+        "data": {
+          "payloadId": "ai_mmul6r19_gy1pxh",
+          "requestId": "req_mmul6opm_fgmwk3",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750453486,
+        "data": {
+          "requestId": "req_mmul8166_c2wcub",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750458031,
+        "data": {
+          "requestId": "req_mmul8166_c2wcub",
+          "promptTokens": 4068,
+          "completionTokens": 130,
+          "totalTokens": 4198,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750458042,
+        "data": {
+          "payloadId": "ai_mmul84og_st1g3h",
+          "requestId": "req_mmul8166_c2wcub",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750483993,
+        "data": {
+          "payloadId": "ai_mmul84og_st1g3h",
+          "requestId": "req_mmul8166_c2wcub",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750497923,
+        "data": {
+          "requestId": "req_mmul8zgj_w618nd",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750501635,
+        "data": {
+          "requestId": "req_mmul8zgj_w618nd",
+          "promptTokens": 4347,
+          "completionTokens": 225,
+          "totalTokens": 4572,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750501640,
+        "data": {
+          "payloadId": "ai_mmul92bo_huyqdz",
+          "requestId": "req_mmul8zgj_w618nd",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750513672,
+        "data": {
+          "acceptId": "accept_mmul9bm0_2szpm8",
+          "payloadId": "ai_mmul92bo_huyqdz",
+          "requestId": "req_mmul8zgj_w618nd",
+          "phaseId": "B-P1",
+          "usableUnits": 7,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750518681,
+        "data": {
+          "requestId": "req_mmul9fh5_q8s3wa",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750523449,
+        "data": {
+          "requestId": "req_mmul9fh5_q8s3wa",
+          "promptTokens": 4554,
+          "completionTokens": 214,
+          "totalTokens": 4768,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750523455,
+        "data": {
+          "payloadId": "ai_mmul9j5l_1cgrs9",
+          "requestId": "req_mmul9fh5_q8s3wa",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750525130,
+        "data": {
+          "payloadId": "ai_mmul9j5l_1cgrs9",
+          "requestId": "req_mmul9fh5_q8s3wa",
+          "phaseId": "B-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750548129,
+        "data": {
+          "requestId": "req_mmula275_ey9dwu",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750553351,
+        "data": {
+          "requestId": "req_mmula275_ey9dwu",
+          "promptTokens": 4742,
+          "completionTokens": 147,
+          "totalTokens": 4889,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750553356,
+        "data": {
+          "payloadId": "ai_mmula688_6uiopz",
+          "requestId": "req_mmula275_ey9dwu",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750553529,
+        "data": {
+          "payloadId": "ai_mmula688_6uiopz",
+          "requestId": "req_mmula275_ey9dwu",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750563633,
+        "data": {
+          "requestId": "req_mmulae5t_im8h43",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750567772,
+        "data": {
+          "requestId": "req_mmulae5t_im8h43",
+          "promptTokens": 4742,
+          "completionTokens": 142,
+          "totalTokens": 4884,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750567780,
+        "data": {
+          "payloadId": "ai_mmulahct_wgdi5e",
+          "requestId": "req_mmulae5t_im8h43",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750569273,
+        "data": {
+          "payloadId": "ai_mmulahct_wgdi5e",
+          "requestId": "req_mmulae5t_im8h43",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750575374,
+        "data": {
+          "requestId": "req_mmulan7y_3326sn",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750579044,
+        "data": {
+          "requestId": "req_mmulan7y_3326sn",
+          "promptTokens": 4742,
+          "completionTokens": 128,
+          "totalTokens": 4870,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750579053,
+        "data": {
+          "payloadId": "ai_mmulaq1x_3i3s1x",
+          "requestId": "req_mmulan7y_3326sn",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750580516,
+        "data": {
+          "payloadId": "ai_mmulaq1x_3i3s1x",
+          "requestId": "req_mmulan7y_3326sn",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750631091,
+        "data": {
+          "requestId": "req_mmulbu7n_y74h6f",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750635169,
+        "data": {
+          "requestId": "req_mmulbu7n_y74h6f",
+          "promptTokens": 5295,
+          "completionTokens": 128,
+          "totalTokens": 5423,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750635174,
+        "data": {
+          "payloadId": "ai_mmulbxcy_nerlrr",
+          "requestId": "req_mmulbu7n_y74h6f",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750640462,
+        "data": {
+          "payloadId": "ai_mmulbxcy_nerlrr",
+          "requestId": "req_mmulbu7n_y74h6f",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750676146,
+        "data": {
+          "requestId": "req_mmulcsz6_au4sjx",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750682156,
+        "data": {
+          "requestId": "req_mmulcsz6_au4sjx",
+          "promptTokens": 5716,
+          "completionTokens": 145,
+          "totalTokens": 5861,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750682169,
+        "data": {
+          "payloadId": "ai_mmulcxm5_tzj116",
+          "requestId": "req_mmulcsz6_au4sjx",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750823912,
+        "data": {
+          "payloadId": "ai_mmulcxm5_tzj116",
+          "requestId": "req_mmulcsz6_au4sjx",
+          "phaseId": "B-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750853972,
+        "data": {
+          "requestId": "req_mmulgm6s_v8em89",
+          "phaseId": "B-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773749953_lsl55y"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750858850,
+        "data": {
+          "requestId": "req_mmulgm6s_v8em89",
+          "promptTokens": 7178,
+          "completionTokens": 132,
+          "totalTokens": 7310,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750858859,
+        "data": {
+          "payloadId": "ai_mmulgpyb_s6c810",
+          "requestId": "req_mmulgm6s_v8em89",
+          "phaseId": "B-P1"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750875007,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750876367,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750898459,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750898614,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750920167,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750920320,
+        "data": {
+          "phaseId": "B-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750996031,
+        "data": {
+          "phaseId": "B-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750996275,
+        "data": {
+          "phaseId": "B-P3"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773751028536
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 22,
+    "previewCount": 22,
+    "acceptCount": 7,
+    "dismissCount": 14,
+    "completedRoundCount": 22,
+    "totalPromptTokens": 83035,
+    "acceptedUsableUnits": 48,
+    "acceptedTextChars": 905,
+    "changedTextChars": 131,
+    "suggestionAcceptanceRate": 0.3181818181818182,
+    "dismissRate": 0.6363636363636364,
+    "straightUseRate": 0.2857142857142857,
+    "userChangedRate": 0.14475138121546963,
+    "promptTokensPerRound": 3774.318181818182,
+    "acceptedUsableContentPer1kTokens": 0.5780694887697959,
+    "activeBlockAlignmentRate": 0,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "B-P1",
+        "invoke": 22,
+        "straightUseRate": 0.2857142857142857,
+        "acceptedOutputPer1kToken": 0.5780694887697959,
+        "promptTokens": 83035,
+        "acceptedUsableUnits": 48,
+        "acceptedCount": 7
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmul0w1b_mv8dbp",
+        "requestId": "req_mmul0sdz_et6a65",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_002"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_002"
+        ],
+        "baselineShapes": {
+          "ai_text_002": {
+            "id": "ai_text_002",
+            "kind": "text",
+            "bbox": [
+              420,
+              320,
+              680,
+              429.62
+            ],
+            "text": "* Examples: Social media platforms, messaging apps, and marketplaces thrive as they gain users.",
+            "summary": "Examples of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 5,
+        "targetBBox": [
+          420,
+          320,
+          680,
+          429.62
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul12gt_ed7zum",
+        "acceptedAt": 1773750128573,
+        "maxPostAcceptEdit": 0.31067993978299185,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.31067993978299185,
+        "acceptedTextChars": 95,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul1eyf_rn68gs",
+        "requestId": "req_mmul1cck_bolkfs",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_003"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_003"
+        ],
+        "baselineShapes": {
+          "ai_text_003": {
+            "id": "ai_text_003",
+            "kind": "text",
+            "bbox": [
+              534,
+              250,
+              794,
+              384.82
+            ],
+            "text": "* Challenges: Network effects can lead to monopolies or reduced competition, as dominant platforms benefit disproportionately.",
+            "summary": "Challenges of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          534,
+          250,
+          794,
+          384.82
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1hel_b9c4sl",
+        "acceptedAt": 1773750147933,
+        "maxPostAcceptEdit": 0.013074409009212268,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0.013074409009212268,
+        "acceptedTextChars": 126,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul1mpk_icfl8t",
+        "requestId": "req_mmul1k3j_7skuq9",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_004"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_004"
+        ],
+        "baselineShapes": {
+          "ai_text_004": {
+            "id": "ai_text_004",
+            "kind": "text",
+            "bbox": [
+              535,
+              400,
+              795,
+              560.02
+            ],
+            "text": "* Opportunities: Network effects can accelerate innovation and value creation, as larger user bases attract more investment and development.",
+            "summary": "Opportunities from network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          535,
+          400,
+          795,
+          560.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1qmb_k7x7go",
+        "acceptedAt": 1773750159875,
+        "maxPostAcceptEdit": 0,
+        "maxChangedTextChars": 0,
+        "changedEver": false,
+        "postAcceptEdit": 0,
+        "acceptedTextChars": 140,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": true,
+        "userChanged": false
+      },
+      {
+        "payloadId": "ai_mmul1uac_bref9c",
+        "requestId": "req_mmul1s83_mqnq6t",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_005"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_005"
+        ],
+        "baselineShapes": {
+          "ai_text_005": {
+            "id": "ai_text_005",
+            "kind": "text",
+            "bbox": [
+              256,
+              500,
+              494.578,
+              660.02
+            ],
+            "text": "* Implications: Network effects influence market dynamics, user behaviors, and strategic decisions in technology-driven industries.",
+            "summary": "Implications of network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          256,
+          500,
+          494.578,
+          660.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul1viz_ve7ey1",
+        "acceptedAt": 1773750166235,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 131,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul20w0_3i5tza",
+        "requestId": "req_mmul1xa7_mvv32j",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_006"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_006"
+        ],
+        "baselineShapes": {
+          "ai_text_006": {
+            "id": "ai_text_006",
+            "kind": "text",
+            "bbox": [
+              256,
+              680,
+              494.578,
+              840.02
+            ],
+            "text": "* Strategies: To leverage network effects, companies often focus on user acquisition, retention, and fostering community engagement.",
+            "summary": "Strategies for utilizing network effects",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          256,
+          680,
+          494.578,
+          840.02
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul22af_y1dasv",
+        "acceptedAt": 1773750174999,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 132,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul4aep_gwf15h",
+        "requestId": "req_mmul47c4_pddltq",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_007"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_007"
+        ],
+        "baselineShapes": {
+          "ai_text_007": {
+            "id": "ai_text_007",
+            "kind": "text",
+            "bbox": [
+              256,
+              1100,
+              487.9692890625,
+              1275.2589468921303
+            ],
+            "text": "* Strategic Actions: Companies can counteract lock-in mechanisms by enabling interoperability, reducing switching costs, or focusing on niche markets.",
+            "summary": "Counteracting lock-in mechanisms",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 8,
+        "targetBBox": [
+          256,
+          1100,
+          487.9692890625,
+          1275.2589468921303
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul4su3_zu1p11",
+        "acceptedAt": 1773750302715,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 150,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmul92bo_huyqdz",
+        "requestId": "req_mmul8zgj_w618nd",
+        "phaseId": "B-P1",
+        "acceptedShapeIds": [
+          "ai_text_008"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_008"
+        ],
+        "baselineShapes": {
+          "ai_text_008": {
+            "id": "ai_text_008",
+            "kind": "text",
+            "bbox": [
+              1240,
+              320,
+              1540,
+              454.82
+            ],
+            "text": "3. Ecosystem (生态系统) A thriving ecosystem includes users, developers, and partners working together to enhance the platform's value.",
+            "summary": "Ecosystem dynamics",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 7,
+        "targetBBox": [
+          1240,
+          320,
+          1540,
+          454.82
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmul9bm0_2szpm8",
+        "acceptedAt": 1773750513672,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 131,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 131,
+        "changedTextChars": 131,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      }
+    ]
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 21,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

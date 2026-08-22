@@ -1,0 +1,5397 @@
+{
+  "exportedAt": "2026-03-17T12:21:58.787Z",
+  "run": {
+    "runId": "run_mmujviio_1tylma",
+    "startedAt": 1773748189824,
+    "endedAt": 1773750116651,
+    "initialSessionId": null,
+    "currentPhaseId": "A-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [
+      {
+        "requestId": "req_mmujwt8a_65q5ds",
+        "phaseId": "A-P1",
+        "sentAt": 1773748250362,
+        "respondedAt": 1773748278686,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2537,
+        "completionTokens": 234,
+        "totalTokens": 2771,
+        "planTargetBlockIds": [
+          "block_d7e64642"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_d7e64642",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmujxf33_xilu7n",
+        "error": null
+      },
+      {
+        "requestId": "req_mmujxk96_rbckqa",
+        "phaseId": "A-P1",
+        "sentAt": 1773748285386,
+        "respondedAt": 1773748301502,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2562,
+        "completionTokens": 228,
+        "totalTokens": 2790,
+        "planTargetBlockIds": [
+          "group_0f4c922b"
+        ],
+        "activeBlockIds": [
+          "group_0f4c922b"
+        ],
+        "mainBlockId": "block_2eb8a394",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmujxwov_7q0x8m",
+        "error": null
+      },
+      {
+        "requestId": "req_mmujy262_m02ore",
+        "phaseId": "A-P1",
+        "sentAt": 1773748308602,
+        "respondedAt": 1773748320065,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2563,
+        "completionTokens": 218,
+        "totalTokens": 2781,
+        "planTargetBlockIds": [
+          "group_4d023581"
+        ],
+        "activeBlockIds": [
+          "group_4d023581"
+        ],
+        "mainBlockId": "block_6ee0c4a0",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmujyb0l_kmraj7",
+        "error": null
+      },
+      {
+        "requestId": "req_mmujz3q4_93380y",
+        "phaseId": "A-P1",
+        "sentAt": 1773748357276,
+        "respondedAt": 1773748369008,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3163,
+        "completionTokens": 248,
+        "totalTokens": 3411,
+        "planTargetBlockIds": [
+          "block_6ee0c4a0"
+        ],
+        "activeBlockIds": [
+          "group_4d023581"
+        ],
+        "mainBlockId": "block_6ee0c4a0",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmujzcsa_n6l70m",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk36eo_6kioje",
+        "phaseId": "A-P1",
+        "sentAt": 1773748547376,
+        "respondedAt": 1773748554375,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 360,
+        "completionTokens": 45,
+        "totalTokens": 405,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "group_4d023581"
+        ],
+        "mainBlockId": null,
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmuk3bt8_brm60w",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk42fw_633scj",
+        "phaseId": "A-P1",
+        "sentAt": 1773748588892,
+        "respondedAt": 1773748594996,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 360,
+        "completionTokens": 47,
+        "totalTokens": 407,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [
+          "group_4d023581"
+        ],
+        "mainBlockId": null,
+        "planAction": "NOOP",
+        "previewPayloadId": "ai_mmuk475g_ri8pzv",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk5dxw_ouordo",
+        "phaseId": "A-P1",
+        "sentAt": 1773748650452,
+        "respondedAt": 1773748661729,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2960,
+        "completionTokens": 304,
+        "totalTokens": 3264,
+        "planTargetBlockIds": [
+          "block_3dad4887"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_3dad4887",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk5mn7_iutv8p",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk5ne0_snoboa",
+        "phaseId": "A-P1",
+        "sentAt": 1773748662696,
+        "respondedAt": 1773748672068,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2962,
+        "completionTokens": 606,
+        "totalTokens": 3568,
+        "planTargetBlockIds": [
+          "block_3dad4887"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_3dad4887",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk5umd_t2p1v9",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk6idr_1z0d7y",
+        "phaseId": "A-P1",
+        "sentAt": 1773748702863,
+        "respondedAt": 1773748712707,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3090,
+        "completionTokens": 422,
+        "totalTokens": 3512,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk6pz7_97a810",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk78jb_4hv08s",
+        "phaseId": "A-P1",
+        "sentAt": 1773748736759,
+        "respondedAt": 1773748743349,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3639,
+        "completionTokens": 279,
+        "totalTokens": 3918,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk7dme_jdgmlo",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk833u_9hhgwr",
+        "phaseId": "A-P1",
+        "sentAt": 1773748776378,
+        "respondedAt": 1773748791184,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3051,
+        "completionTokens": 287,
+        "totalTokens": 3338,
+        "planTargetBlockIds": [
+          "group_61ccc5d4"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk8ej5_awtpl7",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuk8lj4_9q0cr4",
+        "phaseId": "A-P1",
+        "sentAt": 1773748800256,
+        "respondedAt": 1773748810008,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3778,
+        "completionTokens": 270,
+        "totalTokens": 4048,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuk8t21_e1x96x",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukabri_wq7tue",
+        "phaseId": "A-P1",
+        "sentAt": 1773748880910,
+        "respondedAt": 1773748889237,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4049,
+        "completionTokens": 250,
+        "totalTokens": 4299,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukai6v_xpwxt2",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukap9t_ac6w8s",
+        "phaseId": "A-P1",
+        "sentAt": 1773748898417,
+        "respondedAt": 1773748912205,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4004,
+        "completionTokens": 230,
+        "totalTokens": 4234,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukazwt_hc9sjd",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukbbk6_1898hi",
+        "phaseId": "A-P1",
+        "sentAt": 1773748927302,
+        "respondedAt": 1773748939228,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4552,
+        "completionTokens": 542,
+        "totalTokens": 5094,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukbkrg_t9mctk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukbwgb_xmgo3d",
+        "phaseId": "A-P1",
+        "sentAt": 1773748954379,
+        "respondedAt": 1773748963439,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4391,
+        "completionTokens": 388,
+        "totalTokens": 4779,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukc3g0_vt1u25",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukcmay_defmof",
+        "phaseId": "A-P1",
+        "sentAt": 1773748987882,
+        "respondedAt": 1773748992195,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5414,
+        "completionTokens": 202,
+        "totalTokens": 5616,
+        "planTargetBlockIds": [
+          "block_c9eaa98c",
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukcpmr_q6822u",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukdee8_0w8wdt",
+        "phaseId": "A-P1",
+        "sentAt": 1773749024288,
+        "respondedAt": 1773749028602,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5414,
+        "completionTokens": 260,
+        "totalTokens": 5674,
+        "planTargetBlockIds": [
+          "block_c9eaa98c",
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukdhq2_6vi0vf",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukf13z_zca6su",
+        "phaseId": "A-P1",
+        "sentAt": 1773749100383,
+        "respondedAt": 1773749109126,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4637,
+        "completionTokens": 186,
+        "totalTokens": 4823,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_c9eaa98c"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukf7uv_nj6klt",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukglfl_452bs5",
+        "phaseId": "A-P1",
+        "sentAt": 1773749173377,
+        "respondedAt": 1773749184103,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4400,
+        "completionTokens": 312,
+        "totalTokens": 4712,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukgtpj_p5yyve",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukhhkt_p018dn",
+        "phaseId": "A-P1",
+        "sentAt": 1773749215037,
+        "respondedAt": 1773749221758,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4545,
+        "completionTokens": 287,
+        "totalTokens": 4832,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukhmri_ien7zo",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuki3fv_tsbep9",
+        "phaseId": "A-P1",
+        "sentAt": 1773749243371,
+        "respondedAt": 1773749253720,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5055,
+        "completionTokens": 277,
+        "totalTokens": 5332,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukibfc_396b69",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukiljx_q40hci",
+        "phaseId": "A-P1",
+        "sentAt": 1773749266845,
+        "respondedAt": 1773749276349,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5894,
+        "completionTokens": 367,
+        "totalTokens": 6261,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukisvx_dk7oiv",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukjida_79zybx",
+        "phaseId": "A-P1",
+        "sentAt": 1773749309374,
+        "respondedAt": 1773749321522,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 6845,
+        "completionTokens": 736,
+        "totalTokens": 7581,
+        "planTargetBlockIds": [
+          "block_c9eaa98c",
+          "block_6541d5f4",
+          "block_70e01422"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukjrqr_nut66c",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukk5r7_danjw2",
+        "phaseId": "A-P1",
+        "sentAt": 1773749339683,
+        "respondedAt": 1773749348926,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5746,
+        "completionTokens": 343,
+        "totalTokens": 6089,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6",
+          "group_2e496906"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukkcw1_1plsfv",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukkp5i_cjkapf",
+        "phaseId": "A-P1",
+        "sentAt": 1773749364822,
+        "respondedAt": 1773749372931,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5478,
+        "completionTokens": 429,
+        "totalTokens": 5907,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6",
+          "group_2e496906"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukkves_ktbd8k",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukl7mx_6gvaz6",
+        "phaseId": "A-P1",
+        "sentAt": 1773749388777,
+        "respondedAt": 1773749399339,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5271,
+        "completionTokens": 658,
+        "totalTokens": 5929,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmuklfsb_19ikwk",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukls2k_d072je",
+        "phaseId": "A-P1",
+        "sentAt": 1773749415260,
+        "respondedAt": 1773749422083,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5227,
+        "completionTokens": 281,
+        "totalTokens": 5508,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmuklxc3_dcgyt6",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukm9cl_1ipj8p",
+        "phaseId": "A-P1",
+        "sentAt": 1773749437653,
+        "respondedAt": 1773749443796,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5207,
+        "completionTokens": 268,
+        "totalTokens": 5475,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukme39_u42dqs",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukmylh_g8564w",
+        "phaseId": "A-P1",
+        "sentAt": 1773749470373,
+        "respondedAt": 1773749485675,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5199,
+        "completionTokens": 731,
+        "totalTokens": 5930,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmuknaej_evnon1",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuknqdg_oyjzxs",
+        "phaseId": "A-P1",
+        "sentAt": 1773749506372,
+        "respondedAt": 1773749518297,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4798,
+        "completionTokens": 467,
+        "totalTokens": 5265,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_d25e8743"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_d25e8743",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmuknzkp_0bd2x4",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuko9o1_ohkrgw",
+        "phaseId": "A-P1",
+        "sentAt": 1773749531377,
+        "respondedAt": 1773749541368,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5656,
+        "completionTokens": 501,
+        "totalTokens": 6157,
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6",
+          "block_d25e8743"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_d25e8743",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukohdk_qot8yj",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukpip8_5y9qd0",
+        "phaseId": "A-P1",
+        "sentAt": 1773749589740,
+        "respondedAt": 1773749597280,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 2412,
+        "completionTokens": 240,
+        "totalTokens": 2652,
+        "planTargetBlockIds": [
+          "block_3193e5d3"
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_d25e8743",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukpoip_8h214b",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukrlaf_t8vjvq",
+        "phaseId": "A-P1",
+        "sentAt": 1773749686407,
+        "respondedAt": 1773749693213,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4930,
+        "completionTokens": 247,
+        "totalTokens": 5177,
+        "planTargetBlockIds": [
+          "block_eab743c6",
+          "block_c9eaa98c",
+          "block_d25e8743"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_d25e8743",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukrqji_nsrwzx",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukt41y_gf8swt",
+        "phaseId": "A-P1",
+        "sentAt": 1773749757382,
+        "respondedAt": 1773749767559,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5641,
+        "completionTokens": 433,
+        "totalTokens": 6074,
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_d25e8743",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "mainBlockId": "block_70e01422",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmuktbwo_umj6lc",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukth78_kd4cru",
+        "phaseId": "A-P1",
+        "sentAt": 1773749774420,
+        "respondedAt": 1773749782013,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5674,
+        "completionTokens": 92,
+        "totalTokens": 5766,
+        "planTargetBlockIds": [],
+        "activeBlockIds": [],
+        "mainBlockId": null,
+        "planAction": null,
+        "previewPayloadId": "ai_mmuktn26_xj3lgx",
+        "error": null
+      },
+      {
+        "requestId": "req_mmuku4zm_swdwt4",
+        "phaseId": "A-P1",
+        "sentAt": 1773749805250,
+        "respondedAt": 1773749817583,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4291,
+        "completionTokens": 380,
+        "totalTokens": 4671,
+        "planTargetBlockIds": [
+          "block_51ce1ab5"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_51ce1ab5",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukuei8_lgmqcj",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukvqyl_sb7zuu",
+        "phaseId": "A-P1",
+        "sentAt": 1773749880381,
+        "respondedAt": 1773749886870,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4861,
+        "completionTokens": 296,
+        "totalTokens": 5157,
+        "planTargetBlockIds": [
+          "block_48a5beeb"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_48a5beeb",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukvvyv_m3pnj5",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukxpvx_0ufijm",
+        "phaseId": "A-P2",
+        "sentAt": 1773749972301,
+        "respondedAt": 1773749981463,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 4849,
+        "completionTokens": 327,
+        "totalTokens": 5176,
+        "planTargetBlockIds": [
+          "block_48a5beeb"
+        ],
+        "activeBlockIds": [],
+        "mainBlockId": "block_48a5beeb",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukxwyf_ctudlw",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukz3br_druwun",
+        "phaseId": "A-P3",
+        "sentAt": 1773750036375,
+        "respondedAt": 1773750048888,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 5312,
+        "completionTokens": 288,
+        "totalTokens": 5600,
+        "planTargetBlockIds": [
+          "block_255dc389",
+          "block_ffd32bbf"
+        ],
+        "activeBlockIds": [
+          "block_ffd32bbf",
+          "block_255dc389"
+        ],
+        "mainBlockId": "block_48a5beeb",
+        "planAction": "OPEN_RELATED",
+        "previewPayloadId": "ai_mmukzczd_atfelq",
+        "error": null
+      },
+      {
+        "requestId": "req_mmukzsjd_rkw0k3",
+        "phaseId": "A-P3",
+        "sentAt": 1773750069049,
+        "respondedAt": 1773750077126,
+        "sessionId": "sess_1773748228_7tfctg",
+        "requestMode": "full",
+        "status": "completed",
+        "promptTokens": 3462,
+        "completionTokens": 335,
+        "totalTokens": 3797,
+        "planTargetBlockIds": [
+          "block_ffd32bbf"
+        ],
+        "activeBlockIds": [
+          "block_ffd32bbf",
+          "block_255dc389"
+        ],
+        "mainBlockId": "block_48a5beeb",
+        "planAction": "CONTINUE",
+        "previewPayloadId": "ai_mmukzyrq_por5gq",
+        "error": null
+      }
+    ],
+    "previews": [
+      {
+        "payloadId": "ai_mmujxf33_xilu7n",
+        "requestId": "req_mmujwt8a_65q5ds",
+        "phaseId": "A-P1",
+        "at": 1773748278696
+      },
+      {
+        "payloadId": "ai_mmujxwov_7q0x8m",
+        "requestId": "req_mmujxk96_rbckqa",
+        "phaseId": "A-P1",
+        "at": 1773748301505
+      },
+      {
+        "payloadId": "ai_mmujyb0l_kmraj7",
+        "requestId": "req_mmujy262_m02ore",
+        "phaseId": "A-P1",
+        "at": 1773748320072
+      },
+      {
+        "payloadId": "ai_mmujzcsa_n6l70m",
+        "requestId": "req_mmujz3q4_93380y",
+        "phaseId": "A-P1",
+        "at": 1773748369062
+      },
+      {
+        "payloadId": "ai_mmuk3bt8_brm60w",
+        "requestId": "req_mmuk36eo_6kioje",
+        "phaseId": "A-P1",
+        "at": 1773748554387
+      },
+      {
+        "payloadId": "ai_mmuk475g_ri8pzv",
+        "requestId": "req_mmuk42fw_633scj",
+        "phaseId": "A-P1",
+        "at": 1773748594999
+      },
+      {
+        "payloadId": "ai_mmuk5mn7_iutv8p",
+        "requestId": "req_mmuk5dxw_ouordo",
+        "phaseId": "A-P1",
+        "at": 1773748661738
+      },
+      {
+        "payloadId": "ai_mmuk5umd_t2p1v9",
+        "requestId": "req_mmuk5ne0_snoboa",
+        "phaseId": "A-P1",
+        "at": 1773748672074
+      },
+      {
+        "payloadId": "ai_mmuk6pz7_97a810",
+        "requestId": "req_mmuk6idr_1z0d7y",
+        "phaseId": "A-P1",
+        "at": 1773748712713
+      },
+      {
+        "payloadId": "ai_mmuk7dme_jdgmlo",
+        "requestId": "req_mmuk78jb_4hv08s",
+        "phaseId": "A-P1",
+        "at": 1773748743354
+      },
+      {
+        "payloadId": "ai_mmuk8ej5_awtpl7",
+        "requestId": "req_mmuk833u_9hhgwr",
+        "phaseId": "A-P1",
+        "at": 1773748791201
+      },
+      {
+        "payloadId": "ai_mmuk8t21_e1x96x",
+        "requestId": "req_mmuk8lj4_9q0cr4",
+        "phaseId": "A-P1",
+        "at": 1773748810012
+      },
+      {
+        "payloadId": "ai_mmukai6v_xpwxt2",
+        "requestId": "req_mmukabri_wq7tue",
+        "phaseId": "A-P1",
+        "at": 1773748889242
+      },
+      {
+        "payloadId": "ai_mmukazwt_hc9sjd",
+        "requestId": "req_mmukap9t_ac6w8s",
+        "phaseId": "A-P1",
+        "at": 1773748912208
+      },
+      {
+        "payloadId": "ai_mmukbkrg_t9mctk",
+        "requestId": "req_mmukbbk6_1898hi",
+        "phaseId": "A-P1",
+        "at": 1773748939234
+      },
+      {
+        "payloadId": "ai_mmukc3g0_vt1u25",
+        "requestId": "req_mmukbwgb_xmgo3d",
+        "phaseId": "A-P1",
+        "at": 1773748963441
+      },
+      {
+        "payloadId": "ai_mmukcpmr_q6822u",
+        "requestId": "req_mmukcmay_defmof",
+        "phaseId": "A-P1",
+        "at": 1773748992196
+      },
+      {
+        "payloadId": "ai_mmukdhq2_6vi0vf",
+        "requestId": "req_mmukdee8_0w8wdt",
+        "phaseId": "A-P1",
+        "at": 1773749028602
+      },
+      {
+        "payloadId": "ai_mmukf7uv_nj6klt",
+        "requestId": "req_mmukf13z_zca6su",
+        "phaseId": "A-P1",
+        "at": 1773749109127
+      },
+      {
+        "payloadId": "ai_mmukgtpj_p5yyve",
+        "requestId": "req_mmukglfl_452bs5",
+        "phaseId": "A-P1",
+        "at": 1773749184109
+      },
+      {
+        "payloadId": "ai_mmukhmri_ien7zo",
+        "requestId": "req_mmukhhkt_p018dn",
+        "phaseId": "A-P1",
+        "at": 1773749221763
+      },
+      {
+        "payloadId": "ai_mmukibfc_396b69",
+        "requestId": "req_mmuki3fv_tsbep9",
+        "phaseId": "A-P1",
+        "at": 1773749253722
+      },
+      {
+        "payloadId": "ai_mmukisvx_dk7oiv",
+        "requestId": "req_mmukiljx_q40hci",
+        "phaseId": "A-P1",
+        "at": 1773749276355
+      },
+      {
+        "payloadId": "ai_mmukjrqr_nut66c",
+        "requestId": "req_mmukjida_79zybx",
+        "phaseId": "A-P1",
+        "at": 1773749321525
+      },
+      {
+        "payloadId": "ai_mmukkcw1_1plsfv",
+        "requestId": "req_mmukk5r7_danjw2",
+        "phaseId": "A-P1",
+        "at": 1773749348933
+      },
+      {
+        "payloadId": "ai_mmukkves_ktbd8k",
+        "requestId": "req_mmukkp5i_cjkapf",
+        "phaseId": "A-P1",
+        "at": 1773749372936
+      },
+      {
+        "payloadId": "ai_mmuklfsb_19ikwk",
+        "requestId": "req_mmukl7mx_6gvaz6",
+        "phaseId": "A-P1",
+        "at": 1773749399347
+      },
+      {
+        "payloadId": "ai_mmuklxc3_dcgyt6",
+        "requestId": "req_mmukls2k_d072je",
+        "phaseId": "A-P1",
+        "at": 1773749422088
+      },
+      {
+        "payloadId": "ai_mmukme39_u42dqs",
+        "requestId": "req_mmukm9cl_1ipj8p",
+        "phaseId": "A-P1",
+        "at": 1773749443800
+      },
+      {
+        "payloadId": "ai_mmuknaej_evnon1",
+        "requestId": "req_mmukmylh_g8564w",
+        "phaseId": "A-P1",
+        "at": 1773749485680
+      },
+      {
+        "payloadId": "ai_mmuknzkp_0bd2x4",
+        "requestId": "req_mmuknqdg_oyjzxs",
+        "phaseId": "A-P1",
+        "at": 1773749518299
+      },
+      {
+        "payloadId": "ai_mmukohdk_qot8yj",
+        "requestId": "req_mmuko9o1_ohkrgw",
+        "phaseId": "A-P1",
+        "at": 1773749541371
+      },
+      {
+        "payloadId": "ai_mmukpoip_8h214b",
+        "requestId": "req_mmukpip8_5y9qd0",
+        "phaseId": "A-P1",
+        "at": 1773749597285
+      },
+      {
+        "payloadId": "ai_mmukrqji_nsrwzx",
+        "requestId": "req_mmukrlaf_t8vjvq",
+        "phaseId": "A-P1",
+        "at": 1773749693217
+      },
+      {
+        "payloadId": "ai_mmuktbwo_umj6lc",
+        "requestId": "req_mmukt41y_gf8swt",
+        "phaseId": "A-P1",
+        "at": 1773749767585
+      },
+      {
+        "payloadId": "ai_mmuktn26_xj3lgx",
+        "requestId": "req_mmukth78_kd4cru",
+        "phaseId": "A-P1",
+        "at": 1773749782014
+      },
+      {
+        "payloadId": "ai_mmukuei8_lgmqcj",
+        "requestId": "req_mmuku4zm_swdwt4",
+        "phaseId": "A-P1",
+        "at": 1773749817592
+      },
+      {
+        "payloadId": "ai_mmukvvyv_m3pnj5",
+        "requestId": "req_mmukvqyl_sb7zuu",
+        "phaseId": "A-P1",
+        "at": 1773749886888
+      },
+      {
+        "payloadId": "ai_mmukxwyf_ctudlw",
+        "requestId": "req_mmukxpvx_0ufijm",
+        "phaseId": "A-P2",
+        "at": 1773749981485
+      },
+      {
+        "payloadId": "ai_mmukzczd_atfelq",
+        "requestId": "req_mmukz3br_druwun",
+        "phaseId": "A-P3",
+        "at": 1773750048892
+      },
+      {
+        "payloadId": "ai_mmukzyrq_por5gq",
+        "requestId": "req_mmukzsjd_rkw0k3",
+        "phaseId": "A-P3",
+        "at": 1773750077129
+      }
+    ],
+    "dismisses": [
+      {
+        "payloadId": "ai_mmujxf33_xilu7n",
+        "requestId": "req_mmujwt8a_65q5ds",
+        "phaseId": "A-P1",
+        "at": 1773748279841,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmujyb0l_kmraj7",
+        "requestId": "req_mmujy262_m02ore",
+        "phaseId": "A-P1",
+        "at": 1773748341251,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmujzcsa_n6l70m",
+        "requestId": "req_mmujz3q4_93380y",
+        "phaseId": "A-P1",
+        "at": 1773748539651,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmuk475g_ri8pzv",
+        "requestId": "req_mmuk42fw_633scj",
+        "phaseId": "A-P1",
+        "at": 1773748638735,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmuk7dme_jdgmlo",
+        "requestId": "req_mmuk78jb_4hv08s",
+        "phaseId": "A-P1",
+        "at": 1773748769013,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukdhq2_6vi0vf",
+        "requestId": "req_mmukdee8_0w8wdt",
+        "phaseId": "A-P1",
+        "at": 1773749031010,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmukf7uv_nj6klt",
+        "requestId": "req_mmukf13z_zca6su",
+        "phaseId": "A-P1",
+        "at": 1773749153024,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukgtpj_p5yyve",
+        "requestId": "req_mmukglfl_452bs5",
+        "phaseId": "A-P1",
+        "at": 1773749203469,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukibfc_396b69",
+        "requestId": "req_mmuki3fv_tsbep9",
+        "phaseId": "A-P1",
+        "at": 1773749261866,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukjrqr_nut66c",
+        "requestId": "req_mmukjida_79zybx",
+        "phaseId": "A-P1",
+        "at": 1773749334707,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukkcw1_1plsfv",
+        "requestId": "req_mmukk5r7_danjw2",
+        "phaseId": "A-P1",
+        "at": 1773749349077,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukkves_ktbd8k",
+        "requestId": "req_mmukkp5i_cjkapf",
+        "phaseId": "A-P1",
+        "at": 1773749390548,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmuklfsb_19ikwk",
+        "requestId": "req_mmukl7mx_6gvaz6",
+        "phaseId": "A-P1",
+        "at": 1773749401011,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmuknzkp_0bd2x4",
+        "requestId": "req_mmuknqdg_oyjzxs",
+        "phaseId": "A-P1",
+        "at": 1773749519185,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukohdk_qot8yj",
+        "requestId": "req_mmuko9o1_ohkrgw",
+        "phaseId": "A-P1",
+        "at": 1773749582535,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmukpoip_8h214b",
+        "requestId": "req_mmukpip8_5y9qd0",
+        "phaseId": "A-P1",
+        "at": 1773749659187,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukrqji_nsrwzx",
+        "requestId": "req_mmukrlaf_t8vjvq",
+        "phaseId": "A-P1",
+        "at": 1773749724093,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukvvyv_m3pnj5",
+        "requestId": "req_mmukvqyl_sb7zuu",
+        "phaseId": "A-P1",
+        "at": 1773749941634,
+        "reason": "manual"
+      },
+      {
+        "payloadId": "ai_mmukzczd_atfelq",
+        "requestId": "req_mmukz3br_druwun",
+        "phaseId": "A-P3",
+        "at": 1773750053783,
+        "reason": "canvas_mutation"
+      },
+      {
+        "payloadId": "ai_mmukzyrq_por5gq",
+        "requestId": "req_mmukzsjd_rkw0k3",
+        "phaseId": "A-P3",
+        "at": 1773750100642,
+        "reason": "manual"
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmuk5umd_t2p1v9",
+        "requestId": "req_mmuk5ne0_snoboa",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "wolff_law_diagram_1",
+          "trabecular_bone_diagram",
+          "trabecular_bone_label"
+        ],
+        "userChangeTrackedShapeIds": [
+          "wolff_law_diagram_1",
+          "trabecular_bone_label"
+        ],
+        "baselineShapes": {
+          "wolff_law_diagram_1": {
+            "id": "wolff_law_diagram_1",
+            "kind": "text",
+            "bbox": [
+              600,
+              100,
+              992.01171875,
+              192.12234375000003
+            ],
+            "text": "Wolff's Law: Bone adapts to stress",
+            "summary": "Title for Wolff's Law explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "trabecular_bone_diagram": {
+            "id": "trabecular_bone_diagram",
+            "kind": "pen",
+            "bbox": [
+              650,
+              250,
+              1050,
+              350
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 5,
+            "sampledPoints": [
+              [
+                650,
+                250
+              ],
+              [
+                750,
+                350
+              ],
+              [
+                850,
+                250
+              ],
+              [
+                950,
+                350
+              ],
+              [
+                1050,
+                250
+              ]
+            ]
+          },
+          "trabecular_bone_label": {
+            "id": "trabecular_bone_label",
+            "kind": "text",
+            "bbox": [
+              600,
+              400,
+              1100,
+              512.56
+            ],
+            "text": "Trabecular bone forms a lattice structure that aligns along stress lines, optimizing strength and reducing weight.",
+            "summary": "Explanation of trabecular bone adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          600,
+          100,
+          1100,
+          512.56
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_3dad4887"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk6c2r_xmpmhx",
+        "acceptedAt": 1773748694691,
+        "maxPostAcceptEdit": 0.5185643518651609,
+        "maxChangedTextChars": 114,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuk6pz7_97a810",
+        "requestId": "req_mmuk6idr_1z0d7y",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "bone_adaptation_heading",
+          "stress_diagram",
+          "stress_implications_text"
+        ],
+        "userChangeTrackedShapeIds": [
+          "bone_adaptation_heading",
+          "stress_implications_text"
+        ],
+        "baselineShapes": {
+          "bone_adaptation_heading": {
+            "id": "bone_adaptation_heading",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1090.0390625,
+              292.12625
+            ],
+            "text": "Adaptation of Trabecular Bone to Stress",
+            "summary": "Heading for expanded explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "stress_diagram": {
+            "id": "stress_diagram",
+            "kind": "pen",
+            "bbox": [
+              500,
+              260,
+              800,
+              340
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 3,
+            "sampledPoints": [
+              [
+                500,
+                300
+              ],
+              [
+                600,
+                340
+              ],
+              [
+                800,
+                260
+              ]
+            ]
+          },
+          "stress_implications_text": {
+            "id": "stress_implications_text",
+            "kind": "text",
+            "bbox": [
+              600,
+              320,
+              1100,
+              634.16
+            ],
+            "text": "Trabecular bone adapts dynamically to stress by remodeling its lattice structure. This process enhances mechanical efficiency, making bones strong yet lightweight. Implications include: - Improved understanding of osteoporosis and fracture risks. - Applications in biomimetic engineering for lightweight, stress-adaptive materials.",
+            "summary": "Implications of trabecular adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 20,
+        "targetBBox": [
+          500,
+          200,
+          1100,
+          634.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk6s0z_g5ohcp",
+        "acceptedAt": 1773748715363,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 370,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuk8ej5_awtpl7",
+        "requestId": "req_mmuk833u_9hhgwr",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_bio_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_bio_001"
+        ],
+        "baselineShapes": {
+          "text_topology_bio_001": {
+            "id": "text_topology_bio_001",
+            "kind": "text",
+            "bbox": [
+              600,
+              1024,
+              1084.61328125,
+              1405.384241875
+            ],
+            "text": "Biological Analogy: Wolff's Law and Bone Adaptation Topology Optimization mirrors the principles of Wolff's Law, which states that bones adapt to the loads placed on them by changing their internal structure. Similarly, TO algorithms \"adapt\" the material distribution to efficiently support applied forces, creating structures that resemble the trabecular patterns found in bones.",
+            "summary": "Topology Optimization linked to Wolff's Law and bone adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          600,
+          1024,
+          1084.61328125,
+          1405.384241875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "group_61ccc5d4"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk8h8v_4nd2wt",
+        "acceptedAt": 1773748794703,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 380,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukai6v_xpwxt2",
+        "requestId": "req_mmukabri_wq7tue",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_adaptation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_adaptation"
+        ],
+        "baselineShapes": {
+          "text_topology_adaptation": {
+            "id": "text_topology_adaptation",
+            "kind": "text",
+            "bbox": [
+              600,
+              550,
+              1100,
+              763.3599999999999
+            ],
+            "text": "Topology optimization algorithms mimic Wolff's Law by iteratively redistributing material in a structure to align with stress paths. This process creates efficient, lightweight designs that resemble the trabecular bone's adaptive lattice.",
+            "summary": "Topology optimization mimics bone adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          600,
+          550,
+          1100,
+          763.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukaijj_fa3nnl",
+        "acceptedAt": 1773748889695,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 238,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukazwt_hc9sjd",
+        "requestId": "req_mmukap9t_ac6w8s",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_engineering_application"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_engineering_application"
+        ],
+        "baselineShapes": {
+          "text_engineering_application": {
+            "id": "text_engineering_application",
+            "kind": "text",
+            "bbox": [
+              1200,
+              700,
+              1700,
+              946.9599999999999
+            ],
+            "text": "In engineering, topology optimization is applied to design lightweight yet strong components, such as aircraft wings, bridges, and automotive parts. By mimicking natural adaptation principles, these algorithms reduce material usage while maintaining structural integrity.",
+            "summary": "Engineering applications of topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 14,
+        "targetBBox": [
+          1200,
+          700,
+          1700,
+          946.9599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukb3e9_uhqvk6",
+        "acceptedAt": 1773748916721,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 271,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukbkrg_t9mctk",
+        "requestId": "req_mmukbbk6_1898hi",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "title_topology_wolff",
+          "text_comparison_topology",
+          "diagram_topology_wolff",
+          "text_diagram_label"
+        ],
+        "userChangeTrackedShapeIds": [
+          "title_topology_wolff",
+          "text_comparison_topology",
+          "text_diagram_label"
+        ],
+        "baselineShapes": {
+          "title_topology_wolff": {
+            "id": "title_topology_wolff",
+            "kind": "text",
+            "bbox": [
+              100,
+              50,
+              492.01171875000006,
+              142.12234375000003
+            ],
+            "text": "Comparison: Topology Optimization vs Wolff's Law",
+            "summary": "Title for comparison of engineering and biological adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_comparison_topology": {
+            "id": "text_comparison_topology",
+            "kind": "text",
+            "bbox": [
+              100,
+              200,
+              600,
+              446.9599999999999
+            ],
+            "text": "Topology optimization in engineering iteratively redistributes material to align with stress paths, achieving lightweight and efficient designs. Wolff's Law describes how bones adapt by remodeling trabecular structures along stress lines, optimizing strength and minimizing weight.",
+            "summary": "Parallel between engineering and biological adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "diagram_topology_wolff": {
+            "id": "diagram_topology_wolff",
+            "kind": "pen",
+            "bbox": [
+              700,
+              200,
+              900,
+              300
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 7,
+            "sampledPoints": [
+              [
+                700,
+                250
+              ],
+              [
+                750,
+                300
+              ],
+              [
+                850,
+                300
+              ],
+              [
+                900,
+                250
+              ],
+              [
+                850,
+                200
+              ],
+              [
+                750,
+                200
+              ],
+              [
+                700,
+                250
+              ]
+            ]
+          },
+          "text_diagram_label": {
+            "id": "text_diagram_label",
+            "kind": "text",
+            "bbox": [
+              720,
+              320,
+              880,
+              429.62
+            ],
+            "text": "Stress alignment in engineering (left) and bone adaptation (right).",
+            "summary": "Label for explanatory diagram.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          100,
+          50,
+          900,
+          446.9599999999999
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukbn3o_6f1xjr",
+        "acceptedAt": 1773748942260,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 396,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukc3g0_vt1u25",
+        "requestId": "req_mmukbwgb_xmgo3d",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "diagram_topology_vs_wolff",
+          "diagram_labels"
+        ],
+        "userChangeTrackedShapeIds": [
+          "diagram_labels"
+        ],
+        "baselineShapes": {
+          "diagram_topology_vs_wolff": {
+            "id": "diagram_topology_vs_wolff",
+            "kind": "pen",
+            "bbox": [
+              300,
+              200,
+              600,
+              300
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 4,
+            "sampledPoints": [
+              [
+                300,
+                200
+              ],
+              [
+                400,
+                300
+              ],
+              [
+                500,
+                200
+              ],
+              [
+                600,
+                300
+              ]
+            ]
+          },
+          "diagram_labels": {
+            "id": "diagram_labels",
+            "kind": "text",
+            "bbox": [
+              310,
+              310,
+              510,
+              394.41999999999996
+            ],
+            "text": "Stress lines guide adaptation in both cases.",
+            "summary": "Shared principle of stress alignment.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          300,
+          200,
+          600,
+          394.41999999999996
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukcbyr_fkfk3x",
+        "acceptedAt": 1773748974483,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 44,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukhmri_ien7zo",
+        "requestId": "req_mmukhhkt_p018dn",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_anisotropic_explanation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_anisotropic_explanation"
+        ],
+        "baselineShapes": {
+          "text_anisotropic_explanation": {
+            "id": "text_anisotropic_explanation",
+            "kind": "text",
+            "bbox": [
+              700,
+              1500,
+              1200,
+              1881.36
+            ],
+            "text": "Anisotropic properties of trabecular bone ensure that it is optimized for mechanical efficiency. By aligning trabeculae along the primary stress directions, the bone achieves maximum strength where it is most needed while minimizing material usage. This directional strength allows bones to withstand high loads during activities like walking or jumping, while maintaining a lightweight structure that reduces energy expenditure during movement.",
+            "summary": "How anisotropy enhances bone strength and efficiency.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          700,
+          1500,
+          1200,
+          1881.36
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukhpfc_rdzy0a",
+        "acceptedAt": 1773749225208,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 445,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukisvx_dk7oiv",
+        "requestId": "req_mmukiljx_q40hci",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_comparison_title",
+          "text_comparison_body"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_comparison_title",
+          "text_comparison_body"
+        ],
+        "baselineShapes": {
+          "text_comparison_title": {
+            "id": "text_comparison_title",
+            "kind": "text",
+            "bbox": [
+              1100,
+              200,
+              1492.01171875,
+              292.12234375
+            ],
+            "text": "Comparison: Wolff's Law vs. Topology Optimization",
+            "summary": "Title for comparison block",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_comparison_body": {
+            "id": "text_comparison_body",
+            "kind": "text",
+            "bbox": [
+              1100,
+              320,
+              1600,
+              667.76
+            ],
+            "text": "Wolff's Law describes how bones adapt to mechanical stress by remodeling their internal structure, aligning trabeculae along stress lines. Topology optimization in engineering similarly redistributes material to align with stress paths, creating efficient, lightweight designs. Both processes exemplify adaptation to functional demands, though one is biological and the other computational.",
+            "summary": "Comparison between Wolff's Law and topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          1100,
+          200,
+          1600,
+          667.76
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukjbdl_awuwcl",
+        "acceptedAt": 1773749300313,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 439,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuklxc3_dcgyt6",
+        "requestId": "req_mmukls2k_d072je",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_wolffs_law_comparison"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_wolffs_law_comparison"
+        ],
+        "baselineShapes": {
+          "text_topology_wolffs_law_comparison": {
+            "id": "text_topology_wolffs_law_comparison",
+            "kind": "text",
+            "bbox": [
+              600,
+              700,
+              1100,
+              1114.96
+            ],
+            "text": "Topology optimization in engineering mirrors Wolff's Law in biology by seeking to distribute material efficiently in response to applied forces. Both principles aim to achieve structural efficiency: in engineering, this involves minimizing material usage while maintaining strength, and in biology, it ensures bones adapt to mechanical stress to remain strong yet lightweight. This comparison highlights the convergence of natural and engineered systems in solving similar challenges of strength and economy.",
+            "summary": "Comparison of topology optimization and Wolff's Law.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          600,
+          700,
+          1100,
+          1114.96
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukm0hz_r5wu7j",
+        "acceptedAt": 1773749426183,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 508,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukme39_u42dqs",
+        "requestId": "req_mmukm9cl_1ipj8p",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "ai_text_wolff_law_comparison"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_wolff_law_comparison"
+        ],
+        "baselineShapes": {
+          "ai_text_wolff_law_comparison": {
+            "id": "ai_text_wolff_law_comparison",
+            "kind": "text",
+            "bbox": [
+              600,
+              250,
+              1100,
+              631.3599999999999
+            ],
+            "text": "Wolff's Law demonstrates how bones adapt to mechanical stress by remodeling and aligning their structure to optimize strength and efficiency. This principle parallels engineering techniques like topology optimization, where material is strategically distributed to handle stress while minimizing weight. Both systems highlight the balance between structural integrity and resource efficiency, offering insights into nature-inspired design.",
+            "summary": "Comparison of Wolff's Law and engineering optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          600,
+          250,
+          1100,
+          631.3599999999999
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukmu4k_6d2wxe",
+        "acceptedAt": 1773749464580,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuknaej_evnon1",
+        "requestId": "req_mmukmylh_g8564w",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "explore_parallels_title",
+          "explanatory_diagram",
+          "topology_optimization_curve",
+          "comparison_text"
+        ],
+        "userChangeTrackedShapeIds": [
+          "explore_parallels_title",
+          "comparison_text"
+        ],
+        "baselineShapes": {
+          "explore_parallels_title": {
+            "id": "explore_parallels_title",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1010.26953125,
+              295.77390625
+            ],
+            "text": "Parallels Between Wolff's Law and Topology Optimization",
+            "summary": "Title for exploring parallels",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "explanatory_diagram": {
+            "id": "explanatory_diagram",
+            "kind": "line",
+            "bbox": [
+              650,
+              350,
+              900,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                650,
+                350
+              ],
+              [
+                900,
+                600
+              ]
+            ]
+          },
+          "topology_optimization_curve": {
+            "id": "topology_optimization_curve",
+            "kind": "line",
+            "bbox": [
+              950,
+              350,
+              1200,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                950,
+                350
+              ],
+              [
+                1200,
+                600
+              ]
+            ]
+          },
+          "comparison_text": {
+            "id": "comparison_text",
+            "kind": "text",
+            "bbox": [
+              600,
+              650,
+              1100,
+              997.76
+            ],
+            "text": "Wolff's Law describes how bone remodels in response to mechanical stress, optimizing its structure for strength and efficiency. Similarly, topology optimization in engineering seeks to distribute material within a design space to achieve maximum performance under given constraints. Both principles emphasize efficiency, adaptability, and the strategic use of material.",
+            "summary": "Comparison of Wolff's Law and topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          600,
+          200,
+          1200,
+          997.76
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmuknfxx_5c5foj",
+        "acceptedAt": 1773749492853,
+        "maxPostAcceptEdit": 0.7673951820000842,
+        "maxChangedTextChars": 369,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmuktn26_xj3lgx",
+        "requestId": "req_mmukth78_kd4cru",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "ai_diagram_causal_chain"
+        ],
+        "userChangeTrackedShapeIds": [],
+        "baselineShapes": {
+          "ai_diagram_causal_chain": {
+            "id": "ai_diagram_causal_chain",
+            "kind": "pen",
+            "bbox": [
+              100,
+              100,
+              600,
+              400
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 4,
+            "sampledPoints": [
+              [
+                100,
+                100
+              ],
+              [
+                200,
+                100
+              ],
+              [
+                400,
+                200
+              ],
+              [
+                600,
+                400
+              ]
+            ]
+          }
+        },
+        "usableUnits": 1,
+        "targetBBox": [
+          100,
+          100,
+          600,
+          400
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuktps8_jm1bov",
+        "acceptedAt": 1773749785544,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukuei8_lgmqcj",
+        "requestId": "req_mmuku4zm_swdwt4",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_causal_chain_expansion"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_causal_chain_expansion"
+        ],
+        "baselineShapes": {
+          "text_causal_chain_expansion": {
+            "id": "text_causal_chain_expansion",
+            "kind": "text",
+            "bbox": [
+              700,
+              300,
+              1200,
+              1185.36
+            ],
+            "text": "### Expanded Steps in the Causal Chain 1. **Mechanical Stress**: Forces such as weight-bearing activities or impacts create localized stress on bones. 2. **Cellular Detection**: Osteocytes embedded in the bone matrix detect mechanical stress and initiate signaling. 3. **Cellular Response**: Osteoblasts (bone-forming cells) and osteoclasts (bone-resorbing cells) are activated to remodel bone tissue. 4. **Bone Remodeling**: Continuous deposition and resorption adjust bone density and shape based on stress patterns. 5. **Microarchitecture Changes**: Over time, repeated stress influences the internal structure, optimizing strength and efficiency. 6. **Final Shape Adaptation**: Macroscopic changes in bone shape occur, enhancing functionality and load distribution. This sequence highlights the dynamic interaction between mechanical forces and biological adaptation, ensuring bones remain resilient and efficient.",
+            "summary": "Detailed causal chain from mechanical stress to bone remodeling.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 46,
+        "targetBBox": [
+          700,
+          300,
+          1200,
+          1185.36
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_51ce1ab5"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukuv3l_zp4edc",
+        "acceptedAt": 1773749839089,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      },
+      {
+        "payloadId": "ai_mmukxwyf_ctudlw",
+        "requestId": "req_mmukxpvx_0ufijm",
+        "phaseId": "A-P2",
+        "acceptedShapeIds": [
+          "text_osteoblast_response_expansion"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_osteoblast_response_expansion"
+        ],
+        "baselineShapes": {
+          "text_osteoblast_response_expansion": {
+            "id": "text_osteoblast_response_expansion",
+            "kind": "text",
+            "bbox": [
+              2000,
+              -200,
+              2492.50390625,
+              501.26546874999997
+            ],
+            "text": "### Osteoblasts' Role in Bone Remodeling Osteoblasts are specialized cells responsible for bone formation. Upon receiving signals from osteocytes, they migrate to areas of mechanical stress and begin synthesizing new bone matrix. This matrix is primarily composed of collagen and other proteins, which provide the framework for mineral deposition. As osteoblasts work, they secrete enzymes and signaling molecules that regulate mineralization, ensuring the bone achieves optimal density and strength. Over time, osteoblast activity contributes to the adaptation of bone structure, aligning it with the mechanical demands placed upon it. This dynamic process is crucial for maintaining skeletal integrity and responding to changing physical environments.",
+            "summary": "Explanation of osteoblasts' role in bone remodeling.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 38,
+        "targetBBox": [
+          2000,
+          -200,
+          2492.50390625,
+          501.26546874999997
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_48a5beeb"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukyt2y_ekhbsd",
+        "acceptedAt": 1773750023098,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true
+      }
+    ],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773748189824,
+        "data": {
+          "phaseId": "A-P1",
+          "sessionId": null
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748250362,
+        "data": {
+          "requestId": "req_mmujwt8a_65q5ds",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748278686,
+        "data": {
+          "requestId": "req_mmujwt8a_65q5ds",
+          "promptTokens": 2537,
+          "completionTokens": 234,
+          "totalTokens": 2771,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_d7e64642"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748278696,
+        "data": {
+          "payloadId": "ai_mmujxf33_xilu7n",
+          "requestId": "req_mmujwt8a_65q5ds",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773748279841,
+        "data": {
+          "payloadId": "ai_mmujxf33_xilu7n",
+          "requestId": "req_mmujwt8a_65q5ds",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748285386,
+        "data": {
+          "requestId": "req_mmujxk96_rbckqa",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748301502,
+        "data": {
+          "requestId": "req_mmujxk96_rbckqa",
+          "promptTokens": 2562,
+          "completionTokens": 228,
+          "totalTokens": 2790,
+          "activeBlockIds": [
+            "group_0f4c922b"
+          ],
+          "planTargetBlockIds": [
+            "group_0f4c922b"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748301505,
+        "data": {
+          "payloadId": "ai_mmujxwov_7q0x8m",
+          "requestId": "req_mmujxk96_rbckqa",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748308602,
+        "data": {
+          "requestId": "req_mmujy262_m02ore",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748320065,
+        "data": {
+          "requestId": "req_mmujy262_m02ore",
+          "promptTokens": 2563,
+          "completionTokens": 218,
+          "totalTokens": 2781,
+          "activeBlockIds": [
+            "group_4d023581"
+          ],
+          "planTargetBlockIds": [
+            "group_4d023581"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748320072,
+        "data": {
+          "payloadId": "ai_mmujyb0l_kmraj7",
+          "requestId": "req_mmujy262_m02ore",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773748341251,
+        "data": {
+          "payloadId": "ai_mmujyb0l_kmraj7",
+          "requestId": "req_mmujy262_m02ore",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748357276,
+        "data": {
+          "requestId": "req_mmujz3q4_93380y",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748369008,
+        "data": {
+          "requestId": "req_mmujz3q4_93380y",
+          "promptTokens": 3163,
+          "completionTokens": 248,
+          "totalTokens": 3411,
+          "activeBlockIds": [
+            "group_4d023581"
+          ],
+          "planTargetBlockIds": [
+            "block_6ee0c4a0"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748369062,
+        "data": {
+          "payloadId": "ai_mmujzcsa_n6l70m",
+          "requestId": "req_mmujz3q4_93380y",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773748539651,
+        "data": {
+          "payloadId": "ai_mmujzcsa_n6l70m",
+          "requestId": "req_mmujz3q4_93380y",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748547376,
+        "data": {
+          "requestId": "req_mmuk36eo_6kioje",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748554375,
+        "data": {
+          "requestId": "req_mmuk36eo_6kioje",
+          "promptTokens": 360,
+          "completionTokens": 45,
+          "totalTokens": 405,
+          "activeBlockIds": [
+            "group_4d023581"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748554387,
+        "data": {
+          "payloadId": "ai_mmuk3bt8_brm60w",
+          "requestId": "req_mmuk36eo_6kioje",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748588892,
+        "data": {
+          "requestId": "req_mmuk42fw_633scj",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748594996,
+        "data": {
+          "requestId": "req_mmuk42fw_633scj",
+          "promptTokens": 360,
+          "completionTokens": 47,
+          "totalTokens": 407,
+          "activeBlockIds": [
+            "group_4d023581"
+          ],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748594999,
+        "data": {
+          "payloadId": "ai_mmuk475g_ri8pzv",
+          "requestId": "req_mmuk42fw_633scj",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773748638735,
+        "data": {
+          "payloadId": "ai_mmuk475g_ri8pzv",
+          "requestId": "req_mmuk42fw_633scj",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748650452,
+        "data": {
+          "requestId": "req_mmuk5dxw_ouordo",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748661729,
+        "data": {
+          "requestId": "req_mmuk5dxw_ouordo",
+          "promptTokens": 2960,
+          "completionTokens": 304,
+          "totalTokens": 3264,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_3dad4887"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748661738,
+        "data": {
+          "payloadId": "ai_mmuk5mn7_iutv8p",
+          "requestId": "req_mmuk5dxw_ouordo",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748662696,
+        "data": {
+          "requestId": "req_mmuk5ne0_snoboa",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748672068,
+        "data": {
+          "requestId": "req_mmuk5ne0_snoboa",
+          "promptTokens": 2962,
+          "completionTokens": 606,
+          "totalTokens": 3568,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_3dad4887"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748672074,
+        "data": {
+          "payloadId": "ai_mmuk5umd_t2p1v9",
+          "requestId": "req_mmuk5ne0_snoboa",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748694691,
+        "data": {
+          "acceptId": "accept_mmuk6c2r_xmpmhx",
+          "payloadId": "ai_mmuk5umd_t2p1v9",
+          "requestId": "req_mmuk5ne0_snoboa",
+          "phaseId": "A-P1",
+          "usableUnits": 9,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748702863,
+        "data": {
+          "requestId": "req_mmuk6idr_1z0d7y",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748712707,
+        "data": {
+          "requestId": "req_mmuk6idr_1z0d7y",
+          "promptTokens": 3090,
+          "completionTokens": 422,
+          "totalTokens": 3512,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748712713,
+        "data": {
+          "payloadId": "ai_mmuk6pz7_97a810",
+          "requestId": "req_mmuk6idr_1z0d7y",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748715363,
+        "data": {
+          "acceptId": "accept_mmuk6s0z_g5ohcp",
+          "payloadId": "ai_mmuk6pz7_97a810",
+          "requestId": "req_mmuk6idr_1z0d7y",
+          "phaseId": "A-P1",
+          "usableUnits": 20,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748736759,
+        "data": {
+          "requestId": "req_mmuk78jb_4hv08s",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748743349,
+        "data": {
+          "requestId": "req_mmuk78jb_4hv08s",
+          "promptTokens": 3639,
+          "completionTokens": 279,
+          "totalTokens": 3918,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748743354,
+        "data": {
+          "payloadId": "ai_mmuk7dme_jdgmlo",
+          "requestId": "req_mmuk78jb_4hv08s",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773748769013,
+        "data": {
+          "payloadId": "ai_mmuk7dme_jdgmlo",
+          "requestId": "req_mmuk78jb_4hv08s",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748776378,
+        "data": {
+          "requestId": "req_mmuk833u_9hhgwr",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748791184,
+        "data": {
+          "requestId": "req_mmuk833u_9hhgwr",
+          "promptTokens": 3051,
+          "completionTokens": 287,
+          "totalTokens": 3338,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "group_61ccc5d4"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748791201,
+        "data": {
+          "payloadId": "ai_mmuk8ej5_awtpl7",
+          "requestId": "req_mmuk833u_9hhgwr",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748794703,
+        "data": {
+          "acceptId": "accept_mmuk8h8v_4nd2wt",
+          "payloadId": "ai_mmuk8ej5_awtpl7",
+          "requestId": "req_mmuk833u_9hhgwr",
+          "phaseId": "A-P1",
+          "usableUnits": 19,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748800256,
+        "data": {
+          "requestId": "req_mmuk8lj4_9q0cr4",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748810008,
+        "data": {
+          "requestId": "req_mmuk8lj4_9q0cr4",
+          "promptTokens": 3778,
+          "completionTokens": 270,
+          "totalTokens": 4048,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748810012,
+        "data": {
+          "payloadId": "ai_mmuk8t21_e1x96x",
+          "requestId": "req_mmuk8lj4_9q0cr4",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748880910,
+        "data": {
+          "requestId": "req_mmukabri_wq7tue",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748889237,
+        "data": {
+          "requestId": "req_mmukabri_wq7tue",
+          "promptTokens": 4049,
+          "completionTokens": 250,
+          "totalTokens": 4299,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748889242,
+        "data": {
+          "payloadId": "ai_mmukai6v_xpwxt2",
+          "requestId": "req_mmukabri_wq7tue",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748889695,
+        "data": {
+          "acceptId": "accept_mmukaijj_fa3nnl",
+          "payloadId": "ai_mmukai6v_xpwxt2",
+          "requestId": "req_mmukabri_wq7tue",
+          "phaseId": "A-P1",
+          "usableUnits": 12,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748898417,
+        "data": {
+          "requestId": "req_mmukap9t_ac6w8s",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748912205,
+        "data": {
+          "requestId": "req_mmukap9t_ac6w8s",
+          "promptTokens": 4004,
+          "completionTokens": 230,
+          "totalTokens": 4234,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748912208,
+        "data": {
+          "payloadId": "ai_mmukazwt_hc9sjd",
+          "requestId": "req_mmukap9t_ac6w8s",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748916721,
+        "data": {
+          "acceptId": "accept_mmukb3e9_uhqvk6",
+          "payloadId": "ai_mmukazwt_hc9sjd",
+          "requestId": "req_mmukap9t_ac6w8s",
+          "phaseId": "A-P1",
+          "usableUnits": 14,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748927302,
+        "data": {
+          "requestId": "req_mmukbbk6_1898hi",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748939228,
+        "data": {
+          "requestId": "req_mmukbbk6_1898hi",
+          "promptTokens": 4552,
+          "completionTokens": 542,
+          "totalTokens": 5094,
+          "activeBlockIds": [
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748939234,
+        "data": {
+          "payloadId": "ai_mmukbkrg_t9mctk",
+          "requestId": "req_mmukbbk6_1898hi",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748942260,
+        "data": {
+          "acceptId": "accept_mmukbn3o_6f1xjr",
+          "payloadId": "ai_mmukbkrg_t9mctk",
+          "requestId": "req_mmukbbk6_1898hi",
+          "phaseId": "A-P1",
+          "usableUnits": 23,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748954379,
+        "data": {
+          "requestId": "req_mmukbwgb_xmgo3d",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748963439,
+        "data": {
+          "requestId": "req_mmukbwgb_xmgo3d",
+          "promptTokens": 4391,
+          "completionTokens": 388,
+          "totalTokens": 4779,
+          "activeBlockIds": [
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748963441,
+        "data": {
+          "payloadId": "ai_mmukc3g0_vt1u25",
+          "requestId": "req_mmukbwgb_xmgo3d",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773748974483,
+        "data": {
+          "acceptId": "accept_mmukcbyr_fkfk3x",
+          "payloadId": "ai_mmukc3g0_vt1u25",
+          "requestId": "req_mmukbwgb_xmgo3d",
+          "phaseId": "A-P1",
+          "usableUnits": 4,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773748987882,
+        "data": {
+          "requestId": "req_mmukcmay_defmof",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773748992195,
+        "data": {
+          "requestId": "req_mmukcmay_defmof",
+          "promptTokens": 5414,
+          "completionTokens": 202,
+          "totalTokens": 5616,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_c9eaa98c",
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773748992196,
+        "data": {
+          "payloadId": "ai_mmukcpmr_q6822u",
+          "requestId": "req_mmukcmay_defmof",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749024288,
+        "data": {
+          "requestId": "req_mmukdee8_0w8wdt",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749028602,
+        "data": {
+          "requestId": "req_mmukdee8_0w8wdt",
+          "promptTokens": 5414,
+          "completionTokens": 260,
+          "totalTokens": 5674,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_c9eaa98c",
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749028602,
+        "data": {
+          "payloadId": "ai_mmukdhq2_6vi0vf",
+          "requestId": "req_mmukdee8_0w8wdt",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749031010,
+        "data": {
+          "payloadId": "ai_mmukdhq2_6vi0vf",
+          "requestId": "req_mmukdee8_0w8wdt",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749100383,
+        "data": {
+          "requestId": "req_mmukf13z_zca6su",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749109126,
+        "data": {
+          "requestId": "req_mmukf13z_zca6su",
+          "promptTokens": 4637,
+          "completionTokens": 186,
+          "totalTokens": 4823,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_c9eaa98c"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749109127,
+        "data": {
+          "payloadId": "ai_mmukf7uv_nj6klt",
+          "requestId": "req_mmukf13z_zca6su",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749153024,
+        "data": {
+          "payloadId": "ai_mmukf7uv_nj6klt",
+          "requestId": "req_mmukf13z_zca6su",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749173377,
+        "data": {
+          "requestId": "req_mmukglfl_452bs5",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749184103,
+        "data": {
+          "requestId": "req_mmukglfl_452bs5",
+          "promptTokens": 4400,
+          "completionTokens": 312,
+          "totalTokens": 4712,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749184109,
+        "data": {
+          "payloadId": "ai_mmukgtpj_p5yyve",
+          "requestId": "req_mmukglfl_452bs5",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749203469,
+        "data": {
+          "payloadId": "ai_mmukgtpj_p5yyve",
+          "requestId": "req_mmukglfl_452bs5",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749215037,
+        "data": {
+          "requestId": "req_mmukhhkt_p018dn",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749221758,
+        "data": {
+          "requestId": "req_mmukhhkt_p018dn",
+          "promptTokens": 4545,
+          "completionTokens": 287,
+          "totalTokens": 4832,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749221763,
+        "data": {
+          "payloadId": "ai_mmukhmri_ien7zo",
+          "requestId": "req_mmukhhkt_p018dn",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749225208,
+        "data": {
+          "acceptId": "accept_mmukhpfc_rdzy0a",
+          "payloadId": "ai_mmukhmri_ien7zo",
+          "requestId": "req_mmukhhkt_p018dn",
+          "phaseId": "A-P1",
+          "usableUnits": 23,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749243371,
+        "data": {
+          "requestId": "req_mmuki3fv_tsbep9",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749253720,
+        "data": {
+          "requestId": "req_mmuki3fv_tsbep9",
+          "promptTokens": 5055,
+          "completionTokens": 277,
+          "totalTokens": 5332,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749253722,
+        "data": {
+          "payloadId": "ai_mmukibfc_396b69",
+          "requestId": "req_mmuki3fv_tsbep9",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749261866,
+        "data": {
+          "payloadId": "ai_mmukibfc_396b69",
+          "requestId": "req_mmuki3fv_tsbep9",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749266845,
+        "data": {
+          "requestId": "req_mmukiljx_q40hci",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749276349,
+        "data": {
+          "requestId": "req_mmukiljx_q40hci",
+          "promptTokens": 5894,
+          "completionTokens": 367,
+          "totalTokens": 6261,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749276355,
+        "data": {
+          "payloadId": "ai_mmukisvx_dk7oiv",
+          "requestId": "req_mmukiljx_q40hci",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749300313,
+        "data": {
+          "acceptId": "accept_mmukjbdl_awuwcl",
+          "payloadId": "ai_mmukisvx_dk7oiv",
+          "requestId": "req_mmukiljx_q40hci",
+          "phaseId": "A-P1",
+          "usableUnits": 23,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749309374,
+        "data": {
+          "requestId": "req_mmukjida_79zybx",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749321522,
+        "data": {
+          "requestId": "req_mmukjida_79zybx",
+          "promptTokens": 6845,
+          "completionTokens": 736,
+          "totalTokens": 7581,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_c9eaa98c",
+            "block_6541d5f4",
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749321525,
+        "data": {
+          "payloadId": "ai_mmukjrqr_nut66c",
+          "requestId": "req_mmukjida_79zybx",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749334707,
+        "data": {
+          "payloadId": "ai_mmukjrqr_nut66c",
+          "requestId": "req_mmukjida_79zybx",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749339683,
+        "data": {
+          "requestId": "req_mmukk5r7_danjw2",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749348926,
+        "data": {
+          "requestId": "req_mmukk5r7_danjw2",
+          "promptTokens": 5746,
+          "completionTokens": 343,
+          "totalTokens": 6089,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6",
+            "group_2e496906"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749348933,
+        "data": {
+          "payloadId": "ai_mmukkcw1_1plsfv",
+          "requestId": "req_mmukk5r7_danjw2",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749349077,
+        "data": {
+          "payloadId": "ai_mmukkcw1_1plsfv",
+          "requestId": "req_mmukk5r7_danjw2",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749364822,
+        "data": {
+          "requestId": "req_mmukkp5i_cjkapf",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749372931,
+        "data": {
+          "requestId": "req_mmukkp5i_cjkapf",
+          "promptTokens": 5478,
+          "completionTokens": 429,
+          "totalTokens": 5907,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "group_2e496906",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6",
+            "group_2e496906"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749372936,
+        "data": {
+          "payloadId": "ai_mmukkves_ktbd8k",
+          "requestId": "req_mmukkp5i_cjkapf",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749388777,
+        "data": {
+          "requestId": "req_mmukl7mx_6gvaz6",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749390548,
+        "data": {
+          "payloadId": "ai_mmukkves_ktbd8k",
+          "requestId": "req_mmukkp5i_cjkapf",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749399339,
+        "data": {
+          "requestId": "req_mmukl7mx_6gvaz6",
+          "promptTokens": 5271,
+          "completionTokens": 658,
+          "totalTokens": 5929,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749399347,
+        "data": {
+          "payloadId": "ai_mmuklfsb_19ikwk",
+          "requestId": "req_mmukl7mx_6gvaz6",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749401011,
+        "data": {
+          "payloadId": "ai_mmuklfsb_19ikwk",
+          "requestId": "req_mmukl7mx_6gvaz6",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749415260,
+        "data": {
+          "requestId": "req_mmukls2k_d072je",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749422083,
+        "data": {
+          "requestId": "req_mmukls2k_d072je",
+          "promptTokens": 5227,
+          "completionTokens": 281,
+          "totalTokens": 5508,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "group_2e496906",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749422088,
+        "data": {
+          "payloadId": "ai_mmuklxc3_dcgyt6",
+          "requestId": "req_mmukls2k_d072je",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749426183,
+        "data": {
+          "acceptId": "accept_mmukm0hz_r5wu7j",
+          "payloadId": "ai_mmuklxc3_dcgyt6",
+          "requestId": "req_mmukls2k_d072je",
+          "phaseId": "A-P1",
+          "usableUnits": 26,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749437653,
+        "data": {
+          "requestId": "req_mmukm9cl_1ipj8p",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749443796,
+        "data": {
+          "requestId": "req_mmukm9cl_1ipj8p",
+          "promptTokens": 5207,
+          "completionTokens": 268,
+          "totalTokens": 5475,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749443800,
+        "data": {
+          "payloadId": "ai_mmukme39_u42dqs",
+          "requestId": "req_mmukm9cl_1ipj8p",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749464580,
+        "data": {
+          "acceptId": "accept_mmukmu4k_6d2wxe",
+          "payloadId": "ai_mmukme39_u42dqs",
+          "requestId": "req_mmukm9cl_1ipj8p",
+          "phaseId": "A-P1",
+          "usableUnits": 22,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749470373,
+        "data": {
+          "requestId": "req_mmukmylh_g8564w",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749485675,
+        "data": {
+          "requestId": "req_mmukmylh_g8564w",
+          "promptTokens": 5199,
+          "completionTokens": 731,
+          "totalTokens": 5930,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "group_2e496906",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749485680,
+        "data": {
+          "payloadId": "ai_mmuknaej_evnon1",
+          "requestId": "req_mmukmylh_g8564w",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749492853,
+        "data": {
+          "acceptId": "accept_mmuknfxx_5c5foj",
+          "payloadId": "ai_mmuknaej_evnon1",
+          "requestId": "req_mmukmylh_g8564w",
+          "phaseId": "A-P1",
+          "usableUnits": 24,
+          "activeBlockAligned": true
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749506372,
+        "data": {
+          "requestId": "req_mmuknqdg_oyjzxs",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749518297,
+        "data": {
+          "requestId": "req_mmuknqdg_oyjzxs",
+          "promptTokens": 4798,
+          "completionTokens": 467,
+          "totalTokens": 5265,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_d25e8743",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_d25e8743"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749518299,
+        "data": {
+          "payloadId": "ai_mmuknzkp_0bd2x4",
+          "requestId": "req_mmuknqdg_oyjzxs",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749519185,
+        "data": {
+          "payloadId": "ai_mmuknzkp_0bd2x4",
+          "requestId": "req_mmuknqdg_oyjzxs",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749531377,
+        "data": {
+          "requestId": "req_mmuko9o1_ohkrgw",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749541368,
+        "data": {
+          "requestId": "req_mmuko9o1_ohkrgw",
+          "promptTokens": 5656,
+          "completionTokens": 501,
+          "totalTokens": 6157,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "group_2e496906",
+            "block_d25e8743",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422",
+            "block_eab743c6",
+            "block_d25e8743"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749541371,
+        "data": {
+          "payloadId": "ai_mmukohdk_qot8yj",
+          "requestId": "req_mmuko9o1_ohkrgw",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749582535,
+        "data": {
+          "payloadId": "ai_mmukohdk_qot8yj",
+          "requestId": "req_mmuko9o1_ohkrgw",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749589740,
+        "data": {
+          "requestId": "req_mmukpip8_5y9qd0",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749597280,
+        "data": {
+          "requestId": "req_mmukpip8_5y9qd0",
+          "promptTokens": 2412,
+          "completionTokens": 240,
+          "totalTokens": 2652,
+          "activeBlockIds": [
+            "block_c9eaa98c",
+            "group_2e496906",
+            "block_d25e8743",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_3193e5d3"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749597285,
+        "data": {
+          "payloadId": "ai_mmukpoip_8h214b",
+          "requestId": "req_mmukpip8_5y9qd0",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749659187,
+        "data": {
+          "payloadId": "ai_mmukpoip_8h214b",
+          "requestId": "req_mmukpip8_5y9qd0",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749686407,
+        "data": {
+          "requestId": "req_mmukrlaf_t8vjvq",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749693213,
+        "data": {
+          "requestId": "req_mmukrlaf_t8vjvq",
+          "promptTokens": 4930,
+          "completionTokens": 247,
+          "totalTokens": 5177,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_d25e8743",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_eab743c6",
+            "block_c9eaa98c",
+            "block_d25e8743"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749693217,
+        "data": {
+          "payloadId": "ai_mmukrqji_nsrwzx",
+          "requestId": "req_mmukrlaf_t8vjvq",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749724093,
+        "data": {
+          "payloadId": "ai_mmukrqji_nsrwzx",
+          "requestId": "req_mmukrlaf_t8vjvq",
+          "phaseId": "A-P1",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749757382,
+        "data": {
+          "requestId": "req_mmukt41y_gf8swt",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749767559,
+        "data": {
+          "requestId": "req_mmukt41y_gf8swt",
+          "promptTokens": 5641,
+          "completionTokens": 433,
+          "totalTokens": 6074,
+          "activeBlockIds": [
+            "group_2e496906",
+            "block_c9eaa98c",
+            "block_d25e8743",
+            "block_eab743c6",
+            "block_70e01422"
+          ],
+          "planTargetBlockIds": [
+            "block_70e01422"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749767585,
+        "data": {
+          "payloadId": "ai_mmuktbwo_umj6lc",
+          "requestId": "req_mmukt41y_gf8swt",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749774420,
+        "data": {
+          "requestId": "req_mmukth78_kd4cru",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749782013,
+        "data": {
+          "requestId": "req_mmukth78_kd4cru",
+          "promptTokens": 5674,
+          "completionTokens": 92,
+          "totalTokens": 5766,
+          "activeBlockIds": [],
+          "planTargetBlockIds": []
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749782014,
+        "data": {
+          "payloadId": "ai_mmuktn26_xj3lgx",
+          "requestId": "req_mmukth78_kd4cru",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749785544,
+        "data": {
+          "acceptId": "accept_mmuktps8_jm1bov",
+          "payloadId": "ai_mmuktn26_xj3lgx",
+          "requestId": "req_mmukth78_kd4cru",
+          "phaseId": "A-P1",
+          "usableUnits": 1,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749805250,
+        "data": {
+          "requestId": "req_mmuku4zm_swdwt4",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749817583,
+        "data": {
+          "requestId": "req_mmuku4zm_swdwt4",
+          "promptTokens": 4291,
+          "completionTokens": 380,
+          "totalTokens": 4671,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_51ce1ab5"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749817592,
+        "data": {
+          "payloadId": "ai_mmukuei8_lgmqcj",
+          "requestId": "req_mmuku4zm_swdwt4",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773749839089,
+        "data": {
+          "acceptId": "accept_mmukuv3l_zp4edc",
+          "payloadId": "ai_mmukuei8_lgmqcj",
+          "requestId": "req_mmuku4zm_swdwt4",
+          "phaseId": "A-P1",
+          "usableUnits": 46,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749880381,
+        "data": {
+          "requestId": "req_mmukvqyl_sb7zuu",
+          "phaseId": "A-P1",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749886870,
+        "data": {
+          "requestId": "req_mmukvqyl_sb7zuu",
+          "promptTokens": 4861,
+          "completionTokens": 296,
+          "totalTokens": 5157,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_48a5beeb"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749886888,
+        "data": {
+          "payloadId": "ai_mmukvvyv_m3pnj5",
+          "requestId": "req_mmukvqyl_sb7zuu",
+          "phaseId": "A-P1"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749925142,
+        "data": {
+          "phaseId": "A-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773749925254,
+        "data": {
+          "phaseId": "A-P2"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773749941634,
+        "data": {
+          "payloadId": "ai_mmukvvyv_m3pnj5",
+          "requestId": "req_mmukvqyl_sb7zuu",
+          "phaseId": "A-P1",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773749972301,
+        "data": {
+          "requestId": "req_mmukxpvx_0ufijm",
+          "phaseId": "A-P2",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773749981463,
+        "data": {
+          "requestId": "req_mmukxpvx_0ufijm",
+          "promptTokens": 4849,
+          "completionTokens": 327,
+          "totalTokens": 5176,
+          "activeBlockIds": [],
+          "planTargetBlockIds": [
+            "block_48a5beeb"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773749981485,
+        "data": {
+          "payloadId": "ai_mmukxwyf_ctudlw",
+          "requestId": "req_mmukxpvx_0ufijm",
+          "phaseId": "A-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750006354,
+        "data": {
+          "phaseId": "A-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773750006458,
+        "data": {
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_accept",
+        "at": 1773750023098,
+        "data": {
+          "acceptId": "accept_mmukyt2y_ekhbsd",
+          "payloadId": "ai_mmukxwyf_ctudlw",
+          "requestId": "req_mmukxpvx_0ufijm",
+          "phaseId": "A-P2",
+          "usableUnits": 38,
+          "activeBlockAligned": false
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750036375,
+        "data": {
+          "requestId": "req_mmukz3br_druwun",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750048888,
+        "data": {
+          "requestId": "req_mmukz3br_druwun",
+          "promptTokens": 5312,
+          "completionTokens": 288,
+          "totalTokens": 5600,
+          "activeBlockIds": [
+            "block_ffd32bbf",
+            "block_255dc389"
+          ],
+          "planTargetBlockIds": [
+            "block_255dc389",
+            "block_ffd32bbf"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750048892,
+        "data": {
+          "payloadId": "ai_mmukzczd_atfelq",
+          "requestId": "req_mmukz3br_druwun",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750053783,
+        "data": {
+          "payloadId": "ai_mmukzczd_atfelq",
+          "requestId": "req_mmukz3br_druwun",
+          "phaseId": "A-P3",
+          "reason": "canvas_mutation"
+        }
+      },
+      {
+        "type": "ai_request_sent",
+        "at": 1773750069049,
+        "data": {
+          "requestId": "req_mmukzsjd_rkw0k3",
+          "phaseId": "A-P3",
+          "requestMode": "full",
+          "sessionId": "sess_1773748228_7tfctg"
+        }
+      },
+      {
+        "type": "ai_request_completed",
+        "at": 1773750077126,
+        "data": {
+          "requestId": "req_mmukzsjd_rkw0k3",
+          "promptTokens": 3462,
+          "completionTokens": 335,
+          "totalTokens": 3797,
+          "activeBlockIds": [
+            "block_ffd32bbf",
+            "block_255dc389"
+          ],
+          "planTargetBlockIds": [
+            "block_ffd32bbf"
+          ]
+        }
+      },
+      {
+        "type": "ai_preview",
+        "at": 1773750077129,
+        "data": {
+          "payloadId": "ai_mmukzyrq_por5gq",
+          "requestId": "req_mmukzsjd_rkw0k3",
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "ai_dismiss",
+        "at": 1773750100642,
+        "data": {
+          "payloadId": "ai_mmukzyrq_por5gq",
+          "requestId": "req_mmukzsjd_rkw0k3",
+          "phaseId": "A-P3",
+          "reason": "manual"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773750116651
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 41,
+    "previewCount": 41,
+    "acceptCount": 15,
+    "dismissCount": 20,
+    "completedRoundCount": 41,
+    "totalPromptTokens": 174239,
+    "acceptedUsableUnits": 304,
+    "acceptedTextChars": 5773,
+    "changedTextChars": 3574,
+    "suggestionAcceptanceRate": 0.36585365853658536,
+    "dismissRate": 0.4878048780487805,
+    "straightUseRate": 0,
+    "userChangedRate": 0.6190888619435302,
+    "promptTokensPerRound": 4249.731707317073,
+    "acceptedUsableContentPer1kTokens": 1.7447299399101235,
+    "activeBlockAlignmentRate": 0.4,
+    "phaseSpecificEfficiency": [
+      {
+        "phaseId": "A-P1",
+        "invoke": 38,
+        "straightUseRate": 0,
+        "acceptedOutputPer1kToken": 1.656123922896847,
+        "promptTokens": 160616,
+        "acceptedUsableUnits": 266,
+        "acceptedCount": 14
+      },
+      {
+        "phaseId": "A-P2",
+        "invoke": 1,
+        "straightUseRate": 0,
+        "acceptedOutputPer1kToken": 7.836667354093628,
+        "promptTokens": 4849,
+        "acceptedUsableUnits": 38,
+        "acceptedCount": 1
+      },
+      {
+        "phaseId": "A-P3",
+        "invoke": 2,
+        "straightUseRate": null,
+        "acceptedOutputPer1kToken": 0,
+        "promptTokens": 8774,
+        "acceptedUsableUnits": 0,
+        "acceptedCount": 0
+      }
+    ],
+    "acceptedSuggestions": [
+      {
+        "payloadId": "ai_mmuk5umd_t2p1v9",
+        "requestId": "req_mmuk5ne0_snoboa",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "wolff_law_diagram_1",
+          "trabecular_bone_diagram",
+          "trabecular_bone_label"
+        ],
+        "userChangeTrackedShapeIds": [
+          "wolff_law_diagram_1",
+          "trabecular_bone_label"
+        ],
+        "baselineShapes": {
+          "wolff_law_diagram_1": {
+            "id": "wolff_law_diagram_1",
+            "kind": "text",
+            "bbox": [
+              600,
+              100,
+              992.01171875,
+              192.12234375000003
+            ],
+            "text": "Wolff's Law: Bone adapts to stress",
+            "summary": "Title for Wolff's Law explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "trabecular_bone_diagram": {
+            "id": "trabecular_bone_diagram",
+            "kind": "pen",
+            "bbox": [
+              650,
+              250,
+              1050,
+              350
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 5,
+            "sampledPoints": [
+              [
+                650,
+                250
+              ],
+              [
+                750,
+                350
+              ],
+              [
+                850,
+                250
+              ],
+              [
+                950,
+                350
+              ],
+              [
+                1050,
+                250
+              ]
+            ]
+          },
+          "trabecular_bone_label": {
+            "id": "trabecular_bone_label",
+            "kind": "text",
+            "bbox": [
+              600,
+              400,
+              1100,
+              512.56
+            ],
+            "text": "Trabecular bone forms a lattice structure that aligns along stress lines, optimizing strength and reducing weight.",
+            "summary": "Explanation of trabecular bone adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 9,
+        "targetBBox": [
+          600,
+          100,
+          1100,
+          512.56
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_3dad4887"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk6c2r_xmpmhx",
+        "acceptedAt": 1773748694691,
+        "maxPostAcceptEdit": 0.5185643518651609,
+        "maxChangedTextChars": 114,
+        "changedEver": true,
+        "postAcceptEdit": 0.5185643518651609,
+        "acceptedTextChars": 148,
+        "changedTextChars": 114,
+        "changedTextRatio": 0.7702702702702703,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuk6pz7_97a810",
+        "requestId": "req_mmuk6idr_1z0d7y",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "bone_adaptation_heading",
+          "stress_diagram",
+          "stress_implications_text"
+        ],
+        "userChangeTrackedShapeIds": [
+          "bone_adaptation_heading",
+          "stress_implications_text"
+        ],
+        "baselineShapes": {
+          "bone_adaptation_heading": {
+            "id": "bone_adaptation_heading",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1090.0390625,
+              292.12625
+            ],
+            "text": "Adaptation of Trabecular Bone to Stress",
+            "summary": "Heading for expanded explanation",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "stress_diagram": {
+            "id": "stress_diagram",
+            "kind": "pen",
+            "bbox": [
+              500,
+              260,
+              800,
+              340
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 3,
+            "sampledPoints": [
+              [
+                500,
+                300
+              ],
+              [
+                600,
+                340
+              ],
+              [
+                800,
+                260
+              ]
+            ]
+          },
+          "stress_implications_text": {
+            "id": "stress_implications_text",
+            "kind": "text",
+            "bbox": [
+              600,
+              320,
+              1100,
+              634.16
+            ],
+            "text": "Trabecular bone adapts dynamically to stress by remodeling its lattice structure. This process enhances mechanical efficiency, making bones strong yet lightweight. Implications include: - Improved understanding of osteoporosis and fracture risks. - Applications in biomimetic engineering for lightweight, stress-adaptive materials.",
+            "summary": "Implications of trabecular adaptation",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 20,
+        "targetBBox": [
+          500,
+          200,
+          1100,
+          634.16
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk6s0z_g5ohcp",
+        "acceptedAt": 1773748715363,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 370,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 370,
+        "changedTextChars": 370,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuk8ej5_awtpl7",
+        "requestId": "req_mmuk833u_9hhgwr",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_bio_001"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_bio_001"
+        ],
+        "baselineShapes": {
+          "text_topology_bio_001": {
+            "id": "text_topology_bio_001",
+            "kind": "text",
+            "bbox": [
+              600,
+              1024,
+              1084.61328125,
+              1405.384241875
+            ],
+            "text": "Biological Analogy: Wolff's Law and Bone Adaptation Topology Optimization mirrors the principles of Wolff's Law, which states that bones adapt to the loads placed on them by changing their internal structure. Similarly, TO algorithms \"adapt\" the material distribution to efficiently support applied forces, creating structures that resemble the trabecular patterns found in bones.",
+            "summary": "Topology Optimization linked to Wolff's Law and bone adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 19,
+        "targetBBox": [
+          600,
+          1024,
+          1084.61328125,
+          1405.384241875
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "group_61ccc5d4"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuk8h8v_4nd2wt",
+        "acceptedAt": 1773748794703,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 380,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 380,
+        "changedTextChars": 380,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukai6v_xpwxt2",
+        "requestId": "req_mmukabri_wq7tue",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_adaptation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_adaptation"
+        ],
+        "baselineShapes": {
+          "text_topology_adaptation": {
+            "id": "text_topology_adaptation",
+            "kind": "text",
+            "bbox": [
+              600,
+              550,
+              1100,
+              763.3599999999999
+            ],
+            "text": "Topology optimization algorithms mimic Wolff's Law by iteratively redistributing material in a structure to align with stress paths. This process creates efficient, lightweight designs that resemble the trabecular bone's adaptive lattice.",
+            "summary": "Topology optimization mimics bone adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 12,
+        "targetBBox": [
+          600,
+          550,
+          1100,
+          763.3599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukaijj_fa3nnl",
+        "acceptedAt": 1773748889695,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 238,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 238,
+        "changedTextChars": 238,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukazwt_hc9sjd",
+        "requestId": "req_mmukap9t_ac6w8s",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_engineering_application"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_engineering_application"
+        ],
+        "baselineShapes": {
+          "text_engineering_application": {
+            "id": "text_engineering_application",
+            "kind": "text",
+            "bbox": [
+              1200,
+              700,
+              1700,
+              946.9599999999999
+            ],
+            "text": "In engineering, topology optimization is applied to design lightweight yet strong components, such as aircraft wings, bridges, and automotive parts. By mimicking natural adaptation principles, these algorithms reduce material usage while maintaining structural integrity.",
+            "summary": "Engineering applications of topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 14,
+        "targetBBox": [
+          1200,
+          700,
+          1700,
+          946.9599999999999
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukb3e9_uhqvk6",
+        "acceptedAt": 1773748916721,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 271,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 271,
+        "changedTextChars": 271,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukbkrg_t9mctk",
+        "requestId": "req_mmukbbk6_1898hi",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "title_topology_wolff",
+          "text_comparison_topology",
+          "diagram_topology_wolff",
+          "text_diagram_label"
+        ],
+        "userChangeTrackedShapeIds": [
+          "title_topology_wolff",
+          "text_comparison_topology",
+          "text_diagram_label"
+        ],
+        "baselineShapes": {
+          "title_topology_wolff": {
+            "id": "title_topology_wolff",
+            "kind": "text",
+            "bbox": [
+              100,
+              50,
+              492.01171875000006,
+              142.12234375000003
+            ],
+            "text": "Comparison: Topology Optimization vs Wolff's Law",
+            "summary": "Title for comparison of engineering and biological adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_comparison_topology": {
+            "id": "text_comparison_topology",
+            "kind": "text",
+            "bbox": [
+              100,
+              200,
+              600,
+              446.9599999999999
+            ],
+            "text": "Topology optimization in engineering iteratively redistributes material to align with stress paths, achieving lightweight and efficient designs. Wolff's Law describes how bones adapt by remodeling trabecular structures along stress lines, optimizing strength and minimizing weight.",
+            "summary": "Parallel between engineering and biological adaptation.",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "diagram_topology_wolff": {
+            "id": "diagram_topology_wolff",
+            "kind": "pen",
+            "bbox": [
+              700,
+              200,
+              900,
+              300
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 7,
+            "sampledPoints": [
+              [
+                700,
+                250
+              ],
+              [
+                750,
+                300
+              ],
+              [
+                850,
+                300
+              ],
+              [
+                900,
+                250
+              ],
+              [
+                850,
+                200
+              ],
+              [
+                750,
+                200
+              ],
+              [
+                700,
+                250
+              ]
+            ]
+          },
+          "text_diagram_label": {
+            "id": "text_diagram_label",
+            "kind": "text",
+            "bbox": [
+              720,
+              320,
+              880,
+              429.62
+            ],
+            "text": "Stress alignment in engineering (left) and bone adaptation (right).",
+            "summary": "Label for explanatory diagram.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          100,
+          50,
+          900,
+          446.9599999999999
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukbn3o_6f1xjr",
+        "acceptedAt": 1773748942260,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 396,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 396,
+        "changedTextChars": 396,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukc3g0_vt1u25",
+        "requestId": "req_mmukbwgb_xmgo3d",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "diagram_topology_vs_wolff",
+          "diagram_labels"
+        ],
+        "userChangeTrackedShapeIds": [
+          "diagram_labels"
+        ],
+        "baselineShapes": {
+          "diagram_topology_vs_wolff": {
+            "id": "diagram_topology_vs_wolff",
+            "kind": "pen",
+            "bbox": [
+              300,
+              200,
+              600,
+              300
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 4,
+            "sampledPoints": [
+              [
+                300,
+                200
+              ],
+              [
+                400,
+                300
+              ],
+              [
+                500,
+                200
+              ],
+              [
+                600,
+                300
+              ]
+            ]
+          },
+          "diagram_labels": {
+            "id": "diagram_labels",
+            "kind": "text",
+            "bbox": [
+              310,
+              310,
+              510,
+              394.41999999999996
+            ],
+            "text": "Stress lines guide adaptation in both cases.",
+            "summary": "Shared principle of stress alignment.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 4,
+        "targetBBox": [
+          300,
+          200,
+          600,
+          394.41999999999996
+        ],
+        "activeBlockIds": [
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukcbyr_fkfk3x",
+        "acceptedAt": 1773748974483,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 44,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 44,
+        "changedTextChars": 44,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukhmri_ien7zo",
+        "requestId": "req_mmukhhkt_p018dn",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_anisotropic_explanation"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_anisotropic_explanation"
+        ],
+        "baselineShapes": {
+          "text_anisotropic_explanation": {
+            "id": "text_anisotropic_explanation",
+            "kind": "text",
+            "bbox": [
+              700,
+              1500,
+              1200,
+              1881.36
+            ],
+            "text": "Anisotropic properties of trabecular bone ensure that it is optimized for mechanical efficiency. By aligning trabeculae along the primary stress directions, the bone achieves maximum strength where it is most needed while minimizing material usage. This directional strength allows bones to withstand high loads during activities like walking or jumping, while maintaining a lightweight structure that reduces energy expenditure during movement.",
+            "summary": "How anisotropy enhances bone strength and efficiency.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          700,
+          1500,
+          1200,
+          1881.36
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukhpfc_rdzy0a",
+        "acceptedAt": 1773749225208,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 445,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 445,
+        "changedTextChars": 445,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukisvx_dk7oiv",
+        "requestId": "req_mmukiljx_q40hci",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_comparison_title",
+          "text_comparison_body"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_comparison_title",
+          "text_comparison_body"
+        ],
+        "baselineShapes": {
+          "text_comparison_title": {
+            "id": "text_comparison_title",
+            "kind": "text",
+            "bbox": [
+              1100,
+              200,
+              1492.01171875,
+              292.12234375
+            ],
+            "text": "Comparison: Wolff's Law vs. Topology Optimization",
+            "summary": "Title for comparison block",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "text_comparison_body": {
+            "id": "text_comparison_body",
+            "kind": "text",
+            "bbox": [
+              1100,
+              320,
+              1600,
+              667.76
+            ],
+            "text": "Wolff's Law describes how bones adapt to mechanical stress by remodeling their internal structure, aligning trabeculae along stress lines. Topology optimization in engineering similarly redistributes material to align with stress paths, creating efficient, lightweight designs. Both processes exemplify adaptation to functional demands, though one is biological and the other computational.",
+            "summary": "Comparison between Wolff's Law and topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 23,
+        "targetBBox": [
+          1100,
+          200,
+          1600,
+          667.76
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukjbdl_awuwcl",
+        "acceptedAt": 1773749300313,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 439,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 439,
+        "changedTextChars": 439,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuklxc3_dcgyt6",
+        "requestId": "req_mmukls2k_d072je",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_topology_wolffs_law_comparison"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_topology_wolffs_law_comparison"
+        ],
+        "baselineShapes": {
+          "text_topology_wolffs_law_comparison": {
+            "id": "text_topology_wolffs_law_comparison",
+            "kind": "text",
+            "bbox": [
+              600,
+              700,
+              1100,
+              1114.96
+            ],
+            "text": "Topology optimization in engineering mirrors Wolff's Law in biology by seeking to distribute material efficiently in response to applied forces. Both principles aim to achieve structural efficiency: in engineering, this involves minimizing material usage while maintaining strength, and in biology, it ensures bones adapt to mechanical stress to remain strong yet lightweight. This comparison highlights the convergence of natural and engineered systems in solving similar challenges of strength and economy.",
+            "summary": "Comparison of topology optimization and Wolff's Law.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 26,
+        "targetBBox": [
+          600,
+          700,
+          1100,
+          1114.96
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukm0hz_r5wu7j",
+        "acceptedAt": 1773749426183,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 508,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 508,
+        "changedTextChars": 508,
+        "changedTextRatio": 1,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukme39_u42dqs",
+        "requestId": "req_mmukm9cl_1ipj8p",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "ai_text_wolff_law_comparison"
+        ],
+        "userChangeTrackedShapeIds": [
+          "ai_text_wolff_law_comparison"
+        ],
+        "baselineShapes": {
+          "ai_text_wolff_law_comparison": {
+            "id": "ai_text_wolff_law_comparison",
+            "kind": "text",
+            "bbox": [
+              600,
+              250,
+              1100,
+              631.3599999999999
+            ],
+            "text": "Wolff's Law demonstrates how bones adapt to mechanical stress by remodeling and aligning their structure to optimize strength and efficiency. This principle parallels engineering techniques like topology optimization, where material is strategically distributed to handle stress while minimizing weight. Both systems highlight the balance between structural integrity and resource efficiency, offering insights into nature-inspired design.",
+            "summary": "Comparison of Wolff's Law and engineering optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 22,
+        "targetBBox": [
+          600,
+          250,
+          1100,
+          631.3599999999999
+        ],
+        "activeBlockIds": [
+          "group_2e496906",
+          "block_c9eaa98c",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmukmu4k_6d2wxe",
+        "acceptedAt": 1773749464580,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 439,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuknaej_evnon1",
+        "requestId": "req_mmukmylh_g8564w",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "explore_parallels_title",
+          "explanatory_diagram",
+          "topology_optimization_curve",
+          "comparison_text"
+        ],
+        "userChangeTrackedShapeIds": [
+          "explore_parallels_title",
+          "comparison_text"
+        ],
+        "baselineShapes": {
+          "explore_parallels_title": {
+            "id": "explore_parallels_title",
+            "kind": "text",
+            "bbox": [
+              600,
+              200,
+              1010.26953125,
+              295.77390625
+            ],
+            "text": "Parallels Between Wolff's Law and Topology Optimization",
+            "summary": "Title for exploring parallels",
+            "pointCount": 0,
+            "sampledPoints": []
+          },
+          "explanatory_diagram": {
+            "id": "explanatory_diagram",
+            "kind": "line",
+            "bbox": [
+              650,
+              350,
+              900,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                650,
+                350
+              ],
+              [
+                900,
+                600
+              ]
+            ]
+          },
+          "topology_optimization_curve": {
+            "id": "topology_optimization_curve",
+            "kind": "line",
+            "bbox": [
+              950,
+              350,
+              1200,
+              600
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 2,
+            "sampledPoints": [
+              [
+                950,
+                350
+              ],
+              [
+                1200,
+                600
+              ]
+            ]
+          },
+          "comparison_text": {
+            "id": "comparison_text",
+            "kind": "text",
+            "bbox": [
+              600,
+              650,
+              1100,
+              997.76
+            ],
+            "text": "Wolff's Law describes how bone remodels in response to mechanical stress, optimizing its structure for strength and efficiency. Similarly, topology optimization in engineering seeks to distribute material within a design space to achieve maximum performance under given constraints. Both principles emphasize efficiency, adaptability, and the strategic use of material.",
+            "summary": "Comparison of Wolff's Law and topology optimization.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 24,
+        "targetBBox": [
+          600,
+          200,
+          1200,
+          997.76
+        ],
+        "activeBlockIds": [
+          "block_c9eaa98c",
+          "group_2e496906",
+          "block_eab743c6",
+          "block_70e01422"
+        ],
+        "planTargetBlockIds": [
+          "block_70e01422",
+          "block_eab743c6"
+        ],
+        "activeBlockAligned": true,
+        "acceptId": "accept_mmuknfxx_5c5foj",
+        "acceptedAt": 1773749492853,
+        "maxPostAcceptEdit": 0.7673951820000842,
+        "maxChangedTextChars": 369,
+        "changedEver": true,
+        "postAcceptEdit": 0.7673951820000842,
+        "acceptedTextChars": 424,
+        "changedTextChars": 369,
+        "changedTextRatio": 0.8702830188679245,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmuktn26_xj3lgx",
+        "requestId": "req_mmukth78_kd4cru",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "ai_diagram_causal_chain"
+        ],
+        "userChangeTrackedShapeIds": [],
+        "baselineShapes": {
+          "ai_diagram_causal_chain": {
+            "id": "ai_diagram_causal_chain",
+            "kind": "pen",
+            "bbox": [
+              100,
+              100,
+              600,
+              400
+            ],
+            "text": "",
+            "summary": "",
+            "pointCount": 4,
+            "sampledPoints": [
+              [
+                100,
+                100
+              ],
+              [
+                200,
+                100
+              ],
+              [
+                400,
+                200
+              ],
+              [
+                600,
+                400
+              ]
+            ]
+          }
+        },
+        "usableUnits": 1,
+        "targetBBox": [
+          100,
+          100,
+          600,
+          400
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmuktps8_jm1bov",
+        "acceptedAt": 1773749785544,
+        "maxPostAcceptEdit": 1,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 1,
+        "acceptedTextChars": 0,
+        "changedTextChars": 0,
+        "changedTextRatio": null,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukuei8_lgmqcj",
+        "requestId": "req_mmuku4zm_swdwt4",
+        "phaseId": "A-P1",
+        "acceptedShapeIds": [
+          "text_causal_chain_expansion"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_causal_chain_expansion"
+        ],
+        "baselineShapes": {
+          "text_causal_chain_expansion": {
+            "id": "text_causal_chain_expansion",
+            "kind": "text",
+            "bbox": [
+              700,
+              300,
+              1200,
+              1185.36
+            ],
+            "text": "### Expanded Steps in the Causal Chain 1. **Mechanical Stress**: Forces such as weight-bearing activities or impacts create localized stress on bones. 2. **Cellular Detection**: Osteocytes embedded in the bone matrix detect mechanical stress and initiate signaling. 3. **Cellular Response**: Osteoblasts (bone-forming cells) and osteoclasts (bone-resorbing cells) are activated to remodel bone tissue. 4. **Bone Remodeling**: Continuous deposition and resorption adjust bone density and shape based on stress patterns. 5. **Microarchitecture Changes**: Over time, repeated stress influences the internal structure, optimizing strength and efficiency. 6. **Final Shape Adaptation**: Macroscopic changes in bone shape occur, enhancing functionality and load distribution. This sequence highlights the dynamic interaction between mechanical forces and biological adaptation, ensuring bones remain resilient and efficient.",
+            "summary": "Detailed causal chain from mechanical stress to bone remodeling.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 46,
+        "targetBBox": [
+          700,
+          300,
+          1200,
+          1185.36
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_51ce1ab5"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukuv3l_zp4edc",
+        "acceptedAt": 1773749839089,
+        "maxPostAcceptEdit": 0.33333333333333337,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.33333333333333337,
+        "acceptedTextChars": 918,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      },
+      {
+        "payloadId": "ai_mmukxwyf_ctudlw",
+        "requestId": "req_mmukxpvx_0ufijm",
+        "phaseId": "A-P2",
+        "acceptedShapeIds": [
+          "text_osteoblast_response_expansion"
+        ],
+        "userChangeTrackedShapeIds": [
+          "text_osteoblast_response_expansion"
+        ],
+        "baselineShapes": {
+          "text_osteoblast_response_expansion": {
+            "id": "text_osteoblast_response_expansion",
+            "kind": "text",
+            "bbox": [
+              2000,
+              -200,
+              2492.50390625,
+              501.26546874999997
+            ],
+            "text": "### Osteoblasts' Role in Bone Remodeling Osteoblasts are specialized cells responsible for bone formation. Upon receiving signals from osteocytes, they migrate to areas of mechanical stress and begin synthesizing new bone matrix. This matrix is primarily composed of collagen and other proteins, which provide the framework for mineral deposition. As osteoblasts work, they secrete enzymes and signaling molecules that regulate mineralization, ensuring the bone achieves optimal density and strength. Over time, osteoblast activity contributes to the adaptation of bone structure, aligning it with the mechanical demands placed upon it. This dynamic process is crucial for maintaining skeletal integrity and responding to changing physical environments.",
+            "summary": "Explanation of osteoblasts' role in bone remodeling.",
+            "pointCount": 0,
+            "sampledPoints": []
+          }
+        },
+        "usableUnits": 38,
+        "targetBBox": [
+          2000,
+          -200,
+          2492.50390625,
+          501.26546874999997
+        ],
+        "activeBlockIds": [],
+        "planTargetBlockIds": [
+          "block_48a5beeb"
+        ],
+        "activeBlockAligned": false,
+        "acceptId": "accept_mmukyt2y_ekhbsd",
+        "acceptedAt": 1773750023098,
+        "maxPostAcceptEdit": 0.3333333333333333,
+        "maxChangedTextChars": 0,
+        "changedEver": true,
+        "postAcceptEdit": 0.3333333333333333,
+        "acceptedTextChars": 753,
+        "changedTextChars": 0,
+        "changedTextRatio": 0,
+        "straightUse": false,
+        "userChanged": true
+      }
+    ]
+  },
+  "graphBlockCount": 3,
+  "currentShapeCount": 15,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

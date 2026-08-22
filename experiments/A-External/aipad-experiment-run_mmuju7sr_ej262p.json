@@ -1,0 +1,83 @@
+{
+  "exportedAt": "2026-03-17T12:08:20.595Z",
+  "run": {
+    "runId": "run_mmuju7sr_ej262p",
+    "startedAt": 1773748129275,
+    "endedAt": 1773749291679,
+    "initialSessionId": null,
+    "currentPhaseId": "A-P3",
+    "editThreshold": 0.2,
+    "requestRounds": [],
+    "previews": [],
+    "dismisses": [],
+    "acceptedSuggestions": [],
+    "events": [
+      {
+        "type": "experiment_started",
+        "at": 1773748129275,
+        "data": {
+          "phaseId": "A-P1",
+          "sessionId": null
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773748486753,
+        "data": {
+          "phaseId": "A-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773748487514,
+        "data": {
+          "phaseId": "A-P2"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773748933662,
+        "data": {
+          "phaseId": "A-P"
+        }
+      },
+      {
+        "type": "phase_changed",
+        "at": 1773748934039,
+        "data": {
+          "phaseId": "A-P3"
+        }
+      },
+      {
+        "type": "experiment_ended",
+        "at": 1773749291679
+      }
+    ]
+  },
+  "summary": {
+    "aiInvokeTimes": 0,
+    "previewCount": 0,
+    "acceptCount": 0,
+    "dismissCount": 0,
+    "completedRoundCount": 0,
+    "totalPromptTokens": 0,
+    "acceptedUsableUnits": 0,
+    "acceptedTextChars": 0,
+    "changedTextChars": 0,
+    "suggestionAcceptanceRate": null,
+    "dismissRate": null,
+    "straightUseRate": null,
+    "userChangedRate": null,
+    "promptTokensPerRound": null,
+    "acceptedUsableContentPer1kTokens": null,
+    "activeBlockAlignmentRate": null,
+    "phaseSpecificEfficiency": [],
+    "acceptedSuggestions": []
+  },
+  "graphBlockCount": 0,
+  "currentShapeCount": 46,
+  "config": {
+    "editThreshold": 0.2,
+    "textUnitChars": 20
+  }
+}

@@ -1,0 +1,6277 @@
+{
+  "schemaVersion": 1,
+  "sid": "sess_1773750753_vkyiqk",
+  "mode": "light_helper",
+  "initGoal": "Work as a noting assistant to draw or write.",
+  "tags": [],
+  "createdAtEpoch": 1773750753.7733097,
+  "callCount": 25,
+  "strokes": [
+    {
+      "id": "text_mmule6ld_ge97",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          96.0,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          246.08,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "red",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Digital Economics (Network Effects & Lock-in)",
+        "summary": "",
+        "role": "title",
+        "fontFamily": "sans-serif",
+        "fontWeight": "700",
+        "fontSize": 32,
+        "growDir": "right-down",
+        "baseWidth": 416,
+        "baseHeight": 128,
+        "configuredWidth": 416,
+        "configuredHeight": 128,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 416,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 3,
+        "renderedText": "Digital Economics\n(Network Effects &\nLock-in)"
+      }
+    },
+    {
+      "id": "ai_text_002",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          270.0,
+          null,
+          null
+        ],
+        [
+          1125.43,
+          380.945,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Key concepts:\n- Positive feedback loops in networks\n- User lock-in through high switching costs\n- Value increases with user base (Metcalfe's Law)",
+        "summary": "Key concepts of digital economics",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 416,
+        "configuredHeight": 120,
+        "baseWidth": 416,
+        "baseHeight": 120,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 357.42559814453125,
+        "contentHeight": 89.6,
+        "lineCount": 4,
+        "renderedText": "Key concepts:\n- Positive feedback loops in networks\n- User lock-in through high switching costs\n- Value increases with user base (Metcalfe's Law)",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_mmulfeto_8gi7",
+      "tool": "text",
+      "points": [
+        [
+          224.0,
+          256.0,
+          null,
+          null
+        ],
+        [
+          608.0,
+          334.96,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Title: The Dynamics of Platform Ecosystems",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 384,
+        "baseHeight": 64,
+        "configuredWidth": 384,
+        "configuredHeight": 64,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 384,
+        "contentHeight": 67.19999999999999,
+        "lineCount": 2,
+        "renderedText": "Title: The Dynamics of Platform\nEcosystems"
+      }
+    },
+    {
+      "id": "ai_text_003",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          400.0,
+          null,
+          null
+        ],
+        [
+          1118.379,
+          517.333,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Examples:\n- Social media platforms (Facebook, Instagram)\n- E-commerce marketplaces (Amazon, eBay)\n- Operating systems (Windows, Android)",
+        "summary": "Examples of platforms with network effects",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 384,
+        "configuredHeight": 120,
+        "baseWidth": 384,
+        "baseHeight": 120,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 350.32373046875,
+        "contentHeight": 89.6,
+        "lineCount": 4,
+        "renderedText": "Examples:\n- Social media platforms (Facebook, Instagram)\n- E-commerce marketplaces (Amazon, eBay)\n- Operating systems (Windows, Android)",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_004",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          540.0,
+          null,
+          null
+        ],
+        [
+          1130.0,
+          659.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Challenges:\n- Overcoming initial adoption barriers\n- Balancing openness vs. control\n- Managing competitive pressures in winner-takes-all markets",
+        "summary": "Challenges in digital economics",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 362,
+        "configuredHeight": 110,
+        "baseWidth": 362,
+        "baseHeight": 110,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 362,
+        "contentHeight": 112,
+        "lineCount": 5,
+        "renderedText": "Challenges:\n- Overcoming initial adoption barriers\n- Balancing openness vs. control\n- Managing competitive pressures in\nwinner-takes-all markets",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_mmulh5o9_g9oz",
+      "tool": "text",
+      "points": [
+        [
+          1344.0,
+          192.0,
+          null,
+          null
+        ],
+        [
+          1637.035,
+          291.671,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Core Concept: Network Effects (Metcalfe’s Law)",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 320,
+        "baseHeight": 96,
+        "configuredWidth": 320,
+        "configuredHeight": 96,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 293.03515625,
+        "contentHeight": 67.19999999999999,
+        "lineCount": 2,
+        "renderedText": "Core Concept: Network\nEffects (Metcalfe’s Law)"
+      }
+    },
+    {
+      "id": "ai_text_005",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          680.0,
+          null,
+          null
+        ],
+        [
+          1130.0,
+          822.24,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Opportunities:\n- Leveraging data for personalization\n- Creating ecosystems with complementary products\n- Encouraging user-generated content to enhance value",
+        "summary": "Opportunities in digital economics",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 362,
+        "configuredHeight": 110,
+        "baseWidth": 362,
+        "baseHeight": 110,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 362,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 6,
+        "renderedText": "Opportunities:\n- Leveraging data for personalization\n- Creating ecosystems with complementary\nproducts\n- Encouraging user-generated content to\nenhance value",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_006",
+      "tool": "text",
+      "points": [
+        [
+          1344.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1619.716,
+          459.565,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Implications of Network Effects:\n- Accelerated growth for early movers\n- Risk of monopolistic tendencies\n- Challenges in maintaining user trust and engagement",
+        "summary": "Implications of network effects",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 293.0350000000001,
+        "configuredHeight": 140,
+        "baseWidth": 293.0350000000001,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 275.7155041503907,
+        "contentHeight": 112,
+        "lineCount": 5,
+        "renderedText": "Implications of Network Effects:\n- Accelerated growth for early movers\n- Risk of monopolistic tendencies\n- Challenges in maintaining user\ntrust and engagement",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_007",
+      "tool": "text",
+      "points": [
+        [
+          1344.0,
+          480.0,
+          null,
+          null
+        ],
+        [
+          1611.45,
+          623.643,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Strategies for Success:\n- Focus on user experience and trust\n- Build scalable infrastructure for growth\n- Foster partnerships to expand ecosystem",
+        "summary": "Strategies for success in digital economics",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 275.7159999999999,
+        "configuredHeight": 140,
+        "baseWidth": 275.7159999999999,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 267.44967480468745,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 6,
+        "renderedText": "Strategies for Success:\n- Focus on user experience and trust\n- Build scalable infrastructure for\ngrowth\n- Foster partnerships to expand\necosystem",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "text_mmuligmi_lty9",
+      "tool": "text",
+      "points": [
+        [
+          -213.307,
+          353.7,
+          null,
+          null
+        ],
+        [
+          394.693,
+          690.12,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "A network effect occurs when a product or service becomes more valuable to its users as more people use it. Direct Network Effects occur when an increase in usage leads to a direct increase in value for other users (e.g., a social network). Indirect Network Effects occur when more users attract more \"complementary\" goods or third-party developers (e.g., more gamers attracting more game developers to a console), which in turn increases the value for the users.\nThe Lock-in Mechanism\nAs a platform grows, it creates Switching Costs. These aren't just financial; they include Data Lock-in (all your photos and history are there) and Search Costs (learning a new interface). High switching costs lead to \"Lock-in,\" making it difficult for a superior technical competitor to unseat an incumbent.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 608,
+        "baseHeight": 320,
+        "configuredWidth": 608,
+        "configuredHeight": 320,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 608,
+        "contentHeight": 327.59999999999997,
+        "lineCount": 13,
+        "renderedText": "A network effect occurs when a product or service becomes more\nvaluable to its users as more people use it. Direct Network Effects occur\nwhen an increase in usage leads to a direct increase in value for other\nusers (e.g., a social network). Indirect Network Effects occur when more\nusers attract more \"complementary\" goods or third-party developers\n(e.g., more gamers attracting more game developers to a console), which\nin turn increases the value for the users.\nThe Lock-in Mechanism\nAs a platform grows, it creates Switching Costs. These aren't just\nfinancial; they include Data Lock-in (all your photos and history are\nthere) and Search Costs (learning a new interface). High switching costs\nlead to \"Lock-in,\" making it difficult for a superior technical competitor\nto unseat an incumbent."
+      }
+    },
+    {
+      "id": "ai_text_008",
+      "tool": "text",
+      "points": [
+        [
+          1344.0,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1619.716,
+          804.64,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Future Trends:\n- Integration of AI in platform ecosystems\n- Expansion of decentralized networks\n- Enhanced focus on data privacy and security",
+        "summary": "Future trends in digital economics",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 275.7159999999999,
+        "configuredHeight": 110,
+        "baseWidth": 275.7159999999999,
+        "baseHeight": 110,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 275.7159999999999,
+        "contentHeight": 156.79999999999998,
+        "lineCount": 7,
+        "renderedText": "Future Trends:\n- Integration of AI in platform\necosystems\n- Expansion of decentralized\nnetworks\n- Enhanced focus on data privacy\nand security",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_009",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          740.0,
+          null,
+          null
+        ],
+        [
+          643.262,
+          874.834,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Conclusion:\nUnderstanding network effects and lock-in mechanisms is crucial for navigating digital economics. Platforms thrive by leveraging user growth, managing challenges, and seizing opportunities to create sustainable ecosystems.",
+        "summary": "Conclusion on network effects and lock-in.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 547.2623437499999,
+        "contentHeight": 126,
+        "lineCount": 5,
+        "renderedText": "Conclusion:\nUnderstanding network effects and lock-in mechanisms is crucial\nfor navigating digital economics. Platforms thrive by leveraging\nuser growth, managing challenges, and seizing opportunities to\ncreate sustainable ecosystems.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "ai_text_010",
+      "tool": "text",
+      "points": [
+        [
+          1344.0,
+          840.0,
+          null,
+          null
+        ],
+        [
+          1619.716,
+          959.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Key Takeaway:\nPlatforms leveraging network effects must balance growth with user trust and innovation to ensure long-term success.",
+        "summary": "Key takeaway on platforms and network effects.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 275.7159999999999,
+        "configuredHeight": 110,
+        "baseWidth": 275.7159999999999,
+        "baseHeight": 110,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 275.7159999999999,
+        "contentHeight": 112,
+        "lineCount": 5,
+        "renderedText": "Key Takeaway:\nPlatforms leveraging network effects\nmust balance growth with user trust\nand innovation to ensure long-term\nsuccess.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_poly_001",
+      "tool": "poly",
+      "points": [
+        [
+          400.0,
+          400.0,
+          null,
+          null
+        ],
+        [
+          600.0,
+          400.0,
+          null,
+          null
+        ],
+        [
+          700.0,
+          600.0,
+          null,
+          null
+        ],
+        [
+          500.0,
+          600.0,
+          null,
+          null
+        ],
+        [
+          400.0,
+          400.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 0.8
+      },
+      "meta": {
+        "author": "ai",
+        "desc": "Flywheel cycle showing Users, Developers, and Content"
+      }
+    },
+    {
+      "id": "ai_text_001",
+      "tool": "text",
+      "points": [
+        [
+          420.0,
+          380.0,
+          null,
+          null
+        ],
+        [
+          500.0,
+          427.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Users",
+        "summary": "Users in flywheel",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "configuredWidth": 60,
+        "configuredHeight": 40,
+        "baseWidth": 80,
+        "baseHeight": 40,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 80,
+        "contentHeight": 22.4,
+        "lineCount": 1,
+        "renderedText": "Users",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_002",
+      "tool": "text",
+      "points": [
+        [
+          680.0,
+          580.0,
+          null,
+          null
+        ],
+        [
+          760.0,
+          632.64,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Developers",
+        "summary": "Developers in flywheel",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "configuredWidth": 60,
+        "configuredHeight": 40,
+        "baseWidth": 80,
+        "baseHeight": 40,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 88.20370483398438,
+        "contentHeight": 44.8,
+        "lineCount": 2,
+        "renderedText": "Develope\nrs",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_003",
+      "tool": "text",
+      "points": [
+        [
+          480.0,
+          620.0,
+          null,
+          null
+        ],
+        [
+          560.0,
+          667.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Content",
+        "summary": "Content in flywheel",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 16,
+        "role": "body",
+        "growDir": "right-down",
+        "configuredWidth": 60,
+        "configuredHeight": 40,
+        "baseWidth": 80,
+        "baseHeight": 40,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 80,
+        "contentHeight": 22.4,
+        "lineCount": 1,
+        "renderedText": "Content",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_011",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          860.0,
+          null,
+          null
+        ],
+        [
+          1130.0,
+          1091.84,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "**Financial Switching Costs**: These are tangible costs incurred when switching platforms, such as subscription fees, cancellation penalties, or the cost of purchasing a new product/service.\n\n**Psychological/Data Switching Costs**: These are intangible costs, including emotional attachment, learning a new interface, or losing access to stored data and history. They often create a deeper sense of user lock-in.",
+        "summary": "Differences between financial and psychological/data switching costs.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 16,
+        "growDir": "right-down",
+        "configuredWidth": 362,
+        "configuredHeight": 150,
+        "baseWidth": 362,
+        "baseHeight": 150,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 362,
+        "contentHeight": 224,
+        "lineCount": 10,
+        "renderedText": "Financial Switching Costs: These are tangible\ncosts incurred when switching platforms, such\nas subscription fees, cancellation penalties, or\nthe cost of purchasing a new product/service.\n\nPsychological/Data Switching Costs: These are\nintangible costs, including emotional\nattachment, learning a new interface, or losing\naccess to stored data and history. They often\ncreate a deeper sense of user lock-in.",
+        "heightPadding": 7.839999999999999
+      }
+    },
+    {
+      "id": "ai_text_012",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          900.0,
+          null,
+          null
+        ],
+        [
+          643.262,
+          1034.834,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Actionable Insight:\nTo succeed in digital ecosystems, businesses should prioritize creating value for users, fostering strong network effects, and minimizing switching costs to ensure long-term user retention and competitive advantage.",
+        "summary": "Actionable insight for digital ecosystems.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 547.2623437499999,
+        "contentHeight": 126,
+        "lineCount": 5,
+        "renderedText": "Actionable Insight:\nTo succeed in digital ecosystems, businesses should prioritize\ncreating value for users, fostering strong network effects, and\nminimizing switching costs to ensure long-term user retention\nand competitive advantage.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "ai_text_013",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          1100.0,
+          null,
+          null
+        ],
+        [
+          643.262,
+          1234.834,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Practical Advice:\nFocus on creating a seamless user experience and invest in tools that reduce switching costs. Encourage user engagement and foster an ecosystem where users, developers, and content creators thrive together.",
+        "summary": "Practical advice for platforms.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 547.2623437499999,
+        "contentHeight": 126,
+        "lineCount": 5,
+        "renderedText": "Practical Advice:\nFocus on creating a seamless user experience and invest in tools\nthat reduce switching costs. Encourage user engagement and\nfoster an ecosystem where users, developers, and content\ncreators thrive together.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "ai_text_014",
+      "tool": "text",
+      "points": [
+        [
+          766.1,
+          1154.305,
+          null,
+          null
+        ],
+        [
+          1374.1,
+          1339.525,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Categorization of Apps:\n1. **WhatsApp**: Relies more on Direct Network Effects (value increases as more users join).\n2. **Adobe Creative Cloud**: Relies on Indirect Network Effects (value grows with complementary tools and plugins).\n3. **Amazon**: Combines both Direct (user reviews, marketplace activity) and Indirect (third-party sellers, product diversity) effects.",
+        "summary": "Categorization of apps by network effects.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 608,
+        "contentHeight": 176.4,
+        "lineCount": 7,
+        "renderedText": "Categorization of Apps:\n1. WhatsApp: Relies more on Direct Network Effects (value increases as\nmore users join).\n2. Adobe Creative Cloud: Relies on Indirect Network Effects (value grows\nwith complementary tools and plugins).\n3. Amazon: Combines both Direct (user reviews, marketplace activity)\nand Indirect (third-party sellers, product diversity) effects.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "pen_mmulo44j_ydxv",
+      "tool": "pen",
+      "points": [
+        [
+          672.0,
+          864.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          867.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          870.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          873.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          876.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          879.0,
+          null,
+          null
+        ],
+        [
+          672.0,
+          882.0,
+          null,
+          null
+        ],
+        [
+          672.316,
+          884.949,
+          null,
+          null
+        ],
+        [
+          673.265,
+          887.795,
+          null,
+          null
+        ],
+        [
+          674.478,
+          890.478,
+          null,
+          null
+        ],
+        [
+          676.599,
+          892.599,
+          null,
+          null
+        ],
+        [
+          678.966,
+          894.322,
+          null,
+          null
+        ],
+        [
+          681.812,
+          895.271,
+          null,
+          null
+        ],
+        [
+          684.694,
+          896.0,
+          null,
+          null
+        ],
+        [
+          687.694,
+          896.0,
+          null,
+          null
+        ],
+        [
+          690.694,
+          896.0,
+          null,
+          null
+        ],
+        [
+          692.487,
+          897.623,
+          null,
+          null
+        ],
+        [
+          693.349,
+          900.496,
+          null,
+          null
+        ],
+        [
+          694.211,
+          903.37,
+          null,
+          null
+        ],
+        [
+          695.073,
+          906.243,
+          null,
+          null
+        ],
+        [
+          695.935,
+          909.117,
+          null,
+          null
+        ],
+        [
+          696.797,
+          911.99,
+          null,
+          null
+        ],
+        [
+          697.659,
+          914.863,
+          null,
+          null
+        ],
+        [
+          698.18,
+          917.804,
+          null,
+          null
+        ],
+        [
+          698.479,
+          920.79,
+          null,
+          null
+        ],
+        [
+          698.777,
+          923.775,
+          null,
+          null
+        ],
+        [
+          699.076,
+          926.76,
+          null,
+          null
+        ],
+        [
+          699.374,
+          929.745,
+          null,
+          null
+        ],
+        [
+          699.673,
+          932.73,
+          null,
+          null
+        ],
+        [
+          699.972,
+          935.715,
+          null,
+          null
+        ],
+        [
+          700.27,
+          938.7,
+          null,
+          null
+        ],
+        [
+          700.569,
+          941.685,
+          null,
+          null
+        ],
+        [
+          700.867,
+          944.67,
+          null,
+          null
+        ],
+        [
+          701.166,
+          947.656,
+          null,
+          null
+        ],
+        [
+          701.464,
+          950.641,
+          null,
+          null
+        ],
+        [
+          701.763,
+          953.626,
+          null,
+          null
+        ],
+        [
+          702.02,
+          956.614,
+          null,
+          null
+        ],
+        [
+          702.12,
+          959.612,
+          null,
+          null
+        ],
+        [
+          702.22,
+          962.61,
+          null,
+          null
+        ],
+        [
+          702.32,
+          965.609,
+          null,
+          null
+        ],
+        [
+          702.42,
+          968.607,
+          null,
+          null
+        ],
+        [
+          702.52,
+          971.605,
+          null,
+          null
+        ],
+        [
+          702.62,
+          974.604,
+          null,
+          null
+        ],
+        [
+          702.72,
+          977.602,
+          null,
+          null
+        ],
+        [
+          702.82,
+          980.6,
+          null,
+          null
+        ],
+        [
+          702.92,
+          983.599,
+          null,
+          null
+        ],
+        [
+          703.02,
+          986.597,
+          null,
+          null
+        ],
+        [
+          703.12,
+          989.595,
+          null,
+          null
+        ],
+        [
+          703.22,
+          992.594,
+          null,
+          null
+        ],
+        [
+          703.32,
+          995.592,
+          null,
+          null
+        ],
+        [
+          703.42,
+          998.59,
+          null,
+          null
+        ],
+        [
+          703.52,
+          1001.589,
+          null,
+          null
+        ],
+        [
+          703.62,
+          1004.587,
+          null,
+          null
+        ],
+        [
+          703.72,
+          1007.585,
+          null,
+          null
+        ],
+        [
+          703.819,
+          1010.584,
+          null,
+          null
+        ],
+        [
+          703.919,
+          1013.582,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1016.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1019.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1022.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1025.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1028.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1031.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1034.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1037.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1040.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1043.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1046.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1049.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1052.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1055.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1058.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1061.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1064.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1067.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1070.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1073.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1076.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1079.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1082.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1085.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1088.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1091.581,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1094.581,
+          null,
+          null
+        ],
+        [
+          704.053,
+          1097.58,
+          null,
+          null
+        ],
+        [
+          704.153,
+          1100.578,
+          null,
+          null
+        ],
+        [
+          704.253,
+          1103.576,
+          null,
+          null
+        ],
+        [
+          704.352,
+          1106.575,
+          null,
+          null
+        ],
+        [
+          704.452,
+          1109.573,
+          null,
+          null
+        ],
+        [
+          704.552,
+          1112.571,
+          null,
+          null
+        ],
+        [
+          704.652,
+          1115.57,
+          null,
+          null
+        ],
+        [
+          704.752,
+          1118.568,
+          null,
+          null
+        ],
+        [
+          704.852,
+          1121.566,
+          null,
+          null
+        ],
+        [
+          704.952,
+          1124.565,
+          null,
+          null
+        ],
+        [
+          705.052,
+          1127.563,
+          null,
+          null
+        ],
+        [
+          705.152,
+          1130.561,
+          null,
+          null
+        ],
+        [
+          705.252,
+          1133.56,
+          null,
+          null
+        ],
+        [
+          705.352,
+          1136.558,
+          null,
+          null
+        ],
+        [
+          705.452,
+          1139.556,
+          null,
+          null
+        ],
+        [
+          705.552,
+          1142.555,
+          null,
+          null
+        ],
+        [
+          705.652,
+          1145.553,
+          null,
+          null
+        ],
+        [
+          705.752,
+          1148.551,
+          null,
+          null
+        ],
+        [
+          705.852,
+          1151.55,
+          null,
+          null
+        ],
+        [
+          705.952,
+          1154.548,
+          null,
+          null
+        ],
+        [
+          706.154,
+          1157.54,
+          null,
+          null
+        ],
+        [
+          706.452,
+          1160.525,
+          null,
+          null
+        ],
+        [
+          706.751,
+          1163.51,
+          null,
+          null
+        ],
+        [
+          707.049,
+          1166.495,
+          null,
+          null
+        ],
+        [
+          707.348,
+          1169.48,
+          null,
+          null
+        ],
+        [
+          707.647,
+          1172.465,
+          null,
+          null
+        ],
+        [
+          707.945,
+          1175.45,
+          null,
+          null
+        ],
+        [
+          708.244,
+          1178.435,
+          null,
+          null
+        ],
+        [
+          708.542,
+          1181.42,
+          null,
+          null
+        ],
+        [
+          708.841,
+          1184.406,
+          null,
+          null
+        ],
+        [
+          709.139,
+          1187.391,
+          null,
+          null
+        ],
+        [
+          709.438,
+          1190.376,
+          null,
+          null
+        ],
+        [
+          709.736,
+          1193.361,
+          null,
+          null
+        ],
+        [
+          710.1,
+          1196.333,
+          null,
+          null
+        ],
+        [
+          710.962,
+          1199.207,
+          null,
+          null
+        ],
+        [
+          711.824,
+          1202.08,
+          null,
+          null
+        ],
+        [
+          712.686,
+          1204.954,
+          null,
+          null
+        ],
+        [
+          713.548,
+          1207.827,
+          null,
+          null
+        ],
+        [
+          714.41,
+          1210.7,
+          null,
+          null
+        ],
+        [
+          715.272,
+          1213.574,
+          null,
+          null
+        ],
+        [
+          716.467,
+          1216.0,
+          null,
+          null
+        ],
+        [
+          719.467,
+          1216.0,
+          null,
+          null
+        ],
+        [
+          722.467,
+          1216.0,
+          null,
+          null
+        ],
+        [
+          724.88,
+          1217.174,
+          null,
+          null
+        ],
+        [
+          726.68,
+          1219.574,
+          null,
+          null
+        ],
+        [
+          728.48,
+          1221.974,
+          null,
+          null
+        ],
+        [
+          730.113,
+          1224.453,
+          null,
+          null
+        ],
+        [
+          730.841,
+          1227.364,
+          null,
+          null
+        ],
+        [
+          731.569,
+          1230.274,
+          null,
+          null
+        ],
+        [
+          732.296,
+          1233.184,
+          null,
+          null
+        ],
+        [
+          733.024,
+          1236.095,
+          null,
+          null
+        ],
+        [
+          733.751,
+          1239.005,
+          null,
+          null
+        ],
+        [
+          734.164,
+          1241.968,
+          null,
+          null
+        ],
+        [
+          734.413,
+          1244.958,
+          null,
+          null
+        ],
+        [
+          734.662,
+          1247.947,
+          null,
+          null
+        ],
+        [
+          734.911,
+          1250.937,
+          null,
+          null
+        ],
+        [
+          735.161,
+          1253.926,
+          null,
+          null
+        ],
+        [
+          735.41,
+          1256.916,
+          null,
+          null
+        ],
+        [
+          735.659,
+          1259.906,
+          null,
+          null
+        ],
+        [
+          735.908,
+          1262.895,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1265.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1268.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1271.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1274.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1277.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1280.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1283.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1286.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1289.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1292.892,
+          null,
+          null
+        ],
+        [
+          736.0,
+          1295.892,
+          null,
+          null
+        ],
+        [
+          736.409,
+          1298.862,
+          null,
+          null
+        ],
+        [
+          736.833,
+          1301.832,
+          null,
+          null
+        ],
+        [
+          737.257,
+          1304.802,
+          null,
+          null
+        ],
+        [
+          737.682,
+          1307.772,
+          null,
+          null
+        ],
+        [
+          738.106,
+          1310.742,
+          null,
+          null
+        ],
+        [
+          738.53,
+          1313.712,
+          null,
+          null
+        ],
+        [
+          738.955,
+          1316.682,
+          null,
+          null
+        ],
+        [
+          739.379,
+          1319.651,
+          null,
+          null
+        ],
+        [
+          739.803,
+          1322.621,
+          null,
+          null
+        ],
+        [
+          740.508,
+          1325.525,
+          null,
+          null
+        ],
+        [
+          741.457,
+          1328.371,
+          null,
+          null
+        ],
+        [
+          742.406,
+          1331.217,
+          null,
+          null
+        ],
+        [
+          743.354,
+          1334.063,
+          null,
+          null
+        ],
+        [
+          744.303,
+          1336.909,
+          null,
+          null
+        ],
+        [
+          745.252,
+          1339.755,
+          null,
+          null
+        ],
+        [
+          746.2,
+          1342.601,
+          null,
+          null
+        ],
+        [
+          747.149,
+          1345.447,
+          null,
+          null
+        ],
+        [
+          748.159,
+          1348.265,
+          null,
+          null
+        ],
+        [
+          749.702,
+          1350.837,
+          null,
+          null
+        ],
+        [
+          751.246,
+          1353.41,
+          null,
+          null
+        ],
+        [
+          752.789,
+          1355.982,
+          null,
+          null
+        ],
+        [
+          754.333,
+          1358.555,
+          null,
+          null
+        ],
+        [
+          755.876,
+          1361.127,
+          null,
+          null
+        ],
+        [
+          757.42,
+          1363.7,
+          null,
+          null
+        ],
+        [
+          758.963,
+          1366.272,
+          null,
+          null
+        ],
+        [
+          760.697,
+          1368.697,
+          null,
+          null
+        ],
+        [
+          762.818,
+          1370.818,
+          null,
+          null
+        ],
+        [
+          764.939,
+          1372.939,
+          null,
+          null
+        ],
+        [
+          767.061,
+          1375.061,
+          null,
+          null
+        ],
+        [
+          769.182,
+          1377.182,
+          null,
+          null
+        ],
+        [
+          771.303,
+          1379.303,
+          null,
+          null
+        ],
+        [
+          773.425,
+          1381.425,
+          null,
+          null
+        ],
+        [
+          775.546,
+          1383.546,
+          null,
+          null
+        ],
+        [
+          777.534,
+          1385.79,
+          null,
+          null
+        ],
+        [
+          779.487,
+          1388.068,
+          null,
+          null
+        ],
+        [
+          781.439,
+          1390.346,
+          null,
+          null
+        ],
+        [
+          783.392,
+          1392.624,
+          null,
+          null
+        ],
+        [
+          785.344,
+          1394.901,
+          null,
+          null
+        ],
+        [
+          787.296,
+          1397.179,
+          null,
+          null
+        ],
+        [
+          789.064,
+          1399.596,
+          null,
+          null
+        ],
+        [
+          790.728,
+          1402.093,
+          null,
+          null
+        ],
+        [
+          792.393,
+          1404.589,
+          null,
+          null
+        ],
+        [
+          794.057,
+          1407.085,
+          null,
+          null
+        ],
+        [
+          795.721,
+          1409.581,
+          null,
+          null
+        ],
+        [
+          796.927,
+          1412.318,
+          null,
+          null
+        ],
+        [
+          798.041,
+          1415.103,
+          null,
+          null
+        ],
+        [
+          799.156,
+          1417.889,
+          null,
+          null
+        ],
+        [
+          800.0,
+          1420.726,
+          null,
+          null
+        ],
+        [
+          800.0,
+          1423.726,
+          null,
+          null
+        ],
+        [
+          800.0,
+          1426.726,
+          null,
+          null
+        ],
+        [
+          801.221,
+          1429.221,
+          null,
+          null
+        ],
+        [
+          803.342,
+          1431.342,
+          null,
+          null
+        ],
+        [
+          805.463,
+          1433.463,
+          null,
+          null
+        ],
+        [
+          808.126,
+          1434.709,
+          null,
+          null
+        ],
+        [
+          810.972,
+          1435.657,
+          null,
+          null
+        ],
+        [
+          813.818,
+          1436.606,
+          null,
+          null
+        ],
+        [
+          816.664,
+          1437.555,
+          null,
+          null
+        ],
+        [
+          819.582,
+          1438.176,
+          null,
+          null
+        ],
+        [
+          822.564,
+          1438.507,
+          null,
+          null
+        ],
+        [
+          825.545,
+          1438.838,
+          null,
+          null
+        ],
+        [
+          828.527,
+          1439.17,
+          null,
+          null
+        ],
+        [
+          831.509,
+          1439.501,
+          null,
+          null
+        ],
+        [
+          834.49,
+          1439.832,
+          null,
+          null
+        ],
+        [
+          837.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          840.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          843.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          846.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          849.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          852.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          855.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          858.481,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          861.475,
+          1440.134,
+          null,
+          null
+        ],
+        [
+          864.463,
+          1440.406,
+          null,
+          null
+        ],
+        [
+          867.45,
+          1440.677,
+          null,
+          null
+        ],
+        [
+          870.438,
+          1440.949,
+          null,
+          null
+        ],
+        [
+          873.426,
+          1441.221,
+          null,
+          null
+        ],
+        [
+          876.413,
+          1441.492,
+          null,
+          null
+        ],
+        [
+          879.401,
+          1441.764,
+          null,
+          null
+        ],
+        [
+          882.383,
+          1442.077,
+          null,
+          null
+        ],
+        [
+          885.324,
+          1442.665,
+          null,
+          null
+        ],
+        [
+          888.266,
+          1443.253,
+          null,
+          null
+        ],
+        [
+          891.208,
+          1443.842,
+          null,
+          null
+        ],
+        [
+          894.15,
+          1444.43,
+          null,
+          null
+        ],
+        [
+          897.091,
+          1445.018,
+          null,
+          null
+        ],
+        [
+          900.033,
+          1445.607,
+          null,
+          null
+        ],
+        [
+          902.943,
+          1446.314,
+          null,
+          null
+        ],
+        [
+          905.789,
+          1447.263,
+          null,
+          null
+        ],
+        [
+          908.635,
+          1448.212,
+          null,
+          null
+        ],
+        [
+          911.481,
+          1449.16,
+          null,
+          null
+        ],
+        [
+          914.327,
+          1450.109,
+          null,
+          null
+        ],
+        [
+          917.173,
+          1451.058,
+          null,
+          null
+        ],
+        [
+          920.018,
+          1452.009,
+          null,
+          null
+        ],
+        [
+          922.702,
+          1453.351,
+          null,
+          null
+        ],
+        [
+          925.385,
+          1454.692,
+          null,
+          null
+        ],
+        [
+          928.068,
+          1456.034,
+          null,
+          null
+        ],
+        [
+          930.752,
+          1457.376,
+          null,
+          null
+        ],
+        [
+          933.435,
+          1458.717,
+          null,
+          null
+        ],
+        [
+          936.121,
+          1460.052,
+          null,
+          null
+        ],
+        [
+          938.879,
+          1461.234,
+          null,
+          null
+        ],
+        [
+          941.636,
+          1462.416,
+          null,
+          null
+        ],
+        [
+          944.394,
+          1463.597,
+          null,
+          null
+        ],
+        [
+          947.151,
+          1464.779,
+          null,
+          null
+        ],
+        [
+          949.909,
+          1465.961,
+          null,
+          null
+        ],
+        [
+          952.752,
+          1466.917,
+          null,
+          null
+        ],
+        [
+          955.598,
+          1467.866,
+          null,
+          null
+        ],
+        [
+          958.444,
+          1468.815,
+          null,
+          null
+        ],
+        [
+          961.29,
+          1469.763,
+          null,
+          null
+        ],
+        [
+          964.208,
+          1470.442,
+          null,
+          null
+        ],
+        [
+          967.149,
+          1471.03,
+          null,
+          null
+        ],
+        [
+          970.091,
+          1471.618,
+          null,
+          null
+        ],
+        [
+          973.053,
+          1472.0,
+          null,
+          null
+        ],
+        [
+          976.053,
+          1472.0,
+          null,
+          null
+        ],
+        [
+          979.053,
+          1472.0,
+          null,
+          null
+        ],
+        [
+          982.013,
+          1471.597,
+          null,
+          null
+        ],
+        [
+          984.955,
+          1471.009,
+          null,
+          null
+        ],
+        [
+          987.897,
+          1470.421,
+          null,
+          null
+        ],
+        [
+          990.811,
+          1469.73,
+          null,
+          null
+        ],
+        [
+          993.657,
+          1468.781,
+          null,
+          null
+        ],
+        [
+          996.504,
+          1467.832,
+          null,
+          null
+        ],
+        [
+          999.35,
+          1466.883,
+          null,
+          null
+        ],
+        [
+          1002.19,
+          1465.919,
+          null,
+          null
+        ],
+        [
+          1004.947,
+          1464.737,
+          null,
+          null
+        ],
+        [
+          1007.704,
+          1463.555,
+          null,
+          null
+        ],
+        [
+          1010.462,
+          1462.374,
+          null,
+          null
+        ],
+        [
+          1013.219,
+          1461.192,
+          null,
+          null
+        ],
+        [
+          1015.977,
+          1460.01,
+          null,
+          null
+        ],
+        [
+          1018.661,
+          1458.67,
+          null,
+          null
+        ],
+        [
+          1021.344,
+          1457.328,
+          null,
+          null
+        ],
+        [
+          1024.027,
+          1455.986,
+          null,
+          null
+        ],
+        [
+          1026.71,
+          1454.645,
+          null,
+          null
+        ],
+        [
+          1029.394,
+          1453.303,
+          null,
+          null
+        ],
+        [
+          1032.084,
+          1451.983,
+          null,
+          null
+        ],
+        [
+          1035.026,
+          1451.395,
+          null,
+          null
+        ],
+        [
+          1037.968,
+          1450.806,
+          null,
+          null
+        ],
+        [
+          1040.91,
+          1450.218,
+          null,
+          null
+        ],
+        [
+          1043.851,
+          1449.63,
+          null,
+          null
+        ],
+        [
+          1046.793,
+          1449.041,
+          null,
+          null
+        ],
+        [
+          1049.735,
+          1448.453,
+          null,
+          null
+        ],
+        [
+          1052.677,
+          1447.865,
+          null,
+          null
+        ],
+        [
+          1055.618,
+          1447.276,
+          null,
+          null
+        ],
+        [
+          1058.56,
+          1446.688,
+          null,
+          null
+        ],
+        [
+          1061.502,
+          1446.1,
+          null,
+          null
+        ],
+        [
+          1064.482,
+          1445.774,
+          null,
+          null
+        ],
+        [
+          1067.469,
+          1445.503,
+          null,
+          null
+        ],
+        [
+          1070.457,
+          1445.231,
+          null,
+          null
+        ],
+        [
+          1073.445,
+          1444.96,
+          null,
+          null
+        ],
+        [
+          1076.432,
+          1444.688,
+          null,
+          null
+        ],
+        [
+          1079.42,
+          1444.416,
+          null,
+          null
+        ],
+        [
+          1082.408,
+          1444.145,
+          null,
+          null
+        ],
+        [
+          1085.396,
+          1443.873,
+          null,
+          null
+        ],
+        [
+          1088.383,
+          1443.602,
+          null,
+          null
+        ],
+        [
+          1091.371,
+          1443.33,
+          null,
+          null
+        ],
+        [
+          1094.359,
+          1443.058,
+          null,
+          null
+        ],
+        [
+          1097.346,
+          1442.787,
+          null,
+          null
+        ],
+        [
+          1100.334,
+          1442.515,
+          null,
+          null
+        ],
+        [
+          1103.322,
+          1442.243,
+          null,
+          null
+        ],
+        [
+          1106.31,
+          1441.989,
+          null,
+          null
+        ],
+        [
+          1109.309,
+          1441.886,
+          null,
+          null
+        ],
+        [
+          1112.307,
+          1441.783,
+          null,
+          null
+        ],
+        [
+          1115.305,
+          1441.679,
+          null,
+          null
+        ],
+        [
+          1118.303,
+          1441.576,
+          null,
+          null
+        ],
+        [
+          1121.301,
+          1441.472,
+          null,
+          null
+        ],
+        [
+          1124.3,
+          1441.369,
+          null,
+          null
+        ],
+        [
+          1127.298,
+          1441.266,
+          null,
+          null
+        ],
+        [
+          1130.296,
+          1441.162,
+          null,
+          null
+        ],
+        [
+          1133.294,
+          1441.059,
+          null,
+          null
+        ],
+        [
+          1136.293,
+          1440.955,
+          null,
+          null
+        ],
+        [
+          1139.291,
+          1440.852,
+          null,
+          null
+        ],
+        [
+          1142.289,
+          1440.749,
+          null,
+          null
+        ],
+        [
+          1145.287,
+          1440.645,
+          null,
+          null
+        ],
+        [
+          1148.285,
+          1440.542,
+          null,
+          null
+        ],
+        [
+          1151.284,
+          1440.438,
+          null,
+          null
+        ],
+        [
+          1154.282,
+          1440.335,
+          null,
+          null
+        ],
+        [
+          1157.28,
+          1440.232,
+          null,
+          null
+        ],
+        [
+          1160.278,
+          1440.128,
+          null,
+          null
+        ],
+        [
+          1163.276,
+          1440.025,
+          null,
+          null
+        ],
+        [
+          1166.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1169.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1172.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1175.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1178.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1181.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1184.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1187.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1190.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1193.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1196.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1199.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1202.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1205.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1208.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1211.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1214.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1217.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1220.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1223.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1226.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1229.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1232.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1235.276,
+          1440.0,
+          null,
+          null
+        ],
+        [
+          1238.275,
+          1439.919,
+          null,
+          null
+        ],
+        [
+          1241.273,
+          1439.812,
+          null,
+          null
+        ],
+        [
+          1244.271,
+          1439.705,
+          null,
+          null
+        ],
+        [
+          1247.269,
+          1439.598,
+          null,
+          null
+        ],
+        [
+          1250.267,
+          1439.49,
+          null,
+          null
+        ],
+        [
+          1253.265,
+          1439.383,
+          null,
+          null
+        ],
+        [
+          1256.263,
+          1439.276,
+          null,
+          null
+        ],
+        [
+          1259.261,
+          1439.169,
+          null,
+          null
+        ],
+        [
+          1262.259,
+          1439.062,
+          null,
+          null
+        ],
+        [
+          1265.257,
+          1438.955,
+          null,
+          null
+        ],
+        [
+          1268.255,
+          1438.848,
+          null,
+          null
+        ],
+        [
+          1271.254,
+          1438.741,
+          null,
+          null
+        ],
+        [
+          1274.252,
+          1438.634,
+          null,
+          null
+        ],
+        [
+          1277.25,
+          1438.527,
+          null,
+          null
+        ],
+        [
+          1280.248,
+          1438.42,
+          null,
+          null
+        ],
+        [
+          1283.246,
+          1438.313,
+          null,
+          null
+        ],
+        [
+          1286.244,
+          1438.206,
+          null,
+          null
+        ],
+        [
+          1289.242,
+          1438.098,
+          null,
+          null
+        ],
+        [
+          1292.239,
+          1437.976,
+          null,
+          null
+        ],
+        [
+          1295.224,
+          1437.678,
+          null,
+          null
+        ],
+        [
+          1298.209,
+          1437.379,
+          null,
+          null
+        ],
+        [
+          1301.195,
+          1437.081,
+          null,
+          null
+        ],
+        [
+          1304.18,
+          1436.782,
+          null,
+          null
+        ],
+        [
+          1307.165,
+          1436.484,
+          null,
+          null
+        ],
+        [
+          1310.15,
+          1436.185,
+          null,
+          null
+        ],
+        [
+          1313.135,
+          1435.887,
+          null,
+          null
+        ],
+        [
+          1316.12,
+          1435.588,
+          null,
+          null
+        ],
+        [
+          1319.105,
+          1435.289,
+          null,
+          null
+        ],
+        [
+          1322.09,
+          1434.991,
+          null,
+          null
+        ],
+        [
+          1325.075,
+          1434.692,
+          null,
+          null
+        ],
+        [
+          1328.061,
+          1434.394,
+          null,
+          null
+        ],
+        [
+          1331.046,
+          1434.095,
+          null,
+          null
+        ],
+        [
+          1333.98,
+          1433.505,
+          null,
+          null
+        ],
+        [
+          1336.89,
+          1432.777,
+          null,
+          null
+        ],
+        [
+          1339.801,
+          1432.05,
+          null,
+          null
+        ],
+        [
+          1342.711,
+          1431.322,
+          null,
+          null
+        ],
+        [
+          1345.622,
+          1430.595,
+          null,
+          null
+        ],
+        [
+          1348.532,
+          1429.867,
+          null,
+          null
+        ],
+        [
+          1351.442,
+          1429.139,
+          null,
+          null
+        ],
+        [
+          1354.353,
+          1428.412,
+          null,
+          null
+        ],
+        [
+          1356.921,
+          1427.079,
+          null,
+          null
+        ],
+        [
+          1359.042,
+          1424.958,
+          null,
+          null
+        ],
+        [
+          1361.163,
+          1422.837,
+          null,
+          null
+        ],
+        [
+          1363.285,
+          1420.715,
+          null,
+          null
+        ],
+        [
+          1365.591,
+          1418.807,
+          null,
+          null
+        ],
+        [
+          1367.991,
+          1417.007,
+          null,
+          null
+        ],
+        [
+          1370.391,
+          1415.207,
+          null,
+          null
+        ],
+        [
+          1372.884,
+          1413.558,
+          null,
+          null
+        ],
+        [
+          1375.567,
+          1412.216,
+          null,
+          null
+        ],
+        [
+          1378.251,
+          1410.875,
+          null,
+          null
+        ],
+        [
+          1381.013,
+          1409.747,
+          null,
+          null
+        ],
+        [
+          1383.923,
+          1409.019,
+          null,
+          null
+        ],
+        [
+          1386.834,
+          1408.292,
+          null,
+          null
+        ],
+        [
+          1389.798,
+          1408.0,
+          null,
+          null
+        ],
+        [
+          1392.798,
+          1408.0,
+          null,
+          null
+        ],
+        [
+          1395.798,
+          1408.0,
+          null,
+          null
+        ],
+        [
+          1398.654,
+          1407.115,
+          null,
+          null
+        ],
+        [
+          1401.5,
+          1406.167,
+          null,
+          null
+        ],
+        [
+          1403.749,
+          1404.251,
+          null,
+          null
+        ],
+        [
+          1405.87,
+          1402.13,
+          null,
+          null
+        ],
+        [
+          1406.891,
+          1399.328,
+          null,
+          null
+        ],
+        [
+          1407.839,
+          1396.482,
+          null,
+          null
+        ],
+        [
+          1408.0,
+          1393.508,
+          null,
+          null
+        ],
+        [
+          1408.0,
+          1390.508,
+          null,
+          null
+        ],
+        [
+          1408.156,
+          1387.533,
+          null,
+          null
+        ],
+        [
+          1409.104,
+          1384.687,
+          null,
+          null
+        ],
+        [
+          1410.118,
+          1381.882,
+          null,
+          null
+        ],
+        [
+          1412.24,
+          1379.76,
+          null,
+          null
+        ],
+        [
+          1414.484,
+          1377.839,
+          null,
+          null
+        ],
+        [
+          1417.331,
+          1376.89,
+          null,
+          null
+        ],
+        [
+          1420.186,
+          1376.0,
+          null,
+          null
+        ],
+        [
+          1423.186,
+          1376.0,
+          null,
+          null
+        ],
+        [
+          1426.186,
+          1376.0,
+          null,
+          null
+        ],
+        [
+          1428.61,
+          1374.983,
+          null,
+          null
+        ],
+        [
+          1430.154,
+          1372.41,
+          null,
+          null
+        ],
+        [
+          1431.697,
+          1369.838,
+          null,
+          null
+        ],
+        [
+          1433.241,
+          1367.265,
+          null,
+          null
+        ],
+        [
+          1434.299,
+          1364.505,
+          null,
+          null
+        ],
+        [
+          1434.887,
+          1361.564,
+          null,
+          null
+        ],
+        [
+          1435.476,
+          1358.622,
+          null,
+          null
+        ],
+        [
+          1436.064,
+          1355.68,
+          null,
+          null
+        ],
+        [
+          1436.652,
+          1352.738,
+          null,
+          null
+        ],
+        [
+          1437.241,
+          1349.797,
+          null,
+          null
+        ],
+        [
+          1437.829,
+          1346.855,
+          null,
+          null
+        ],
+        [
+          1438.142,
+          1343.877,
+          null,
+          null
+        ],
+        [
+          1438.341,
+          1340.883,
+          null,
+          null
+        ],
+        [
+          1438.541,
+          1337.89,
+          null,
+          null
+        ],
+        [
+          1438.74,
+          1334.897,
+          null,
+          null
+        ],
+        [
+          1438.94,
+          1331.903,
+          null,
+          null
+        ],
+        [
+          1439.139,
+          1328.91,
+          null,
+          null
+        ],
+        [
+          1439.339,
+          1325.916,
+          null,
+          null
+        ],
+        [
+          1439.538,
+          1322.923,
+          null,
+          null
+        ],
+        [
+          1439.738,
+          1319.93,
+          null,
+          null
+        ],
+        [
+          1439.938,
+          1316.936,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1313.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1310.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1307.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1304.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1301.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1298.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1295.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1292.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1289.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1286.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1283.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1280.938,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          1277.938,
+          null,
+          null
+        ],
+        [
+          1439.934,
+          1274.941,
+          null,
+          null
+        ],
+        [
+          1439.747,
+          1271.946,
+          null,
+          null
+        ],
+        [
+          1439.56,
+          1268.952,
+          null,
+          null
+        ],
+        [
+          1439.372,
+          1265.958,
+          null,
+          null
+        ],
+        [
+          1439.185,
+          1262.964,
+          null,
+          null
+        ],
+        [
+          1438.998,
+          1259.97,
+          null,
+          null
+        ],
+        [
+          1438.811,
+          1256.976,
+          null,
+          null
+        ],
+        [
+          1438.624,
+          1253.981,
+          null,
+          null
+        ],
+        [
+          1438.437,
+          1250.987,
+          null,
+          null
+        ],
+        [
+          1438.25,
+          1247.993,
+          null,
+          null
+        ],
+        [
+          1438.062,
+          1244.999,
+          null,
+          null
+        ],
+        [
+          1437.671,
+          1242.028,
+          null,
+          null
+        ],
+        [
+          1437.178,
+          1239.069,
+          null,
+          null
+        ],
+        [
+          1436.685,
+          1236.11,
+          null,
+          null
+        ],
+        [
+          1436.192,
+          1233.151,
+          null,
+          null
+        ],
+        [
+          1435.699,
+          1230.191,
+          null,
+          null
+        ],
+        [
+          1435.205,
+          1227.232,
+          null,
+          null
+        ],
+        [
+          1434.712,
+          1224.273,
+          null,
+          null
+        ],
+        [
+          1434.219,
+          1221.314,
+          null,
+          null
+        ],
+        [
+          1433.414,
+          1218.438,
+          null,
+          null
+        ],
+        [
+          1432.361,
+          1215.629,
+          null,
+          null
+        ],
+        [
+          1431.308,
+          1212.82,
+          null,
+          null
+        ],
+        [
+          1430.254,
+          1210.011,
+          null,
+          null
+        ],
+        [
+          1429.201,
+          1207.202,
+          null,
+          null
+        ],
+        [
+          1428.147,
+          1204.393,
+          null,
+          null
+        ],
+        [
+          1426.176,
+          1202.176,
+          null,
+          null
+        ],
+        [
+          1424.054,
+          1200.054,
+          null,
+          null
+        ],
+        [
+          1421.933,
+          1197.933,
+          null,
+          null
+        ],
+        [
+          1419.84,
+          1195.787,
+          null,
+          null
+        ],
+        [
+          1418.04,
+          1193.387,
+          null,
+          null
+        ],
+        [
+          1416.24,
+          1190.987,
+          null,
+          null
+        ],
+        [
+          1414.44,
+          1188.587,
+          null,
+          null
+        ],
+        [
+          1412.986,
+          1185.973,
+          null,
+          null
+        ],
+        [
+          1411.645,
+          1183.29,
+          null,
+          null
+        ],
+        [
+          1410.303,
+          1180.606,
+          null,
+          null
+        ],
+        [
+          1409.437,
+          1177.747,
+          null,
+          null
+        ],
+        [
+          1408.709,
+          1174.837,
+          null,
+          null
+        ],
+        [
+          1408.0,
+          1171.924,
+          null,
+          null
+        ],
+        [
+          1408.0,
+          1168.924,
+          null,
+          null
+        ],
+        [
+          1408.0,
+          1165.924,
+          null,
+          null
+        ],
+        [
+          1407.6,
+          1163.001,
+          null,
+          null
+        ],
+        [
+          1406.486,
+          1160.216,
+          null,
+          null
+        ],
+        [
+          1405.372,
+          1157.43,
+          null,
+          null
+        ],
+        [
+          1404.258,
+          1154.645,
+          null,
+          null
+        ],
+        [
+          1402.721,
+          1152.082,
+          null,
+          null
+        ],
+        [
+          1401.057,
+          1149.586,
+          null,
+          null
+        ],
+        [
+          1399.393,
+          1147.089,
+          null,
+          null
+        ],
+        [
+          1397.729,
+          1144.593,
+          null,
+          null
+        ],
+        [
+          1396.065,
+          1142.097,
+          null,
+          null
+        ],
+        [
+          1394.124,
+          1139.811,
+          null,
+          null
+        ],
+        [
+          1392.171,
+          1137.533,
+          null,
+          null
+        ],
+        [
+          1390.219,
+          1135.255,
+          null,
+          null
+        ],
+        [
+          1388.266,
+          1132.978,
+          null,
+          null
+        ],
+        [
+          1386.314,
+          1130.7,
+          null,
+          null
+        ],
+        [
+          1384.362,
+          1128.422,
+          null,
+          null
+        ],
+        [
+          1382.272,
+          1126.272,
+          null,
+          null
+        ],
+        [
+          1380.15,
+          1124.15,
+          null,
+          null
+        ],
+        [
+          1378.029,
+          1122.029,
+          null,
+          null
+        ],
+        [
+          1375.908,
+          1119.908,
+          null,
+          null
+        ],
+        [
+          1373.786,
+          1117.786,
+          null,
+          null
+        ],
+        [
+          1371.665,
+          1115.665,
+          null,
+          null
+        ],
+        [
+          1369.544,
+          1113.544,
+          null,
+          null
+        ],
+        [
+          1367.38,
+          1111.468,
+          null,
+          null
+        ],
+        [
+          1365.102,
+          1109.516,
+          null,
+          null
+        ],
+        [
+          1362.824,
+          1107.564,
+          null,
+          null
+        ],
+        [
+          1360.547,
+          1105.611,
+          null,
+          null
+        ],
+        [
+          1358.269,
+          1103.659,
+          null,
+          null
+        ],
+        [
+          1355.991,
+          1101.707,
+          null,
+          null
+        ],
+        [
+          1353.686,
+          1099.79,
+          null,
+          null
+        ],
+        [
+          1351.19,
+          1098.126,
+          null,
+          null
+        ],
+        [
+          1348.693,
+          1096.462,
+          null,
+          null
+        ],
+        [
+          1346.197,
+          1094.798,
+          null,
+          null
+        ],
+        [
+          1343.701,
+          1093.134,
+          null,
+          null
+        ],
+        [
+          1341.113,
+          1091.645,
+          null,
+          null
+        ],
+        [
+          1338.327,
+          1090.531,
+          null,
+          null
+        ],
+        [
+          1335.542,
+          1089.417,
+          null,
+          null
+        ],
+        [
+          1332.757,
+          1088.303,
+          null,
+          null
+        ],
+        [
+          1329.815,
+          1088.0,
+          null,
+          null
+        ],
+        [
+          1326.815,
+          1088.0,
+          null,
+          null
+        ],
+        [
+          1323.824,
+          1087.941,
+          null,
+          null
+        ],
+        [
+          1320.978,
+          1086.993,
+          null,
+          null
+        ],
+        [
+          1318.132,
+          1086.044,
+          null,
+          null
+        ],
+        [
+          1315.977,
+          1083.977,
+          null,
+          null
+        ],
+        [
+          1313.936,
+          1081.807,
+          null,
+          null
+        ],
+        [
+          1312.987,
+          1078.961,
+          null,
+          null
+        ],
+        [
+          1312.038,
+          1076.115,
+          null,
+          null
+        ],
+        [
+          1312.0,
+          1073.121,
+          null,
+          null
+        ],
+        [
+          1312.0,
+          1070.121,
+          null,
+          null
+        ],
+        [
+          1311.787,
+          1067.147,
+          null,
+          null
+        ],
+        [
+          1311.059,
+          1064.237,
+          null,
+          null
+        ],
+        [
+          1310.332,
+          1061.326,
+          null,
+          null
+        ],
+        [
+          1309.27,
+          1058.539,
+          null,
+          null
+        ],
+        [
+          1307.928,
+          1055.856,
+          null,
+          null
+        ],
+        [
+          1306.586,
+          1053.173,
+          null,
+          null
+        ],
+        [
+          1304.987,
+          1050.649,
+          null,
+          null
+        ],
+        [
+          1303.187,
+          1048.249,
+          null,
+          null
+        ],
+        [
+          1301.387,
+          1045.849,
+          null,
+          null
+        ],
+        [
+          1299.513,
+          1043.513,
+          null,
+          null
+        ],
+        [
+          1297.392,
+          1041.392,
+          null,
+          null
+        ],
+        [
+          1295.27,
+          1039.27,
+          null,
+          null
+        ],
+        [
+          1293.149,
+          1037.149,
+          null,
+          null
+        ],
+        [
+          1290.9,
+          1035.175,
+          null,
+          null
+        ],
+        [
+          1288.5,
+          1033.375,
+          null,
+          null
+        ],
+        [
+          1286.1,
+          1031.575,
+          null,
+          null
+        ],
+        [
+          1283.665,
+          1029.832,
+          null,
+          null
+        ],
+        [
+          1280.981,
+          1028.491,
+          null,
+          null
+        ],
+        [
+          1278.298,
+          1027.149,
+          null,
+          null
+        ],
+        [
+          1275.582,
+          1025.896,
+          null,
+          null
+        ],
+        [
+          1272.672,
+          1025.168,
+          null,
+          null
+        ],
+        [
+          1269.761,
+          1024.44,
+          null,
+          null
+        ],
+        [
+          1266.815,
+          1024.0,
+          null,
+          null
+        ],
+        [
+          1263.815,
+          1024.0,
+          null,
+          null
+        ],
+        [
+          1260.815,
+          1024.0,
+          null,
+          null
+        ],
+        [
+          1257.928,
+          1023.309,
+          null,
+          null
+        ],
+        [
+          1255.082,
+          1022.361,
+          null,
+          null
+        ],
+        [
+          1252.685,
+          1020.685,
+          null,
+          null
+        ],
+        [
+          1250.563,
+          1018.563,
+          null,
+          null
+        ],
+        [
+          1249.303,
+          1015.91,
+          null,
+          null
+        ],
+        [
+          1248.355,
+          1013.064,
+          null,
+          null
+        ],
+        [
+          1248.0,
+          1010.121,
+          null,
+          null
+        ],
+        [
+          1248.0,
+          1007.121,
+          null,
+          null
+        ],
+        [
+          1248.0,
+          1004.121,
+          null,
+          null
+        ],
+        [
+          1247.09,
+          1001.269,
+          null,
+          null
+        ],
+        [
+          1246.141,
+          998.423,
+          null,
+          null
+        ],
+        [
+          1244.194,
+          996.194,
+          null,
+          null
+        ],
+        [
+          1242.073,
+          994.073,
+          null,
+          null
+        ],
+        [
+          1239.252,
+          993.084,
+          null,
+          null
+        ],
+        [
+          1236.405,
+          992.135,
+          null,
+          null
+        ],
+        [
+          1233.427,
+          992.0,
+          null,
+          null
+        ],
+        [
+          1230.427,
+          992.0,
+          null,
+          null
+        ],
+        [
+          1227.444,
+          991.861,
+          null,
+          null
+        ],
+        [
+          1224.534,
+          991.134,
+          null,
+          null
+        ],
+        [
+          1221.624,
+          990.406,
+          null,
+          null
+        ],
+        [
+          1218.814,
+          989.407,
+          null,
+          null
+        ],
+        [
+          1216.13,
+          988.065,
+          null,
+          null
+        ],
+        [
+          1213.447,
+          986.724,
+          null,
+          null
+        ],
+        [
+          1210.894,
+          985.171,
+          null,
+          null
+        ],
+        [
+          1208.494,
+          983.371,
+          null,
+          null
+        ],
+        [
+          1206.094,
+          981.571,
+          null,
+          null
+        ],
+        [
+          1203.73,
+          979.73,
+          null,
+          null
+        ],
+        [
+          1201.608,
+          977.608,
+          null,
+          null
+        ],
+        [
+          1199.487,
+          975.487,
+          null,
+          null
+        ],
+        [
+          1197.366,
+          973.366,
+          null,
+          null
+        ],
+        [
+          1195.522,
+          971.044,
+          null,
+          null
+        ],
+        [
+          1194.181,
+          968.361,
+          null,
+          null
+        ],
+        [
+          1192.839,
+          965.678,
+          null,
+          null
+        ],
+        [
+          1191.497,
+          962.995,
+          null,
+          null
+        ],
+        [
+          1190.156,
+          960.311,
+          null,
+          null
+        ],
+        [
+          1189.357,
+          957.427,
+          null,
+          null
+        ],
+        [
+          1188.629,
+          954.517,
+          null,
+          null
+        ],
+        [
+          1187.902,
+          951.606,
+          null,
+          null
+        ],
+        [
+          1187.174,
+          948.696,
+          null,
+          null
+        ],
+        [
+          1186.446,
+          945.785,
+          null,
+          null
+        ],
+        [
+          1185.885,
+          942.846,
+          null,
+          null
+        ],
+        [
+          1185.586,
+          939.861,
+          null,
+          null
+        ],
+        [
+          1185.288,
+          936.876,
+          null,
+          null
+        ],
+        [
+          1184.989,
+          933.891,
+          null,
+          null
+        ],
+        [
+          1184.691,
+          930.906,
+          null,
+          null
+        ],
+        [
+          1184.392,
+          927.921,
+          null,
+          null
+        ],
+        [
+          1184.094,
+          924.936,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          921.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          918.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          915.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          912.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          909.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          906.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          903.94,
+          null,
+          null
+        ],
+        [
+          1184.0,
+          900.94,
+          null,
+          null
+        ],
+        [
+          1183.773,
+          897.953,
+          null,
+          null
+        ],
+        [
+          1183.441,
+          894.971,
+          null,
+          null
+        ],
+        [
+          1183.11,
+          891.989,
+          null,
+          null
+        ],
+        [
+          1182.779,
+          889.008,
+          null,
+          null
+        ],
+        [
+          1182.447,
+          886.026,
+          null,
+          null
+        ],
+        [
+          1182.116,
+          883.045,
+          null,
+          null
+        ],
+        [
+          1181.384,
+          880.151,
+          null,
+          null
+        ],
+        [
+          1180.435,
+          877.305,
+          null,
+          null
+        ],
+        [
+          1179.486,
+          874.459,
+          null,
+          null
+        ],
+        [
+          1178.538,
+          871.613,
+          null,
+          null
+        ],
+        [
+          1177.081,
+          869.081,
+          null,
+          null
+        ],
+        [
+          1174.959,
+          866.959,
+          null,
+          null
+        ],
+        [
+          1172.838,
+          864.838,
+          null,
+          null
+        ],
+        [
+          1170.185,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1167.185,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1164.185,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1161.269,
+          863.317,
+          null,
+          null
+        ],
+        [
+          1158.359,
+          862.59,
+          null,
+          null
+        ],
+        [
+          1155.492,
+          861.746,
+          null,
+          null
+        ],
+        [
+          1152.808,
+          860.404,
+          null,
+          null
+        ],
+        [
+          1150.125,
+          859.062,
+          null,
+          null
+        ],
+        [
+          1147.501,
+          857.625,
+          null,
+          null
+        ],
+        [
+          1145.101,
+          855.825,
+          null,
+          null
+        ],
+        [
+          1142.701,
+          854.025,
+          null,
+          null
+        ],
+        [
+          1140.301,
+          852.225,
+          null,
+          null
+        ],
+        [
+          1138.144,
+          850.144,
+          null,
+          null
+        ],
+        [
+          1136.023,
+          848.023,
+          null,
+          null
+        ],
+        [
+          1133.902,
+          845.902,
+          null,
+          null
+        ],
+        [
+          1131.734,
+          843.84,
+          null,
+          null
+        ],
+        [
+          1129.161,
+          842.297,
+          null,
+          null
+        ],
+        [
+          1126.589,
+          840.753,
+          null,
+          null
+        ],
+        [
+          1124.016,
+          839.21,
+          null,
+          null
+        ],
+        [
+          1121.385,
+          837.795,
+          null,
+          null
+        ],
+        [
+          1118.539,
+          836.846,
+          null,
+          null
+        ],
+        [
+          1115.693,
+          835.898,
+          null,
+          null
+        ],
+        [
+          1112.847,
+          834.949,
+          null,
+          null
+        ],
+        [
+          1110.001,
+          834.0,
+          null,
+          null
+        ],
+        [
+          1107.031,
+          833.576,
+          null,
+          null
+        ],
+        [
+          1104.061,
+          833.152,
+          null,
+          null
+        ],
+        [
+          1101.091,
+          832.727,
+          null,
+          null
+        ],
+        [
+          1098.121,
+          832.303,
+          null,
+          null
+        ],
+        [
+          1095.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1092.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1089.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1086.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1083.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1080.143,
+          832.0,
+          null,
+          null
+        ],
+        [
+          1077.171,
+          832.404,
+          null,
+          null
+        ],
+        [
+          1074.202,
+          832.828,
+          null,
+          null
+        ],
+        [
+          1071.232,
+          833.253,
+          null,
+          null
+        ],
+        [
+          1068.262,
+          833.677,
+          null,
+          null
+        ],
+        [
+          1065.322,
+          834.226,
+          null,
+          null
+        ],
+        [
+          1062.475,
+          835.175,
+          null,
+          null
+        ],
+        [
+          1059.629,
+          836.124,
+          null,
+          null
+        ],
+        [
+          1056.783,
+          837.072,
+          null,
+          null
+        ],
+        [
+          1053.943,
+          838.034,
+          null,
+          null
+        ],
+        [
+          1051.371,
+          839.577,
+          null,
+          null
+        ],
+        [
+          1048.798,
+          841.121,
+          null,
+          null
+        ],
+        [
+          1046.226,
+          842.664,
+          null,
+          null
+        ],
+        [
+          1043.714,
+          844.286,
+          null,
+          null
+        ],
+        [
+          1041.593,
+          846.407,
+          null,
+          null
+        ],
+        [
+          1039.472,
+          848.528,
+          null,
+          null
+        ],
+        [
+          1037.35,
+          850.65,
+          null,
+          null
+        ],
+        [
+          1035.128,
+          852.654,
+          null,
+          null
+        ],
+        [
+          1032.728,
+          854.454,
+          null,
+          null
+        ],
+        [
+          1030.328,
+          856.254,
+          null,
+          null
+        ],
+        [
+          1027.919,
+          858.04,
+          null,
+          null
+        ],
+        [
+          1025.236,
+          859.382,
+          null,
+          null
+        ],
+        [
+          1022.553,
+          860.724,
+          null,
+          null
+        ],
+        [
+          1019.858,
+          862.035,
+          null,
+          null
+        ],
+        [
+          1016.948,
+          862.763,
+          null,
+          null
+        ],
+        [
+          1014.037,
+          863.491,
+          null,
+          null
+        ],
+        [
+          1011.1,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1008.1,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1005.1,
+          864.0,
+          null,
+          null
+        ],
+        [
+          1002.198,
+          863.399,
+          null,
+          null
+        ],
+        [
+          999.351,
+          862.45,
+          null,
+          null
+        ],
+        [
+          996.886,
+          860.886,
+          null,
+          null
+        ],
+        [
+          994.765,
+          858.765,
+          null,
+          null
+        ],
+        [
+          993.393,
+          856.18,
+          null,
+          null
+        ],
+        [
+          992.445,
+          853.334,
+          null,
+          null
+        ],
+        [
+          992.0,
+          850.406,
+          null,
+          null
+        ],
+        [
+          992.0,
+          847.406,
+          null,
+          null
+        ],
+        [
+          992.0,
+          844.406,
+          null,
+          null
+        ],
+        [
+          989.497,
+          843.317,
+          null,
+          null
+        ],
+        [
+          986.603,
+          842.528,
+          null,
+          null
+        ],
+        [
+          983.709,
+          841.739,
+          null,
+          null
+        ],
+        [
+          980.815,
+          840.949,
+          null,
+          null
+        ],
+        [
+          977.92,
+          840.16,
+          null,
+          null
+        ],
+        [
+          975.026,
+          839.371,
+          null,
+          null
+        ],
+        [
+          972.132,
+          838.581,
+          null,
+          null
+        ],
+        [
+          969.213,
+          837.928,
+          null,
+          null
+        ],
+        [
+          966.225,
+          837.657,
+          null,
+          null
+        ],
+        [
+          963.237,
+          837.385,
+          null,
+          null
+        ],
+        [
+          960.25,
+          837.114,
+          null,
+          null
+        ],
+        [
+          957.262,
+          836.842,
+          null,
+          null
+        ],
+        [
+          954.274,
+          836.57,
+          null,
+          null
+        ],
+        [
+          951.287,
+          836.299,
+          null,
+          null
+        ],
+        [
+          948.299,
+          836.027,
+          null,
+          null
+        ],
+        [
+          945.311,
+          835.756,
+          null,
+          null
+        ],
+        [
+          942.324,
+          835.484,
+          null,
+          null
+        ],
+        [
+          939.336,
+          835.212,
+          null,
+          null
+        ],
+        [
+          936.348,
+          834.941,
+          null,
+          null
+        ],
+        [
+          933.361,
+          834.669,
+          null,
+          null
+        ],
+        [
+          930.373,
+          834.398,
+          null,
+          null
+        ],
+        [
+          927.385,
+          834.126,
+          null,
+          null
+        ],
+        [
+          924.392,
+          833.951,
+          null,
+          null
+        ],
+        [
+          921.393,
+          833.86,
+          null,
+          null
+        ],
+        [
+          918.394,
+          833.77,
+          null,
+          null
+        ],
+        [
+          915.396,
+          833.679,
+          null,
+          null
+        ],
+        [
+          912.397,
+          833.588,
+          null,
+          null
+        ],
+        [
+          909.399,
+          833.497,
+          null,
+          null
+        ],
+        [
+          906.4,
+          833.406,
+          null,
+          null
+        ],
+        [
+          903.401,
+          833.315,
+          null,
+          null
+        ],
+        [
+          900.403,
+          833.224,
+          null,
+          null
+        ],
+        [
+          897.404,
+          833.133,
+          null,
+          null
+        ],
+        [
+          894.405,
+          833.043,
+          null,
+          null
+        ],
+        [
+          891.407,
+          832.952,
+          null,
+          null
+        ],
+        [
+          888.408,
+          832.861,
+          null,
+          null
+        ],
+        [
+          885.41,
+          832.77,
+          null,
+          null
+        ],
+        [
+          882.411,
+          832.679,
+          null,
+          null
+        ],
+        [
+          879.412,
+          832.588,
+          null,
+          null
+        ],
+        [
+          876.414,
+          832.497,
+          null,
+          null
+        ],
+        [
+          873.415,
+          832.407,
+          null,
+          null
+        ],
+        [
+          870.416,
+          832.316,
+          null,
+          null
+        ],
+        [
+          867.418,
+          832.225,
+          null,
+          null
+        ],
+        [
+          864.419,
+          832.134,
+          null,
+          null
+        ],
+        [
+          861.421,
+          832.043,
+          null,
+          null
+        ],
+        [
+          858.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          855.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          852.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          849.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          846.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          843.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          840.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          837.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          834.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          831.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          828.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          825.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          822.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          819.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          816.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          813.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          810.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          807.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          804.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          801.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          798.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          795.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          792.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          789.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          786.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          783.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          780.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          777.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          774.421,
+          832.0,
+          null,
+          null
+        ],
+        [
+          771.421,
+          832.018,
+          null,
+          null
+        ],
+        [
+          768.423,
+          832.108,
+          null,
+          null
+        ],
+        [
+          765.424,
+          832.199,
+          null,
+          null
+        ],
+        [
+          762.426,
+          832.29,
+          null,
+          null
+        ],
+        [
+          759.427,
+          832.381,
+          null,
+          null
+        ],
+        [
+          756.428,
+          832.472,
+          null,
+          null
+        ],
+        [
+          753.43,
+          832.563,
+          null,
+          null
+        ],
+        [
+          750.431,
+          832.654,
+          null,
+          null
+        ],
+        [
+          747.433,
+          832.744,
+          null,
+          null
+        ],
+        [
+          744.434,
+          832.835,
+          null,
+          null
+        ],
+        [
+          741.435,
+          832.926,
+          null,
+          null
+        ],
+        [
+          738.437,
+          833.017,
+          null,
+          null
+        ],
+        [
+          735.438,
+          833.108,
+          null,
+          null
+        ],
+        [
+          732.439,
+          833.199,
+          null,
+          null
+        ],
+        [
+          729.441,
+          833.29,
+          null,
+          null
+        ],
+        [
+          726.442,
+          833.381,
+          null,
+          null
+        ],
+        [
+          723.444,
+          833.471,
+          null,
+          null
+        ],
+        [
+          720.445,
+          833.562,
+          null,
+          null
+        ],
+        [
+          717.446,
+          833.653,
+          null,
+          null
+        ],
+        [
+          714.448,
+          833.744,
+          null,
+          null
+        ],
+        [
+          711.449,
+          833.835,
+          null,
+          null
+        ],
+        [
+          708.45,
+          833.926,
+          null,
+          null
+        ],
+        [
+          705.454,
+          834.05,
+          null,
+          null
+        ],
+        [
+          702.466,
+          834.321,
+          null,
+          null
+        ],
+        [
+          699.478,
+          834.593,
+          null,
+          null
+        ],
+        [
+          696.491,
+          834.864,
+          null,
+          null
+        ],
+        [
+          693.503,
+          835.136,
+          null,
+          null
+        ],
+        [
+          690.515,
+          835.408,
+          null,
+          null
+        ],
+        [
+          687.528,
+          835.679,
+          null,
+          null
+        ],
+        [
+          684.54,
+          835.951,
+          null,
+          null
+        ],
+        [
+          681.552,
+          836.223,
+          null,
+          null
+        ],
+        [
+          678.565,
+          836.494,
+          null,
+          null
+        ],
+        [
+          675.577,
+          836.766,
+          null,
+          null
+        ],
+        [
+          672.589,
+          837.037,
+          null,
+          null
+        ],
+        [
+          669.602,
+          837.309,
+          null,
+          null
+        ],
+        [
+          666.614,
+          837.581,
+          null,
+          null
+        ],
+        [
+          663.626,
+          837.852,
+          null,
+          null
+        ],
+        [
+          660.681,
+          838.36,
+          null,
+          null
+        ],
+        [
+          657.787,
+          839.149,
+          null,
+          null
+        ],
+        [
+          654.893,
+          839.938,
+          null,
+          null
+        ],
+        [
+          651.998,
+          840.728,
+          null,
+          null
+        ],
+        [
+          649.104,
+          841.517,
+          null,
+          null
+        ],
+        [
+          646.21,
+          842.306,
+          null,
+          null
+        ],
+        [
+          643.315,
+          843.096,
+          null,
+          null
+        ],
+        [
+          640.421,
+          843.885,
+          null,
+          null
+        ],
+        [
+          640.0,
+          846.564,
+          null,
+          null
+        ],
+        [
+          640.0,
+          849.564,
+          null,
+          null
+        ],
+        [
+          640.0,
+          852.564,
+          null,
+          null
+        ],
+        [
+          640.0,
+          855.564,
+          null,
+          null
+        ],
+        [
+          640.0,
+          858.564,
+          null,
+          null
+        ],
+        [
+          640.0,
+          861.564,
+          null,
+          null
+        ],
+        [
+          640.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          643.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          646.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          649.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          652.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          655.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          658.564,
+          864.0,
+          null,
+          null
+        ],
+        [
+          661.483,
+          864.494,
+          null,
+          null
+        ],
+        [
+          664.329,
+          865.443,
+          null,
+          null
+        ],
+        [
+          666.876,
+          866.876,
+          null,
+          null
+        ],
+        [
+          668.997,
+          868.997,
+          null,
+          null
+        ],
+        [
+          670.5,
+          871.501,
+          null,
+          null
+        ],
+        [
+          671.449,
+          874.347,
+          null,
+          null
+        ],
+        [
+          672.0,
+          877.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          880.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          883.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          886.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          889.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          892.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          895.258,
+          null,
+          null
+        ],
+        [
+          672.0,
+          896.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "ai_text_015",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          1300.0,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1586.02,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Strategy Note:\nTo overcome the incumbent's network effects, the startup should:\n1. **Target niche audiences**: Build critical mass in underserved segments.\n2. **Leverage multi-homing**: Offer unique features that complement existing platforms.\n3. **Minimize switching costs**: Simplify migration and provide interoperability with competitors.\n4. **Prioritize privacy**: Cultivate trust by emphasizing data security and transparency.\n5. **Encourage viral growth**: Incentivize user referrals and community building.",
+        "summary": "Strategy for overcoming network effects.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 608,
+        "contentHeight": 277.2,
+        "lineCount": 11,
+        "renderedText": "Strategy Note:\nTo overcome the incumbent's network effects, the startup should:\n1. Target niche audiences: Build critical mass in underserved segments.\n2. Leverage multi-homing: Offer unique features that complement\nexisting platforms.\n3. Minimize switching costs: Simplify migration and provide\ninteroperability with competitors.\n4. Prioritize privacy: Cultivate trust by emphasizing data security and\ntransparency.\n5. Encourage viral growth: Incentivize user referrals and community\nbuilding.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "ai_text_016",
+      "tool": "text",
+      "points": [
+        [
+          101.674,
+          1607.104,
+          null,
+          null
+        ],
+        [
+          625.445,
+          1736.529,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Additional Insight:\nPlatforms can further enhance network effects by integrating cross-platform compatibility, incentivizing active participation, and leveraging analytics to optimize user engagement.",
+        "summary": "Enhancing network effects through strategies.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 523.770625,
+        "contentHeight": 100.8,
+        "lineCount": 4,
+        "renderedText": "Additional Insight:\nPlatforms can further enhance network effects by integrating\ncross-platform compatibility, incentivizing active participation,\nand leveraging analytics to optimize user engagement.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "line_mmulpo0e_4d72",
+      "tool": "line",
+      "points": [
+        [
+          0.0,
+          1248.0,
+          null,
+          null
+        ],
+        [
+          704.0,
+          1248.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human"
+      }
+    },
+    {
+      "id": "ai_text_017",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          1750.0,
+          null,
+          null
+        ],
+        [
+          630.482,
+          1881.891,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Final Thought:\nThe interplay of network effects and lock-in mechanisms shapes the competitive landscape of digital platforms. Success hinges on balancing innovation, user trust, and strategic growth.",
+        "summary": "Final thoughts on network effects and lock-in.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 534.481875,
+        "contentHeight": 100.8,
+        "lineCount": 4,
+        "renderedText": "Final Thought:\nThe interplay of network effects and lock-in mechanisms shapes\nthe competitive landscape of digital platforms. Success hinges\non balancing innovation, user trust, and strategic growth.",
+        "heightPadding": 8.819999999999999
+      }
+    },
+    {
+      "id": "ai_text_018",
+      "tool": "text",
+      "points": [
+        [
+          96.0,
+          1900.0,
+          null,
+          null
+        ],
+        [
+          643.262,
+          2034.834,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "text": "Final Reflection:\nDigital platforms must continuously innovate while maintaining user trust and minimizing barriers to entry. Success lies in creating ecosystems that benefit all stakeholders and adapt to evolving trends.",
+        "summary": "Final reflection on digital platforms.",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "configuredWidth": 608,
+        "configuredHeight": 140,
+        "baseWidth": 608,
+        "baseHeight": 140,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 547.2623437499999,
+        "contentHeight": 126,
+        "lineCount": 5,
+        "renderedText": "Final Reflection:\nDigital platforms must continuously innovate while maintaining\nuser trust and minimizing barriers to entry. Success lies in\ncreating ecosystems that benefit all stakeholders and adapt to\nevolving trends.",
+        "heightPadding": 8.819999999999999
+      }
+    }
+  ]
+}

@@ -1,0 +1,2016 @@
+{
+  "schemaVersion": 1,
+  "sid": "sess_1773751672_wblm1j",
+  "mode": "light_helper",
+  "initGoal": "Work as a noting assistant to draw or write.",
+  "tags": [],
+  "createdAtEpoch": 1773751672.120747,
+  "callCount": 0,
+  "strokes": [
+    {
+      "id": "text_mmulybur_s6s4",
+      "tool": "text",
+      "points": [
+        [
+          768.0,
+          128.0,
+          null,
+          null
+        ],
+        [
+          1056.0,
+          322.88,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "red",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Environmental Engineering (Urban Heat Island - UHI)",
+        "summary": "",
+        "role": "title",
+        "fontFamily": "sans-serif",
+        "fontWeight": "700",
+        "fontSize": 32,
+        "growDir": "right-down",
+        "baseWidth": 288,
+        "baseHeight": 96,
+        "configuredWidth": 288,
+        "configuredHeight": 96,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 288,
+        "contentHeight": 179.2,
+        "lineCount": 4,
+        "renderedText": "Environmental\nEngineering\n(Urban Heat\nIsland - UHI)"
+      }
+    },
+    {
+      "id": "text_mmulyo81_71c5",
+      "tool": "text",
+      "points": [
+        [
+          288.0,
+          352.0,
+          null,
+          null
+        ],
+        [
+          540.0,
+          464.56,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Title: Mitigating the Urban Heat Island (UHI) Effect",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 480,
+        "baseHeight": 192,
+        "configuredWidth": 480,
+        "configuredHeight": 192,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 252,
+        "contentHeight": 100.79999999999998,
+        "lineCount": 3,
+        "renderedText": "Title: Mitigating the\nUrban Heat Island\n(UHI) Effect"
+      }
+    },
+    {
+      "id": "text_mmulyw0s_i81l",
+      "tool": "text",
+      "points": [
+        [
+          173.735,
+          518.691,
+          null,
+          null
+        ],
+        [
+          610.438,
+          754.354,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "The Physics of UHI\nUrban areas are significantly warmer than surrounding rural areas. This is primarily due to Albedo (the reflectivity of surfaces) and Thermal Mass. Dark surfaces like asphalt have low albedo, absorbing up to 90% of solar radiation. Meanwhile, materials like concrete act as a \"Heat Battery,\" storing energy during the day and releasing it at night.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 604.8046875000001,
+        "baseHeight": 314.16234375000005,
+        "configuredWidth": 604.8046875000001,
+        "configuredHeight": 314.16234375000005,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 436.7031860351563,
+        "contentHeight": 226.79999999999998,
+        "lineCount": 9,
+        "renderedText": "The Physics of UHI\nUrban areas are significantly warmer than\nsurrounding rural areas. This is primarily due to\nAlbedo (the reflectivity of surfaces) and Thermal\nMass. Dark surfaces like asphalt have low albedo,\nabsorbing up to 90% of solar radiation. Meanwhile,\nmaterials like concrete act as a \"Heat Battery,\"\nstoring energy during the day and releasing it at\nnight."
+      }
+    },
+    {
+      "id": "text_mmulzgrp_5d07",
+      "tool": "text",
+      "points": [
+        [
+          165.353,
+          786.618,
+          null,
+          null
+        ],
+        [
+          576.337,
+          1000.93,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Evapotranspiration & Vegetation\nRural areas stay cool because of plants. Plants perform Evapotranspiration, a process where they release water vapor into the air, which consumes heat energy and cools the surrounding environment. Urban \"Grey Infrastructure\" lacks this cooling mechanism, leading to higher energy consumption for air conditioning.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 448,
+        "baseHeight": 224,
+        "configuredWidth": 448,
+        "configuredHeight": 224,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 410.984375,
+        "contentHeight": 201.6,
+        "lineCount": 8,
+        "renderedText": "Evapotranspiration & Vegetation\nRural areas stay cool because of plants. Plants\nperform Evapotranspiration, a process where\nthey release water vapor into the air, which\nconsumes heat energy and cools the surrounding\nenvironment. Urban \"Grey Infrastructure\" lacks\nthis cooling mechanism, leading to higher energy\nconsumption for air conditioning."
+      }
+    },
+    {
+      "id": "text_mmum09z5_ksb1",
+      "tool": "text",
+      "points": [
+        [
+          672.0,
+          480.0,
+          null,
+          null
+        ],
+        [
+          1085.129,
+          901.949,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Why rural areas are cooler\nPlants use evapotranspiration — releasing water vapor that cools the air.Urban grey infrastructure does not have this cooling effect.\nThree mitigation strategies\nCool Roofs\nMechanism: Increase albedo with reflective paint.\nChallenge: May cause glare to nearby buildings.\nPermeable Pavement\nMechanism: Cool through water evaporation from underlying soil.\nChallenge: Lower structural load capacity.\nGreen Infrastructure\nMechanism: Provides shade and evapotranspiration.\nChallenge: High maintenance and water needs.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 576,
+        "baseHeight": 576,
+        "configuredWidth": 576,
+        "configuredHeight": 576,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 413.1289062499999,
+        "contentHeight": 403.2,
+        "lineCount": 16,
+        "renderedText": "Why rural areas are cooler\nPlants use evapotranspiration — releasing water\nvapor that cools the air.Urban grey infrastructure\ndoes not have this cooling effect.\nThree mitigation strategies\nCool Roofs\nMechanism: Increase albedo with reflective paint.\nChallenge: May cause glare to nearby buildings.\nPermeable Pavement\nMechanism: Cool through water evaporation\nfrom underlying soil.\nChallenge: Lower structural load capacity.\nGreen Infrastructure\nMechanism: Provides shade and\nevapotranspiration.\nChallenge: High maintenance and water needs."
+      }
+    },
+    {
+      "id": "text_mmum61zz_e29e",
+      "tool": "text",
+      "points": [
+        [
+          1376.0,
+          256.0,
+          null,
+          null
+        ],
+        [
+          1558.048,
+          319.774,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Solar Radiation",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 224,
+        "baseHeight": 64,
+        "configuredWidth": 224,
+        "configuredHeight": 64,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 182.0379180908203,
+        "contentHeight": 33.599999999999994,
+        "lineCount": 1,
+        "renderedText": "Solar Radiation"
+      }
+    },
+    {
+      "id": "text_mmum6553_f86p",
+      "tool": "text",
+      "points": [
+        [
+          1248.0,
+          384.0,
+          null,
+          null
+        ],
+        [
+          1599.922,
+          546.584,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Asphalt\nLow albedo\nAbsorbs: ~90% solar radiation\nActs as heat storage",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 448,
+        "baseHeight": 192,
+        "configuredWidth": 448,
+        "configuredHeight": 192,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 351.903076171875,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 4,
+        "renderedText": "Asphalt\nLow albedo\nAbsorbs: ~90% solar radiation\nActs as heat storage"
+      }
+    },
+    {
+      "id": "text_mmum6dbh_2utg",
+      "tool": "text",
+      "points": [
+        [
+          1664.0,
+          384.0,
+          null,
+          null
+        ],
+        [
+          1986.617,
+          530.184,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Heat Trapped in Pavement(No evapotranspiration, no reflection)",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 384,
+        "baseHeight": 160,
+        "configuredWidth": 384,
+        "configuredHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 322.6171875,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 4,
+        "renderedText": "Heat Trapped in\nPavement(No\nevapotranspiration, no\nreflection)"
+      }
+    },
+    {
+      "id": "text_mmum6jrd_lhdh",
+      "tool": "text",
+      "points": [
+        [
+          1440.0,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1677.539,
+          810.119,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Ambient Night Air(Slow heat release → warmer night temperatures)",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 384,
+        "baseHeight": 256,
+        "configuredWidth": 384,
+        "configuredHeight": 256,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 237.5390625,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 4,
+        "renderedText": "Ambient Night\nAir(Slow heat\nrelease → warmer\nnight temperatures)"
+      }
+    },
+    {
+      "id": "pen_mmum6rnc_1n3m",
+      "tool": "pen",
+      "points": [
+        [
+          1504.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1501.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1498.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1495.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1492.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1489.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1486.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1483.051,
+          320.316,
+          null,
+          null
+        ],
+        [
+          1480.205,
+          321.265,
+          null,
+          null
+        ],
+        [
+          1477.522,
+          322.478,
+          null,
+          null
+        ],
+        [
+          1475.401,
+          324.599,
+          null,
+          null
+        ],
+        [
+          1473.678,
+          326.966,
+          null,
+          null
+        ],
+        [
+          1472.729,
+          329.812,
+          null,
+          null
+        ],
+        [
+          1472.0,
+          332.694,
+          null,
+          null
+        ],
+        [
+          1472.0,
+          335.694,
+          null,
+          null
+        ],
+        [
+          1472.0,
+          338.694,
+          null,
+          null
+        ],
+        [
+          1471.464,
+          341.607,
+          null,
+          null
+        ],
+        [
+          1470.516,
+          344.453,
+          null,
+          null
+        ],
+        [
+          1469.032,
+          346.968,
+          null,
+          null
+        ],
+        [
+          1466.91,
+          349.09,
+          null,
+          null
+        ],
+        [
+          1464.375,
+          350.542,
+          null,
+          null
+        ],
+        [
+          1461.529,
+          351.49,
+          null,
+          null
+        ],
+        [
+          1458.612,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1455.612,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1452.612,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1449.734,
+          352.755,
+          null,
+          null
+        ],
+        [
+          1446.888,
+          353.704,
+          null,
+          null
+        ],
+        [
+          1444.541,
+          355.459,
+          null,
+          null
+        ],
+        [
+          1442.42,
+          357.58,
+          null,
+          null
+        ],
+        [
+          1441.239,
+          360.283,
+          null,
+          null
+        ],
+        [
+          1440.29,
+          363.129,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          366.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          369.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          372.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          375.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          378.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          381.082,
+          null,
+          null
+        ],
+        [
+          1440.0,
+          384.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmum6sdd_s9vb",
+      "tool": "pen",
+      "points": [
+        [
+          1568.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1571.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1574.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1577.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1580.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1583.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1586.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1589.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1592.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1595.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1598.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1601.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1604.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1607.0,
+          320.0,
+          null,
+          null
+        ],
+        [
+          1609.98,
+          320.283,
+          null,
+          null
+        ],
+        [
+          1612.95,
+          320.707,
+          null,
+          null
+        ],
+        [
+          1615.92,
+          321.131,
+          null,
+          null
+        ],
+        [
+          1618.889,
+          321.556,
+          null,
+          null
+        ],
+        [
+          1621.859,
+          321.98,
+          null,
+          null
+        ],
+        [
+          1624.711,
+          322.904,
+          null,
+          null
+        ],
+        [
+          1627.557,
+          323.852,
+          null,
+          null
+        ],
+        [
+          1630.403,
+          324.801,
+          null,
+          null
+        ],
+        [
+          1633.249,
+          325.75,
+          null,
+          null
+        ],
+        [
+          1635.894,
+          327.136,
+          null,
+          null
+        ],
+        [
+          1638.466,
+          328.68,
+          null,
+          null
+        ],
+        [
+          1641.039,
+          330.223,
+          null,
+          null
+        ],
+        [
+          1643.611,
+          331.767,
+          null,
+          null
+        ],
+        [
+          1645.801,
+          333.801,
+          null,
+          null
+        ],
+        [
+          1647.922,
+          335.922,
+          null,
+          null
+        ],
+        [
+          1650.044,
+          338.044,
+          null,
+          null
+        ],
+        [
+          1652.187,
+          340.14,
+          null,
+          null
+        ],
+        [
+          1654.587,
+          341.94,
+          null,
+          null
+        ],
+        [
+          1656.987,
+          343.74,
+          null,
+          null
+        ],
+        [
+          1659.387,
+          345.54,
+          null,
+          null
+        ],
+        [
+          1661.997,
+          346.999,
+          null,
+          null
+        ],
+        [
+          1664.681,
+          348.34,
+          null,
+          null
+        ],
+        [
+          1667.364,
+          349.682,
+          null,
+          null
+        ],
+        [
+          1670.221,
+          350.555,
+          null,
+          null
+        ],
+        [
+          1673.131,
+          351.283,
+          null,
+          null
+        ],
+        [
+          1676.043,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1679.043,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1682.043,
+          352.0,
+          null,
+          null
+        ],
+        [
+          1685.022,
+          352.204,
+          null,
+          null
+        ],
+        [
+          1687.964,
+          352.793,
+          null,
+          null
+        ],
+        [
+          1690.906,
+          353.381,
+          null,
+          null
+        ],
+        [
+          1693.848,
+          353.97,
+          null,
+          null
+        ],
+        [
+          1696.699,
+          354.9,
+          null,
+          null
+        ],
+        [
+          1699.545,
+          355.848,
+          null,
+          null
+        ],
+        [
+          1702.391,
+          356.797,
+          null,
+          null
+        ],
+        [
+          1705.237,
+          357.746,
+          null,
+          null
+        ],
+        [
+          1708.018,
+          358.865,
+          null,
+          null
+        ],
+        [
+          1710.775,
+          360.047,
+          null,
+          null
+        ],
+        [
+          1713.533,
+          361.228,
+          null,
+          null
+        ],
+        [
+          1716.29,
+          362.41,
+          null,
+          null
+        ],
+        [
+          1719.048,
+          363.592,
+          null,
+          null
+        ],
+        [
+          1721.757,
+          364.878,
+          null,
+          null
+        ],
+        [
+          1724.44,
+          366.22,
+          null,
+          null
+        ],
+        [
+          1727.123,
+          367.562,
+          null,
+          null
+        ],
+        [
+          1729.806,
+          368.903,
+          null,
+          null
+        ],
+        [
+          1732.49,
+          370.245,
+          null,
+          null
+        ],
+        [
+          1735.173,
+          371.587,
+          null,
+          null
+        ],
+        [
+          1737.908,
+          372.818,
+          null,
+          null
+        ],
+        [
+          1740.665,
+          373.999,
+          null,
+          null
+        ],
+        [
+          1743.422,
+          375.181,
+          null,
+          null
+        ],
+        [
+          1746.18,
+          376.363,
+          null,
+          null
+        ],
+        [
+          1748.937,
+          377.545,
+          null,
+          null
+        ],
+        [
+          1751.749,
+          378.583,
+          null,
+          null
+        ],
+        [
+          1754.595,
+          379.532,
+          null,
+          null
+        ],
+        [
+          1757.441,
+          380.48,
+          null,
+          null
+        ],
+        [
+          1760.287,
+          381.429,
+          null,
+          null
+        ],
+        [
+          1763.172,
+          382.234,
+          null,
+          null
+        ],
+        [
+          1766.113,
+          382.823,
+          null,
+          null
+        ],
+        [
+          1769.055,
+          383.411,
+          null,
+          null
+        ],
+        [
+          1771.997,
+          383.999,
+          null,
+          null
+        ],
+        [
+          1774.997,
+          384.0,
+          null,
+          null
+        ],
+        [
+          1777.997,
+          384.0,
+          null,
+          null
+        ],
+        [
+          1780.946,
+          384.315,
+          null,
+          null
+        ],
+        [
+          1783.792,
+          385.264,
+          null,
+          null
+        ],
+        [
+          1786.475,
+          386.475,
+          null,
+          null
+        ],
+        [
+          1788.597,
+          388.597,
+          null,
+          null
+        ],
+        [
+          1790.321,
+          390.963,
+          null,
+          null
+        ],
+        [
+          1791.27,
+          393.809,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          396.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          399.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          402.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          405.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          408.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          411.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          414.691,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          416.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmum6t9h_em9w",
+      "tool": "pen",
+      "points": [
+        [
+          1536.0,
+          544.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          547.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          550.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          553.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          556.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          559.0,
+          null,
+          null
+        ],
+        [
+          1536.0,
+          562.0,
+          null,
+          null
+        ],
+        [
+          1536.316,
+          564.949,
+          null,
+          null
+        ],
+        [
+          1537.265,
+          567.795,
+          null,
+          null
+        ],
+        [
+          1538.478,
+          570.478,
+          null,
+          null
+        ],
+        [
+          1540.599,
+          572.599,
+          null,
+          null
+        ],
+        [
+          1542.966,
+          574.322,
+          null,
+          null
+        ],
+        [
+          1545.812,
+          575.271,
+          null,
+          null
+        ],
+        [
+          1548.694,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1551.694,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1554.694,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1557.607,
+          576.536,
+          null,
+          null
+        ],
+        [
+          1560.453,
+          577.484,
+          null,
+          null
+        ],
+        [
+          1562.968,
+          578.968,
+          null,
+          null
+        ],
+        [
+          1565.09,
+          581.09,
+          null,
+          null
+        ],
+        [
+          1566.542,
+          583.625,
+          null,
+          null
+        ],
+        [
+          1567.49,
+          586.471,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          589.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          592.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          595.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          598.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          601.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          604.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          607.388,
+          null,
+          null
+        ],
+        [
+          1568.0,
+          608.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "pen_mmum6u0b_agd5",
+      "tool": "pen",
+      "points": [
+        [
+          1792.0,
+          544.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          547.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          550.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          553.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          556.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          559.0,
+          null,
+          null
+        ],
+        [
+          1792.0,
+          562.0,
+          null,
+          null
+        ],
+        [
+          1791.445,
+          564.832,
+          null,
+          null
+        ],
+        [
+          1789.781,
+          567.328,
+          null,
+          null
+        ],
+        [
+          1788.117,
+          569.824,
+          null,
+          null
+        ],
+        [
+          1785.506,
+          571.247,
+          null,
+          null
+        ],
+        [
+          1782.822,
+          572.589,
+          null,
+          null
+        ],
+        [
+          1780.139,
+          573.931,
+          null,
+          null
+        ],
+        [
+          1777.194,
+          574.468,
+          null,
+          null
+        ],
+        [
+          1774.235,
+          574.961,
+          null,
+          null
+        ],
+        [
+          1771.276,
+          575.454,
+          null,
+          null
+        ],
+        [
+          1768.317,
+          575.947,
+          null,
+          null
+        ],
+        [
+          1765.321,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1762.321,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1759.321,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1756.321,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1753.321,
+          576.0,
+          null,
+          null
+        ],
+        [
+          1750.338,
+          576.237,
+          null,
+          null
+        ],
+        [
+          1747.368,
+          576.662,
+          null,
+          null
+        ],
+        [
+          1744.398,
+          577.086,
+          null,
+          null
+        ],
+        [
+          1741.428,
+          577.51,
+          null,
+          null
+        ],
+        [
+          1738.458,
+          577.935,
+          null,
+          null
+        ],
+        [
+          1735.593,
+          578.802,
+          null,
+          null
+        ],
+        [
+          1732.747,
+          579.751,
+          null,
+          null
+        ],
+        [
+          1729.901,
+          580.7,
+          null,
+          null
+        ],
+        [
+          1727.055,
+          581.648,
+          null,
+          null
+        ],
+        [
+          1724.381,
+          582.971,
+          null,
+          null
+        ],
+        [
+          1721.809,
+          584.515,
+          null,
+          null
+        ],
+        [
+          1719.236,
+          586.058,
+          null,
+          null
+        ],
+        [
+          1716.664,
+          587.602,
+          null,
+          null
+        ],
+        [
+          1714.426,
+          589.574,
+          null,
+          null
+        ],
+        [
+          1712.305,
+          591.695,
+          null,
+          null
+        ],
+        [
+          1710.183,
+          593.817,
+          null,
+          null
+        ],
+        [
+          1708.062,
+          595.938,
+          null,
+          null
+        ],
+        [
+          1705.67,
+          597.747,
+          null,
+          null
+        ],
+        [
+          1703.27,
+          599.547,
+          null,
+          null
+        ],
+        [
+          1700.87,
+          601.347,
+          null,
+          null
+        ],
+        [
+          1698.29,
+          602.855,
+          null,
+          null
+        ],
+        [
+          1695.606,
+          604.197,
+          null,
+          null
+        ],
+        [
+          1692.923,
+          605.538,
+          null,
+          null
+        ],
+        [
+          1690.091,
+          606.477,
+          null,
+          null
+        ],
+        [
+          1687.18,
+          607.205,
+          null,
+          null
+        ],
+        [
+          1684.27,
+          607.933,
+          null,
+          null
+        ],
+        [
+          1681.278,
+          608.0,
+          null,
+          null
+        ],
+        [
+          1678.278,
+          608.0,
+          null,
+          null
+        ],
+        [
+          1675.315,
+          608.228,
+          null,
+          null
+        ],
+        [
+          1672.469,
+          609.177,
+          null,
+          null
+        ],
+        [
+          1669.719,
+          610.281,
+          null,
+          null
+        ],
+        [
+          1667.598,
+          612.402,
+          null,
+          null
+        ],
+        [
+          1665.766,
+          614.702,
+          null,
+          null
+        ],
+        [
+          1664.817,
+          617.548,
+          null,
+          null
+        ],
+        [
+          1664.0,
+          620.416,
+          null,
+          null
+        ],
+        [
+          1664.0,
+          623.416,
+          null,
+          null
+        ],
+        [
+          1664.0,
+          626.416,
+          null,
+          null
+        ],
+        [
+          1663.552,
+          629.343,
+          null,
+          null
+        ],
+        [
+          1662.604,
+          632.189,
+          null,
+          null
+        ],
+        [
+          1661.228,
+          634.772,
+          null,
+          null
+        ],
+        [
+          1659.107,
+          636.893,
+          null,
+          null
+        ],
+        [
+          1656.639,
+          638.454,
+          null,
+          null
+        ],
+        [
+          1653.793,
+          639.402,
+          null,
+          null
+        ],
+        [
+          1650.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1647.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1644.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1641.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1638.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1635.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1632.89,
+          640.0,
+          null,
+          null
+        ],
+        [
+          1632.0,
+          640.0,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "curve": true
+      }
+    },
+    {
+      "id": "text_mmum6y91_xvgd",
+      "tool": "text",
+      "points": [
+        [
+          1257.492,
+          865.627,
+          null,
+          null
+        ],
+        [
+          1848.929,
+          1011.805,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Solar radiation is heavily absorbed by low-albedo asphalt, stored as thermal mass, and slowly released into the night air, creating the urban heat island effect.",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 704,
+        "baseHeight": 160,
+        "configuredWidth": 704,
+        "configuredHeight": 160,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 591.4373437500001,
+        "contentHeight": 134.39999999999998,
+        "lineCount": 4,
+        "renderedText": "Solar radiation is heavily absorbed by low-albedo\nasphalt, stored as thermal mass, and slowly\nreleased into the night air, creating the urban heat\nisland effect."
+      }
+    },
+    {
+      "id": "text_mmum7met_nkeq",
+      "tool": "text",
+      "points": [
+        [
+          2400.0,
+          32.0,
+          null,
+          null
+        ],
+        [
+          2688.0,
+          110.96,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "blue",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Cool Roofs vs. Green Roofs",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 288,
+        "baseHeight": 64,
+        "configuredWidth": 288,
+        "configuredHeight": 64,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 288,
+        "contentHeight": 67.19999999999999,
+        "lineCount": 2,
+        "renderedText": "Cool Roofs vs. Green\nRoofs"
+      }
+    },
+    {
+      "id": "text_mmum7pyb_iz89",
+      "tool": "text",
+      "points": [
+        [
+          2112.0,
+          192.0,
+          null,
+          null
+        ],
+        [
+          2592.0,
+          741.36,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": "Feature\tCool Roofs\tGreen Roofs\nCooling Mechanism\tHigh albedo → reflects solar radiation\tShade + evapotranspiration → cools through water\nHeat Reduction\tStrong daytime reduction\tStrong daytime + better nighttime cooling\nWater Need\tVery low\tHigh (needs irrigation)\nMaintenance\tLow\tHigh (soil, plants, drainage)\nInsulation\tModerate\tExcellent (thermal mass + insulation)\nCost\tLow–medium\tHigh (structure, soil, plants)",
+        "summary": "",
+        "role": "subtitle",
+        "fontFamily": "sans-serif",
+        "fontWeight": "600",
+        "fontSize": 24,
+        "growDir": "right-down",
+        "baseWidth": 480,
+        "baseHeight": 192,
+        "configuredWidth": 480,
+        "configuredHeight": 192,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 480,
+        "contentHeight": 537.5999999999999,
+        "lineCount": 16,
+        "renderedText": "Feature Cool Roofs Green Roofs\nCooling Mechanism High albedo →\nreflects solar radiation Shade +\nevapotranspiration → cools through\nwater\nHeat Reduction Strong daytime\nreduction Strong daytime + better\nnighttime cooling\nWater Need Very low High (needs\nirrigation)\nMaintenance Low High (soil, plants,\ndrainage)\nInsulation Moderate Excellent (thermal\nmass + insulation)\nCost Low–medium High (structure, soil,\nplants)"
+      }
+    },
+    {
+      "id": "text_mmum84h6_jedu",
+      "tool": "text",
+      "points": [
+        [
+          2656.0,
+          224.0,
+          null,
+          null
+        ],
+        [
+          3085.102,
+          554.646,
+          null,
+          null
+        ]
+      ],
+      "style": {
+        "size": "m",
+        "color": "black",
+        "opacity": 1.0
+      },
+      "meta": {
+        "author": "human",
+        "text": " Desert City (hot, dry, scarce water)\nBetter choice: Cool Roofs\nDesert has intense sun but little water.\nCool roofs reflect heat without using water.\nGreen roofs need too much irrigation and are hard to maintain.\n🌴 Tropical City (hot, humid, rainy)\nBetter choice: Green Roofs\nHigh humidity makes reflection less effective alone.\nEvapotranspiration works well with natural rainfall.\nGreen roofs also improve stormwater management and insulation.",
+        "summary": "",
+        "role": "body",
+        "fontFamily": "sans-serif",
+        "fontWeight": "400",
+        "fontSize": 18,
+        "growDir": "right-down",
+        "baseWidth": 512,
+        "baseHeight": 384,
+        "configuredWidth": 512,
+        "configuredHeight": 384,
+        "lineHeight": 1.4,
+        "padding": 0,
+        "contentWidth": 429.1015625,
+        "contentHeight": 302.4,
+        "lineCount": 12,
+        "renderedText": "Desert City (hot, dry, scarce water)\nBetter choice: Cool Roofs\nDesert has intense sun but little water.\nCool roofs reflect heat without using water.\nGreen roofs need too much irrigation and are hard\nto maintain.\n🌴 Tropical City (hot, humid, rainy)\nBetter choice: Green Roofs\nHigh humidity makes reflection less effective alone.\nEvapotranspiration works well with natural rainfall.\nGreen roofs also improve stormwater management\nand insulation."
+      }
+    }
+  ]
+}
